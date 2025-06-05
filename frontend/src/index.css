@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Prata&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"] {
+    -webkit-appearance: none;
+    margin: 0;
+    -moz-appearance: textfield !important;
+  }
+}
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+.prata-regular {
+  font-family: "Prata", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo-font {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+}
+
+a.active hr {
+  display: block;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  a.active {
+    background-color: gray;
+    color: white;
+  }
+}
