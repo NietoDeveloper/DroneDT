@@ -31,7 +31,7 @@
 ## How to Run Locally
 1. Clone the repository:
 ```bash
-git clone https://github.com/czhaoyiii/clothix/
+git clone https://github.com/NietoDeveloper/DroneDT
 ```
 2. Look at the README.md in the backend folder of this GitHub repo: [Here](https://github.com/czhaoyiii/clothix/tree/main/backend)
 3. Look at the README.md in the frontend folder of this GitHub repo: [Here](https://github.com/czhaoyiii/clothix/tree/main/frontend)
