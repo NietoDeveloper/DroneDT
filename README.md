@@ -1,6 +1,6 @@
 **DronesDT** is a full-stack e-commerce platform built using the MERN stack (MongoDB, Express.js, React, and Node.js). It offers a seamless shopping experience with advanced filtering, sorting, and user account management. The platform is designed with responsive design principles for optimal usability across devices.
 
-* Clothix E-commerce: [Live Demo](https://clothix.vercel.app/)
+* E-commerce: [Live Demo](https://clothix.vercel.app/)
 * Clothix Admin Panel: [Admin Panel Demo](https://clothix-admin.vercel.app/)
 <br />
 
