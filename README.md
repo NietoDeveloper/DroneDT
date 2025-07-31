@@ -5,7 +5,7 @@
 <br />
 
 ## Features
-### Clothix E-commerce
+### E-commerce
 * **Dynamic Product Listings**: Displays the latest collections and best sellers fetched via REST APIs.
 * **Advanced Filtering, Searching, and Sorting**: Combine filters for categories (Men, Women, Kids), types (Topwear, Bottomwear, Winterwear), price sorting, and search to quickly find products.
 * **Interactive Product Pages**: View detailed product descriptions, select sizes, and explore related items dynamically generated from backend data.
