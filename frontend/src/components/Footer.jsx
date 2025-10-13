@@ -8,17 +8,14 @@ export default function Footer() {
         <div>
           <div className="flex gap-2 items-center mb-5 cursor-default">
             <img src={clothixLogo} alt="" />
-            <h1 className="logo-font items-center">Clothix</h1>
+            <h1 className="logo-font items-center">Dron D T</h1>
           </div>
           <p className="w-full sm:w-2/3 text-gray-600">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            L.
           </p>
         </div>
         <div>
-          <p className="text-xl font-medium mb-5">COMPANY</p>
+          <p className="text-xl font-medium mb-5">Empresa</p>
           <div className="flex flex-col flex-1 text-gray-600">
             <Link to="/" className="mb-2 w-fit">
               Home
