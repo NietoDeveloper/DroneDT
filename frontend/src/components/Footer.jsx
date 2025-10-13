@@ -18,7 +18,7 @@ export default function Footer() {
           <p className="text-xl font-medium mb-5">Empresa</p>
           <div className="flex flex-col flex-1 text-gray-600">
             <Link to="/" className="mb-2 w-fit">
-              Home
+              Inicio
             </Link>
             <Link to="about" className="mb-2 w-fit">
               Sobre Nosotros
