@@ -33,7 +33,7 @@ export default function Header() {
     <nav className="flex justify-between items-center py-5 font-medium border-b">
       <Link to="." className="flex gap-2">
         <img src={clothixLogo} alt="" />
-        <h1 className="logo-font items-center">Clothix</h1>
+        <h1 className="logo-font items-center">Dron D T</h1>
       </Link>
 
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
