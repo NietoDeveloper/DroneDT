@@ -143,7 +143,7 @@ export default function Header() {
             onClick={() => setVisible(false)}
             to="about"
           >
-            ABOUT
+            Sobre
           </NavLink>
           <NavLink
             className="py-2 pl-6 border"
