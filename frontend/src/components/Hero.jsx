@@ -10,7 +10,7 @@ export default function Hero() {
             <p className="font-medium text-sm text-base"> Industria Colombiana</p>
           </div>
           <h1 className="prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed">
-            Ultimos Productos
+            Drones D T
           </h1>
           <div className="flex gap-2 items-center">
             <p className="font-semibold text-sm text-base">Fabricamos  con las Ultimas Technologias</p>
