@@ -1,5 +1,5 @@
 # Frontend
-The frontend of the Clothix E-commerce.
+The frontend of the drondt E-commerce.
 <br />
 
 ## How to Run Frontend Locally
