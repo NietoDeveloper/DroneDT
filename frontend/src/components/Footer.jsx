@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
       </div>
       <hr />
-      <p className="py-5 text-sm text-center">© 2024, Coded by Chan Zhao Yi</p>
+      <p className="py-5 text-sm text-center">Created by NietoDeveloper ©</p>
     </div>
   );
 }
