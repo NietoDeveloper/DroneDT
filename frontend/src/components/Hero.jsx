@@ -13,7 +13,7 @@ export default function Hero() {
             Dron D T
           </h1>
           <div className="flex gap-2 items-center">
-            <p className="font-semibold text-sm text-base">Fabricamos  con las Ultimas Technologias</p>
+            <p className="font-semibold text-sm text-base">Fabricamos  productos con las Ultimas Technologias</p>
             <p className="w-11 h-[2px] bg-[#414141]"></p>
           </div>
         </div>
