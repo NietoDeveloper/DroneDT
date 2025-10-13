@@ -136,7 +136,7 @@ export default function Header() {
             onClick={() => setVisible(false)}
             to="collection"
           >
-            COLLECTION
+            Productos
           </NavLink>
           <NavLink
             className="py-2 pl-6 border"
