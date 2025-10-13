@@ -21,10 +21,10 @@ export default function Footer() {
               Home
             </Link>
             <Link to="about" className="mb-2 w-fit">
-              About Us
+              Sobre Nosotros
             </Link>
             <Link to="contact" className="mb-2 w-fit">
-              Contact Us
+              Contactanos
             </Link>
             <p className="mb-2">Envio</p>
             <p className="mb-2">Politica De Privacidad</p>
