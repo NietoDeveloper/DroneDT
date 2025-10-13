@@ -122,7 +122,7 @@ export default function Header() {
             onClick={() => setVisible(false)}
           >
             <img className="h-4 rotate-180" src={backArrow} alt="" />
-            <p>Back</p>
+            <p>Atras</p>
           </div>
           <NavLink
             className="py-2 pl-6 border"
