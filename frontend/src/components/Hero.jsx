@@ -7,13 +7,13 @@ export default function Hero() {
         <div className="text-[#414141]">
           <div className="flex gap-2 items-center">
             <p className="w-11 h-[2px] bg-[#414141]"></p>
-            <p className="font-medium text-sm text-base"> Nuestros mas Vendidos</p>
+            <p className="font-medium text-sm text-base"> Drones Funcionales</p>
           </div>
           <h1 className="prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed">
             Ultimos Productos
           </h1>
           <div className="flex gap-2 items-center">
-            <p className="font-semibold text-sm text-base">Compra Ahora</p>
+            <p className="font-semibold text-sm text-base">Compra A</p>
             <p className="w-11 h-[2px] bg-[#414141]"></p>
           </div>
         </div>
