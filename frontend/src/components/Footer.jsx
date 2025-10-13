@@ -27,7 +27,7 @@ export default function Footer() {
               Contact Us
             </Link>
             <p className="mb-2">Envio</p>
-            <p className="mb-2">Privacy policy</p>
+            <p className="mb-2"></p>
           </div>
         </div>
         <div>
