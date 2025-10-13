@@ -11,7 +11,7 @@ export default function Footer() {
             <h1 className="logo-font items-center">Dron D T</h1>
           </div>
           <p className="w-full sm:w-2/3 text-gray-600">
-            L.
+            Construimos Drones de calidad 
           </p>
         </div>
         <div>
