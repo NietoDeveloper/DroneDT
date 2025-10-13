@@ -39,7 +39,7 @@ export default function Footer() {
         </div>
       </div>
       <hr />
-      <p className="py-5 text-sm text-center">Created by NietoDeveloper ©</p>
+      <p className="py-5 text-sm text-center">2025 Created by NietoDeveloper ©</p>
     </div>
   );
 }
