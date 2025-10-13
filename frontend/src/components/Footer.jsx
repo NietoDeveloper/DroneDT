@@ -26,7 +26,7 @@ export default function Footer() {
             <Link to="contact" className="mb-2 w-fit">
               Contact Us
             </Link>
-            <p className="mb-2">Delivery</p>
+            <p className="mb-2">Envio</p>
             <p className="mb-2">Privacy policy</p>
           </div>
         </div>
