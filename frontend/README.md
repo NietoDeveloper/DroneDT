@@ -5,7 +5,7 @@ The frontend of the drondt E-commerce.
 ## How to Run Frontend Locally
 1. Navigate to the Backend Directory
 ```bash
-cd clothix/frontend
+cd dronedt/frontend
 ```
 2. Install Dependencies
 ```bash
