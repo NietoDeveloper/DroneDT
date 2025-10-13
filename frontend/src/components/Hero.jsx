@@ -7,10 +7,10 @@ export default function Hero() {
         <div className="text-[#414141]">
           <div className="flex gap-2 items-center">
             <p className="w-11 h-[2px] bg-[#414141]"></p>
-            <p className="font-medium text-sm text-base"> Nuestro mas Vendidos</p>
+            <p className="font-medium text-sm text-base"> Nuestros mas Vendidos</p>
           </div>
           <h1 className="prata-regular text-3xl sm:py-3 lg:text-5xl leading-relaxed">
-            Latest Arrivals
+            Ultimos Productos
           </h1>
           <div className="flex gap-2 items-center">
             <p className="font-semibold text-sm text-base">SHOP NOW</p>
