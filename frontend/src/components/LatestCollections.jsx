@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import Title from "./Title";
 import ProductCard from "./ProductCard";
-import homepageHero from "../assets/dron1.1.png";
+import dron1 from "../assets/dron1.1.png";
 
 export default function LatestCollections() {
   const { products } = useContext(ShopContext);
@@ -33,7 +33,7 @@ export default function LatestCollections() {
         />
       </div>
 
-      <img className="sm:w-1/2" src={} alt="" />
+      <img className="sm:w-1/2" src={dron1} alt="" />
 
       {/* Rendering List */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
