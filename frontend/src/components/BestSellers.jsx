@@ -29,7 +29,7 @@ export default function BestSellers() {
         <Title
           title1="EL MAS VENDIDO:"
           title2="CITY 1.1"
-          caption="Our best-selling products that our customers can not get enough of. Shop the most popular items from our store."
+          caption="Out enough of. Shop the most popular items from our store."
         />
       </div>
       {/* Rendering List */}
