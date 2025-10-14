@@ -28,7 +28,7 @@ export default function LatestCollections() {
         <Title
           title1="UN DRONE"
           title2="PARA CADA PROPOSITO"
-          caption="Tenemos un DRONE para cada escenario;  Sea para: Fotografia, Video, Renocimiento, Exploracion, Agrario y Militar, Tenemos un Drone para cada situacion. "
+          caption="Tenemos un DRONE para cada escenario;  Sea: Fotografia, Video, Renocimiento, Exploracion, Agrario y Militar, Tenemos un Drone para cada situacion. "
         />
       </div>
 
