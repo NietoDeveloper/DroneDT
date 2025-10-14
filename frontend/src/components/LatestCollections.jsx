@@ -26,8 +26,8 @@ export default function LatestCollections() {
     <div className="my-10">
       <div className="text-3xl text-center py-8">
         <Title
-          title1=""
-          title2="COLLECTION"
+          title1="UN DRONE"
+          title2="PARA CADA PROPOSITO"
           caption="Discover our newest arrivals that blend style and comfort. Explore the latest trends in fashion, curated just for you."
         />
       </div>
