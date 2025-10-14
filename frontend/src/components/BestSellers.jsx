@@ -27,7 +27,7 @@ export default function BestSellers() {
     <div className="my-10">
       <div className="text-3xl text-center py-8">
         <Title
-          title1="BEST"
+          title1=""
           title2="SELLERS"
           caption="Our best-selling products that our customers can not get enough of. Shop the most popular items from our store."
         />
