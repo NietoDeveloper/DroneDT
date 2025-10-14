@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import Title from "./Title";
 import ProductCard from "./ProductCard";
-import homepageHero from "../assets/hero_img.png";
+import homepageHero from "../assets/.png";
 
 export default function LatestCollections() {
   const { products } = useContext(ShopContext);
