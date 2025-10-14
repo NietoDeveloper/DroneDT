@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import Title from "./Title";
 import ProductCard from "./ProductCard";
-import homepageHero from "../assets/hero_img.png";
+import homepageHero from "../assets/.png";
 
 export default function BestSellers() {
   const { products } = useContext(ShopContext);
@@ -35,7 +35,7 @@ export default function BestSellers() {
       </div>
 
       <img className="sm:w-1/2" src={homepageHero} alt="" />
-      
+
       {/* Rendering List */}
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
         {productElements}
