@@ -28,7 +28,7 @@ export default function LatestCollections() {
         <Title
           title1="UN DRONE"
           title2="PARA CADA PROPOSITO"
-          caption="Discover our newest arrivals that ble."
+          caption=""
         />
       </div>
 
