@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import Title from "./Title";
 import ProductCard from "./ProductCard";
+import homepageHero from "../assets/hero_img.png";
 
 export default function BestSellers() {
   const { products } = useContext(ShopContext);
