@@ -54,5 +54,6 @@ git clone https://github.com/NietoDeveloper/DroneDT
 * **Expanded Profile Page**: Add editable user information and saved addresses.
 <br />
 
-## License
+
+### License
 This project is open-source and available under the MIT License.
