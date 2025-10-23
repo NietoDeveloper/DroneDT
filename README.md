@@ -55,5 +55,5 @@ git clone https://github.com/NietoDeveloper/DroneDT
 <br />
 
 
-### License
-This project is open-source  License.
+### Source
+This project is open-source.
