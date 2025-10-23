@@ -33,7 +33,7 @@
 ```bash
 git clone https://github.com/NietoDeveloper/DroneDT
 ```
-2. Look at the README.md in the backend folder of this GitHub repo: [Here](https://github.com/czhaoyiii/clothix/tree/main/backend)
+2. Look at the README.md in the backend folder of this GitHub repo: [Here]()
 3. Look at the README.md in the frontend folder of this GitHub repo: [Here](https://github.com/czhaoyiii/clothix/tree/main/frontend)
 4. Look at the README.md in the admin folder of this GitHub repo: [Here](https://github.com/czhaoyiii/clothix/tree/main/admin)
 <br />
