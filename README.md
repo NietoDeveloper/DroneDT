@@ -1,6 +1,6 @@
 **DronesDT** is a full-stack e-commerce platform built using the MERN stack (MongoDB, Express.js, React, and Node.js). It offers a seamless shopping experience with advanced filtering, sorting, and user account management. The platform is designed with responsive design principles for optimal usability across devices.
 
-* E-commerce: [Live Demo](https://)
+* E-commerce: [Live Demo]()
 * Admin Panel: [Admin Panel Demo](https://)
 <br />
 
