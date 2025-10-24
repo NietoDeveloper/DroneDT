@@ -1,5 +1,5 @@
 # Admin Panel
-The admin panel of the Clothix E-commerce.
+The admin panel of the  E-commerce.
 <br />
 
 ## How to Run Frontend Locally
