@@ -12,10 +12,12 @@ The backend of the Drone DT E-commerce.
 ```bash
 cd clothix/backend
 ```
+
 2. Install Dependencies
 ```bash
 npm install
 ```
+
 3. Create .env File and Configure Environment Variables (Anything with < > you have to configure)
 ```bash
 
