@@ -34,7 +34,7 @@ export default function Footer() {
           <p className="text-xl font-medium mb-5">Estemos en Contacto</p>
           <div className="flex flex-col flex-1 text-gray-600">
             <p className="mb-2">+123 456 7890</p>
-            <p className="mb-2">contacto@drondt.com</p>
+            <p className="mb-2">ventas@drondt.com</p>
           </div>
         </div>
       </div>
