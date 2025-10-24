@@ -11,6 +11,7 @@ cd clothix/admin
 ```bash
 npm install
 ```
+
 3. Create .env File and Configure Environment Variables (Anything with < > you have to configure)
 ```bash
 VITE_BACKEND_URL = "http://localhost:<BACKEND PORT NUMBER>"
