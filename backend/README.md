@@ -18,6 +18,7 @@ npm install
 ```
 3. Create .env File and Configure Environment Variables (Anything with < > you have to configure)
 ```bash
+
 MONGODB_URI = "<YOUR MONGODB CONNECTION STRING>"
 CLOUDINARY_NAME = "<YOUR CLOUDINARY CLOUD NAME>"
 CLOUDINARY_API_KEY = <YOUR CLOUDINARY API KEY>
@@ -26,6 +27,7 @@ JWT_SECRET = "<YOUR SECRET>"
 ADMIN_EMAIL = "admin@clothix.com"
 ADMIN_PASSWORD = "admin123"
 ```
+
 4. Run the Backend
 ```bash
 npm run server
