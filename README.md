@@ -35,7 +35,7 @@ git clone https://github.com/NietoDeveloper/DroneDT
 ```
 2. Look at the README.md in the backend folder of this GitHub repo: [https://github.com/NietoDeveloper/DroneDT]
 3. Look at the README.md in the frontend folder of this GitHub repo: [Here]()
-4. Look at the README.md in the admin folder of this GitHub repo: [Here]()
+4. Look at the README.md in the admin folder of this GitHub repo: []
 <br />
 
 ## Highlights
