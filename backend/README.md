@@ -1,5 +1,5 @@
 # Backend
-The backend of the Clothix E-commerce.
+The backend of the  E-commerce.
 <br />
 
 ## Pre-requisite
