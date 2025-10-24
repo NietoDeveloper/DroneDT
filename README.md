@@ -54,6 +54,6 @@ git clone https://github.com/NietoDeveloper/DroneDT
 * **Expanded Profile Page**: Add editable user information and saved addresses.
 <br />
 
-## Nieto Software Developer
+## Manuel Nieto Software Developer
 
 ### 2025
