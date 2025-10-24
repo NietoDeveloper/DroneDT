@@ -19,4 +19,4 @@ VITE_BACKEND_URL = "http://localhost:<BACKEND PORT NUMBER>"
 ```bash
 npm run dev
 ```
-## Manuel 
+## Manuel Nieto
