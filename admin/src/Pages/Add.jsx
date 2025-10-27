@@ -164,7 +164,7 @@ export default function Add() {
             value={category}
             className="w-full px-3 py-2"
           >
-            <option value="Men">Men</option>
+            <option value="Men">FVP</option>
             <option value="Women">Women</option>
             <option value="Kids">Kids</option>
           </select>
