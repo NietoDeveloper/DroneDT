@@ -20,7 +20,7 @@ export default function Header({ setToken }) {
           Logout
         </button>
         <a
-          href="https://clothix.vercel.app/"
+          href="https://.vercel.app/"
           target="_blank"
           className="flex items-center cursor-pointer"
         >
