@@ -72,7 +72,7 @@ export default function Add() {
     >
       {/* Images */}
       <div>
-        <p className="mb-2">Upload Image</p>
+        <p className="mb-2"> Image</p>
         <div className="flex gap-2">
           <label htmlFor="image1" className="cursor-pointer">
             <img
