@@ -8,7 +8,7 @@ export default function Header({ setToken }) {
       <div className="flex gap-2">
         <img src={clothixLogo} alt="" />
         <div className="flex flex-col sm:flex-row sm:items-end">
-          <p className="logo-font items-center"></p>
+          <p className="logo-font items-center">DroneDT</p>
           <p className="text-xs sm:pl-1">Admin Panel</p>
         </div>
       </div>
