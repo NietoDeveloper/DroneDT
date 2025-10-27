@@ -20,7 +20,7 @@ export default function Header({ setToken }) {
           Logout
         </button>
         <a
-          href="https://.vercel.app/"
+          href="https://dronedt.vercel.app/"
           target="_blank"
           className="flex items-center cursor-pointer"
         >
