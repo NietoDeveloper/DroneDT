@@ -24,7 +24,7 @@ export default function Header({ setToken }) {
           target="_blank"
           className="flex items-center cursor-pointer"
         >
-          <p className="hover:underline text-sm sm:text-base"></p>
+          <p className="hover:underline text-sm sm:text-base">Tienda</p>
           <img className="h-4 pl-2" src={arrow} alt="" />
         </a>
       </div>
