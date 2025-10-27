@@ -42,7 +42,7 @@ export default function Login({ setToken }) {
         <form onSubmit={onSubmitHandler}>
           <div className="mb-3 min-w-72">
             <p className="text-sm font-medium text-gray-700 mb-2">
-              Email
+             Direccion Email
             </p>
             <input
               onChange={(e) => setEmail(e.target.value)}
