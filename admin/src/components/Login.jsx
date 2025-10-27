@@ -54,7 +54,7 @@ export default function Login({ setToken }) {
             />
           </div>
           <div className="mb-3 min-w-72">
-            <p className="text-sm font-medium text-gray-700 mb-2">Password</p>
+            <p className="text-sm font-medium text-gray-700 mb-2">Clave</p>
             <input
               onChange={(e) => setPassword(e.target.value)}
               value={password}
