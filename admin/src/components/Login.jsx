@@ -34,7 +34,7 @@ export default function Login({ setToken }) {
         <div className="flex gap-2 mb-4">
           <img src={clothixLogo} alt="" />
           <div className="flex flex-col sm:flex-row sm:items-end">
-            <p className="logo-font items-center">Clothix</p>
+            <p className="logo-font items-center"></p>
             <p className="text-xs sm:pl-1">Admin Panel</p>
           </div>
         </div>
