@@ -68,7 +68,7 @@ export default function Login({ setToken }) {
             type="submit"
             className="w-full py-2 px-4 mt-2 rounded-md bg-black text-white"
           >
-            Login
+            
           </button>
         </form>
       </div>
