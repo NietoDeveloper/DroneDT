@@ -2,7 +2,8 @@
 The frontend of the Drone DT E-commerce.
 <br />
 
-## How to Run Frontend Locally
+### How to Run Frontend Locally
+
 1. Navigate to the Backend Directory
 ```bash
 cd dronedt/frontend
@@ -20,6 +21,6 @@ VITE_BACKEND_URL = "http://localhost:<BACKEND PORT NUMBER>"
 npm run dev
 ```
 
-## Manuel Nieto Software Developer
+# Manuel Nieto Software Developer
 
 ### 2025
