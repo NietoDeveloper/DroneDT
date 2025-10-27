@@ -165,8 +165,8 @@ export default function Add() {
             className="w-full px-3 py-2"
           >
             <option value="Men">FVP</option>
-            <option value="Women">Women</option>
-            <option value="Kids">Kids</option>
+            <option value="Women">Medium</option>
+            <option value="Kids"></option>
           </select>
         </div>
 
