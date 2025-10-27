@@ -158,7 +158,7 @@ export default function Add() {
       {/* Category */}
       <div className="flex flex-col sm:flex-row gap-2 w-full sm:gap-8">
         <div>
-          <p className="mb-2">Product Category</p>
+          <p className="mb-2"></p>
           <select
             onChange={(e) => setCategory(e.target.value)}
             value={category}
