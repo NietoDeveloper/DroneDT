@@ -5,7 +5,9 @@
 <br />
 
 ## Features
+
 ### E-commerce
+
 * **Dynamic Product Listings**: Displays the latest collections and best sellers fetched via REST APIs.
 * **Advanced Filtering, Searching, and Sorting**: Combine filters for categories (Men, Women, Kids), types (Topwear, Bottomwear, Winterwear), price sorting, and search to quickly find products.
 * **Interactive Product Pages**: View detailed product descriptions, select sizes, and explore related items dynamically generated from backend data.
@@ -14,7 +16,9 @@
   * **Order Tracking**: Monitor order history and status.
   * **Cart & Checkout**: Add items to the cart, view totals, and complete orders with mock payment.
 * **Responsive Design**: Optimized for desktop and mobile viewing.
+
 ### Admin Panel
+
 * Built for admin users to perform CRUD operations on products and orders:
   * **Add Products**: Input product details like images, categories, pricing, and sizes (disabled in demo mode for security).
   * **Manage Products**: View, update, or delete existing products from the database.
@@ -22,6 +26,7 @@
 <br />
 
 ## Tech Stack
+
 * **Frontend**: React.js with React Router for navigation and Tailwind CSS for styling a responsive and modern design.
 * **Backend**: Node.js and Express.js for REST API creation.
 * **Database**: MongoDB for storing products, users, and orders.
@@ -29,16 +34,20 @@
 <br />
 
 ## How to Run Locally
+
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/NietoDeveloper/DroneDT
 ```
+
 2. Look at the README.md in the backend folder of this GitHub repo: [https://github.com/NietoDeveloper/DroneDT/tree/main/backend]
 3. Look at the README.md in the frontend folder of this GitHub repo: [https://github.com/NietoDeveloper/DroneDT/tree/main/frontend]
 4. Look at the README.md in the admin folder of this GitHub repo: [https://github.com/NietoDeveloper/DroneDT/tree/main/admin]
 <br />
 
 ## Highlights
+
 * **MERN Stack Expertise**: Full-stack development with seamless integration between frontend and backend.
 * **CRUD Operations**: Create, read, update, and delete functionality for products and orders.
 * **REST APIs**: Efficient data retrieval and manipulation via backend endpoints.
@@ -47,6 +56,7 @@ git clone https://github.com/NietoDeveloper/DroneDT
 <br />
 
 ## Potential Improvements
+
 * **Enhanced UI/UX**: Improve the design for a more intuitive user experience.
 * **Online Payment Gateway**: Integrate real payment options for a complete shopping experience.
 * **Wishlist Feature**: Allow users to save favorite products for later.
