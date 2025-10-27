@@ -131,7 +131,7 @@ export default function Add() {
 
       {/* Name */}
       <div className="w-full">
-        <p className="mb-2"></p>
+        <p className="mb-2">Nombre de Producto</p>
         <input
           onChange={(e) => setName(e.target.value)}
           value={name}
