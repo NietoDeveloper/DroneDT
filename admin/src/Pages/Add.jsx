@@ -166,7 +166,7 @@ export default function Add() {
           >
             <option value="Men">FVP</option>
             <option value="Women">Medium</option>
-            <option value="Kids"></option>
+            <option value="Kids">Mini</option>
           </select>
         </div>
 
