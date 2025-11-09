@@ -64,7 +64,7 @@ export default function ProductList({ category, subCategory }) {
 
   return (
     <div className="flex-1">
-      {/* Title & Filter */}
+
       <div className="flex justify-between text-base sm:text-xl lg:text-2xl mb-4">
         <Title title1="ALL" title2="COLLECTIONS" />
         <select
