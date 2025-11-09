@@ -57,8 +57,6 @@ export default function BestSellers() {
             $25.500.000 COP
           </h3>
         </div>
-
-        {/* Eliminamos el Rendering List del código inicial para mantener solo el producto destacado. */}
       </div>
     </div>
   );
