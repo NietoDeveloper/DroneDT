@@ -30,13 +30,6 @@ export default function Footer() {
             <p className="mb-2">Politica De Privacidad</p>
           </div>
         </div>
-        <div>
-          <p className="text-xl font-medium mb-5">Contactanos</p>
-          <div className="flex flex-col flex-1 text-gray-600">
-            <p className="mb-2">+57 3132151939</p>
-            <p className="mb-2">ventas@drondt.com</p>
-          </div>
-        </div>
       </div>
       <hr />
       <p className="py-5 text-sm text-center">2025 Created by NietoDeveloper ©</p>
