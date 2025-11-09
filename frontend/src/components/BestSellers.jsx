@@ -26,7 +26,7 @@ export default function BestSellers() {
         </div>
         <div className="flex justify-center w-full mb-8">
           <a 
-            href="#" // Link libre para customizar
+            href="#" 
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 cursor-pointer transition duration-300 hover:scale-[1.03] hover:shadow-2xl rounded-xl overflow-hidden block"
