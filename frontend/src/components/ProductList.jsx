@@ -30,7 +30,6 @@ export default function ProductList({ category, subCategory }) {
       );
     }
 
-    // If sorting is applied, then set productlist
     switch (sortType) {
       case "high-low":
         productsCopy.sort((a, b) => b.price - a.price);
