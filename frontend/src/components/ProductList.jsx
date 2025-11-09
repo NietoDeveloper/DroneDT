@@ -24,7 +24,6 @@ export default function ProductList({ category, subCategory }) {
       );
     }
 
-    // If there's a sub-category selected
     if (subCategory.length > 0) {
       productsCopy = productsCopy.filter((item) =>
         subCategory.includes(item.subCategory)
