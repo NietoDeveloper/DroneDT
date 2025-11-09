@@ -9,7 +9,7 @@ export default function ProductList({ category, subCategory }) {
   const [sortType, setSortType] = useState("relevant");
 
   function applyFilterAndSort() {
-    // Make a copy of the products array
+
     let productsCopy = products.slice();
 
     if (showSearch && search) {
