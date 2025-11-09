@@ -2,12 +2,6 @@ import exchange from "../assets/exchange_icon.png";
 import quality from "../assets/quality_icon.png";
 import support from "../assets/support_img.png";
 
-/**
- * Componente Policy
- * * Muestra las políticas de la tienda (intercambio, devolución, soporte).
- * Ajustado para ocupar el 100% de la altura de la vista (min-h-screen) y ser totalmente responsivo.
- * Utiliza un diseño de columna en móviles y pasa a fila en pantallas medianas (md).
- */
 export default function Policy() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 bg-white text-gray-700">
