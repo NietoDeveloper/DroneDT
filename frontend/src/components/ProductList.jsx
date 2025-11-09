@@ -48,7 +48,6 @@ export default function ProductList({ category, subCategory }) {
     setSortType(e.target.value);
   }
 
-  // Everytime category, subcategory and sortType changes, run applyFilterAndSort()
   useEffect(() => {
     applyFilterAndSort();
   }, [category, subCategory, sortType, search, showSearch, products]);
