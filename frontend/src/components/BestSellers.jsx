@@ -9,8 +9,7 @@ export default function BestSellers() {
   const [bestProducts, setBestProducts] = useState([]);
 
   useEffect(() => {
-    // Se mantiene el useEffect para asegurar la estructura inicial, 
-    // pero no se usa el resultado para la vista principal.
+
     const best = products.filter((product) => product.bestseller);
     setBestProducts(best.slice(0, 5));
   }, [products]);
