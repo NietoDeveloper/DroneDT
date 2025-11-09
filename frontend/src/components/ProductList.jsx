@@ -77,7 +77,7 @@ export default function ProductList({ category, subCategory }) {
           <option value="low-high">Sort by: Low to High</option>
         </select>
       </div>
-      {/* Products List */}
+
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-6">
         {productElements}
       </div>
