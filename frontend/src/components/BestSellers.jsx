@@ -28,8 +28,6 @@ export default function BestSellers() {
             caption="Descubre el CITY 1.1, nuestro líder en ventas."
           />
         </div>
-
-        {/* Imagen como Botón target="_blank" */}
         <div className="flex justify-center w-full mb-8">
           <a 
             href="#" // Link libre para customizar
