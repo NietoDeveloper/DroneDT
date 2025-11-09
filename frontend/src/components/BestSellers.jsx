@@ -17,8 +17,6 @@ export default function BestSellers() {
     <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 bg-gray-100 text-gray-800">
       
       <div className="w-full max-w-4xl text-center">
-        
-        {/* Título */}
         <div className="text-3xl text-center pb-8">
           <Title
             title1="EL DRON"
