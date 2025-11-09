@@ -21,8 +21,7 @@ export default function Policy() {
           - w-full max-w-7xl limita el ancho total en pantallas muy grandes
       */}
       <div className="w-full max-w-6xl flex flex-col md:flex-row justify-around gap-10 md:gap-8 py-10 md:py-0 text-center">
-        
-        {/* Tarjeta 1: Política de Intercambio */}
+
         <div className="flex flex-col items-center p-4 md:p-6 rounded-lg transition duration-300 hover:shadow-xl hover:scale-[1.02]">
           <img className="w-14 h-14 object-contain mb-4" src={exchange} alt="Icono de Intercambio" />
           <p className="font-bold text-lg text-gray-800">Política de Cambio Fácil</p>
