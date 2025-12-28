@@ -15,7 +15,3 @@ body {
   background-color: var(--gainsboro);
   color: var(--text-color);
   font-family: Arial, Helvetica, sans-serif; /* O la fuente de tu preferencia */
-}
-
-h1, h2, h3, h4, h5, h6 {
-  color: var(--heading-color);
