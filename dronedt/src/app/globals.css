@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gainsboro: #DCDCDC;
+  --gold: #FFD700;
+  --yellow-color: #FEB60D;
+  --royal-blue: #4169E1; /* Nuevo color: Azul Rey */
+  --heading-color: #000000;
+  --text-color: #000000;
+  --card-bg: #FFFFFF;
+}
+
+body {
+  background-color: var(--gainsboro);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+@layer components {
+  /* Tarjeta con acento Azul Rey y borde Gold */
+  .drone-card {
+    @apply bg-white rounded-xl shadow-lg border-t-4 border-royalBlue border-b-4 border-gold p-4 transition-all hover:scale-105;
+  }
+  
+  /* Botón Principal (Azul Rey para contraste) */
+  .btn-primary {
+    @apply bg-royalBlue text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors shadow-md;
+  }
+
+  /* Botón Secundario (Tu clásico Amarillo/Oro) */
+  .btn-secondary {
+    @apply bg-yellowColor text-black font-bold py-2 px-6 rounded-full hover:bg-gold transition-colors;
+  }
+}
