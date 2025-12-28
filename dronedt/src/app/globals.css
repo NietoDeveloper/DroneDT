@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gainsboro: #DCDCDC;
+  --gold: #FFD700;
+  --yellow-color: #FEB60D;
+  --heading-color: #000000;
+  --text-color: #000000;
+  --card-bg: #FFFFFF;
+}
+
+body {
+  background-color: var(--gainsboro);
+  color: var(--text-color);
+  font-family: Arial, Helvetica, sans-serif; /* O la fuente de tu preferencia */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+@layer components {
+  .drone-card {
+    @apply bg-white rounded-xl shadow-lg border-b-4 border-gold p-4 transition-all hover:scale-105;
+  }
+  
+  .btn-primary {
+    @apply bg-yellowColor text-black font-bold py-2 px-6 rounded-full hover:bg-gold transition-colors;
+  }
+}
