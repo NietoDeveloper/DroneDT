@@ -12,8 +12,7 @@ The backend of the Drone DT E-commerce.
 ```bash
 cd clothix/backend
 ```
-s
-3. Create .env File and Configure Environment Variables (Anything with < > you have to configure)
+ith < > you have to configure)
 ```bash
 
 
