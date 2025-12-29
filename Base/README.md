@@ -15,22 +15,7 @@
   * **Login/Signup**: Secure user authentication.
   * **Order Tracking**: Monitor order history and status.
   * **Cart & Checkout**: Add items to the cart, view totals, and complete orders with mock payment.
-* **Responsive Design**: Optimized for desktop and mobile viewing.
-
-### Admin Panel
-
-* Built for admin users to perform CRUD operations on products and orders:
-  * **Add Products**: Input product details like images, categories, pricing, and sizes (disabled in demo mode for security).
-  * **Manage Products**: View, update, or delete existing products from the database.
-  * **Order Management**: Monitor and manage customer orders fetched dynamically from the backend.
-<br />
-
-
-
-## How to Run Locally
-
-1. Clone the repository:
-
+* **Responsive Design**: Optimized for desktop and mobile viewin
 ```bash
 git clone https://github.com/NietoDeveloper/DroneDT
 ```
