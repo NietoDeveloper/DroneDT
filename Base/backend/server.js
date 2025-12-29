@@ -9,8 +9,6 @@ connectDB();
 connectCloudinary();
 
 
-app.use("/api/product", productRouter);
-app.use("/api/cart", cartRouter);
 
 
 
