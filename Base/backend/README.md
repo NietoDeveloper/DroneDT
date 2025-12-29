@@ -16,8 +16,6 @@ s
 3. Create .env File and Configure Environment Variables (Anything with < > you have to configure)
 ```bash
 
-MONGODB_URI = "<YOUR MONGODB CONNECTION STRING>"
-CLOUDINARY_NAME = "<YOUR CLOUDINARY CLOUD NAME>"
-CL
+
 
 
