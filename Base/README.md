@@ -26,12 +26,5 @@ git clone https://github.com/NietoDeveloper/DroneDT
 ## Potential Improvements
 
 * **Enhanced UI/UX**: Improve the design for a more intuitive user experience.
-* **Online Payment Gateway**: Integrate real payment options for a complete shopping experience.
-* **Wishlist Feature**: Allow users to save favorite products for later.
-* **Order Tracking Enhancements**: Include more granular updates on order status.
-* **Expanded Profile Page**: Add editable user information and saved addresses.
-<br />
-
-## Manuel Nieto Software Developer
-
+* **Online Payment Gateway**: Integrate real payment 
 ### 2025
