@@ -8,8 +8,5 @@ The admin panel of the Drone D.T.  E-commerce.
 cd clothix/admin
 ```
 
-2. Install Dependencies
-```bash
-npm install
 
 
