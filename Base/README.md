@@ -23,8 +23,3 @@ git clone https://github.com/NietoDeveloper/DroneDT
  data.
 <br />
 
-## Potential Improvements
-
-* **Enhanced UI/UX**: Improve the design for a more intuitive user experience.
-* **Online Payment Gateway**: Integrate real payment 
-### 2025
