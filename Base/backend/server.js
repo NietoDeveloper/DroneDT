@@ -11,12 +11,7 @@ const port = process.env.PORT || 4000;
 connectDB();
 connectCloudinary();
 
-// Middlewares
-app.use(express.json());
-app.use(cors());
 
-// API Endpoints
-app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
