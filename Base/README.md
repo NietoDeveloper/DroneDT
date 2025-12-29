@@ -15,11 +15,5 @@
   * **Login/Signup**: Secure user authentication.
   * **Order Tracking**: Monitor order history and status.
   * **Cart & Checkout**: Add items to the cart, view totals, and complete orders with mock payment.
-* **Responsive Design**: Optimized for desktop and mobile viewin
-```bash
-git clone https://github.com/NietoDeveloper/DroneDT
 
-
- data.
-<br />
 
