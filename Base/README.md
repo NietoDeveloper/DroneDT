@@ -25,13 +25,7 @@
   * **Order Management**: Monitor and manage customer orders fetched dynamically from the backend.
 <br />
 
-## Tech Stack
 
-* **Frontend**: React.js with React Router for navigation and Tailwind CSS for styling a responsive and modern design.
-* **Backend**: Node.js and Express.js for REST API creation.
-* **Database**: MongoDB for storing products, users, and orders.
-* **Deployment**: Deployed on Vercel for fast and reliable delivery.
-<br />
 
 ## How to Run Locally
 
