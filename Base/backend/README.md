@@ -11,9 +11,7 @@ The backend of the Drone DT E-commerce.
 1. Navigate to the Backend Directory
 ```bash
 cd clothix/backend
-```
-ith < > you have to configure)
-```bash
+
 
 
 
