@@ -20,13 +20,7 @@
 git clone https://github.com/NietoDeveloper/DroneDT
 
 
-## Highlights
-
-* **MERN Stack Expertise**: Full-stack development with seamless integration between frontend and backend.
-* **CRUD Operations**: Create, read, update, and delete functionality for products and orders.
-* **REST APIs**: Efficient data retrieval and manipulation via backend endpoints.
-* **Responsive Design**: Ensures usability across devices.
-* **Admin Functionality**: Dedicated panel for managing e-commerce data.
+ data.
 <br />
 
 ## Potential Improvements
