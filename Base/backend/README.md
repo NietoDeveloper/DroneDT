@@ -7,10 +7,6 @@ The backend of the Drone DT E-commerce.
 * Have a Cloudinary account (To convert uploaded product images to URL)
 <br />
 
-## How to Run Backend Locally
-1. Navigate to the Backend Directory
-```bash
-cd clothix/backend
 
 
 
