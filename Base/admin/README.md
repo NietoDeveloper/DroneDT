@@ -20,9 +20,5 @@ VITE_BACKEND_URL = "http://localhost:<BACKEND PORT NUMBER>"
 
 4. Run the Admin Panel
 ```bash
-npm run dev
-```
-
-## NietoDeveloper
 
 ### 2025
