@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    /* File Layout */
+    "rootDir": "./src",                          // Donde está tu código TS
+    "outDir": "./dist",                         // Donde saldrá el código JS compilado
+
+    /* Environment Settings */
+    "module": "NodeNext",                        // Estándar moderno para Node.js
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",                          // Aprovecha las últimas funciones de JS
+    "lib": ["ESNext"],
+    "types": ["node"],                           // Asegúrate de tener: npm install -D @types/node
+
+    /* Other Outputs */
+    "sourceMap": true,                           // Útil para debugging
+    "declaration": true,
+    "declarationMap": true,
+
+    /* Stricter Typechecking Options */
+    "strict": true,                              // Máxima seguridad de tipos
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* Style Options */
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Recommended Options */
+    "jsx": "react-jsx",                          // Aunque es backend, lo dejamos listo por si usas SSR
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,                        // Evita errores de librerías externas
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],                       // Solo compila lo que esté en src
+  "exclude": ["node_modules", "**/*.test.ts"]    // Ignora basura y tests en la build
+}
