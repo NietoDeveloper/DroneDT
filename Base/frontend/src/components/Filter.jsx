@@ -8,20 +8,7 @@ export default function Filter({
   setSubCategory,
 }) {
   const [showFilter, setShowFilter] = useState(false);
-
-  function toggleCategory(e) {
-    // Remove filter if it is inside already and Add filter if it is not inside
-    if (category.includes(e.target.value)) {
-      setCategory((prev) => prev.filter((item) => item !== e.target.value));
-    } else {
-      setCategory((prev) => [...prev, e.target.value]);
-    }
-  }
-
-  function toggleSubCategory(e) {
-    // Remove filter if it is inside already and Add filter if it is not inside
-    if (subCategory.includes(e.target.value)) {
-      setSubCategory((prev) => prev.filter((item) => item !== e.target.value));
+.filter((item) => item !== e.target.value));
     } else {
       setSubCategory((prev) => [...prev, e.target.value]);
     }
