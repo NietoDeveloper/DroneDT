@@ -16,19 +16,7 @@
 * {
 
 .logo-font {
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 30px;
-}
 
-a.active hr {
-  display: block;
-}
-
-::-webkit-scrollbar {
-  display: none;
-}
 
 @media (max-width: 639px) {
   a.active {
