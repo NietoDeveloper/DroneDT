@@ -1,44 +1,4 @@
 
-    }
-
-    if (subCategory.length > 0) {
-      productsCopy = productsCopy.filter((item) =>
-        subCategory.includes(item.subCategory)
-      );
-    }
-
-    switch (sortType) {
-      case "high-low":
-        productsCopy.sort((a, b) => b.price - a.price);
-        break;
-      case "low-high":
-        productsCopy.sort((a, b) => a.price - b.price);
-        break;
-      default:
-        break;
-    }
-
-    setProductsList(productsCopy);
-  }
-
-  function sortFilter(e) {
-    setSortType(e.target.value);
-  }
-
-  useEffect(() => {
-    applyFilterAndSort();
-  }, [category, subCategory, sortType, search, showSearch, products]);
-
-  const productElements = productsList.map((product, index) => (
-    <ProductCard
-      key={index}
-      id={product._id}
-      name={product.name}
-      price={product.price}
-      image={product.image}
-    />
-  ));
-
   return (
     <div className="flex-1">
 
