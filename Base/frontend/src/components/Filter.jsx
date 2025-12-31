@@ -4,26 +4,7 @@ import moreArrow from "../assets/back_arrow_icon.png";
 export default function Filter({
   category,
   setCategory,
-me="w-fit text-xl my-2 flex cursor-pointer items-center gap-2"
-      >
-        FILTERS{" "}
-        <img
-          src={moreArrow}
-          alt=""
-          className={`h-3 sm:hidden ${showFilter ? "rotate-90" : ""}`}
-        />
-      </p>
-      <div
-        className={`border border-gray-300 pl-5 py-5 mt-6 ${
-          showFilter ? "" : "hidden"
-        } sm:block`}
-      >
-        <p className="mb-3 font-medium">CATEGORIES</p>
-        <div className="flex flex-col gap-3 font-light text-gray-700">
-          <p className="flex gap-2">
-            <input
-              className="w-3"
-              type="checkbox"
+box"
               value="Men"
               onChange={toggleCategory}
             />
