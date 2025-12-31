@@ -2,22 +2,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import clothixLogo from "../assets/clothixLogo.svg";
 import search from "../assets/search_icon.png";
 import profile from "../assets/profile_icon.png";
-import cart from "../assets/cart_icon.png";
-import menu from "../assets/menu_icon.png";
-import backArrow from "../assets/back_arrow_icon.png";
-import { useContext, useState } from "react";
-moveItem("token");
-    setToken("");
-    setCartItems({});
-  }
-
-  return (700 hidden" />
-        </NavLink>
-        <NavLink to="collection" className="flex flex-col items-center gap-1">
-          <p>Productos</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
-        </NavLink>
-        <NavLink to="about" className="flex flex-col items-center gap-1">
+import cart frex flex-col items-center gap-1">
           <p>Sobre</p>
           <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
         </NavLink>
