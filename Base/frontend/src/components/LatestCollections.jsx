@@ -4,9 +4,7 @@ import Title from "./Title";
 import ProductCard from "./ProductCard";
 import dron1 from "../assets/dron1.png";
 
-export default function LatestCollections() {
-  const { products } = useContext(ShopContext);
-
+export default
   const [latestProducts, setLatestProducts] = useState([]);
 
   useEffect(() => {
