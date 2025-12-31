@@ -7,17 +7,7 @@ import search from "../asol gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 roun
                   className="cursor-pointer hover:text-black"
                 >
                   Order
-                </p>
-                <a
-                  href="https://clothix-admin.vercel.app/"
-                  target="_blank"
-                  className="cursor-pointer hover:text-black"
-                >
-                  Admin Panel
-                </a>
-                <p onClick={logout} className="cursor-pointer hover:text-black">
-                  Logout
-                </p>
+           /p>
               </div>
             </div>
           )}
