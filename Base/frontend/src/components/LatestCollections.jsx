@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import Title from "./Title";
-import ProductCard from "./ProductCard";
-import dron1 from "../assetss
 
 
   return (src={dron1} alt="" />
