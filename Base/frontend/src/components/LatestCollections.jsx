@@ -5,12 +5,7 @@ import ProductCard from "./ProductCard";
 import dron1 from "../assetss
 
 
-  return (
-    <div className="my-10">
-      <div className="text-3xl text-center py-8">
-        <Title
-
-      <img className="sm:w-1/2" src={dron1} alt="" />
+  return (src={dron1} alt="" />
 
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6">
         {productElements}
