@@ -1,24 +1,4 @@
-import { useState } from "react";
-import moreArrow from "../assets/back_arrow_icon.png";
-
-export default function Filter({
-  category,
-  setCategory,
-box"
-              value="Men"
-              onChange={toggleCategory}
-            />
-            Men
-          </p>
-          <p className="flex gap-2">
-            <input
-              className="w-3"
-              type="checkbox"
-              value="Women"
-              onChange={toggleCategory}
-            />
-            Women
-          </p>
+import { useStat
           <p className="flex gap-2">
             <input
               className="w-3"
