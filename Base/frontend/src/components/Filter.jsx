@@ -4,21 +4,7 @@ import moreArrow from "../assets/back_arrow_icon.png";
 export default function Filter({
   category,
   setCategory,
-  subCategory,
-  setSubCategory,
-}) {
-  const [showFilter, setShowFilter] = useState(false);
-.filter((item) => item !== e.target.value));
-    } else {
-      setSubCategory((prev) => [...prev, e.target.value]);
-    }
-  }
-
-  return (
-    <div className="min-w-52 md:min-w-60">
-      <p
-        onClick={() => setShowFilter(!showFilter)}
-        className="w-fit text-xl my-2 flex cursor-pointer items-center gap-2"
+me="w-fit text-xl my-2 flex cursor-pointer items-center gap-2"
       >
         FILTERS{" "}
         <img
