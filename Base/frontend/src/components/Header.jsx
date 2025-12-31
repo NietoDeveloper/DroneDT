@@ -11,17 +11,7 @@ moveItem("token");
     setCartItems({});
   }
 
-  return (
-    <nav className="flex justify-between items-center py-5 font-medium border-b">
-      <Link to="." className="flex gap-2">
-        <img src={clothixLogo} alt="" />
-        <h1 className="logo-font items-center">Drone D T</h1>
-      </Link>
-
-      <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
-        <NavLink to="." className="flex flex-col items-center gap-1">
-          <p>Inicio</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
+  return (700 hidden" />
         </NavLink>
         <NavLink to="collection" className="flex flex-col items-center gap-1">
           <p>Productos</p>
