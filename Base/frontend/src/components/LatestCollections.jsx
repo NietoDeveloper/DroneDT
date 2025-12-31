@@ -9,9 +9,6 @@ import dron1 from "../assetss
     <div className="my-10">
       <div className="text-3xl text-center py-8">
         <Title
-          title1="UN DRONE"
-          title2="PARA CADA PROPOSITO"
-          caption="Tes
 
       <img className="sm:w-1/2" src={dron1} alt="" />
 
