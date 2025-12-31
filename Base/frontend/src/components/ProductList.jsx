@@ -6,13 +6,7 @@
         <Title title1="ALL" title2="COLLECTIONS" />
         <select
           onChange={sortFilter}
-          value={sortType}
-          className="border border-gray-300 text-sm px-2 sm:h-[40px]"
-        >
-          <option value="relevant">Sort by: Relevant</option>
-          <option value="high-low">Sort by: High to Low</option>
-          <option value="low-high">Sort by: Low to High</option>
-        </select>
+          v
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 gap-y-6">
