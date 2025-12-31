@@ -2,14 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import Title from "./Title";
 import ProductCard from "./ProductCard";
-import dron1 from "../assets/dron1.png";
-
-export default
-  const [latestProducts, setLatestProducts] = useState([]);
-
-  useEffect(() => {
-    setLatestProducts(products.slice(0, 10));
-  }, [products]);
+import dron1 from "../assetss
 
 
   return (
