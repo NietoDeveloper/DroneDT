@@ -1,27 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import Title from "./Title";
-import { ShopContext } from "../Context/ShopContext";
-import ProductCard from "./ProductCard";
 
-export default function ProductList({ category, subCategory }) {
-  const { products, search, showSearch } = useContext(ShopContext);
-  const [productsList, setProductsList] = useState([]);
-  const [sortType, setSortType] = useState("relevant");
-
-  function applyFilterAndSort() {
-
-    let productsCopy = products.slice();
-
-    if (showSearch && search) {
-      productsCopy = productsCopy.filter((item) =>
-        item.name.toLowerCase().includes(search.toLowerCase())
-      );
-    }
-
-    if (category.length > 0) {
-      productsCopy = productsCopy.filter((item) =>
-        category.includes(item.category)
-      );
     }
 
     if (subCategory.length > 0) {
