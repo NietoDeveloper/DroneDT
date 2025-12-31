@@ -8,15 +8,6 @@ import backArrow from "../assets/back_arrow_icon.png";
 import { useContext, useState } from "react";
 
 
-export default function Header() {
-  const [visible, setVisible] = useState(false);
-  const {
-    setShowSearch,
-    getCartCount,
-    token,
-    setToken,
-    navigate,
-    setCartItems,
   } = useContext(ShopContext);
   const location = useLocation();
 
