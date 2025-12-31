@@ -12,14 +12,7 @@ import search from "../asol gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 roun
             </div>
           )}
         </div>
-        <Link to="cart" className="relative">
-          <img className="cursor-pointer w-5" src={cart} alt="" />
-          <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
-            {getCartCount()}
-          </p>
-        </Link>
-        <img
-          className="cursor-pointer w-5 sm:hidden"
+        <Link to="carnter w-5 sm:hidden"
           onClick={() => setVisible(true)}
           src={menu}
           alt=""
