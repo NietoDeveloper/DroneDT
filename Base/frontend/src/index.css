@@ -21,6 +21,3 @@
 @media (max-width: 639px) {
   a.active {
     background-color: gray;
-    color: white;
-  }
-}
