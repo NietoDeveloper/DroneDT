@@ -6,8 +6,7 @@ import cart from "../assets/cart_icon.png";
 import menu from "../assets/menu_icon.png";
 import backArrow from "../assets/back_arrow_icon.png";
 import { useContext, useState } from "react";
-import { ShopContext } from "../Context/ShopContext";
-import { toast } from "react-toastify";
+
 
 export default function Header() {
   const [visible, setVisible] = useState(false);
