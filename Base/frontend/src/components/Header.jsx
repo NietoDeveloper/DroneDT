@@ -6,15 +6,7 @@ import cart from "../assets/cart_icon.png";
 import menu from "../assets/menu_icon.png";
 import backArrow from "../assets/back_arrow_icon.png";
 import { useContext, useState } from "react";
-
-
-  } = useContext(ShopContext);
-  const location = useLocation();
-
-  function logout() {
-    navigate("login");
-    toast.success("Logged out");
-    localStorage.removeItem("token");
+moveItem("token");
     setToken("");
     setCartItems({});
   }
