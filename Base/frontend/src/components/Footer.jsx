@@ -13,13 +13,7 @@ export default function Footer() {
         </div>
           </div>
         </div>
-        <div>
-          <p className="text-xl font-medium mb-5">Empresa</p>
-          <div className="flex flex-col flex-1 text-gray-600">
-            <Link to="/" className="mb-2 w-fit">
-              Inicio
-            </Link>
-            <Link to="about" className="mb-2 w-fit">
+        <div>fit">
               Sobre Nosotros
             </Link>
             <Link to="contact" className="mb-2 w-fit">
