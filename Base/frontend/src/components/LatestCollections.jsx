@@ -11,11 +11,6 @@ export default
     setLatestProducts(products.slice(0, 10));
   }, [products]);
 
-  const productElements = latestProducts.map((product, index) => (
-    <ProductCard
-      key={index}
-      ids
-  ));
 
   return (
     <div className="my-10">
