@@ -1,23 +1,6 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import clothixLogo from "../assets/clothixLogo.svg";
-import search from "../assets/search_icon.png";
-import profile from "../assets/profile_icon.png";
-import cart frex flex-col items-center gap-1">
-          <p>Sobre</p>
-          <hr className="w-2/4 border-none h-[1.5px] bg-gray-700 hidden" />
-        </NavLink>
-          <div className="w-5"></div>
-        )}
-        <div className="group relative">
-          <img
-            onClick={() => (token ? null : navigate("/login"))}
-            className="cursor-pointer w-5"
-            src={profile}
-            alt=""
-          />
-          {token && (
-            <div className="group-hover:block hidden absolute dropdown-menu right-0 pt-4">
-              <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
+import search from "../asol gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
                 <p className="cursor-pointer hover:text-black">Mi Perfil</p>
                 <p
                   onClick={() => navigate("orders")}
