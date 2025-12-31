@@ -5,10 +5,7 @@ export default function Footer() {
   return (
     <div>
       <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm">
-        <div>
-          <div className="flex gap-2 items-center mb-5 cursor-default">
-            <img src={clothixLogo} alt="" />
-            <h1 className="logo-font items-center">Dron D T</h1>
+ e="logo-font items-center">Dron D T</h1>
           </div>
           <p className="w-full sm:w-2/3 text-gray-600">
             Construimos Drones Colombianos
