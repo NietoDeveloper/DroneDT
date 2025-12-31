@@ -6,20 +6,7 @@ import agro3 from "../assets/agro3.png";
 export default function BestSellers() {
   const { products } = useContext(ShopContext);
 
-  const [bestProducts, setBestProducts] = useState([]);
-
-  useEffect(() => {
-    const best = products.filter((product) => product.bestseller);
-    setBestProducts(best.slice(0, 5));
-  }, [products]);
-
-  return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 sm:p-8 bg-gray-100 text-gray-800">
-      
-      <div className="w-full max-w-4xl text-center">
-        <div className="text-3xl text-center pb-8">
-          <Title
-            title1="EL DRON"
+  c
             title2="MÁS VENDIDO"
             caption="Descubre el CITY 1.1, nuestro líder en ventas."
           />
