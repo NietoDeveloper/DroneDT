@@ -3,8 +3,5 @@ import { ShopContext } from "../Context/ShopContext";
 import Title from "./Title";
 
 
-  return (src={dron1} alt="" />
-
-    </div>
-  );
+  res
 }
