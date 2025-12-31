@@ -11,9 +11,7 @@ import dron1 from "../assetss
         <Title
           title1="UN DRONE"
           title2="PARA CADA PROPOSITO"
-          caption="Tenemos un DRONE para cada escenario; Fotografia, Video, Renocimiento, Exploracion, Agrario y Militar, Tenemos un Drone para cada situacion. "
-        />
-      </div>
+          caption="Tes
 
       <img className="sm:w-1/2" src={dron1} alt="" />
 
