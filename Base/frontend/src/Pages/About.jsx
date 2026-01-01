@@ -12,14 +12,7 @@ export default function About() {
         <img className="w-full md:max-w-[400px]" src={aboutHero} alt="" />
 
         <div className="flex flex-col justify-center gap-6 text-gray-600 md:w-2/4">
-          <p>
 
-          </p>
-          <p>
-
-          </p>
-          <p className="font-bold text-black">Our Mission</p>
-          <p>
 
           </p>
         </div>
