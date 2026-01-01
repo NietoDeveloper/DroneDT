@@ -23,19 +23,7 @@ export default function ShopContextProvider(props) {
       }
     }
     return totalAmount;
-  }
 
-  async function getProducts() {
-    try {
-      const res = await axios.get(backendUrl + "/api/product/list");
-      if (res.data.success) {
-        setProducts(res.data.products);
-
-      if (res.data.success) {
-        setCartItems(res.data.cartData);
-      }
-    } catch (error) {
-      console.log(error);
       toast.error(error.message);
     }
   }
