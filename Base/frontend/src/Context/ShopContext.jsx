@@ -25,9 +25,7 @@ export default function ShopContextProvider(props) {
     for (const item in cartItems) {
       let itemInfo = products.find((product) => product._id === item);
       for (const size in cartItems[item]) {
-        try {
-         
-          }
+
  
       }
     }
