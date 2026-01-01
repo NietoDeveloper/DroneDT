@@ -21,7 +21,6 @@ export default function Product() {
           <div className="flex items-center gap-1 mt-2">
             <img src={star} alt="" className="w-3.5" />
 
-            <p className="pl-2">(109)</p>
           </div>
           <p className="font-medium text-3xl mt-5">
             {currency}
