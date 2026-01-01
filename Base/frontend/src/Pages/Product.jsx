@@ -11,10 +11,3 @@ export default function Product() {
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
-
-
-
-  return productData ? (
-
-
-}
