@@ -28,7 +28,7 @@ export default function ShopContextProvider(props) {
         try {
          
           }
-        } catch (error) 
+ 
       }
     }
     return totalAmount;
