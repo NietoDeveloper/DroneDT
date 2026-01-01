@@ -46,7 +46,7 @@ export default function ShopContextProvider(props) {
     search,
     setSearch,
     showSearch,
-    setShowSearch,
+
 
 
    
