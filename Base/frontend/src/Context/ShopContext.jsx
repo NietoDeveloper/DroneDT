@@ -24,7 +24,6 @@ export default function ShopContextProvider(props) {
     }
     return totalAmount;
 
-      toast.error(error.message);
     }
   }
 
