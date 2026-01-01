@@ -21,12 +21,7 @@ export default function Product() {
             <p>Select Size</p>
             <div className="flex gap-2">
               {productData.sizes.map((sz, index) => (
-                <button
-                  onClick={() => setSize(sz)}
 
-                >
-
-                </button>
               ))}
             </div>
           </div>
