@@ -30,11 +30,7 @@ export default function ShopContextProvider(props) {
       const res = await axios.get(backendUrl + "/api/product/list");
       if (res.data.success) {
         setProducts(res.data.products);
-      } else {
 
-
-sage);
-    }
   }
 
   async function getUserCart(token) {
