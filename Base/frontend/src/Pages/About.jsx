@@ -5,9 +5,6 @@ import aboutHero from "../assets/about_img.png";
 export default function About() {
   return (
     <>
-      <div className="text-2xl text-center pt-8 pb-3">
-        <Title title1="ABOUT" title2="US" />
-      </div>
 
       <div className="text-xl py-4">
         <Title title1="WHY" title2="CHOOSE US?" />
