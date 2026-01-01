@@ -31,15 +31,6 @@ export default function ShopContextProvider(props) {
       if (res.data.success) {
         setProducts(res.data.products);
 
-  }
-
-  async function getUserCart(token) {
-    try {
-      const res = await axios.post(
-        backendUrl + "/api/cart/get",
-        {},
-        { headers: { token } }
-      );
       if (res.data.success) {
         setCartItems(res.data.cartData);
       }
