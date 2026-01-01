@@ -37,9 +37,7 @@ export default function ShopContextProvider(props) {
           backendUrl + "/api/cart/add",
 }
         );
-      } catch (error) {
-        console.log(error);
-        toast.error(error.message);
+
       }
     }
   }
