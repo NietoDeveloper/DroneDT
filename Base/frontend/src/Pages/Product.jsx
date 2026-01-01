@@ -17,15 +17,6 @@ export default function Product() {
     setSize("");
   }, [location.pathname]);
 
-  useEffect(() => {
-    products.map((product) => {
-      if (product._id === id) {
-        setProductData(product);
-        setImage(product.image[0]);
-        return null;
-      }
-    });
-  }, [id, products]);
 
   return productData ? (
     <div className="pt-10 transition-opacity ease-in duration-500 opacity-100">
