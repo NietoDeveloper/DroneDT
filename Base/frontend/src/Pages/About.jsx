@@ -8,15 +8,7 @@ export default function About() {
       <div className="text-2xl text-center pt-8 pb-3">
         <Title title1="ABOUT" title2="US" />
       </div>
-      <div className="flex flex-col md:flex-row gap-16 my-10">
-        <img className="w-full md:max-w-[400px]" src={aboutHero} alt="" />
 
-        <div className="flex flex-col justify-center gap-6 text-gray-600 md:w-2/4">
-
-
-          </p>
-        </div>
-      </div>
       <div className="text-xl py-4">
         <Title title1="WHY" title2="CHOOSE US?" />
         <div className="flex flex-col md:flex-row text-sm mb-20 pt-4">
