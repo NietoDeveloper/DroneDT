@@ -27,7 +27,7 @@ export default function ShopContextProvider(props) {
         // cartItems[item] is the stuff in the ID
         // size in the cartItems[item] is the size selected in the ID
         if (cartItems[item][size] > 0) {
-          // cartItems[item][size] is the quantities of the size
+
           totalCount += cartItems[item][size];
         }
       }
