@@ -16,20 +16,6 @@ export default function Product() {
 
   return productData ? (
 
-
-
-      {/* Description & Review */}
-    
-      <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
-
-        <p>
-          E-commerce websites typically display products or services along with
-          detailed descriptions, images, prices, and any available variations
-          (e.g., sizes, colors). Each product usually has its own dedicated page
-          with relevant information.
-        </p>
-      </div>
-
       {/* Related Products */}
       <RelatedProducts
         category={productData.category}
