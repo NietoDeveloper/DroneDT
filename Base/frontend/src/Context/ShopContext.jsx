@@ -27,20 +27,7 @@ export default function ShopContextProvider(props) {
    
       }
 
-      cartData[productId][size] = 1;
-    }
-    setCartItems(cartData);
-
-    if (token) {
-      try {
-        await axios.post(
-          backendUrl + "/api/cart/add",
 }
-        );
-
-      }
-    }
-  }
 
   function getCartCount() {
     let totalCount = 0;
