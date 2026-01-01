@@ -23,10 +23,7 @@ export default function Product() {
               {productData.sizes.map((sz, index) => (
                 <button
                   onClick={() => setSize(sz)}
-                  className={`border py-2 px-4 bg-gray-100 ${
-                    sz === size ? "border-orange-500" : ""
-                  }`}
-                  key={index}
+
                 >
 
                 </button>
