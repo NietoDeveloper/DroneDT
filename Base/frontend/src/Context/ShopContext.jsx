@@ -35,8 +35,7 @@ export default function ShopContextProvider(props) {
       try {
         await axios.post(
           backendUrl + "/api/cart/add",
-          { productId, size },
-          { headers: { token } }
+}
         );
       } catch (error) {
         console.log(error);
