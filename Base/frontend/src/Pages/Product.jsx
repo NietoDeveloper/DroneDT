@@ -19,9 +19,7 @@ export default function Product() {
         <div className="flex-1">
           <div className="flex flex-col gap-4 my-8">
             <p>Select Size</p>
-            <div className="flex gap-2">
 
-            </div>
           </div>
           <button
             onClick={() => addToCart(productData._id, size)}
