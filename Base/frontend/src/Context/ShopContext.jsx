@@ -26,7 +26,7 @@ export default function ShopContextProvider(props) {
       if (cartData[productId][size]) {
         cartData[productId][size] += 1;
       } else {
-        cartData[productId][size] = 1;
+   
       }
     } else {
       cartData[productId] = {};
