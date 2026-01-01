@@ -10,4 +10,3 @@ export default function Product() {
   const { products, currency, cartItems, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
-  const [size, setSize] = useState("");
