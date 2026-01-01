@@ -28,10 +28,6 @@ export default function ShopContextProvider(props) {
     }
   }
 
-  useEffect(() => {
-    getProducts();
-  }, []);
-
 
 
 
