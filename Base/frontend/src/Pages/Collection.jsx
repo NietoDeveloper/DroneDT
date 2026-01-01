@@ -12,8 +12,6 @@ export default function Collection() {
       <Filter
         category={category}
         setCategory={setCategory}
-        subCategory={subCategory}
-        setSub
 
       <ProductList category={category} subCategory={subCategory} />
     </div>
