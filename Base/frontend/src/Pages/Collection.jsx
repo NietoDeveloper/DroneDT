@@ -4,9 +4,3 @@ import ProductList from "../components/ProductList";
 
 export default function Collection() {
   const [category, setCategory] = useState([]);
-  const [subCategory, setSubCategory] = useState([]);
-
-  return (
-
-  );
-}
