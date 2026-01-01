@@ -22,7 +22,7 @@ export default function ShopContextProvider(props) {
   function getCartCount() {
     let totalCount = 0;
     for (const item in cartItems) {
-      // item in cartItem is the IDs in cartItems
+
       for (const size in cartItems[item]) {
 
         if (cartItems[item][size] > 0) {
