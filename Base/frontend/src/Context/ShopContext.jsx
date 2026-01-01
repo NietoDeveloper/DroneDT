@@ -47,9 +47,7 @@ export default function ShopContextProvider(props) {
     setSearch,
     showSearch,
     setShowSearch,
-    cartItems,
-    setCartItems,
-    addToCart,
+
 
    
 
