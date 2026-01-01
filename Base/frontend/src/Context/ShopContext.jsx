@@ -44,8 +44,7 @@ export default function ShopContextProvider(props) {
     currency,
     deliveryFee,
     search,
-    setSearch,
-    showSearch,
+
 
 
 
