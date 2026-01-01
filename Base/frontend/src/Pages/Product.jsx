@@ -17,10 +17,7 @@ export default function Product() {
   return productData ? (
 
         <div className="flex-1">
-          <div className="flex flex-col gap-4 my-8">
-            <p>Select Size</p>
 
-          </div>
           <button
             onClick={() => addToCart(productData._id, size)}
             className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700"
