@@ -32,8 +32,7 @@ export default function ShopContextProvider(props) {
         setProducts(res.data.products);
       } else {
 
-      }
-    } catch (error) {
+
 sage);
     }
   }
