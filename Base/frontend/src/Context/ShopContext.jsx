@@ -53,11 +53,7 @@ export default function ShopContextProvider(props) {
     getCartCount,
     updateQuantity,
     getCartAmount,
-    navigate,
-    backendUrl,
-    setToken,
-    token,
-  };
+   
 
   return (
     <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>
