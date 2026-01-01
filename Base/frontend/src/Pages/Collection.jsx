@@ -13,7 +13,7 @@ export default function Collection() {
         category={category}
         setCategory={setCategory}
         subCategory={subCategory}
-        setSubCategory={setSubCategory}
+        setSub
 
       <ProductList category={category} subCategory={subCategory} />
     </div>
