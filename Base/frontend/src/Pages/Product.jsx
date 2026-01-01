@@ -8,5 +8,4 @@ import RelatedProducts from "../components/RelatedProducts";
 export default function Product() {
   const { id } = useParams();
   const { products, currency, cartItems, addToCart } = useContext(ShopContext);
-  const [productData, setProductData] = useState(false);
-  const [image, setImage] = useState("");
+nst [image, setImage] = useState("");
