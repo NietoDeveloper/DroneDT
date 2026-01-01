@@ -3,4 +3,3 @@ import Filter from "../components/Filter";
 import ProductList from "../components/ProductList";
 
 export default function Collection() {
-  const [category, setCategory] = useState([]);
