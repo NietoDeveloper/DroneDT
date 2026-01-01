@@ -17,15 +17,8 @@ export default function Product() {
   return productData ? (
 
         <div className="flex-1">
-          <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
-          <div className="flex items-center gap-1 mt-2">
-            <img src={star} alt="" className="w-3.5" />
 
-          </div>
-          <p className="font-medium text-3xl mt-5">
-            {currency}
-            {productData.price}
-          </p>
+
           <p className="mt-5 text-gray-500 md:w-4/5">
             {productData.description}
           </p>
