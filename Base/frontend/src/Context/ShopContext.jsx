@@ -22,10 +22,3 @@ s
 
 
 
-
-   
-
-  return (
-    <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>
-  );
-}
