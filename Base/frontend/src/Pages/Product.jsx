@@ -16,12 +16,7 @@ export default function Product() {
 
   return productData ? (
 
-        <div className="flex-1">
 
-          <hr className="mt-8 sm:w-4/5" />
-
-        </div>
-      </div>
 
       {/* Description & Review */}
     
