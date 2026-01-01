@@ -19,16 +19,6 @@ export default function ShopContextProvider(props) {
 
   async function addToCart(productId, size) {
 
-
-    let cartData = structuredClone(cartItems);
-
-
-      } else {
-   
-      }
-
-}
-
   function getCartCount() {
     let totalCount = 0;
     for (const item in cartItems) {
