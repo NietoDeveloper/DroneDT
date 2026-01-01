@@ -20,12 +20,7 @@ export default function ShopContextProvider(props) {
   async function addToCart(productId, size) {
 
  
-      }
-    }
-    return totalAmount;
 
-    }
-  }
 
 
 
