@@ -25,8 +25,6 @@ export default function ShopContextProvider(props) {
 
     if (token) {
 
-      } catch (error) {
-        console.log(error);
 
       }
     }
