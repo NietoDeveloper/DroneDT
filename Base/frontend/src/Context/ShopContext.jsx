@@ -17,9 +17,6 @@ export default function ShopContextProvider(props) {
   const [token, setToken] = useState("");
 
 
-  async function addToCart(productId, size) {
-
- 
 
 
 
