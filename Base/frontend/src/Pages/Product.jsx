@@ -5,5 +5,3 @@ import star from "../assets/star_icon.png";
 import noStar from "../assets/star_dull_icon.png";
 import RelatedProducts from "../components/RelatedProducts";
 
-export default function Product() {
-  const { id } = useParams();
