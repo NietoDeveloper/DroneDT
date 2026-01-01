@@ -11,8 +11,7 @@ export default function ShopContextProvider(props) {
   const deliveryFee = 10;
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const [search, setSearch] = useState("");
-  const [showSearch, setShowSearch] = useState(false);
-
+s
 
 
 
