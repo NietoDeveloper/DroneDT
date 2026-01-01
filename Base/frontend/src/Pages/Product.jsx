@@ -28,7 +28,7 @@ export default function Product() {
                   }`}
                   key={index}
                 >
-                  {sz}
+
                 </button>
               ))}
             </div>
