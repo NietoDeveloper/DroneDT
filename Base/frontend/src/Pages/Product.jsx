@@ -16,11 +16,6 @@ export default function Product() {
 
   return productData ? (
 
-      {/* Related Products */}
-      <RelatedProducts
-        category={productData.category}
-        subCategory={productData.subCategory}
-      />
     </div>
   ) : (
     <div className="opactity-0"></div>
