@@ -36,10 +36,7 @@ export default function ShopContextProvider(props) {
     if (!token && localStorage.getItem("token")) {
       setToken(localStorage.getItem("token"));
       getUserCart(localStorage.getItem("token"));
-    }
-  }, []);
 
-  const value = {
 
 
 
