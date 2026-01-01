@@ -26,8 +26,7 @@ export default function ShopContextProvider(props) {
       } else {
    
       }
-    } else {
-      cartData[productId] = {};
+
       cartData[productId][size] = 1;
     }
     setCartItems(cartData);
