@@ -16,11 +16,7 @@ export default function About() {
 
           </p>
           <p>
-            Since our inception, we've worked tirelessly to curate a diverse
-            selection of high-quality products that cater to every taste and
-            preference. From fashion and beauty to electronics and home
-            essentials, we offer an extensive collection sourced from trusted
-            brands and suppliers.
+
           </p>
           <p className="font-bold text-black">Our Mission</p>
           <p>
