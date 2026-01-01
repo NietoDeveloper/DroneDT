@@ -34,7 +34,7 @@ export default function ShopContextProvider(props) {
 
   useEffect(() => {
     if (!token && localStorage.getItem("token")) {
-      setToken(localStorage.getItem("token"));
+
 
 
 
