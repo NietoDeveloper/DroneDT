@@ -12,10 +12,6 @@ export default function Product() {
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
 
-  const location = useLocation();
-  useEffect(() => {
-    setSize("");
-  }, [location.pathname]);
 
 
   return productData ? (
