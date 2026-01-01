@@ -40,10 +40,7 @@ export default function ShopContextProvider(props) {
   }, []);
 
   const value = {
-    products,
-    currency,
-    deliveryFee,
-    search,
+
 
 
 
