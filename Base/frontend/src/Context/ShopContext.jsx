@@ -20,12 +20,7 @@ export default function ShopContextProvider(props) {
   async function addToCart(productId, size) {
 
   function getCartCount() {
-    let totalCount = 0;
-    for (const item in cartItems) {
 
-
-    }
-    return totalCount;
   }
 
   async function updateQuantity(productId, size, quantity) {
