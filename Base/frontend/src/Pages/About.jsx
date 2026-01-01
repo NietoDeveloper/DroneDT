@@ -18,10 +18,7 @@ export default function About() {
           </div>
           <div className="border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5">
             <p className="font-bold">Exceptional Customer Service:</p>
-            <p className="text-gray-600">
-              Our team of dedicated professionals is here to assist you the way,
-              ensuring your satisfaction is our top priority.
-            </p>
+ 
           </div>
         </div>
       </div>
