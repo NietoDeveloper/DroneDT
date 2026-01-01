@@ -7,5 +7,3 @@ import axios from "axios";
 export const ShopContext = createContext();
 
 export default function ShopContextProvider(props) {
-  const currency = "$";
-  const deliveryFee = 10;
