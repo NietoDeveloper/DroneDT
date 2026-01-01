@@ -19,13 +19,6 @@ export default function ShopContextProvider(props) {
 
   async function addToCart(productId, size) {
 
-
-  function getCartAmount() {
-    let totalAmount = 0;
-    for (const item in cartItems) {
-      let itemInfo = products.find((product) => product._id === item);
-      for (const size in cartItems[item]) {
-
  
       }
     }
