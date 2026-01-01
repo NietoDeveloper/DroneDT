@@ -14,8 +14,7 @@ export default function Collection() {
         setCategory={setCategory}
         subCategory={subCategory}
         setSubCategory={setSubCategory}
-      />
-      {/* Right side */}
+
       <ProductList category={category} subCategory={subCategory} />
     </div>
   );
