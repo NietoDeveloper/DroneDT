@@ -30,7 +30,7 @@ export default function ShopContextProvider(props) {
             totalAmount += itemInfo.price * cartItems[item][size];
           }
         } catch (error) {
-          console.log(error);
+
         }
       }
     }
