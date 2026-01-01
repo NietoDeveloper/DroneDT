@@ -10,8 +10,7 @@ export default function Collection() {
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10">
       {/* Left side */}
       <Filter
-        category={category}
-        setCategory={setCategory}
+
 
       <ProductList category={category} subCategory={subCategory} />
     </div>
