@@ -16,8 +16,5 @@ export default function Product() {
 
   return productData ? (
 
-    </div>
-  ) : (
-    <div className="opactity-0"></div>
-  );
+
 }
