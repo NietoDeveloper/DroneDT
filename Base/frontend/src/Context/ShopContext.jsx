@@ -9,16 +9,3 @@ export const ShopContext = createContext();
 export default function ShopContextProvider(props) {
   const currency = "$";
   const deliveryFee = 10;
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
-  const [search, setSearch] = useState("");
-s
-
-
-
-
-
-
-
-
-
-
