@@ -31,7 +31,7 @@ export default function ShopContextProvider(props) {
       if (res.data.success) {
         setProducts(res.data.products);
       } else {
-        toast.error(res.data.message);
+
       }
     } catch (error) {
       console.log(error);
