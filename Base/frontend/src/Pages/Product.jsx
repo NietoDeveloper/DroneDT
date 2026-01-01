@@ -20,8 +20,6 @@ export default function Product() {
           <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
           <div className="flex items-center gap-1 mt-2">
             <img src={star} alt="" className="w-3.5" />
-            <img src={star} alt="" className="w-3.5" />
-            <img src={star} alt="" className="w-3.5" />
 
             <p className="pl-2">(109)</p>
           </div>
