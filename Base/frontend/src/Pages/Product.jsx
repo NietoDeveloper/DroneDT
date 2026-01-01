@@ -15,21 +15,7 @@ export default function Product() {
 
 
   return productData ? (
-    <div className="pt-10 transition-opacity ease-in duration-500 opacity-100">
-      {
-                key={index}
-                className="w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer"
-                onClick={() => setImage(img)}
-                src={img}
-                alt=""
-              />
-            ))}
-          </div>
-          <div className="w-full sm:w-[80%]">
-            <img className="w-full h-auto" src={image} alt="" />
-          </div>
-        </div>
-        {/* Product Info */}
+
         <div className="flex-1">
           <h1 className="font-medium text-2xl mt-2">{productData.name}</h1>
           <div className="flex items-center gap-1 mt-2">
