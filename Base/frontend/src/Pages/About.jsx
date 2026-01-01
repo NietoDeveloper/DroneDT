@@ -24,10 +24,7 @@ export default function About() {
           </p>
           <p className="font-bold text-black">Our Mission</p>
           <p>
-            Our mission at Clothix is to empower customers with choice,
-            convenience, and confidence. We're dedicated to providing a seamless
-            shopping experience that exceeds expectations, from browsing and
-            ordering to delivery and beyond.
+
           </p>
         </div>
       </div>
