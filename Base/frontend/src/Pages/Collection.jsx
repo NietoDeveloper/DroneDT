@@ -7,8 +7,6 @@ export default function Collection() {
   const [subCategory, setSubCategory] = useState([]);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10">
 
-    </div>
   );
 }
