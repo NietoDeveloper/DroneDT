@@ -26,12 +26,9 @@ export default function ShopContextProvider(props) {
       let itemInfo = products.find((product) => product._id === item);
       for (const size in cartItems[item]) {
         try {
-          if (cartItems[item][size] > 0) {
-            totalAmount += itemInfo.price * cartItems[item][size];
+         
           }
-        } catch (error) {
-
-        }
+        } catch (error) 
       }
     }
     return totalAmount;
