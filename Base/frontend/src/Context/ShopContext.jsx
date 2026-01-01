@@ -24,8 +24,7 @@ export default function ShopContextProvider(props) {
     for (const item in cartItems) {
       // item in cartItem is the IDs in cartItems
       for (const size in cartItems[item]) {
-        // cartItems[item] is the stuff in the ID
-        // size in the cartItems[item] is the size selected in the ID
+
         if (cartItems[item][size] > 0) {
 
           totalCount += cartItems[item][size];
