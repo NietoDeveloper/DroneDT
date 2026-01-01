@@ -23,10 +23,7 @@ export default function ShopContextProvider(props) {
     let totalCount = 0;
     for (const item in cartItems) {
 
-      for (const size in cartItems[item]) {
 
-
-      }
     }
     return totalCount;
   }
