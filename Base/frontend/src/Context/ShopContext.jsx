@@ -50,9 +50,7 @@ export default function ShopContextProvider(props) {
     cartItems,
     setCartItems,
     addToCart,
-    getCartCount,
-    updateQuantity,
-    getCartAmount,
+
    
 
   return (
