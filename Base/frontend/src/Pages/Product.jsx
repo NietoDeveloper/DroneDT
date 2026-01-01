@@ -22,8 +22,7 @@ export default function Product() {
             <img src={star} alt="" className="w-3.5" />
             <img src={star} alt="" className="w-3.5" />
             <img src={star} alt="" className="w-3.5" />
-            <img src={star} alt="" className="w-3.5" />
-            <img src={noStar} alt="" className="w-3.5" />
+
             <p className="pl-2">(109)</p>
           </div>
           <p className="font-medium text-3xl mt-5">
