@@ -1,1 +1,1 @@
-export default function Title({  title2, caption }) {
+export default function Titl
