@@ -7,10 +7,5 @@ export default function RelatedProducts({ category, subCategory }) {
   const { products } = useContext(ShopContext);
   const [relatedProducts, setRelatedProducts] = useState([])
 
-  return (
-    <div className="my-24">
-
-
-    </div>
   );
 }
