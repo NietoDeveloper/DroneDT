@@ -4,6 +4,3 @@ import { ShopContext } from "../Context/ShopContext";
 
 export default function ProductCard({ id, image, name, price }) {
   const { currency } = useContext(ShopContext);
-  return (s
-  );
-}
