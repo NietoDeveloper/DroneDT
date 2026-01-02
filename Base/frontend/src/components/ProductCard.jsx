@@ -9,7 +9,7 @@ export default function ProductCard({ id, image, name, price }) {
       <div className="overflow-hidden h-[300px] border rounded-lg p-4 shadow-sm text-gray-700">
         <img
           className="overflow-hidden w-full h-44 object-cover mb-2 rounded hover:scale-110 transition ease-in-out duration-500"
-          src={image[0]}
+          src={image}
           alt=""
         />
         </p>
