@@ -5,11 +5,7 @@ import ProductCard from "./ProductCard";
 
 export default function RelatedProducts({ category, subCategory }) {
   const { products } = useContext(ShopContext);
-  const [relatedProducts, setRelatedProducts] = useState([]);
-
-  useEffect(() => {
-
-  }, [products]);
+  const [relatedProducts, setRelatedProducts] = useState([])
 
   return (
     <div className="my-24">
