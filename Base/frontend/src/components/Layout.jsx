@@ -8,9 +8,5 @@ export default function Layout() {
   const location = useLocation();
   const { pathname } = location;
 
-  useEffect(() => {
 
-
-
-  );
 }
