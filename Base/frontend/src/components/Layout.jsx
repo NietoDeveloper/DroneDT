@@ -12,11 +12,5 @@ export default function Layout() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  return (
-
-
-
-
-    </div>
   );
 }
