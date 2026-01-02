@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export default function Layout() {
   const location = useLocation();
-  const { pathname } = location;
+
 
 
 }
