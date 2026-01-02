@@ -10,7 +10,7 @@ export default function RelatedProducts({ category, subCategory }) {
   return (
     <div className="my-24">
       <div className="text-3xl text-center">
-        <Title title1="RELATED" title2="PRODUCTS" />
+
       </div>
         ))}
       </div>
