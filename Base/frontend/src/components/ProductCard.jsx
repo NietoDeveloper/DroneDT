@@ -13,7 +13,6 @@ export default function ProductCard({ id, image, name, price }) {
           alt=""
         />
         <p className="pt-1 pb-1 text-sm">{name}</p>
-        <p className="text-sm font-medium">
         </p>
       </div>
     </Link>
