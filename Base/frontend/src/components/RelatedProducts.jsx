@@ -16,8 +16,7 @@ export default function RelatedProducts({ category, subCategory }) {
         {relatedProducts.map((product, index) => (
           <ProductCard
             key={index}
-            id={product._id}
-            image={product.image}
+            id={product._id
  
        
           />
