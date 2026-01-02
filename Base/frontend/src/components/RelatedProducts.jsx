@@ -19,7 +19,7 @@ export default function RelatedProducts({ category, subCategory }) {
             id={product._id}
             image={product.image}
             name={product.name}
-            price={product.price}
+       
           />
         ))}
       </div>
