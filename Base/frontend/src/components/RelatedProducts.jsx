@@ -11,9 +11,6 @@ export default function RelatedProducts({ category, subCategory }) {
     <div className="my-24">
 
 
-      </div>
-        ))}
-      </div>
     </div>
   );
 }
