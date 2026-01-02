@@ -8,16 +8,7 @@ export default function RelatedProducts({ category, subCategory }) {
   const [relatedProducts, setRelatedProducts] = useState([]);
 
   useEffect(() => {
-    if (products.length > 0) {
-      let productsCopy = products.slice();
 
-      productsCopy = productsCopy.filter(
-        (product) =>
-          product.category === category && product.subCategory === subCategory
-      );
-
-      setRelatedProducts(productsCopy.slice(0, 5));
-    }
   }, [products]);
 
   return (
