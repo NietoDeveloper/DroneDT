@@ -12,7 +12,6 @@ export default function ProductCard({ id, image, name, price }) {
           src={image[0]}
           alt=""
         />
-        <p className="pt-1 pb-1 text-sm">{name}</p>
         </p>
       </div>
     </Link>
