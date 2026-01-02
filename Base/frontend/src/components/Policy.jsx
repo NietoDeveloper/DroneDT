@@ -16,8 +16,7 @@ export default function Policy() {
 
         <div className="flex flex-col items-center p-4 md:p-6 rounded-lg transition duration-300 hover:shadow-xl hover:scale-[1.02]">
           <img className="w-14 h-14 object-contain mb-4" src={quality} alt="Icono de Calidad" />
-          <p className="font-bold text-lg text-gray-800">Política de Devolución de 7 Días</p>
-          <p className="text-gray-500 mt-1">Proporcionamos una política de devolución de 7 días.</p>
+ssName="text-gray-500 mt-1">Proporcionamos una política de devolución de 7 días.</p>
         </div>
 
         <div className="flex flex-col items-center p-4 md:p-6 rounded-lg transition duration-300 hover:shadow-xl hover:scale-[1.02]">
