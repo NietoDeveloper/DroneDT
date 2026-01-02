@@ -4,8 +4,3 @@ import Footer from "./Footer";
 import SearchBar from "./SearchBar";
 import { useEffect } from "react";
 
-export default function Layout() {
-
-
-
-}
