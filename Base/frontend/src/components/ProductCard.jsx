@@ -14,7 +14,6 @@ export default function ProductCard({ id, image, name, price }) {
         />
         <p className="pt-1 pb-1 text-sm">{name}</p>
         <p className="text-sm font-medium">
-          {currency}
         </p>
       </div>
     </Link>
