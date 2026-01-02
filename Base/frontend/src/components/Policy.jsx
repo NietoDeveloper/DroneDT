@@ -15,7 +15,6 @@ export default function Policy() {
         </div>
 
         <div className="flex flex-col items-center p-4 md:p-6 rounded-lg transition duration-300 hover:shadow-xl hover:scale-[1.02]">
-          <img className="w-14 h-14 object-contain mb-4" src={support} alt="Icono de Soporte" />
          
         </div>
         
