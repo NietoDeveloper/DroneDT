@@ -5,7 +5,6 @@ import SearchBar from "./SearchBar";
 import { useEffect } from "react";
 
 export default function Layout() {
-  const location = useLocation();
 
 
 
