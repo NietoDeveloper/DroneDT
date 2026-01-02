@@ -9,7 +9,7 @@ export default function Layout() {
   const { pathname } = location;
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+
 
 
   );
