@@ -4,6 +4,5 @@ import { ShopContext } from "../Context/ShopContext";
 import ProductCard from "./ProductCard";
 
 export default function RelatedProducts({ category, subCategory }) {
-  const { products } = useContext(ShopContext);
 
 }
