@@ -18,7 +18,7 @@ export default function RelatedProducts({ category, subCategory }) {
             key={index}
             id={product._id}
             image={product.image}
-            name={product.name}
+ 
        
           />
         ))}
