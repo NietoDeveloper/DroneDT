@@ -23,9 +23,7 @@ const Subscription = () => {
   return (
     // Contenedor principal: min-h-[50vh] para garantizar la altura requerida
     <div className="w-full min-h-[50vh] flex items-center justify-center bg-gray-50 p-4 font-sans">
-      <div className="w-full max-w-2xl p-6 md:p-10 bg-white shadow-2xl rounded-xl transition-all duration-300">
 
-          </p>
 
 >
       </div>
