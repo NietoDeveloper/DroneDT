@@ -38,9 +38,7 @@ const Subscription = () => {
             <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-sm font-medium text-center transition-opacity duration-500">
               Subscription successful! Check your email for your 20% discount code.
             </div>
-          ) : (
-
-          )}
+          )
         </form>
       </div>
     </div>
