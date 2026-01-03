@@ -35,7 +35,7 @@ const Subscription = () => {
 
         <form onSubmiacity duration-500">
 
-            </div>
+    
           )
         </form>
       </div>
