@@ -32,12 +32,7 @@ const Subscription = () => {
            w arrivals, exclusive sales, and exciting promos!
           </p>
         </div>
-
-        <form onSubmiacity duration-500">
-
-    
-          )
-        </form>
+>
       </div>
     </div>
   );
