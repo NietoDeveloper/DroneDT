@@ -11,9 +11,6 @@ export default function Orders() {
 
   }
 
-  useEffect(() => {
-
-
   return (
     <div className="pt-16">
       <div className="text-2xl">
