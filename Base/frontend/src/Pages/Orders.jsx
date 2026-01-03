@@ -18,8 +18,6 @@ export default function Orders() {
         {},
         { headers: { token } }
       );
-      if (res.data.success) {
-        setOrderData(allOrdersItem.reverse());
       }
     } 
   }
