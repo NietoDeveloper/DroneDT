@@ -20,9 +20,7 @@ export default function Cart() {
             <button
               disabled={cartData.length === 0 ? true : false}
               className={`bg-black text-white text-sm px-8 py-3 my-8 ${
-                cartData.length === 0 ? "cursor-not-allowed bg-[#C6C6C6]" : ""
-              }`}
-              onClick={() => navigate("/place-order")}
+
             >
               PROCEED TO CHECKOUT
             </button>
