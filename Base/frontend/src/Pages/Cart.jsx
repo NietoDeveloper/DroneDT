@@ -10,11 +10,7 @@ export default function Cart() {
   const [cartData, setCartData] = useState([]);
 
   const cartElements = cartData.map((item, index) => {
-: updateQuantity(item._id, item.size, Number(e.target.value))
-          }
-          type="number"
-          min={1}
-          defaultValue={item.quantity}
+
 
   return (
     <div className="pt-14">
