@@ -18,9 +18,6 @@ export default function SearchBar() {
     }
   }, [location]);
 
-  return showSearch && visible ? (
 
-      
-    </div>
   ) : null;
 }
