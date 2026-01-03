@@ -10,14 +10,7 @@ export default function Cart() {
   const [cartData, setCartData] = useState([]);
 
   const cartElements = cartData.map((item, index) => {
-    const productsData = products.find((product) => product._id === item._id);
-
-        <input
-          className="border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1"
-          onChange={(e) =>
-            e.target.value === "" || e.target.value === "0"
-              ? null
-              : updateQuantity(item._id, item.size, Number(e.target.value))
+: updateQuantity(item._id, item.size, Number(e.target.value))
           }
           type="number"
           min={1}
