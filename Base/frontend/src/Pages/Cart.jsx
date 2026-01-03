@@ -13,9 +13,7 @@ export default function Cart() {
     const productsData = products.find((product) => product._id === item._id);
 
 
-            <div className="flex items-center gap-5 mt-2">
-              <p>
-                {currency}
+            
                 {productsData.price}
               </p>
               <p className="px-2 sm:px-3 sm:py-1 border bg-slate-50">
