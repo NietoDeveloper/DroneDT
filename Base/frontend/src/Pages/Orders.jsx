@@ -12,10 +12,6 @@ export default function Orders() {
       if (!token) {
         return null;
       }
-
-      const res = await axios.post(
-
-      }
     } 
   }
 
