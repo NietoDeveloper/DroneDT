@@ -52,11 +52,9 @@ const Subscription = () => {
                 className={`flex-shrink-0 px-6 py-4 rounded-lg text-white font-semibold shadow-md transition-all duration-300 disabled:cursor-not-allowed flex items-center justify-center ${
                   isLoading
                     ? 'bg-indigo-400'
-                   
-                }`}
+   s
 
-        
-              </button>
+
             </div>
           )}
         </form>
