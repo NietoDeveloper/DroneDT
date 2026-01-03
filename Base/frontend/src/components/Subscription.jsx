@@ -54,12 +54,8 @@ const Subscription = () => {
                     ? 'bg-indigo-400'
                     : 'bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800'
                 }`}
-                disabled={isLoading}
-                    
-                  </svg>
-                ) : (
-                  'Subscribe'
-                )}
+
+        
               </button>
             </div>
           )}
