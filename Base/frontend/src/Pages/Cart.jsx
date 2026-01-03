@@ -10,9 +10,6 @@ export default function Cart() {
   return (
     <div className="pt-14">
       <div className="text-2xl">
-        <Title title1="YOUR" title2="CART" />
-      </div>
-      <div>{cartElements}</div>
 
           </div>
         </div>
