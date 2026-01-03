@@ -9,13 +9,4 @@ const Subscription = () => {
     e.preventDefault();
     if (!email) return;
 
-    setIsLoading(true);
-    // Simulación de una llamada a API
-    setTimeout(() => {
-
-
-
-  };
-
-
 export default Subscription;
