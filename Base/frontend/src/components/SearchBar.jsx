@@ -12,12 +12,3 @@ export default function SearchBar() {
 
   useEffect(() => {
     if (location.pathname.includes("collection")) {
-      setVisible(true);
-    } else {
- 
-    }
-  }, [location]);
-
-
-  ) : null;
-}
