@@ -8,7 +8,3 @@ export default function SearchBar() {
   const { search, setSearch, showSearch, setShowSearch } =
     useContext(ShopContext);
   const [visible, setVisible] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.pathname.includes("collection")) {
