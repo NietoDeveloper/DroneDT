@@ -23,7 +23,7 @@ export default function Orders() {
         res.data.orders.map((order) => {
           order.products.map((item) => {
             item["status"] = order.status;
-            item["payment"] = order.payment;
+            
             item["paymentMethod"] = order.paymentMethod;
             item["date"] = order.date;
             allOrdersItem.push(item);
