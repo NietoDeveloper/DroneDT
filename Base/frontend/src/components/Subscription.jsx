@@ -35,7 +35,7 @@ const Subscription = () => {
 
         <form onSubmit={handleSubmit} className="mt-8">
           {isSubscribed ? (
-            <div className="p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-sm font-medium text-center transition-opacity duration-500">
+            <div classNaborder border-green-400 text-green-700 rounded-lg text-sm font-medium text-center transition-opacity duration-500">
 
             </div>
           )
