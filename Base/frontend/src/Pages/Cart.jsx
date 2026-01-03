@@ -14,11 +14,8 @@ export default function Cart() {
       const tempCart = [];
       for (const item in cartItems) {
         for (const size in cartItems[item]) {
-          if (cartItems[item][size] > 0) {
-            tempCart.push({
-              _id: item,
-              size: size,
-              quantity: cartItems[item][size],
+
+
             });
           }
         }
