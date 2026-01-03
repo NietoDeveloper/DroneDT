@@ -40,8 +40,6 @@ const Subscription = () => {
             </div>
           ) : (
             <div className="flex flex-col sm:flex-row gap-3">
-              <input
-
 
 
             </div>
