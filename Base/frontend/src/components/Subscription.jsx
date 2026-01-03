@@ -29,9 +29,7 @@ const Subscription = () => {
             Subscribe Now & Get 20% Off
           </p>
           <p className="text-base sm:text-lg text-gray-600 max-w-lg">
-           w arri
-          </p>
-        </div>
+
 >
       </div>
     </div>
