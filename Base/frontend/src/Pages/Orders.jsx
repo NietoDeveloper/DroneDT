@@ -22,7 +22,7 @@ export default function Orders() {
         let allOrdersItem = [];
         res.data.orders.map((order) => {
           order.products.map((item) => {
-            item["status"] = order.status;
+  
             allOrdersItem.push(item);
           });
         });
