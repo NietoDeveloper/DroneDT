@@ -41,8 +41,7 @@ const Subscription = () => {
           ) : (
             <div className="flex flex-col sm:flex-row gap-3">
               <input
-                className="w-full flex-1 p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors disabled:opacity-60"
-          ¿
+
 
 
             </div>
