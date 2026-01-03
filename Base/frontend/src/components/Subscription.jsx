@@ -34,7 +34,7 @@ const Subscription = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="mt-8">
-          {isSubscribed ? (en-700 rounded-lg text-sm font-medium text-center transition-opacity duration-500">
+          {isSubscribed ? (en-70m text-center transition-opacity duration-500">
 
             </div>
           )
