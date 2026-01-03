@@ -25,7 +25,7 @@ const Subscription = () => {
     <div className="w-full min-h-[50vh] flex items-center justify-center bg-gray-50 p-4 font-sans">
       <div className="w-full max-w-2xl p-6 md:p-10 bg-white shadow-2xl rounded-xl transition-all duration-300">
         <div className="flex flex-col items-center text-center space-y-4">
-          <p className="text-3xl sm:text-4xl font-extrabold text-indigo-700 tracking-tight">
+          <p className="text-3xl sm:text-4xlindigo-700 tracking-tight">
        
           </p>
 
