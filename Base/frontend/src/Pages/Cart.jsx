@@ -6,14 +6,3 @@ import bin from "../assets/bin_icon.png";
 
 export default function Cart() {
 
-
-  return (
-    <div className="pt-14">
-      <div className="text-2xl">
-
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
