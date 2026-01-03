@@ -14,10 +14,7 @@ export default function Orders() {
       }
 
       const res = await axios.post(
-        backendUrl + "/api/order/userorders",
-        {},
-        { headers: { token } }
-      );
+
       }
     } 
   }
