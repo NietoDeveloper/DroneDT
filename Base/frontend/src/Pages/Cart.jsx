@@ -15,13 +15,7 @@ export default function Cart() {
       <div>{cartElements}</div>
       <div className="flex justify-end my-20">
         <div className="w-full sm:w-[450px]">
-          <CartTotal />
-          <div className="w-full text-end">
-            <button
-              disabled={cartData.length === 0 ? true : false}
-              className={`bg-black text-white text-sm px-8 py-3 my-8 ${
-
-            >
+          <CartTotal /            >
               PROCEED TO CHECKOUT
             </button>
           </div>
