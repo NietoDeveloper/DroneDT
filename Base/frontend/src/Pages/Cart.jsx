@@ -17,7 +17,7 @@ export default function Cart() {
           }
         }
       }
-      setCartData(tempCart);
+
     }
   }, [cartItems, products]);
 
