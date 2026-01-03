@@ -7,6 +7,6 @@ const Subscription = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email) return;
+
 
 export default Subscription;
