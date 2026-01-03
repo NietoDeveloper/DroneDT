@@ -21,9 +21,7 @@ const Subscription = () => {
   };
 
   return (
-    // Contenedor principal: min-h-[50vh] para garantizar la altura requerida
-    </div>
-  );
+    
 };
 
 export default Subscription;
