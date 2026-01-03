@@ -8,9 +8,7 @@ export default function Orders() {
   const [orderData, setOrderData] = useState([]);
 
   async function loadOrderData() {
-    try {
 
-    } 
   }
 
   useEffect(() => {
