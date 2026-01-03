@@ -55,9 +55,6 @@ const Subscription = () => {
                     : 'bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800'
                 }`}
                 disabled={isLoading}
-              >
-                {isLoading ? (
-                 one" viewBox="0 0 24 24">
                     
                   </svg>
                 ) : (
