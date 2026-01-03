@@ -17,9 +17,7 @@ export default function Cart() {
         <div className="flex items-start gap-6">
           <img className="w-16 sm:w-20" src={productsData.image[0]} alt="" />
           <div>
-            <p className="text-sm sm:text-lg font-medium">
-              {productsData.name}
-            </p>
+
 
             <div className="flex items-center gap-5 mt-2">
               <p>
