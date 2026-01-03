@@ -39,10 +39,7 @@ const Subscription = () => {
               Subscription successful! Check your email for your 20% discount code.
             </div>
           ) : (
-            <div className="flex flex-col sm:flex-row gap-3">
 
-
-            </div>
           )}
         </form>
       </div>
