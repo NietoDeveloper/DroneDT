@@ -45,9 +45,7 @@ const Subscription = () => {
                 type="email"
                 required
                 placeholder="Enter your email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={isLoading}
+                value={email}                disabled={isLoading}
               />
               <button
                 type="submit"
