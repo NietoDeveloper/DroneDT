@@ -9,18 +9,6 @@ export default function Cart() {
     useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
 
-  useEffect(() => {
-    if (products.length > 0) {
-      const tempCart = [];
-      for (const item in cartItems) {
-  
-          }
-        }
-      }
-
-    }
-  }, [cartItems, products]);
-
   const cartElements = cartData.map((item, index) => {
     const productsData = products.find((product) => product._id === item._id);
 
