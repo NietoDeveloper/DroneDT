@@ -5,11 +5,6 @@ import { ShopContext } from "../Context/ShopContext";
 import bin from "../assets/bin_icon.png";
 
 export default function Cart() {
-  const { cartItems, products, currency, updateQuantity, navigate } =
-    useContext(ShopContext);
-  const [cartData, setCartData] = useState([]);
-
-  const cartElements = cartData.map((item, index) => {
 
 
   return (
