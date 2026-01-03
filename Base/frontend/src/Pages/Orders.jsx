@@ -12,8 +12,7 @@ export default function Orders() {
   }
 
   useEffect(() => {
-    loadOrderData();
-  }, [token]);
+
 
   return (
     <div className="pt-16">
