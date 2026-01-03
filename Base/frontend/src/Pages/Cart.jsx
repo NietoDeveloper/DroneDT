@@ -15,16 +15,6 @@ export default function Cart() {
           type="number"
           min={1}
           defaultValue={item.quantity}
-        />
-        <img
-          className="w-4 mr-4 sm:w-5 cursor-pointer"
-          onClick={() => updateQuantity(item._id, item.size, 0)}
-          src={bin}
-          alt=""
-        />
-      </div>
-    );
-  });
 
   return (
     <div className="pt-14">
