@@ -14,7 +14,7 @@ export default function SearchBar() {
     if (location.pathname.includes("collection")) {
       setVisible(true);
     } else {
-      setVisible(false);
+ 
     }
   }, [location]);
 
