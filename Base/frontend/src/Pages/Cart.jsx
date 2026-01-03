@@ -13,11 +13,7 @@ export default function Cart() {
         <Title title1="YOUR" title2="CART" />
       </div>
       <div>{cartElements}</div>
-      <div className="flex justify-end my-20">
-        <div className="w-full sm:w-[450px]">
-          <CartTotal /            >
-              PROCEED TO CHECKOUT
-            </button>
+
           </div>
         </div>
       </div>
