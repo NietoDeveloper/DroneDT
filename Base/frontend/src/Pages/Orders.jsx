@@ -9,9 +9,7 @@ export default function Orders() {
 
   async function loadOrderData() {
     try {
-      if (!token) {
-        return null;
-      }
+
     } 
   }
 
