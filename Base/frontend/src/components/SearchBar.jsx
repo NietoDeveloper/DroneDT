@@ -32,7 +32,7 @@ export default function SearchBar() {
       </div>
       <img
         onClick={() => setShowSearch(false)}
-        className="inline w-3 cursor-pointer"
+
         src={exitIcon}
         alt=""
       />
