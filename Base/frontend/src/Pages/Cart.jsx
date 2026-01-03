@@ -12,14 +12,6 @@ export default function Cart() {
   const cartElements = cartData.map((item, index) => {
     const productsData = products.find((product) => product._id === item._id);
 
-
-            
-                {productsData.price}
-              </p>
-              <p className="px-2 sm:px-3 sm:py-1 border bg-slate-50">
-                {item.size}
-
-        </div>
         <input
           className="border max-w-10 sm:max-w-20 px-1 sm:px-2 py-1"
           onChange={(e) =>
