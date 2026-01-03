@@ -43,8 +43,6 @@ const Subscription = () => {
               <input
                 className="w-full flex-1 p-4 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-colors disabled:opacity-60"
                 type="email"
-                required
-                placeholder="Enter your email address"
 
 
             </div>
