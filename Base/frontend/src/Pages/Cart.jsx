@@ -13,10 +13,7 @@ export default function Cart() {
     if (products.length > 0) {
       const tempCart = [];
       for (const item in cartItems) {
-        for (const size in cartItems[item]) {
-
-
-            });
+  
           }
         }
       }
