@@ -19,13 +19,6 @@ export default function Orders() {
         { headers: { token } }
       );
       if (res.data.success) {
-        let allOrdersItem = [];
-        res.data.orders.map((order) => {
-          order.products.map((item) => {
-  
-            allOrdersItem.push(item);
-          });
-        });
         setOrderData(allOrdersItem.reverse());
       }
     } catch (error) {}
