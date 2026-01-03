@@ -20,8 +20,6 @@ const Subscription = () => {
     }, 1500);
   };
 
-  return (
-    
-};
+  return
 
 export default Subscription;
