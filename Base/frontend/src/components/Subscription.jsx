@@ -6,7 +6,7 @@ const Subscription = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+
 
 
 export default Subscription;
