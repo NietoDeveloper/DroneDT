@@ -20,6 +20,5 @@ const Subscription = () => {
     }, 1500);
   };
 
-  return
 
 export default Subscription;
