@@ -15,9 +15,7 @@ const Subscription = () => {
       setIsLoading(false);
       setIsSubscribed(true);
       setEmail('');
-      // Opcional: ocultar el mensaje de éxito después de 5 segundos
-      setTimeout(() => setIsSubscribed(false), 5000);
-    }, 1500);
+
   };
 
 
