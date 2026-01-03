@@ -24,9 +24,7 @@ export default function SearchBar() {
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="flex-1 outline-none bg-inherit text-sm"
-          type="text"
-          placeholder="Search"
+
         />
         <img className="w-4" src={searchIcon} alt="" />
       </div>
