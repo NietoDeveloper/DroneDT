@@ -21,7 +21,7 @@ export default function Orders() {
       if (res.data.success) {
         setOrderData(allOrdersItem.reverse());
       }
-    } catch (error) {}
+    } 
   }
 
   useEffect(() => {
