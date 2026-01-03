@@ -12,8 +12,7 @@ const Subscription = () => {
     setIsLoading(true);
     // Simulación de una llamada a API
     setTimeout(() => {
-      setIsLoading(false);
-      setIsSubscribed(true);
+
 
 
   };
