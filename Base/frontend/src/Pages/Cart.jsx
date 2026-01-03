@@ -12,12 +12,6 @@ export default function Cart() {
   const cartElements = cartData.map((item, index) => {
     const productsData = products.find((product) => product._id === item._id);
 
-    return (
-     
-        <div className="flex items-start gap-6">
-          <img className="w-16 sm:w-20" src={productsData.image[0]} alt="" />
-          <div>
-
 
             <div className="flex items-center gap-5 mt-2">
               <p>
