@@ -14,7 +14,7 @@ const Subscription = () => {
     setTimeout(() => {
       setIsLoading(false);
       setIsSubscribed(true);
-      setEmail('');
+
 
   };
 
