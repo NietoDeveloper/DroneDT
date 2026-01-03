@@ -33,7 +33,6 @@ export default function Orders() {
                     {item.price}
                   </p>
                   <p>Quantity: {item.quantity}</p>
-                  <p>Size: {item.size}</p>
                 </div>
                 <p className="mt-1">
                   Date:{" "}
