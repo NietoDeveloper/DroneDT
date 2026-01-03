@@ -28,7 +28,6 @@ const Subscription = () => {
           <p className="text-3xl sm:text-4xl font-extrabold text-indigo-700 tracking-tight">
             Subscribe Now & Get 20% Off
           </p>
-          <p className="text-base sm:text-lg text-gray-600 max-w-lg">
 
 >
       </div>
