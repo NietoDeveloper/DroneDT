@@ -9,6 +9,3 @@ export default function Orders() {
 
   async function loadOrderData() {
 
-  }
-
-
