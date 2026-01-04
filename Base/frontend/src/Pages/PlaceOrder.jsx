@@ -14,7 +14,7 @@ export default function PlaceOrder() {
     cartItems,
 
     deliveryFee,
-    products,
+
   } = useContext(ShopContext);
   const [formData, setFormData] = useState({
     firstName: "",
