@@ -7,7 +7,6 @@ import Subscription from "../components/Subscription";
 export default function Homepage() {
   return (
     <>
-      <Hero />
     </>
   );
 }
