@@ -22,7 +22,7 @@ export default function Orders() {
           <div
           >
             <div className="flex ittext-sm">
-              <img className="w-16 sm:w-20" src={item.image[0]} alt="" />
+              <img className="w-16 sm:w-20" src={[0]} alt="" />
               <div>
                 <p className="sm:tef">{}</p>
                 <div className="flex items-center gap-3 mt-1 text-base text-gray-700">
