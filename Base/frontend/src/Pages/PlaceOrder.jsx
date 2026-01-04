@@ -20,7 +20,7 @@ import paypalLogo from "../assets/paypal_logo.png";
   }
 
   function demoMethod(method) {
-    toast.warn(`${method} is disabled in demo, use COD`);
+
   }
 
   return (
