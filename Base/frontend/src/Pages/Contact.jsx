@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <>
       <div className="text-2xl text-center pt-8 pb-3">
-        <Title title1="CONTACT" title2="US" />
+       
       </div>
       <div className="flex flex-col justify-center md:flex-row gap-10 my-10 mb-28">
         <img className="w-full md:max-w-[480px]" src={contactHero} alt="" />
