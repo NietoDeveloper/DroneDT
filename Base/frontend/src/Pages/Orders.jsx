@@ -15,6 +15,5 @@ export default function Orders() {
     <div className="pt-16">
 
 
-      </div>
 
 }
