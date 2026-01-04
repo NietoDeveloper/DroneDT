@@ -12,7 +12,6 @@ export default function PlaceOrder() {
   const [paymentMethod, setPaymentMethod] = useState("cod");
   const {
     navigate,
-    backendUrl,
     cartItems,
     setCartItems,
     getCartAmount,
