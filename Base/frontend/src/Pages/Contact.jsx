@@ -15,7 +15,6 @@ export default function Contact() {
           <p className="text-gray-500">
             +123 456 7890
             <br />
-            contact@clothix.com
           </p>
 
           <p className="text-gray-500">
