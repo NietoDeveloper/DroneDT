@@ -21,7 +21,7 @@ export default function Orders() {
 
               <div className="flex items-center gap-2">
                 <p className="min-w-2 h-2 rounded-full bg-green-500"></p>
-                <p className="text-sm md:text-base">{item.status}</p>
+
               </div>
 
 
