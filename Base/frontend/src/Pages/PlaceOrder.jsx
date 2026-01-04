@@ -7,7 +7,6 @@ import { useContext, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import { toast } from "react-toastify";
 
-export default function PlaceOrder() {
   const {
     navigate,
     cartItems,
