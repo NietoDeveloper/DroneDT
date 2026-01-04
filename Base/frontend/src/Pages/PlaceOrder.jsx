@@ -3,11 +3,3 @@ import Title from "../components/Title";
 import paypalLogo from "../assets/paypal_logo.png";
 
 
-            >
-
-          </div>
-        </div>
-      </div>
-
-  );
-}
