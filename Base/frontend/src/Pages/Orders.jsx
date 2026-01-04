@@ -13,7 +13,7 @@ export default function Orders() {
 
   return (
     <div className="pt-16">
-      <div className="text-2xl">
+
 
       </div>
 
