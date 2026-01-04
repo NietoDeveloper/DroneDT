@@ -20,8 +20,6 @@ export default function PlaceOrder() {
     firstName: "",
     state: "",
 
-    country: "",
-    phone: "",
   });
 
   function onChangeHandler(e) {
