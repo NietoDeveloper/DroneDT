@@ -30,7 +30,6 @@ export default function Orders() {
                 <p className="text-sm md:text-base">{item.status}</p>
               </div>
               
-                Track Order
               </button>
             </div>
           </div>
