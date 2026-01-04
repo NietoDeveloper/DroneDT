@@ -21,7 +21,6 @@ export default function PlaceOrder() {
     firstName: "",
     email: "",
     street: "",
-    city: "",
     state: "",
     zipcode: "",
     country: "",
