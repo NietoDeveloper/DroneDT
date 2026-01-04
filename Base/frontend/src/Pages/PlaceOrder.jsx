@@ -28,7 +28,7 @@ import paypalLogo from "../assets/paypal_logo.png";
 
      
     >
-      <div className="flex flex-col gap-4 w-full sm:max-w-[480px]">
+
         <div className="text-xl sm:text-2xl my-3">
           <Title title1="DELIVERY" title2="INFOMATION" />
         </div>
