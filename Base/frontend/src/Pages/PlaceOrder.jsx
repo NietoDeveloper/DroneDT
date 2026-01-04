@@ -19,7 +19,7 @@ export default function PlaceOrder() {
   const [formData, setFormData] = useState({
     firstName: "",
     state: "",
-    zipcode: "",
+
     country: "",
     phone: "",
   });
