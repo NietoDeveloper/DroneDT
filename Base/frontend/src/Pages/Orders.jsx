@@ -7,5 +7,3 @@ export default function Orders() {
   const { backendUrl, token, currency } = useContext(ShopContext);
   const [orderData, setOrderData] = useState([]);
 
-  async function loadOrderData() {
-
