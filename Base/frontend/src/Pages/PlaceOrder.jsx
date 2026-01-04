@@ -8,8 +8,7 @@ import { ShopContext } from "../Context/ShopContext";
 import { toast } from "react-toastify";
 
   const {
-    navigate,
-    cartItems,
+
 
   } = useContext(ShopContext);
   const [formData, setFormData] = useState({
