@@ -17,9 +17,6 @@ export default function Orders() {
 
       </div>
 
-
-
-              <div className="flex items-center gap-2">
        
 
               </div>
