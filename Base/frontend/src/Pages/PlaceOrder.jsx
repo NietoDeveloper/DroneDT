@@ -19,7 +19,6 @@ export default function PlaceOrder() {
   } = useContext(ShopContext);
   const [formData, setFormData] = useState({
     firstName: "",
-    lastName: "",
     email: "",
     street: "",
     city: "",
