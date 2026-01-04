@@ -16,9 +16,7 @@ export default function Orders() {
       <div className="text-2xl">
         <Title title1="MY" title2="ORDERS" />
       </div>
-                  <p>
-                  
-                  </p>
+
 
 
 
