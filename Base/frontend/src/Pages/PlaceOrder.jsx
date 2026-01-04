@@ -14,7 +14,6 @@ export default function PlaceOrder() {
     navigate,
     cartItems,
     setCartItems,
-    getCartAmount,
     deliveryFee,
     products,
   } = useContext(ShopContext);
