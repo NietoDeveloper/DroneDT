@@ -17,7 +17,7 @@ export default function Contact() {
             <br />
             contact@clothix.com
           </p>
-          <p className="font-bold text-xl text-gray-600">Careers at Clothix</p>
+
           <p className="text-gray-500">
             Learn more about our teams and job openings.
           </p>
