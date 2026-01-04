@@ -22,8 +22,7 @@ import paypalLogo from "../assets/paypal_logo.png";
   async function onSubmitHandler(e) {
     e.preventDefault();
     try {
-      let orderItems = [];
-      for (const items in cartItems) {
+      let orde
         for (const item in cartItems[items]) {
           if (cartItems[items][item] > 0) {
             const itemInfo = structuredClone(
