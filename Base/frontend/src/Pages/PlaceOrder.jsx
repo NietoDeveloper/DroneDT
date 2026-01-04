@@ -9,7 +9,6 @@ import { toast } from "react-toastify";
 import axios from "axios";
 
 export default function PlaceOrder() {
-  const [paymentMethod, setPaymentMethod] = useState("cod");
   const {
     navigate,
     cartItems,
