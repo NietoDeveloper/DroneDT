@@ -21,7 +21,7 @@ export default function Orders() {
         {orderData.map((item, index) => (
           <div
           >
-            <div className="flex items-start gap-6 text-sm">
+            <div className="flex ittext-sm">
               <img className="w-16 sm:w-20" src={item.image[0]} alt="" />
               <div>
                 <p className="sm:tef">{}</p>
