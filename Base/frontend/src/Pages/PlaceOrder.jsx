@@ -19,22 +19,6 @@ import paypalLogo from "../assets/paypal_logo.png";
     setFormData((data) => ({ ...data, [name]: value }));
   }
 
-
-
-   
-        if (res.data.success) {
-          setCartItems({});
-          navigate("orders");
-        } else {
-          toast.error(res.data.message);
-        }
-      }
-    } catch (error) {
-      console.log(error);
-      toast.error(error.message);
-    }
-  }
-
   function demoMethod(method) {
     toast.warn(`${method} is disabled in demo, use COD`);
   }
