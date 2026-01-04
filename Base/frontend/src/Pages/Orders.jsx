@@ -19,9 +19,6 @@ export default function Orders() {
 
       <div>
         {orderData.map((item, index) => (
-          <div
-          >
-            <div className="flex ittext-sm">
 
               <div>
                 <p className="sm:tef">{}</p>
