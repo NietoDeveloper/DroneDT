@@ -16,19 +16,11 @@ export default function Orders() {
       <div className="text-2xl">
         <Title title1="MY" title2="ORDERS" />
       </div>
-
-      <div>
-
-              <div>
                   <p>
                   
                   </p>
                   <p>Quantity: {item.quantity}</p>
-                </div>
-                <p className="mt-1">
-                  Date:{" "}
 
-                  </span>
                 </p>
 
               </div>
