@@ -14,7 +14,7 @@ export default function Orders() {
   return (
     <div className="pt-16">
       <div className="text-2xl">
-        <Title title1="MY" title2="ORDERS" />
+
       </div>
 
 
