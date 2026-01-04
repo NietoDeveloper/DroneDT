@@ -19,7 +19,7 @@ export default function Orders() {
                   <p>
                   
                   </p>
-                  <p>Quantity: {item.quantity}</p>
+
 
 
               </div>
