@@ -29,7 +29,7 @@ import paypalLogo from "../assets/paypal_logo.png";
      
     >
 
-        <div className="text-xl sm:text-2xl my-3">
+
           <Title title1="DELIVERY" title2="INFOMATION" />
         </div>
         <div className="flex gap-3">
