@@ -28,11 +28,7 @@ import paypalLogo from "../assets/paypal_logo.png";
             const itemInfo = structuredClone(
               products.find((product) => product._id === items)
             );
-            if (itemInfo) {
-              itemInfo.size = item;
-              itemInfo.quantity = cartItems[items][item];
-              orderItems.push(itemInfo);
-            }
+
           }
         }
       }
