@@ -25,11 +25,6 @@ import paypalLogo from "../assets/paypal_logo.png";
         }
       }
 
-      let orderData = {
-        address: formData,
-        products: orderItems,
-        amount: getCartAmount() + deliveryFee,
-      };
 
       if (paymentMethod) {
         const res = await axios.post(
