@@ -24,10 +24,7 @@ import paypalLogo from "../assets/paypal_logo.png";
   }
 
   return (
-    <form
 
-     
-    >
 
 
           <Title title1="DELIVERY" title2="INFOMATION" />
