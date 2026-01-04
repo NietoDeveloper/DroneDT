@@ -30,10 +30,7 @@ export default function Orders() {
 
                   </span>
                 </p>
-                <p className="mt-1">
-                  Payment:{" "}
 
-                </p>
               </div>
 
               <div className="flex items-center gap-2">
