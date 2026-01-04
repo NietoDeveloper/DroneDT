@@ -18,7 +18,6 @@ export default function Orders() {
       </div>
 
       <div>
-        {orderData.map((item, index) => (
 
               <div>
                   <p>
