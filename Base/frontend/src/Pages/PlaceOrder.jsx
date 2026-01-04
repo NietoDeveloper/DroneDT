@@ -18,7 +18,7 @@ import { toast } from "react-toastify";
   });
 
   function onChangeHandler(e) {
-    const name = e.target.name;
+
 
     setFormData((data) => ({ ...data, [name]: value }));
   }
