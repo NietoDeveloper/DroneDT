@@ -20,14 +20,6 @@ import paypalLogo from "../assets/paypal_logo.png";
   }
 
   async function onSubmitHandler(e) {
-    e.preventDefault();
-    try {
-      let orde
-        for (const item in cartItems[items]) {
-          if (cartItems[items][item] > 0) {
-            const itemInfo = structuredClone(
-              products.find((product) => product._id === items)
-            );
 
           }
         }
