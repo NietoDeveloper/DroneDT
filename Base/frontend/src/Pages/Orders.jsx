@@ -22,7 +22,7 @@ export default function Orders() {
 
               <div>
                   <p>
-                    {currency}
+                  
                   </p>
                   <p>Quantity: {item.quantity}</p>
                 </div>
