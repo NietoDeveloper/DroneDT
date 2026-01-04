@@ -10,7 +10,6 @@ export default function Homepage() {
       <Hero />
       <LatestCollections />
       <BestSellers />
-      <Policy />
       <Subscription />
     </>
   );
