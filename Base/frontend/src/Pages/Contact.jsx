@@ -13,11 +13,6 @@ export default function Contact() {
 
         <div className="flex flex-col justify-center gap-6 text-gray-600 items-start">
 
-
-          </p>
-
-        </div>
-      </div>
       <Subscription />
     </>
   );
