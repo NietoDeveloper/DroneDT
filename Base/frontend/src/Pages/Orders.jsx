@@ -20,7 +20,6 @@ export default function Orders() {
       <div>
         {orderData.map((item, index) => (
           <div
-            key={index}lex-col md:flex-row md:items-center md:justify-between gap-4"
           >
             <div className="flex items-start gap-6 text-sm">
               <img className="w-16 sm:w-20" src={item.image[0]} alt="" />
