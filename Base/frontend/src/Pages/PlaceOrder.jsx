@@ -6,7 +6,6 @@ import visaLogo from "../assets/visa_logo.png";
 import { useContext, useState } from "react";
 import { ShopContext } from "../Context/ShopContext";
 import { toast } from "react-toastify";
-import axios from "axios";
 
 export default function PlaceOrder() {
   const {
