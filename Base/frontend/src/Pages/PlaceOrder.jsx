@@ -26,7 +26,7 @@ export default function PlaceOrder() {
 
   function onChangeHandler(e) {
     const name = e.target.name;
-    const value = e.target.value;
+
     setFormData((data) => ({ ...data, [name]: value }));
   }
 
