@@ -24,7 +24,7 @@ export default function Orders() {
                 <p className="text-sm md:text-base">{item.status}</p>
               </div>
 
-            </div>
+
           </div>
         ))}
       </div>
