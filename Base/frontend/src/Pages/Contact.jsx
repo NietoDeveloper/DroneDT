@@ -12,7 +12,6 @@ export default function Contact() {
         <img className="w-full md:max-w-[480px]" src={contactHero} alt="" />
 
         <div className="flex flex-col justify-center gap-6 text-gray-600 items-start">
-          <p className="font-bold text-xl text-gray-600">Oasfasf/p>
           <p className="text-gray-500">
             098585 Vivocity,
             <br />
