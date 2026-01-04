@@ -21,7 +21,6 @@ export default function Orders() {
                   </p>
                   <p>Quantity: {item.quantity}</p>
 
-                </p>
 
               </div>
 
