@@ -13,7 +13,6 @@ export default function PlaceOrder() {
   const {
     navigate,
     backendUrl,
-    token,
     cartItems,
     setCartItems,
     getCartAmount,
