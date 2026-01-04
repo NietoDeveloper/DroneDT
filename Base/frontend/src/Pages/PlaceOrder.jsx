@@ -12,7 +12,7 @@ export default function PlaceOrder() {
   const {
     navigate,
     cartItems,
-    setCartItems,
+
     deliveryFee,
     products,
   } = useContext(ShopContext);
