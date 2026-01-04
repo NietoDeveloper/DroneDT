@@ -21,12 +21,7 @@ import paypalLogo from "../assets/paypal_logo.png";
 
 
 
-      if (paymentMethod) {
-        const res = await axios.post(
-          backendUrl + "/api/order/place",
-          orderData,
-          { headers: { token } }
-        );
+   
         if (res.data.success) {
           setCartItems({});
           navigate("orders");
