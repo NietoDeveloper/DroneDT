@@ -19,11 +19,6 @@ import paypalLogo from "../assets/paypal_logo.png";
     setFormData((data) => ({ ...data, [name]: value }));
   }
 
-  async function onSubmitHandler(e) {
-
-          }
-        }
-      }
 
 
       if (paymentMethod) {
