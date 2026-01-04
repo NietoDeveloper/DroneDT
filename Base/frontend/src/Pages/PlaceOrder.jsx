@@ -26,7 +26,7 @@ import paypalLogo from "../assets/paypal_logo.png";
   return (
     <form
 
-      className="flex flex-col sm:flex-row justify-between pt-5 sm:pt-14 min-h-[80vh]"
+     
     >
       <div className="flex flex-col gap-4 w-full sm:max-w-[480px]">
         <div className="text-xl sm:text-2xl my-3">
