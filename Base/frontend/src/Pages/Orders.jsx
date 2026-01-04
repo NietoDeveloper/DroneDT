@@ -21,8 +21,6 @@ export default function Orders() {
         {orderData.map((item, index) => (
 
               <div>
- 
-                <div className="flex items-center gap-3 mt-1 text-base text-gray-700">
                   <p>
                     {currency}
                   </p>
