@@ -1,11 +1,7 @@
 import CartTotal from "../components/CartTotal";
 import Title from "../components/Title";
 import paypalLogo from "../assets/paypal_logo.png";
-import mastercardLogo from "../assets/mastercard_logo.png";
-import visaLogo from "../assets/visa_logo.png";
-import { useContext, useState } from "react";
-import { ShopContext } from "../Context/ShopContext";
-import { toast } from "react-toastify";
+
 
   const {
 
