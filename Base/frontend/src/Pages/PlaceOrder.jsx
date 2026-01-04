@@ -139,16 +139,10 @@ import paypalLogo from "../assets/paypal_logo.png";
               onClick={() => demoMethod("Mastercard")}
               className="flex items-center gap-3 border p-2 px-3 cursor-pointer"
             >
-              <p
-                className={`min-w-3.5 h-3.5 border rounded-full ${
-                  paymentMethod === "mastercard" ? "bg-green-400" : ""
-  
-            >
-              PLACE ORDER
-            </button>
+
           </div>
         </div>
       </div>
-    </form>
+
   );
 }
