@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 import Homepage from "./Pages/Homepage";
 import ShopContextProvider from "./Context/ShopContext";
 import Product from "./Pages/Product";
-import Cart from "./Pages/Cart";
+
 
 
 
