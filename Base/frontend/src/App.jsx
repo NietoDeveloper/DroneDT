@@ -14,8 +14,6 @@ export default function App() {
 
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Homepage />} />
-            <Route path="login" element={<Login />} />
           </Route>
         </Routes>
       </ShopContextProvider>
