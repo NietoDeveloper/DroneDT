@@ -1,1 +1,1 @@
-import { StrictMode } from "react";
+import { StrictMode } from "react"
