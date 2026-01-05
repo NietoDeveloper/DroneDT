@@ -65,7 +65,6 @@ export default function Login() {
         </div>
         {currentState === "Sign Up" && (
 
-          />
         )}
         <input
           type="email"
