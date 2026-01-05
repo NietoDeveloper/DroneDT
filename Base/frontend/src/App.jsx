@@ -8,7 +8,5 @@ import ShopContextProvider from "./Context/ShopContext";
 
 export default function App() {
   return (
-    <BrowserRouter>
-    </BrowserRouter>
   );
 }
