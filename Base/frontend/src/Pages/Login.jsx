@@ -76,7 +76,7 @@ quired
               onClick={() => setCurrentState("Sign Up")}
               className="cursor-pointer"
             >
-              Create account
+  
             </p>
           ) : (
             <p
