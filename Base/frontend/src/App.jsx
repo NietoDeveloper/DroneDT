@@ -9,7 +9,7 @@ import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 
 import Orders from "./Pages/Orders";
-import Login from "./Pages/Login";
+
 
 export default function App() {
   return (
@@ -22,8 +22,7 @@ export default function App() {
             <Route index element={<Homepage />} />
             <Route path="collection" element={<Collection />} />
             <Route path="about" element={<About />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="product/:id" element={<Product />} />
+           
             <Route path="cart" element={<Cart />} />
             <Route path="place-order" element={<PlaceOrder />} />
             <Route path="orders" element={<Orders />} />
