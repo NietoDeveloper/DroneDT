@@ -5,8 +5,3 @@ import Contact from "./Pages/Contact";
 import Layout from "./components/Layout";
 import Homepage from "./Pages/Homepage";
 import ShopContextProvider from "./Context/ShopContext";
-
-export default function App() {
-  return (
-  );
-}
