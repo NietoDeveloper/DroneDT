@@ -14,23 +14,4 @@ export default function Login() {
   async function formSubmit(e) {
     e.preventDefault();
     try {
-      if (currentState === "Sign Up") {
-        const res = await axios.post(backendUrl + "/api/user/register", {
-          name,
-          password,
-          email,
-        });
-        console.log(res);
-        if (res.data.success) {
-          setToken(res.data.token);
-          localStorage.setItem("token", res.data.token);
-          toast.success("Sign up successful");
-        } else {
-          toast.error(res.data.message);
-        }
-      } else {
-        const res = await axios.post(backendUrl + "/api/user/login", {
-          email,
-          password,
-        });
 
