@@ -66,7 +66,7 @@ export default function Login() {
         {currentState === "Sign Up" && (
           <input
             type="text"
-            onChange={(e) => setName(e.target.value)}
+
             value={name}
             className="w-full px-3 py-2 border border-gray-800"
             placeholder="Name"
