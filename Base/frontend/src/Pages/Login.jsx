@@ -33,12 +33,4 @@ export default function Login() {
           email,
           password,
         });
-        console.log(res);
-        if (res.data.success) {
-          setToken(res.data.token);
-          localStorage.setItem("token", res.data.token);
-          toast.success("Login successful");
-        } else {
-          toast.error(res.data.message);
-        }
 
