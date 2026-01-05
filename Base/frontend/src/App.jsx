@@ -13,8 +13,6 @@ export default function App() {
         <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
 
         <Routes>
-          <Route path="/" element={<Layout />}>
-          </Route>
         </Routes>
       </ShopContextProvider>
     </BrowserRouter>
