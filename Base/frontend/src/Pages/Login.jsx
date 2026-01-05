@@ -65,12 +65,7 @@ export default function Login() {
         <div className="w-full flex justify-between text-sm mt-[-8px]">
           <p className="cursor-pointer">Forget your password?</p>
           {currentState === "Login" ? (
-            <p
-              onClick={() => setCurrentState("Sign Up")}
-              className="cursor-pointer"
-            >
-  
-            </p>
+
           ) : (
  
               Login here
