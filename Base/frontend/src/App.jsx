@@ -6,7 +6,6 @@ import Layout from "./components/Layout";
 import Homepage from "./Pages/Homepage";
 import ShopContextProvider from "./Context/ShopContext";
 import Product from "./Pages/Product";
-import { ToastContainer, toast } from "react-toastify";
 import Cart from "./Pages/Cart";
 import PlaceOrder from "./Pages/PlaceOrder";
 import Orders from "./Pages/Orders";
