@@ -7,7 +7,7 @@ import Homepage from "./Pages/Homepage";
 import ShopContextProvider from "./Context/ShopContext";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
-import PlaceOrder from "./Pages/PlaceOrder";
+
 import Orders from "./Pages/Orders";
 import Login from "./Pages/Login";
 
