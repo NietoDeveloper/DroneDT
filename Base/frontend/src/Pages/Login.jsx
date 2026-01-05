@@ -72,10 +72,7 @@ export default function Login() {
   
             </p>
           ) : (
-            <p
-              onClick={() => setCurrentState("Login")}
-              className="cursor-pointer"
-            >
+ 
               Login here
             </p>
           )}
