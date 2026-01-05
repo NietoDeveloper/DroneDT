@@ -67,7 +67,7 @@ export default function Login() {
           <input
             type="text"
 
-            value={name}
+           
             className="w-full px-3 py-2 border border-gray-800"
             placeholder="Name"
             required
