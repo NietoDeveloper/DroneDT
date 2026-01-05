@@ -50,9 +50,7 @@ export default function Login() {
 
   useEffect(() => {
     if (token) {
-      navigate("/");
-    }
-  }, [token]);
+
 
 
 }
