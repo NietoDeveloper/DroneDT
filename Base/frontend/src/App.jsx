@@ -5,10 +5,6 @@ import Contact from "./Pages/Contact";
 import Layout from "./components/Layout";
 import Homepage from "./Pages/Homepage";
 import ShopContextProvider from "./Context/ShopContext";
-import Product from "./Pages/Product";
-
-
-
 
 export default function App() {
   return (
