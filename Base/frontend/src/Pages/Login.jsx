@@ -67,13 +67,7 @@ export default function Login() {
 
         )}
 
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          className="w-full px-3 py-2 border border-gray-800"
-          placeholder="Password"
-          required
+quired
         />
         <div className="w-full flex justify-between text-sm mt-[-8px]">
           <p className="cursor-pointer">Forget your password?</p>
