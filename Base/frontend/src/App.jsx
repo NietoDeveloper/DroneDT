@@ -8,7 +8,6 @@ import ShopContextProvider from "./Context/ShopContext";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 
-import Orders from "./Pages/Orders";
 
 
 export default function App() {
