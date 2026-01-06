@@ -9,10 +9,7 @@ const geistSans = GeistSans({
   subsets: ["latin"],
 });
 
-const geistMono = GeistMono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "DroneDT",
