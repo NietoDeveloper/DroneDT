@@ -11,10 +11,6 @@ const geistSans = GeistSans({
 
 
 
-export const metadata: Metadata = {
-  title: "DroneDT",
-  description: "E-commerce platform for manufacturing and selling drones in Colombia, inspired by Tesla.com",
-};
 
 export default function RootLayout({
   children,
