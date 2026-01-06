@@ -31,7 +31,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-t way to ds to use the [Vercel Platform](https://vercel.com/new?utm_med
+t way to ds to use the [Vercel Platform](http
 
 
 drone-dt/  ← Raíz del monorepo
