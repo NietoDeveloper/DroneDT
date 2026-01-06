@@ -29,13 +29,3 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-main text-textColor flex flex-col min-h-screen`}
       >
-        <Navbar />
-        {/* pt-20 asegura que el contenido no quede debajo del Navbar fixed */}
-        <main className="flex-grow pt-20">
-          {children}
-        </main>
-        <Footer />
-      </body>
-    </html>
-  );
-}
