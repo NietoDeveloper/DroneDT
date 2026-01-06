@@ -7,18 +7,7 @@
   }
 
   .bg-red-dt {
-    background-color: var(--dt-red);
-  }
 
-  /* Contenedor tipo Tesla para secciones Full-Screen */
-  .section-container {
-    @apply h-screen w-full flex flex-col items-center justify-between py-20 snap-start;
-  }
-}
-
-/* Scrollbar minimalista */
-::-webkit-scrollbar {
-  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
