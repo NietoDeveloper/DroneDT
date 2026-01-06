@@ -5,17 +5,6 @@
 
 
 
-  /* Títulos con estilo Tesla: Impactantes pero limpios */
-  h1,
-  h2,
-  h3,
-  h4 {
-    @apply font-medium tracking-tight text-black;
-  }
-}
-
-@layer components {
-
   /* Botones estilo Tesla (Bordes redondeados suaves o capsulares) */
   .btn-tesla-primary {
     @apply bg-black text-white px-10 py-2 rounded-full font-medium transition-all duration-300 hover:bg-opacity-80 active:scale-95;
