@@ -31,7 +31,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-The easiest wa
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_med
 
 
 drone-dt/  ← Raíz del monorepo
