@@ -4,23 +4,6 @@
 
 
 
-
-  /* Botones estilo Tesla (Bordes redondeados suaves o capsulares) */
-  .btn-tesla-primary {
-    @apply bg-black text-white px-10 py-2 rounded-full font-medium transition-all duration-300 hover:bg-opacity-80 active:scale-95;
-  }
-
-  .btn-tesla-secondary {
-    @apply bg-gray-100 text-black px-10 py-2 rounded-full font-medium transition-all duration-300 hover:bg-gray-200 active:scale-95;
-  }
-
-  /* Acentos específicos */
-  .border-gold {
-    border-color: var(--dt-gold);
-  }
-
-  .text-blue-dt {
-    color: var(--dt-blue);
   }
 
   .bg-red-dt {
