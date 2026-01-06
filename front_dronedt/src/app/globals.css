@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @layer components {
-  /* Tarjeta con acento Azul Rey y borde Gold */
+
   .drone-card {
     @apply bg-white rounded-xl shadow-lg border-t-4 border-royalBlue border-b-4 border-gold p-4 transition-all hover:scale-105;
   }
