@@ -7,7 +7,7 @@ const Footer: FC = () => {
       <div className="max-w-7xl mx-auto">
         {/* Main links section - Responsive grid */}
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 mb-8">
-          {/* Company */}
+
           <div className="flex flex-col space-y-2">
             <h3 className="text-white font-medium mb-2">DroneDT</h3>
             <Link href="/" className="hover:text-white transition-colors duration-200">Inicio</Link>
