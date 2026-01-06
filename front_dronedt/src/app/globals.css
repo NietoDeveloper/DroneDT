@@ -6,12 +6,12 @@
   /* Paleta Base */
   --background: #FFFFFF;
   --foreground: #000000;
-  
+
   /* Acentos Solicitados */
   --dt-gold: #FFD700;
   --dt-blue: #004586;
   --dt-red: #E81922;
-  
+
   /* Software DT Identity */
   --gainsboro: #DCDCDC;
   --yellow-color: #FEB60D;
@@ -24,27 +24,37 @@
   }
 
   /* Títulos con estilo Tesla: Impactantes pero limpios */
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-medium tracking-tight text-black;
   }
 }
 
 @layer components {
+
   /* Botones estilo Tesla (Bordes redondeados suaves o capsulares) */
   .btn-tesla-primary {
-    @apply bg-black text-white px-10 py-2 rounded-full font-medium 
-           transition-all duration-300 hover:bg-opacity-80 active:scale-95;
+    @apply bg-black text-white px-10 py-2 rounded-full font-medium transition-all duration-300 hover:bg-opacity-80 active:scale-95;
   }
 
   .btn-tesla-secondary {
-    @apply bg-gray-100 text-black px-10 py-2 rounded-full font-medium 
-           transition-all duration-300 hover:bg-gray-200 active:scale-95;
+    @apply bg-gray-100 text-black px-10 py-2 rounded-full font-medium transition-all duration-300 hover:bg-gray-200 active:scale-95;
   }
 
   /* Acentos específicos */
-  .border-gold { border-color: var(--dt-gold); }
-  .text-blue-dt { color: var(--dt-blue); }
-  .bg-red-dt { background-color: var(--dt-red); }
+  .border-gold {
+    border-color: var(--dt-gold);
+  }
+
+  .text-blue-dt {
+    color: var(--dt-blue);
+  }
+
+  .bg-red-dt {
+    background-color: var(--dt-red);
+  }
 
   /* Contenedor tipo Tesla para secciones Full-Screen */
   .section-container {
@@ -67,8 +77,15 @@
 
 /* Animación sutil para el cargado de drones */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-tesla {
