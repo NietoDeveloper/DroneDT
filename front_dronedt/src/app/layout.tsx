@@ -4,10 +4,7 @@ import { GeistSans, GeistMono } from "next/font/google"; // Corrected import nam
 import "./globals.css";
 import Navbar from "../components/Navbar"; // Import the Navbar component (adjust path if needed)
 
-const geistSans = GeistSans({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+
 
 
 
