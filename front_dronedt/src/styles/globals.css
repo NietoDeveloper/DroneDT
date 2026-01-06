@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Software DT Identity - Colores del Tema */
+  --gainsboro: #DCDCDC;
+  --gold: #FFD700;
+  --yellow-color: #FEB60D;
+  --heading-color: #000000;
+  --text-color: #000000;
+
+  /* Acentos Tesla/DroneDT */
+  --dt-blue: #004586;
+  --dt-red: #E81922;
+  
+  /* Sistema */
+  --background: var(--gainsboro);
+  --foreground: var(--text-color);
+}
+
+@layer base {
+  body {
+    /* Usamos gainsboro (#DCDCDC) de fondo como pediste en la estructura */
+    @apply bg-[family-name:var(--gainsboro)] text-black antialiased overflow-x-hidden;
+    background-color: var(--gainsboro);
+    font-feature-settings: "ss01", "ss02", "cv01", "cv03";
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight text-black;
+    color: var(--heading-color);
+  }
+}
+
+@layer components {
+  /* Botones estilo Tesla / Software DT */
+  /* El primario usa el color Yellow Color de tu identidad */
+  .btn-dt-primary {
+    @apply bg-[#FEB60D] text-black px-10 py-2 rounded-full font-semibold transition-all duration-300 hover:bg-[#FFD700] active:scale-95 shadow-sm;
+  }
+
+  .btn-tesla-dark {
+    @apply bg-black text-white px-10 py-2 rounded-full font-medium transition-all duration-300 hover:bg-gray-900 active:scale-95;
+  }
+
+  /* Clases de utilidad personalizadas para DroneDT */
+  .text-gold { color: var(--gold); }
+  .text-blue-dt { color: var(--dt-blue); }
+  .bg-red-dt { background-color: var(--dt-red); }
+  .bg-card-white { background-color: #FFFFFF; }
+
+  /* Contenedor tipo Tesla para secciones Full-Screen */
+  .section-container {
+    @apply min-h-screen w-full flex flex-col items-center justify-center py-20 snap-start;
+  }
+}
+
+/* Scrollbar minimalista estilo High-Tech */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gainsboro);
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full hover:bg-gray-600 transition-colors;
+}
+
+/* Animación sutil para el despliegue de Drones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-tesla {
+  animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
