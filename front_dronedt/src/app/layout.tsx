@@ -16,9 +16,3 @@ const geistMono = GeistMono({
 
 export const metadata: Metadata = {
   title: "DroneDT",
-  description: "E-commerce platform for manufacturing and selling drones in Colombia, inspired by Tesla.com",
-};
-
-export default function RootLayout({
-ssName={`${geistSans.variable} ${geistMono.variable} antialiased bg-main text-textColor flex flex-col min-h-screen`}
-      >
