@@ -32,3 +32,85 @@ body {
 
 
 }
+
+
+
+
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Paleta Base */
+  --background: #FFFFFF;
+  --foreground: #000000;
+  
+  /* Acentos Solicitados */
+  --dt-gold: #FFD700;
+  --dt-blue: #004586;
+  --dt-red: #E81922;
+  
+  /* Software DT Identity */
+  --gainsboro: #DCDCDC;
+  --yellow-color: #FEB60D;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-black antialiased overflow-x-hidden;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv03";
+  }
+
+  /* Títulos con estilo Tesla: Impactantes pero limpios */
+  h1, h2, h3, h4 {
+    @apply font-medium tracking-tight text-black;
+  }
+}
+
+@layer components {
+  /* Botones estilo Tesla (Bordes redondeados suaves o capsulares) */
+  .btn-tesla-primary {
+    @apply bg-black text-white px-10 py-2 rounded-full font-medium 
+           transition-all duration-300 hover:bg-opacity-80 active:scale-95;
+  }
+
+  .btn-tesla-secondary {
+    @apply bg-gray-100 text-black px-10 py-2 rounded-full font-medium 
+           transition-all duration-300 hover:bg-gray-200 active:scale-95;
+  }
+
+  /* Acentos específicos */
+  .border-gold { border-color: var(--dt-gold); }
+  .text-blue-dt { color: var(--dt-blue); }
+  .bg-red-dt { background-color: var(--dt-red); }
+
+  /* Contenedor tipo Tesla para secciones Full-Screen */
+  .section-container {
+    @apply h-screen w-full flex flex-col items-center justify-between py-20 snap-start;
+  }
+}
+
+/* Scrollbar minimalista */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
+
+/* Animación sutil para el cargado de drones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-tesla {
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
