@@ -28,8 +28,7 @@ h1, h2, h3, h4, h5, h6 {
   .drone-card {
     @apply bg-white rounded-xl shadow-lg border-t-4 border-royalBlue border-b-4 border-gold p-4 transition-all hover:scale-105;
   }
-  
-  /* Botón Principal (Azul Rey para contraste) */
+
   .btn-primary {
     @apply bg-royalBlue text-white font-bold py-2 px-6 rounded-full hover:bg-blue-700 transition-colors shadow-md;
   }
