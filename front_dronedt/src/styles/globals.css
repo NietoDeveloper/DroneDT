@@ -13,11 +13,7 @@
   --yellow-color: #FEB60D;
 }
 
-@layer base {
-  body {
-    @apply bg-white text-black antialiased overflow-x-hidden;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv03";
-  }
+
 
   /* Títulos con estilo Tesla: Impactantes pero limpios */
   h1,
