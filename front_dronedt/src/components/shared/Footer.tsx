@@ -46,7 +46,6 @@ const Footer: FC = () => {
             <Link href="/legal/cookies" className="hover:text-white transition-colors duration-200">Cookies</Link>
           </div>
 
-          {/* Project Tools/Integrations - As per project context */}
           <div className="flex flex-col space-y-2">
             <h3 className="text-white font-medium mb-2">Proyecto</h3>
             <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Next.js</a>
