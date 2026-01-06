@@ -23,7 +23,6 @@ const Footer: FC = () => {
             <Link href="/shop/servicios" className="hover:text-white transition-colors duration-200">Servicios</Link>
           </div>
 
-          {/* Support */}
           <div className="flex flex-col space-y-2">
             <h3 className="text-white font-medium mb-2">Soporte</h3>
             <Link href="/support/faq" className="hover:text-white transition-colors duration-200">FAQ</Link>
