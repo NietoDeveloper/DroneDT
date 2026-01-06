@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, ShoppingCart, ChevronDown, User } from 'lucide-react';
+import { Menu, X, ShoppingCart, ChevronDown } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -12,10 +12,10 @@ const Navbar: React.FC = () => {
   const cartCount: number = 0;
 
   const droneCategories = [
-    { name: 'Racing Drones', href: '/products/racing' },
-    { name: 'Photography Drones', href: '/products/photography' },
-    { name: 'Professional Drones', href: '/products/professional' },
-    { name: 'Accessories', href: '/products/accessories' },
+    { name: 'Drones de Carrera', href: '/products/racing' },
+    { name: 'Drones de Fotografía', href: '/products/photography' },
+    { name: 'Drones Profesionales', href: '/products/professional' },
+    { name: 'Accesorios', href: '/products/accessories' },
   ];
 
   return (
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
           </Link>
           <div className="h-6 w-[1px] bg-gainsboro mx-2"></div>
           <Link href="/login" className="text-sm font-medium hover:text-yellowColor transition-colors">
-            Login
+            Iniciar Sesión
           </Link>
           <Link 
             href="/register" 
@@ -124,8 +124,11 @@ const Navbar: React.FC = () => {
               Carrito ({cartCount})
             </Link>
             <div className="flex flex-col space-y-4 pt-4">
-              <Link href="/login" className="btn-dt-primary text-center" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/login" className="text-black font-semibold text-center py-2 border border-black rounded-full hover:bg-main hover:text-yellowColor transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Iniciar Sesión
+              </Link>
+              <Link href="/register" className="bg-black text-white px-5 py-2 rounded-full text-center font-semibold hover:bg-gray-800 transition-all active:scale-95" onClick={() => setIsMenuOpen(false)}>
+                Registro
               </Link>
             </div>
           </div>
