@@ -31,7 +31,6 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-t way to ds to use the [Verc
 
 
 drone-dt/  ← Raíz del monorepo
