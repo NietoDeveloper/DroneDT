@@ -17,9 +17,9 @@ const Footer: FC = () => {
 
           <div className="flex flex-col space-y-2">
             <h3 className="text-white font-medium mb-2">Tienda</h3>
-            <Link href="/shop/drones" className="hover:text-white transition-colors duration-200">Drones</Link>
-            <Link href="/shop/accesorios" className="hover:text-white transition-colors duration-200">Accesorios</Link>
-            <Link href="/shop/servicios" className="hover:text-white transition-colors duration-200">Servicios</Link>
+            <Link href="/products/drones" className="hover:text-white transition-colors duration-200">Drones</Link>
+            <Link href="/products/accesorios" className="hover:text-white transition-colors duration-200">Accesorios</Link>
+            <Link href="/services" className="hover:text-white transition-colors duration-200">Servicios</Link>
           </div>
 
           <div className="flex flex-col space-y-2">
@@ -43,7 +43,7 @@ const Footer: FC = () => {
           </div>
 
           <div className="flex flex-col space-y-2">
-            <h3 className="text-white font-medium mb-2">Proyecto</h3>
+            <h3 className="text-white font-medium mb-2">Tecnologías</h3>
             <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Next.js</a>
             <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Node.js</a>
             <a href="https://react.dev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">React</a>
@@ -59,10 +59,10 @@ const Footer: FC = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-6">
           <div className="flex space-x-6 mb-4 md:mb-0">
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">X (Twitter)</a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Facebook</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Instagram</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">YouTube</a>
+            <a href="https://twitter.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">X (Twitter)</a>
+            <a href="https://facebook.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Facebook</a>
+            <a href="https://instagram.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Instagram</a>
+            <a href="https://youtube.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">YouTube</a>
           </div>
           <div className="flex space-x-6">
             <select className="bg-transparent border-none text-gray-400 hover:text-white cursor-pointer transition-colors duration-200">
