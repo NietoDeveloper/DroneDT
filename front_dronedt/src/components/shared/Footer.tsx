@@ -79,7 +79,6 @@ const Footer: FC = () => {
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="text-center mt-6">
           <p>© 2026 DroneDT. Todos los derechos reservados.</p>
         </div>
