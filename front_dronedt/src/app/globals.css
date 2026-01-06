@@ -17,7 +17,7 @@ body {
 
 }
 
-@layer components {
+@layer {
 
   .drone-card {
     @apply bg-white rounded-xl shadow-lg border-t-border-gold p-4 transition-all hover:scale-105;
