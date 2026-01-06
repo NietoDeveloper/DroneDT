@@ -5,7 +5,7 @@ const Footer: FC = () => {
   return (
     <footer className="bg-black text-gray-400 text-sm font-light py-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-48">
       <div className="max-w-7xl mx-auto">
-        {/* Main links section - Responsive grid */}
+
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 mb-8">
 
           <div className="flex flex-col space-y-2">
