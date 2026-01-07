@@ -111,7 +111,7 @@ drone-dt/  ← Raíz del monorepo
 │   ├── components/
 │   │   ├── ui/        
 │   │   ├── layout/
-│   │   │   ├── Header.tsx  ← Navbar fixed, logo DroneDT, menú responsive (hamburguesa mobile)
+│   │   │   ├── Header.tsx  ←
 │   │   │   └── Footer.tsx  ← El que te di, con links a shop, soporte, etc.
 │   │   └── sections/    ← Hero, FeaturesDrones, Testimonials (animaciones sutiles)
 │   ├── lib/             ← Utils: API fetchers a /back/ (e.g., getDrones())
