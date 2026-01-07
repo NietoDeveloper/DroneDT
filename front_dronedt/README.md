@@ -118,11 +118,7 @@ ind, auth admin)
 │   ├── lib/             ← API fetchers a /back/ (con roles check)
 │   ├── styles/globals.css  ← Dark mode por default, moderno y limpio
 │   ├── next.config.js
-│   ├── tsconfig.json
-│   └── package.json     ← + bibliotecas como recharts o tanstack-table para datos
-├── shared/  ← Opcional: Paquetes compartidos (e.g., tipos TS, utils)
-│   ├── types/           ← Interfaces: IDrone, IUser (usado en front/back/panels)
-│   └── utils/           ← Funciones comunes: formatCurrency, validateEmail
+← Funciones comunes: formatCurrency, validateEmail
 ├── docker-compose.yml 
 ├── .gitignore           ← Ignora node_modules, .env, builds
 ├── README.md            ← Instrucciones: npm install, dev en cada carpeta
