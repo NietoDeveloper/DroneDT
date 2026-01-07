@@ -80,7 +80,7 @@ The current development phase focuses on the core functional modules required fo
 - **Operational Dashboard**: Specialized data cards for the administrative control panel.
 
 Project Status: Active Development  
-Platform: [DroneDT Web](https://softwaredt.vercel.app/)
+Platform: [DroneDT Web](https://dronedt.vercel.app/)
 
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
