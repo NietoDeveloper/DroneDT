@@ -109,7 +109,7 @@ drone-dt/  ← Raíz del monorepo
 │   │       ├── terminos/page.tsx
 │   │       └── cookies/page.tsx
 │   ├── components/
-│   │   ├── ui/          ← Reusables: Button, Card, Input (Tailwind variants)
+│   │   ├── ui/        
 │   │   ├── layout/
 │   │   │   ├── Header.tsx  ← Navbar fixed, logo DroneDT, menú responsive (hamburguesa mobile)
 │   │   │   └── Footer.tsx  ← El que te di, con links a shop, soporte, etc.
