@@ -1,84 +1,86 @@
 # DroneDT - Frontend
 
-Welcome to the frontend of DroneDT, a high-performance, world-class web application built with Next.js 15. This project serves as the interface for both the customer-facing shop and the specialized administrative control panel.
-
-## 🚀 Vision
-
-DroneDT is built with a commitment to excellence, aiming for the highest standards of software engineering. Our goal is to maintain a relentless development pace (100 commits/day) to achieve the top spot in the Colombian developer rankings and provide a seamless, enterprise-grade experience.
+DroneDT is a high-performance web application built with Next.js 15. It features a dual-interface architecture designed to handle a customer-facing storefront and a robust administrative control panel for internal management.
 
 ## 🛠 Tech Stack
 
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS (Custom "Software DT" Theme)
+- **Styling**: Tailwind CSS v4 (Custom "Software DT" Theme)
 - **Optimization**: React Compiler (Enabled)
-- **Components**: Modular architecture with a focus on scannability and performance.
+- **Architecture**: Modular component-based design with strict separation of concerns.
 
-## 🎨 Identity & Design
+## 🎨 Design System & Identity
 
-The UI follows the strict Software DT branding guidelines:
+The project implements a custom design language based on the Software DT identity, utilizing a high-contrast palette and Tesla-inspired UI elements.
 
-- **Primary Colors**: Gold (#FFD700), Yellow (#FEB60D)
-- **Background**: Gainsboro (#DCDCDC)
-- **Typography**: Heading & Text (#000000)
-- **Import Alias**: @/* points to the src/ directory.
+### Color Palette
+
+| Element     | Hex Code | Variable           |
+|-------------|----------|--------------------|
+| Primary     | #FFD700 | --color-gold       |
+| Accent      | #FEB60D | --color-yellow-color |
+| Background  | #DCDCDC | --color-gainsboro  |
+| Typography  | #000000 | --color-text-color |
+| Action Red  | #E81922 | --color-dt-red     |
+
+### Key UI Features
+
+- **Tesla-style Animations**: Custom fadeIn transitions with cubic-bezier easing.
+- **Modular Layers**: Clean separation between base styles, components (buttons, containers), and utilities.
+- **Responsive Design**: Optimized for seamless performance across all device types.
 
 ## 📂 Project Structure
-
-The frontend is logically separated to handle two distinct user flows:
 
 ```
 src/
 ├── app/
-│   ├── (shop)/         # Customer-facing storefront
-│   └── (admin)/        # Admin & Employee control panel
-├── components/         # Shared UI components
-├── styles/             # Global CSS and Tailwind configuration
-└── lib/                # Utilities and API services
+│   ├── (shop)/         # Customer-facing storefront flow
+│   └── (admin)/        # Admin & Employee control panel flow
+├── components/         # Atomic and molecular UI components
+├── lib/                # API services, hooks, and core logic
+├── styles/             # Tailwind v4 configuration and global CSS
+└── types/              # TypeScript definitions and interfaces
 ```
 
 ## ⚙️ Setup & Installation
 
 1. Clone the repository:
 
-   ```
+   ```bash
    git clone https://github.com/NietoDevelooper/drone-dt-front.git
    ```
 
 2. Install dependencies:
 
-   ```
+   ```bash
    npm install
    ```
 
-3. Environment Variables: Create a .env.local file and add your backend connection:
+3. Configure Environment:
+   Create a .env.local file in the root directory:
 
-   ```
-   NEXT_PUBLIC_API_URL=http://localhost:your-port
+   ```bash
+   NEXT_PUBLIC_API_URL=http://your-backend-api-url
    ```
 
-4. Run Development Server:
+4. Launch Development Server:
 
-   ```
+   ```bash
    npm run dev
    ```
 
-## 🎯 Roadmap to MVP (January 20th)
+## 🎯 MVP Development Roadmap
 
-To reach our production goal, the following modules are being prioritized:
+The current development phase focuses on the core functional modules required for production:
 
-- [ ] Appointments: Create and view appointments in the panel.
-- [ ] Appointment Status: Real-time adjustment of completed appointments.
-- [ ] Messaging System: Integrated chat buttons and messaging history.
-- [ ] Admin Dashboard: Final optimization of the control panel cards.
+- **Appointment Engine**: End-to-end flow for creating and managing service appointments.
+- **Status Management**: Real-time state updates for service fulfillment.
+- **Messaging Hub**: Integration of messaging triggers and communication history.
+- **Operational Dashboard**: Specialized data cards for the administrative control panel.
 
-## 📈 Performance & Commits
-
-We are currently on a 150+ day streak. This repository is the engine behind our goal to lead the national rankings. Every commit is a step toward engineering excellence worthy of the highest global standards.
-
-Developer: [NietoDevelooper](https://softwaredt.vercel.app/)  
-Location: Bogotá, Colombia  
-Status: Active Development
+Project Status: Active Development  
+Platform: [DroneDT Web](https://softwaredt.vercel.app/)
 
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
