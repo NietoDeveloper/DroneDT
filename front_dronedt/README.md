@@ -99,7 +99,7 @@ drone-dt/  ← Raíz del monorepo
 │   │   ├── layout.tsx  ← RootLayout que ya tienes (con Geist fonts, globals.css, metadata)
 │   │   ├── page.tsx    ← Home: Hero con drones, secciones de modelos, shop, etc. (minimalista, responsive 310px-1900px)
 │   │   ├── shop/
-│   │   │   ├── drones/page.tsx  ← Lista de drones (cards interactivas como modelos Tesla)
+│   │   │   ├── d
 │   │   │   ├── accesorios/page.tsx
 │   │   │   └── servicios/page.tsx
 │   │   ├── about/page.tsx
