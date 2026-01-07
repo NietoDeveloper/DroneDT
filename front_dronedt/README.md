@@ -113,11 +113,7 @@ drone-dt/  ← Raíz del monorepo
 ind, auth admin)
 │   ├── app/
 │   │   ├── layout.tsx   ← Layout con sidebar admin (inventario, ventas, usuarios)
-│   │   ├── page.tsx     ← Dashboard home: Metrics (ventas diarias, stock bajo)
-│   │   ├── inventario/page.tsx  ← Gestión drones/accesorios (CRUD forms)
-│   │   ├── ventas/page.tsx      ← Reportes, gráficos (usa Chart.js)
-│   │   ├── usuarios/page.tsx    ← Manage clientes/empleados
-│   │   └── configuracion/page.tsx  ← Settings app
+
 │   ├── components/      ← Específicos: AdminTable, InventoryForm
 │   ├── lib/             ← API fetchers a /back/ (con roles check)
 │   ├── styles/globals.css  ← Dark mode por default, moderno y limpio
