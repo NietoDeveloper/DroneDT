@@ -4,14 +4,17 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, ShoppingCart, ChevronDown } from 'lucide-react';
 
+/**
+ * Header Component - DroneDT
+ * Ajustado para eliminar errores de importación y alineado al esqueleto del proyecto.
+ */
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
-  // Lógica de carrito (Placeholder para tu integración futura)
+  // Lógica de carrito (Placeholder)
   const cartCount: number = 0;
 
-  // Rutas ajustadas al esqueleto DroneDT: front/app/shop/...
   const droneCategories = [
     { name: 'Drones de Carrera', href: '/shop/drones' },
     { name: 'Drones de Fotografía', href: '/shop/photography' },
@@ -23,7 +26,7 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 w-full bg-white border-b border-gainsboro z-50 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         
-        {/* Logo Estilo Software DT */}
+        {/* Logo - Identidad Software DT */}
         <Link href="/" className="text-2xl font-bold tracking-tighter text-black">
           DRONE<span className="text-yellowColor">DT</span>
         </Link>
@@ -41,12 +44,12 @@ const Header: React.FC = () => {
             </button>
 
             {isDropdownOpen && (
-              <div className="absolute top-16 left-0 bg-white border border-gainsboro shadow-xl py-2 w-56 animate-tesla">
+              <div className="absolute top-16 left-0 bg-white border border-gainsboro shadow-xl py-2 w-56">
                 {droneCategories.map((category) => (
                   <Link
                     key={category.name}
                     href={category.href}
-                    className="block px-4 py-3 text-sm text-black hover:bg-main hover:text-yellowColor transition-colors"
+                    className="block px-4 py-3 text-sm text-black hover:bg-[#DCDCDC] hover:text-[#FEB60D] transition-colors"
                   >
                     {category.name}
                   </Link>
@@ -60,7 +63,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
 
-        {/* Action Icons */}
+        {/* Icons & Auth */}
         <div className="hidden md:flex items-center space-x-5">
           <Link href="/cart" className="relative p-2 text-black hover:text-yellowColor transition-colors">
             <ShoppingCart size={22} />
@@ -76,13 +79,13 @@ const Header: React.FC = () => {
           </Link>
           <Link 
             href="/register" 
-            className="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition-all active:scale-95 shadow-lg"
+            className="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition-all active:scale-95 shadow-md"
           >
             Registro
           </Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Button */}
         <button
           className="md:hidden text-black p-2 outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -91,9 +94,9 @@ const Header: React.FC = () => {
         </button>
       </nav>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gainsboro absolute w-full left-0 shadow-2xl animate-tesla">
+        <div className="md:hidden bg-white border-t border-gainsboro absolute w-full left-0 shadow-2xl">
           <div className="px-6 py-8 flex flex-col space-y-6">
             <button
               className="text-xl font-bold flex items-center justify-between border-b border-gainsboro pb-2 outline-none"
@@ -125,7 +128,7 @@ const Header: React.FC = () => {
               Carrito ({cartCount})
             </Link>
             <div className="flex flex-col space-y-4 pt-4">
-              <Link href="/login" className="text-black font-semibold text-center py-3 border border-black rounded-full hover:bg-gainsboro transition-colors" onClick={() => setIsMenuOpen(false)}>
+              <Link href="/login" className="text-black font-semibold text-center py-3 border border-black rounded-full hover:bg-main transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Iniciar Sesión
               </Link>
               <Link href="/register" className="bg-black text-white py-3 rounded-full text-center font-semibold active:scale-95" onClick={() => setIsMenuOpen(false)}>
