@@ -84,7 +84,7 @@ admin-panel/
 │   │   ├── Dashboard.tsx
 │   │   ├── Appointments.tsx # Paso 1 & 2 del MVP
 │   │   ├── Inventory.tsx    # Gestión de drones fabricados
-│   │   └── Messaging.tsx    # Paso 3 del MVP: Historial e IA
+│   │   └── Messaging.tsx    # Historial e IA
 │   └── context/          # Gestión de roles (Admin vs Empleado)
 ├── index.html
 └── tailwind.config.js    # Mismo diseño que la Shop para consistencia

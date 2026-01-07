@@ -32,6 +32,8 @@ The project implements a custom design language based on the Software DT identit
 
 ## 📂 Project Structure
 
+# Estructura del Monorepo DroneDT
+
 ```
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
