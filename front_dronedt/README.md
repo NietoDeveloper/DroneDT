@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with y
 
 You can start editing the page by modifying `app/page.tsx`. Thethe file.
  [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) (https://
