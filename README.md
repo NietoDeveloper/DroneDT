@@ -146,6 +146,9 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For questions or issues, contact the development team at [your-email@example.com].
 
 
+# Estructura del Monorepo DroneDT
+
+```
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
 │   ├── app/
@@ -228,3 +231,4 @@ drone-dt/  ← Raíz del monorepo
 ├── .gitignore           ← Ignora node_modules, .env, builds
 ├── README.md            ← Instrucciones: npm install, dev en cada carpeta
 └── package.json         ← Workspace config: "workspaces": ["front", "back", "panel-cliente", "panel-empleados"]
+```
