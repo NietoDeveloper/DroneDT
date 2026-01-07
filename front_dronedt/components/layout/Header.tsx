@@ -4,21 +4,18 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, ShoppingCart, ChevronDown } from 'lucide-react';
 
-/**
- * Header Component - DroneDT
- * Estructura profesional según el esquema de monorepo.
- */
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
-  // Estado del carrito (Próximamente conectado a tu Backend Express)
+  // Lógica de carrito (Placeholder para tu integración futura)
   const cartCount: number = 0;
 
+  // Rutas ajustadas al esqueleto DroneDT: front/app/shop/...
   const droneCategories = [
-    { name: 'Drones de Carrera', href: '/shop/drones?category=racing' },
-    { name: 'Drones de Fotografía', href: '/shop/drones?category=photography' },
-    { name: 'Drones Profesionales', href: '/shop/drones?category=professional' },
+    { name: 'Drones de Carrera', href: '/shop/drones' },
+    { name: 'Drones de Fotografía', href: '/shop/photography' },
+    { name: 'Drones Profesionales', href: '/shop/professional' },
     { name: 'Accesorios', href: '/shop/accesorios' },
   ];
 
@@ -26,19 +23,19 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 w-full bg-white border-b border-gainsboro z-50 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         
-        {/* Logo Software DT Identity */}
+        {/* Logo Estilo Software DT */}
         <Link href="/" className="text-2xl font-bold tracking-tighter text-black">
           DRONE<span className="text-yellowColor">DT</span>
         </Link>
 
-        {/* Desktop Menu - Tesla Style Minimalism */}
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <div
             className="relative h-16 flex items-center"
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
-            <button className="text-black hover:text-yellowColor flex items-center font-medium transition-colors cursor-pointer">
+            <button className="text-black hover:text-yellowColor flex items-center font-medium transition-colors cursor-pointer outline-none">
               Productos
               <ChevronDown size={16} className={`ml-1 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
@@ -61,13 +58,9 @@ const Header: React.FC = () => {
           <Link href="/shop/servicios" className="text-black hover:text-yellowColor font-medium transition-colors">
             Servicios
           </Link>
-          
-          <Link href="/about" className="text-black hover:text-yellowColor font-medium transition-colors">
-            Nosotros
-          </Link>
         </div>
 
-        {/* Action Icons & Auth */}
+        {/* Action Icons */}
         <div className="hidden md:flex items-center space-x-5">
           <Link href="/cart" className="relative p-2 text-black hover:text-yellowColor transition-colors">
             <ShoppingCart size={22} />
@@ -83,7 +76,7 @@ const Header: React.FC = () => {
           </Link>
           <Link 
             href="/register" 
-            className="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition-all active:scale-95"
+            className="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition-all active:scale-95 shadow-lg"
           >
             Registro
           </Link>
@@ -107,7 +100,7 @@ const Header: React.FC = () => {
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
             >
               Productos
-              <ChevronDown size={20} className={`transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+              <ChevronDown size={20} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             
             {isDropdownOpen && (
@@ -128,24 +121,14 @@ const Header: React.FC = () => {
             <Link href="/shop/servicios" className="text-xl font-bold border-b border-gainsboro pb-2" onClick={() => setIsMenuOpen(false)}>
               Servicios
             </Link>
-            
             <Link href="/cart" className="text-xl font-bold flex items-center" onClick={() => setIsMenuOpen(false)}>
               Carrito ({cartCount})
             </Link>
-
             <div className="flex flex-col space-y-4 pt-4">
-              <Link 
-                href="/login" 
-                className="text-black font-semibold text-center py-3 border border-black rounded-full hover:bg-main transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <Link href="/login" className="text-black font-semibold text-center py-3 border border-black rounded-full hover:bg-gainsboro transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Iniciar Sesión
               </Link>
-              <Link 
-                href="/register" 
-                className="bg-black text-white py-3 rounded-full text-center font-semibold active:scale-95"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <Link href="/register" className="bg-black text-white py-3 rounded-full text-center font-semibold active:scale-95" onClick={() => setIsMenuOpen(false)}>
                 Registro
               </Link>
             </div>
