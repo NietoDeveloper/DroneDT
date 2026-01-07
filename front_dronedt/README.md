@@ -101,8 +101,7 @@ drone-dt/  ← Raíz del monorepo
 │   │   │   ├── d
 │   │   │   ├── 
 │   │   │   └── 
-│   │   └── sections/    ← Hero, FeaturesDrones, Testimonials (animaciones sutiles)
-│   ├── lib/             ← Utils: API fetchers a /back/ (e.g., getDrones())
+
 │   ├── styles/
 │   │   └── globals.css  ← Tailwind base, bg-main, text-textColor, etc.
 │   ├── public/         
