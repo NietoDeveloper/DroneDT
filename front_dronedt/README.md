@@ -1,4 +1,3 @@
-This is a [Next.js](https://nextjs.org) 
 
 
 drone-dt/  ← Raíz del monorepo
