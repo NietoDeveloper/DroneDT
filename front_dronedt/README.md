@@ -114,8 +114,4 @@ ind, auth admin)
 │   ├── app/
 │   │   ├── layout.tsx   ← Layout con sidebar admin (inventario, ventas, usuarios)
 
-│   ├── components/      ← Específicos: AdminTable, InventoryForm
-│   ├── lib/             ← API fetchers a /back/ (con roles check)
-│   ├── styles/globals.css  ← Dark mode por default, moderno y limpio
-│   ├── next.config.js
 ← Funciones comun"panel-empleados"]
