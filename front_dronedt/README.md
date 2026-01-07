@@ -105,7 +105,7 @@ drone-dt/  ← Raíz del monorepo
 │   │   ├── contact/page.tsx
 │   │   └── legal/
 │   │       ├── terminos/page.tsx
-│   │       └── cookies/page.tsx
+│   │       └──
 │   ├── components/
 │   │   ├── ui/        
 │   │   ├── layout/
