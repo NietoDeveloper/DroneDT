@@ -101,15 +101,6 @@ drone-dt/  ← Raíz del monorepo
 │   │   │   ├── d
 │   │   │   ├── 
 │   │   │   └── 
-│   │   ├── about/page.tsx
-│   │   ├── contact/page.tsx
-│   │   └── lega
-│   │       └──
-│   ├── components/
-│   │   ├── ui/        
-│   │   ├── layout/
-│   │   │   ├── Header.tsx  ←
-│   │   │   └── Footer.tsx  ← El que te di, con links a shop, soporte, etc.
 │   │   └── sections/    ← Hero, FeaturesDrones, Testimonials (animaciones sutiles)
 │   ├── lib/             ← Utils: API fetchers a /back/ (e.g., getDrones())
 │   ├── styles/
