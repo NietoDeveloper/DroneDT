@@ -89,9 +89,3 @@ Platform: [DroneDT Web](https://dronedt.vercel.app/)
 ## NietoDeveloper
 
 ### 2026 
-
-
-
-
-drone-dt/  ← Raíz del monorepo
-
