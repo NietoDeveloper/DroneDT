@@ -95,12 +95,7 @@ Platform: [DroneDT Web](https://dronedt.vercel.app/)
 
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
-│   ├── app/
-│   │   ├── layout.tsx  ← RootLayouista, responsive 310px-1900px)
-│   │   ├── shop/
-│   │   │   ├── d
-│   │   │   ├── 
-│   │   │   └── 
+
 
 │   ├── styles/
 │   │   └── globals.css  ← Tailwind base, bg-main, text-textColor, etc.
