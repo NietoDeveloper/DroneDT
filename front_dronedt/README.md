@@ -96,8 +96,7 @@ Platform: [DroneDT Web](https://dronedt.vercel.app/)
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
 │   ├── app/
-│   │   ├── layout.tsx  ← RootLayout que ya tienes (con Geist fonts, globals.css, metadata)
-│   │   ├── page.tsx    ← Home: Hero con drones, secciones de modelos, shop, etc. (minimalista, responsive 310px-1900px)
+│   │   ├── layout.tsx  ← RootLayouista, responsive 310px-1900px)
 │   │   ├── shop/
 │   │   │   ├── d
 │   │   │   ├── 
