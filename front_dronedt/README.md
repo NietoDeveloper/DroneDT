@@ -1,5 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/
-
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://
 
 
 drone-dt/  ← Raíz del monorepo
