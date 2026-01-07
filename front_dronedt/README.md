@@ -105,21 +105,7 @@ drone-dt/  ← Raíz del monorepo
 │   └── package.json     ← Deps: next, react, tailwindcss, @types/react
 ├── back/  ← Backend (Express + Node.js, API REST para datos y lógica)
 │   ├── src/
-│   │   ├── index.ts     ← Server entry: app.listen(), rutas
-│   │   ├── routes/
-│   │   │   ├── drones.ts  ← Endpoints: /api/drones (CRUD, auth middleware)
-│   │   │   ├── users.ts   ← /api/users (registro, login, JWT)
-│   │   │   ├── orders.ts  ← /api/orders (e-commerce logic)
-│   │   │   └── admin.ts   ← Endpoints exclusivos para empleados
-│   │   ├── models/
-│   │   │   ├── Drone.ts   ← Mongoose schemas (nombre, precio, specs)
-│   │   │   ├── User.ts    ← Tipos: cliente/empleado
-│   │   │   └── Order.ts
-│   │   ├── controllers/   ← Lógica: createDrone, getOrders
-│   │   ├── middleware/    ← Auth, error handling
-│   │   └── config/
-│   │       └── db.ts      ← Conexión MongoDB Atlas (process.env.MONGO_URI)
-│   ├── .env.example     ← Vars: MONGO_URI, JWT_SECRET, PORT=4000
+
 │   ├── tsconfig.json
 │   ├── Dockerfile       ← Para containerizar: FROM node:20, COPY ., npm run build
 │   └── package.json     ← Deps: express, mongoose, dotenv, cors, jsonwebtoken
