@@ -1,36 +1,33 @@
-DroneDT - Frontend
+# DroneDT - Frontend
+
 Welcome to the frontend of DroneDT, a high-performance, world-class web application built with Next.js 15. This project serves as the interface for both the customer-facing shop and the specialized administrative control panel.
 
-🚀 Vision
+## 🚀 Vision
+
 DroneDT is built with a commitment to excellence, aiming for the highest standards of software engineering. Our goal is to maintain a relentless development pace (100 commits/day) to achieve the top spot in the Colombian developer rankings and provide a seamless, enterprise-grade experience.
 
-🛠 Tech Stack
-Framework: Next.js 15 (App Router)
+## 🛠 Tech Stack
 
-Language: TypeScript
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS (Custom "Software DT" Theme)
+- **Optimization**: React Compiler (Enabled)
+- **Components**: Modular architecture with a focus on scannability and performance.
 
-Styling: Tailwind CSS (Custom "Software DT" Theme)
+## 🎨 Identity & Design
 
-Optimization: React Compiler (Enabled)
-
-Components: Modular architecture with a focus on scannability and performance.
-
-🎨 Identity & Design
 The UI follows the strict Software DT branding guidelines:
 
-Primary Colors: Gold (#FFD700), Yellow (#FEB60D)
+- **Primary Colors**: Gold (#FFD700), Yellow (#FEB60D)
+- **Background**: Gainsboro (#DCDCDC)
+- **Typography**: Heading & Text (#000000)
+- **Import Alias**: @/* points to the src/ directory.
 
-Background: Gainsboro (#DCDCDC)
+## 📂 Project Structure
 
-Typography: Heading & Text (#000000)
-
-Import Alias: @/* points to the src/ directory.
-
-📂 Project Structure
 The frontend is logically separated to handle two distinct user flows:
 
-Plaintext
-
+```
 src/
 ├── app/
 │   ├── (shop)/         # Customer-facing storefront
@@ -38,51 +35,50 @@ src/
 ├── components/         # Shared UI components
 ├── styles/             # Global CSS and Tailwind configuration
 └── lib/                # Utilities and API services
-⚙️ Setup & Installation
-Clone the repository:
+```
 
-Bash
+## ⚙️ Setup & Installation
 
-git clone https://github.com/NietoDevelooper/drone-dt-front.git
-Install dependencies:
+1. Clone the repository:
 
-Bash
+   ```
+   git clone https://github.com/NietoDevelooper/drone-dt-front.git
+   ```
 
-npm install
-Environment Variables: Create a .env.local file and add your backend connection:
+2. Install dependencies:
 
-Fragmento de código
+   ```
+   npm install
+   ```
 
-NEXT_PUBLIC_API_URL=http://localhost:your-port
-Run Development Server:
+3. Environment Variables: Create a .env.local file and add your backend connection:
 
-Bash
+   ```
+   NEXT_PUBLIC_API_URL=http://localhost:your-port
+   ```
 
-npm run dev
-🎯 Roadmap to MVP (January 20th)
+4. Run Development Server:
+
+   ```
+   npm run dev
+   ```
+
+## 🎯 Roadmap to MVP (January 20th)
+
 To reach our production goal, the following modules are being prioritized:
 
-[ ] Appointments: Create and view appointments in the panel.
+- [ ] Appointments: Create and view appointments in the panel.
+- [ ] Appointment Status: Real-time adjustment of completed appointments.
+- [ ] Messaging System: Integrated chat buttons and messaging history.
+- [ ] Admin Dashboard: Final optimization of the control panel cards.
 
-[ ] Appointment Status: Real-time adjustment of completed appointments.
+## 📈 Performance & Commits
 
-[ ] Messaging System: Integrated chat buttons and messaging history.
-
-[ ] Admin Dashboard: Final optimization of the control panel cards.
-
-📈 Performance & Commits
 We are currently on a 150+ day streak. This repository is the engine behind our goal to lead the national rankings. Every commit is a step toward engineering excellence worthy of the highest global standards.
 
-Developer: NietoDevelooper
-
-Location: Bogotá, Colombia
-
+Developer: [NietoDevelooper](https://softwaredt.vercel.app/)  
+Location: Bogotá, Colombia  
 Status: Active Development
-
-
-
-
-
 
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
