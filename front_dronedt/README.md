@@ -98,8 +98,3 @@ drone-dt/  ← Raíz del monorepo
 
 
 │   ├── styles/
-│   │   └── globals.css  ← Tailwind base, bg-main, text-textColor, etc.
-
-│   │   ├── layout.tsx   ← Layout con sidebar admin (inventario, ventas, usuarios)
-
-← Funciones comun"panel-empleados"]
