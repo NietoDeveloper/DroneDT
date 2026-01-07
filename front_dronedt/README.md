@@ -99,19 +99,7 @@ drone-dt/  ← Raíz del monorepo
 
 │   ├── styles/
 │   │   └── globals.css  ← Tailwind base, bg-main, text-textColor, etc.
-│   ├── public/         
-│   ├── next.config.js   ← Config: images domains, etc.
-│   ├── tsconfig.json    ← TypeScript config
-│   └── package.json     ← Deps: next, react, tailwindcss, @types/react
-├── back/  ← Backend (Express + Node.js, API REST para datos y lógica)
-│   ├── src/
 
-│   ├──   ← Dashboard clientes (Next.js + React + Tailwind, auth required)
-│   ├── app/
-
-│   ├── components/      ← Compartidos con front si posible, o específicos (e.g., OrderCard)
-ind, auth admin)
-│   ├── app/
 │   │   ├── layout.tsx   ← Layout con sidebar admin (inventario, ventas, usuarios)
 
 ← Funciones comun"panel-empleados"]
