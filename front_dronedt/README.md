@@ -118,8 +118,4 @@ ind, auth admin)
 │   ├── lib/             ← API fetchers a /back/ (con roles check)
 │   ├── styles/globals.css  ← Dark mode por default, moderno y limpio
 │   ├── next.config.js
-← Funciones comunes: formatCurrency, validateEmail
-├── docker-compose.yml 
-├── .gitignore           ← Ignora node_modules, .env, builds
-├── README.md            ← Instrucciones: npm install, dev en cada carpeta
-└── package.json         ← Workspace config: "workspaces": ["front", "back", "panel-cliente", "panel-empleados"]
+← Funciones comun"panel-empleados"]
