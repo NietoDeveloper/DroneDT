@@ -111,11 +111,7 @@ drone-dt/  ← Raíz del monorepo
 │   └── package.json     ← Deps: express, mongoose, dotenv, cors, jsonwebtoken
 ├── panel-cliente/  ← Dashboard clientes (Next.js + React + Tailwind, auth required)
 │   ├── app/
-│   │   ├── layout.tsx   ← Layout con sidebar cliente (órdenes, perfil, tracking)
-│   │   ├── page.tsx     ← Dashboard home: Resumen órdenes recientes
-│   │   ├── ordenes/page.tsx  ← Lista órdenes (tabla responsive, filters)
-│   │   ├── perfil/page.tsx   ← Editar datos, historial
-│   │   └── soporte/page.tsx  ← Chat/FAQ personalizado
+
 │   ├── components/      ← Compartidos con front si posible, o específicos (e.g., OrderCard)
 │   ├── lib/             ← API fetchers a /back/ (con auth headers)
 │   ├── styles/globals.css  ← Similar a front, pero con theme dashboard (e.g., bg-gray-900)
