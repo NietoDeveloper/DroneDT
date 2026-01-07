@@ -14,9 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) 
-
-a)
+Open [http://localhost:3000](http://localhost:3000)
 
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
