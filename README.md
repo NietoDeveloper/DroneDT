@@ -25,70 +25,15 @@ The project supports local development with Docker for orchestration, and deploy
 - **Deployment**: Railway (backend), Vercel (frontend), Docker for local/dev environments.
 - **Other Tools**: JWT for auth, Mongoose for MongoDB schemas, and planned integrations for AI bot and AWS.
 
-## Project Structure
-The root directory is organized as follows:
-
-```
-dronedt-project/
-├── backend/              # Node.js + Express + TypeScript (Railway)
-├── frontend-shop/        # Next.js 15 + Tailwind (Vercel)
-├── admin-panel/          # React + Vite (Panel de Empleados/Admin)
-└── docker-compose.yml    # Orquestación de contenedores
-```
 
 ### 1. Backend (API Engine)
 Oriented towards scalability and security with SQL and NoSQL.
 
-```
-backend/
-├── src/
-│   ├── config/           # Conexión a MongoDB Atlas y AWS SDK
-│   ├── controllers/      # Lógica de Citas, Drones y Usuarios
-│   ├── models/           # Schemas (Mongoose para Drones / SQL para Pagos)
-│   ├── routes/           # Endpoints divididos por recursos
-│   ├── middlewares/      # Auth JWT y Validación con Zod
-│   ├── services/         # Integración de Bot IA y AWS S3 (imágenes)
-│   └── index.ts          # Punto de entrada
-├── Dockerfile            # Configuración para Railway
-├── .env                  # Variables (MONGO_URI, AWS_KEY, PORT)
-├── tsconfig.json
-└── package.json
-```
-
 ### 2. Frontend Shop (Tesla Style)
 Focus on SEO and premium user experience.
 
-```
-frontend-shop/
-├── public/               # Videos 4K de drones y assets
-├── src/
-│   ├── app/              # Next.js 15 App Router (Layouts y Pages)
-│   ├── components/       # UI (Navbar Tesla-style, Hero, Configurator)
-│   ├── hooks/            # Lógica de carrito y selección de servicios
-│   ├── services/         # Llamados a la API del backend
-│   ├── store/            # Estado global (Zustand/Redux) para el flujo de citas
-│   └── styles/           # Tailwind Config con colores Software DT
-├── next.config.js        # React Compiler activado
-└── tailwind.config.js    # Definición de Gold, Gainsboro y YellowColor
-```
-
 ### 3. Admin & Employee Panel
 High-efficiency dashboard for internal management.
-
-```
-admin-panel/
-├── src/
-│   ├── api/              # Instancia de Axios configurada
-│   ├── components/       # Tablas de citas, gráficos de ventas
-│   ├── pages/            
-│   │   ├── Dashboard.tsx
-│   │   ├── Appointments.tsx # Paso 1 & 2 del MVP
-│   │   ├── Inventory.tsx    # Gestión de drones fabricados
-│   │   └── Messaging.tsx    # Historial e IA
-│   └── context/          # Gestión de roles (Admin vs Empleado)
-├── index.html
-└── tailwind.config.js    # Mismo diseño que la Shop para consistencia
-```
 
 ## Installation & Setup
 1. **Clone the Repository**:
