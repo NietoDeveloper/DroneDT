@@ -25,8 +25,6 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 - [Next.js Documentation](https://nextjs.org/docs) - 
 - [Learn Next.js](https://nextjs.org/learn).
 
-You can check out 
-
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
 │   ├── app/
