@@ -105,7 +105,7 @@ drone-dt/  ← Raíz del monorepo
 │   ├── lib/             ← Utils: API fetchers a /back/ (e.g., getDrones())
 │   ├── styles/
 │   │   └── globals.css  ← Tailwind base, bg-main, text-textColor, etc.
-│   ├── public/          ← Assets: logos, imágenes drones (optimizadas)
+│   ├── public/         
 │   ├── next.config.js   ← Config: images domains, etc.
 │   ├── tsconfig.json    ← TypeScript config
 │   └── package.json     ← Deps: next, react, tailwindcss, @types/react
