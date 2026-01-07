@@ -17,7 +17,7 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) 
 
 
- [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing)
+ [`next/font`](https://nextjs.org/docs/app/building-yourg)
 
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
