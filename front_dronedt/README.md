@@ -106,10 +106,7 @@ drone-dt/  ← Raíz del monorepo
 ├── back/  ← Backend (Express + Node.js, API REST para datos y lógica)
 │   ├── src/
 
-│   ├── tsconfig.json
-│   ├── Dockerfile       ← Para containerizar: FROM node:20, COPY ., npm run build
-│   └── package.json     ← Deps: express, mongoose, dotenv, cors, jsonwebtoken
-├── panel-cliente/  ← Dashboard clientes (Next.js + React + Tailwind, auth required)
+│   ├──   ← Dashboard clientes (Next.js + React + Tailwind, auth required)
 │   ├── app/
 
 │   ├── components/      ← Compartidos con front si posible, o específicos (e.g., OrderCard)
