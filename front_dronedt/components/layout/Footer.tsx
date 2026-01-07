@@ -43,7 +43,7 @@ const Footer: FC = () => {
           </div>
 
           <div className="flex flex-col space-y-2">
-            <h3 className="text-white font-medium mb-2">Tecnologías</h3>
+            <h3 className="text-white font-medium mb-2">Tecnologías De Vanguardia</h3>
             <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Next.js</a>
             <a href="https://nodejs.org" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Node.js</a>
             <a href="https://react.dev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">React</a>
