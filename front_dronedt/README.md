@@ -100,7 +100,7 @@ drone-dt/  ← Raíz del monorepo
 │   │   ├── page.tsx    ← Home: Hero con drones, secciones de modelos, shop, etc. (minimalista, responsive 310px-1900px)
 │   │   ├── shop/
 │   │   │   ├── d
-│   │   │   ├── accesorios/page.tsx
+│   │   │   ├── 
 │   │   │   └── servicios/page.tsx
 │   │   ├── about/page.tsx
 │   │   ├── contact/page.tsx
