@@ -113,12 +113,7 @@ drone-dt/  ← Raíz del monorepo
 │   ├── app/
 
 │   ├── components/      ← Compartidos con front si posible, o específicos (e.g., OrderCard)
-│   ├── lib/             ← API fetchers a /back/ (con auth headers)
-│   ├── styles/globals.css  ← Similar a front, pero con theme dashboard (e.g., bg-gray-900)
-│   ├── next.config.js
-│   ├── tsconfig.json
-│   └── package.json     ← Similar a front, + bibliotecas como react-hook-form para forms
-├── panel-empleados/  ← Dashboard empleados (Next.js + React + Tailwind, auth admin)
+ind, auth admin)
 │   ├── app/
 │   │   ├── layout.tsx   ← Layout con sidebar admin (inventario, ventas, usuarios)
 │   │   ├── page.tsx     ← Dashboard home: Metrics (ventas diarias, stock bajo)
