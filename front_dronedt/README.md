@@ -82,6 +82,9 @@ The current development phase focuses on the core functional modules required fo
 Project Status: Active Development  
 Platform: [DroneDT Web](https://dronedt.vercel.app/)
 
+
+
+## Manuel Nieto
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
 │   ├── app/
@@ -160,7 +163,7 @@ drone-dt/  ← Raíz del monorepo
 ├── shared/  ← Opcional: Paquetes compartidos (e.g., tipos TS, utils)
 │   ├── types/           ← Interfaces: IDrone, IUser (usado en front/back/panels)
 │   └── utils/           ← Funciones comunes: formatCurrency, validateEmail
-├── docker-compose.yml   ← Para dev local: services para back (con Mongo), front, panels
+├── docker-compose.yml 
 ├── .gitignore           ← Ignora node_modules, .env, builds
 ├── README.md            ← Instrucciones: npm install, dev en cada carpeta
 └── package.json         ← Workspace config: "workspaces": ["front", "back", "panel-cliente", "panel-empleados"]
