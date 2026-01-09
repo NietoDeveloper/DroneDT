@@ -8,7 +8,7 @@ const DRONES_DATA = [
     name: 'DT-Pro Phantom',
     description: 'Precisión quirúrgica para cinematografía aérea.',
     image: '/images/drones/drone-1.webp', // Asegúrate de que este archivo exista
-    price: '2.499 USD'
+
   },
 
 
