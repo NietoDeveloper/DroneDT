@@ -30,7 +30,7 @@ export default function FeaturesDrones() {
           <div className="h-1 w-24 bg-yellowColor mx-auto"></div>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      
           {DRONES_DATA.map((drone) => (
             <div 
               key={drone.id} 
