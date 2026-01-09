@@ -27,7 +27,6 @@ export default function FeaturesDrones() {
           <h2 className="text-4xl md:text-5xl font-bold text-headingColor mb-4 uppercase tracking-tighter">
             Nuestra Flota
           </h2>
-          <div className="h-1 w-24 bg-yellowColor mx-auto"><
-  
+          <div className="h-1 w-24 bg-yellowCol
 
       
