@@ -36,11 +36,7 @@ export default function FeaturesDrones() {
        
      
 
-             
-
-
-
-
+    
     </section>
   );
 }
