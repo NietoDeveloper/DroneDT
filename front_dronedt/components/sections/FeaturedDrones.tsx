@@ -57,7 +57,7 @@ export default function FeaturesDrones() {
                   <span className="text-xl font-bold text-yellowColor">{drone.price}</span>
                 </div>
 
-                <div className="flex gap-4 mt-8">
+            
                   <L
                     className="flex-1 bg-
           
