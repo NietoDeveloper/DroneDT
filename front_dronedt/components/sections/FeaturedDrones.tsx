@@ -60,7 +60,7 @@ export default function FeaturesDrones() {
             
           
                   </Link>
-                  <buttr-2 border-gold text-headingColor rounded-md font-bold hover:bg-gold transition-colors uppercase text-sm">
+                  <buttr-2nded-md font-bold hover:bg-gold transition-colors uppercase text-sm">
                     Reservar
                   </button>
                 </div>
