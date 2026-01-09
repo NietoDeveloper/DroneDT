@@ -58,9 +58,7 @@ export default function FeaturesDrones() {
                 </div>
 
             
-          
-                  </Link>
-                  <buttr-2nded-md font-b
+
                     Reservar
                   </button>
                 </div>
