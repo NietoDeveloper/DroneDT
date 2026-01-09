@@ -37,14 +37,7 @@ export default function FeaturesDrones() {
               className="group relative bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-200"
             >
               {/* Contenedor de Imagen */}
-              <div className="relative h-[400px] w-full bg-[#f8f8f8] overflow-hidden">
-                <Image
-                  src={drone.image}
-                  alt={drone.name}
-                  fill
-                  className="objec
-                />
-              </div>
+    
 
               {/* Información del Producto */}
               <div className="p-8">
