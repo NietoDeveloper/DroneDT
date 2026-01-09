@@ -58,8 +58,7 @@ export default function FeaturesDrones() {
                 </div>
 
                 <div className="flex gap-4 mt-8">
-                  <Link 
-                    href={`/shop/drones/${drone.id}`}
+                  <L
                     className="flex-1 bg-
           
                   </Link>
