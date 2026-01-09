@@ -20,4 +20,4 @@ const DRONES_DATA = [
 ];
 
 export default function FeaturesDrones() {
-  return (
+
