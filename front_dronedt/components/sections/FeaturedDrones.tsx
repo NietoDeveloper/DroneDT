@@ -31,7 +31,3 @@ export default function FeaturesDrones() {
         </header>
 
       
-   
-            <div 
-       
-
