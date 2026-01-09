@@ -17,7 +17,5 @@ const DRONES_DATA = [
     image: '/images/drones/drone-2.webp',
     price: '1.899 USD'
   }
-];
-
 
 
