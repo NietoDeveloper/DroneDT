@@ -40,7 +40,7 @@ export default function FeaturesDrones() {
 
 
 
-      </div>
+
     </section>
   );
 }
