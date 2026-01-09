@@ -57,13 +57,6 @@ export default function FeaturesDrones() {
                   <span className="text-xl font-bold text-yellowColor">{drone.price}</span>
                 </div>
 
-            
-
-                    Reservar
-                  </button>
-                </div>
-              </div>
-            </div>
           ))}
         </div>
       </div>
