@@ -21,10 +21,3 @@ const DRONES_DATA = [
 
 export default function FeaturesDrones() {
   return (
-    <section className="bg-main py-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
-
-   
-      
-
-      
