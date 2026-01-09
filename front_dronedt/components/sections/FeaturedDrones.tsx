@@ -58,8 +58,6 @@ export default function FeaturesDrones() {
                 </div>
 
             
-                  <L
-                    className="flex-1 bg-
           
                   </Link>
                   <buttr-2 border-gold text-headingColor rounded-md font-bold hover:bg-gold transition-colors uppercase text-sm">
