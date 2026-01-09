@@ -36,7 +36,7 @@ export default function FeaturesDrones() {
        
      
 
-                    <p className="text-gray-
+             
                   <span className="text-xl font-bold text-yellowColor">{drone.price}</span>
                 </div>
 
