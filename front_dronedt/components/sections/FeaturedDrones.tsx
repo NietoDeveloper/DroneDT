@@ -24,8 +24,7 @@ export default function FeaturesDrones() {
     <section className="bg-main py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <header className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-headingColor mb-4 uppercase tracking-tighter">
-            Nuest
+          <h2 className="text-4xl md:text-5xl font-bold text-headingColor mb-4 u
    
       
 
