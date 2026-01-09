@@ -34,7 +34,7 @@ export default function FeaturesDrones() {
    
             <div 
        
-              className="group relative bg-caverflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-200"
+             verflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-200"
             >
               {/* Contenedor de Imagen */}
     
