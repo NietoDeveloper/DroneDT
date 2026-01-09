@@ -17,7 +17,7 @@ const Home: FC = () => {
       
       {/* 1. HERO SECTION: Impacto Visual Inmediato */}
       <Hero 
-        title="Drone D T: Technologia Colombia"
+        title="Drone D T: Technologia Colombiana"
         subtitle="Fabricados con innovación, inspirados en el futuro. Explora nuestra línea de drones premium."
         ctaText="Descubre Modelos"
         ctaLink="/shop/drones"
