@@ -36,7 +36,6 @@ export default function FeaturesDrones() {
        
      
 
-                  <div<h3text-headingColor uppercase">{drone.name}</h3>
                     <p className="text-gray-600 mt-2 max-w-xs">{drone.description}</p>
                   </div>
                   <span className="text-xl font-bold text-yellowColor">{drone.price}</span>
