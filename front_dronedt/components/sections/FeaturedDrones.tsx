@@ -28,6 +28,6 @@ export default function FeaturesDrones() {
             Nuestra Flota
           </h2>
           <div className="h-1 w-24 bg-yellowColor mx-auto"></div>
-        </header>
+  
 
       
