@@ -6,8 +6,7 @@ const DRONES_DATA = [
   {
     id: 'dt-01',
     name: 'DT-Pro Phantom',
-    description: 'Precisión quirúrgica para cinematografía aérea.',
-    image: '/images/drones/drone-1.webp', // Asegúrate de que este archivo exista
+    description: 'Precisión / Asegúrate de que este archivo exista
 
   },
 
