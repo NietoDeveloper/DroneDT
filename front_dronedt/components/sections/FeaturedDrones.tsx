@@ -42,8 +42,7 @@ export default function FeaturesDrones() {
                   src={drone.image}
                   alt={drone.name}
                   fill
-                  className="object-contain p-8 group-hover:scale-110 transition-transform duration-700"
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="objec
                 />
               </div>
 
