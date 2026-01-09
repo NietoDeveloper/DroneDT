@@ -38,7 +38,7 @@ export default function FeaturesDrones() {
     
 
           
-              <div className="p-8">
+              <div classNam
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h3 className="text-2xl font-bold text-headingColor uppercase">{drone.name}</h3>
