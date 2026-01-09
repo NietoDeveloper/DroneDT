@@ -34,7 +34,7 @@ export default function FeaturesDrones() {
           {DRONES_DATA.map((drone) => (
             <div 
               key={drone.id} 
-              className="group relative bg-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-200"
+              className="group relative bg-caverflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-200"
             >
               {/* Contenedor de Imagen */}
     
