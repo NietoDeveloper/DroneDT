@@ -19,5 +19,5 @@ const DRONES_DATA = [
   }
 ];
 
-export default function 
+
 
