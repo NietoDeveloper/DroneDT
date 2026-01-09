@@ -62,7 +62,7 @@ export default function FeaturesDrones() {
                     href={`/shop/drones/${drone.id}`}
                     className="flex-1 bg-headingColor text-white text-center py-3 rounded-md font-bold hover:bg-opacity-90 transition-colors uppercase text-sm tracking-widest"
                   >
-                    Explorar
+          
                   </Link>
                   <button className="px-6 py-3 border-2 border-gold text-headingColor rounded-md font-bold hover:bg-gold transition-colors uppercase text-sm">
                     Reservar
