@@ -26,7 +26,7 @@ export default function FeaturesDrones() {
         <header className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-headingColor mb-4 uppercase tracking-tighter">
             Nuestra Flota
-          </h2>
+   
       
 
       
