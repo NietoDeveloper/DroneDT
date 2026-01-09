@@ -34,8 +34,7 @@ export default function FeaturesDrones() {
    
             <div 
        
-             
-              {/* Contenedor de Imagen */}
+     
     
 
               {/* Información del Producto */}
