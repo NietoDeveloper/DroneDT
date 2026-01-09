@@ -60,8 +60,7 @@ export default function FeaturesDrones() {
                 <div className="flex gap-4 mt-8">
                   <Link 
                     href={`/shop/drones/${drone.id}`}
-                    className="flex-1 bg-hd-md font-bold hover:bg-opacity-90 transition-colors uppercase text-sm tracking-widest"
-                  >
+                    className="flex-1 bg-hd-md font-bold hover:bg
           
                   </Link>
                   <buttr-2 border-gold text-headingColor rounded-md font-bold hover:bg-gold transition-colors uppercase text-sm">
