@@ -34,8 +34,7 @@ const ProductsMenu = () => {
               className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
             >
               <div className="">
-                <h2 className=>
-                </h2>
+
                 <p className="text-gray-600 mb-4">${product.price}</p>
                 <p className="text-sm text-gray-500 mb-4">{product.description}</p>
                 <button
