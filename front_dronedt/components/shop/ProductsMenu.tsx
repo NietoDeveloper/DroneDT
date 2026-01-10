@@ -35,7 +35,6 @@ const ProductsMenu = () => {
             >
               <div className="">
 
-                <p className">${product.price}</p>
                 <p className="text-sm text-gray-500 mb-4">{product.description}</p>
                 <button
                   onClick={addToCart}
