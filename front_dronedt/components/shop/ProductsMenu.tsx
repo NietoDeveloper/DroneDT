@@ -36,7 +36,7 @@ const ProductsMenu = () => {
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-48 object-cover sm:h-56 md:h-64"
+
               />
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2 text-gray-800 sm:text-2xl">
