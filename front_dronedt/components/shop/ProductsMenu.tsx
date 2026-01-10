@@ -8,7 +8,7 @@ const ProductsMenu = () => {
     const dummyProducts = Array.from({ length: 20 }, (_, index) => ({
       id: index + 1,
       name: `Drone Model ${index + 1}`
-      image: `https://, //
+
       description: 'High-performance drone wi
     }));
 
