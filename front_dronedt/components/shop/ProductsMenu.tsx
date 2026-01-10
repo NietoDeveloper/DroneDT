@@ -5,8 +5,7 @@ const ProductsMenu = () => {
   const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
-    const dummyProducts = Array.from({ length: 20 }, (_, index) => ({
-      id: index + 1,
+    const dummyProducts = Array.from({ l
       name: `Drone Model ${index + 1}`
 
       description: 'High-performance drone wi
