@@ -21,9 +21,7 @@ const ProductsMenu = () => {
     setCartCount(prev => prev + 1);
   };
 
-  return (
-    <div className="min-h-screen bg-gray-100">
-      <div classNa6xl">
+
 
         </h1>
 
