@@ -39,7 +39,7 @@ const ProductsMenu = () => {
           ))}
         </div>
       </div>
-        <button className="relative bg-green-600 text-white p-4 rounded-full shadow-lg hover:bg-green-700 transition duration-200">
+        <button className="relative bg-green-600-full shadow-lg hover:bg-green-700 transition duration-200">
           Carrito
           {cartCount > 0 && (
             <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-1">
