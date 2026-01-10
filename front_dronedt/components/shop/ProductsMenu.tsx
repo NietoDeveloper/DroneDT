@@ -4,7 +4,7 @@ const ProductsMenu = () => {
   const [products, setProducts] = useState([]);
   const [cartCount, setCartCount] = useState(0);
 
-  useEffect(() => {tch real a tu API en
+  useEffect(() => {tch real a 
     const dummyProducts = Array.from({ length: 20 }, (_, index) => ({
       id: index + 1,
       name: `Drone Model ${index + 1}`,
