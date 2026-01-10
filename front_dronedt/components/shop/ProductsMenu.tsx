@@ -38,7 +38,7 @@ const ProductsMenu = () => {
             </div>
           ))}
         </div>
-      </div>              {cartCount}
+      </div>        
             </span>
           )}
         </button>
