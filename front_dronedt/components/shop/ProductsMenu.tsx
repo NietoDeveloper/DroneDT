@@ -38,10 +38,7 @@ const ProductsMenu = () => {
             </div>
           ))}
         </div>
-      </div>
-
-            <>
-              {cartCount}
+      </div>              {cartCount}
             </span>
           )}
         </button>
