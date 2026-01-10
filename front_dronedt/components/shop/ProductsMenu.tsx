@@ -21,10 +21,6 @@ const ProductsMenu = () => {
     setCartCount(prev => prev + 1);
   };
 
-
-
-    </div>
-  );
 };
 
 export default ProductsMenu;
