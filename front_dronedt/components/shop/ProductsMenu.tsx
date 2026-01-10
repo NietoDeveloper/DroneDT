@@ -17,5 +17,3 @@ const ProductsMenu = () => {
     setProducts(dummyProducts.slice(0, 20)); // Asegura máximo 20
   }, []);
 
-CartCount(prev => prev + 1);
-  };
