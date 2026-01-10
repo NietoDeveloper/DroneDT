@@ -20,7 +20,3 @@ const ProductsMenu = () => {
   const addToCart = () => {
     setCartCount(prev => prev + 1);
   };
-
-};
-
-export default ProductsMenu;
