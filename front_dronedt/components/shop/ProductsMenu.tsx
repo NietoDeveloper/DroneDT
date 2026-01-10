@@ -36,10 +36,7 @@ const ProductsMenu = () => {
               <div className="">
               </div>
             </div>
-          ))}
-        </div>
-      </div>        
-            </span>
+
           )}
         </button>
       </div>
