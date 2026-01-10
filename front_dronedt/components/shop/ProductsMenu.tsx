@@ -38,7 +38,7 @@ const ProductsMenu = () => {
             </div>
 
           )}
-        </button>
+
       </div>
     </div>
   );
