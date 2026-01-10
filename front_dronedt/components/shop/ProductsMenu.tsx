@@ -4,7 +4,7 @@ const ProductsMenu = () => {
   const [products, setProducts] = useState([]);
   const [cartCount, setCartCount] = useState(0);
 
-  // Simulación de fetch de productos desde API (máximo 20)
+  // Simulación de fetch de productos desde API
   useEffect(() => {tch real a tu API en Express/Mongo
     const dummyProducts = Array.from({ length: 20 }, (_, index) => ({
       id: index + 1,
