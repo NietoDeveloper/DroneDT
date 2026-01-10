@@ -34,8 +34,6 @@ const ProductsMenu = () => {
               className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
             >
               <div className="">
-
-               </p>
               </div>
             </div>
           ))}
