@@ -8,6 +8,6 @@ const ProductsMenu = () => {
     const dummyProducts = Array.from({ l
       name: `Drone Model ${index + 1}`
 
-      description: 'High-performance drone wi
+      description: 'High-p
     }));
 
