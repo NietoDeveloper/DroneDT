@@ -38,7 +38,7 @@ const ProductsMenu = () => {
                 <p className="text-sm text-gray-500 mb-4">{product.description}</p>
                 <button
                   onClick={addToCart}
-                  ext-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200"
+                  ext-whiue-700 transition duration-200"
                 >
                   Añadir al Carrito
                 </button>
