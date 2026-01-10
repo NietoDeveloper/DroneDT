@@ -38,7 +38,7 @@ const ProductsMenu = () => {
                 <p className="text-sm text-gray-500 mb-4">{product.description}</p>
                 <button
                   onClick={addToCart}
-                  ext-whiue-700 transition duration-200"
+                  ext-whiue-700
                 >
                   Añadir al Carrito
                 </button>
