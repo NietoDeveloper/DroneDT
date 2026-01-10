@@ -23,10 +23,6 @@ const ProductsMenu = () => {
 
 
 
-        </h1>
-
-
-      </div>
     </div>
   );
 };
