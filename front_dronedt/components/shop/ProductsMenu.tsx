@@ -14,6 +14,4 @@ const ProductsMenu = () => {
       image: `https://via.placeholder.com/300x200?text=Drone+${index + 1}`, // Placeholder para imágenes
       description: 'High-performance drone with advanced features.',
     }));
-    setProducts(dummyProducts.slice(0, 20)); // Asegura máximo 20
-  }, []);
 
