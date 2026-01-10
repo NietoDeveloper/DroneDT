@@ -40,7 +40,7 @@ const ProductsMenu = () => {
         </div>
       </div>
 
-            <span hite text-xs font-bold">
+            <>
               {cartCount}
             </span>
           )}
