@@ -23,7 +23,7 @@ const ProductsMenu = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="connter mb-8 text-gray-800 md:text-5xl lg:text-6xl">
+      <div classNa6xl">
 
         </h1>
 
