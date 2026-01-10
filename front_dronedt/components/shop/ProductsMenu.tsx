@@ -27,12 +27,7 @@ const ProductsMenu = () => {
         <h1 className="text-4xl font-bold text-center mb-8 text-gray-800 md:text-5xl lg:text-6xl">
           Nuestros Drones
         </h1>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          {products.map(product => (
-            <div
 
-
-          )}
 
       </div>
     </div>
