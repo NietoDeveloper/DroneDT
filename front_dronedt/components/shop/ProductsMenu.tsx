@@ -32,9 +32,7 @@ const ProductsMenu = () => {
             <div
               key={product.id}
               className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
-            >
 
-            </div>
 
           )}
 
