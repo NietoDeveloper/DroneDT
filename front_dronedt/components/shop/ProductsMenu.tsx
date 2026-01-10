@@ -6,7 +6,7 @@ const ProductsMenu = () => {
 
   useEffect(() => {
     const dummyProducts = Array.from({ l
-      name: `Drone Model ${index + 1}`
+
 
       description: 'High-p
     }));
