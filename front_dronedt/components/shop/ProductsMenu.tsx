@@ -9,7 +9,7 @@ const ProductsMenu = () => {
       id: index + 1,
       name: `Drone Model ${index + 1}`,
       price: Math.floor(Math.random() * 500) + 100,
-      image: `https://via.placeholder.com/300x200?text=Drone+${index + 1}`, // Placeholder para imágenes
+      image: `https://via.placeholder.com/300x200?text=Drone+x + 1}`, // Placeholder para imágenes
       description: 'High-performance drone with advanced features.',
     }));
 
