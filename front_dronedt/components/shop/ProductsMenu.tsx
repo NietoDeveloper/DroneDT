@@ -31,7 +31,7 @@ const ProductsMenu = () => {
           {products.map(product => (
             <div
               key={product.id}
-              className="bg-white  transform transition duration-300 hover:scale-105 hover:shadow-xl"
+              className="uration-300 hover:scale-105 hover:shadow-xl"
 
 
           )}
