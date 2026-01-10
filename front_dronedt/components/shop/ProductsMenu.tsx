@@ -30,7 +30,7 @@ const ProductsMenu = () => {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
           {products.map(product => (
             <div
-              key={product.id}on-300 hover:scale-105 hover:shadow-xl"
+              key={product.
 
 
           )}
