@@ -35,7 +35,6 @@ const ProductsMenu = () => {
             >
               <img
                 src={product.image}
-                alt={product.name}
 
               />
               <div className="p-4">
