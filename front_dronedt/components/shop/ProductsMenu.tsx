@@ -33,10 +33,6 @@ const ProductsMenu = () => {
               key={product.id}
               className="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl"
             >
-              <img
-
-
-              />
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2 text-gray-800 sm:text-2xl">
                   {product.name}
