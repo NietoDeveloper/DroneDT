@@ -23,7 +23,7 @@ const ProductsMenu = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      <div className="contai-[310px]">xt-4xl font-bold text-center mb-8 text-gray-800 md:text-5xl lg:text-6xl">
+      <div className="connter mb-8 text-gray-800 md:text-5xl lg:text-6xl">
 
         </h1>
 
