@@ -39,8 +39,8 @@ const ProductsMenu = () => {
           ))}
         </div>
       </div>
-          { (
-            <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-1">
+
+            <span hite text-xs font-bold rounded-full px-2 py-1">
               {cartCount}
             </span>
           )}
