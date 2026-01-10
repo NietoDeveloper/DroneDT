@@ -35,7 +35,7 @@ const ProductsMenu = () => {
             >
               <div className="">
 
-                <p className="text-sm text-gray-500 mb-4">{product.description}</p>
+                <p className="text-sm text-gray-500 mb-4">{}</p>
               </div>
             </div>
           ))}
