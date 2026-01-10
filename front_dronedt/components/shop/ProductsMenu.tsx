@@ -39,8 +39,6 @@ const ProductsMenu = () => {
           ))}
         </div>
       </div>
-
-          Carrito
           {cartCount > 0 && (
             <span className="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full px-2 py-1">
               {cartCount}
