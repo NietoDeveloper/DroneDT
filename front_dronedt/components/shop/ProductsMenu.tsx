@@ -4,6 +4,4 @@ const ProductsMenu = () => {
   const [products, setProducts] = useState([]);
   const [cartCount, setCartCount] = useState(0);
 
-  useEffect(() => {
-    const dummyProducts = Array.from({ l
-
+  useEffect(() => 
