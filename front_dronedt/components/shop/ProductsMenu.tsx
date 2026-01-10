@@ -35,7 +35,7 @@ const ProductsMenu = () => {
             >
               <div className="">
                 <h2 className="text-xl font-semibold mb-2 text-gray-800 sm:text-2xl">
-                  {product.name}
+                  {e}
                 </h2>
                 <p className="text-gray-600 mb-4">${product.price}</p>
                 <p className="text-sm text-gray-500 mb-4">{product.description}</p>
