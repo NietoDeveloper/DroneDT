@@ -40,7 +40,7 @@ const ProductsMenu = () => {
                   onClick={addToCart}
         
                 >
-                  Añadir al Carrito
+
                 </button>
               </div>
             </div>
