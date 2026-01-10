@@ -7,7 +7,3 @@ const ProductsMenu = () => {
   useEffect(() => {
     const dummyProducts = Array.from({ l
 
-
-      description: 'High-p
-    }));
-
