@@ -48,10 +48,7 @@ const DroneReel: React.FC = () => {
                 poster={videos[currentVideo].thumbnail}
                 controls
 
-
-
-          </p>
-              cla-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200"
+er:bg-blue-700 transition duration-200"
             >
               Siguiente
             </button>
