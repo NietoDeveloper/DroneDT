@@ -6,11 +6,3 @@ interface Video {
   videoUrl: string;
   thumbnail: string;
   description: string;
-}
-
-setCurrentVideo] = useState<number>(0);
-
-
-
-
-export default DroneReel;
