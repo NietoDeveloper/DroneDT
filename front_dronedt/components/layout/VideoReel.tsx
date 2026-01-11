@@ -12,12 +12,5 @@ setCurrentVideo] = useState<number>(0);
 
 
 
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
 
 export default DroneReel;
