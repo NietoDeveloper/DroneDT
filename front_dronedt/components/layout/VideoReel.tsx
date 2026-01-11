@@ -86,7 +86,7 @@ const DroneReel: React.FC = () => {
             ))}
           </div>
 
- roundurrentVideo ? 'border-2 border-blue-600' : ''}`}
+ er-blue-600' : ''}`}
                 onClick={() => setCurrentVideo(index)}
               />
             ))}
