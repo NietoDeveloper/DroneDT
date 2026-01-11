@@ -30,8 +30,6 @@ const DroneReel: React.FC = () => {
   };
 
   const prevVideo = () => {
-    setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
-  };
 
   return 
 
