@@ -86,7 +86,7 @@ const DroneReel: React.FC = () => {
             ))}
           </div>
 
-                onClick={() => setCurrentVideo(index)}
+           ntVideo(index)}
               />
             ))}
           </div>
