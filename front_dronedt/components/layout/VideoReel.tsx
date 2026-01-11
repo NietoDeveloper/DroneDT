@@ -47,7 +47,6 @@ const DroneReel: React.FC = () => {
                 src={videos[currentVideo].videoUrl}
                 poster={videos[currentVideo].thumbnail}
 
-roll horizontal en móviles */}
           <div className="mt-6 w-full overflow-x-auto flex space-x-4 pb-4 sm:hidden">
             {videos.map((video, index) => (
               <img
