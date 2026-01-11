@@ -51,8 +51,7 @@ const DroneReel: React.FC = () => {
               >
                 Tu navegador no soporta el elemento de video.
               </video>
-            )}
-          </div>Name="mt-4 text-center text-gray-600 text-lg">
+            )}gray-600 text-lg">
             {videos[currentVideo]?.title}: {videos[currentVideo]?.description}
           </p>
               cla-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200"
