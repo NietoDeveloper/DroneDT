@@ -14,16 +14,7 @@ const DroneReel: React.FC = () => {
 
   // Simulación de fetch de videos desde API (máximo, digamos, 10 videos para un reel)
   useEffect(() => {
-    // En producción, reemplaza con fetch real a tu API en Express/Mongo
-    const dummyVideos = Array.from({ length: 10 }, (_, index) => ({
-      id: index + 1,
-      title: `Drone Flight ${index + 1}`,
-      videoUrl: `https://example.com/drone-video-${index + 1}.mp4`, // Placeholder para URLs de videos
-      thumbnail: `https://via.placeholder.com/300x169?text=Drone+Video+${index + 1}`, // Thumbnail placeholder
-      description: 'Impresionantes imágenes de drones en vuelo.',
-    }));
-    setVideos(dummyVideos);
-  }, []);
+
 
 
             ))}
