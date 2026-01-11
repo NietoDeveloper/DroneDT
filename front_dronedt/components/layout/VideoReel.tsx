@@ -33,10 +33,7 @@ const DroneReel: React.FC = () => {
     setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
   };
 
-  return (
-    <section className="py-12 bg-gray-100">
-      <div className="container mx-auto px-4 max-w-[1900px] min-w-[310px]">
-
+  return 
 
 
 
