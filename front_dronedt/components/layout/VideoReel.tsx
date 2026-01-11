@@ -34,9 +34,7 @@ const DroneReel: React.FC = () => {
 
 
 
-  
-            {videos.map((video, index) => (
-              <img
+
                 key={video.id}
                 src={video.thumbnail}
                 alt={video.title}
