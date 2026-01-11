@@ -8,7 +8,6 @@ interface Video {
   description: string;
 }
 
-setCurrentVideo] = useState<number>(0);
 
 
 
