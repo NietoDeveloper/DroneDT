@@ -31,14 +31,6 @@ const DroneReel: React.FC = () => {
 
 
 
-
-
-
-
-                key={video.id}
-                src={video.thumbnail}
-                alt={video.title}
-
             ))}
           </div>
         </div>
