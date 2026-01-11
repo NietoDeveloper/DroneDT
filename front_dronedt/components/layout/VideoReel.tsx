@@ -80,10 +80,6 @@ const DroneReel: React.FC = () => {
                 key={video.id}
                 src={video.thumbnail}
                 alt={video.title}
-                className={`w-32 h-18 object-cover rounded cursor-pointer ${index === currentVideo ? 'border-2 border-blue-600' : ''}`}
-                onClick={() => setCurrentVideo(index)}
-              />
-            ))}
 
             ))}
           </div>
