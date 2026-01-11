@@ -44,8 +44,7 @@ const DroneReel: React.FC = () => {
           <div className="w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
             {videos.length > 0 && (
               <video
-                src={videos[currentVideo].videoUrl}
-                poster={videos[currentVideo].thumbnail}
+
 
           <div className="mt-6 w-full overflow-x-auto flex space-x-4 pb-4 sm:hidden">
             {videos.map((video, index) => (
