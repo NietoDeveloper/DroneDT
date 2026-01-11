@@ -48,8 +48,7 @@ const DroneReel: React.FC = () => {
                 poster={videos[currentVideo].thumbnail}
                 controls
                 className="w-full h-full object-cover"
-              >
-                Tu navegador no soporta el elemento de video.
+              >elemento de video.
               </video>
 
             {videos[currentVideo]?.rrentVideo]?.description}
