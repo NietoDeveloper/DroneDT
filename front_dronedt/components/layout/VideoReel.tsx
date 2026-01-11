@@ -48,7 +48,7 @@ const DroneReel: React.FC = () => {
                 poster={videos[currentVideo].thumbnail}
                 controls
 
-er:bg-blue-700 transition duration-200"
+
             >
               Siguiente
             </button>
