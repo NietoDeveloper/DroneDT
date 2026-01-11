@@ -47,10 +47,6 @@ const DroneReel: React.FC = () => {
                 src={videos[currentVideo].videoUrl}
                 poster={videos[currentVideo].thumbnail}
 
-            >
-              Siguiente
-            </button>
-          </div>
 
           {/* Miniaturas para scroll horizontal en móviles */}
           <div className="mt-6 w-full overflow-x-auto flex space-x-4 pb-4 sm:hidden">
