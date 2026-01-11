@@ -13,12 +13,7 @@ ch de videos desde API (máximo, digamos, 10 videos para un reel)
 
 
 
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+
 };
 
 export default DroneReel;
