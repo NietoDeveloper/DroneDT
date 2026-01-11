@@ -86,8 +86,7 @@ const DroneReel: React.FC = () => {
             ))}
           </div>
 
-              <img
-                key={video.id}
+                      key={video.id}
                 src={video.thumbnail}
                 alt={video.title}
                 c-full h-32 object-cover rounded cursor-pointer ${index === currentVideo ? 'border-2 border-blue-600' : ''}`}
