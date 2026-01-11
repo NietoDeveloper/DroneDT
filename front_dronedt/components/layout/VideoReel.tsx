@@ -86,8 +86,7 @@ const DroneReel: React.FC = () => {
             ))}
           </div>
 
-          {/* Grid de miniaturas para desktops */}
-          <div classo, index) => (
+          {/* Grid de mi
               <img
                 key={video.id}
                 src={video.thumbnail}
