@@ -86,7 +86,7 @@ const DroneReel: React.FC = () => {
             ))}
           </div>
 
-           ntVideo(index)}
+
               />
             ))}
           </div>
