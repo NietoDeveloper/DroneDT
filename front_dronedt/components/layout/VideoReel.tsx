@@ -84,10 +84,7 @@ const DroneReel: React.FC = () => {
                 onClick={() => setCurrentVideo(index)}
               />
             ))}
-          </div>
 
-
-              />
             ))}
           </div>
         </div>
