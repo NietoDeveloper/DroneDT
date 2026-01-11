@@ -13,12 +13,3 @@ interface Video {
 
 
 
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default DroneReel;
