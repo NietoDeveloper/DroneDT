@@ -6,4 +6,4 @@ interface Video {
   videoUrl: string;
   thumbnail: string;
   description: string;
-}
+
