@@ -59,7 +59,7 @@ const DroneReel: React.FC = () => {
 
           {/* Controles de navegación */}
           <div className="flex justify-between w-full max-w-4xl mt-4">
-            <buttonsition duration-200"
+  
             >
               Anterior
             </button>
