@@ -8,11 +8,7 @@ interface Video {
   description: string;
 }
 
-const DroneReel: React.FC = () => {
-  const [videos, setVideos] = useState<Video[]>([]);
-  const [currentVideo, setCurrentVideo] = useState<number>(0);
-
-  // Simulación de fetch de videos desde API (máximo, digamos, 10 videos para un reel)
+ch de videos desde API (máximo, digamos, 10 videos para un reel)
   useEffect(() => {
 
 
