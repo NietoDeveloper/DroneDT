@@ -86,7 +86,6 @@ const DroneReel: React.FC = () => {
             ))}
           </div>
 
-          {/* Grid de mi
               <img
                 key={video.id}
                 src={video.thumbnail}
