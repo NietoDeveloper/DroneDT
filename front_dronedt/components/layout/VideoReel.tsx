@@ -67,7 +67,7 @@ const DroneReel: React.FC = () => {
             </button>
             <button
               onClick={nextVideo}
-              className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200"
+              cla-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200"
             >
               Siguiente
             </button>
