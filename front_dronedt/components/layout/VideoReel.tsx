@@ -25,11 +25,6 @@ const DroneReel: React.FC = () => {
     setVideos(dummyVideos);
   }, []);
 
-  const nextVideo = () => {
-    setCurrentVideo((prev) => (prev + 1) % videos.length);
-  };
-
-
 
             ))}
           </div>
