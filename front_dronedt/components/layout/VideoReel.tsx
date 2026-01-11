@@ -46,8 +46,6 @@ const DroneReel: React.FC = () => {
               <video
                 src={videos[currentVideo].videoUrl}
                 poster={videos[currentVideo].thumbnail}
-                controls
-
 
             >
               Siguiente
