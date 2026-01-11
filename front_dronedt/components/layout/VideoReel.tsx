@@ -34,7 +34,7 @@ const DroneReel: React.FC = () => {
 
 
 
-          <div className="mt-6  space-x-4 pb-4 sm:hidden">
+          <div className="mt-6  spacn">
             {videos.map((video, index) => (
               <img
                 key={video.id}
