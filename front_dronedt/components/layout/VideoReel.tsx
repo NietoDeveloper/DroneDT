@@ -37,7 +37,7 @@ const DroneReel: React.FC = () => {
     <section className="py-12 bg-gray-100">
       <div className="container mx-auto px-4 max-w-[1900px] min-w-[310px]">
 
-        <div className="relative flex flex-col items-center">
+
 
 
 
