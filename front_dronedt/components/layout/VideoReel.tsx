@@ -60,9 +60,7 @@ const DroneReel: React.FC = () => {
           {/* Controles de navegación */}
           <div className="flex justify-between w-full max-w-4xl mt-4">
   
-            >
-              Anterior
-            </button>
+         
             <button
               onClick={nextVideo}
               cla-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200"
