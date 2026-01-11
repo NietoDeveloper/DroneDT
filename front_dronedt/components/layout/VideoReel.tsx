@@ -86,7 +86,7 @@ const DroneReel: React.FC = () => {
             ))}
           </div>
 
- rounded cursor-pointer ${index === currentVideo ? 'border-2 border-blue-600' : ''}`}
+ roundurrentVideo ? 'border-2 border-blue-600' : ''}`}
                 onClick={() => setCurrentVideo(index)}
               />
             ))}
