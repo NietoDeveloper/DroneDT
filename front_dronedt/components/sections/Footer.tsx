@@ -43,7 +43,7 @@ const Footer: FC = () => {
           </div>
 
           <div className="flex flex-col space-y-2">
-            <h3 className="text-white font-medium mb-2">Tecnologías De Vanguardia</h3>
+            
            
            
           </div>
