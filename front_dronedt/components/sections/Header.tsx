@@ -13,7 +13,6 @@ const Header: React.FC = () => {
   return (
 
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gainsboro absolute w-full left-0 shadow-2xl">
           <div className="px-6 py-8 flex flex-col space-y-6">
