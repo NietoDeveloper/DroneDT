@@ -51,7 +51,7 @@ const Footer: FC = () => {
             <a href="https://expressjs.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Express</a>
             <a href="https://www.mongodb.com/atlas" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">MongoDB Atlas</a>
             <a href="https://railway.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Railway</a>
-            <a href="" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Vercel</a>
+            
 
           </div>
 
