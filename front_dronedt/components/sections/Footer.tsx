@@ -49,7 +49,6 @@ const Footer: FC = () => {
             <a href="https://react.dev" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">React</a>
             <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Tailwind CSS</a>
             <a href="https://expressjs.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Express</a>
-            oDB Atlas</a>
            
           </div>
 
