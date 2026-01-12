@@ -64,15 +64,9 @@ const Footer: FC = () => {
             <a href="https://instagram.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Instagram</a>
             <a href="https://youtube.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">YouTube</a>
           </div>
-          <div className="flex space-x-6">
->
-
-          </div>
-        </div>
-
-        <div className="text-center mt-6">
 
         </div>
+
       </div>
     </footer>
   );
