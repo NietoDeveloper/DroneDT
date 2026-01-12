@@ -14,37 +14,12 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 w-full bg-white border-b border-gainsboro z-50 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       
-
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          <div
-            <
-
-           
-                    key={category.name}
-                    href={category.href}
-                    className="block px-4 py-3 text-sm text-black hover:bg-[#DCDCDC] hover:text-[#FEB60D] transition-colors"
-                  >
-                    {category.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-
-          <Link href="/shop/servicios" className="text-black hover:text-yellowColor font-medium transition-colors">
-            Servicios
-          </Link>
-        </div>
-
-        {/* Icons & Auth */}
+ {/* Icons & Auth */}
         <div className="hidden md:flex items-center space-x-5">
           <Link href="/cart" className="relative p-2 text-black hover:text-yellowColor transition-colors">
             <ShoppingCart size={22} />
             {cartCount > 0 && (
-              <span className="absolute top-0 right-0 bg-yellowColor text-black text-[10px] font-bold px-1.5 py-0.5 rounded-full">
-                {cartCount}
-              </span>
+
             )}
           </Link>
           <div className="h-6 w-[1px] bg-gainsboro mx-2"></div>
