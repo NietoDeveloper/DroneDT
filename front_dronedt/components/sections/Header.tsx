@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
         <div className="hidden md:flex items-center space-x-5">
           <Link href="/cart" className="relative p-2 text-black hover:text-yellowColor transition-colors">
-            <ShoppingCart size={22} />
+    
             {cartCount > 0 && (
 
             )}
