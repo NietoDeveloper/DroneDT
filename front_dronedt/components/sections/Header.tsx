@@ -11,11 +11,7 @@ import { Menu, X, ShoppingCart, ChevronDown } from 'lucide-react';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   return (
-    <header className="fixed top-0 left-0 w-full bg-white border-b border-gainsboro z-50 shadow-sm">
 
-
-      
-      </nav>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
