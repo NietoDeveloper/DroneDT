@@ -34,7 +34,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       suppressHydrationWarning
     >
       <body
-        className="antialiased bg-main text-textColor flex flex-col min-h-screen font-sans"
+      
       >
         
 
