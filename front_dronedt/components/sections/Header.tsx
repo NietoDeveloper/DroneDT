@@ -21,14 +21,7 @@ const Header: React.FC = () => {
             {isDropdownOpen && (
               <div className="flex flex-col space-y-4 pl-4 border-l-2 border-yellowColor">
                 {droneCategories.map((category) => (
-                  <Link 
-           
-
-  
-
-                  >
-                    {category.name}
-                  </Link>
+                
                 ))}
               </div>
             )}
