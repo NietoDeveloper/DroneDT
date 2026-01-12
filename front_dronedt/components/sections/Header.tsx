@@ -16,7 +16,7 @@ const Header: React.FC = () => {
 
         <div className="hidden md:flex items-center space-x-5">
 
-          <div className="h-6 w-[1px] bg-gainsboro mx-2"></div>
+      
           <Link href="/login" className="text-sm font-medium hover:text-yellowColor transition-colors">
             Iniciar Sesión
           </Link>
