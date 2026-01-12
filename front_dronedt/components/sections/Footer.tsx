@@ -44,8 +44,7 @@ const Footer: FC = () => {
 
           <div className="flex flex-col space-y-2">
             <h3 className="text-white font-medium mb-2">Tecnologías De Vanguardia</h3>
-            <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Next.js</a>
-
+           
            
           </div>
 
