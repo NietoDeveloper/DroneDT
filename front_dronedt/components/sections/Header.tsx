@@ -16,7 +16,6 @@ const Header: React.FC = () => {
 
         </div>
 
-        {/* Mobile Button */}
         <button
           className="md:hidden text-black p-2 outline-none"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
