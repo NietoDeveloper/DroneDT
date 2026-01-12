@@ -50,9 +50,7 @@ const Footer: FC = () => {
             <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Tailwind CSS</a>
             <a href="https://expressjs.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Express</a>
             <a href="https://www.mongodb.com/atlas" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">MongoDB Atlas</a>
-            <a href="https://railway.app" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Railway</a>
-            
-
+           
           </div>
 
         </div>
