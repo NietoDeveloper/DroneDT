@@ -42,11 +42,6 @@ const Footer: FC = () => {
             <Link href="/legal/cookies" className="hover:text-white transition-colors duration-200">Cookies</Link>
           </div>
 
-          <div className="flex flex-col space-y-2">
-            
-           
-           
-          </div>
 
         </div>
 
