@@ -18,7 +18,7 @@ const Header: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <div
-            className="relative h-16 flex items-center"
+            
             onMouseEnter={() => setIsDropdownOpen(true)}
             onMouseLeave={() => setIsDropdownOpen(false)}
           >
