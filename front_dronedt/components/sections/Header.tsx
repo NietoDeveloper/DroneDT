@@ -31,7 +31,7 @@ const Header: React.FC = () => {
            
                     href={category.href} 
                     className="text-gray-600 text-lg"
-                    onClick={() => setIsMenuOpen(false)}
+
                   >
                     {category.name}
                   </Link>
