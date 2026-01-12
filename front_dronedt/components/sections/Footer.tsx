@@ -55,12 +55,6 @@ const Footer: FC = () => {
             <a href="https://www.docker.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Docker</a>
             <a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">AWS</a>
           </div>
-        </div>
-
-
-          
-
-          </div>
 
         </div>
 
