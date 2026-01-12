@@ -30,7 +30,7 @@ const Header: React.FC = () => {
                   <Link 
            
                     href={category.href} 
-                    className="text-gray-600 text-lg"
+  
 
                   >
                     {category.name}
