@@ -19,11 +19,7 @@ const Header: React.FC = () => {
 
             
             {isDropdownOpen && (
-              <div className="flex flex-col space-y-4 pl-4 border-l-2 border-yellowColor">
-                {droneCategories.map((category) => (
-                
-                ))}
-              </div>
+
             )}
 
             <Link href="/shop/servicios" className="text-xl font-bold border-b border-gainsboro pb-2" onClick={() => setIsMenuOpen(false)}>
