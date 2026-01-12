@@ -20,12 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {/* Header fijo con z-index superior */}
         <Header />
 
-        {/* Contenedor Principal:
-            - pt-16 para compensar el header fixed.
-            - max-w-[1900px] para monitores ultra-wide.
-            - min-w-[310px] para móviles antiguos.
-            - w-full para fluidez total.
-        */}
+
         <main className="flex-grow w-full max-w-[1900px] min-w-[310px] mx-auto overflow-x-hidden">
           {children}
         </main>
