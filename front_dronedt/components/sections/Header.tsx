@@ -10,12 +10,6 @@ import { Menu, X, ShoppingCart, ChevronDown } from 'lucide-react';
  */
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
-
-  const drone'/shop/drones' },
-    { name: 'Drones de Fotografía', href: '/shop/photography' },
-
-
   return (
     <header className="fixed top-0 left-0 w-full bg-white border-b border-gainsboro z-50 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
