@@ -12,7 +12,3 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   return (
 
-
-
-  );
-};
