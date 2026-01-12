@@ -5,20 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/sections/Footer"; // Importamos tu nuevo footer profesional
 
 
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-  display: "swap",
-});
 
-export const metadata: Metadata = {
-  title: "DroneDT | Elite Drone Solutions",
-  description: "Plataforma e-commerce de manufactura y servicios de drones en Colombia. Ingeniería de clase mundial.",
-};
-
-interface RootLayoutProps {
-  children: React.ReactNode;
-}
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
