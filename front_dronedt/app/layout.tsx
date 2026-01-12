@@ -4,11 +4,6 @@ import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/sections/Footer"; // Importamos tu nuevo footer profesional
 
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-  display: "swap",
-});
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
