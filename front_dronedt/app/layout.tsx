@@ -36,8 +36,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className="antialiased bg-main text-textColor flex flex-col min-h-screen font-sans"
       >
-        {/* Usamos el componente Header según tu estructura profesional */}
-        <Header />
+        
 
 
         <footer className="py-8 text-center text-xs border-t border-gainsboro bg-white/80 backdrop-blur-sm">
