@@ -18,7 +18,7 @@ const Header: React.FC = () => {
   const droneCategories = [
     { name: 'Drones de Carrera', href: '/shop/drones' },
     { name: 'Drones de Fotografía', href: '/shop/photography' },
-    { name: 'Drones Profesionales', href: '/shop/professional' },
+    { namef: '/shop/professional' },
     { name: 'Accesorios', href: '/shop/accesorios' },
   ];
 
