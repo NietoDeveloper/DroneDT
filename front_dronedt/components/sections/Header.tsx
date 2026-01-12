@@ -17,9 +17,7 @@ const Header: React.FC = () => {
         <div className="hidden md:flex items-center space-x-5">
 
       
-          <Link href="/login" className="text-sm font-medium hover:text-yellowColor transition-colors">
-    
-          </Link>
+
           <Link 
             href="/register" 
             className="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition-all active:scale-95 shadow-md"
