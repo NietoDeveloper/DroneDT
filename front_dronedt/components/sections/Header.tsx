@@ -20,7 +20,7 @@ const Header: React.FC = () => {
             
 
             <Link href="/cart" className="text-xl font-bold flex items-center" onClick={() => setIsMenuOpen(false)}>
-              Carrito ({cartCount})
+
             </Link>
             <div className="flex flex-col space-y-4 pt-4">
               <Link href="/login" className="text-black font-semibold text-center py-3 border border-black rounded-full hover:bg-main transition-colors" onClick={() => setIsMenuOpen(false)}>
