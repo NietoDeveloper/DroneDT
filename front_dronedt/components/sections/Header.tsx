@@ -18,9 +18,6 @@ const Header: React.FC = () => {
           <div className="px-6 py-8 flex flex-col space-y-6">
 
             
-            {isDropdownOpen && (
-
-            )}
 
             <Link href="/cart" className="text-xl font-bold flex items-center" onClick={() => setIsMenuOpen(false)}>
               Carrito ({cartCount})
