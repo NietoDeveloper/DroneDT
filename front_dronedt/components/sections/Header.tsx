@@ -18,7 +18,6 @@ const Header: React.FC = () => {
 
       
 
-            Registro
           </Link>
         </div>
 
