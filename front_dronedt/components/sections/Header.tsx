@@ -20,7 +20,7 @@ const Header: React.FC = () => {
               className="text-xl font-bold flex items-center justify-between border-b border-gainsboro pb-2 outline-none"
               onClick={() => s}
             >
-              Productos
+    
               <ChevronDown size={20} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
             
