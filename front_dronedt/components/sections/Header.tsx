@@ -22,9 +22,6 @@ const Header: React.FC = () => {
 
             )}
 
-            <Link href="/shop/servicios" className="text-xl font-bold border-b border-gainsboro pb-2" onClick={() => setIsMenuOpen(false)}>
-
-            </Link>
             <Link href="/cart" className="text-xl font-bold flex items-center" onClick={() => setIsMenuOpen(false)}>
               Carrito ({cartCount})
             </Link>
