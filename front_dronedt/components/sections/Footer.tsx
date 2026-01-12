@@ -62,7 +62,7 @@ const Footer: FC = () => {
             <a href="https://twitter.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">X (Twitter)</a>
             <a href="https://facebook.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Facebook</a>
             <a href="https://instagram.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Instagram</a>
-            <a href="https://youtube.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">YouTube</a>
+        te transition-colors duration-200">YouTube</a>
           </div>
 
         </div>
