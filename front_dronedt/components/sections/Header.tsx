@@ -14,9 +14,7 @@ const Header: React.FC = () => {
 
   const drone'/shop/drones' },
     { name: 'Drones de Fotografía', href: '/shop/photography' },
-    { name
-    { name: 'Accesorios', href: '/shop/accesorios' },
-  ];
+
 
   return (
     <header className="fixed top-0 left-0 w-full bg-white border-b border-gainsboro z-50 shadow-sm">
