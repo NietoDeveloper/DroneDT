@@ -39,9 +39,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
         {/* Usamos el componente Header según tu estructura profesional */}
         <Header />
 
-        <main className="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16">
-          {children}
-        </main>
 
         <footer className="py-8 text-center text-xs border-t border-gainsboro bg-white/80 backdrop-blur-sm">
           <div className="flex flex-col gap-2">
