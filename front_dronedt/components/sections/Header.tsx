@@ -18,10 +18,7 @@ const Header: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <div
-            <button className="text-black hover:text-yellowColor flex items-center font-medium transition-colors cursor-pointer outline-none">
-              Productos
-              <ChevronDown size={16} className={`ml-1 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
+            <
 
             {isDropdownOpen && (
               <div className="absolute top-16 left-0 bg-white border border-gainsboro shadow-xl py-2 w-56">
