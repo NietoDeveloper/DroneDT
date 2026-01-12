@@ -57,8 +57,7 @@ const Footer: FC = () => {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-6">
-          <div className="flex space-x-6 mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-6">>
           
 
           </div>
