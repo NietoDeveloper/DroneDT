@@ -18,10 +18,6 @@ const Header: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-8">
           <div
-            
-            onMouseEnter={() => setIsDropdownOpen(true)}
-            onMouseLeave={() => setIsDropdownOpen(false)}
-          >
             <button className="text-black hover:text-yellowColor flex items-center font-medium transition-colors cursor-pointer outline-none">
               Productos
               <ChevronDown size={16} className={`ml-1 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
