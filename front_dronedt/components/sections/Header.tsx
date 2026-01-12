@@ -18,7 +18,7 @@ const Header: React.FC = () => {
 
       
           <Link href="/login" className="text-sm font-medium hover:text-yellowColor transition-colors">
-            Iniciar Sesión
+    
           </Link>
           <Link 
             href="/register" 
