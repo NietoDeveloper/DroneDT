@@ -29,7 +29,7 @@ const Header: React.FC = () => {
                 {droneCategories.map((category) => (
                   <Link 
            
-                    href={category.href} 
+
   
 
                   >
