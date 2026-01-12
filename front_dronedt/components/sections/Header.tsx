@@ -14,12 +14,7 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 w-full bg-white border-b border-gainsboro z-50 shadow-sm">
 
 
-        <button
-          className="md:hidden text-black p-2 outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+      
       </nav>
 
       {/* Mobile Menu */}
