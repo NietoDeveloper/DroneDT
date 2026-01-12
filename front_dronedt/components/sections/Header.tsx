@@ -21,9 +21,7 @@ const Header: React.FC = () => {
               <Link href="/login" className="text-black font-semibold text-center py-3 border border-black rounded-full hover:bg-main transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Iniciar Sesión
               </Link>
-              <Link href="/"bg-black text-white py-3 rounded-full text-center font-semibold active:scale-95" onClick={() => setIsMenuOpen(false)}>
-   
-              </Link>
+
             </div>
           </div>
         </div>
