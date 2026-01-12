@@ -18,10 +18,6 @@ const Header: React.FC = () => {
 
       
 
-          <Link 
-            href="/register" 
-            className="bg-black text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-gray-800 transition-all active:scale-95 shadow-md"
-          >
             Registro
           </Link>
         </div>
