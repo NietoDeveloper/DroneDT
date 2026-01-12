@@ -43,7 +43,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="flex flex-col gap-2">
             <p className="font-semibold text-headingColor">Software DT</p>
             <p className="opacity-60">
-              © {new Date().getFullYear()} DroneDT. Todos los derechos reservados.
+             
             </p>
           </div>
         </footer>
