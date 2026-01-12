@@ -28,7 +28,7 @@ const Header: React.FC = () => {
               <div className="flex flex-col space-y-4 pl-4 border-l-2 border-yellowColor">
                 {droneCategories.map((category) => (
                   <Link 
-                    key={category.name} 
+           
                     href={category.href} 
                     className="text-gray-600 text-lg"
                     onClick={() => setIsMenuOpen(false)}
