@@ -16,13 +16,7 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gainsboro absolute w-full left-0 shadow-2xl">
           <div className="px-6 py-8 flex flex-col space-y-6">
-            <button
-              className="text-xl font-bold flex items-center justify-between border-b border-gainsboro pb-2 outline-none"
-              onClick={() => s}
-            >
-    
-              <ChevronDown size={20} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
-            </button>
+
             
             {isDropdownOpen && (
               <div className="flex flex-col space-y-4 pl-4 border-l-2 border-yellowColor">
