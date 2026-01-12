@@ -38,7 +38,7 @@ const Footer: FC = () => {
           <div className="flex flex-col space-y-2">
             <h3 className="text-white font-medium mb-2">Legal</h3>
             
-            <Link href="/legal/terminos" className="hover:text-white transition-colors duration-200">Términos</Link>
+transition-colors duration-200">Términos</Link>
             <Link href="/legal/cookies" className="hover:text-white transition-colors duration-200">Cookies</Link>
           </div>
 
