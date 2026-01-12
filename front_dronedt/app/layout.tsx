@@ -1,11 +1,30 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css"; 
-import Header from "@/components/layout/Header";
-import Footer from "@/components/sections/Footer"; // Importamos tu nuevo footer profesional
+// Ruta corregida: El archivo está en sections, no en layout
+import Header from "@/components/sections/Header";
+import Footer from "@/components/sections/Footer";
 
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
+  display: "swap",
+});
 
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
+  display: "swap",
+});
 
+export const metadata: Metadata = {
+  title: "DroneDT | Elite Drone Solutions",
+  description: "Plataforma e-commerce de manufactura y servicios de drones en Colombia. Ingeniería de clase mundial.",
+};
+
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
@@ -17,11 +36,20 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className="antialiased bg-main text-textColor flex flex-col min-h-screen font-sans selection:bg-yellowColor selection:text-headingColor"
       >
-        {/* Header fijo con z-index superior */}
+        {/* Header de DroneDT - Ubicado en components/sections */}
         <Header />
 
+        {/* Contenedor Principal:
+            - pt-16 o pt-20: Ajuste necesario para que el contenido no quede oculto bajo el Header fijo.
+            - max-w-[1900px]: Límite para pantallas Ultra-Wide.
+            - min-w-[310px]: Garantía para dispositivos móviles pequeños.
+            - mx-auto: Centrado horizontal en pantallas grandes.
+        */}
+        <main className="flex-grow w-full max-w-[1900px] min-w-[310px] mx-auto overflow-x-hidden pt-16">
+          {children}
+        </main>
 
-fesional que ajustamos anteriormente */}
+        {/* Footer Profesional de DroneDT */}
         <Footer />
       </body>
     </html>
