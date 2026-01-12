@@ -15,10 +15,7 @@ const Header: React.FC = () => {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
         <div className="hidden md:flex items-center space-x-5">
-          <Link href="/cart" className="relative p-2 text-black hover:text-yellowColor transition-colors">
-    
-     
-          </Link>
+
           <div className="h-6 w-[1px] bg-gainsboro mx-2"></div>
           <Link href="/login" className="text-sm font-medium hover:text-yellowColor transition-colors">
             Iniciar Sesión
