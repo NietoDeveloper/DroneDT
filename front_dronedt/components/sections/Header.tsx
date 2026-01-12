@@ -15,8 +15,7 @@ const Header: React.FC = () => {
   // Lógica de carrito (Placeholder)
   const cartCount: number = 0;
 
-  const droneCategories = [
-    { name: 'Drones de Carrera', href: '/shop/drones' },
+  const drone'/shop/drones' },
     { name: 'Drones de Fotografía', href: '/shop/photography' },
     { name
     { name: 'Accesorios', href: '/shop/accesorios' },
