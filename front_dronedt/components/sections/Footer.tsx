@@ -65,10 +65,7 @@ const Footer: FC = () => {
             <a href="https://youtube.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">YouTube</a>
           </div>
           <div className="flex space-x-6">
-            <select className="bg-transparent border-none text-gray-400 hover:text-white cursor-pointer transition-colors duration-200">
-     
-
-            </select>
+>
 
           </div>
         </div>
