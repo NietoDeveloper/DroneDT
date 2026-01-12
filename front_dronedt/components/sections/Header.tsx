@@ -14,11 +14,6 @@ const Header: React.FC = () => {
     <header className="fixed top-0 left-0 w-full bg-white border-b border-gainsboro z-50 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
 
-        <div className="hidden md:flex items-center space-x-5">
-
-      
-
-          </Link>
         </div>
 
         {/* Mobile Button */}
