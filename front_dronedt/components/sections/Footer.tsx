@@ -60,7 +60,7 @@ const Footer: FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-6">
           <div className="flex space-x-6 mb-4 md:mb-0">
             <a href="https://twitter.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">X (Twitter)</a>
-            <a href="https://facebook.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Facebook</a>
+
           </div>
 
         </div>
