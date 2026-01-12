@@ -18,7 +18,7 @@ const Header: React.FC = () => {
           <div className="px-6 py-8 flex flex-col space-y-6">
             <button
               className="text-xl font-bold flex items-center justify-between border-b border-gainsboro pb-2 outline-none"
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              onClick={() => s}
             >
               Productos
               <ChevronDown size={20} className={`transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} />
