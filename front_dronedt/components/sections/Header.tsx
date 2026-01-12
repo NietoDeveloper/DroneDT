@@ -20,10 +20,7 @@ const Header: React.FC = () => {
           <div
             <
 
-            {isDropdownOpen && (
-              <div className="absolute top-16 left-0 bg-white border border-gainsboro shadow-xl py-2 w-56">
-                {droneCategories.map((category) => (
-                  <Link
+           
                     key={category.name}
                     href={category.href}
                     className="block px-4 py-3 text-sm text-black hover:bg-[#DCDCDC] hover:text-[#FEB60D] transition-colors"
