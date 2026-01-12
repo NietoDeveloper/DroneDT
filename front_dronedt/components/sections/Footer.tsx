@@ -66,7 +66,7 @@ const Footer: FC = () => {
           </div>
           <div className="flex space-x-6">
             <select className="bg-transparent border-none text-gray-400 hover:text-white cursor-pointer transition-colors duration-200">
-              <option>Español</option>
+     
 
             </select>
 
