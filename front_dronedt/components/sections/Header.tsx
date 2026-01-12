@@ -18,7 +18,7 @@ const Header: React.FC = () => {
           <div className="px-6 py-8 flex flex-col space-y-6">
 
             <div className="flex flex-col space-y-4 pt-4">
-              <Link href="/login" c              </Link>
+      
 
             </div>
           </div>
