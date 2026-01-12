@@ -21,11 +21,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Header />
 
 
-        <main className="flex-grow w-full max-w-[1900px] min-w-[310px] mx-auto overflow-x-hidden">
-          {children}
-        </main>
-
-        {/* Footer profesional que ajustamos anteriormente */}
+fesional que ajustamos anteriormente */}
         <Footer />
       </body>
     </html>
