@@ -10,10 +10,7 @@ import { Menu, X, ShoppingCart, ChevronDown } from 'lucide-react';
  */
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
-  // Lógica de carrito (Placeholder)
-  const cartCount: number = 0;
 
   const drone'/shop/drones' },
     { name: 'Drones de Fotografía', href: '/shop/photography' },
