@@ -61,7 +61,6 @@ const Footer: FC = () => {
           <div className="flex space-x-6 mb-4 md:mb-0">
             <a href="https://twitter.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">X (Twitter)</a>
             <a href="https://facebook.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Facebook</a>
-            <a href="https://instagram.com/dronedt" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors duration-200">Instagram</a>
           </div>
 
         </div>
