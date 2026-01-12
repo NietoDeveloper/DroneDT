@@ -9,6 +9,4 @@ import { Menu, X, ShoppingCart, ChevronDown } from 'lucide-react';
  * Ajustado para eliminar errores de importación y alineado al esqueleto del proyecto.
  */
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  return (
 
