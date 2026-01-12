@@ -22,7 +22,7 @@ const Header: React.FC = () => {
                 Iniciar Sesión
               </Link>
               <Link href="/"bg-black text-white py-3 rounded-full text-center font-semibold active:scale-95" onClick={() => setIsMenuOpen(false)}>
-                Registro
+   
               </Link>
             </div>
           </div>
