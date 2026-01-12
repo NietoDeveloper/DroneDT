@@ -69,7 +69,7 @@ const Footer: FC = () => {
               <option>Español</option>
 
             </select>
-            <span>Colombia</span>
+            <span></span>
           </div>
         </div>
 
