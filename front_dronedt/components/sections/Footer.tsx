@@ -64,20 +64,7 @@ const Footer: FC = () => {
               <span>Express</span>
               <span>MongoDB</span>
               <span>Docker</span>
-              <span>Vercel</span>
-            </div>
-          </div>
-        </div>
 
-
-
-        {/* Copyright & Créditos */}
-        <div className="text-center mt-12 pt-8 border-t border-gray-900">
-
-
-        </div>
-      </div>
-    </footer>
   );
 };
 
