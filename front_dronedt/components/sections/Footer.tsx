@@ -89,9 +89,7 @@ const Footer: FC = () => {
 
         {/* Copyright & Créditos */}
         <div className="text-center mt-12 pt-8 border-t border-gray-900">
-          <p className="text-[10px] font-medium tracking-[0.4em] text-gray-500 uppercase">
-            © 2026 <span className="text-gold">DroneDT</span>. Ingeniería para un mundo conectado.
-          </p>
+
 
         </div>
       </div>
