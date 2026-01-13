@@ -120,7 +120,7 @@ const Header: React.FC = () => {
             <div className="h-[1px] bg-gainsboro w-full"></div>
 
             <Link href="/shop/servicios" className="text-2xl font-black text-headingColor uppercase tracking-tighter" onClick={() => setIsMenuOpen(false)}>
-              Servicios Especializados
+
             </Link>
           </div>
 
