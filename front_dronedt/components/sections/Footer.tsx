@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      setTime(now.toLocaleTimeString('es-CO', { 
+
 
 
        
