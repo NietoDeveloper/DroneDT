@@ -43,22 +43,6 @@ const Footer: FC = () => {
           {/* Columna: Paneles de Control (Arquitectura Separada) */}
           <div className="flex flex-col space-y-3">
             <h3 className="text-yellowColor font-bold text-sm uppercase tracking-[0.2em] mb-2">Accesos</h3>
-            <Link href="/panel/cliente" className="hover:text-white transition-colors text-xs uppercase font-medium">Panel Cliente</Link>
-            <Link href="/panel/empleados" className="hover:text-white transition-colors text-xs uppercase font-medium">Panel Operativo</Link>
-            <Link href="/admin" className="hover:text-white transition-colors text-xs uppercase font-medium font-bold text-gold/80">Administrador</Link>
-          </div>
 
-          {/* Columna: Legal */}
-          <div className="flex flex-col space-y-3">
-            <h3 className="text-yellowColor font-bold text-sm uppercase tracking-[0.2em] mb-2">Legal</h3>
-            <Link href="/legal/privacidad" className="hover:text-white transition-colors text-xs uppercase font-medium">Privacidad</Link>
-            <Link href="/legal/terminos" className="hover:text-white transition-colors text-xs uppercase font-medium">Términos</Link>
-          </div>
-
-
-              <span>Docker</span>
-
-  );
-};
 
 export default Footer;
