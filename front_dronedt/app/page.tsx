@@ -140,7 +140,7 @@ const Home: FC = () => {
       {/* Créditos finales de racha */}
       <div className="bg-white py-4 text-center opacity-20 hover:opacity-100 transition-opacity">
         <p className="text-[10px] font-black uppercase tracking-widest">
-          Build by Software DT | NietoDevelooper
+          Build by Software DT | NietoDeveloper
         </p>
       </div>
     </div>
