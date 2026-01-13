@@ -35,24 +35,6 @@ const Footer: React.FC = () => {
     <footer className="bg-white text-[#171a20] py-12 px-4 sm:px-8 border-t border-gainsboro">
       <div className="max-w-[1900px] mx-auto flex flex-col items-center">
         
-        {/* BOTONES DE ACCIÓN (ASISTENCIA Y COMPRA) */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-12 w-full justify-center max-w-2xl">
-          <button className="flex-1 flex items-center justify-center gap-2 bg-[#f4f4f4] hover:bg-[#e2e2e2] text-[#171a20] py-3 px-8 rounded-md font-bold uppercase text-[12px] tracking-widest transition-all transition-colors active:scale-95">
-            <Bot size={18} className="text-[#0041C2]" />
-            Asistencia IA
-          </button>
-          
-          <Link 
-            href="/shop/drones" 
-            className="flex-1 flex items-center justify-center gap-2 bg-[#393c41] hover:bg-[#171a20] text-white py-3 px-8 rounded-md font-bold uppercase text-[12px] tracking-widest transition-all active:scale-95"
-          >
-            <ShoppingBag size={18} className="text-[#FFD700]" />
-            Comprar Drone
-          </Link>
-
-
-
-        </nav>
 
         {/* INFO DE DESARROLLADOR & STATUS */}
         <div className="flex flex-col items-center space-y-2 opacity-40">
