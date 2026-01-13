@@ -91,9 +91,7 @@ const Header: React.FC = () => {
           </Link>
 
           <div className="hidden sm:flex items-center space-x-4">
-            <Link href="/login" className="text-xs font-black uppercase tracking-widest hover:text-yellowColor transition-colors">
-              Login
-            </Link>
+
             
 
          
