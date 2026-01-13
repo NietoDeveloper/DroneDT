@@ -69,20 +69,7 @@ const Footer: FC = () => {
           </div>
         </div>
 
-        {/* Barra Inferior - Social & Región */}
 
-          
-          </div>
-          
-          <div className="flex items-center space-x-6 text-[10px] font-bold uppercase tracking-widest bg-black/40 px-6 py-2 rounded-full border border-gray-800">
-            <select className="bg-transparent border-none focus:ring-0 cursor-pointer text-gold">
-              <option className="bg-headingColor">ES - COL</option>
-             
-            </select>
-            <span className="text-gainsboro/50">|</span>
-            <span>Bogotá, Colombia</span>
-          </div>
-        </div>
 
         {/* Copyright & Créditos */}
         <div className="text-center mt-12 pt-8 border-t border-gray-900">
