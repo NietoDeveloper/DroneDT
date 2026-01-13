@@ -19,6 +19,6 @@ const Footer: React.FC = () => {
     };
     updateTime();
     const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
+
   }, []);
 
