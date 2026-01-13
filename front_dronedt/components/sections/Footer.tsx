@@ -54,11 +54,7 @@ const Footer: React.FC = () => {
         {/* LINKS ESTILO TESLA (HORIZONTAL) */}
         <nav className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-8">
           {footerLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href}
-              className="text-[12px] font-bold text-[#5c5e62] hover:text-black transition-colors"
-            >
+
               {link.name}
             </Link>
           ))}
