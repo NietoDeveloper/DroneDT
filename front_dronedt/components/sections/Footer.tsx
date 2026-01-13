@@ -15,18 +15,6 @@ const Footer: FC = () => {
               DRONE<span className="text-yellowColor">DT</span>
             </h3>
             <p className="text-xs leading-relaxed opacity-60 uppercase tracking-widest">
-              Ingeniería aérea de vanguardia. Elevando los estándares de precisión en Colombia y el mundo.
-            </p>
-            <div className="flex space-x-4 pt-2">
-               {/* Iconos sociales simplificados con hover Gold */}
-               <Link href="/" className="hover:text-gold transition-colors">Inicio</Link>
-               <Link href="/about" className="hover:text-gold transition-colors">Nosotros</Link>
-            </div>
-          </div>
-
-          {/* Columna: Tienda */}
-          <div className="flex flex-col space-y-3">
-assName="text-yellowColor font-bold text-sm uppercase tracking-[0.2em] mb-2">Accesos</h3>
 
 
 export default Footer;
