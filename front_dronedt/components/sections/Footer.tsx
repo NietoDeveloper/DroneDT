@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
                </span>
              </div>
              <p className="text-[8px] font-bold text-[#0041C2]/50 uppercase tracking-[0.2em]">
-               Colombia Rank #1 Goal | World Class App
+               Colombia Rank #1 Committers.top | World Class App
              </p>
            </div>
         </div>
