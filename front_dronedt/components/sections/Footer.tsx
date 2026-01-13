@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
               {link.name}
             </Link>
           ))}
-          {/* Hora Dinámica */}
+
 
         </nav>
 
