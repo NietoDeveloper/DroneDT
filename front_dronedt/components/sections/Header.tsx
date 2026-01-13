@@ -75,7 +75,7 @@ const Header: React.FC = () => {
           
           {/* Link exclusivo para el Admin Panel si es empleado */}
           <Link href="/admin" className="text-headingColor/50 hover:text-gold font-bold uppercase text-[10px] tracking-widest transition-colors border border-gainsboro px-2 py-1 rounded">
-            Panel
+        
           </Link>
         </div>
 
