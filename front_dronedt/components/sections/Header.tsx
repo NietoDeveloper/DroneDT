@@ -117,11 +117,7 @@ const Header: React.FC = () => {
         <div className="p-8 flex flex-col h-full bg-main/30">
 
           <div className="mt-auto space-y-4 pb-12">
-            <Link 
-              href="/login" 
 
-             
-            >
               <User className="mr-2" size={20} /> 
             </Link>
 
