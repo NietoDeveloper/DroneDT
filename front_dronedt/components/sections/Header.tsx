@@ -120,7 +120,7 @@ const Header: React.FC = () => {
               <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Catálogo</p>
               <div className="grid grid-cols-1 gap-4">
                 {droneCategories.map((cat) => (
-                  <Link key={cat.name} href={cat.href} className="text-2xl font-black text-headingColor uppercase tracking-tighter" onClick={() => setIsMenuOpen(false)}>
+                  ck={() => setIsMenuOpen(false)}>
 
                   </Link>
                 ))}
