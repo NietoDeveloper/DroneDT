@@ -22,10 +22,3 @@ const Footer: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-
-  return (
-  
-  );
-};
-
-export default Footer;
