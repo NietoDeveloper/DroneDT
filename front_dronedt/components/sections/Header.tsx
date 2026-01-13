@@ -8,100 +8,146 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
+  // Definición de colores para reutilizar (Blue Rey: #0000FF o similar profundo)
+  const blueRey = "#0041C2"; 
+  const gold = "#FFD700";
+
+  const droneTypes = [
+    { name: 'Drones de Carrera', img: '/img/race-drone.png', href: '/shop/drones' },
+    { name: 'Fotografía Aérea', img: '/img/photo-drone.png', href: '/shop/photography' },
+    { name: 'Drones Profesionales', img: '/img/pro-drone.png', href: '/shop/professional' },
+    { name: 'Drones de Inspección', img: '/img/industrial-drone.png', href: '/shop/industrial' },
+  ];
+
+  const navLinks = [
+    { name: 'Accesorios', href: '/shop/accesorios' },
+    { name: 'Servicios', href: '/shop/servicios' },
+    { name: 'Demos', href: '/demos' },
+    { name: 'About', href: '/about' },
+    { name: 'Contacto', href: '/contact' },
+  ];
 
   return (
-    
-            className="px-4 py-2 rounded-md hover:bg-black/5 transition-colors uppercase text-xs tracking-widest font-bold"
+    <header 
+      className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${
+        activeCategory || isMenuOpen ? 'bg-white shadow-lg' : 'bg-transparent'
+      }`}
+      onMouseLeave={() => setActiveCategory(null)}
+    >
+      <nav className="max-w-[1900px] mx-auto px-8 h-20 flex items-center justify-between">
+        
+        {/* Logo - Botón Recargable al Inicio */}
+        <Link href="/" className="group flex items-center z-[110] outline-none">
+          <span className="text-3xl font-black tracking-tighter transition-transform group-active:scale-95">
+            <span style={{ color: blueRey }}>DRONE</span>
+            <span style={{ color: gold }}>DT</span>
+          </span>
+        </Link>
+
+        {/* Desktop Menu */}
+        <div className="hidden lg:flex items-center space-x-1">
+          <button 
+            onMouseEnter={() => setActiveCategory('drones')}
+            className="px-5 py-2 rounded-md font-bold uppercase text-xs tracking-widest transition-all duration-300 hover:text-white"
+            style={{ 
+                color: activeCategory || isMenuOpen ? '#000' : '#fff',
+                '--hover-bg': blueRey 
+            } as any}
+            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = blueRey)}
+            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
           >
             Drones
           </button>
-          {mainLinks.map((link) => (
+
+          {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
-              className="px-4 py-2 rounded-md hover:bg-black/5 transition-colors uppercase text-xs tracking-widest font-bold"
+              className="px-5 py-2 rounded-md font-bold uppercase text-xs tracking-widest transition-all duration-300 hover:text-white"
+              style={{ 
+                color: activeCategory || isMenuOpen ? '#000' : '#fff'
+              }}
+              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = blueRey)}
+              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
             >
               {link.name}
             </Link>
           ))}
         </div>
 
-        {/* Right Actions */}
-        <div className="hidden lg:flex items-center space-x-2">
-          {infoLinks.map((link) => (
-            <Link key={link.name} href={link.href} className="px-3 py-2 rounded-md hover:bg-black/5 transition-colors text-xs font-bold uppercase tracking-widest">
-              {link.name}
-            </Link>
-          ))}
-          <Link href="/cart" className="p-2 hover:bg-black/5 rounded-md transition-colors">
-            <ShoppingCart size={20} />
+        {/* Right Icons */}
+        <div className="hidden lg:flex items-center space-x-4">
+          <Link href="/cart" className="p-2 rounded-md transition-colors hover:text-white" 
+            style={{ color: activeCategory || isMenuOpen ? '#000' : '#fff' }}
+            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = blueRey)}
+            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}>
+            <ShoppingCart size={22} />
           </Link>
-          <Link href="/login" className="p-2 hover:bg-black/5 rounded-md transition-colors">
-            <User size={20} />
+          <Link href="/login" className="p-2 rounded-md transition-colors hover:text-white"
+            style={{ color: activeCategory || isMenuOpen ? '#000' : '#fff' }}
+            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = blueRey)}
+            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}>
+            <User size={22} />
           </Link>
-          <button className="p-2 hover:bg-black/5 rounded-md transition-colors">
-            <LogOut size={20} />
-          </button>
         </div>
 
-        {/* Mobile Menu Toggle */}
+        {/* Mobile Toggle (Hamburguesa) */}
         <button 
-          className="lg:hidden p-2 rounded-md hover:bg-black/5 transition-colors z-[110]"
+          className="lg:hidden p-2 rounded-md transition-all group z-[110]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          style={{ color: isMenuOpen ? blueRey : '#fff' }}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          {isMenuOpen ? (
+            <X size={30} style={{ color: blueRey }} />
+          ) : (
+            <div className="space-y-1.5 p-1">
+              <div className="w-8 h-1 transition-all group-hover:bg-[#FFD700]" style={{ backgroundColor: blueRey }}></div>
+              <div className="w-8 h-1 transition-all group-hover:bg-[#FFD700]" style={{ backgroundColor: blueRey }}></div>
+              <div className="w-8 h-1 transition-all group-hover:bg-[#FFD700]" style={{ backgroundColor: blueRey }}></div>
+            </div>
+          )}
         </button>
       </nav>
 
-      {/* --- MEGA MENU DESPLEGABLE (TESLA STYLE) --- */}
+      {/* Mega Menu Drones */}
       <div 
-        className={`absolute top-0 left-0 w-full bg-white border-b border-gainsboro transition-all duration-500 ease-in-out overflow-hidden z-[90] ${
-          activeCategory === 'drones' ? 'max-h-[500px] opacity-100 pt-20' : 'max-h-0 opacity-0'
+        className={`absolute top-0 left-0 w-full bg-white transition-all duration-500 ease-in-out overflow-hidden z-[90] border-b-4 ${
+          activeCategory === 'drones' ? 'max-h-[600px] opacity-100 pt-24' : 'max-h-0 opacity-0'
         }`}
+        style={{ borderColor: gold }}
       >
-        <div className="max-w-[1400px] mx-auto px-12 pb-16 grid grid-cols-4 gap-8">
+        <div className="max-w-[1500px] mx-auto px-12 pb-12 grid grid-cols-4 gap-8">
           {droneTypes.map((drone) => (
-            <Link 
-              key={drone.name} 
-              href={drone.href} 
-              className="group flex flex-col items-center text-center space-y-4"
-              onClick={() => setActiveCategory(null)}
-            >
-              <div className="w-full aspect-[16/10] relative overflow-hidden">
-                {/*  */}
-                <img 
-                  src={drone.img} 
-                  alt={drone.name} 
-                  className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
-                />
+            <Link key={drone.name} href={drone.href} className="group flex flex-col items-center space-y-4">
+              <div className="w-full aspect-video bg-main rounded-lg overflow-hidden border border-transparent group-hover:border-blue-600 transition-all">
+                <img src={drone.img} alt={drone.name} className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500" />
               </div>
-              <span className="text-black font-bold uppercase text-xs tracking-[0.2em] group-hover:border-b-2 border-yellowColor">
-                {drone.name}
-              </span>
+              <span className="text-black font-black uppercase text-xs tracking-widest group-hover:text-[#0041C2]">{drone.name}</span>
             </Link>
           ))}
         </div>
       </div>
 
-      {/* --- MOBILE FULLSCREEN MENU --- */}
+      {/* Mobile Menu */}
       <div className={`fixed inset-0 bg-white transition-transform duration-500 lg:hidden z-[100] ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col p-12 pt-24 space-y-6">
-          <p className="text-gray-400 text-[10px] font-black uppercase tracking-widest">Modelos</p>
+        <div className="flex flex-col p-10 pt-28 space-y-4">
+          <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4">Explorar DroneDT</p>
           {droneTypes.map((drone) => (
-            <Link key={drone.name} href={drone.href} className="text-2xl font-bold uppercase tracking-tighter" onClick={() => setIsMenuOpen(false)}>
+            <Link key={drone.name} href={drone.href} className="text-3xl font-black uppercase tracking-tighter hover:text-[#0041C2]" onClick={() => setIsMenuOpen(false)}>
               {drone.name}
             </Link>
           ))}
-          <div className="h-[1px] bg-gainsboro w-full my-4" />
-          {[...mainLinks, ...infoLinks].map((link) => (
-            <Link key={link.name} href={link.href} className="text-xl font-medium uppercase" onClick={() => setIsMenuOpen(false)}>
+          <div className="h-1 bg-gold w-16 my-4" />
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              href={link.href} 
+              className="text-xl font-bold uppercase transition-colors py-2 rounded-lg hover:bg-[#0041C2] hover:text-white px-4 -ml-4" 
+              onClick={() => setIsMenuOpen(false)}
+            >
               {link.name}
             </Link>
           ))}
-          <div className="flex space-x-6 pt-10">
-            <Link href="/cart" onClick={() => setIsMenuOpen(false)}><ShoppingCart size={24} /></Link>
-            <Link href="/login" onClick={() => setIsMenuOpen(false)}><User size={24} /></Link>
-          </div>
         </div>
       </div>
     </header>
