@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
         hour12: true 
       }));
     };
-    updateTime();
+
    
 
   }, []);
