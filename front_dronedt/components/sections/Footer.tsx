@@ -8,13 +8,7 @@ const Footer: React.FC = () => {
   const [time, setTime] = useState<string>("");
 
   useEffect(() => {
-    const updateTime = () => {
 
-
-
-       
-
-      }));
     };
 
    
