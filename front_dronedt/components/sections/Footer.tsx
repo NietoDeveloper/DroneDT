@@ -63,9 +63,7 @@ const Footer: React.FC = () => {
             </Link>
           ))}
           {/* Hora Dinámica */}
-          <span className="text-[12px] font-bold text-[#0041C2] border-l border-gainsboro pl-6">
-            BOGOTÁ, COL: {time}
-          </span>
+
         </nav>
 
         {/* INFO DE DESARROLLADOR & STATUS */}
