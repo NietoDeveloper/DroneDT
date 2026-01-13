@@ -43,17 +43,7 @@ const Header: React.FC = () => {
       
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-1">
-          <button 
-            onMouseEnter={() => setActiveCategory('drones')}
-            className="px-5 py-2 rounded-md font-bold uppercase text-xs tracking-widest transition-all duration-300 hover:text-white"
-            style={{ 
-                color: activeCategory || isMenuOpen ? '#000' : '#fff'
-            }}
-            onMouseOver={(e) => (e.currentTarget.style.backgroundColor = blueRey)}
-            onMouseOut={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-          >
-            Drones
-          </button>
+
 
           {navLinks.map((link) => (
             <Link 
