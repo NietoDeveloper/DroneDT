@@ -117,7 +117,7 @@ const Header: React.FC = () => {
         <div className="p-8 flex flex-col h-full bg-main/30">
 
             <div>
-              <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Catálogo</p>
+           
 
             </div>
 
