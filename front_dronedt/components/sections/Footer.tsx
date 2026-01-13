@@ -26,23 +26,7 @@ const Footer: FC = () => {
 
           {/* Columna: Tienda */}
           <div className="flex flex-col space-y-3">
-            <h3 className="text-yellowColor font-bold text-sm uppercase tracking-[0.2em] mb-2">Ecosistema</h3>
-            <Link href="/shop/drones" className="hover:text-white transition-colors text-xs uppercase font-medium">Modelos Drones</Link>
-            <Link href="/shop/accesorios" className="hover:text-white transition-colors text-xs uppercase font-medium">Componentes</Link>
-            <Link href="/shop/servicios" className="hover:text-white transition-colors text-xs uppercase font-medium">Servicios Técnicos</Link>
-          </div>
-
-          {/* Columna: Soporte */}
-          <div className="flex flex-col space-y-3">
-            <h3 className="text-yellowColor font-bold text-sm uppercase tracking-[0.2em] mb-2">Soporte</h3>
-            <Link href="/support/faq" className="hover:text-white transition-colors text-xs uppercase font-medium">FAQ</Link>
-            <Link href="/support/manuales" className="hover:text-white transition-colors text-xs uppercase font-medium">Manuales Vuelo</Link>
-            <Link href="/support/garantia" className="hover:text-white transition-colors text-xs uppercase font-medium">Garantía DT</Link>
-          </div>
-
-          {/* Columna: Paneles de Control (Arquitectura Separada) */}
-          <div className="flex flex-col space-y-3">
-            <h3 className="text-yellowColor font-bold text-sm uppercase tracking-[0.2em] mb-2">Accesos</h3>
+assName="text-yellowColor font-bold text-sm uppercase tracking-[0.2em] mb-2">Accesos</h3>
 
 
 export default Footer;
