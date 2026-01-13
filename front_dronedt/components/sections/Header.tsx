@@ -9,11 +9,6 @@ const Header: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
 
-  const infoLinks = [
-    { name: 'About', href: '/about' },
-    { name: 'Contacto', href: '/contact' },
-  ];
-
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-[100] transition-colors duration-300 ${
