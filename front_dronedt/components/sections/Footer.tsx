@@ -22,13 +22,6 @@ const Footer: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const footerLinks = [
-
- 
-
-
-
-  ];
 
   return (
   
