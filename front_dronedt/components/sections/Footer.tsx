@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
     const updateTime = () => {
       const now = new Date();
       setTime(now.toLocaleTimeString('es-CO', { 
-        hour: '2-digit', 
+
 
        
 
