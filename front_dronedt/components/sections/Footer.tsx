@@ -49,15 +49,7 @@ const Footer: React.FC = () => {
             <ShoppingBag size={18} className="text-[#FFD700]" />
             Comprar Drone
           </Link>
-        </div>
 
-        {/* LINKS ESTILO TESLA (HORIZONTAL) */}
-        <nav className="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-8">
-          {footerLinks.map((link) => (
-
-              {link.name}
-            </Link>
-          ))}
 
 
         </nav>
