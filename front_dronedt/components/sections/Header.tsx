@@ -142,13 +142,7 @@ const Header: React.FC = () => {
             >
               <User className="mr-2" size={20} /> Cuenta
             </Link>
-            <Link 
-              href="/register" 
-              className="flex items-center justify-center w-full py-4 bg-yellowColor text-headingColor font-black uppercase tracking-widest"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Comenzar Ahora
-            </Link>
+
           </div>
         </div>
       </div>
