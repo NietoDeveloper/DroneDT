@@ -119,7 +119,7 @@ const Header: React.FC = () => {
           <div className="mt-auto space-y-4 pb-12">
             <Link 
               href="/login" 
-             percase tracking-widest"
+
              
             >
               <User className="mr-2" size={20} /> 
