@@ -138,7 +138,7 @@ const Header: React.FC = () => {
             <Link 
               href="/login" 
               className="flex items-center justify-center w-full py-4 border-2 border-headingColor font-black uppercase tracking-widest"
-              onClick={() => setIsMenuOpen(false)}
+             
             >
               <User className="mr-2" size={20} /> Cuenta
             </Link>
