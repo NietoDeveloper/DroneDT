@@ -116,10 +116,6 @@ const Header: React.FC = () => {
       <div className={`fixed inset-0 bg-white z-40 transition-transform duration-500 md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ top: '64px' }}>
         <div className="p-8 flex flex-col h-full bg-main/30">
 
-          <div className="mt-auto space-y-4 pb-12">
-
-              
-            </Link>
 
           </div>
         </div>
