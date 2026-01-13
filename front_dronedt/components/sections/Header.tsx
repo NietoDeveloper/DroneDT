@@ -81,14 +81,7 @@ const Header: React.FC = () => {
 
         {/* Action Icons & Auth */}
         <div className="flex items-center space-x-3 sm:space-x-6">
-          <Link href="/cart" className="relative p-2 text-headingColor hover:text-yellowColor transition-transform active:scale-90">
-            <ShoppingCart size={24} strokeWidth={2.5} />
-            {cartCount > 0 && (
-              <span className="absolute top-0 right-0 bg-yellowColor text-headingColor text-[10px] font-black h-5 w-5 flex items-center justify-center rounded-full border-2 border-white">
-                {cartCount}
-              </span>
-            )}
-          </Link>
+
 
           </div>
         </div>
