@@ -25,8 +25,7 @@ const Footer: React.FC = () => {
   const footerLinks = [
     { name: 'DroneDT © 2026', href: '/' },
     { name: 'Privacidad y Legal', href: '/legal' },
-    { name: 'Contacto', href: '/contact' },
-    { name: 'Ecosistema', href: '/shop/drones' },
+
 
 
   ];
