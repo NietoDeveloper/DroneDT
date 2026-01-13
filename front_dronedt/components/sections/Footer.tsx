@@ -55,14 +55,7 @@ const Footer: FC = () => {
             <Link href="/legal/terminos" className="hover:text-white transition-colors text-xs uppercase font-medium">Términos</Link>
           </div>
 
-          {/* Columna: Stack Tecnológico (Optimizado para scannability) */}
-          <div className="flex flex-col space-y-2 col-span-1 sm:col-span-2 lg:col-span-1">
-            <h3 className="text-white font-bold text-sm uppercase tracking-[0.2em] mb-2">Stack DT</h3>
-            <div className="grid grid-cols-2 gap-x-4 gap-y-1 opacity-50 text-[10px] font-bold uppercase">
-              <span>Next.js 15</span>
-              <span>Node.js</span>
-              <span>Express</span>
-              <span>MongoDB</span>
+
               <span>Docker</span>
 
   );
