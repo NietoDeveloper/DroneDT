@@ -7,11 +7,4 @@ import { Bot, ShoppingBag } from 'lucide-react';
 const Footer: React.FC = () => {
   const [time, setTime] = useState<string>("");
 
-  useEffect(() => {
-
-    };
-
-   
-
-  }, []);
 
