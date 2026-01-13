@@ -36,10 +36,7 @@ const Header: React.FC = () => {
     >
       <nav className="max-w-[1900px] mx-auto px-8 h-20 flex items-center justify-between">
         
-        {/* LOGO - BOTÓN MAESTRO DE RECARGA ESTILO TESLA */}
-        <button 
-          onClick={() => window.location.href = '/'}
-          className="group flex items-center z-[110] outline-none border-none bg-transparent cursor-pointer transitio
+       
 
 
           {navLinks.map((link) => (
