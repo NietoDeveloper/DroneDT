@@ -39,10 +39,7 @@ const Header: React.FC = () => {
         {/* LOGO - BOTÓN MAESTRO DE RECARGA ESTILO TESLA */}
         <button 
           onClick={() => window.location.href = '/'}
-          className="group flex items-center z-[110] outline-none border-none bg-transparent cursor-pointer transition-all duration-500 ease-in-out hover:scale-110 hover:-translate-y-1"
-      
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex items-center space-x-1">
+          className="group flex items-center z-[110] outline-none border-none bg-transparent cursor-pointer transitio
 
 
           {navLinks.map((link) => (
