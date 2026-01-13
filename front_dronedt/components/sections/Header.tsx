@@ -94,10 +94,7 @@ const Header: React.FC = () => {
             <Link href="/login" className="text-xs font-black uppercase tracking-widest hover:text-yellowColor transition-colors">
               Login
             </Link>
-            <Link 
-              href="/register" 
-              className="bg-headingColor text-gold px-6 py-2.5 rounded-sm text-xs font-black uppercase tracking-widest hover:bg-yellowColor hover:text-headingColor transition-all shadow-[4px_4px_0px_0px_rgba(254,182,13,1)] active:translate-y-1 active:shadow-none"
-
+            
 
          
       
