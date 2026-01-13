@@ -119,7 +119,7 @@ const Header: React.FC = () => {
           <div className="mt-auto space-y-4 pb-12">
             <Link 
               href="/login" 
-              className="flex items-center justify-center w-full py-4 border-2 border-headingColor font-black uppercase tracking-widest"
+             percase tracking-widest"
              
             >
               <User className="mr-2" size={20} /> 
