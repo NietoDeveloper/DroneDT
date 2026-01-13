@@ -118,7 +118,7 @@ const Header: React.FC = () => {
 
           <div className="mt-auto space-y-4 pb-12">
 
-              <User className="mr-2" size={20} /> 
+              
             </Link>
 
           </div>
