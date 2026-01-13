@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
   }, []);
 
   const footerLinks = [
-    { name: 'DroneDT © 2026', href: '/' },
+
  
 
 
