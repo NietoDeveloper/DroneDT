@@ -115,7 +115,7 @@ const Header: React.FC = () => {
       {/* Mobile Full-Screen Menu Overlay */}
       <div className={`fixed inset-0 bg-white z-40 transition-transform duration-500 md:hidden ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`} style={{ top: '64px' }}>
         <div className="p-8 flex flex-col h-full bg-main/30">
-          <div className="space-y-8">
+
             <div>
               <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Catálogo</p>
               <div className="grid grid-cols-1 gap-4">
