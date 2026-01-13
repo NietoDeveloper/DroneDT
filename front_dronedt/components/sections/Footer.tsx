@@ -92,9 +92,7 @@ const Footer: FC = () => {
           <p className="text-[10px] font-medium tracking-[0.4em] text-gray-500 uppercase">
             © 2026 <span className="text-gold">DroneDT</span>. Ingeniería para un mundo conectado.
           </p>
-          <p className="text-[9px] mt-2 opacity-30 uppercase font-black">
-            NietoDevelooper - Commit Streak: 152 Days
-          </p>
+
         </div>
       </div>
     </footer>
