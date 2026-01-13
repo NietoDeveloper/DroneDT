@@ -102,16 +102,7 @@ const Header: React.FC = () => {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-headingColor p-1 transition-colors hover:text-yellowColor"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
-          </button>
-        </div>
-      </nav>
-
+         
       
       
        
