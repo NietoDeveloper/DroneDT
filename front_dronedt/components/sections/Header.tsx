@@ -117,9 +117,6 @@ const Header: React.FC = () => {
         <div className="p-8 flex flex-col h-full bg-main/30">
 
 
-            <div className="h-[1px] bg-gainsboro w-full"></div>
-
-          </div>
 
           <div className="mt-auto space-y-4 pb-12">
             <Link 
