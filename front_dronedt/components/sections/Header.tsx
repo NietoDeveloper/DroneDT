@@ -42,19 +42,14 @@ const Header: React.FC = () => {
           className="group flex items-center z-[110] outline-none border-none bg-transparent cursor-pointer transition-all duration-500 ease-in-out hover:scale-110 hover:-translate-y-1"
         >
           <span className="text-3xl font-black tracking-tighter transition-all duration-500 group-hover:drop-shadow-[0_0_20px_rgba(255,215,0,0.5)]">
-            <span 
-              className="transition-colors duration-500" 
-              style={{ color: blueRey }}
-              onMouseOver={(e) => (e.currentTarget.style.color = gold)}
-              onMouseOut={(e) => (e.currentTarget.style.color = blueRey)}
-            >
-              DRONE
+
+              Drone
             </span>
             <span 
               className="transition-colors duration-500" 
               style={{ color: gold }}
             >
-              DT
+               D T
             </span>
           </span>
         </button>
