@@ -10,23 +10,7 @@ const Header: React.FC = () => {
 
 
   return (
-    <header 
-      className={`fixed top-0 left-0 w-full z-[100] transition-colors duration-300 ${
-        activeCategory || isMenuOpen ? 'bg-white text-black' : 'bg-transparent text-white'
-      }`}
-      onMouseLeave={() => setActiveCategory(null)}
-    >
-      <nav className="max-w-[1900px] mx-auto px-8 h-16 flex items-center justify-between font-medium">
-        
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-black tracking-tighter z-[110]">
-          DRONE<span className={activeCategory || isMenuOpen ? 'text-yellowColor' : 'text-gold'}>DT</span>
-        </Link>
-
-        {/* Desktop Central Menu (Hover Tesla Effect) */}
-        <div className="hidden lg:flex items-center space-x-1">
-          <button 
-            onMouseEnter={() => setActiveCategory('drones')}
+    
             className="px-4 py-2 rounded-md hover:bg-black/5 transition-colors uppercase text-xs tracking-widest font-bold"
           >
             Drones
