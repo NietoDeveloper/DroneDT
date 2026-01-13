@@ -27,7 +27,7 @@ const Footer: React.FC = () => {
     { name: 'Privacidad y Legal', href: '/legal' },
     { name: 'Contacto', href: '/contact' },
     { name: 'Ecosistema', href: '/shop/drones' },
-    { name: 'Ubicaciones', href: '/about' },
+
 
   ];
 
