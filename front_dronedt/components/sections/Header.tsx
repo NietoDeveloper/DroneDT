@@ -79,9 +79,6 @@ const Header: React.FC = () => {
           </Link>
         </div>
 
-        {/* Action Icons & Auth */}
-        <div className="flex items-center space-x-3 sm:space-x-6">
-
 
           </div>
         </div>
