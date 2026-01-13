@@ -70,8 +70,7 @@ const Footer: FC = () => {
         </div>
 
         {/* Barra Inferior - Social & Región */}
-        <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-8 mt-8">
-          <div className="flex space-x-8 mb-6 md:mb-0 text-[10px] font-black uppercase tracking-[0.3em]">
+
             <a href="#" className="hover:text-gold transition-colors">X / TW</a> <a href="#" className="hover:text-gold transition-colors">FB / MET</a>
             <a href="#" className="hover:text-gold transition-colors">IG / DT</a>
           </div>
