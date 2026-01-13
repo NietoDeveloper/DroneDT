@@ -121,7 +121,7 @@ const Header: React.FC = () => {
               <div className="grid grid-cols-1 gap-4">
                 {droneCategories.map((cat) => (
                   <Link key={cat.name} href={cat.href} className="text-2xl font-black text-headingColor uppercase tracking-tighter" onClick={() => setIsMenuOpen(false)}>
-                    {cat.name}
+
                   </Link>
                 ))}
               </div>
