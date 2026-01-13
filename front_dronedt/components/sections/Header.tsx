@@ -118,9 +118,7 @@ const Header: React.FC = () => {
 
             <div>
               <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] mb-4">Catálogo</p>
-              <div className="grid grid-cols-1 gap-4">
 
-              </div>
             </div>
 
             <div className="h-[1px] bg-gainsboro w-full"></div>
