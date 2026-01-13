@@ -9,12 +9,6 @@ const Header: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
 
 
-  const mainLinks = [
-    { name: 'Accesorios', href: '/shop/accesorios' },
-    { name: 'Servicios', href: '/shop/servicios' },
-    { name: 'Demos', href: '/demos' },
-  ];
-
   const infoLinks = [
     { name: 'About', href: '/about' },
     { name: 'Contacto', href: '/contact' },
