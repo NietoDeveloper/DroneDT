@@ -70,9 +70,7 @@ const Footer: React.FC = () => {
 
         {/* INFO DE DESARROLLADOR & STATUS */}
         <div className="flex flex-col items-center space-y-2 opacity-40">
-           <p className="text-[10px] font-black uppercase tracking-[0.4em]">
-             NietoDevelooper — Engineering Class
-           </p>
+
            <div className="flex items-center gap-2">
              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
              <span className="text-[9px] font-bold uppercase tracking-widest">
