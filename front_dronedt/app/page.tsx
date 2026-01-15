@@ -29,8 +29,8 @@ const Home: FC = () => {
             Drone <span style={{ color: blueRey }}>D</span> <span style={{ color: gold }}>T</span>
           </span>
         }
-        subtitle="Ingeniería Colombiana. "
-        ctaText="Explorar Modelos"
+        subtitle="Drones e Ingeniería Colombiana "
+        ctaText="Compra Ahora"
         ctaLink="/shop/drones"
         videoSrc="/videos/drone-hero.mp4" 
       />
