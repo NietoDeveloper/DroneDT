@@ -21,13 +21,7 @@ const Home: FC = () => {
 
   return (
     <div className="flex flex-col w-full overflow-x-hidden bg-white">
-      
-      {/* 1. HERO SECTION: Impacto Visual Tesla-Style */}
-      <Hero 
-        title={
-          <span className="tracking-tighter uppercase">
-            Drone <span style={{ color: blueRey }}>D</span> <span style={{ color: gold }}>T</span>
-          </span>
+    
         }
         subtitle="Drones e Ingeniería Colombiana "
         ctaText="Compra Ahora"
