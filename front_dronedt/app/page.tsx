@@ -21,13 +21,7 @@ const Home: FC = () => {
 
   return (
     <div className="flex flex-col w-full overflow-x-hidden bg-white">
-    
-        }
-        subtitle="Drones e Ingeniería Colombiana "
-        ctaText="Compra Ahora"
-        ctaLink="/shop/drones"
-        videoSrc="/videos/drone-hero.mp4" 
-      />
+ 
 
       {/* Indicador de scroll animado (Estilo Tesla) */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white opacity-70">
