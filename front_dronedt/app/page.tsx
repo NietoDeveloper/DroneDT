@@ -1,41 +1,5 @@
 
 
-      {/* 2. DRONE MODELS: Grid de productos */}
-      <section className="py-20">
-        <DroneModels 
-          title={
-            <h2 className="text-center text-4xl font-black uppercase tracking-tighter mb-12">
-              Línea de Vuelo <span style={{ color: blueRey }}>D</span><span style={{ color: gold }}>T</span>
-            </h2>
-          }
-          drones={[
-            { 
-              id: 1, 
-              name: 'Drone X-Alpha', 
-              description: 'Inteligencia Artificial integrada por Software DT.', 
-              price: 1500000, 
-              image: '/images/drone-x1.jpg' 
-            },
-            { 
-              id: 2, 
-              name: 'Drone Pro Max', 
-              description: 'GPS de grado militar y autonomía de 45 min.', 
-              price: 2500000, 
-              image: '/images/drone-pro.jpg' 
-            },
-          ]}
-        />
-      </section>
-
-      {/* 3. FEATURES: Propuesta de Valor Software DT */}
-      <div className="bg-[#f4f4f4]">
-        <Features 
-          title="Tecnología de Vanguardia"
-          features={[
-            { 
-              icon: <ArrowRight style={{ color: blueRey }} />, 
-              title: 'Software DT Core', 
-              desc: 'Sistemas embebidos de alta precisión optimizados localmente.' 
             },
             { 
               icon: <ArrowRight style={{ color: gold }} />, 
