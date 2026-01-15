@@ -39,7 +39,7 @@ const Home: FC = () => {
             <span style={{ color: blueRey }}>Drone</span> <span style={{ color: gold }}>DT</span>
           </h1>
           <p className="text-white text-lg md:text-2xl font-light tracking-[0.3em] uppercase opacity-90">
-            Ingeniería Colombiana de Clase Mundial
+            Ingeniería Y Drones Colombianos
           </p>
         </div>
 
@@ -129,7 +129,7 @@ const Home: FC = () => {
             Eleva tu <span style={{ color: gold }}>Perspectiva</span>
           </h2>
           <p className="text-xl text-gainsboro mb-12 opacity-80 font-medium">
-            Únete a la élite tecnológica con ingeniería de Software DT.
+            Únete a la élite tecnológica con ingeniería de Drone DT.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
