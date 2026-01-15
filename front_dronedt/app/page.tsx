@@ -70,7 +70,7 @@ const Home: FC = () => {
       {/* 3. FEATURES: Propuesta de Valor Software DT */}
       <div className="bg-[#f4f4f4]">
         <Features 
-          title="Tecnología de Vanguardia Colombiana"
+          title="Tecnología de Vanguardia"
           features={[
             { 
               icon: <ArrowRight style={{ color: blueRey }} />, 
@@ -97,7 +97,7 @@ const Home: FC = () => {
         testimonials={[
           { 
             name: 'Carlos Rodríguez', 
-            text: 'El soporte de Software DT es inigualable. El rendimiento de los drones superó mis expectativas en campo.', 
+            text: 'El soporte de Drone DT es inigualable. El rendimiento de los drones superó mis expectativas en campo.', 
             rating: 5 
           },
         ]}
