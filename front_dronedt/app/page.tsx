@@ -1,32 +1,4 @@
-"use client";
 
-import { FC } from 'react';
-import Link from 'next/link';
-import { ArrowRight, ChevronDown } from 'lucide-react';
-
-// Componentes secciones
-import Hero from '@/components/sections/Hero'; 
-import DroneModels from '@/components/sections/DroneModels'; 
-import Features from '@/components/sections/Features'; 
-import Testimonials from '@/components/sections/Testimonials';
-
-/**
- * DroneDT Home Page - NietoDevelooper Edition
- * Identidad: Blue Rey & Gold | Software DT
- */
-const Home: FC = () => {
-  // Definición de colores de marca para estilos rápidos
-  const blueRey = "#0041C2";
-  const gold = "#FFD700";
-
-  return (
-    <div className="flex flex-col w-full overflow-x-hidden bg-white">
- 
-
-      {/* Indicador de scroll animado (Estilo Tesla) */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white opacity-70">
-        <ChevronDown size={32} />
-      </div>
 
       {/* 2. DRONE MODELS: Grid de productos */}
       <section className="py-20">
