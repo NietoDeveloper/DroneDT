@@ -9,14 +9,7 @@ drone-dt/  ← Raíz del monorepo
 │   │   └── globals.css  ← Tailwind base, bg-main, text-textColor, etc.
 │   ├── public/          ← Assets: logos, imágenes drones (optimizadas)
 │   ├── api/users (registro, login, JWT)
-│   │   │   ├── orders.ts  ← /api/orders (e-commerce logic)
-│   │   │   └── admin.ts   ← Endpoints exclusivos para empleados
-│   │   ├── models/
-│   │   │   ├── Drone.ts   ← Mongoose schemas (nombre, precio, specs)
-│   │   │   ├── User.ts    ← Tipos: cliente/empleado
-│   │   │   └── Order.ts
-│   │   ├── controllers/   ← Lógica: createDrone, getOrders
-│   │   ├── middleware/    ← Auth, error handling
+ware/    ← Auth, error handling
 │   │   └── config/
 │   │       └── db.ts      ← Conexión MongoDB Atlas (process.env.MONGO_URI)
 │   ├── .env.example     ← Vars: MONGO_URI, JWT_SECRET, PORT=4000
