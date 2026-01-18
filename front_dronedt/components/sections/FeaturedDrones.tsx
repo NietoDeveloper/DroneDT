@@ -23,12 +23,6 @@ export default function FeaturesDrones() {
   return (
     <section className="bg-main py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <header className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-headingColor mb-4 uppercase tracking-tighter">
-            Nuestra Flota
-          </h2>
-          <div className="h-1 w-24 bg-yellowColor mx-auto"></div>
-        </header>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {DRONES_DATA.map((drone) => (
