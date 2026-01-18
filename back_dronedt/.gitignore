@@ -29,10 +29,3 @@ yarn-error.log*
 coverage/
 .nyc_output
 
-# Archivos temporales
-.cache/
-.eslintcache
-.stylelintcache
-
-# TypeScript
-tsconfig.tsbuildinfo
