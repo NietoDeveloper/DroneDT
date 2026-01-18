@@ -6,5 +6,4 @@
                        // Asegúrate de tener: npm install -D @types/node
 
     /* Other Outputs */
-    "sourceMap": true,                           // Útil para debugging
-    "declaration": true,
+
