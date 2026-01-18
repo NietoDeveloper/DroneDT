@@ -15,9 +15,6 @@
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
-    /* Style Options */
-    "noImplicitReturns": true,
-
 
     /* Recommended Options */
     "jsx": "react-jsx",                          // Aunque es backend, lo dejamos listo por si usas SSR
