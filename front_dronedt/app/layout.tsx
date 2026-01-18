@@ -13,10 +13,6 @@ const geistSans = Geist({
 lay: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "DroneDT | Elite Drone Solutions",
-  description: "Plataforma e-commerce de manufactura y servicios de drones en Colombia. Ingeniería de clase mundial.",
-};
 
 interface RootLayoutProps {
   children: React.ReactNode;
