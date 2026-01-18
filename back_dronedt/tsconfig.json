@@ -15,7 +15,7 @@
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
 
-    "jsx": "react-jsx",                          // Aunque es backend, lo dejamos listo por si usas SSR
+                       // Aunque es backend, lo dejamos listo por si usas SSR
     "verbatimModuleSyntax": true,
     "isolatedModules": true,
     "moduleDetection": "force",
