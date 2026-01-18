@@ -1,25 +1,4 @@
 
-```
-drone-dt/  ← Raíz del monorepo
-├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
-│   ├── app/
-│   │   ├── layout.tsx  ← RootLayout que ya tienes (con Geist fonts, globals.css, metadata)
-x     ← Dashboard home: Resumen órdenes recientes
-│   │   ├── ordenes/page.tsx  ← Lista órdenes (tabla responsive, filters)
-│   │   ├── perfil/page.tsx   ← Editar datos, historial
-│   │   └── soporte/page.tsx  ← Chat/FAQ personalizado
-│   ├── components/      ← Compartidos con front si posible, o específicos (e.g., OrderCard)
-│   ├── lib/             ← API fetchers a /back/ (con auth headers)
-│   ├── styles/globals.css  ← Similar a front, pero con theme dashboard (e.g., bg-gray-900)
-│   ├── next.config.js
-│   ├── tsconfig.json
-│   └── package.json     ← Similar a front, + bibliotecas como react-hook-form para forms
-├── panel-empleados/  ← Dashboard empleados (Next.js + React + Tailwind, auth admin)
-│   ├── app/
-│   │   ├── layout.tsx   ← Layout con sidebar admin (inventario, ventas, usuarios)
-│   │   ├── page.tsx     ← Dashboard home: Metrics (ventas diarias, stock bajo)
-│   │   ├── inventario/page.tsx  ← Gestión drones/accesorios (CRUD forms)
-│   │   ├── ventas/page.tsx      ← Reportes, gráficos (usa Chart.js)
 │   │   ├── usuarios/page.tsx    ← Manage clientes/empleados
 │   │   └── configuracion/page.tsx  ← Settings app
 │   ├── components/      ← Específicos: AdminTable, InventoryForm
