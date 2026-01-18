@@ -8,5 +8,3 @@
     /* Other Outputs */
     "sourceMap": true,                           // Útil para debugging
     "declaration": true,
-    "declarationMap": true,
-
