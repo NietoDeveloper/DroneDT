@@ -17,10 +17,7 @@ const config: Config = {
         'drone-light': '0 4px 15px rgba(65, 105, 225, 0.1)',
         'drone-gold': '0 4px 15px rgba(255, 215, 0, 0.3)',
       },
-      // Animaciones para efectos de vuelo en la UI
-      animation: {
-        'float': 'hoverFloat 3s ease-in-out infinite',
-      },
+
 
       }
     },
