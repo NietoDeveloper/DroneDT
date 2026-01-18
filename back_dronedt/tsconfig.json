@@ -3,13 +3,7 @@
     /* File Layout */
     "rootDir": "./src",                          // Donde está tu código TS
     "outDir": "./dist",                         // Donde saldrá el código JS compilado
-
-    /* Environment Settings */
-    "module": "NodeNext",                        // Estándar moderno para Node.js
-    "moduleResolution": "NodeNext",
-    "target": "ESNext",                          // Aprovecha las últimas funciones de JS
-    "lib": ["ESNext"],
-    "types": ["node"],                           // Asegúrate de tener: npm install -D @types/node
+                       // Asegúrate de tener: npm install -D @types/node
 
     /* Other Outputs */
     "sourceMap": true,                           // Útil para debugging
