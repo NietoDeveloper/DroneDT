@@ -10,8 +10,3 @@
     "declaration": true,
     "declarationMap": true,
 
-    "strict": true,                              // Máxima seguridad de tipos
-    "noUncheckedIndexedAccess": true,
-
-
-}
