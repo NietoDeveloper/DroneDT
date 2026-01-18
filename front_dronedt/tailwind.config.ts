@@ -11,14 +11,6 @@ const config: Config = {
   theme: {
     extend: {
       // Paleta de colores Software DT + DroneDT
-      colors: {
-        gainsboro: "#DCDCDC",
-        gold: "#FFD700",
-        yellowColor: "#FEB60D",
-        royalBlue: "#4169E1", // El nuevo Azul Rey para autoridad tecnológica
-        headingColor: "#000000",
-        textColor: "#000000",
-      },
 
       // Sombras personalizadas para resaltar los drones
       boxShadow: {
