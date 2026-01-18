@@ -49,9 +49,3 @@ const Header: React.FC = () => {
               onMouseOut={(e) => (e.currentTarget.style.color = blueRey)}
             >
               Drone
-            </span>
-            <span 
-              className="transition-colors duration-500" 
-
-
-export default Header;
