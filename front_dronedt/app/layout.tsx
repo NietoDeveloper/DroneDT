@@ -5,16 +5,6 @@ import "@/styles/globals.css";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist-sans",
-  display: "swap",
-});
-lay: "swap",
-});
-
-
-        {/* Footer Profesional de DroneDT */}
         <Footer />
       </body>
     </html>
