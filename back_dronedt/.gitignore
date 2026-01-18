@@ -18,7 +18,6 @@ yarn-debug.log*
 yarn-error.log*
 logs
 
-Thumbs.db
 .vscode/
 .idea/
 *.suo
