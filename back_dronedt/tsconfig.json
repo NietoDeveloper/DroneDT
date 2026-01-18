@@ -3,7 +3,3 @@
     /* File Layout */
     "rootDir": "./src",                          // Donde está tu código TS
     "outDir": "./dist",                         // Donde saldrá el código JS compilado
-                       // Asegúrate de tener: npm install -D @types/node
-
-    /* Other Outputs */
-
