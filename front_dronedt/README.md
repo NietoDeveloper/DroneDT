@@ -16,14 +16,7 @@ DroneDT is a high-performance web application built with Next.js 15. It features
 | Primary     | #FFD700 | --color-gold       |
 | Accent      | #FEB60D | --color-yellow-color |
 | Background  | #DCDCDC | --color-gainsboro  |
-| Typography  | #000000 | --color-text-color |
-| Action Red  | #E81922 | --color-dt-red     |
 
-### Key UI Features
-
-- **Responsive Design**: Optimized for seamless performance across all device types.
-
-## 📂 Project Structure
 
 # Estructura del Monorepo DroneDT
 
