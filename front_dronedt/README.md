@@ -4,9 +4,7 @@ DroneDT is a high-performance web application built with Next.js 15. It features
 
 ## 🛠 Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS v4 (Custom "Software DT" Theme)
+
 
 
 ```
