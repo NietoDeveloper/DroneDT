@@ -22,9 +22,7 @@ export default function FeaturesDrones() {
                   >
                     Explorar
                   </Link>
-                  <button className="px-6 py-3 border-2 border-gold text-headingColor rounded-md font-bold hover:bg-gold transition-colors uppercase text-sm">
-                    Reservar
-                  </button>
+
                 </div>
               </div>
             </div>
