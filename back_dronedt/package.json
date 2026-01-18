@@ -14,7 +14,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "helmet": "^8.1.0",
+    "helmet": "^8.1.",
     "mongoose": "^9.1.0"
   },
   "devDependencies": {
