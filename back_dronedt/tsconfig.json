@@ -15,7 +15,5 @@
 
 
     "skipLibCheck": true,                        // Evita errores de librerías externas
-    "forceConsistentCasingInFileNames": true,
-                  // Solo compila lo que esté en src
-  "exclude": ["node_modules", "**/*.test.ts"]    // Ignora basura y tests en la build
+  // Ignora basura y tests en la build
 }
