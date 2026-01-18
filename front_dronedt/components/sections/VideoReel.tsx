@@ -38,15 +38,7 @@ const DroneReel: React.FC = () => {
           {/* Contenedor del video principal con borde Gold */}
           <div className="w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border-4 border-gold shadow-gold/20">
             {videos.length > 0 && (
-              <video
-                key={videos[currentVideo].id} // Fuerza recarga del elemento video al cambiar
-                src={videos[currentVideo].videoUrl}
-                poster={videos[currentVideo].thumbnail}
-                controls
-                className="w-full h-full object-cover"
-              >
-                Tu navegador no soporta el elemento de video.
-              </video>
+
             )}
           </div>
 
