@@ -58,21 +58,6 @@ const Home: FC = () => {
           </Link>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce text-white opacity-70">
-          <ChevronDown size={32} />
-        </div>
-      </section>
-
-      {/* 2. SECCIÓN REEL DE VIDEOS */}
-      <section className="bg-black py-24 px-4">
-        <div className="max-w-[1400px] mx-auto text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white">
-            <span style={{ color: blueRey }}>Drone</span> <span style={{ color: gold }}>DT</span> en Acción
-          </h2>
-          <div className="w-32 h-2 mx-auto mt-6" style={{ backgroundColor: gold }}></div>
-        </div>
-
-
       </section>
 
 
