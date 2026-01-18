@@ -76,18 +76,7 @@ const Footer: React.FC = () => {
            <div className="flex flex-col items-center gap-1">
              <div className="flex items-center gap-2">
                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-               <span className="text-[9px] font-bold uppercase tracking-widest text-[#5c5e62]">
-                 NietoDeveloper
-               </span>
-             </div>
-             <p className="text-[8px] font-bold text-[#0041C2]/50 uppercase tracking-[0.2em]">
-               Colombia Rank #1 Committers.top | World Class App
-             </p>
-           </div>
-        </div>
 
-      </div>
-    </footer>
   );
 };
 
