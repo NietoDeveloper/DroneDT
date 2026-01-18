@@ -69,13 +69,6 @@ const Footer: React.FC = () => {
         </nav>
 
         {/* CRÉDITOS Y STREAK - SOFTWARE DT */}
-        <div className="flex flex-col items-center space-y-2 opacity-60">
-           <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#171a20]">
-             Desarrollado por <span className="text-[#0041C2]">Software</span> <span className="text-[#FFD700]">DT</span>
-           </p>
-           <div className="flex flex-col items-center gap-1">
-             <div className="flex items-center gap-2">
-               <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
 
   );
 };
