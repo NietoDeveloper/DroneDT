@@ -36,28 +36,6 @@ const Home: FC = () => {
           <source src="/videos/drone-hero.mp4" type="video/mp4" />
         </video>
 
-        <div className="absolute inset-0 bg-black/30 z-10" />
-
-        <div className="relative z-20 px-4">
-          <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter text-white mb-4 animate-tighten">
-            <span style={{ color: blueRey }}>Drone</span> <span style={{ color: gold }}>DT</span>
-          </h1>
-          <p className="text-white text-lg md:text-2xl font-light tracking-[0.4em] uppercase mb-12 opacity-90">
-            Ingeniería Colombiana de Clase Mundial
-          </p>
-          
-          <Link href="/shop/drones" className={brutalistBtn}>
-            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-              Compra Ya
-            </span>
-            {/* Efecto Slide Blue Rey */}
-            <div 
-              className="absolute inset-0 w-0 bg-[var(--blue-rey)] transition-all duration-300 ease-out group-hover:w-full"
-              style={{ backgroundColor: blueRey } as any}
-            />
-          </Link>
-        </div>
-
       </section>
 
 
