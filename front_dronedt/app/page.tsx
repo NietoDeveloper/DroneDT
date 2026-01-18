@@ -94,46 +94,6 @@ const Home: FC = () => {
         </div>
       </section>
 
-      {/* 3. DRONE MODELS */}
-      <section className="py-24 bg-white">
-        <DroneModels 
-          title={
-            <h2 className="text-center text-5xl md:text-7xl font-black uppercase tracking-tighter mb-20">
-              Línea <span style={{ color: blueRey }}>Drone</span> <span style={{ color: gold }}>DT</span>
-            </h2>
-          }
-          drones={[
-            { id: 1, name: 'Drone X-Alpha', description: 'IA Software DT.', price: 1500000, image: '/images/drone-x1.jpg' },
-            { id: 2, name: 'Drone Pro Max', description: 'GPS Militar.', price: 2500000, image: '/images/drone-pro.jpg' },
-          ]}
-        />
-      </section>
-
-      {/* 4. FEATURES & TESTIMONIALS */}
-      <div className="bg-gainsboro py-24 border-y border-black/5">
-        <Features 
-          title={
-            <span className="uppercase tracking-tighter font-black text-4xl">
-               Ingeniería <span style={{ color: blueRey }}>Drone</span> <span style={{ color: gold }}>DT</span>
-            </span>
-          }
-          features={[
-            { icon: <ArrowRight size={20} />, title: 'Software DT Core', desc: 'Sistemas optimizados.' },
-            { icon: <ArrowRight size={20} />, title: 'Soporte 24/7', desc: 'Operación nacional.' },
-          ]}
-        />
-      </div>
-
-      {/* 5. FINAL CALL TO ACTION BRUTALISTA */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-[#0a0a0a] text-white">
-        <div className="relative z-20 text-center px-6">
-          <h2 className="text-7xl md:text-9xl font-black tracking-[0.05em] uppercase mb-12">
-            <span style={{ color: blueRey }}>Drone</span> <span className="text-white">DT</span>
-          </h2>
-          
-          <Link href="/shop/drones" className={brutalistBtn}>
-            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-              Comprar Ahora
 
 
 export default Home;
