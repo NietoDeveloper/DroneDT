@@ -8,15 +8,7 @@ drone-dt/  ← Raíz del monorepo
 │   ├── styles/
 │   │   └── globals.css  ← Tailwind base, bg-main, text-textColor, etc.
 │   ├── public/          ← Assets: logos, imágenes drones (optimizadas)
-│   ├── next.config.js   ← Config: images domains, etc.
-│   ├── tsconfig.json    ← TypeScript config
-│   └── package.json     ← Deps: next, react, tailwindcss, @types/react
-├── back/  ← Backend (Express + Node.js, API REST para datos y lógica)
-│   ├── src/
-│   │   ├── index.ts     ← Server entry: app.listen(), rutas
-│   │   ├── routes/
-│   │   │   ├── drones.ts  ← Endpoints: /api/drones (CRUD, auth middleware)
-│   │   │   ├── users.ts   ← /api/users (registro, login, JWT)
+│   ├── api/users (registro, login, JWT)
 │   │   │   ├── orders.ts  ← /api/orders (e-commerce logic)
 │   │   │   └── admin.ts   ← Endpoints exclusivos para empleados
 │   │   ├── models/
