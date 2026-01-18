@@ -19,16 +19,7 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  return (
-    <al:
-            - pt-16 o pt-20: Ajuste necesario para que el contenido no quede oculto bajo el Header fijo.
-            - max-w-[1900px]: Límite para pantallas Ultra-Wide.
-            - min-w-[310px]: Garantía para dispositivos móviles pequeños.
-            - mx-auto: Centrado horizontal en pantallas grandes.
-        */}
-        <main className="flex-grow w-full max-w-[1900px] min-w-[310px] mx-auto overflow-x-hidden pt-16">
-          {children}
-        </main>
+
 
         {/* Footer Profesional de DroneDT */}
         <Footer />
