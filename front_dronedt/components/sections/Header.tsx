@@ -45,7 +45,3 @@ const Header: React.FC = () => {
             <span 
               className="transition-colors duration-500" 
               style={{ color: blueRey }}
-              onMouseOver={(e) => (e.currentTarget.style.color = gold)}
-              onMouseOut={(e) => (e.currentTarget.style.color = blueRey)}
-            >
-              Drone
