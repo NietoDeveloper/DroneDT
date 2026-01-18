@@ -3,7 +3,3 @@ node_modules/
 jspm_packages/
 web_modules/
 
-# Variables de Entorno (¡CRÍTICO! No subir credenciales)
-.env
-.env.local
-
