@@ -1,6 +1,4 @@
-# DroneDT - Frontend
 
-DroneDT is a high-performance web application built with Next.js 15. It features a dual-interface 
 ```
 drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
