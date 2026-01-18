@@ -8,9 +8,7 @@ drone-dt/  ← Raíz del monorepo
 │   │   ├── shop/
 │   │   │   ├── drones/page.tsx  ← Lista de drones (cards interactivas como modelos Tesla)
 │   │   │   ├── accesorios/page.tsx
-│   │   │   └── servicios/page.tsx
-│   │   ├── about/page.tsx
-│   │   ├── contact/page.tsx
+│   │   │ 
 │   │   └── legal/
 │   │       ├── privacidad/page.tsx
 │   │       ├── terminos/page.tsx
