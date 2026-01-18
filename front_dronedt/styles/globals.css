@@ -4,33 +4,7 @@
 
 /* Capa Base: Limpia y compatible */
 @layer base {
-  :root {
-    --background: var(--color-gainsboro);
-    --foreground: var(--color-text-color);
-  }
-
-  body {
-    background-color: var(--color-gainsboro);
-    color: var(--color-text-color);
-    @apply antialiased overflow-x-hidden;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv03";
-  }
-
-  h1, h2, h3, h4 {
-    color: var(--color-heading-color);
-    @apply font-bold tracking-tight;
-  }
-}
-
-/* Capa de Componentes: Estilo Tesla / Software DT */
-@layer components {
-  /* El primario usa el color Yellow Color de tu identidad */
-  .btn-dt-primary {
-    background-color: var(--color-yellow-color);
-    @apply text-black px-10 py-2 rounded-full font-semibold transition-all duration-300 active:scale-95 shadow-sm;
-  }
-  
-  .btn-dt-primary:hover {
+imary:hover {
     background-color: var(--color-gold);
   }
 
