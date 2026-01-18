@@ -27,33 +27,7 @@ const ProductsMenu: React.FC = () => {
 
     const addToCart = () => {
         setCartCount(prev => prev + 1);
-    };
 
-    return (
-        // bg-main usa el color #DCDCDC definido en tu config
-        <div className="min-h-screen bg-main font-sans">
-            <div className="container mx-auto px-4 py-12 max-w-[1900px] min-w-[310px]">
-                <h1 className="text-4xl font-bold text-center mb-12 text-headingColor md:text-5xl uppercase tracking-wider">
-                    Nuestra Flota <span className="text-yellowColor">DroneDT</span>
-                </h1>
-
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                    {products.map(product => (
-                        <div
-                            key={product.id}
-                            // bg-card usa #FFFFFF según tu estructura
-                            className="bg-card rounded-xl shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-200"
-                        >
-                            <div className="relative overflow-hidden group">
-                                <img
-                                    src={product.image}
-                                    alt={product.name}
-                                    className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute top-2 right-2 bg-gold text-headingColor font-bold px-3 py-1 rounded-full text-sm shadow-md">
-                                    ${product.price}
-                                </div>
-                            </div>
 
                             <div className="p-5">
                                 <h2 className="text-xl font-bold mb-2 text-headingColor truncate">
