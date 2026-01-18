@@ -7,18 +7,7 @@ DroneDT is a high-performance web application built with Next.js 15. It features
 - **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4 (Custom "Software DT" Theme)
-- **Optimization**: React Compiler (Enabled)
-- 
-### Color Palette
 
-| Element     | Hex Code | Variable           |
-|-------------|----------|--------------------|
-| Primary     | #FFD700 | --color-gold       |
-| Accent      | #FEB60D | --color-yellow-color |
-| Background  | #DCDCDC | --color-gainsboro  |
-
-
-# Estructura del Monorepo DroneDT
 
 ```
 drone-dt/  ← Raíz del monorepo
