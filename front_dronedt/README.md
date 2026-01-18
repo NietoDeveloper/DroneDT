@@ -4,22 +4,7 @@ drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
 │   ├── app/
 │   │   ├── layout.tsx  ← RootLayout que ya tienes (con Geist fonts, globals.css, metadata)
-│   │   ├── page.tsx    ← Home: Hero con drones, secciones de modelos, shop, etc. (minimalista, responsive 310px-1900px)
-│   │   ├── shop/
-│   │   │   ├── drones/page.tsx  ← Lista de drones (cards interactivas como modelos Tesla)
-│   │   │   ├── accesorios/page.tsx
-│   │   │ 
-│   │   └── legal/
-│   │       ├── privacidad/page.tsx
-│   │       ├── terminos/page.tsx
-│   │       └── cookies/page.tsx
-│   ├── components/
-│   │   ├── ui/          ← Reusables: Button, Card, Input (Tailwind variants)
-│   │   ├── layout/
-│   │   │   ├── Header.tsx  ← Navbar fixed, logo DroneDT, menú responsive (hamburguesa mobile)
-│   │   │   └── Footer.tsx  ← El que te di, con links a shop, soporte, etc.
-│   │   └── sections/    ← Hero, FeaturesDrones, Testimonials (animaciones sutiles)
-│   ├── lib/             ← Utils: API fetchers a /back/ (e.g., getDrones())
+│   │   ├── page.tsx    ← Home: Hero con drones, secciones de modelos, shop, etc. (minimalista, responsive 31ers a /back/ (e.g., getDrones())
 │   ├── styles/
 │   │   └── globals.css  ← Tailwind base, bg-main, text-textColor, etc.
 │   ├── public/          ← Assets: logos, imágenes drones (optimizadas)
