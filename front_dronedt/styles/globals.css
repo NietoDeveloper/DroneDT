@@ -1,33 +1,4 @@
-@import "tailwindcss";
-
-/* Definimos el tema siguiendo la nueva arquitectura de v4 */
-
-/* Capa Base: Limpia y compatible */
-@layer base {
-imary:hover {
-    background-color: var(--color-gold);
-  }
-
-  .btn-tesla-dark {
-    @apply bg-black text-white px-10 py-2 rounded-full font-medium transition-all duration-300 hover:bg-gray-900 active:scale-95;
-  }
-
-  /* Contenedor tipo Tesla para secciones Full-Screen */
-  .section-container {
-    @apply min-h-screen w-full flex flex-col items-center justify-center py-20;
-  }
-
-  /* Utilidades personalizadas */
-  .bg-card-white { background-color: #FFFFFF; }
-}
-
-/* Scrollbar minimalista (se mantiene igual) */
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--color-gainsboro);
+nd: var(--color-gainsboro);
 }
 
 ::-webkit-scrollbar-thumb {
