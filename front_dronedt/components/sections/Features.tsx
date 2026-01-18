@@ -11,10 +11,5 @@ interface FeaturesProps {
   features: Feature[];
 }
 
-const Features: FC<FeaturesProps> = ({ title, features }) => {
-  return (
-
-  );
-};
 
 export default Features;
