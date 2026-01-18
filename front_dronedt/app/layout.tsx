@@ -14,13 +14,6 @@ lay: "swap",
 });
 
 
-interface RootLayoutProps {
-  children: React.ReactNode;
-}
-
-export default function RootLayout({ children }: RootLayoutProps) {
-
-
         {/* Footer Profesional de DroneDT */}
         <Footer />
       </body>
