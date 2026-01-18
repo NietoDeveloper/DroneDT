@@ -14,6 +14,4 @@
     "noUncheckedIndexedAccess": true,
 
 
-    "skipLibCheck": true,                        // Evita errores de librerías externas
-  // Ignora basura y tests en la build
 }
