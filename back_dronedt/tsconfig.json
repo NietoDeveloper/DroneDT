@@ -13,8 +13,6 @@
     "strict": true,                              // Máxima seguridad de tipos
     "noUncheckedIndexedAccess": true,
 
-                       // Aunque es backend, lo dejamos listo por si usas SSR
-    "verbatimModuleSyntax": true,
 
     "skipLibCheck": true,                        // Evita errores de librerías externas
     "forceConsistentCasingInFileNames": true,
