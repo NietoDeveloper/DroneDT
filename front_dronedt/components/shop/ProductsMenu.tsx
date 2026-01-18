@@ -29,26 +29,6 @@ const ProductsMenu: React.FC = () => {
         setCartCount(prev => prev + 1);
 
 
-                            <div className="p-5">
-                                <h2 className="text-xl font-bold mb-2 text-headingColor truncate">
-                                    {product.name}
-                                </h2>
-                                <p className="text-textColor text-sm mb-6 line-clamp-2 opacity-80">
-                                    {product.description}
-                                </p>
-
-                                <button
-                                    onClick={addToCart}
-                                    // Usamos yellowColor para el botón de acción principal
-                                    className="w-full bg-yellowColor hover:bg-gold text-headingColor font-bold py-3 px-4 rounded-lg transition duration-300 transform active:scale-95 shadow-md"
-                                >
-                                    Añadir al Carrito
-                                </button>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
 
             {/* Floating Cart Button con el estilo Gold de DroneDT */}
             <div className="fixed bottom-8 right-8 z-50">
