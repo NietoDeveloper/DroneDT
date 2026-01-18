@@ -42,15 +42,7 @@ const DroneReel: React.FC = () => {
             )}
           </div>
 
-          {/* Info del Video */}
-          <div className="mt-6 text-center max-w-2xl">
-            <h3 className="text-2xl font-bold text-headingColor uppercase">
-              {videos[currentVideo]?.title}
-            </h3>
-            <p className="text-textColor opacity-75 mt-2">
-              {videos[currentVideo]?.description}
-            </p>
-          </div>
+
 
           {/* Botones de Navegación Estilo DroneDT */}
           <div className="flex justify-between w-full max-w-4xl mt-8 absolute top-1/2 -translate-y-1/2 px-4 pointer-events-none">
