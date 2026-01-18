@@ -32,16 +32,6 @@ export default function FeaturesDrones() {
             >
 
 
-              {/* Información del Producto */}
-              <div className="p-8">
-                <div className="flex justify-between items-start mb-4">
-                  <div>
-                    <h3 className="text-2xl font-bold text-headingColor uppercase">{drone.name}</h3>
-                    <p className="text-gray-600 mt-2 max-w-xs">{drone.description}</p>
-                  </div>
-                  <span className="text-xl font-bold text-yellowColor">{drone.price}</span>
-                </div>
-
                 <div className="flex gap-4 mt-8">
                   <Link 
                     href={`/shop/drones/${drone.id}`}
