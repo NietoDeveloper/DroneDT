@@ -1,5 +1,4 @@
 {
   "compilerOptions": {
     /* File Layout */
-    "rootDir": "./src",                          // Donde está tu código TS
-    "outDir": "./dist",                         // Donde saldrá el código JS compilado
+  "outDir": "./dist",                         // Donde saldrá el código JS compilado
