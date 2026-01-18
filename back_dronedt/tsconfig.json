@@ -12,7 +12,6 @@
 
     "strict": true,                              // Máxima seguridad de tipos
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
 
                        // Aunque es backend, lo dejamos listo por si usas SSR
     "verbatimModuleSyntax": true,
