@@ -72,26 +72,7 @@ const Home: FC = () => {
           <div className="w-32 h-2 mx-auto mt-6" style={{ backgroundColor: gold }}></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1400px] mx-auto">
-          {[1, 2, 3].map((item) => (
-            <div key={item} className="relative aspect-[9/16] bg-neutral-900 overflow-hidden group border-2 border-white/5 hover:border-[#FFD700]/50 transition-colors duration-500">
-              <video
-                loop
-                muted
-                playsInline
-                onMouseOver={(e) => e.currentTarget.play()}
-                onMouseOut={(e) => e.currentTarget.pause()}
-                className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-              >
-                <source src={`/videos/reel-${item}.mp4`} type="video/mp4" />
-              </video>
-              <div className="absolute bottom-8 left-8 z-20">
-                <p className="text-[#FFD700] font-black text-sm tracking-[0.3em] uppercase">Misión 00{item}</p>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
-            </div>
-          ))}
-        </div>
+
       </section>
 
 
