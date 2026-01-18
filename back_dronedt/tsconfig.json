@@ -17,7 +17,6 @@
 
                        // Aunque es backend, lo dejamos listo por si usas SSR
     "verbatimModuleSyntax": true,
-    "isolatedModules": true,
 
     "skipLibCheck": true,                        // Evita errores de librerías externas
     "forceConsistentCasingInFileNames": true,
