@@ -4,22 +4,7 @@ drone-dt/  ← Raíz del monorepo
 ├── front/  ← Front-end principal (Next.js + React + Tailwind, e-commerce público estilo Tesla)
 │   ├── app/
 │   │   ├── layout.tsx  ← RootLayout que ya tienes (con Geist fonts, globals.css, metadata)
-│   │   ├── page.tsx    ← Home: Hero con drones, secciones de modelos, shop, etc. (minimalista, responsive 31ers a /back/ (e.g., getDrones())
-│   ├── styles/
-│   │   └── globals.css  ← Tailwind base, bg-main, text-textColor, etc.
-│   ├── public/          ← Assets: logos, imágenes drones (optimizadas)
-│   ├── api/users (registro, login, JWT)
-ware/    ← Auth, error handling
-│   │   └── config/
-│   │       └── db.ts      ← Conexión MongoDB Atlas (process.env.MONGO_URI)
-│   ├── .env.example     ← Vars: MONGO_URI, JWT_SECRET, PORT=4000
-│   ├── tsconfig.json
-│   ├── Dockerfile       ← Para containerizar: FROM node:20, COPY ., npm run build
-│   └── package.json     ← Deps: express, mongoose, dotenv, cors, jsonwebtoken
-├── panel-cliente/  ← Dashboard clientes (Next.js + React + Tailwind, auth required)
-│   ├── app/
-│   │   ├── layout.tsx   ← Layout con sidebar cliente (órdenes, perfil, tracking)
-│   │   ├── page.tsx     ← Dashboard home: Resumen órdenes recientes
+x     ← Dashboard home: Resumen órdenes recientes
 │   │   ├── ordenes/page.tsx  ← Lista órdenes (tabla responsive, filters)
 │   │   ├── perfil/page.tsx   ← Editar datos, historial
 │   │   └── soporte/page.tsx  ← Chat/FAQ personalizado
