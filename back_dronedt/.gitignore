@@ -10,8 +10,6 @@ web_modules/
 .env.test.local
 .env.production.local
 
-
-# Compilación y Build
 dist/
 build/
 out/
