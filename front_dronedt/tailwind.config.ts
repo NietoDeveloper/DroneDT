@@ -19,12 +19,7 @@ const config: Config = {
         headingColor: "#000000",
         textColor: "#000000",
       },
-      // Configuraciones de fondos específicos
-      backgroundColor: {
-        'main': '#DCDCDC',
-        'card': '#FFFFFF',
-        'admin-sidebar': '#000000',
-      },
+
       // Sombras personalizadas para resaltar los drones
       boxShadow: {
         'drone-light': '0 4px 15px rgba(65, 105, 225, 0.1)',
