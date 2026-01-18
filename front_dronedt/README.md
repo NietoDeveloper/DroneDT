@@ -21,8 +21,6 @@ DroneDT is a high-performance web application built with Next.js 15. It features
 
 ### Key UI Features
 
--
-- **Modular Layers**: Clean separation between base styles, components (buttons, containers), and utilities.
 - **Responsive Design**: Optimized for seamless performance across all device types.
 
 ## 📂 Project Structure
