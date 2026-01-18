@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css"; 
-// Ruta corregida: El archivo está en sections, no en layout
-import Header from "@/components/sections/Header";
-import Footer from "@/components/sections/Footer";
 
-        <Footer />
       </body>
     </html>
   );
