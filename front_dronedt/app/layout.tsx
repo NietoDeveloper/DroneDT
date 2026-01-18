@@ -20,18 +20,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html 
-      lang="es" 
-      className={`${geistSans.variable} ${geistMono.variable}`}
-      suppressHydrationWarning
-    >
-      <body
-        className="antialiased bg-main text-textColor flex flex-col min-h-screen font-sans selection:bg-yellowColor selection:text-headingColor"
-      >
-        {/* Header de DroneDT - Ubicado en components/sections */}
-        <Header />
-
-        {/* Contenedor Principal:
+    <al:
             - pt-16 o pt-20: Ajuste necesario para que el contenido no quede oculto bajo el Header fijo.
             - max-w-[1900px]: Límite para pantallas Ultra-Wide.
             - min-w-[310px]: Garantía para dispositivos móviles pequeños.
