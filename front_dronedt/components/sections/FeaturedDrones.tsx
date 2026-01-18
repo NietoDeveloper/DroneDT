@@ -1,23 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-// Simulación de datos (En el futuro esto vendrá de tu /back/api/drones)
-const DRONES_DATA = [
-  {
-    id: 'dt-01',
-    name: 'DT-Pro Phantom',
-    description: 'Precisión quirúrgica para cinematografía aérea.',
-    image: '/images/drones/drone-1.webp', // Asegúrate de que este archivo exista
-    price: '2.499 USD'
-  },
-  {
-    id: 'dt-02',
-    name: 'DT-Speed Racer',
-    description: 'Velocidad pura con transmisión de latencia cero.',
-    image: '/images/drones/drone-2.webp',
-    price: '1.899 USD'
-  }
-];
 
 export default function FeaturesDrones() {
   return (
