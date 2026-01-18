@@ -1,4 +1,3 @@
 {
   "compilerOptions": {
     /* File Layout */
-  "outDir": "./dist",                         // Donde saldrá el código JS compilado
