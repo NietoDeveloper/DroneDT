@@ -157,21 +157,7 @@ const Header: React.FC = () => {
               {drone.name}
             </Link>
           ))}
-          <div className="h-1 bg-gold w-16 my-4" />
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              href={link.href} 
-              className="text-xl font-bold uppercase transition-all py-3 rounded-lg hover:bg-[#0041C2] hover:text-white px-4 -ml-4" 
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </header>
-  );
+
 };
 
 export default Header;
