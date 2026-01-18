@@ -10,7 +10,6 @@
     "declaration": true,
     "declarationMap": true,
 
-    /* Stricter Typechecking Options */
     "strict": true,                              // Máxima seguridad de tipos
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
