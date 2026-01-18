@@ -134,33 +134,6 @@ const Home: FC = () => {
           <Link href="/shop/drones" className={brutalistBtn}>
             <span className="relative z-10 group-hover:text-white transition-colors duration-300">
               Comprar Ahora
-            </span>
-            <div 
-              className="absolute inset-0 w-0 bg-[var(--blue-rey)] transition-all duration-300 ease-out group-hover:w-full"
-              style={{ backgroundColor: blueRey } as any}
-            />
-          </Link>
-        </div>
-      </section>
 
-      {/* Footer Branding */}
-      <div className="bg-white py-10 text-center border-t-4 border-black">
-        <p className="text-[12px] font-black uppercase tracking-[0.8em] text-black">
-          Engineered by Software DT | NietoDeveloper
-        </p>
-      </div>
-
-      <style jsx global>{`
-        @keyframes tighten {
-          from { letter-spacing: 0.1em; opacity: 0; }
-          to { letter-spacing: -0.05em; opacity: 1; }
-        }
-        .animate-tighten {
-          animation: tighten 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-      `}</style>
-    </div>
-  );
-};
 
 export default Home;
