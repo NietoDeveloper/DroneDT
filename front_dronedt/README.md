@@ -1,5 +1,4 @@
 drone-dt-frontend/
 ├── src/
 │   ├── app/                    # 🟢 Ruteo y Server Components
-│   │   ├── (shop)/             # Route Group: Para la tienda (sin afectar URL)
-│   │   │   ├── drones/
+   │   │   ├── drones/
