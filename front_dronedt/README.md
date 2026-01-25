@@ -4,5 +4,4 @@ drone-dt-frontend/
 │   │   ├── (shop)/             # Route Group: Para la tienda (sin afectar URL)
 │   │   │   ├── drones/
 │   │   │   └── tienda/
-│   │   ├── (dashboard)/        # Route Group: Para el panel de control
-│   │   │   └── mi-cuenta/
+│   │   ├── (dashboard)/        # Route Group: Para el panel de 
