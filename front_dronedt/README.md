@@ -7,6 +7,7 @@ Built for Scalability, Performance, and Precision.
 This is the frontend repository for Drone DT, a cutting-edge platform inspired by Tesla's aesthetic and efficiency, designed for drone technology control, visualization, and e-commerce.
 
 ## 🛠️ Tech Stack Identity
+
 - **Framework**: Next.js 15+ (App Router & React Compiler)
 - **Language**: TypeScript (Strict Mode)
 - **Styling**: Tailwind CSS + Pure CSS Modules for critical animations.
