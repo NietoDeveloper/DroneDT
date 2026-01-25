@@ -3,5 +3,3 @@ drone-dt-frontend/
 │   ├── app/                    # 🟢 Ruteo y Server Components
 │   │   ├── (shop)/             # Route Group: Para la tienda (sin afectar URL)
 │   │   │   ├── drones/
-│   │   │   └── tienda/
-│   │   ├── (dashboard)/        # Route Group: Para el panel de 
