@@ -6,6 +6,3 @@ drone-dt-frontend/
 │   │   │   └── tienda/
 │   │   ├── (dashboard)/        # Route Group: Para el panel de control
 │   │   │   └── mi-cuenta/
-│   │   ├── api/                # Route Handlers (BFF)
-│   │   ├── layout.tsx          # Layout con Navbar tipo Tesla
-│   │   └── page.tsx            # Hero Landing
