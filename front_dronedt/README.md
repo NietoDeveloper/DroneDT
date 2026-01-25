@@ -13,4 +13,4 @@ drone-dt-frontend/
 │   │   ├── ui/                 # Elementos puros (Boton, Input, Badge)
 │   │   └── layout/             # Header, Footer, Sidebar
 │   ├── features/               # 🔴 EL NÚCLEO (Lógica por dominio)
-│   │   ├── drones/             # Todo sobre drones: visualización, tipos
+│   │   ├── drones/             # Todo sobre drones: visualización, 
