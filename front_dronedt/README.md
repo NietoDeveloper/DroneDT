@@ -11,6 +11,3 @@ drone-dt-frontend/
 │   │   └── page.tsx            # Hero Landing
 │   ├── components/             # 🔵 Componentes Atómicos (Globales)
 │   │   ├── ui/                 # Elementos puros (Boton, Input, Badge)
-│   │   └── layout/             # Header, Footer, Sidebar
-│   ├── features/               # 🔴 EL NÚCLEO (Lógica por dominio)
-│   │   ├── drones/             # Todo sobre drones: visualización, 
