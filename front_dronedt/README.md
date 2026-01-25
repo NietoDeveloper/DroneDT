@@ -16,6 +16,7 @@ This is the frontend repository for Drone DT, a cutting-edge platform inspired b
 - **UI/UX**: Component-driven development with a "Tesla-minimalist" approach.
 
 ## 📐 Scalable Architecture (Feature-Based)
+
 The project utilizes a Feature-First structure, allowing each business module (Drones, Shop, Telemetry) to grow independently without generating technical debt.
 
 ```
