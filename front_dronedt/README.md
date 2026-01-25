@@ -15,5 +15,4 @@ drone-dt-frontend/
 │   ├── features/               # 🔴 EL NÚCLEO (Lógica por dominio)
 │   │   ├── drones/             # Todo sobre drones: visualización, tipos
 │   │   │   ├── components/     # CardDrone, DroneModelView
-│   │   │   ├── hooks/          # useDroneData
-│   │   │   └── services/       # fetchDrones
+│   │   │   ├── hooks/          # useDroneDat
