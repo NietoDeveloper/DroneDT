@@ -14,5 +14,3 @@ drone-dt-frontend/
 │   │   └── layout/             # Header, Footer, Sidebar
 │   ├── features/               # 🔴 EL NÚCLEO (Lógica por dominio)
 │   │   ├── drones/             # Todo sobre drones: visualización, tipos
-│   │   │   ├── components/     # CardDrone, DroneModelView
-│   │   │   ├── hooks/          # useDroneDat
