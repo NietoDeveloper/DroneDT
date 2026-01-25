@@ -1,5 +1,5 @@
 # 🛸 Drone DT — Frontend 
-### World-Class Drone Digital Twin Ecosystem  
+### World-Class Drone Digital Ecosystem  
 **Built for Scalability, Performance, and Precision.**
 
 Este es el repositorio del frontend de **Drone DT**, una plataforma de vanguardia inspirada en la estética y eficiencia de Tesla, diseñada para el control, visualización y comercio de tecnología de drones.
