@@ -24,7 +24,4 @@ drone-dt-frontend/
 │   │   └── utils.ts            # clsx y tailwind-merge
 │   ├── styles/                 # 🎨 Estilos Globales y Especiales
 │   │   ├── globals.css         # Tailwind base
-│   │   └── sections/           # CSS Puro (ej. animationscss)
-│   ├── types/                  # 🔷 Definiciones TS Globales
-│ ext
-└── tailwind.config.ts          # Config con tus colores Software DT
+s colores Software DT
