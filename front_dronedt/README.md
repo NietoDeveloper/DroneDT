@@ -9,5 +9,3 @@ drone-dt-frontend/
 │   │   ├── api/                # Route Handlers (BFF)
 │   │   ├── layout.tsx          # Layout con Navbar tipo Tesla
 │   │   └── page.tsx            # Hero Landing
-│   ├── components/             # 🔵 Componentes Atómicos (Globales)
-│   │   ├── ui/                 # Elementos puros (Boton, Input, Badge)
