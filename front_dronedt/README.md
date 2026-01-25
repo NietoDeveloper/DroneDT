@@ -1,2 +1,0 @@
-drone-dt-frontend/
-├── src/
