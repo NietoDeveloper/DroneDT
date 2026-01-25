@@ -1,38 +1,33 @@
 drone-dt-frontend/
-├── app/                  # Páginas y rutas de Next.js (App Router)
-│   ├── api/              # Rutas API internas (si necesitas, ej. para proxies)
-│   ├── drones/           # Páginas de modelos de drones (inspirado en Tesla Models)
-│   │   ├── [model]/      # Ruta dinámica para drone específico (ej. /drones/pro-max)
-│   │   └── page.tsx     # Lista de drones
-│   ├── tienda/           # E-commerce section (shop)
-│   │   ├── carrito/     # Carrito de compras
-│   │   └── page.tsx     # Catálogo
-│   ├── soporte/          # Support pages
-│   ├── mi-cuenta/       # Panel cliente (integrado: órdenes, perfil)
-│   ├── layout.tsx        # Layout global (nav, footer como Tesla)
-│   ├── page.tsx          # Home (hero con drones destacados)
-│   └── globals.css       # CSS puro para overrides (ej. animaciones)
-├── components/           # Componentes reutilizables (React)
-│   ├── ui/               # UI base (buttons, cards con Tailwind)
-│   │   ├── Button.tsx
-│   │   └── CardDrone.tsx # Card para drones
-│   ├── layout/           # Header, Footer (minimal como Tesla)
-│   ├── hero/             # Hero sections
-│   └── modals/           # Modals para carrito/login
-├── lib/                  # Utilidades
-│   ├── api.ts            # Fetchers para backend API
-│   └── utils.ts          # Helpers TS (ej. formatPrice)
-├── public/               # Assets estáticos
-│   ├── images/           # Imágenes de drones (optimizadas)
-│   └── fonts/            # Fuentes custom
-├── styles/               # Estilos
-│   ├── tailwind/         # Configs Tailwind
-│   └── custom/           # CSS puro para secciones específicas (ej. drone-animations.css)
-├── types/                # Tipos TS (ej. DroneType.ts)
-├── .env                  # Vars (ej. NEXT_PUBLIC_API_URL)
-├── Dockerfile            # Para containerizar con Docker
-├── next.config.js        # Config Next.js (ej. images from AWS S3)
-├── package.json          # Dependencias: next, react, tailwindcss, typescript
-├── tailwind.config.js    # Config Tailwind
-├── tsconfig.json         # TS config
-└── vercel.json           # Config despliegue Vercel
+├── src/
+│   ├── app/                    # 🟢 Ruteo y Server Components
+│   │   ├── (shop)/             # Route Group: Para la tienda (sin afectar URL)
+│   │   │   ├── drones/
+│   │   │   └── tienda/
+│   │   ├── (dashboard)/        # Route Group: Para el panel de control
+│   │   │   └── mi-cuenta/
+│   │   ├── api/                # Route Handlers (BFF)
+│   │   ├── layout.tsx          # Layout con Navbar tipo Tesla
+│   │   └── page.tsx            # Hero Landing
+│   ├── components/             # 🔵 Componentes Atómicos (Globales)
+│   │   ├── ui/                 # Elementos puros (Boton, Input, Badge)
+│   │   └── layout/             # Header, Footer, Sidebar
+│   ├── features/               # 🔴 EL NÚCLEO (Lógica por dominio)
+│   │   ├── drones/             # Todo sobre drones: visualización, tipos
+│   │   │   ├── components/     # CardDrone, DroneModelView
+│   │   │   ├── hooks/          # useDroneData
+│   │   │   └── services/       # fetchDrones
+│   │   ├── checkout/           # Todo sobre el carrito y pagos
+│   │   └── telemetry/          # Control en vivo del Drone
+│   ├── lib/                    # 🟡 Configuraciones de terceros
+│   │   ├── aws-s3.ts           # Config de AWS
+│   │   └── utils.ts            # clsx y tailwind-merge
+│   ├── styles/                 # 🎨 Estilos Globales y Especiales
+│   │   ├── globals.css         # Tailwind base
+│   │   └── sections/           # CSS Puro (ej. animations.css)
+│   ├── types/                  # 🔷 Definiciones TS Globales
+│   └── store/                  # 🧠 Estado Global (Zustand)
+├── public/                     # Assets (Images, Fonts)
+├── Dockerfile                  # Tu config de Docker
+├── next.config.js              # Config de Next
+└── tailwind.config.ts          # Config con tus colores Software DT
