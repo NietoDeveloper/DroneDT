@@ -26,7 +26,5 @@ drone-dt-frontend/
 │   │   ├── globals.css         # Tailwind base
 │   │   └── sections/           # CSS Puro (ej. animationscss)
 │   ├── types/                  # 🔷 Definiciones TS Globales
-│   └── store/                  # 🧠 Estado Global (Zustand)
-
-├── next.config.js              # Config de Next
+│ ext
 └── tailwind.config.ts          # Config con tus colores Software DT
