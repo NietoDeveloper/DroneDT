@@ -72,18 +72,21 @@ AWS_S3_BUCKET=your_bucket_name
 ```
 
 ### Development Mode:
+
 ```bash
 npm run dev
 ```
 The app will be running at http://localhost:3000
 
 ## 🏗️ Docker Production Build
+
 ```bash
 docker build -t drone-dt-frontend .
 docker run -p 3000:3000 drone-dt-frontend
 ```
 
 ## 👨‍💻 Developed by
+
 Manuel Nieto  
 Full-Stack Software Engineer  
 NietoDeveloper — #1 GitHub Contributor in Colombia 🇨🇴  
