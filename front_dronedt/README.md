@@ -24,7 +24,7 @@ drone-dt-frontend/
 │   │   └── utils.ts            # clsx y tailwind-merge
 │   ├── styles/                 # 🎨 Estilos Globales y Especiales
 │   │   ├── globals.css         # Tailwind base
-│   │   └── sections/           # CSS Puro (ej. animations.css)
+│   │   └── sections/           # CSS Puro (ej. animationscss)
 │   ├── types/                  # 🔷 Definiciones TS Globales
 │   └── store/                  # 🧠 Estado Global (Zustand)
 ├── public/                     # Assets (Images, Fonts)
