@@ -18,5 +18,3 @@ drone-dt-frontend/
 │   │   │   ├── hooks/          # useDroneData
 │   │   │   └── services/       # fetchDrones
 │   │   ├── checkout/           # Todo sobre el carrito y pagos
-│   │   └── telemetry/          # Control en vivo del Drone
-s
