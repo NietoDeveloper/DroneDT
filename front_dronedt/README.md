@@ -17,4 +17,3 @@ drone-dt-frontend/
 │   │   │   ├── components/     # CardDrone, DroneModelView
 │   │   │   ├── hooks/          # useDroneData
 │   │   │   └── services/       # fetchDrones
-│   │   ├── checkout/           # Todo sobre el carrito y pagos
