@@ -27,7 +27,6 @@ drone-dt-frontend/
 │   │   └── sections/           # CSS Puro (ej. animationscss)
 │   ├── types/                  # 🔷 Definiciones TS Globales
 │   └── store/                  # 🧠 Estado Global (Zustand)
-├── public/                     # Assets (Images, Fonts)
-├── Dockerfile                  # Tu config de Docker
+
 ├── next.config.js              # Config de Next
 └── tailwind.config.ts          # Config con tus colores Software DT
