@@ -19,9 +19,4 @@ drone-dt-frontend/
 │   │   │   └── services/       # fetchDrones
 │   │   ├── checkout/           # Todo sobre el carrito y pagos
 │   │   └── telemetry/          # Control en vivo del Drone
-│   ├── lib/                    # 🟡 Configuraciones de terceros
-│   │   ├── aws-s3.ts           # Config de AWS
-│   │   └── utils.ts            # clsx y tailwind-merge
-│   ├── styles/                 # 🎨 Estilos Globales y Especiales
-│   │   ├── globals.css         # Tailwind base
-s colores Software DT
+s
