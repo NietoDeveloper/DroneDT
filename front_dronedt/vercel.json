@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "github": {
+    "silent": true,
+    "hasWaitOnBeforeAction": true
+  },
+  "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "regions": ["cle1"], 
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "images": {
+    "sizes": [256, 384, 640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    "domains": [],
+    "minimumCacheTTL": 60
+  }
+}
