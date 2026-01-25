@@ -45,4 +45,6 @@ drone-dt-frontend/
 ├── Dockerfile                  # Containerization config
 └── tailwind.config.ts          # Custom Identity (Gainsboro & Gold)
 
-# Mnauel Nieto
+# Manuel Nieto
+
+## 
