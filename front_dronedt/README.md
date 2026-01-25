@@ -45,6 +45,7 @@ drone-dt-frontend/
 ```
 
 ## 🎨 Brand Identity (Software DT Styles)
+
 | Element | Variable | Hex Code |
 |---------|----------|----------|
 | Primary Gold | gold | #FFD700 |
@@ -55,6 +56,7 @@ drone-dt-frontend/
 ## 🚀 Getting Started
 
 ### Clone & Install:
+
 ```bash
 git clone https://github.com/NietoDeveloper/drone-dt-frontend.git
 cd drone-dt-frontend
@@ -62,6 +64,7 @@ npm install
 ```
 
 ### Environment Setup:
+
 Create a `.env.local` file with your AWS credentials and Backend URL:
 ```
 NEXT_PUBLIC_API_URL=your_api_gateway
