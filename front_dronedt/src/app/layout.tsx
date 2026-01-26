@@ -1,28 +1,37 @@
-import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google"; // Fuentes más "Tesla-style"
+import type { Metadata, Viewport } from "next";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
-// Fuente para cuerpo (Limpia y moderna)
+// Configuración de fuentes
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
+  display: 'swap',
 });
 
-// Fuente para títulos (Elegante y tecnológica)
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
   weight: ["700", "900"],
+  display: 'swap',
 });
 
+// Configuración de Viewport (Separada en Next.js 15)
+export const viewport: Viewport = {
+  themeColor: "#FFD700", // Color Gold de Software DT
+  width: "device-width",
+  initialScale: 1,
+};
+
+// Metadata optimizada para SEO y marca
 export const metadata: Metadata = {
   title: "DRONE DT | Tecnología Aérea Avanzada",
   description: "E-commerce líder en drones industriales, vigilancia y servicios de fotogrametría en Bogotá, Colombia. Desarrollado por Software DT.",
   keywords: ["Drones Bogotá", "Drone DT", "Venta de drones", "Software DT", "Drones Industriales"],
   authors: [{ name: "Manuel Nieto - NietoDeveloper" }],
-  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
 };
 
 export default function RootLayout({
@@ -33,17 +42,17 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${montserrat.variable} antialiased bg-black text-white min-h-screen flex flex-col`}
+        className={`${inter.variable} ${montserrat.variable} font-sans antialiased bg-main text-textColor min-h-screen flex flex-col`}
       >
-        {/* Navbar fijo en la parte superior */}
+        {/* Navbar */}
         <Navbar />
 
-        {/* Contenido principal con padding-top para no quedar oculto bajo el Navbar */}
-        <main className="flex-grow">
+        {/* Contenido principal con espaciado para el Navbar */}
+        <main className="flex-grow pt-20"> 
           {children}
         </main>
 
-        {/* Footer al final de todas las páginas */}
+        {/* Footer */}
         <Footer />
       </body>
     </html>
