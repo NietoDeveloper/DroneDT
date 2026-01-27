@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ShoppingCart, User, Circle } from 'lucide-react';
 
-// Definición de tipos para mantener el estándar de TypeScript
+// Interfaz para el ADN de los productos/servicios de Drone DT
 interface MenuItem {
   id: number;
   name: string;
@@ -26,6 +26,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Contenido Domain-Driven para Drone DT
   const menuContent: Record<string, MenuItem[]> = {
     Tienda: [
       { id: 1, name: "DRONE INDUSTRIAL X-1", price: "Desde $2,500" },
@@ -48,8 +49,8 @@ const Navbar = () => {
     >
       <div className="max-w-[1600px] mx-auto flex justify-between items-center px-8 py-5">
         
-        {/* LOGO DRONE DT */}
-        <Link href="/" className="group flex items-center">
+        {/* LOGO - Identidad Software DT */}
+        <Link href="/" className="group flex items-center outline-none">
           <div className="flex flex-col leading-none">
             <span className="text-2xl font-black tracking-[0.2em] text-gold italic transition-all duration-300 group-hover:tracking-[0.3em]">
               DRONE<span className="text-white not-italic">DT</span>
@@ -58,21 +59,21 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* NAVEGACIÓN CENTRAL */}
+        {/* NAVEGACIÓN CENTRAL - Estilo Minimalista */}
         <div className="hidden lg:flex items-center space-x-2 font-medium">
           {['Tienda', 'Servicios', 'Flota', 'Nosotros'].map((item) => (
             <button
               key={item}
               onMouseEnter={() => setActiveMenu(item)}
-              className="relative px-6 py-2 text-[13px] text-white uppercase tracking-[0.15em] hover:text-gold transition-all duration-300 group"
+              className="relative px-6 py-2 text-[13px] text-white uppercase tracking-[0.15em] hover:text-gold transition-all duration-300 group outline-none"
             >
               {item}
-              <span className="absolute bottom-0 left-1/2 w-0 h-[1px] bg-gold transition-all duration-300 group-hover:w-1/2 group-hover:left-1/4"></span>
+              <span className={`absolute bottom-0 left-1/2 h-[1px] bg-gold transition-all duration-300 ${activeMenu === item ? 'w-1/2 left-1/4' : 'w-0 group-hover:w-1/2 group-hover:left-1/4'}`}></span>
             </button>
           ))}
         </div>
 
-        {/* ACCIONES */}
+        {/* ACCIONES E-COMMERCE */}
         <div className="flex items-center space-x-8">
           <div className="hidden md:flex items-center space-x-2 px-3 py-1 rounded-full border border-white/10 bg-white/5">
             <Circle size={8} className="fill-green-500 text-green-500 animate-pulse" />
@@ -94,7 +95,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* MEGA MENÚ */}
+      {/* MEGA MENÚ DESPLEGABLE */}
       <div 
         className={`absolute top-full left-0 w-full bg-black/98 border-b border-gold/10 overflow-hidden transition-all duration-500 ease-in-out ${
           activeMenu && menuContent[activeMenu] ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
@@ -117,7 +118,13 @@ const Navbar = () => {
           ))}
         </div>
         <div className="bg-white/[0.02] py-4 text-center">
-             <Link href={`/${activeMenu?.toLowerCase()}`} className="text-[10px] tracking-[0.3em] text-gold hover:text-white transition-colors uppercase font-bold">Explorar {activeMenu}</Link>
+             <Link 
+              href={`/${activeMenu?.toLowerCase()}`} 
+              className="text-[10px] tracking-[0.3em] text-gold hover:text-white transition-colors uppercase font-bold"
+              onClick={() => setActiveMenu(null)}
+            >
+              Explorar todo en {activeMenu}
+            </Link>
         </div>
       </div>
     </nav>

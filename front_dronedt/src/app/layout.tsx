@@ -2,9 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
-// Usamos el alias estándar que definimos en el tsconfig.json
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+// 🛡️ Solución Definitiva: Ruta relativa explícita para evitar fallos de alias en Windows/OneDrive
+// Desde src/app/layout.tsx subimos un nivel a src/ y entramos a components/
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,14 +40,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} ${montserrat.variable} scroll-smooth`}>
+    <html 
+      lang="es" 
+      className={`${inter.variable} ${montserrat.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <body
         className="font-sans antialiased bg-main text-textColor min-h-screen flex flex-col"
       >
         <Navbar />
+        
+        {/* El pt-20 asegura que el contenido no quede oculto bajo el Navbar fixed */}
         <main className="flex-grow pt-20">
           {children}
         </main>
+
         <Footer />
       </body>
     </html>
