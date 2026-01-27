@@ -14,7 +14,9 @@
     "react-dom": "^19.0.0",
     "lucide-react": "^0.473.0",
     "tailwindcss": "^4.0.0",
-    "@tailwindcss/postcss": "^4.0.0"
+    "@tailwindcss/postcss": "^4.0.0",
+    "postcss": "^8.5.1",
+    "autoprefixer": "^10.4.20"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -23,6 +25,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.4",
     "typescript": "^5",
-    "babel-plugin-react-compiler": "1.0.0-beta-8a03594-20241205"
+    "babel-plugin-react-compiler": "canary"
   }
 }
