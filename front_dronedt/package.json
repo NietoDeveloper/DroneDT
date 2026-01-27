@@ -12,7 +12,7 @@
     "next": "15.1.7",
     "react": "19.0.0",
     "react-dom": "19.0.0",
-    "lucide-react": "^0.473.0",
+    "lucide-react": "^0.474.0",
     "tailwindcss": "^4.0.0",
     "@tailwindcss/postcss": "^4.0.0",
     "postcss": "^8.5.1",
@@ -25,6 +25,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
     "typescript": "^5",
-    "babel-plugin-react-compiler": "1.0.0-beta-2503975-20250124"
+    "babel-plugin-react-compiler": "canary"
   }
 }
