@@ -67,7 +67,7 @@ const Footer = () => {
 
           {/* COL 4: STATUS BOGOTÁ */}
           <div className="flex flex-col space-y-4 bg-white/[0.03] p-6 rounded-sm border border-white/5">
-            <h4 className="text-[10px] font-bold tracking-[0.3em] text-gold uppercase">Sede Central</h4>
+            <h4 className="text-[10px] font-bold tracking-[0.3em] text-gold uppercase">Base</h4>
             <p className="text-xs font-medium tracking-widest">BOGOTÁ, COLOMBIA</p>
             <div className="space-y-1">
               <p className="text-[10px] text-gold font-mono font-bold">{formatBogotaTime(dateTime)}</p>
