@@ -3,8 +3,8 @@ import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
 // Volvemos al alias estándar. Si TS tira error aquí, el problema es el baseUrl del tsconfig.
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
