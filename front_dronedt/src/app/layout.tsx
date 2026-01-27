@@ -37,25 +37,6 @@ export const metadata: Metadata = {
   robots: "index, follow",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="es" className="scroll-smooth">
-      <body
-        className={`${inter.variable} ${montserrat.variable} font-sans antialiased bg-main text-textColor min-h-screen flex flex-col`}
-      >
-        {/* Renderizado del Navbar */}
-        <Navbar />
-
-        {/* El padding-top pt-20 evita que el Navbar fijo tape el contenido */}
-        <main className="flex-grow pt-20">
-          {children}
-        </main>
-
-        <Footer />
       </body>
     </html>
   );
