@@ -32,12 +32,3 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "DRONE DT | Tecnología Aérea Avanzada",
   description: "E-commerce líder en drones industriales en Bogotá. Desarrollado por Software DT.",
-  keywords: ["Drones Bogotá", "Drone DT", "Software DT"],
-  authors: [{ name: "Manuel Nieto - NietoDeveloper" }],
-  robots: "index, follow",
-};
-
-      </body>
-    </html>
-  );
-}
