@@ -26,9 +26,3 @@ export const viewport: Viewport = {
   themeColor: "#FFD700", // Gold de Software DT
   width: "device-width",
   initialScale: 1,
-};
-
-// Metadata: SEO Clase Mundial
-export const metadata: Metadata = {
-  title: "DRONE DT | Tecnología Aérea Avanzada",
-  description: "E-commerce líder en drones industriales en Bogotá. Desarrollado por Software DT.",
