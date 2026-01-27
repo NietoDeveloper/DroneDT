@@ -100,7 +100,7 @@ const Footer = () => {
           </div>
 
           <p className="text-[9px] tracking-widest text-white/20 uppercase font-medium text-center md:text-right">
-            © {new Date().getFullYear()} DRONE DT
+            © {new Date().getFullYear()} Drone D T
           </p>
         </div>
       </div>
