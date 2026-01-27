@@ -22,7 +22,3 @@ const montserrat = Montserrat({
 });
 
 // Viewport: Nueva convención de Next.js 15
-export const viewport: Viewport = {
-  themeColor: "#FFD700", // Gold de Software DT
-  width: "device-width",
-  initialScale: 1,
