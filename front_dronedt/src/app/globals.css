@@ -1,15 +1,12 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #DCDCDC; /* Gainsboro - Estilo Software DT */
+  --foreground: #000000; /* HeadingColor */
+  --gold: #FFD700;
+  --yellow-color: #FEB60D;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +17,18 @@
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Clases de utilidad personalizadas para tu proyecto DroneDT */
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-main {
+  background-color: var(--background);
 }
