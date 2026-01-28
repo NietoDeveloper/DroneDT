@@ -3,32 +3,49 @@
 @tailwind utilities;
 
 :root {
-  --background: #DCDCDC; /* Gainsboro - Estilo Software DT */
-  --foreground: #000000; /* HeadingColor */
+  /* Paleta Base Software DT */
+  --gainsboro: #DCDCDC;
   --gold: #FFD700;
   --yellow-color: #FEB60D;
+  
+  /* Paleta Inspirada en Tesla / DroneDT High-Tech */
+  --primary: #007BFF;       /* Azul eléctrico tecnología */
+  --secondary: #212121;     /* Fondo oscuro minimalista */
+  --accent: #CC0000;        /* Rojo Tesla para alertas/vínculos */
+  --neutral-light: #FAFAFA;
+  --neutral-dark: #818181;
+  
+  /* Variables de aplicación */
+  --background: var(--gainsboro);
+  --foreground: #000000;
 }
 
+/* Soporte para Modo Oscuro Automático (Media) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--secondary);
+    --foreground: #FFFFFF;
   }
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif; /* Look más moderno */
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease;
 }
 
-/* Clases de utilidad personalizadas para tu proyecto DroneDT */
+/* Clases de utilidad personalizadas DroneDT */
+.btn-tesla {
+  @apply bg-[#212121] text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all;
+}
+
 .text-gold {
   color: var(--gold);
 }
 
-.bg-main {
-  background-color: var(--background);
+.bg-primary-drone {
+  background-color: var(--primary);
 }
