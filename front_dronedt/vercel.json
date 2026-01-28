@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "github": {
-    "silent": true,
-    "hasWaitOnBeforeAction": true
-  },
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "installCommand": "npm install",
+  "installCommand": "rm -rf node_modules && rm -f package-lock.json && npm install --legacy-peer-deps",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "github": {
+    "silent": true
+  },
+  "env": {
+    "NPM_CONFIG_LOGLEVEL": "error"
+  }
 }
