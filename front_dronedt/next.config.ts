@@ -1,16 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* React Compiler: Desactivado. 
-     Forzamos el modo preventivo para evitar conflictos con React 19 en el build.
-  */
+  /* React Compiler: Desactivado para estabilidad en producción */
   experimental: {
     reactCompiler: false,
   },
 
-  /* Configuración de imágenes AWS: 
-     Añadimos un wildcard más amplio por si tus buckets usan regiones específicas.
-  */
+  /* Configuración de imágenes AWS */
   images: {
     remotePatterns: [
       {
@@ -20,9 +16,7 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  /* Bypass de Seguridad y Calidad: 
-     Esencial para saltarse las alertas de vulnerabilidad de Next.js en el pipeline de Vercel.
-  */
+  /* Bypass de Seguridad y Calidad - SOLO PARA DESARROLLO RÁPIDO */
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -30,17 +24,22 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
 
-  /* Output Standalone: 
-     Necesario para tu arquitectura Docker y para reducir el peso en Vercel.
-  */
+  /* Output Standalone para Docker/Vercel */
   output: 'standalone',
 
-  /* Ajuste de producción: 
-     Desactivamos el indicador de feedback de Vercel que a veces causa lag en builds pesados.
-  */
+  /* Desactivar indicadores en producción */
   devIndicators: {
     appIsrStatus: false,
   },
+
+  /* Optimización de builds */
+  poweredByHeader: false,
+  compress: true,
+  
+  /* Configuración específica para Vercel */
+  ...(process.env.VERCEL && {
+    output: 'standalone',
+  }),
 };
 
 export default nextConfig;
