@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  /* Paleta Base Software DT */
-  --gainsboro: #DCDCDC;
+
+  --gainsboro: #ffff;
   --gold: #FFD700;
   --yellow-color: #FEB60D;
   
   /* Paleta Inspirada en Tesla / DroneDT High-Tech */
-  --primary: #007BFF;       /* Azul eléctrico tecnología */
+  --primary: #061dcbe6;       /* Azul eléctrico tecnología */
   --secondary: #212121;     /* Fondo oscuro minimalista */
   --accent: #CC0000;        /* Rojo Tesla para alertas/vínculos */
   --neutral-light: #FAFAFA;
