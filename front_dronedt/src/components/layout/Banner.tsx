@@ -1,40 +1,47 @@
 "use client";
 
-const Banner = () => {
-  return (
-    <section className="relative h-full w-full flex items-center justify-center overflow-hidden">
-      {/* Video Background - Ocupa todo el contenedor de la sección 1 (80vh) */}
-      <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          {/* Usando tu nuevo nombre de archivo */}
-          <source src="/videos/Banner-1.mp4" type="video/mp4" />
-        </video>
-        
-        {/* Overlay Tesla: Degradado sutil para dar profundidad al video */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black" />
-      </div>
+import { useEffect, useRef } from "react";
 
-      {/* Content Overlay: 
-          Quitamos los H1/P grandes de aquí porque ya los pusiste en page.tsx. 
-          Dejamos solo un tag minimalista si deseas, o lo dejamos limpio. 
-      */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-6">
-        <div className="space-y-2">
-          <span className="text-white/60 text-[10px] tracking-[0.8em] uppercase font-black animate-pulse">
-            Sistemas Autónomos
+const Banner = () => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Forzamos el play por si el navegador lo bloquea inicialmente
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log("Autoplay preventido por el navegador, intentando de nuevo...");
+      });
+    }
+  }, []);
+
+  return (
+    <div className="relative w-full h-full min-h-[80vh] bg-black">
+      {/* Video Background */}
+      <video 
+        ref={videoRef}
+        autoPlay 
+        loop 
+        muted 
+        playsInline
+        // Eliminamos z-0 y usamos absolute inset-0 para que llene el padre
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+        style={{ filter: 'brightness(0.7)' }} // Toque Tesla para que el texto resalte
+      >
+        <source src="/videos/Banner-1.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Overlay Tesla: Degradado para fusionar con la siguiente sección negra */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black pointer-events-none" />
+
+      {/* Content Overlay */}
+      <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-6">
+        <div className="animate-fade-in transition-all duration-1000">
+          <span className="text-white/40 text-[9px] md:text-[11px] tracking-[1em] uppercase font-black">
+            Sistemas Autónomos de Alta Precisión
           </span>
         </div>
       </div>
-
-      {/* El indicador de scroll ya lo tienes en page.tsx, 
-          así que aquí el banner queda limpio y optimizado. */}
-    </section>
+    </div>
   );
 };
 

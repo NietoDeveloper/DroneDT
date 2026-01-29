@@ -2,8 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
-// 🛡️ Solución Definitiva: Ruta relativa explícita para evitar fallos de alias en Windows/OneDrive
-// Desde src/app/layout.tsx subimos un nivel a src/ y entramos a components/
+// Rutas relativas explícitas para evitar conflictos de alias
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
@@ -21,7 +20,7 @@ const montserrat = Montserrat({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#FFD700", // Gold de Software DT
+  themeColor: "#FFD700",
   width: "device-width",
   initialScale: 1,
 };
@@ -46,12 +45,13 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="font-sans antialiased bg-main text-textColor min-h-screen flex flex-col"
+        className="font-sans antialiased bg-black text-textColor min-h-screen flex flex-col"
       >
+        {/* El Navbar DEBE ser 'fixed' o 'absolute' en su propio componente para no ocupar espacio */}
         <Navbar />
         
-        {/* El pt-20 asegura que el contenido no quede oculto bajo el Navbar fixed */}
-        <main className="flex-grow pt-20">
+        {/* ELIMINADO pt-20: El contenido (Banner) ahora toca el techo de la pantalla */}
+        <main className="flex-grow">
           {children}
         </main>
 
