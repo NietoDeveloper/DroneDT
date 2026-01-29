@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 
 const slides = [
@@ -13,13 +13,21 @@ const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 7000);
-    return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    startTimer();
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [startTimer]);
 
   useEffect(() => {
     if (currentSlide === 0 && videoRef.current) {
@@ -27,6 +35,11 @@ const Banner = () => {
       videoRef.current.play().then(() => setIsVideoVisible(true)).catch(() => {});
     }
   }, [currentSlide]);
+
+  const handleDotClick = (index: number) => {
+    setCurrentSlide(index);
+    startTimer(); 
+  };
 
   return (
     <section className="relative w-full h-[90vh] bg-black overflow-hidden font-montserrat">
@@ -58,53 +71,53 @@ const Banner = () => {
             )}
           </div>
         ))}
-        {/* Gradiente más suave para no tapar los dots */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-transparent z-[1]" />
+        {/* Gradiente sutil */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 z-[1]" />
       </div>
 
-      {/* 2. TEXTO SUPERIOR */}
-      <div className="relative z-10 pt-[12vh] text-center px-6">
-        <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000 space-y-2">
-          <h1 className="text-white text-4xl md:text-[65px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
+      {/* CONTENEDOR CENTRAL: TÍTULO BAJO Y BOTONES ALTOS JUNTOS */}
+      <div className="relative z-10 flex flex-col items-center justify-start h-full pt-[35vh] px-6 text-center">
+        
+        {/* 2. TEXTO (Bajado con pt-35vh) */}
+        <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000">
+          <h1 className="text-white text-4xl md:text-[72px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
             {slides[currentSlide].title.split(' ')[0]} <span className="text-gold">{slides[currentSlide].title.split(' ')[1]}</span>
           </h1>
-          <p className="text-white text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold drop-shadow-md">
+          <p className="text-white text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold drop-shadow-md mt-2">
             {slides[currentSlide].subtitle}
           </p>
         </div>
-      </div>
 
-      {/* 3. BOTONES DE ACCIÓN */}
-      <div className="absolute inset-0 z-20 flex items-center justify-center px-6 pointer-events-none">
-        <div className="flex flex-col md:flex-row gap-4 w-full max-w-[580px] pointer-events-auto">
+        {/* 3. BOTONES (Subidos con mt-4 para estar casi pegados al texto) */}
+        <div className="flex flex-col md:flex-row gap-4 w-full max-w-[580px] mt-6">
           <Link 
             href="/shop"
-            className="flex-1 h-16 flex items-center justify-center bg-white text-black rounded-[4px] text-[11px] font-bold uppercase tracking-widest hover:bg-gray-100 transition-all shadow-xl active:scale-95"
+            className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[11px] font-bold uppercase tracking-widest hover:bg-gray-200 transition-all shadow-xl active:scale-95"
           >
             Order Now
           </Link>
           <Link 
             href="/services" 
-            className="flex-1 h-16 flex items-center justify-center bg-black/50 backdrop-blur-md text-white rounded-[4px] text-[11px] font-bold uppercase tracking-widest border border-white/20 hover:bg-black/70 transition-all shadow-xl active:scale-95"
+            className="flex-1 h-[84px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[11px] font-bold uppercase tracking-widest border border-white/30 hover:bg-black/60 transition-all shadow-xl active:scale-95"
           >
             Flota
           </Link>
         </div>
       </div>
 
-      {/* 4. INDICADORES (TESLA DOTS) - FORZADOS AL FRENTE */}
-      <div className="absolute bottom-10 left-0 right-0 z-[9999] flex justify-center items-center gap-6 pointer-events-auto">
+      {/* 4. INDICADORES (DOTS) - Limpios y funcionales */}
+      <div className="absolute bottom-10 left-0 right-0 z-[50] flex justify-center items-center gap-6">
           {slides.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrentSlide(i)}
+              onClick={() => handleDotClick(i)}
               className={`
-                w-3 h-3 rounded-full transition-all duration-300 cursor-pointer border-2 border-white/20 shadow-[0_0_10px_rgba(0,0,0,0.5)]
+                w-3 h-3 rounded-full transition-all duration-300 cursor-pointer border border-white/40 shadow-lg
                 ${i === currentSlide 
-                  ? 'bg-white scale-125 opacity-100' 
-                  : 'bg-white/30 hover:bg-white/60 opacity-100'}
+                  ? 'bg-white scale-125' 
+                  : 'bg-white/20 hover:bg-white/50'}
               `}
-              aria-label={`Ver slide ${i + 1}`}
+              aria-label={`Slide ${i + 1}`}
             />
           ))}
       </div>
