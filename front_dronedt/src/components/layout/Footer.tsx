@@ -33,73 +33,81 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black text-white border-t border-gold/10 pt-16 pb-8">
-      <div className="max-w-[1440px] mx-auto px-10">
+    <footer className="bg-black text-white border-t border-gold/10 pt-20 pb-10 font-montserrat">
+      <div className="max-w-[1900px] mx-auto px-6 md:px-12 lg:px-20">
         
         {/* SECCIÓN SUPERIOR: GRID TIPO TESLA */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 lg:gap-20 mb-20">
           
           {/* COL 1: BRANDING */}
           <div className="space-y-6">
-            <h3 className="text-xl font-black italic tracking-tighter text-gold">
+            <h3 className="text-2xl font-black italic tracking-tighter text-gold">
               DRONE<span className="text-white not-italic">DT</span>
             </h3>
-            <p className="text-[11px] tracking-widest leading-relaxed text-gainsboro/50 uppercase">
-              Liderando la revolución aérea en Colombia con tecnología de precisión y soluciones autónomas de clase mundial.
+            <p className="text-[11px] tracking-[0.2em] leading-relaxed text-white/40 uppercase font-bold">
+              Ingeniería de Clase Mundial con tecnología de precisión y soluciones autónomas de alto rendimiento.
             </p>
           </div>
 
           {/* COL 2: NAVEGACIÓN */}
           <div className="flex flex-col space-y-4">
-            <h4 className="text-[10px] font-bold tracking-[0.3em] text-gold/80 uppercase">Navegación</h4>
-            <Link href="/shop" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-gainsboro/70">Tienda</Link>
-            <Link href="/services" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-gainsboro/70">Servicios</Link>
-            <Link href="/fleet" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-gainsboro/70">Flota</Link>
+            <h4 className="text-[10px] font-black tracking-[0.4em] text-gold uppercase mb-2">Navegación</h4>
+            <Link href="/shop" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-white/60 font-medium">Tienda</Link>
+            <Link href="/services" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-white/60 font-medium">Servicios</Link>
+            <Link href="/fleet" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-white/60 font-medium">Flota</Link>
           </div>
 
           {/* COL 3: SOPORTE */}
           <div className="flex flex-col space-y-4">
-            <h4 className="text-[10px] font-bold tracking-[0.3em] text-gold/80 uppercase">Soporte</h4>
-            <Link href="/legal" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-gainsboro/70">Privacidad</Link>
-            <Link href="/terms" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-gainsboro/70">Términos</Link>
-            <Link href="/contact" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-gainsboro/70">Contacto</Link>
+            <h4 className="text-[10px] font-black tracking-[0.4em] text-gold uppercase mb-2">Soporte</h4>
+            <Link href="/legal" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-white/60 font-medium">Privacidad</Link>
+            <Link href="/terms" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-white/60 font-medium">Términos</Link>
+            <Link href="/contact" className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-white/60 font-medium">Contacto</Link>
           </div>
 
-          {/* COL 4: STATUS BOGOTÁ */}
-          <div className="flex flex-col space-y-4 bg-white/[0.03] p-6 rounded-sm border border-white/5">
-            <h4 className="text-[10px] font-bold tracking-[0.3em] text-gold uppercase">Base</h4>
-            <p className="text-xs font-medium tracking-widest">BOGOTÁ, COLOMBIA</p>
-            <div className="space-y-1">
-              <p className="text-[10px] text-gold font-mono font-bold">{formatBogotaTime(dateTime)}</p>
-              <p className="text-[9px] text-white/40 uppercase tracking-tighter">{formatBogotaDate(dateTime)}</p>
+          {/* COL 4: STATUS BOGOTÁ (ESTILO DASHBOARD) */}
+          <div className="flex flex-col space-y-4 bg-white/[0.02] p-8 rounded-[4px] border border-white/5 relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-1 h-full bg-gold/30 group-hover:bg-gold transition-colors duration-500" />
+            <h4 className="text-[10px] font-black tracking-[0.4em] text-gold uppercase">Huso Horario</h4>
+            <div>
+              <p className="text-xs font-bold tracking-[0.3em] text-white">BOGOTÁ, CO</p>
+              <div className="mt-4 space-y-1">
+                <p className="text-lg text-white font-mono font-bold tracking-tighter leading-none">
+                  {formatBogotaTime(dateTime)}
+                </p>
+                <p className="text-[9px] text-white/30 uppercase tracking-[0.2em] font-bold">
+                  {formatBogotaDate(dateTime)}
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* SECCIÓN INFERIOR: CRÉDITOS */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-white/5 pt-10 flex flex-col lg:flex-row justify-between items-center gap-8">
           
-          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 items-center">
+          <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8 items-center">
             <Link href="https://softwaredt.vercel.app/" target="_blank" className="group">
-              <span className="text-[10px] tracking-[0.2em] text-white/40 group-hover:text-gold transition-all duration-300">
-                CREADOR: <span className="font-bold text-white/60 group-hover:text-white">SOFTWARE DT</span>
+              <span className="text-[10px] tracking-[0.3em] text-white/30 group-hover:text-gold transition-all duration-300 font-bold uppercase">
+                Creador: <span className="text-white/60 group-hover:text-white">Software DT</span>
               </span>
             </Link>
             
-            <Link href="https://github.com/NietoDeveloper" target="_blank" className="group border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-6">
-              <span className="text-[10px] tracking-[0.2em] text-white/40 group-hover:text-gold transition-all duration-300">
-                SUPERVISIÓN: <span className="font-bold text-white/60 group-hover:text-white uppercase">NietoDeveloper</span>
+            <Link href="https://github.com/NietoDeveloper" target="_blank" className="group border-t md:border-t-0 md:border-l border-white/10 pt-4 md:pt-0 md:pl-8">
+              <span className="text-[10px] tracking-[0.3em] text-white/30 group-hover:text-gold transition-all duration-300 font-bold uppercase">
+                Supervisor: <span className="text-white/60 group-hover:text-white">NietoDeveloper</span>
               </span>
             </Link>
           </div>
 
-          <div className="flex space-x-6 text-white/40">
-             <Twitter size={16} className="hover:text-gold cursor-pointer transition-colors" />
-             <Linkedin size={16} className="hover:text-gold cursor-pointer transition-colors" />
-             <Instagram size={16} className="hover:text-gold cursor-pointer transition-colors" />
+          {/* REDES */}
+          <div className="flex space-x-8 text-white/30">
+             <Twitter size={18} className="hover:text-gold cursor-pointer transition-all duration-300 hover:scale-110" />
+             <Linkedin size={18} className="hover:text-gold cursor-pointer transition-all duration-300 hover:scale-110" />
+             <Instagram size={18} className="hover:text-gold cursor-pointer transition-all duration-300 hover:scale-110" />
           </div>
 
-          <p className="text-[9px] tracking-widest text-white/20 uppercase font-medium text-center md:text-right">
+          <p className="text-[10px] tracking-[0.4em] text-white/10 uppercase font-black">
             © {new Date().getFullYear()} Drone D T
           </p>
         </div>
