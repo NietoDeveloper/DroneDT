@@ -24,9 +24,7 @@ const Banner = () => {
 
   useEffect(() => {
     startTimer();
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
   }, [startTimer]);
 
   useEffect(() => {
@@ -55,10 +53,7 @@ const Banner = () => {
             {slide.type === 'video' ? (
               <video
                 ref={videoRef}
-                autoPlay
-                loop
-                muted
-                playsInline
+                autoPlay loop muted playsInline
                 className={`w-full h-full object-cover transition-opacity duration-1000 ${isVideoVisible ? 'opacity-100' : 'opacity-0'}`}
               >
                 <source src={slide.src} type="video/mp4" />
@@ -71,53 +66,52 @@ const Banner = () => {
             )}
           </div>
         ))}
-        {/* Gradiente sutil */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/40 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 z-[1]" />
       </div>
 
-      {/* CONTENEDOR CENTRAL: TÍTULO BAJO Y BOTONES ALTOS JUNTOS */}
-      <div className="relative z-10 flex flex-col items-center justify-start h-full pt-[35vh] px-6 text-center">
+      {/* CONTENEDOR CENTRAL: TÍTULO BAJO Y BOTONES PEGADOS */}
+      <div className="relative z-10 flex flex-col items-center justify-start h-full pt-[45vh] px-6 text-center">
         
-        {/* 2. TEXTO (Bajado con pt-35vh) */}
+        {/* 2. TEXTO (Bajado significativamente) */}
         <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000">
-          <h1 className="text-white text-4xl md:text-[72px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
+          <h1 className="text-white text-4xl md:text-[75px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
             {slides[currentSlide].title.split(' ')[0]} <span className="text-gold">{slides[currentSlide].title.split(' ')[1]}</span>
           </h1>
-          <p className="text-white text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold drop-shadow-md mt-2">
+          <p className="text-white text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold drop-shadow-md mt-4">
             {slides[currentSlide].subtitle}
           </p>
         </div>
 
-        {/* 3. BOTONES (Subidos con mt-4 para estar casi pegados al texto) */}
-        <div className="flex flex-col md:flex-row gap-4 w-full max-w-[580px] mt-6">
+        {/* 3. BOTONES (Altos h-[84px] y subidos con margen negativo para acercarse al título) */}
+        <div className="flex flex-col md:flex-row gap-4 w-full max-w-[600px] mt-10 md:-mt-2 pointer-events-auto">
           <Link 
             href="/shop"
-            className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[11px] font-bold uppercase tracking-widest hover:bg-gray-200 transition-all shadow-xl active:scale-95"
+            className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[12px] font-bold uppercase tracking-widest hover:bg-gray-100 transition-all shadow-2xl active:scale-95"
           >
             Order Now
           </Link>
           <Link 
             href="/services" 
-            className="flex-1 h-[84px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[11px] font-bold uppercase tracking-widest border border-white/30 hover:bg-black/60 transition-all shadow-xl active:scale-95"
+            className="flex-1 h-[84px] flex items-center justify-center bg-black/50 backdrop-blur-md text-white rounded-[4px] text-[12px] font-bold uppercase tracking-widest border border-white/20 hover:bg-black/70 transition-all shadow-2xl active:scale-95"
           >
             Flota
           </Link>
         </div>
       </div>
 
-      {/* 4. INDICADORES (DOTS) - Limpios y funcionales */}
-      <div className="absolute bottom-10 left-0 right-0 z-[50] flex justify-center items-center gap-6">
+      {/* 4. INDICADORES (DOTS) - Funcionales y visibles */}
+      <div className="absolute bottom-12 left-0 right-0 z-[100] flex justify-center items-center gap-8">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => handleDotClick(i)}
               className={`
-                w-3 h-3 rounded-full transition-all duration-300 cursor-pointer border border-white/40 shadow-lg
+                w-4 h-4 rounded-full transition-all duration-300 cursor-pointer border-2 shadow-lg
                 ${i === currentSlide 
-                  ? 'bg-white scale-125' 
-                  : 'bg-white/20 hover:bg-white/50'}
+                  ? 'bg-white border-white scale-125 shadow-white/20' 
+                  : 'bg-white/20 border-white/40 hover:bg-white/50'}
               `}
-              aria-label={`Slide ${i + 1}`}
+              aria-label={`Ir al slide ${i + 1}`}
             />
           ))}
       </div>

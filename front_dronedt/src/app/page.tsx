@@ -3,31 +3,22 @@
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// 🚀 Importación dinámica corregida para coincidir con la estructura layout
+// Importación dinámica
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-gold selection:text-black">
-      {/* El Navbar flota sobre el contenido gracias al RootLayout sin padding */}
       <Navbar />
 
       <main className="flex flex-col w-full">
         
-        {/* SECCIÓN 1: BANNER DINÁMICO (80% del viewport) 
-            Aseguramos que no tenga márgenes superiores para que el video toque el techo.
-        */}
-        <section className="relative h-[80vh] w-full z-10 overflow-hidden bg-black">
+        {/* SECCIÓN 1: BANNER DINÁMICO (90% del viewport para máxima inmersión) */}
+        <section className="relative h-[90vh] w-full z-10 overflow-hidden bg-black">
           <Banner />
           
-          {/* INDICADOR DE SCROLL TIPO TESLA */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 pointer-events-none">
-            <span className="text-[8px] md:text-[10px] tracking-[0.5em] text-white/40 uppercase font-black animate-pulse">
-              Desliza
-            </span>
-            <div className="w-[1px] h-10 bg-gradient-to-b from-gold via-gold/10 to-transparent" />
-          </div>
+          {/* SE ELIMINÓ EL INDICADOR "DESLIZA" QUE ESTABA AQUÍ */}
         </section>
 
         {/* SECCIÓN 2: CONTENIDO PRINCIPAL - Branding y Stats */}
