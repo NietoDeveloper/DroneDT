@@ -3,20 +3,22 @@
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// IMPORTANTE: Rutas corregidas para evitar el "Module not found"
+// 🚀 Importación dinámica corregida para coincidir con la estructura layout
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
 
 export default function Home() {
   return (
     <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-gold selection:text-black">
-      {/* El Navbar ahora carga desde layout */}
+      {/* El Navbar flota sobre el contenido gracias al RootLayout sin padding */}
       <Navbar />
 
       <main className="flex flex-col w-full">
         
-        {/* SECCIÓN 1: BANNER DINÁMICO (80% del viewport) */}
-        <section className="relative h-[80vh] w-full z-10">
+        {/* SECCIÓN 1: BANNER DINÁMICO (80% del viewport) 
+            Aseguramos que no tenga márgenes superiores para que el video toque el techo.
+        */}
+        <section className="relative h-[80vh] w-full z-10 overflow-hidden bg-black">
           <Banner />
           
           {/* INDICADOR DE SCROLL TIPO TESLA */}
@@ -28,7 +30,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN 2: CONTENIDO PRINCIPAL */}
+        {/* SECCIÓN 2: CONTENIDO PRINCIPAL - Branding y Stats */}
         <section className="relative z-20 bg-black pt-16 pb-24 px-4 sm:px-10">
           <div className="max-w-[1900px] mx-auto">
             
@@ -79,7 +81,7 @@ export default function Home() {
                 
                 <Link
                   href="/services"
-                  className="flex-1 h-14 flex items-center justify-center rounded-sm bg-[#1a1a1a] text-white border border-white/10 text-[10px] font-black tracking-[0.2em] uppercase backdrop-blur-md transition-all duration-300 hover:border-gold hover:text-gold active:scale-95"
+                  className="flex-1 h-14 flex items-center justify-center rounded-sm bg-[#1a1a1a] text-white border border-white/10 text-[10px] font-black tracking-[0.2em] uppercase transition-all duration-300 hover:border-gold hover:text-gold active:scale-95"
                 >
                   Servicios Técnicos
                 </Link>
@@ -88,7 +90,7 @@ export default function Home() {
 
           </div>
 
-          {/* BACKGROUND EFFECTS */}
+          {/* EFECTOS DE FONDO (Glow y Ruido) */}
           <div className="absolute inset-0 z-[-1] pointer-events-none overflow-hidden">
              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gold/5 blur-[120px] rounded-full" />
              <div className="absolute inset-0 opacity-[0.02] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
@@ -97,7 +99,7 @@ export default function Home() {
       </main>
 
       {/* FOOTER */}
-      <footer className="relative z-20 py-12 flex flex-col items-center gap-6 border-t border-white/5">
+      <footer className="relative z-20 py-12 flex flex-col items-center gap-6 border-t border-white/5 bg-black">
         <div className="flex flex-wrap justify-center gap-6 sm:gap-10 text-[9px] text-white/30 font-bold tracking-widest uppercase">
           <span className="text-white/50">DroneDT © 2026</span>
           <Link href="/privacy" className="hover:text-gold transition-colors">Privacidad</Link>
