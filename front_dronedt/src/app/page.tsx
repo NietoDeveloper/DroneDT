@@ -25,7 +25,7 @@ export default function Home() {
             <span className="text-gold italic">DT</span>
           </h1>
           <p className="text-[10px] md:text-xs tracking-[0.6em] text-gainsboro font-bold uppercase opacity-70">
-            Ingeniería Aérea de Precisión • Bogotá
+            Ingeniería Drone • Bogotá
           </p>
         </div>
 
