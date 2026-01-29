@@ -66,50 +66,54 @@ const Banner = () => {
             )}
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 z-[1]" />
       </div>
 
-      {/* CONTENEDOR CENTRAL: TÍTULO BAJO Y BOTONES PEGADOS */}
-      <div className="relative z-10 flex flex-col items-center justify-start h-full pt-[45vh] px-6 text-center">
+      {/* CONTENEDOR CENTRAL: MÁXIMO 1900PX */}
+      <div className="relative z-10 flex flex-col items-center justify-start h-full max-w-[1900px] mx-auto px-6 text-center">
         
-        {/* 2. TEXTO (Bajado significativamente) */}
-        <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000">
-          <h1 className="text-white text-4xl md:text-[75px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
-            {slides[currentSlide].title.split(' ')[0]} <span className="text-gold">{slides[currentSlide].title.split(' ')[1]}</span>
-          </h1>
-          <p className="text-white text-[10px] md:text-xs tracking-[0.4em] uppercase font-bold drop-shadow-md mt-4">
-            {slides[currentSlide].subtitle}
-          </p>
-        </div>
+        {/* BLOQUE DE CONTENIDO: Título bajo y botones pegados */}
+        <div className="mt-[42vh] md:mt-[48vh] flex flex-col items-center w-full max-w-[700px]">
+          
+          {/* 2. TEXTO - Tamaño controlado para Desktop */}
+          <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
+            <h1 className="text-white text-4xl md:text-[68px] lg:text-[72px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
+              {slides[currentSlide].title.split(' ')[0]} <span className="text-gold">{slides[currentSlide].title.split(' ')[1]}</span>
+            </h1>
+            <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
+              {slides[currentSlide].subtitle}
+            </p>
+          </div>
 
-        {/* 3. BOTONES (Altos h-[84px] y subidos con margen negativo para acercarse al título) */}
-        <div className="flex flex-col md:flex-row gap-4 w-full max-w-[600px] mt-10 md:-mt-2 pointer-events-auto">
-          <Link 
-            href="/shop"
-            className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[12px] font-bold uppercase tracking-widest hover:bg-gray-100 transition-all shadow-2xl active:scale-95"
-          >
-            Order Now
-          </Link>
-          <Link 
-            href="/services" 
-            className="flex-1 h-[84px] flex items-center justify-center bg-black/50 backdrop-blur-md text-white rounded-[4px] text-[12px] font-bold uppercase tracking-widest border border-white/20 hover:bg-black/70 transition-all shadow-2xl active:scale-95"
-          >
-            Flota
-          </Link>
+          {/* 3. BOTONES - Altura 84px fija, casi juntos al texto */}
+          <div className="flex flex-col md:flex-row gap-4 w-full mt-8 md:mt-6 pointer-events-auto">
+            <Link 
+              href="/shop"
+              className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[12px] font-bold uppercase tracking-[0.2em] hover:bg-gray-100 transition-all shadow-2xl active:scale-95"
+            >
+              Order Now
+            </Link>
+            <Link 
+              href="/services" 
+              className="flex-1 h-[84px] flex items-center justify-center bg-black/50 backdrop-blur-md text-white rounded-[4px] text-[12px] font-bold uppercase tracking-[0.2em] border border-white/20 hover:bg-black/70 transition-all shadow-2xl active:scale-95"
+            >
+              Flota
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* 4. INDICADORES (DOTS) - Funcionales y visibles */}
-      <div className="absolute bottom-12 left-0 right-0 z-[100] flex justify-center items-center gap-8">
+      {/* 4. DOTS (TESLA STYLE) - 3 PUNTOS FUNCIONALES */}
+      <div className="absolute bottom-12 left-0 right-0 z-[100] flex justify-center items-center gap-6">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => handleDotClick(i)}
               className={`
-                w-4 h-4 rounded-full transition-all duration-300 cursor-pointer border-2 shadow-lg
+                w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer border shadow-lg
                 ${i === currentSlide 
-                  ? 'bg-white border-white scale-125 shadow-white/20' 
-                  : 'bg-white/20 border-white/40 hover:bg-white/50'}
+                  ? 'bg-white border-white scale-125' 
+                  : 'bg-white/20 border-white/30 hover:bg-white/60'}
               `}
               aria-label={`Ir al slide ${i + 1}`}
             />
