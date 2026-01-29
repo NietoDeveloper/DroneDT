@@ -1,14 +1,15 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { ShoppingCart, User, Menu, X, ChevronRight, Globe } from 'lucide-react';
+import Link from 'next/link';
+import { ShoppingCart, User, Menu, X, ChevronRight, Globe, Circle } from 'lucide-react';
 
 interface MenuItem {
   id: number;
   name: string;
   price?: string;
   desc?: string;
-  icon?: string;
+  img?: string;
 }
 
 const Navbar = () => {
@@ -18,139 +19,180 @@ const Navbar = () => {
   const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
+    // Simulación de check de token para el estado verde
     const token = localStorage.getItem('token');
     if (token) setIsLogged(true);
 
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 30);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const menuContent: Record<string, MenuItem[]> = {
-    Tienda: [
-      { id: 1, name: "DRONE INDUSTRIAL X-1", price: "Desde $2,500", icon: "🛸" },
-      { id: 2, name: "SURVEILLANCE S-4", price: "Desde $1,800", icon: "📡" },
-      { id: 3, name: "AGRICULTURE PRO", price: "Desde $3,200", icon: "🌱" },
+    Modelos: [
+      { id: 1, name: "DRONE INDUSTRIAL X-1", price: "Desde $2,500", img: "🛸" },
+      { id: 2, name: "SURVEILLANCE S-4", price: "Desde $1,800", img: "📡" },
+      { id: 3, name: "AGRICULTURE PRO", price: "Desde $3,200", img: "🌱" },
     ],
-    Servicios: [
-      { id: 4, name: "FOTOGRAMETRÍA", desc: "Mapeo 3D", icon: "📐" },
-      { id: 5, name: "INSPECCIÓN TÉRMICA", desc: "Fallas Industriales", icon: "🔥" },
-      { id: 6, name: "SEGURIDAD 24/7", desc: "Vigilancia Aérea", icon: "🛡️" },
-    ]
+    Flota: [
+      { id: 4, name: "MATRICE 300 RTK", desc: "Unidad de Rescate", img: "🚁" },
+      { id: 5, name: "MAVIC 3 THERMAL", desc: "Inspección", img: "🔥" },
+    ],
+    Accesorios: [
+      { id: 6, name: "BATERÍAS INTELIGENTES", desc: "Alta densidad", img: "🔋" },
+      { id: 7, name: "CONTROLADORES PRO", desc: "Rango 15km", img: "🎮" },
+    ],
+    Nosotros: []
   };
 
-  const Logo = ({ isDark = false }) => (
+  const Logo = () => (
     <button 
       onClick={() => window.location.href = "/"}
       className="group flex flex-col items-start outline-none cursor-pointer"
     >
-      <div className="flex items-baseline transition-all duration-500 group-hover:-translate-y-1">
-        <span className="text-xl sm:text-2xl font-black tracking-widest text-gold italic group-hover:drop-shadow-[0_0_10px_rgba(255,215,0,0.5)]">
+      <div className="flex items-baseline transition-all duration-300 group-hover:-translate-y-0.5">
+        <span className="text-xl sm:text-2xl font-black tracking-widest text-[#0000FF] italic">
           Drone
         </span>
-        <span className={`text-xl sm:text-2xl font-black tracking-tighter not-italic ml-1 ${isDark ? 'text-black' : 'text-[#061dcbe6]'}`}>
+        <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-1 text-gold drop-shadow-[0_0_8px_rgba(255,215,0,0.3)] group-hover:drop-shadow-[0_0_12px_rgba(255,215,0,0.6)] transition-all">
           DT
         </span>
       </div>
-      <span className={`text-[8px] sm:text-[10px] font-bold tracking-[0.3em] uppercase transition-colors ${isDark ? 'text-black/40' : 'text-white/40 group-hover:text-gold'}`}>
-        Tecnología Aérea
+      <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-white/40 group-hover:text-gold transition-colors">
+        Colombia
       </span>
     </button>
   );
 
+  const floatingGoldHover = "transition-all duration-300 hover:text-gold hover:drop-shadow-[0_0_10px_rgba(255,215,0,0.6)]";
+
   return (
     <>
-      {/* NAVBAR PRINCIPAL (HOME TRANSPARENTE) */}
-      <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/20 backdrop-blur-md' : 'bg-transparent'}`}>
-        <div className="max-w-[1900px] mx-auto flex justify-between items-center px-6 py-5">
+      {/* NAVBAR PRINCIPAL */}
+      <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/60 backdrop-blur-lg border-b border-white/5' : 'bg-transparent'}`}>
+        <div className="max-w-[1900px] mx-auto flex justify-between items-center px-6 py-3">
           
-          <Logo />
+          {/* LADO IZQUIERDO: LOGO + INDICADOR DE SESIÓN */}
+          <div className="flex items-center gap-4">
+            <Logo />
+            {/* Espacio reservado para el indicador verde de login */}
+            <div className="flex items-center">
+               <Circle 
+                size={8} 
+                fill={isLogged ? "#22c55e" : "transparent"} 
+                className={`${isLogged ? 'text-green-500 shadow-[0_0_8px_rgba(34,197,94,0.8)]' : 'text-white/10'} transition-all duration-500`}
+               />
+            </div>
+          </div>
 
-          <div className="flex items-center space-x-6">
-            {/* BOTÓN HAMBURGUESA GOLD */}
+          {/* DESKTOP MENU (Solo visible > 650px) */}
+          <div className="hidden min-[650px]:flex items-center space-x-2">
+            {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
+              <button key={item} className={`px-5 py-1 text-[11px] text-white font-black uppercase tracking-[0.2em] rounded-full ${floatingGoldHover}`}>
+                {item}
+              </button>
+            ))}
+          </div>
+
+          {/* BOTÓN HAMBURGUESA (Solo visible en Mobile < 650px) */}
+          <div className="flex items-center min-[650px]:hidden">
             <button 
               onClick={() => setMobileMenuOpen(true)}
-              className="text-gold hover:scale-110 transition-transform p-2"
+              className="p-2 text-gold transition-all hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(255,215,0,0.6)] active:scale-90"
             >
-              <Menu size={32} />
+              <Menu size={28} strokeWidth={2.5} />
             </button>
           </div>
         </div>
       </nav>
 
-      {/* MENÚ MÓVIL PANTALLA COMPLETA (FONDO BLANCO) */}
-      <div className={`fixed inset-0 bg-white z-[110] transition-transform duration-500 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} flex flex-col`}>
+      {/* MENÚ MÓVIL FULLSCREEN */}
+      <div className={`fixed inset-0 bg-white z-[110] transition-transform duration-500 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} flex flex-col overflow-hidden`}>
         
-        {/* Header Menú */}
-        <div className="flex justify-between items-center px-8 py-8">
-            <div className="flex items-center space-x-4">
-              {/* Login Botón Humano */}
+        {/* Header Menú Desplegado */}
+        <div className="flex justify-between items-center px-8 py-6">
+            <div className="flex items-center space-x-6">
               <button 
-                onClick={() => window.location.href = "/login"}
-                className={`${isLogged ? 'text-green-600' : 'text-gold'} hover:scale-110 transition-all`}
+                onClick={() => window.location.href = "/login"} 
+                className={`${isLogged ? 'text-green-500' : 'text-gold'} transition-all active:scale-95`}
               >
                 <User size={28} strokeWidth={2.5} />
               </button>
-              {/* Carrito Botón Gold */}
               <button 
-                onClick={() => window.location.href = "/cart"}
-                className="text-gold hover:scale-110 transition-all"
+                onClick={() => window.location.href = "/cart"} 
+                className="text-gold transition-all active:scale-95"
               >
                 <ShoppingCart size={28} strokeWidth={2.5} />
               </button>
             </div>
-            <button onClick={() => {setMobileMenuOpen(false); setSelectedMobileModel(null)}} className="text-black p-2 hover:rotate-90 transition-transform">
-              <X size={35} />
+
+            {/* Cruz de cierre en AZUL CSS puro */}
+            <button 
+              onClick={() => {setMobileMenuOpen(false); setSelectedMobileModel(null)}} 
+              className="text-[#0000FF] p-2 hover:rotate-90 transition-transform duration-300 active:scale-75"
+            >
+              <X size={35} strokeWidth={3} />
             </button>
         </div>
         
         {/* Cuerpo Menú */}
-        <div className="flex-1 overflow-y-auto px-10 py-4 flex flex-col justify-center">
+        <div className="flex-1 overflow-y-auto px-8 py-4">
           {!selectedMobileModel ? (
-            <div className="space-y-6">
-              {['Tienda', 'Servicios', 'Flota', 'Nosotros'].map((item) => (
+            <div className="flex flex-col space-y-6 mt-12">
+              {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
                 <button 
                   key={item}
                   onClick={() => setSelectedMobileModel(item)}
-                  className="text-4xl text-black font-black tracking-tighter flex justify-between items-center group w-full"
+                  className="text-4xl text-black font-black tracking-tighter flex justify-between items-center group w-full hover:text-gold transition-colors"
                 >
-                  <span className="group-hover:text-gold transition-colors">{item}</span>
+                  <span>{item}</span>
                   <ChevronRight className="text-black/10 group-hover:text-gold" size={30} />
                 </button>
               ))}
             </div>
           ) : (
-            <div className="animate-fade-in w-full">
-              <button onClick={() => setSelectedMobileModel(null)} className="text-gold text-xs font-black tracking-[0.3em] mb-8 flex items-center uppercase">
-                <ChevronRight className="rotate-180 mr-2" /> Volver
+            <div className="animate-in fade-in slide-in-from-right-5 duration-300">
+              <button 
+                onClick={() => setSelectedMobileModel(null)} 
+                className="text-gold text-[10px] font-black tracking-[0.4em] mb-12 flex items-center uppercase"
+              >
+                <ChevronRight className="rotate-180 mr-2" size={16} /> Volver
               </button>
-              <h2 className="text-5xl text-black font-black mb-8 tracking-tighter uppercase">{selectedMobileModel}</h2>
-              <div className="space-y-4 max-h-[40vh] overflow-y-auto pr-4">
-                {menuContent[selectedMobileModel]?.map(item => (
-                  <div key={item.id} className="border-b border-black/5 py-4 flex items-center justify-between group cursor-pointer">
-                    <div className="flex items-center space-x-4">
-                      <span className="text-3xl">{item.icon}</span>
-                      <div>
-                        <p className="text-black font-bold text-lg">{item.name}</p>
-                        <p className="text-black/40 text-xs uppercase">{item.price || item.desc}</p>
+              
+              <div className="grid grid-cols-1 gap-8 pb-24">
+                {menuContent[selectedMobileModel]?.length > 0 ? (
+                  menuContent[selectedMobileModel].map(item => (
+                    <Link key={item.id} href="" className="group block">
+                      <div className="aspect-[16/9] bg-neutral-100 rounded-2xl flex items-center justify-center text-6xl group-hover:bg-neutral-200 group-hover:-translate-y-1 transition-all duration-500 border border-black/5">
+                        {item.img}
                       </div>
-                    </div>
+                      <div className="mt-5 px-2">
+                        <h4 className="text-black font-black text-xl tracking-tight uppercase transition-colors group-hover:text-gold">{item.name}</h4>
+                        <p className="text-black/40 text-xs font-bold tracking-widest mt-1">{item.price || item.desc}</p>
+                      </div>
+                    </Link>
+                  ))
+                ) : (
+                  <div className="py-20 text-center border-2 border-dashed border-black/5 rounded-3xl">
+                    <p className="text-black/20 font-black tracking-widest uppercase italic">Próximamente</p>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           )}
         </div>
 
-        {/* Footer Menú: Idioma y Logo */}
-        <div className="px-10 py-10 border-t border-black/5 flex flex-col items-center space-y-8 bg-neutral-50">
-          <button className="flex items-center space-x-2 text-black/60 font-bold tracking-widest text-xs hover:text-gold transition-colors">
+        {/* Footer Menú Móvil */}
+        <div className="px-10 py-10 border-t border-black/5 flex flex-col items-center space-y-8 bg-neutral-50/50">
+          <button className="flex items-center space-x-2 text-black/40 font-black tracking-[0.3em] text-[10px] hover:text-gold transition-colors">
             <Globe size={16} />
             <span>ESPAÑOL / ENGLISH</span>
           </button>
-          
-          <div className="opacity-80 scale-90">
-            <Logo isDark={true} />
+          <div className="scale-90 opacity-70">
+            <button onClick={() => window.location.href = "/"} className="flex items-baseline">
+                <span className="text-2xl font-black text-blue-600 italic">Drone</span>
+                <span className="text-2xl font-black text-gold ml-1">DT</span>
+            </button>
           </div>
         </div>
       </div>
