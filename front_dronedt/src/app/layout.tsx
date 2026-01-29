@@ -1,21 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Montserrat, Inter } from "next/font/google"; // Montserrat es la más cercana a Tesla
 import "./globals.css";
 
 // Rutas relativas explícitas para evitar conflictos de alias
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 
+// Fuente para cuerpo de texto (Limpia y moderna)
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
+// Fuente para Títulos (Estilo Tesla/Gotham)
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["700", "900"],
+  weight: ["300", "400", "500", "700", "900"],
   display: "swap",
 });
 
@@ -45,12 +47,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className="font-sans antialiased bg-black text-textColor min-h-screen flex flex-col"
+        className="font-montserrat antialiased bg-black text-textColor min-h-screen flex flex-col"
       >
-        {/* El Navbar DEBE ser 'fixed' o 'absolute' en su propio componente para no ocupar espacio */}
+        {/* Navbar fixed para que flote sobre el video de Monserrate */}
         <Navbar />
         
-        {/* ELIMINADO pt-20: El contenido (Banner) ahora toca el techo de la pantalla */}
+        {/* Sin padding superior para que el Banner ocupe toda la pantalla */}
         <main className="flex-grow">
           {children}
         </main>
