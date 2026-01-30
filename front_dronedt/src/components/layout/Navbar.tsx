@@ -93,12 +93,12 @@ const Navbar = () => {
               </button>
             </div>
 
-            {/* BOTÓN X: AZUL CON HOVER GOLD FLOTANTE Y ROTACIÓN */}
+            {/* BOTÓN X: SOLO EL ICONO, AZUL -> GOLD AL HOVER CON MOVIMIENTO */}
             <button 
               onClick={() => {setMenuOpen(false); setSelectedModel(null)}} 
-              className="p-3 bg-[#0000FF] text-white rounded-full transition-all duration-300 hover:bg-gold hover:text-black hover:scale-110 hover:rotate-90 hover:shadow-[0_8px_20px_rgba(255,215,0,0.5)] active:scale-90"
+              className="p-2 text-[#0000FF] transition-all duration-300 hover:text-gold hover:scale-125 hover:rotate-90 drop-shadow-sm hover:drop-shadow-[0_0_8px_rgba(255,215,0,0.8)] active:scale-90 outline-none"
             >
-              <X size={30} strokeWidth={3} />
+              <X size={40} strokeWidth={3} />
             </button>
         </div>
         
@@ -110,7 +110,7 @@ const Navbar = () => {
                   key={item}
                   onClick={() => setSelectedModel(item)}
                   style={{ animationDelay: `${index * 100}ms` }}
-                  className="animate-in fade-in slide-in-from-bottom-5 duration-700 text-4xl sm:text-6xl md:text-8xl text-black font-black tracking-tighter flex justify-between items-center group w-full hover:text-[#0000FF] transition-all"
+                  className="animate-in fade-in slide-in-from-bottom-5 duration-700 text-4xl sm:text-6xl md:text-8xl text-black font-black tracking-tighter flex justify-between items-center group w-full hover:text-[#0000FF] transition-all text-left"
                 >
                   <span>{item}</span>
                   <ChevronRight className="text-black/5 group-hover:text-gold transition-all" size={50} />
@@ -170,7 +170,7 @@ const Navbar = () => {
         </div>
 
         {/* FOOTER DEL MENÚ */}
-        <div className="px-10 py-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 bg-white">
+        <div className="px-10 py-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 bg-white mt-auto">
           <div className="flex gap-8 order-2 md:order-1">
             {['Privacidad', 'Legal', 'Contacto'].map(f => (
               <button key={f} className="text-[10px] font-bold text-gray-400 hover:text-black uppercase tracking-widest transition-colors">{f}</button>
