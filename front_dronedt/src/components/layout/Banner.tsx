@@ -6,7 +6,7 @@ import Link from "next/link";
 const slides = [
   { id: 1, type: 'video', src: '/Banner-1.mp4', title: 'DRONE DT', subtitle: 'Ingeniería Drone de Clase Mundial • Bogotá' },
   { id: 2, type: 'image', src: '/Banner-1.png', title: 'Modelo: DT-101', subtitle: 'Fotografia Y Vuelo Profesional' },
-  { id: 3, type: 'image', src: '/images/drone-photo-2.jpg', title: 'SERVICIO TÉCNICO', subtitle: 'Mantenimiento y Respaldo Especializado' },
+  { id: 3, type: 'image', src: '/Banner-2.png', title: 'SERVICIO TÉCNICO', subtitle: 'Mantenimiento y Respaldo Especializado' },
 ];
 
 const Banner = () => {
