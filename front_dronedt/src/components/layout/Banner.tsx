@@ -17,10 +17,14 @@ const Banner = () => {
 
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
+    
+    // Ajuste dinámico: 8s para video (index 0), 6s para imágenes
+    const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
+
     timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 7000);
-  }, []);
+    }, duration);
+  }, [currentSlide]); // Dependencia de currentSlide para recalcular el tiempo
 
   useEffect(() => {
     startTimer();
@@ -28,7 +32,7 @@ const Banner = () => {
   }, [startTimer]);
 
   useEffect(() => {
-    if (currentSlide === 0 && videoRef.current) {
+    if (slides[currentSlide].type === 'video' && videoRef.current) {
       videoRef.current.muted = true;
       videoRef.current.play().then(() => setIsVideoVisible(true)).catch(() => {});
     }
@@ -36,7 +40,6 @@ const Banner = () => {
 
   const handleDotClick = (index: number) => {
     setCurrentSlide(index);
-    startTimer(); 
   };
 
   return (
@@ -69,13 +72,10 @@ const Banner = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 z-[1]" />
       </div>
 
-      {/* CONTENEDOR CENTRAL: MÁXIMO 1900PX */}
+      {/* CONTENEDOR CENTRAL */}
       <div className="relative z-10 flex flex-col items-center justify-start h-full max-w-[1900px] mx-auto px-6 text-center">
-        
-        {/* BLOQUE DE CONTENIDO: Título bajo y botones pegados */}
         <div className="mt-[42vh] md:mt-[48vh] flex flex-col items-center w-full max-w-[700px]">
           
-          {/* 2. TEXTO - Tamaño controlado para Desktop */}
           <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
             <h1 className="text-white text-4xl md:text-[68px] lg:text-[72px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
               {slides[currentSlide].title.split(' ')[0]} <span className="text-gold">{slides[currentSlide].title.split(' ')[1]}</span>
@@ -85,7 +85,6 @@ const Banner = () => {
             </p>
           </div>
 
-          {/* 3. BOTONES - Altura 84px fija, casi juntos al texto */}
           <div className="flex flex-col md:flex-row gap-4 w-full mt-8 md:mt-6 pointer-events-auto">
             <Link 
               href="/shop"
@@ -103,7 +102,7 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* 4. DOTS (TESLA STYLE) - 3 PUNTOS FUNCIONALES */}
+      {/* 4. DOTS */}
       <div className="absolute bottom-12 left-0 right-0 z-[100] flex justify-center items-center gap-6">
           {slides.map((_, i) => (
             <button
