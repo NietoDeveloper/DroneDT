@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ShoppingCart, User, X, ChevronRight, Globe, Circle, Info, ExternalLink } from 'lucide-react';
+import { ShoppingCart, User, X, ChevronRight, Globe, Circle, Info } from 'lucide-react';
 
 interface MenuItem {
   id: number;
@@ -93,8 +93,12 @@ const Navbar = () => {
               </button>
             </div>
 
-            <button onClick={() => {setMenuOpen(false); setSelectedModel(null)}} className="text-black p-2 hover:bg-gray-100 rounded-full transition-all">
-              <X size={35} />
+            {/* BOTÓN X: AZUL CON HOVER GOLD FLOTANTE Y ROTACIÓN */}
+            <button 
+              onClick={() => {setMenuOpen(false); setSelectedModel(null)}} 
+              className="p-3 bg-[#0000FF] text-white rounded-full transition-all duration-300 hover:bg-gold hover:text-black hover:scale-110 hover:rotate-90 hover:shadow-[0_8px_20px_rgba(255,215,0,0.5)] active:scale-90"
+            >
+              <X size={30} strokeWidth={3} />
             </button>
         </div>
         
@@ -165,7 +169,7 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* FOOTER DEL MENÚ (Dinamismo Tesla) */}
+        {/* FOOTER DEL MENÚ */}
         <div className="px-10 py-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 bg-white">
           <div className="flex gap-8 order-2 md:order-1">
             {['Privacidad', 'Legal', 'Contacto'].map(f => (
