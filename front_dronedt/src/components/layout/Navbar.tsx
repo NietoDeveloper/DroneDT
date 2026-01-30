@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ShoppingCart, User, Menu, X, ChevronRight, Globe, Circle } from 'lucide-react';
+import { ShoppingCart, User, X, ChevronRight, Globe, Circle } from 'lucide-react';
 
 interface MenuItem {
   id: number;
@@ -19,7 +19,6 @@ const Navbar = () => {
   const [isLogged, setIsLogged] = useState(false);
 
   useEffect(() => {
-    // Simulación de check de token para el estado verde
     const token = localStorage.getItem('token');
     if (token) setIsLogged(true);
 
@@ -68,14 +67,12 @@ const Navbar = () => {
 
   return (
     <>
-      {/* NAVBAR PRINCIPAL */}
       <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'bg-black/60 backdrop-blur-lg border-b border-white/5' : 'bg-transparent'}`}>
-        <div className="max-w-[1900px] mx-auto flex justify-between items-center px-6 py-3">
+        <div className="max-w-[1900px] mx-auto flex justify-between items-center px-6 py-4">
           
-          {/* LADO IZQUIERDO: LOGO + INDICADOR DE SESIÓN */}
+          {/* LADO IZQUIERDO: LOGO + INDICADOR */}
           <div className="flex items-center gap-4">
             <Logo />
-            {/* Espacio reservado para el indicador verde de login */}
             <div className="flex items-center">
                <Circle 
                 size={8} 
@@ -85,48 +82,40 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* DESKTOP MENU (Solo visible > 650px) */}
-          <div className="hidden min-[650px]:flex items-center space-x-2">
-            {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
-              <button key={item} className={`px-5 py-1 text-[11px] text-white font-black uppercase tracking-[0.2em] rounded-full ${floatingGoldHover}`}>
+          {/* MENÚ CENTRAL (OPCIONAL, OCULTO EN ESTE ESTILO TESLA SI PREFIERES SOLO EL BOTÓN "MENU") */}
+          <div className="hidden lg:flex items-center space-x-2">
+            {['Modelos', 'Accesorios', 'Flota'].map((item) => (
+              <button key={item} className={`px-5 py-1 text-[11px] text-white font-black uppercase tracking-[0.2em] rounded-md hover:bg-white/10 transition-all`}>
                 {item}
               </button>
             ))}
           </div>
 
-          {/* BOTÓN HAMBURGUESA (Solo visible en Mobile < 650px) */}
-          <div className="flex items-center min-[650px]:hidden">
+          {/* BOTÓN "MENU" TIPO TESLA (Desktop & Mobile) */}
+          <div className="flex items-center">
             <button 
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2 text-gold transition-all hover:scale-110 hover:drop-shadow-[0_0_10px_rgba(255,215,0,0.6)] active:scale-90"
+              className="px-4 py-2 text-white font-black text-[12px] uppercase tracking-[0.2em] bg-white/5 backdrop-blur-md rounded-md transition-all hover:bg-white/20 active:scale-95"
             >
-              <Menu size={28} strokeWidth={2.5} />
+              Menú
             </button>
           </div>
         </div>
       </nav>
 
-      {/* MENÚ MÓVIL FULLSCREEN */}
+      {/* MENÚ FULLSCREEN */}
       <div className={`fixed inset-0 bg-white z-[110] transition-transform duration-500 ease-in-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} flex flex-col overflow-hidden`}>
         
-        {/* Header Menú Desplegado */}
         <div className="flex justify-between items-center px-8 py-6">
             <div className="flex items-center space-x-6">
-              <button 
-                onClick={() => window.location.href = "/login"} 
-                className={`${isLogged ? 'text-green-500' : 'text-gold'} transition-all active:scale-95`}
-              >
+              <button onClick={() => window.location.href = "/login"} className={`${isLogged ? 'text-green-500' : 'text-gold'} transition-all active:scale-95`}>
                 <User size={28} strokeWidth={2.5} />
               </button>
-              <button 
-                onClick={() => window.location.href = "/cart"} 
-                className="text-gold transition-all active:scale-95"
-              >
+              <button onClick={() => window.location.href = "/cart"} className="text-gold transition-all active:scale-95">
                 <ShoppingCart size={28} strokeWidth={2.5} />
               </button>
             </div>
 
-            {/* Cruz de cierre en AZUL CSS puro */}
             <button 
               onClick={() => {setMobileMenuOpen(false); setSelectedMobileModel(null)}} 
               className="text-[#0000FF] p-2 hover:rotate-90 transition-transform duration-300 active:scale-75"
@@ -135,7 +124,6 @@ const Navbar = () => {
             </button>
         </div>
         
-        {/* Cuerpo Menú */}
         <div className="flex-1 overflow-y-auto px-8 py-4">
           {!selectedMobileModel ? (
             <div className="flex flex-col space-y-6 mt-12">
@@ -182,7 +170,6 @@ const Navbar = () => {
           )}
         </div>
 
-        {/* Footer Menú Móvil */}
         <div className="px-10 py-10 border-t border-black/5 flex flex-col items-center space-y-8 bg-neutral-50/50">
           <button className="flex items-center space-x-2 text-black/40 font-black tracking-[0.3em] text-[10px] hover:text-gold transition-colors">
             <Globe size={16} />
@@ -190,7 +177,7 @@ const Navbar = () => {
           </button>
           <div className="scale-90 opacity-70">
             <button onClick={() => window.location.href = "/"} className="flex items-baseline">
-                <span className="text-2xl font-black text-blue-600 italic">Drone</span>
+                <span className="text-2xl font-black text-[#0000FF] italic">Drone</span>
                 <span className="text-2xl font-black text-gold ml-1">DT</span>
             </button>
           </div>
