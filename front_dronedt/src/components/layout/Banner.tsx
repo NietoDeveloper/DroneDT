@@ -43,7 +43,6 @@ const Banner = () => {
     const parts = title.split(':');
     const words = title.split(' ');
     
-    // Aplicando Azul Puro #0000FF y Gold
     if (title.includes('DRONE')) {
       return (
         <>
@@ -93,8 +92,8 @@ const Banner = () => {
       {/* CONTENEDOR CENTRAL */}
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
-        {/* BLOQUE DE TÍTULOS: mt-[85px] */}
-        <div className="mt-[85px] flex flex-col items-center w-full">
+        {/* BLOQUE DE TÍTULOS: mt bajado 10px más (Total 95px) */}
+        <div className="mt-[95px] flex flex-col items-center w-full">
           <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
             <h1 className="text-white text-4xl md:text-[68px] lg:text-[72px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
               {renderTitle(slides[currentSlide].title)}
@@ -105,17 +104,17 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* BLOQUE DE BOTONES */}
-        <div className="mb-[15vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
+        {/* BLOQUE DE BOTONES: mb bajado 10px más */}
+        <div className="mb-[calc(15vh-10px)] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
           <Link 
             href="/shop"
-            className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[16px] md:text-[18px] font-bold uppercase tracking-[0.2em] hover:bg-gray-100 transition-all shadow-2xl active:scale-95"
+            className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[16px] md:text-[18px] font-bold uppercase tracking-[0.2em] hover:bg-[#f0f0f0] hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
           >
             Compra Ahora
           </Link>
           <Link 
             href="/services" 
-            className="flex-1 h-[84px] flex items-center justify-center bg-black/50 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-bold uppercase tracking-[0.2em] border border-white/20 hover:bg-black/70 transition-all shadow-2xl active:scale-95"
+            className="flex-1 h-[84px] flex items-center justify-center bg-black/50 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-bold uppercase tracking-[0.2em] border border-white/20 hover:bg-black/80 hover:border-white/50 hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
           >
             Modelos
           </Link>
