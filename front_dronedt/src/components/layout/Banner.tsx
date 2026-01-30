@@ -90,13 +90,13 @@ const Banner = () => {
               href="/shop"
               className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[12px] font-bold uppercase tracking-[0.2em] hover:bg-gray-100 transition-all shadow-2xl active:scale-95"
             >
-              Order Now
+              Compra Ahora
             </Link>
             <Link 
               href="/services" 
               className="flex-1 h-[84px] flex items-center justify-center bg-black/50 backdrop-blur-md text-white rounded-[4px] text-[12px] font-bold uppercase tracking-[0.2em] border border-white/20 hover:bg-black/70 transition-all shadow-2xl active:scale-95"
             >
-              Flota
+              Modelos
             </Link>
           </div>
         </div>
