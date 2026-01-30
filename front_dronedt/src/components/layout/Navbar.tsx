@@ -77,23 +77,8 @@ const Navbar = () => {
       {/* MENÚ FULLSCREEN */}
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         
-        {/* TOP NAV INTERNA */}
-        <div className="flex justify-between items-center px-6 sm:px-10 py-8">
-            <div className="flex items-center space-x-6 sm:space-x-10">
-              <button onClick={() => window.location.href = "/login"} className="flex items-center gap-2 group">
-                <div className={`p-2 rounded-full transition-all ${isLogged ? 'bg-green-50 text-green-600' : 'bg-gray-50 text-gold group-hover:bg-[#0000FF] group-hover:text-white'}`}>
-                  <User size={24} />
-                </div>
-                <span className="hidden sm:block text-[10px] font-black tracking-widest text-black uppercase">Account</span>
-              </button>
-              
-              <button className="flex items-center gap-2 group text-gray-400 hover:text-[#0000FF]">
-                <Globe size={20} />
-                <span className="hidden sm:block text-[10px] font-black tracking-widest uppercase">ES / EN</span>
-              </button>
-            </div>
-
-            {/* BOTÓN X: SOLO EL ICONO, AZUL -> GOLD AL HOVER CON MOVIMIENTO */}
+        {/* TOP NAV INTERNA (Solo Cierre) */}
+        <div className="flex justify-end items-center px-6 sm:px-10 py-8">
             <button 
               onClick={() => {setMenuOpen(false); setSelectedModel(null)}} 
               className="p-2 text-[#0000FF] transition-all duration-300 hover:text-gold hover:scale-125 hover:rotate-90 drop-shadow-sm hover:drop-shadow-[0_0_8px_rgba(255,215,0,0.8)] active:scale-90 outline-none"
@@ -102,7 +87,7 @@ const Navbar = () => {
             </button>
         </div>
         
-        <div className="flex-1 overflow-y-auto px-6 sm:px-10 py-4 w-full max-w-[1800px] mx-auto">
+        <div className="flex-1 overflow-y-auto px-6 sm:px-10 py-4 w-full max-w-[1800px] mx-auto flex flex-col">
           {!selectedModel ? (
             <div className="flex flex-col space-y-4 md:space-y-6 mt-10">
               {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item, index) => (
@@ -118,7 +103,7 @@ const Navbar = () => {
               ))}
             </div>
           ) : (
-            <div className="animate-in fade-in slide-in-from-right-10 duration-500 pb-20">
+            <div className="animate-in fade-in slide-in-from-right-10 duration-500 pb-10">
               <button onClick={() => setSelectedModel(null)} className="text-[#0000FF] text-[11px] font-black tracking-[0.4em] mb-12 flex items-center uppercase hover:text-gold transition-colors">
                 <ChevronRight className="rotate-180 mr-2" size={16} /> Volver a categorías
               </button>
@@ -167,17 +152,35 @@ const Navbar = () => {
               </div>
             </div>
           )}
-        </div>
 
-        {/* FOOTER DEL MENÚ */}
-        <div className="px-10 py-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6 bg-white mt-auto">
-          <div className="flex gap-8 order-2 md:order-1">
-            {['Privacidad', 'Legal', 'Contacto'].map(f => (
-              <button key={f} className="text-[10px] font-bold text-gray-400 hover:text-black uppercase tracking-widest transition-colors">{f}</button>
-            ))}
-          </div>
-          <div className="order-1 md:order-2">
-            <Logo />
+          {/* FOOTER DEL MENÚ (Ahora parte del flujo de scroll) */}
+          <div className="mt-auto pt-16 pb-10 border-t border-gray-100 flex flex-col space-y-8 bg-white">
+            <div className="flex flex-wrap items-center justify-between gap-6">
+              <div className="flex items-center space-x-8">
+                {/* Account/Login Button */}
+                <button onClick={() => window.location.href = "/login"} className="flex items-center gap-3 group">
+                  <div className={`p-2 rounded-full transition-all ${isLogged ? 'bg-green-50 text-green-600' : 'bg-gray-50 text-gold group-hover:bg-[#0000FF] group-hover:text-white'}`}>
+                    <User size={20} />
+                  </div>
+                  <span className="text-[11px] font-black tracking-[0.2em] text-black uppercase">{isLogged ? 'Dashboard' : 'Account'}</span>
+                </button>
+                
+                {/* Language Switch */}
+                <button className="flex items-center gap-3 group text-gray-400 hover:text-[#0000FF] transition-colors">
+                  <Globe size={18} />
+                  <span className="text-[11px] font-black tracking-[0.2em] uppercase">ES / EN</span>
+                </button>
+              </div>
+
+              <Logo />
+            </div>
+
+            {/* Legal Links */}
+            <div className="flex gap-8 justify-center md:justify-start">
+              {['Privacidad', 'Legal', 'Contacto'].map(f => (
+                <button key={f} className="text-[9px] font-bold text-gray-300 hover:text-black uppercase tracking-widest transition-colors">{f}</button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
