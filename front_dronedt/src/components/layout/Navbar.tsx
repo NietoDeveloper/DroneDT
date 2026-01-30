@@ -67,7 +67,7 @@ const Navbar = () => {
 
           <button 
             onClick={() => setMenuOpen(true)}
-            className="px-8 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full transition-all duration-300 hover:bg-gold hover:text-black hover:scale-105 hover:shadow-[0_10px_25px_rgba(255,215,0,0.4)] border border-white/10"
+            className="px-8 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full transition-all duration-300 hover:bg-gold hover:text-black hover:scale-105 hover:shadow-[0_10px_25px_rgba(255,215,0,0.4)] border border-white/10 cursor-pointer"
           >
             Menú
           </button>
@@ -77,11 +77,10 @@ const Navbar = () => {
       {/* MENÚ FULLSCREEN */}
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         
-        {/* TOP NAV INTERNA (Solo Cierre) */}
         <div className="flex justify-end items-center px-6 sm:px-10 py-8">
             <button 
               onClick={() => {setMenuOpen(false); setSelectedModel(null)}} 
-              className="p-2 text-[#0000FF] transition-all duration-300 hover:text-gold hover:scale-125 hover:rotate-90 drop-shadow-sm hover:drop-shadow-[0_0_8px_rgba(255,215,0,0.8)] active:scale-90 outline-none"
+              className="p-2 text-[#0000FF] transition-all duration-300 hover:text-gold hover:scale-125 hover:rotate-90 cursor-pointer outline-none"
             >
               <X size={40} strokeWidth={3} />
             </button>
@@ -95,7 +94,7 @@ const Navbar = () => {
                   key={item}
                   onClick={() => setSelectedModel(item)}
                   style={{ animationDelay: `${index * 100}ms` }}
-                  className="animate-in fade-in slide-in-from-bottom-5 duration-700 text-4xl sm:text-6xl md:text-8xl text-black font-black tracking-tighter flex justify-between items-center group w-full hover:text-[#0000FF] transition-all text-left"
+                  className="animate-in fade-in slide-in-from-bottom-5 duration-700 text-4xl sm:text-6xl md:text-8xl text-black font-black tracking-tighter flex justify-between items-center group w-full hover:text-[#0000FF] transition-all text-left cursor-pointer"
                 >
                   <span>{item}</span>
                   <ChevronRight className="text-black/5 group-hover:text-gold transition-all" size={50} />
@@ -104,7 +103,7 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="animate-in fade-in slide-in-from-right-10 duration-500 pb-10">
-              <button onClick={() => setSelectedModel(null)} className="text-[#0000FF] text-[11px] font-black tracking-[0.4em] mb-12 flex items-center uppercase hover:text-gold transition-colors">
+              <button onClick={() => setSelectedModel(null)} className="text-[#0000FF] text-[11px] font-black tracking-[0.4em] mb-12 flex items-center uppercase hover:text-gold transition-colors cursor-pointer">
                 <ChevronRight className="rotate-180 mr-2" size={16} /> Volver a categorías
               </button>
 
@@ -118,7 +117,11 @@ const Navbar = () => {
                       style={{ animationDelay: `${idx * 150}ms` }}
                       className="animate-in fade-in zoom-in-95 duration-700 group flex flex-col bg-neutral-50 rounded-[32px] overflow-hidden border border-transparent hover:border-gold/30 hover:shadow-2xl transition-all"
                     >
-                      <div className="relative aspect-[4/3] overflow-hidden bg-gray-200">
+                      {/* Click en imagen redirige al producto */}
+                      <div 
+                        onClick={() => window.location.href = `/drone/${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="relative aspect-[4/3] overflow-hidden bg-gray-200 cursor-pointer"
+                      >
                         {item.img.startsWith('http') ? (
                           <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                         ) : (
@@ -134,10 +137,10 @@ const Navbar = () => {
                         <p className="text-gray-500 text-sm font-medium leading-relaxed mb-6">{item.desc}</p>
                         
                         <div className="mt-auto flex flex-col gap-3">
-                          <button className="w-full py-3 bg-[#0000FF] text-white rounded-xl font-black text-[11px] uppercase tracking-widest hover:bg-gold hover:text-black transition-all shadow-lg shadow-blue-200 hover:shadow-gold/20 active:scale-95">
+                          <button className="w-full py-3 bg-[#0000FF] text-white rounded-xl font-black text-[11px] uppercase tracking-widest hover:bg-gold hover:text-black transition-all shadow-lg shadow-blue-200 hover:shadow-gold/20 active:scale-95 cursor-pointer">
                             Comprar Ahora
                           </button>
-                          <button className="w-full py-3 bg-white border border-gray-200 text-black rounded-xl font-black text-[11px] uppercase tracking-widest hover:border-[#0000FF] hover:text-[#0000FF] transition-all flex items-center justify-center gap-2">
+                          <button className="w-full py-3 bg-white border border-gray-200 text-black rounded-xl font-black text-[11px] uppercase tracking-widest hover:border-[#0000FF] hover:text-[#0000FF] transition-all flex items-center justify-center gap-2 cursor-pointer">
                             <Info size={14} /> Ficha Técnica
                           </button>
                         </div>
@@ -153,32 +156,28 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* FOOTER DEL MENÚ (Ahora parte del flujo de scroll) */}
+          {/* FOOTER DEL MENÚ */}
           <div className="mt-auto pt-16 pb-10 border-t border-gray-100 flex flex-col space-y-8 bg-white">
             <div className="flex flex-wrap items-center justify-between gap-6">
               <div className="flex items-center space-x-8">
-                {/* Account/Login Button */}
-                <button onClick={() => window.location.href = "/login"} className="flex items-center gap-3 group">
+                <button onClick={() => window.location.href = "/login"} className="flex items-center gap-3 group cursor-pointer">
                   <div className={`p-2 rounded-full transition-all ${isLogged ? 'bg-green-50 text-green-600' : 'bg-gray-50 text-gold group-hover:bg-[#0000FF] group-hover:text-white'}`}>
                     <User size={20} />
                   </div>
                   <span className="text-[11px] font-black tracking-[0.2em] text-black uppercase">{isLogged ? 'Dashboard' : 'Account'}</span>
                 </button>
                 
-                {/* Language Switch */}
-                <button className="flex items-center gap-3 group text-gray-400 hover:text-[#0000FF] transition-colors">
+                <button className="flex items-center gap-3 group text-gray-400 hover:text-[#0000FF] transition-colors cursor-pointer">
                   <Globe size={18} />
                   <span className="text-[11px] font-black tracking-[0.2em] uppercase">ES / EN</span>
                 </button>
               </div>
-
               <Logo />
             </div>
 
-            {/* Legal Links */}
             <div className="flex gap-8 justify-center md:justify-start">
               {['Privacidad', 'Legal', 'Contacto'].map(f => (
-                <button key={f} className="text-[9px] font-bold text-gray-300 hover:text-black uppercase tracking-widest transition-colors">{f}</button>
+                <button key={f} className="text-[9px] font-bold text-gray-300 hover:text-black uppercase tracking-widest transition-colors cursor-pointer">{f}</button>
               ))}
             </div>
           </div>
