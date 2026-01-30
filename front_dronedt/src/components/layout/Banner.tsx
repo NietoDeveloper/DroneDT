@@ -17,14 +17,11 @@ const Banner = () => {
 
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
-    
-    // Ajuste dinámico: 8s para video (index 0), 6s para imágenes
     const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
-
     timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, duration);
-  }, [currentSlide]); // Dependencia de currentSlide para recalcular el tiempo
+  }, [currentSlide]);
 
   useEffect(() => {
     startTimer();
@@ -40,6 +37,28 @@ const Banner = () => {
 
   const handleDotClick = (index: number) => {
     setCurrentSlide(index);
+  };
+
+  // Helper para renderizar el título con colores condicionales
+  const renderTitle = (title: string) => {
+    const parts = title.split(':'); // Para casos como "Modelo: DT-101"
+    const words = title.split(' '); // Para casos como "DRONE DT"
+    
+    if (title.includes('DRONE')) {
+      return (
+        <>
+          <span className="text-blue-600">{words[0]}</span> <span className="text-gold">{words[1]}</span>
+        </>
+      );
+    }
+    if (title.includes('Modelo')) {
+      return (
+        <>
+          <span className="text-blue-600">{parts[0]}:</span><span className="text-gold">{parts[1]}</span>
+        </>
+      );
+    }
+    return title;
   };
 
   return (
@@ -73,32 +92,34 @@ const Banner = () => {
       </div>
 
       {/* CONTENEDOR CENTRAL */}
-      <div className="relative z-10 flex flex-col items-center justify-start h-full max-w-[1900px] mx-auto px-6 text-center">
-        <div className="mt-[42vh] md:mt-[48vh] flex flex-col items-center w-full max-w-[700px]">
-          
+      <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
+        
+        {/* BLOQUE DE TÍTULOS: Posicionado arriba (25px del posible navbar/top) */}
+        <div className="mt-[25px] flex flex-col items-center w-full">
           <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
-            <h1 className="text-white text-4xl md:text-[68px] lg:text-[72px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
-              {slides[currentSlide].title.split(' ')[0]} <span className="text-gold">{slides[currentSlide].title.split(' ')[1]}</span>
+            <h1 className="text-white text-[ clamp(32px,8vw,72px) ] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
+              {renderTitle(slides[currentSlide].title)}
             </h1>
-            <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
+            <p className="text-white text-[ clamp(9px,2vw,12px) ] tracking-[0.4em] md:tracking-[0.6em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
               {slides[currentSlide].subtitle}
             </p>
           </div>
+        </div>
 
-          <div className="flex flex-col md:flex-row gap-4 w-full mt-8 md:mt-6 pointer-events-auto">
-            <Link 
-              href="/shop"
-              className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[12px] font-bold uppercase tracking-[0.2em] hover:bg-gray-100 transition-all shadow-2xl active:scale-95"
-            >
-              Compra Ahora
-            </Link>
-            <Link 
-              href="/services" 
-              className="flex-1 h-[84px] flex items-center justify-center bg-black/50 backdrop-blur-md text-white rounded-[4px] text-[12px] font-bold uppercase tracking-[0.2em] border border-white/20 hover:bg-black/70 transition-all shadow-2xl active:scale-95"
-            >
-              Modelos
-            </Link>
-          </div>
+        {/* BLOQUE DE BOTONES: Mantienen su posición central/baja para accesibilidad */}
+        <div className="mb-[15vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
+          <Link 
+            href="/shop"
+            className="flex-1 h-[84px] flex items-center justify-center bg-white text-black rounded-[4px] text-[16px] md:text-[18px] font-bold uppercase tracking-[0.2em] hover:bg-gray-100 transition-all shadow-2xl active:scale-95"
+          >
+            Compra Ahora
+          </Link>
+          <Link 
+            href="/services" 
+            className="flex-1 h-[84px] flex items-center justify-center bg-black/50 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-bold uppercase tracking-[0.2em] border border-white/20 hover:bg-black/70 transition-all shadow-2xl active:scale-95"
+          >
+            Modelos
+          </Link>
         </div>
       </div>
 
