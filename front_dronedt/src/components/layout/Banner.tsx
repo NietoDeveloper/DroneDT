@@ -43,17 +43,18 @@ const Banner = () => {
     const parts = title.split(':');
     const words = title.split(' ');
     
+    // Aplicando Azul Puro #0000FF y Gold
     if (title.includes('DRONE')) {
       return (
         <>
-          <span className="text-blue-600">{words[0]}</span> <span className="text-gold">{words[1]}</span>
+          <span style={{ color: '#0000FF' }}>{words[0]}</span> <span className="text-gold">{words[1]}</span>
         </>
       );
     }
     if (title.includes('Modelo')) {
       return (
         <>
-          <span className="text-blue-600">{parts[0]}:</span><span className="text-gold">{parts[1]}</span>
+          <span style={{ color: '#0000FF' }}>{parts[0]}:</span><span className="text-gold">{parts[1]}</span>
         </>
       );
     }
@@ -62,7 +63,7 @@ const Banner = () => {
 
   return (
     <section className="relative w-full h-[90vh] bg-black overflow-hidden font-montserrat">
-      {/* 1. FONDO - MULTIMEDIA */}
+      {/* 1. FONDO - MULTIMEDIA (SIN FILTROS) */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
           <div
@@ -87,14 +88,13 @@ const Banner = () => {
             )}
           </div>
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/70 z-[1]" />
       </div>
 
       {/* CONTENEDOR CENTRAL */}
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
-        {/* BLOQUE DE TÍTULOS: Bajado 50px adicionales (Total 75px del top) */}
-        <div className="mt-[75px] flex flex-col items-center w-full">
+        {/* BLOQUE DE TÍTULOS: mt-[85px] */}
+        <div className="mt-[85px] flex flex-col items-center w-full">
           <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
             <h1 className="text-white text-4xl md:text-[68px] lg:text-[72px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
               {renderTitle(slides[currentSlide].title)}
@@ -105,7 +105,7 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* BLOQUE DE BOTONES: Sin cambios */}
+        {/* BLOQUE DE BOTONES */}
         <div className="mb-[15vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
           <Link 
             href="/shop"
