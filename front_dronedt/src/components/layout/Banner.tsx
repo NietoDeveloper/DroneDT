@@ -39,10 +39,9 @@ const Banner = () => {
     setCurrentSlide(index);
   };
 
-  // Helper para renderizar el título con colores condicionales
   const renderTitle = (title: string) => {
-    const parts = title.split(':'); // Para casos como "Modelo: DT-101"
-    const words = title.split(' '); // Para casos como "DRONE DT"
+    const parts = title.split(':');
+    const words = title.split(' ');
     
     if (title.includes('DRONE')) {
       return (
@@ -94,19 +93,19 @@ const Banner = () => {
       {/* CONTENEDOR CENTRAL */}
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
-        {/* BLOQUE DE TÍTULOS: Posicionado arriba (25px del posible navbar/top) */}
-        <div className="mt-[25px] flex flex-col items-center w-full">
+        {/* BLOQUE DE TÍTULOS: Bajado 50px adicionales (Total 75px del top) */}
+        <div className="mt-[75px] flex flex-col items-center w-full">
           <div key={slides[currentSlide].id} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
-            <h1 className="text-white text-[ clamp(32px,8vw,72px) ] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
+            <h1 className="text-white text-4xl md:text-[68px] lg:text-[72px] font-medium tracking-tighter uppercase italic leading-none drop-shadow-2xl">
               {renderTitle(slides[currentSlide].title)}
             </h1>
-            <p className="text-white text-[ clamp(9px,2vw,12px) ] tracking-[0.4em] md:tracking-[0.6em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
+            <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
               {slides[currentSlide].subtitle}
             </p>
           </div>
         </div>
 
-        {/* BLOQUE DE BOTONES: Mantienen su posición central/baja para accesibilidad */}
+        {/* BLOQUE DE BOTONES: Sin cambios */}
         <div className="mb-[15vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
           <Link 
             href="/shop"
