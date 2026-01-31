@@ -2,18 +2,13 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 
-// Usamos alias @/ para limpieza si está configurado, o mantenemos rutas relativas
-import Navbar from "../components/layout/Navbar";
-import Footer from "../components/layout/Footer";
-
-// Fuente para cuerpo (Inter es el estándar de la industria tech)
+// Fuentes optimizadas para el ecosistema DT
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
 
-// Fuente para Títulos (Montserrat con pesos específicos para el estilo Tesla)
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
@@ -22,10 +17,10 @@ const montserrat = Montserrat({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#000000", // Cambiado a negro para que la barra del móvil se fusione con el header
+  themeColor: "#000000", // Fusión total con el hardware del móvil
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1, // Evita zoom accidental en inputs en móviles
+  maximumScale: 1,
 };
 
 export const metadata: Metadata = {
@@ -35,17 +30,18 @@ export const metadata: Metadata = {
   },
   description: "Líderes en tecnología de drones industriales y soluciones autónomas en Bogotá. Ingeniería de clase mundial desarrollada por Software DT.",
   keywords: ["Drones industriales", "Drone DT", "Software DT", "Drones Bogotá", "Tecnología Aeroespacial"],
-  authors: [{ name: "Manuel Nieto", url: "https://nietodeveloper.netlify.app/" }],
+  authors: [{ name: "Manuel Nieto", url: "https://github.com/NietoDeveloper" }],
   creator: "NietoDeveloper",
   publisher: "Software DT",
   robots: "index, follow",
   alternates: {
-    canonical: "https://dronedt.com", // Ajusta a tu dominio final
+    // Actualizar cuando tengas el dominio de producción
+    canonical: "https://drone-dt.vercel.app", 
   },
   openGraph: {
     type: "website",
     locale: "es_CO",
-    url: "https://dronedt.com",
+    url: "https://drone-dt.vercel.app",
     title: "DRONE DT | Tecnología Aérea Avanzada",
     description: "La nueva era de drones industriales en Colombia.",
     siteName: "DRONE DT",
@@ -75,15 +71,14 @@ export default function RootLayout({
           selection:bg-gold selection:text-black
         `}
       >
-        {/* Navbar con z-index alto para estar sobre el video */}
-        <Navbar />
+        {/* NOTA: Navbar y Footer se manejan en page.tsx con 'dynamic' 
+          para optimizar el LCP y evitar duplicados. 
+        */}
         
-        {/* El main NO lleva padding-top para permitir que el video sea Hero Full Screen */}
         <main className="flex-grow w-full relative">
           {children}
         </main>
 
-        <Footer />
       </body>
     </html>
   );
