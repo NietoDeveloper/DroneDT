@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Instagram, Linkedin, Twitter, Globe } from 'lucide-react';
 
 const Footer = () => {
   const [dateTime, setDateTime] = useState(new Date());
@@ -18,7 +18,7 @@ const Footer = () => {
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-      hour12: true,
+      hour12: false, // Formato militar/técnico queda mejor para drones
     }).format(date);
   };
 
@@ -26,100 +26,119 @@ const Footer = () => {
     return new Intl.DateTimeFormat('es-CO', {
       timeZone: 'America/Bogota',
       day: '2-digit',
-      month: 'long',
+      month: 'short',
       year: 'numeric',
     }).format(date);
   };
 
   return (
-    <footer className="bg-black text-white border-t border-gold/20 pt-16 md:pt-20 pb-10 font-montserrat">
-      <div className="max-w-[1900px] mx-auto px-4 sm:px-8 md:px-12 lg:px-20">
+    <footer className="bg-black text-white border-t border-gold/20 pt-16 md:pt-24 pb-8 font-sans">
+      <div className="max-w-[1900px] mx-auto px-6 sm:px-10 lg:px-20">
         
-        {/* SECCIÓN SUPERIOR: GRID RESPONSIVO */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-20 mb-16 md:mb-20">
+        {/* GRID PRINCIPAL */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
           
-          {/* COL 1: BRANDING */}
-          <div className="space-y-6">
-            <h3 className="text-xl md:text-2xl font-black italic tracking-tighter text-gold">
-              DRONE<span className="text-white not-italic">DT</span>
-            </h3>
-            <p className="text-[10px] md:text-[11px] tracking-[0.2em] leading-relaxed text-white uppercase font-bold opacity-80">
-              Ingeniería de Clase Mundial con tecnología de precisión y soluciones autónomas de alto rendimiento.
+          {/* COL 1: BRANDING (4 COLUMNAS) */}
+          <div className="lg:col-span-4 space-y-6">
+            <div className="flex flex-col">
+              <h3 className="text-2xl md:text-3xl font-black italic tracking-tighter text-[#0000FF]">
+                DRONE<span className="text-gold not-italic">DT</span>
+              </h3>
+              <span className="text-[9px] font-bold tracking-[0.5em] uppercase text-white/30">Precisión Aeroespacial</span>
+            </div>
+            <p className="text-[11px] tracking-[0.15em] leading-relaxed text-white/60 uppercase font-bold max-w-sm">
+              Ingeniería de Clase Mundial con tecnología de precisión y soluciones autónomas de alto rendimiento. Diseñado para liderar la industria en Colombia.
             </p>
           </div>
 
-          {/* COL 2: NAVEGACIÓN */}
-          <div className="flex flex-col space-y-3 md:space-y-4">
-            <h4 className="text-[10px] font-black tracking-[0.4em] text-gold uppercase mb-2">Navegación</h4>
+          {/* COL 2: NAVEGACIÓN (2 COLUMNAS) */}
+          <div className="lg:col-span-2 flex flex-col space-y-4">
+            <h4 className="text-[10px] font-black tracking-[0.4em] text-gold uppercase mb-2">Explorar</h4>
             {["Shop", "Services", "Fleet"].map((item) => (
               <Link 
                 key={item} 
                 href={`/${item.toLowerCase()}`} 
-                className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-white font-bold"
+                className="text-[12px] text-white/80 hover:text-gold hover:translate-x-2 transition-all duration-300 tracking-widest uppercase font-black w-fit"
               >
                 {item === "Shop" ? "Tienda" : item === "Services" ? "Servicios" : "Flota"}
               </Link>
             ))}
           </div>
 
-          {/* COL 3: SOPORTE */}
-          <div className="flex flex-col space-y-3 md:space-y-4">
+          {/* COL 3: SOPORTE (2 COLUMNAS) */}
+          <div className="lg:col-span-2 flex flex-col space-y-4">
             <h4 className="text-[10px] font-black tracking-[0.4em] text-gold uppercase mb-2">Soporte</h4>
             {["Legal", "Terms", "Contact"].map((item) => (
               <Link 
                 key={item} 
                 href={`/${item.toLowerCase()}`} 
-                className="text-[11px] hover:text-gold transition-colors tracking-widest uppercase text-white font-bold"
+                className="text-[12px] text-white/80 hover:text-gold hover:translate-x-2 transition-all duration-300 tracking-widest uppercase font-black w-fit"
               >
                 {item === "Legal" ? "Privacidad" : item === "Terms" ? "Términos" : "Contacto"}
               </Link>
             ))}
           </div>
 
-          {/* COL 4: STATUS BOGOTÁ (DASHBOARD) */}
-          <div className="flex flex-col space-y-4 bg-white/[0.03] p-6 md:p-8 rounded-[4px] border border-white/10 relative overflow-hidden group min-w-[260px]">
-            <div className="absolute top-0 left-0 w-1 h-full bg-gold transition-colors duration-500" />
-            <h4 className="text-[10px] font-black tracking-[0.4em] text-gold uppercase">Huso Horario</h4>
-            <div>
-              <p className="text-xs font-bold tracking-[0.3em] text-white">BOGOTÁ, CO</p>
-              <div className="mt-4 space-y-1">
-                <p className="text-lg md:text-xl text-white font-mono font-bold tracking-tighter leading-none">
+          {/* COL 4: STATUS BOGOTÁ (4 COLUMNAS) */}
+          <div className="lg:col-span-4">
+            <div className="bg-white/[0.03] p-6 rounded-xl border border-white/5 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 group-hover:text-gold transition-all">
+                <Globe size={40} />
+              </div>
+              <div className="absolute top-0 left-0 w-[2px] h-0 bg-gold group-hover:h-full transition-all duration-700" />
+              
+              <h4 className="text-[10px] font-black tracking-[0.4em] text-gold uppercase mb-4">Operations Center</h4>
+              <p className="text-[11px] font-bold tracking-[0.3em] text-white/90 mb-1">BOGOTÁ, CO (HQ)</p>
+              
+              <div className="flex flex-col">
+                <span className="text-3xl md:text-4xl text-white font-mono font-black tracking-tighter tabular-nums">
                   {formatBogotaTime(dateTime)}
-                </p>
-                <p className="text-[9px] text-white/50 uppercase tracking-[0.2em] font-bold">
+                </span>
+                <span className="text-[10px] text-white/40 uppercase tracking-[0.3em] font-bold mt-1">
                   {formatBogotaDate(dateTime)}
-                </p>
+                </span>
+              </div>
+
+              <div className="mt-4 flex items-center gap-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-[9px] font-black tracking-widest text-green-500 uppercase">Sistemas Online</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* SECCIÓN INFERIOR: CRÉDITOS */}
-        <div className="border-t border-white/10 pt-10 flex flex-col lg:flex-row justify-between items-center gap-10">
+        {/* SECCIÓN INFERIOR */}
+        <div className="border-t border-white/10 pt-10 flex flex-col lg:flex-row justify-between items-center gap-8">
           
-          <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-10 items-center text-center md:text-left">
+          {/* CRÉDITOS */}
+          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-12">
             <Link href="https://softwaredt.vercel.app/" target="_blank" className="group">
-              <span className="text-[10px] tracking-[0.3em] text-white/50 group-hover:text-gold transition-all duration-300 font-bold uppercase">
-                Creador: <span className="text-white group-hover:text-white">Software DT</span>
-              </span>
+              <p className="text-[10px] tracking-[0.3em] text-white/40 font-bold uppercase">
+                DEVELOPED BY <span className="text-white group-hover:text-gold transition-colors duration-300 ml-2">SOFTWARE DT</span>
+              </p>
             </Link>
             
-            <Link href="https://github.com/NietoDeveloper" target="_blank" className="group border-t border-white/10 md:border-t-0 md:border-l md:pl-10 pt-6 md:pt-0">
-              <span className="text-[10px] tracking-[0.3em] text-white/50 group-hover:text-gold transition-all duration-300 font-bold uppercase">
-                Supervisor: <span className="text-white group-hover:text-white">NietoDeveloper</span>
-              </span>
+            <Link href="https://github.com/NietoDeveloper" target="_blank" className="group">
+              <p className="text-[10px] tracking-[0.3em] text-white/40 font-bold uppercase">
+                ENGINEERED BY <span className="text-white group-hover:text-gold transition-colors duration-300 ml-2">@NIETODEVELOPER</span>
+              </p>
             </Link>
           </div>
 
-          {/* REDES */}
-          <div className="flex space-x-10 text-white/50">
-             <Twitter size={20} className="hover:text-gold cursor-pointer transition-all duration-300 hover:scale-110" />
-             <Linkedin size={20} className="hover:text-gold cursor-pointer transition-all duration-300 hover:scale-110" />
-             <Instagram size={20} className="hover:text-gold cursor-pointer transition-all duration-300 hover:scale-110" />
+          {/* SOCIALS */}
+          <div className="flex items-center gap-8">
+            {[Twitter, Linkedin, Instagram].map((Icon, i) => (
+              <Icon 
+                key={i}
+                size={20} 
+                className="text-white/40 hover:text-gold cursor-pointer transition-all duration-300 hover:scale-125 hover:-translate-y-1" 
+              />
+            ))}
           </div>
 
-          <p className="text-[10px] tracking-[0.5em] text-white/20 uppercase font-black text-center">
-            © {new Date().getFullYear()} Drone D T
+          {/* COPYRIGHT */}
+          <p className="text-[9px] tracking-[0.4em] text-white/20 uppercase font-black">
+            © {new Date().getFullYear()} DRONE DT GLOBAL
           </p>
         </div>
       </div>
