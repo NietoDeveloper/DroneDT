@@ -93,7 +93,7 @@ const Navbar = () => {
                 <button 
                   key={item}
                   onClick={() => setSelectedModel(item)}
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  style={{ animationDelay: `${index * 70}ms` }}
                   className="animate-in fade-in slide-in-from-bottom-5 duration-700 text-4xl sm:text-6xl md:text-8xl text-black font-black tracking-tighter flex justify-between items-center group w-full hover:text-[#0000FF] transition-all text-left cursor-pointer"
                 >
                   <span>{item}</span>
@@ -109,14 +109,13 @@ const Navbar = () => {
 
               <h2 className="text-3xl sm:text-5xl font-black text-[#0000FF] mb-12 tracking-tighter uppercase">{selectedModel}</h2>
               
-              {/* GRID AJUSTADA: Más columnas, fotos más pequeñas estilo Tesla */}
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
                 {menuContent[selectedModel]?.length > 0 ? (
                   menuContent[selectedModel].map((item, idx) => (
                     <div 
-                      key={item.id} 
-                      style={{ animationDelay: `${idx * 150}ms` }}
-                      className="animate-in fade-in zoom-in-95 duration-700 group flex flex-col bg-neutral-50 rounded-[24px] overflow-hidden border border-transparent hover:border-gold/30 hover:shadow-2xl transition-all"
+                      key={`${selectedModel}-${item.id}`} 
+                      style={{ animationDelay: `${idx * 100}ms` }}
+                      className="animate-in fade-in slide-in-from-bottom-8 zoom-in-95 duration-700 group flex flex-col bg-neutral-50 rounded-[24px] overflow-hidden border border-transparent hover:border-gold/30 hover:shadow-2xl transition-all"
                     >
                       <div 
                         onClick={() => window.location.href = `/drone/${item.name.toLowerCase().replace(/\s+/g, '-')}`}
@@ -145,7 +144,7 @@ const Navbar = () => {
                     </div>
                   ))
                 ) : (
-                  <div className="col-span-full py-20 text-center bg-neutral-50 rounded-[40px] border-2 border-dashed border-gray-200">
+                  <div className="col-span-full py-20 text-center bg-neutral-50 rounded-[40px] border-2 border-dashed border-gray-200 animate-in fade-in duration-1000">
                     <p className="text-black/20 text-2xl font-black tracking-widest uppercase italic">Próximamente</p>
                   </div>
                 )}
