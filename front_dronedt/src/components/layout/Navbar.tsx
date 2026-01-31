@@ -28,9 +28,34 @@ const Navbar = () => {
 
   const menuContent: Record<string, MenuItem[]> = {
     Modelos: [
-      { id: 1, name: "INDUSTRIAL X-1", desc: "Autonomía de 45 min", img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800" },
-      { id: 2, name: "SURVEILLANCE S-4", desc: "Cámara térmica", img: "https://images.unsplash.com/photo-1527142879024-c6c91aa9c5c7?auto=format&fit=crop&q=80&w=800" },
-      { id: 3, name: "AGRICULTURE PRO", desc: "Mapeo NDVI", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" },
+      { id: 1, name: "INDUSTRIAL X-1", desc: "Autonomía de 45 min", img: "https://images.unsplash.com/photo-1473960104312-bf2e12834e54?auto=format&fit=crop&q=80&w=800" },
+      { id: 2, name: "SURVEILLANCE S-4", desc: "Cámara térmica FLIR", img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800" },
+      { id: 3, name: "AGRICULTURE PRO", desc: "Mapeo NDVI Avanzado", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" },
+      { id: 4, name: "CARGO LIFT 50", desc: "Carga útil de 50kg", img: "https://images.unsplash.com/photo-1521749831539-67c790c02795?auto=format&fit=crop&q=80&w=800" },
+      { id: 5, name: "CINEMATIC FPV", desc: "Transmisión O3+ 4K", img: "https://images.unsplash.com/photo-1533230393035-73f114092243?auto=format&fit=crop&q=80&w=800" },
+      { id: 6, name: "MINING SCANNER", desc: "LiDAR de alta densidad", img: "https://images.unsplash.com/photo-1506947411487-a56738267384?auto=format&fit=crop&q=80&w=800" },
+    ],
+    Accesorios: [
+      { id: 7, name: "Batería Inteligente", desc: "Capacidad 5000mAh", img: "https://images.unsplash.com/photo-1610492314647-3f30966f3396?auto=format&fit=crop&q=80&w=800" },
+      { id: 8, name: "Controler Pro V2", desc: "Pantalla 1000 nits", img: "https://images.unsplash.com/photo-1527142879024-c6c91aa9c5c7?auto=format&fit=crop&q=80&w=800" },
+      { id: 9, name: "Hélices Carbono", desc: "Reducción de ruido", img: "https://images.unsplash.com/photo-156469420277d-ac9093816915?auto=format&fit=crop&q=80&w=800" },
+      { id: 10, name: "Módulo RTK", desc: "Precisión centimétrica", img: "https://images.unsplash.com/photo-1591768793355-74d7c503522a?auto=format&fit=crop&q=80&w=800" },
+      { id: 11, name: "Cargador Rápido", desc: "4 bahías simultáneas", img: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48?auto=format&fit=crop&q=80&w=800" },
+      { id: 12, name: "Maleta Rígida", desc: "IP67 Contra impacto", img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800" },
+      { id: 13, name: "Lentes FPV G2", desc: "Micro-OLED 100Hz", img: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?auto=format&fit=crop&q=80&w=800" },
+      { id: 14, name: "Filtros ND Set", desc: "Óptica cinemática", img: "https://images.unsplash.com/photo-1617783959441-6578a10d93f7?auto=format&fit=crop&q=80&w=800" },
+      { id: 15, name: "Antena Long Range", desc: "Alcance +20KM", img: "https://images.unsplash.com/photo-1520110120835-c96a9ef956a6?auto=format&fit=crop&q=80&w=800" },
+      { id: 16, name: "Dock Station", desc: "Carga autónoma", img: "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&q=80&w=800" },
+    ],
+    Flota: [
+      { id: 17, name: "Escuadrón Alfa", desc: "5x Industrial X-1", img: "https://images.unsplash.com/photo-1507208773393-4019ce360d31?auto=format&fit=crop&q=80&w=800" },
+      { id: 18, name: "Unidad Térmica", desc: "3x Surveillance S-4", img: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=800" },
+      { id: 19, name: "Agro-Fleet", desc: "10x Agriculture Pro", img: "https://images.unsplash.com/photo-1563514227147-6d2ff66de3c3?auto=format&fit=crop&q=80&w=800" },
+      { id: 20, name: "Heavy Cargo Unit", desc: "2x Cargo Lift 50", img: "https://images.unsplash.com/photo-1591768793355-74d7c503522a?auto=format&fit=crop&q=80&w=800" },
+      { id: 21, name: "Surveyor Squad", desc: "LiDAR Mapping Units", img: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?auto=format&fit=crop&q=80&w=800" },
+      { id: 22, name: "Patrulla Urbana", desc: "Monitoreo 24/7", img: "https://images.unsplash.com/photo-1524143925203-3e050960779a?auto=format&fit=crop&q=80&w=800" },
+      { id: 23, name: "Rescue Ops", desc: "Búsqueda y rescate", img: "https://images.unsplash.com/photo-1473960104312-bf2e12834e54?auto=format&fit=crop&q=80&w=800" },
+      { id: 24, name: "Custom Build DT", desc: "Prototipos Especiales", img: "https://images.unsplash.com/photo-1533230393035-73f114092243?auto=format&fit=crop&q=80&w=800" },
     ],
   };
 
@@ -46,7 +71,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* NAV TRANSPARENTE */}
       <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 bg-transparent`}>
         <div className="max-w-[1900px] mx-auto flex justify-between items-center px-6 sm:px-10 py-4">
           <div className="flex items-center gap-6 flex-1">
@@ -54,7 +78,6 @@ const Navbar = () => {
             <Circle size={8} fill={isLogged ? "#22c55e" : "transparent"} className={`${isLogged ? 'text-green-500' : 'text-white/10'} hidden sm:block`} />
           </div>
 
-          {/* BOTONES CENTRALES AJUSTADOS (ONLY GOLD HOVER) */}
           <div className="hidden lg:flex items-center gap-2">
             {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
               <button
@@ -78,7 +101,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* MENÚ FULLSCREEN */}
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         
         <div className="flex justify-between items-center px-6 sm:px-10 py-6">
@@ -107,6 +129,20 @@ const Navbar = () => {
                   <ChevronRight className="text-black/5 group-hover:text-gold transition-all" size={50} />
                 </button>
               ))}
+            </div>
+          ) : selectedModel === 'Nosotros' ? (
+            <div className="animate-in fade-in slide-in-from-right-10 duration-500 pb-20 pt-4 sm:pt-8 max-w-4xl">
+              <button onClick={() => setSelectedModel(null)} className="text-[#0000FF] text-[11px] font-black tracking-[0.4em] mb-12 flex items-center uppercase hover:text-gold transition-colors cursor-pointer outline-none">
+                <ChevronRight className="rotate-180 mr-2" size={16} /> Volver
+              </button>
+              <h2 className="text-5xl md:text-7xl font-black text-black mb-10 tracking-tighter uppercase italic">
+                La Misión <span className="text-[#0000FF]">Drone DT</span>
+              </h2>
+              <div className="space-y-6 text-lg md:text-xl text-black/70 leading-relaxed font-medium">
+                <p>Nacimos en el corazón de Bogotá con una visión clara: <span className="text-black font-black">democratizar la tecnología aeroespacial</span> en Colombia. Bajo el liderazgo de Manuel Nieto y el sello de Software DT, hemos transformado la industria local de una simple importación a un ecosistema de ingeniería técnica avanzada.</p>
+                <p>En Drone DT no solo vendemos hardware; desarrollamos el software que permite a las empresas colombianas optimizar sus misiones críticas. Desde el monitoreo de infraestructura en los Andes hasta la agricultura de precisión en los llanos, somos el socio tecnológico que vuela donde otros no llegan.</p>
+                <p className="border-l-4 border-gold pl-6 py-2 italic text-black font-bold">"Nuestra meta es crear tecnología de clase mundial que ponga el nombre de Colombia en el radar de la ingeniería global."</p>
+              </div>
             </div>
           ) : (
             <div className="animate-in fade-in slide-in-from-right-10 duration-500 pb-10 pt-4 sm:pt-8">
