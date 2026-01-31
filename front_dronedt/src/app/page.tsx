@@ -3,9 +3,10 @@
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// Importación dinámica para optimizar el LCP (Largest Contentful Paint)
+// Importaciones dinámicas para máximo rendimiento LCP
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
+const ProductShow = dynamic(() => import("@/components/sections/ProductShow"), { ssr: false });
 const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
 
 export default function Home() {
@@ -15,16 +16,21 @@ export default function Home() {
 
       <main className="flex flex-col w-full">
         
-        {/* SECCIÓN 1: BANNER HERO (Impacto inmediato) */}
+        {/* SECCIÓN 1: BANNER HERO (Impacto inmediato) 
+            Mantenemos 90vh para que el inicio de ProductShow sea visible al cargar */}
         <section className="relative h-[90vh] w-full z-10 overflow-hidden bg-black">
           <Banner />
         </section>
 
+        {/* SECCIÓN NUEVA: CATÁLOGO ESTILO TESLA 
+            Esta sección fluye naturalmente y muestra "tarjeta y media" */}
+        <ProductShow />
+
         {/* SECCIÓN 2: CONTENIDO PRINCIPAL Y SPECS */}
-        <section className="relative z-20 bg-black pt-16 pb-32 px-6 md:px-12">
+        <section className="relative z-20 bg-black pt-24 pb-32 px-6 md:px-12">
           <div className="max-w-[1900px] mx-auto">
             
-            {/* STATS DE ALTA PRECISIÓN - Grid responsivo de alto rendimiento */}
+            {/* STATS DE ALTA PRECISIÓN */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 mb-24 border-y border-white/5 py-16 lg:py-24">
               <div className="flex flex-col items-center text-center group md:border-r border-white/10 last:border-0">
                 <h3 className="text-5xl lg:text-6xl font-black text-white group-hover:text-gold transition-all duration-500 italic">
@@ -48,7 +54,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* BRANDING CENTRAL - Enfoque en conversión */}
+            {/* BRANDING CENTRAL */}
             <div className="flex flex-col items-center text-center space-y-10 py-10">
               <div className="space-y-4">
                 <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-black tracking-tighter uppercase leading-none">
@@ -60,7 +66,7 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* CTAS RESPONSIVOS - Estilo Tesla botones planos */}
+              {/* CTAS RESPONSIVOS */}
               <div className="flex flex-col sm:flex-row gap-5 w-full max-w-lg pt-6">
                 <Link
                   href="/shop"
@@ -80,7 +86,7 @@ export default function Home() {
 
           </div>
 
-          {/* EFECTOS DE FONDO - Capa visual de profundidad */}
+          {/* EFECTOS DE FONDO */}
           <div className="absolute inset-0 z-[-1] pointer-events-none overflow-hidden">
              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
              <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
@@ -88,7 +94,6 @@ export default function Home() {
         </section>
       </main>
 
-      {/* FOOTER - Importado dinámicamente con tu lógica de Ops Center */}
       <Footer />
     </div>
   );
