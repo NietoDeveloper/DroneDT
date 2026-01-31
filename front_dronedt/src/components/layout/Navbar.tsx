@@ -30,10 +30,10 @@ const Navbar = () => {
 
   const menuContent: Record<string, MenuItem[]> = {
     Modelos: [
-      { id: 1, name: "INDUSTRIAL X-1", price: "$2,500", desc: "Autonomía de 45 min y carga de 5kg.", features: "Ficha Técnica", img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800" },
-      { id: 2, name: "SURVEILLANCE S-4", price: "$1,800", desc: "Cámara térmica y zoom óptico 30x.", features: "Ficha Técnica", img: "https://images.unsplash.com/photo-1527142879024-c6c91aa9c5c7?auto=format&fit=crop&q=80&w=800" },
-      { id: 3, name: "AGRICULTURE PRO", price: "$3,200", desc: "Aspersión inteligente y mapeo NDVI.", features: "Ficha Técnica", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" },
-      { id: 4, name: "RESCUE R-7", price: "$4,100", desc: "Transmisión satelital y altavoz IP67.", features: "Ficha Técnica", img: "https://images.unsplash.com/photo-1473960104312-bf2e12017180?auto=format&fit=crop&q=80&w=800" },
+      { id: 1, name: "INDUSTRIAL X-1", price: "$2,500", desc: "Autonomía de 45 min", img: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=800" },
+      { id: 2, name: "SURVEILLANCE S-4", price: "$1,800", desc: "Cámara térmica", img: "https://images.unsplash.com/photo-1527142879024-c6c91aa9c5c7?auto=format&fit=crop&q=80&w=800" },
+      { id: 3, name: "AGRICULTURE PRO", price: "$3,200", desc: "Mapeo NDVI", img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" },
+      { id: 4, name: "RESCUE R-7", price: "$4,100", desc: "Transmisión satelital", img: "https://images.unsplash.com/photo-1473960104312-bf2e12017180?auto=format&fit=crop&q=80&w=800" },
     ],
     Flota: [
       { id: 5, name: "MATRICE 300 RTK", desc: "Unidad de Rescate", img: "🚁" },
@@ -107,49 +107,46 @@ const Navbar = () => {
                 <ChevronRight className="rotate-180 mr-2" size={16} /> Volver a categorías
               </button>
 
-              <h2 className="text-4xl sm:text-6xl font-black text-[#0000FF] mb-12 tracking-tighter uppercase">{selectedModel}</h2>
+              <h2 className="text-3xl sm:text-5xl font-black text-[#0000FF] mb-12 tracking-tighter uppercase">{selectedModel}</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-10">
+              {/* GRID AJUSTADA: Más columnas, fotos más pequeñas estilo Tesla */}
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
                 {menuContent[selectedModel]?.length > 0 ? (
                   menuContent[selectedModel].map((item, idx) => (
                     <div 
                       key={item.id} 
                       style={{ animationDelay: `${idx * 150}ms` }}
-                      className="animate-in fade-in zoom-in-95 duration-700 group flex flex-col bg-neutral-50 rounded-[32px] overflow-hidden border border-transparent hover:border-gold/30 hover:shadow-2xl transition-all"
+                      className="animate-in fade-in zoom-in-95 duration-700 group flex flex-col bg-neutral-50 rounded-[24px] overflow-hidden border border-transparent hover:border-gold/30 hover:shadow-2xl transition-all"
                     >
-                      {/* Click en imagen redirige al producto */}
                       <div 
                         onClick={() => window.location.href = `/drone/${item.name.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="relative aspect-[4/3] overflow-hidden bg-gray-200 cursor-pointer"
+                        className="relative aspect-[16/10] overflow-hidden bg-gray-200 cursor-pointer"
                       >
                         {item.img.startsWith('http') ? (
                           <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center text-7xl">{item.img}</div>
+                          <div className="w-full h-full flex items-center justify-center text-5xl">{item.img}</div>
                         )}
-                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-4 py-1 rounded-full text-[10px] font-black text-[#0000FF] shadow-sm">
-                          {item.price}
-                        </div>
                       </div>
 
-                      <div className="p-8 flex flex-col flex-1">
-                        <h4 className="text-black font-black text-2xl tracking-tight leading-none mb-2">{item.name}</h4>
-                        <p className="text-gray-500 text-sm font-medium leading-relaxed mb-6">{item.desc}</p>
+                      <div className="p-5 flex flex-col flex-1">
+                        <h4 className="text-black font-black text-lg tracking-tight leading-none mb-1">{item.name}</h4>
+                        <p className="text-gray-500 text-[10px] font-medium leading-tight mb-4">{item.desc}</p>
                         
-                        <div className="mt-auto flex flex-col gap-3">
-                          <button className="w-full py-3 bg-[#0000FF] text-white rounded-xl font-black text-[11px] uppercase tracking-widest hover:bg-gold hover:text-black transition-all shadow-lg shadow-blue-200 hover:shadow-gold/20 active:scale-95 cursor-pointer">
-                            Comprar Ahora
+                        <div className="mt-auto flex flex-col gap-2">
+                          <button className="w-full py-2 bg-[#0000FF] text-white rounded-lg font-black text-[9px] uppercase tracking-widest hover:bg-gold hover:text-black transition-all cursor-pointer">
+                            Comprar
                           </button>
-                          <button className="w-full py-3 bg-white border border-gray-200 text-black rounded-xl font-black text-[11px] uppercase tracking-widest hover:border-[#0000FF] hover:text-[#0000FF] transition-all flex items-center justify-center gap-2 cursor-pointer">
-                            <Info size={14} /> Ficha Técnica
+                          <button className="w-full py-2 bg-white border border-gray-200 text-black rounded-lg font-black text-[9px] uppercase tracking-widest hover:border-[#0000FF] hover:text-[#0000FF] transition-all flex items-center justify-center gap-1 cursor-pointer">
+                            <Info size={10} /> Ficha
                           </button>
                         </div>
                       </div>
                     </div>
                   ))
                 ) : (
-                  <div className="col-span-full py-32 text-center bg-neutral-50 rounded-[40px] border-2 border-dashed border-gray-200">
-                    <p className="text-black/20 text-3xl font-black tracking-widest uppercase italic">Próximamente</p>
+                  <div className="col-span-full py-20 text-center bg-neutral-50 rounded-[40px] border-2 border-dashed border-gray-200">
+                    <p className="text-black/20 text-2xl font-black tracking-widest uppercase italic">Próximamente</p>
                   </div>
                 )}
               </div>
