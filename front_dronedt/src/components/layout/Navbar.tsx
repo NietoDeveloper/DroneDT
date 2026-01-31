@@ -152,17 +152,21 @@ const Navbar = () => {
 
               <h2 className="text-3xl sm:text-5xl font-black text-[#0000FF] mb-6 tracking-tighter uppercase">{selectedModel}</h2>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
+              {/* CAMBIO CLAVE: Grid optimizado para pantallas grandes */}
+              <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-10">
                 {menuContent[selectedModel]?.map((item) => (
-                  <div key={item.id} className="group flex flex-col bg-neutral-50 rounded-[24px] overflow-hidden border border-transparent hover:border-gold/30 hover:shadow-2xl transition-all">
-                    <div className="relative aspect-[16/10] overflow-hidden bg-gray-200">
-                       <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div key={item.id} className="group flex flex-col bg-neutral-50 rounded-[32px] overflow-hidden border border-transparent hover:border-gold/30 hover:shadow-2xl transition-all duration-500">
+                    <div className="relative aspect-[16/11] overflow-hidden bg-gray-200">
+                       <img src={item.img} alt={item.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" />
                     </div>
-                    <div className="p-4 flex flex-col flex-1">
-                      <h4 className="text-black font-black text-lg tracking-tight mb-1">{item.name}</h4>
-                      <p className="text-gray-500 text-[10px] mb-3">{item.desc}</p>
-                      <button className="w-full py-1.5 mb-2 border border-black/10 text-black/60 rounded-lg font-bold text-[8px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Info Técnica</button>
-                      <button className="w-full py-2 bg-[#0000FF] text-white rounded-lg font-black text-[9px] uppercase tracking-widest hover:bg-gold hover:text-black transition-all">Comprar</button>
+                    {/* Padding aumentado en desktop para mayor elegancia */}
+                    <div className="p-5 lg:p-8 flex flex-col flex-1">
+                      <h4 className="text-black font-black text-xl lg:text-2xl tracking-tight mb-2 uppercase italic">{item.name}</h4>
+                      <p className="text-gray-500 text-xs lg:text-sm mb-6 font-medium">{item.desc}</p>
+                      <div className="mt-auto space-y-3">
+                        <button className="w-full py-2 border-2 border-black/5 text-black font-black text-[10px] lg:text-[11px] uppercase tracking-widest hover:bg-black hover:text-white transition-all rounded-xl">Especificaciones</button>
+                        <button className="w-full py-3 bg-[#0000FF] text-white rounded-xl font-black text-[11px] lg:text-[12px] uppercase tracking-widest hover:bg-gold hover:text-black hover:scale-[1.02] transition-all shadow-lg shadow-blue-500/20">Añadir al Carrito</button>
+                      </div>
                     </div>
                   </div>
                 ))}
