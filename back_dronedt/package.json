@@ -1,0 +1,41 @@
+{
+  "name": "drone-dt-backend",
+  "version": "1.0.0",
+  "description": "Production-ready API for Drone DT - Scalable MERN Architecture",
+  "main": "src/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --watchAll --no-cache",
+    "test:ci": "jest --ci --forceExit"
+  },
+  "keywords": [
+    "drone-dt",
+    "express",
+    "mongodb",
+    "mern",
+    "scalable"
+  ],
+  "author": "Manuel Nieto",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.1.5",
+    "morgan": "^1.10.1",
+    "redis": "^5.10.0",
+    "winston": "^3.19.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "supertest": "^7.2.2"
+  }
+}
