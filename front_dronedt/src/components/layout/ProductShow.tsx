@@ -41,48 +41,52 @@ const vehicles: VehicleCard[] = [
 
 const ProductShow = () => {
   return (
-    <section className="w-full bg-white">
-      {vehicles.map((item) => (
-        <div 
-          key={item.id} 
-          className="relative h-screen w-full flex flex-col items-center justify-between py-12 md:py-20 overflow-hidden snap-start"
-        >
-          {/* Background Image - Full Cover */}
-          <div className="absolute inset-0 z-0">
-            <img 
-              src={item.image} 
-              alt={item.name} 
-              className="w-full h-full object-cover object-center"
-            />
-          </div>
+    <section className="w-full bg-white overflow-hidden">
+      {/* Contenedor Horizontal con Scroll */}
+      <div className="flex flex-row overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+        {vehicles.map((item) => (
+          <div 
+            key={item.id} 
+            className="relative h-[80vh] min-h-[500px] w-[85vw] md:w-[70vw] lg:w-[60vw] flex-shrink-0 flex flex-col items-center justify-between py-12 md:py-20 snap-center border-r border-white/10"
+          >
+            {/* Background Image */}
+            <div className="absolute inset-0 z-0">
+              <img 
+                src={item.image} 
+                alt={item.name} 
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-black/10"></div> {/* Overlay sutil */}
+            </div>
 
-          {/* Content Top: Centrado y Limpio */}
-          <div className="relative z-10 text-center px-4 mt-8 md:mt-12">
-            <h2 className="text-black font-semibold text-[clamp(40px,7vw,80px)] tracking-tight leading-none mb-2">
-              {item.name}
-            </h2>
-            {item.promo ? (
-              <p className="text-black text-[clamp(16px,1.5vw,22px)] font-normal underline underline-offset-4 cursor-pointer hover:text-black/70 transition-colors">
-                {item.promo}
-              </p>
-            ) : (
-              <p className="text-black font-medium text-[clamp(14px,1.2vw,18px)] uppercase tracking-[0.2em]">
-                {item.category}
-              </p>
-            )}
-          </div>
+            {/* Content Top */}
+            <div className="relative z-10 text-center px-4">
+              <h2 className="text-white drop-shadow-md font-semibold text-[clamp(32px,5vw,60px)] tracking-tight leading-none mb-2">
+                {item.name}
+              </h2>
+              {item.promo ? (
+                <p className="text-white drop-shadow-sm text-[clamp(14px,1.2vw,18px)] font-normal underline underline-offset-4 cursor-pointer hover:text-white/80 transition-colors">
+                  {item.promo}
+                </p>
+              ) : (
+                <p className="text-white font-medium text-[clamp(12px,1vw,14px)] uppercase tracking-[0.3em] opacity-90">
+                  {item.category}
+                </p>
+              )}
+            </div>
 
-          {/* Buttons Bottom: El clásico estilo horizontal de Tesla */}
-          <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-full max-w-[90%] sm:max-w-[550px] lg:max-w-[650px] px-6 mb-12">
-            <button className="flex-1 py-3 px-10 bg-[#171a20cc] backdrop-blur-md text-white font-medium text-sm rounded-[4px] hover:bg-[#171a20] transition-all uppercase tracking-wider">
-              Order Now
-            </button>
-            <button className="flex-1 py-3 px-10 bg-[#f4f4f4a6] backdrop-blur-md text-[#393c41] font-medium text-sm rounded-[4px] hover:bg-[#f4f4f4] transition-all uppercase tracking-wider border-none">
-              Learn More
-            </button>
+            {/* Buttons Bottom */}
+            <div className="relative z-10 flex flex-col sm:flex-row gap-3 w-full max-w-[80%] sm:max-w-[400px] px-4 mb-8">
+              <button className="flex-1 py-2.5 bg-white/90 backdrop-blur-md text-black font-medium text-xs rounded-[4px] hover:bg-white transition-all uppercase tracking-wider">
+                Order Now
+              </button>
+              <button className="flex-1 py-2.5 bg-[#171a20cc] backdrop-blur-md text-white font-medium text-xs rounded-[4px] hover:bg-[#171a20] transition-all uppercase tracking-wider">
+                Learn More
+              </button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 };
