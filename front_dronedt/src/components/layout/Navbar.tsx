@@ -54,12 +54,13 @@ const Navbar = () => {
             <Circle size={8} fill={isLogged ? "#22c55e" : "transparent"} className={`${isLogged ? 'text-green-500' : 'text-white/10'} hidden sm:block`} />
           </div>
 
+          {/* BOTONES CENTRALES AJUSTADOS (ONLY GOLD HOVER) */}
           <div className="hidden lg:flex items-center gap-2">
             {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
               <button
                 key={item}
                 onClick={() => { setSelectedModel(item); setMenuOpen(true); }}
-                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest transition-all duration-300 hover:text-gold hover:-translate-y-1 cursor-pointer outline-none"
+                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest transition-all duration-300 hover:text-gold hover:-translate-y-1 bg-transparent cursor-pointer outline-none"
               >
                 {item}
               </button>
@@ -94,14 +95,13 @@ const Navbar = () => {
         
         <div className="flex-1 overflow-y-auto px-6 sm:px-10 w-full max-w-[1800px] mx-auto flex flex-col">
           {!selectedModel ? (
-            /* Eliminado -mt y añadido pt para bajar el contenido limpiamente */
             <div className="flex flex-col space-y-2 md:space-y-4 pt-4 sm:pt-8">
               {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item, index) => (
                 <button 
                   key={item}
                   onClick={() => setSelectedModel(item)}
                   style={{ animationDelay: `${index * 70}ms` }}
-                  className="animate-in fade-in slide-in-from-bottom-5 duration-700 text-4xl sm:text-6xl md:text-8xl text-black font-black tracking-tighter flex justify-between items-center group w-full hover:text-[#0000FF] transition-all text-left cursor-pointer"
+                  className="animate-in fade-in slide-in-from-bottom-5 duration-700 text-4xl sm:text-6xl md:text-8xl text-black font-black tracking-tighter flex justify-between items-center group w-full transition-all duration-300 hover:text-gold hover:-translate-y-3 text-left cursor-pointer bg-transparent"
                 >
                   <span>{item}</span>
                   <ChevronRight className="text-black/5 group-hover:text-gold transition-all" size={50} />
@@ -109,7 +109,6 @@ const Navbar = () => {
               ))}
             </div>
           ) : (
-            /* Volver a categorías ahora respira con pt-4 sm:pt-8 */
             <div className="animate-in fade-in slide-in-from-right-10 duration-500 pb-10 pt-4 sm:pt-8">
               <button onClick={() => setSelectedModel(null)} className="text-[#0000FF] text-[11px] font-black tracking-[0.4em] mb-6 flex items-center uppercase hover:text-gold transition-colors cursor-pointer outline-none">
                 <ChevronRight className="rotate-180 mr-2" size={16} /> Volver a categorías
@@ -126,6 +125,7 @@ const Navbar = () => {
                     <div className="p-4 flex flex-col flex-1">
                       <h4 className="text-black font-black text-lg tracking-tight mb-1">{item.name}</h4>
                       <p className="text-gray-500 text-[10px] mb-3">{item.desc}</p>
+                      <button className="w-full py-1.5 mb-2 border border-black/10 text-black/60 rounded-lg font-bold text-[8px] uppercase tracking-widest hover:bg-black hover:text-white transition-all">Info Técnica</button>
                       <button className="w-full py-2 bg-[#0000FF] text-white rounded-lg font-black text-[9px] uppercase tracking-widest hover:bg-gold hover:text-black transition-all">Comprar</button>
                     </div>
                   </div>
