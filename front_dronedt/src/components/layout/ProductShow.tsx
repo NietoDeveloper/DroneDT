@@ -45,9 +45,9 @@ const ProductShow = () => {
       {vehicles.map((item) => (
         <div 
           key={item.id} 
-          className="relative h-[75vh] min-h-[400px] md:h-[85vh] w-full flex flex-col items-center justify-between py-10 md:py-16 overflow-hidden snap-start"
+          className="relative h-screen w-full flex flex-col items-center justify-between py-12 md:py-20 overflow-hidden snap-start"
         >
-          {/* Background Image - Optimizada para cubrir todo el ratio */}
+          {/* Background Image - Full Cover */}
           <div className="absolute inset-0 z-0">
             <img 
               src={item.image} 
@@ -56,28 +56,28 @@ const ProductShow = () => {
             />
           </div>
 
-          {/* Content Top: Tipografía escalable desde 210px */}
-          <div className="relative z-10 text-center px-4 mt-6 md:mt-10">
-            <h2 className="text-black font-semibold text-[clamp(32px,8vw,72px)] tracking-tight leading-tight mb-1">
+          {/* Content Top: Centrado y Limpio */}
+          <div className="relative z-10 text-center px-4 mt-8 md:mt-12">
+            <h2 className="text-black font-semibold text-[clamp(40px,7vw,80px)] tracking-tight leading-none mb-2">
               {item.name}
             </h2>
             {item.promo ? (
-              <p className="text-black text-[clamp(14px,2vw,24px)] font-normal underline underline-offset-4 cursor-pointer hover:text-black/70 transition-colors">
+              <p className="text-black text-[clamp(16px,1.5vw,22px)] font-normal underline underline-offset-4 cursor-pointer hover:text-black/70 transition-colors">
                 {item.promo}
               </p>
             ) : (
-              <p className="text-black font-medium text-[clamp(12px,1.8vw,20px)] uppercase tracking-widest opacity-90">
+              <p className="text-black font-medium text-[clamp(14px,1.2vw,18px)] uppercase tracking-[0.2em]">
                 {item.category}
               </p>
             )}
           </div>
 
-          {/* Buttons Bottom: Responsive imponente para pantallas grandes */}
-          <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-full max-w-[90%] sm:max-w-[600px] lg:max-w-[800px] px-6 mb-10">
-            <button className="flex-1 py-[clamp(12px,1.5vw,20px)] px-6 bg-[#171a20cc] backdrop-blur-md text-white font-medium text-[clamp(12px,1.2vw,18px)] rounded-[4px] hover:bg-[#171a20] transition-all uppercase tracking-wide">
+          {/* Buttons Bottom: El clásico estilo horizontal de Tesla */}
+          <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-full max-w-[90%] sm:max-w-[550px] lg:max-w-[650px] px-6 mb-12">
+            <button className="flex-1 py-3 px-10 bg-[#171a20cc] backdrop-blur-md text-white font-medium text-sm rounded-[4px] hover:bg-[#171a20] transition-all uppercase tracking-wider">
               Order Now
             </button>
-            <button className="flex-1 py-[clamp(12px,1.5vw,20px)] px-6 bg-[#f4f4f4a6] backdrop-blur-md text-[#393c41] font-medium text-[clamp(12px,1.2vw,18px)] rounded-[4px] hover:bg-[#f4f4f4] transition-all uppercase tracking-wide">
+            <button className="flex-1 py-3 px-10 bg-[#f4f4f4a6] backdrop-blur-md text-[#393c41] font-medium text-sm rounded-[4px] hover:bg-[#f4f4f4] transition-all uppercase tracking-wider border-none">
               Learn More
             </button>
           </div>
