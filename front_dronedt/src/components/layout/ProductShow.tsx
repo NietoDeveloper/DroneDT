@@ -41,56 +41,48 @@ const vehicles: VehicleCard[] = [
 
 const ProductShow = () => {
   return (
-    <section 
-      className="w-full h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth bg-white"
-      style={{ scrollbarWidth: 'none' }} // Esconde scrollbar en Firefox
-    >
+    <section className="w-full bg-white">
       {vehicles.map((item) => (
         <div 
           key={item.id} 
-          className="relative h-[85vh] md:h-[90vh] w-full flex flex-col items-center justify-between py-12 md:py-20 snap-start border-b-[6px] border-white overflow-hidden"
+          className="relative h-[75vh] min-h-[400px] md:h-[85vh] w-full flex flex-col items-center justify-between py-10 md:py-16 overflow-hidden snap-start"
         >
-          {/* Background Image Container */}
+          {/* Background Image - Optimizada para cubrir todo el ratio */}
           <div className="absolute inset-0 z-0">
             <img 
               src={item.image} 
               alt={item.name} 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           </div>
 
-          {/* Content Top: Escala desde móviles de 210px hasta 1900px */}
-          <div className="relative z-10 text-center px-4 mt-10">
-            <h2 className="text-black font-medium text-[clamp(28px,6vw,56px)] tracking-tight leading-none mb-2">
+          {/* Content Top: Tipografía escalable desde 210px */}
+          <div className="relative z-10 text-center px-4 mt-6 md:mt-10">
+            <h2 className="text-black font-semibold text-[clamp(32px,8vw,72px)] tracking-tight leading-tight mb-1">
               {item.name}
             </h2>
             {item.promo ? (
-               <p className="text-black text-[clamp(14px,1.5vw,20px)] font-normal underline underline-offset-4 cursor-pointer hover:text-black/70 transition-colors">
+              <p className="text-black text-[clamp(14px,2vw,24px)] font-normal underline underline-offset-4 cursor-pointer hover:text-black/70 transition-colors">
                 {item.promo}
-               </p>
+              </p>
             ) : (
-              <p className="text-black font-medium text-[clamp(14px,1.5vw,18px)] uppercase tracking-wide">
+              <p className="text-black font-medium text-[clamp(12px,1.8vw,20px)] uppercase tracking-widest opacity-90">
                 {item.category}
               </p>
             )}
           </div>
 
-          {/* Buttons Bottom: Responsive Dinámico */}
-          <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-full max-w-[90%] sm:max-w-[640px] px-6 mb-8 md:mb-12">
-            <button className="flex-1 py-[clamp(10px,1.2vw,16px)] px-4 bg-[#171a20cc] backdrop-blur-sm text-white font-medium text-[clamp(12px,1vw,15px)] rounded-[4px] hover:bg-[#171a20] transition-all uppercase tracking-tight">
+          {/* Buttons Bottom: Responsive imponente para pantallas grandes */}
+          <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-full max-w-[90%] sm:max-w-[600px] lg:max-w-[800px] px-6 mb-10">
+            <button className="flex-1 py-[clamp(12px,1.5vw,20px)] px-6 bg-[#171a20cc] backdrop-blur-md text-white font-medium text-[clamp(12px,1.2vw,18px)] rounded-[4px] hover:bg-[#171a20] transition-all uppercase tracking-wide">
               Order Now
             </button>
-            <button className="flex-1 py-[clamp(10px,1.2vw,16px)] px-4 bg-[#f4f4f4a6] backdrop-blur-sm text-[#393c41] font-medium text-[clamp(12px,1vw,15px)] rounded-[4px] hover:bg-[#f4f4f4] transition-all uppercase tracking-tight">
+            <button className="flex-1 py-[clamp(12px,1.5vw,20px)] px-6 bg-[#f4f4f4a6] backdrop-blur-md text-[#393c41] font-medium text-[clamp(12px,1.2vw,18px)] rounded-[4px] hover:bg-[#f4f4f4] transition-all uppercase tracking-wide">
               Learn More
             </button>
           </div>
         </div>
       ))}
-
-      {/* Footer Visual para el efecto de media tarjeta final */}
-      <div className="h-[15vh] bg-white flex items-center justify-center">
-        <p className="text-gray-400 text-xs">Drone DT © 2026</p>
-      </div>
     </section>
   );
 };
