@@ -9,7 +9,7 @@ const Navbar = dynamic(() => import("@/components/layout/Navbar"), {
   loading: () => <div className="h-20 bg-black w-full" /> 
 });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
-const ProductShow = dynamic(() => import("@/components/sections/ProductShow"), { 
+const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { 
   ssr: false,
   loading: () => <div className="h-screen bg-black w-full" />
 });
