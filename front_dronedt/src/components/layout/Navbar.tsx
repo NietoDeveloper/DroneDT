@@ -77,18 +77,20 @@ const Navbar = () => {
       {/* MENÚ FULLSCREEN */}
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         
-        <div className="flex justify-end items-center px-6 sm:px-10 py-8">
+        {/* CABECERA REDUCIDA: py-4 en lugar de py-8 */}
+        <div className="flex justify-end items-center px-6 sm:px-10 py-4">
             <button 
               onClick={() => {setMenuOpen(false); setSelectedModel(null)}} 
               className="p-2 text-[#0000FF] transition-all duration-300 hover:text-gold hover:scale-125 hover:rotate-90 cursor-pointer outline-none"
             >
-              <X size={40} strokeWidth={3} />
+              <X size={35} strokeWidth={3} />
             </button>
         </div>
         
-        <div className="flex-1 overflow-y-auto px-6 sm:px-10 py-4 w-full max-w-[1800px] mx-auto flex flex-col">
+        {/* CONTENEDOR PRINCIPAL: Eliminado padding top excesivo */}
+        <div className="flex-1 overflow-y-auto px-6 sm:px-10 py-0 w-full max-w-[1800px] mx-auto flex flex-col">
           {!selectedModel ? (
-            <div className="flex flex-col space-y-4 md:space-y-6 mt-10">
+            <div className="flex flex-col space-y-2 md:space-y-4 mt-2">
               {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item, index) => (
                 <button 
                   key={item}
@@ -103,11 +105,13 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="animate-in fade-in slide-in-from-right-10 duration-500 pb-10">
-              <button onClick={() => setSelectedModel(null)} className="text-[#0000FF] text-[11px] font-black tracking-[0.4em] mb-12 flex items-center uppercase hover:text-gold transition-colors cursor-pointer">
+              {/* Espaciado reducido: mb-4 en lugar de mb-12 */}
+              <button onClick={() => setSelectedModel(null)} className="text-[#0000FF] text-[11px] font-black tracking-[0.4em] mb-4 flex items-center uppercase hover:text-gold transition-colors cursor-pointer">
                 <ChevronRight className="rotate-180 mr-2" size={16} /> Volver a categorías
               </button>
 
-              <h2 className="text-3xl sm:text-5xl font-black text-[#0000FF] mb-12 tracking-tighter uppercase">{selectedModel}</h2>
+              {/* Título reducido: mb-6 en lugar de mb-12 */}
+              <h2 className="text-3xl sm:text-5xl font-black text-[#0000FF] mb-6 tracking-tighter uppercase">{selectedModel}</h2>
               
               <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 sm:gap-6">
                 {menuContent[selectedModel]?.length > 0 ? (
@@ -128,9 +132,9 @@ const Navbar = () => {
                         )}
                       </div>
 
-                      <div className="p-5 flex flex-col flex-1">
+                      <div className="p-4 flex flex-col flex-1">
                         <h4 className="text-black font-black text-lg tracking-tight leading-none mb-1">{item.name}</h4>
-                        <p className="text-gray-500 text-[10px] font-medium leading-tight mb-4">{item.desc}</p>
+                        <p className="text-gray-500 text-[10px] font-medium leading-tight mb-3">{item.desc}</p>
                         
                         <div className="mt-auto flex flex-col gap-2">
                           <button className="w-full py-2 bg-[#0000FF] text-white rounded-lg font-black text-[9px] uppercase tracking-widest hover:bg-gold hover:text-black transition-all cursor-pointer">
@@ -144,7 +148,7 @@ const Navbar = () => {
                     </div>
                   ))
                 ) : (
-                  <div className="col-span-full py-20 text-center bg-neutral-50 rounded-[40px] border-2 border-dashed border-gray-200 animate-in fade-in duration-1000">
+                  <div className="col-span-full py-16 text-center bg-neutral-50 rounded-[40px] border-2 border-dashed border-gray-200 animate-in fade-in duration-1000">
                     <p className="text-black/20 text-2xl font-black tracking-widest uppercase italic">Próximamente</p>
                   </div>
                 )}
@@ -152,8 +156,8 @@ const Navbar = () => {
             </div>
           )}
 
-          {/* FOOTER DEL MENÚ */}
-          <div className="mt-auto pt-16 pb-10 border-t border-gray-100 flex flex-col space-y-8 bg-white">
+          {/* FOOTER DEL MENÚ: Reducido pt-8 en lugar de pt-16 */}
+          <div className="mt-auto pt-8 pb-10 border-t border-gray-100 flex flex-col space-y-6 bg-white">
             <div className="flex flex-wrap items-center justify-between gap-6">
               <div className="flex items-center space-x-8">
                 <button onClick={() => window.location.href = "/login"} className="flex items-center gap-3 group cursor-pointer">
