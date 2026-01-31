@@ -3,9 +3,10 @@
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// Importación dinámica
+// Importación dinámica para optimizar el LCP (Largest Contentful Paint)
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
+const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
 
 export default function Home() {
   return (
@@ -14,16 +15,16 @@ export default function Home() {
 
       <main className="flex flex-col w-full">
         
-        {/* SECCIÓN 1: BANNER (90% del viewport) */}
+        {/* SECCIÓN 1: BANNER HERO (Impacto inmediato) */}
         <section className="relative h-[90vh] w-full z-10 overflow-hidden bg-black">
           <Banner />
         </section>
 
-        {/* SECCIÓN 2: CONTENIDO PRINCIPAL */}
-        <section className="relative z-20 bg-black pt-16 pb-24 px-6 md:px-12">
+        {/* SECCIÓN 2: CONTENIDO PRINCIPAL Y SPECS */}
+        <section className="relative z-20 bg-black pt-16 pb-32 px-6 md:px-12">
           <div className="max-w-[1900px] mx-auto">
             
-            {/* STATS DE ALTA PRECISIÓN - Refinados para 1900px */}
+            {/* STATS DE ALTA PRECISIÓN - Grid responsivo de alto rendimiento */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 mb-24 border-y border-white/5 py-16 lg:py-24">
               <div className="flex flex-col items-center text-center group md:border-r border-white/10 last:border-0">
                 <h3 className="text-5xl lg:text-6xl font-black text-white group-hover:text-gold transition-all duration-500 italic">
@@ -47,7 +48,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* BRANDING CENTRAL - Tamaños controlados */}
+            {/* BRANDING CENTRAL - Enfoque en conversión */}
             <div className="flex flex-col items-center text-center space-y-10 py-10">
               <div className="space-y-4">
                 <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-black tracking-tighter uppercase leading-none">
@@ -59,7 +60,7 @@ export default function Home() {
                 </p>
               </div>
 
-              {/* CTAS RESPONSIVOS */}
+              {/* CTAS RESPONSIVOS - Estilo Tesla botones planos */}
               <div className="flex flex-col sm:flex-row gap-5 w-full max-w-lg pt-6">
                 <Link
                   href="/shop"
@@ -79,7 +80,7 @@ export default function Home() {
 
           </div>
 
-          {/* EFECTOS DE FONDO */}
+          {/* EFECTOS DE FONDO - Capa visual de profundidad */}
           <div className="absolute inset-0 z-[-1] pointer-events-none overflow-hidden">
              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
              <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
@@ -87,15 +88,8 @@ export default function Home() {
         </section>
       </main>
 
-      {/* FOOTER */}
-      <footer className="relative z-20 py-16 flex flex-col items-center gap-8 border-t border-white/5 bg-black">
-        <div className="flex flex-wrap justify-center gap-8 md:gap-14 text-[10px] text-white/20 font-bold tracking-[0.3em] uppercase">
-          <span className="text-white/40">DroneDT © 2026</span>
-          <Link href="/privacy" className="hover:text-gold transition-colors">Privacidad</Link>
-          <Link href="/terms" className="hover:text-gold transition-colors">Términos</Link>
-          <Link href="/contact" className="hover:text-gold transition-colors">Contacto</Link>
-        </div>
-      </footer>
+      {/* FOOTER - Importado dinámicamente con tu lógica de Ops Center */}
+      <Footer />
     </div>
   );
 }
