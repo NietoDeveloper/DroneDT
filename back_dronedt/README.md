@@ -1,4 +1,3 @@
-monorepo-root/
 ├── backend/                  # Carpeta principal del backend (Node.js con Express y MongoDB)
 │   ├── src/                  # Código fuente principal
 │   │   ├── config/           # Configuraciones globales
