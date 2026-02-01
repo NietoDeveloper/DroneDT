@@ -1,26 +1,26 @@
-import Product from '../models/Product.js';
+const Product = require('../models/Product');
 
 /**
  * @desc    Obtener lista de drones/servicios (Modo High-Availability)
  * @route   GET /api/v1/products
  * @access  Public (Carga la flota en el Shop)
  */
-export const getProducts = async (req, res, next) => {
+const getProducts = async (req, res, next) => {
     try {
         // Ejecutamos la consulta en el Cluster de Assets
         const products = await Product.find()
             .populate('category', 'name')
             .sort('-createdAt')
-            .lean(); // .lean() mejora el rendimiento al devolver objetos JSON puros
+            .lean(); // Rendimiento óptimo: devuelve JSON puro sin hidratar el documento de Mongoose
 
         res.status(200).json({
             success: true,
             count: products.length,
-            version: "1.0.0", // Para control de API en producción
+            version: "1.0.0",
+            developer: "Manuel Nieto",
             data: products
         });
     } catch (error) {
-        // Este next(error) dispara tu middleware de errorHandler.js
         next(error);
     }
 };
@@ -30,7 +30,7 @@ export const getProducts = async (req, res, next) => {
  * @route   GET /api/v1/products/:id
  * @access  Public (Flujo de selección en Services.tsx)
  */
-export const getProductById = async (req, res, next) => {
+const getProductById = async (req, res, next) => {
     try {
         const product = await Product.findById(req.params.id)
             .populate('category', 'name')
@@ -48,7 +48,6 @@ export const getProductById = async (req, res, next) => {
             data: product
         });
     } catch (error) {
-        // Manejo automático de errores de ID mal formado (CastError)
         next(error);
     }
 };
@@ -58,9 +57,9 @@ export const getProductById = async (req, res, next) => {
  * @route   POST /api/v1/products
  * @access  Private/Admin (Exclusivo Panel Control Empleados)
  */
-export const createProduct = async (req, res, next) => {
+const createProduct = async (req, res, next) => {
     try {
-        // En producción, vinculamos el ID del empleado que crea el producto
+        // Vinculación automática con el creador (para auditoría en el panel)
         if (req.user) {
             req.body.user = req.user.id;
         }
@@ -75,4 +74,11 @@ export const createProduct = async (req, res, next) => {
     } catch (error) {
         next(error);
     }
+};
+
+// Exportación masiva para las rutas
+module.exports = {
+    getProducts,
+    getProductById,
+    createProduct
 };
