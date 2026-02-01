@@ -4,29 +4,70 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 require('dotenv').config();
 
-const connectDB = require('./config/db');
+// Importamos la infraestructura
+const { connectDB } = require('./config/db');
+const productRoutes = require('./routes/productRoutes');
 const { errorHandler } = require('./middlewares/errorHandler');
 
 const app = express();
 
-// Conectar a BD
+// 1. Conexión Dual a MongoDB Atlas (Core & Assets)
 connectDB();
 
-// Middlewares Globales
-app.use(helmet()); // Seguridad de headers
-app.use(cors());
+// 2. Middlewares de Seguridad y Monitoreo
+app.use(helmet()); 
+app.use(cors({
+    origin: process.env.FRONTEND_URL || '*', // En prod, usa tu URL de Vercel
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 app.use(express.json());
-app.use(morgan('dev')); // Logs de peticiones
+app.use(morgan('dev')); // Log de peticiones en consola
 
-// Rutas Base
+// 3. --- RUTAS API v1 ---
+
+// Endpoint de Salud / Root
 app.get('/', (req, res) => {
-  res.send('Drone DT API is running... 🚀');
+    res.status(200).json({
+        status: 'Operational',
+        project: 'Drone DT',
+        author: 'NietoDeveloper',
+        clusters: 'Active (1 & 2)'
+    });
 });
 
-// Middleware de errores
+// Rutas de Inventario y Productos
+app.use('/api/v1/products', productRoutes);
+
+// 4. Manejo de Rutas No Encontradas (404)
+app.use((req, res, next) => {
+    res.status(404).json({
+        success: false,
+        message: `La ruta ${req.originalUrl} no existe en la arquitectura Drone DT`
+    });
+});
+
+// 5. Middleware de Errores Global (Captura fallos de DB o Controladores)
 app.use(errorHandler);
 
+// 6. Lanzamiento
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`🔥 Server running on port ${PORT}`));
+const server = app.listen(PORT, () => {
+    console.log(`
+    =============================================
+    🛸 DRONE DT SERVER OPERATIONAL
+    🎯 PORT: ${PORT}
+    🌐 NODE_ENV: ${process.env.NODE_ENV || 'development'}
+    🏆 Colombia's #1 Committer Standard
+    =============================================
+    `);
+});
+
+// Manejo de errores no capturados (Uncaught Rejections)
+process.on('unhandledRejection', (err) => {
+    console.log(`❌ Error Crítico: ${err.message}`);
+    // Cerrar servidor y salir del proceso
+    // server.close(() => process.exit(1));
+});
 
 module.exports = app;

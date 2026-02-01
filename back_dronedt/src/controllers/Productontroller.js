@@ -1,25 +1,26 @@
 import Product from '../models/Product.js';
 
 /**
- * @desc    Obtener lista de drones/servicios
+ * @desc    Obtener lista de drones/servicios (Modo High-Availability)
  * @route   GET /api/v1/products
- * @access  Public (Carga los drones en la tienda/shop)
+ * @access  Public (Carga la flota en el Shop)
  */
 export const getProducts = async (req, res, next) => {
     try {
-        // Buscamos los productos y traemos el nombre de la categoría
-        // Ordenamos por los más recientes para que las novedades aparezcan primero
+        // Ejecutamos la consulta en el Cluster de Assets
         const products = await Product.find()
             .populate('category', 'name')
-            .sort('-createdAt');
+            .sort('-createdAt')
+            .lean(); // .lean() mejora el rendimiento al devolver objetos JSON puros
 
         res.status(200).json({
             success: true,
             count: products.length,
+            version: "1.0.0", // Para control de API en producción
             data: products
         });
     } catch (error) {
-        // Este next(error) activa el errorHandler.js que configuramos antes
+        // Este next(error) dispara tu middleware de errorHandler.js
         next(error);
     }
 };
@@ -38,7 +39,7 @@ export const getProductById = async (req, res, next) => {
         if (!product) {
             return res.status(404).json({
                 success: false,
-                message: 'El equipo o servicio no fue encontrado en la base de datos'
+                message: 'El equipo o servicio no fue encontrado en el Inventario Real (Cluster 2)'
             });
         }
 
@@ -47,6 +48,7 @@ export const getProductById = async (req, res, next) => {
             data: product
         });
     } catch (error) {
+        // Manejo automático de errores de ID mal formado (CastError)
         next(error);
     }
 };
@@ -54,17 +56,20 @@ export const getProductById = async (req, res, next) => {
 /**
  * @desc    Crear nuevo drone/servicio
  * @route   POST /api/v1/products
- * @access  Private/Admin (Para el panel de control de empleados)
+ * @access  Private/Admin (Exclusivo Panel Control Empleados)
  */
 export const createProduct = async (req, res, next) => {
     try {
-        // En una fase posterior, req.user vendrá del middleware de Auth
-        // Por ahora, el body debe incluir el ID del usuario/admin
+        // En producción, vinculamos el ID del empleado que crea el producto
+        if (req.user) {
+            req.body.user = req.user.id;
+        }
+
         const product = await Product.create(req.body);
 
         res.status(201).json({
             success: true,
-            message: 'Drone registrado exitosamente',
+            message: 'Unidad de flota registrada exitosamente en el clúster de inventario',
             data: product
         });
     } catch (error) {
