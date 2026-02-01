@@ -3,33 +3,45 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 
-interface VehicleCard {
-  id: string;
-  category: string;
+interface Product {
+  _id: string;
   name: string;
-  promo?: string;
-  image: string;
+  brand: string;
+  description: string;
+  price: number;
+  images: { url: string }[];
+  category: { name: string } | string;
 }
 
-const vehicles: VehicleCard[] = [
-  { id: "1", category: "Industrial Drone", name: "Model X-1", image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&q=80&w=1800" },
-  { id: "2", category: "Cinematic FPV", name: "Model DT-3", image: "https://images.unsplash.com/photo-1533230393035-73f114092243?auto=format&fit=crop&q=80&w=1800" },
-  { id: "3", category: "Utility Cargo", name: "Lift Pro", promo: "3.99% APR Disponible", image: "https://images.unsplash.com/photo-1521749831539-67c790c02795?auto=format&fit=crop&q=80&w=1800" },
-  { id: "4", category: "Luxury Surveillance", name: "Eagle Eye", promo: "3.99% APR Disponible", image: "https://images.unsplash.com/photo-1473960104312-bf2e12834e54?auto=format&fit=crop&q=80&w=1800" },
-  { id: "5", category: "Agricultural", name: "Agro DT-5", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1800" },
-  { id: "6", category: "Rescue Ops", name: "Guardian 6", image: "https://images.unsplash.com/photo-1527142879195-574163997225?auto=format&fit=crop&q=80&w=1800" }
-];
-
 const ProductShow = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
+  // 1. Fetch de datos reales desde el Backend
+  useEffect(() => {
+    const fetchDrones = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`);
+        const result = await response.json();
+        // Ajustamos según la estructura de respuesta de tu controlador
+        const data = result.data || result;
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching drones:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchDrones();
+  }, []);
+
   const scrollToId = useCallback((index: number) => {
-    if (scrollRef.current) {
+    if (scrollRef.current && products.length > 0) {
       const container = scrollRef.current;
-      const totalWidth = container.scrollWidth;
-      const itemWidth = totalWidth / vehicles.length;
+      const itemWidth = container.scrollWidth / products.length;
       
       container.scrollTo({
         left: index * itemWidth,
@@ -37,30 +49,41 @@ const ProductShow = () => {
       });
       setActiveIndex(index);
     }
-  }, []);
+  }, [products.length]);
 
-  // Banner Automático (Autoplay cada 5 segundos)
+  // Autoplay mejorado
   useEffect(() => {
+    if (products.length === 0) return;
     const interval = setInterval(() => {
-      const nextIndex = (activeIndex + 1) % vehicles.length;
+      const nextIndex = (activeIndex + 1) % products.length;
       scrollToId(nextIndex);
-    }, 5000);
+    }, 6000); // 6 segundos para dar tiempo a apreciar la tecnología
 
     return () => clearInterval(interval);
-  }, [activeIndex, scrollToId]);
+  }, [activeIndex, scrollToId, products.length]);
 
   const handleScroll = () => {
-    if (scrollRef.current) {
+    if (scrollRef.current && products.length > 0) {
       const { scrollLeft, scrollWidth } = scrollRef.current;
-      const index = Math.round(scrollLeft / (scrollWidth / vehicles.length));
+      const index = Math.round(scrollLeft / (scrollWidth / products.length));
       if (index !== activeIndex) setActiveIndex(index);
     }
   };
 
   const handleProductClick = (id: string) => {
-    // Redirección futura al detalle del modelo
-    router.push(`/models/${id}`);
+    router.push(`/shop/product/${id}`);
   };
+
+  if (loading) {
+    return (
+      <div className="h-[85vh] flex items-center justify-center bg-white">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-gold mx-auto mb-4"></div>
+          <p className="text-headingColor font-bold tracking-widest uppercase text-xs">Cargando Flota Drone DT...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <section className="relative w-full bg-white overflow-hidden group">
@@ -71,58 +94,61 @@ const ProductShow = () => {
         className="flex flex-row overflow-x-auto snap-x snap-mandatory scrollbar-hide"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {vehicles.map((item) => (
+        {products.map((item) => (
           <div 
-            key={item.id} 
-            className="relative h-[85vh] min-h-[600px] w-[85vw] md:w-[70vw] lg:w-[60vw] flex-shrink-0 flex flex-col items-center justify-between py-12 md:py-20 snap-center border-r border-white/5 overflow-hidden"
+            key={item._id} 
+            className="relative h-[85vh] min-h-[600px] w-screen md:w-[70vw] lg:w-[100vw] flex-shrink-0 flex flex-col items-center justify-between py-12 md:py-20 snap-center border-r border-white/5 overflow-hidden"
           >
             {/* Background Image con Hover Suave */}
             <div 
-              onClick={() => handleProductClick(item.id)}
-              className="absolute inset-0 z-0 cursor-pointer group/item transition-transform duration-700 ease-in-out hover:scale-105"
+              onClick={() => handleProductClick(item._id)}
+              className="absolute inset-0 z-0 cursor-pointer group/item transition-transform duration-1000 ease-in-out hover:scale-105"
             >
               <img 
-                src={item.image} 
+                src={item.images[0]?.url || 'https://via.placeholder.com/1920x1080?text=Drone+DT'} 
                 alt={item.name} 
                 className="w-full h-full object-cover"
               />
-              {/* Overlay de Luxury DT */}
-              <div className="absolute inset-0 bg-black/20 group-hover/item:bg-black/10 transition-colors duration-500"></div>
+              {/* Overlay de Luxury DT - Degradado para legibilidad */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 group-hover/item:bg-black/20 transition-colors duration-700"></div>
             </div>
 
             {/* Content Top */}
             <div className="relative z-10 text-center px-4 pointer-events-none">
-              <h2 className="text-white drop-shadow-2xl font-semibold text-[clamp(32px,5vw,60px)] tracking-tight leading-none mb-2">
+              <h2 className="text-white drop-shadow-2xl font-bold text-[clamp(32px,6vw,80px)] tracking-tighter leading-none mb-2">
                 {item.name}
               </h2>
-              <p className="text-white font-medium text-[clamp(12px,1vw,14px)] uppercase tracking-[0.3em] opacity-90">
-                {item.promo || item.category}
+              <p className="text-gold font-bold text-[clamp(12px,1.2vw,16px)] uppercase tracking-[0.4em] drop-shadow-md">
+                {item.brand}
               </p>
             </div>
 
             {/* Buttons Bottom */}
-            <div className="relative z-10 flex flex-col sm:flex-row gap-3 w-full max-w-[80%] sm:max-w-[400px] px-4 mb-12">
-              <button className="flex-1 py-3 bg-white text-black font-bold text-xs rounded-[4px] hover:bg-white/90 transition-all uppercase tracking-widest shadow-lg">
-                Order Now
+            <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-full max-w-[85%] sm:max-w-[450px] px-4 mb-16">
+              <button 
+                onClick={() => handleProductClick(item._id)}
+                className="flex-1 py-4 bg-white text-black font-bold text-[11px] rounded-[4px] hover:bg-gold hover:text-white transition-all duration-300 uppercase tracking-[0.2em] shadow-2xl"
+              >
+                Reservar Ahora
               </button>
-              <button className="flex-1 py-3 bg-[#171a20cc] backdrop-blur-md text-white font-bold text-xs rounded-[4px] hover:bg-[#171a20] transition-all uppercase tracking-widest shadow-lg">
-                Learn More
+              <button className="flex-1 py-4 bg-black/40 backdrop-blur-xl text-white border border-white/20 font-bold text-[11px] rounded-[4px] hover:bg-black transition-all duration-300 uppercase tracking-[0.2em] shadow-2xl">
+                Especificaciones
               </button>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Puntos de Navegación - Más Grandes y Fáciles de Clickear */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-4 p-2">
-        {vehicles.map((_, index) => (
+      {/* Puntos de Navegación - Estilo Software DT */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-5 p-2 bg-black/10 backdrop-blur-md rounded-full px-6">
+        {products.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollToId(index)}
-            className={`h-3 transition-all duration-500 rounded-full cursor-pointer ${
+            className={`h-1.5 transition-all duration-700 rounded-full cursor-pointer ${
               activeIndex === index 
-                ? "w-12 bg-gold shadow-[0_0_15px_rgba(255,215,0,0.6)]" 
-                : "w-3 bg-white/50 hover:bg-white/80"
+                ? "w-16 bg-gold shadow-[0_0_20px_rgba(255,215,0,0.8)]" 
+                : "w-4 bg-white/40 hover:bg-white/80"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
