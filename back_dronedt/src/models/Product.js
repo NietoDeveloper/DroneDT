@@ -1,17 +1,20 @@
 import mongoose from 'mongoose';
+import slugify from 'slugify';
 
 /**
- * Modelo de Producto/Drone para Software DT
- * Optimizado para geolocalización y flujo de servicios.
+ * Modelo de Producto/Drone para Drone DT
+ * Arquitectura de alto rendimiento con soporte GeoJSON y SEO Friendly.
  */
 const productSchema = new mongoose.Schema(
     {
         name: {
             type: String,
             required: [true, 'El nombre del drone/servicio es obligatorio'],
+            unique: true,
             trim: true,
             maxlength: [100, 'El nombre no puede exceder los 100 caracteres']
         },
+        slug: String, // Para URLs amigables en Next.js
         brand: {
             type: String,
             required: [true, 'La marca del equipo es obligatoria'],
@@ -20,7 +23,7 @@ const productSchema = new mongoose.Schema(
         category: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Category',
-            required: [true, 'Debes asignar una categoría (e.g., Fumigación, Fotografía)'],
+            required: [true, 'Debes asignar una categoría técnica'],
         },
         description: {
             type: String,
@@ -38,12 +41,15 @@ const productSchema = new mongoose.Schema(
             maxRange: { type: Number, default: 0 }, // Metros
             weight: { type: Number, default: 0 }, // Gramos
         },
-        images: [
-            {
-                url: { type: String, required: true },
-                public_id: { type: String }, // Referencia para AWS S3 o Cloudinary
-            },
-        ],
+        images: {
+            type: [
+                {
+                    url: { type: String, required: true },
+                    public_id: { type: String }, // Referencia para AWS S3
+                }
+            ],
+            validate: [val => val.length > 0, 'Debe incluir al menos una imagen']
+        },
         stock: {
             type: Number,
             required: [true, 'El stock es obligatorio'],
@@ -58,7 +64,7 @@ const productSchema = new mongoose.Schema(
             },
             default: 'disponible',
         },
-        // GeoJSON para rastreo en tiempo real y disponibilidad por zona
+        // Estructura GeoJSON estándar para MongoDB
         currentLocation: {
             type: {
                 type: String,
@@ -67,15 +73,14 @@ const productSchema = new mongoose.Schema(
             },
             coordinates: {
                 type: [Number],
-                index: '2dsphere',
-                default: [-74.0721, 4.7110], // Bogotá, Colombia
+                default: [-74.0721, 4.7110], // Bogotá
             },
         },
         rating: {
             type: Number,
             default: 0,
-            min: 0,
-            max: 5
+            min: [0, 'El rating debe ser al menos 0'],
+            max: [5, 'El rating no puede superar 5']
         },
         numReviews: {
             type: Number,
@@ -84,7 +89,7 @@ const productSchema = new mongoose.Schema(
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
-            required: [true, 'Debe haber un administrador o empleado responsable'],
+            required: [true, 'Debe haber un administrador responsable'],
         },
     },
     {
@@ -94,14 +99,24 @@ const productSchema = new mongoose.Schema(
     }
 );
 
-// --- ÍNDICES ESTRATÉGICOS ---
+// --- MIDDLEWARES ---
 
-// Búsqueda de texto para el buscador del Header
+// Generar Slug antes de guardar (SEO)
+productSchema.pre('save', function(next) {
+    if (!this.isModified('name')) return next();
+    this.slug = slugify(this.name, { lower: true, strict: true });
+    next();
+});
+
+// --- ÍNDICES ---
+
 productSchema.index({ name: 'text', brand: 'text', description: 'text' });
+productSchema.index({ currentLocation: '2dsphere' }); // Índice geoespacial correcto
+productSchema.index({ slug: 1 });
 
 // --- VIRTUALS ---
 
-// Útil para el frontend: saber si el producto se puede agendar inmediatamente
+// Determina si el servicio puede ser agendado en el flujo de Services.tsx
 productSchema.virtual('isBookable').get(function() {
     return this.status === 'disponible' && this.stock > 0;
 });
