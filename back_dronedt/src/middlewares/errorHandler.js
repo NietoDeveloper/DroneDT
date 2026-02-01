@@ -1,16 +1,16 @@
 /**
- * Global Error Handler para Software DT
- * Centraliza las respuestas de error y el logging profesional.
+ * Global Error Handler - Drone DT Standard
+ * Centraliza las respuestas de error para la arquitectura MERN de Manuel Nieto.
  */
 const errorHandler = (err, req, res, next) => {
     // Valores por defecto
     let statusCode = err.statusCode || 500;
-    let message = err.message || 'Error interno del servidor';
+    let message = err.message || 'Error interno en el sistema Drone DT';
 
-    // 1. Logging para monitoreo (escalable a Winston/Pino)
-    console.error(`[ERROR] ${req.method} ${req.url}:`, {
+    // 1. Logging Profesional (Mantiene el rastro en Railway/Vercel)
+    console.error(`[DRONE-DT-ERROR] ${req.method} ${req.url}:`, {
         message: err.message,
-        stack: err.stack,
+        stack: process.env.NODE_ENV === 'production' ? '🥞' : err.stack,
         timestamp: new Date().toISOString()
     });
 
@@ -20,37 +20,41 @@ const errorHandler = (err, req, res, next) => {
         message = Object.values(err.errors).map(val => val.message).join(', ');
     }
 
-    // 3. Error de Mongoose: Valor duplicado (e.g., email ya registrado)
+    // 3. Error de Mongoose: Valor duplicado (E.g. mismo número de serie de drone)
     if (err.code === 11000) {
         statusCode = 400;
         const field = Object.keys(err.keyValue || {});
-        message = `El campo ${field} ya está en uso.`;
+        message = `Error de duplicidad: El valor en el campo '${field}' ya existe en la base de datos.`;
     }
 
-    // 4. Error de Mongoose: ID de MongoDB mal formado (CastError)
+    // 4. Error de Mongoose: ID mal formado (CastError)
+    // Muy común cuando se pasan IDs de drones inexistentes desde el Front
     if (err.name === 'CastError') {
         statusCode = 404;
-        message = `Recurso no encontrado. ID inválido: ${err.value}`;
+        message = `Recurso no localizado. El ID especificado no es válido para la flota DT.`;
     }
 
-    // 5. Errores de Autenticación JWT
+    // 5. Errores de Seguridad JWT (Para el Panel de Empleados futuro)
     if (err.name === 'JsonWebTokenError') {
         statusCode = 401;
-        message = 'Token de autenticación inválido.';
+        message = 'Acceso denegado. Token de seguridad inválido.';
     }
 
     if (err.name === 'TokenExpiredError') {
         statusCode = 401;
-        message = 'El token ha expirado. Por favor, inicia sesión de nuevo.';
+        message = 'Sesión expirada. Por favor, reautentíquese en el panel de Drone DT.';
     }
 
-    // Respuesta estandarizada para el Frontend (Software DT)
+    // --- Respuesta Final Estandarizada ---
     res.status(statusCode).json({
         success: false,
         message,
-        // Solo enviamos el stack si NO estamos en producción
+        // En producción ocultamos el stack para no exponer vulnerabilidades
         stack: process.env.NODE_ENV === 'production' ? null : err.stack,
+        developer: "NietoDeveloper",
+        region: "Colombia-Cluster"
     });
 };
 
-export default errorHandler;
+// Exportación compatible con tu server.js actual
+module.exports = { errorHandler };
