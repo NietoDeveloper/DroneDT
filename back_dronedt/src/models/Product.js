@@ -1,11 +1,16 @@
 import mongoose from 'mongoose';
 
+/**
+ * Modelo de Producto/Drone para Software DT
+ * Optimizado para geolocalización y flujo de servicios.
+ */
 const productSchema = new mongoose.Schema(
     {
         name: {
             type: String,
             required: [true, 'El nombre del drone/servicio es obligatorio'],
             trim: true,
+            maxlength: [100, 'El nombre no puede exceder los 100 caracteres']
         },
         brand: {
             type: String,
@@ -15,7 +20,7 @@ const productSchema = new mongoose.Schema(
         category: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Category',
-            required: true,
+            required: [true, 'Debes asignar una categoría (e.g., Fumigación, Fotografía)'],
         },
         description: {
             type: String,
@@ -24,31 +29,36 @@ const productSchema = new mongoose.Schema(
         price: {
             type: Number,
             required: [true, 'Define un precio base'],
+            min: [0, 'El precio no puede ser negativo'],
             default: 0,
         },
         specifications: {
-            flightTime: { type: Number }, // Minutos
-            cameraResolution: { type: String }, // e.g., "4K", "6K"
-            maxRange: { type: Number }, // Metros
-            weight: { type: Number }, // Gramos
+            flightTime: { type: Number, default: 0 }, // Minutos
+            cameraResolution: { type: String, default: 'N/A' }, 
+            maxRange: { type: Number, default: 0 }, // Metros
+            weight: { type: Number, default: 0 }, // Gramos
         },
         images: [
             {
                 url: { type: String, required: true },
-                public_id: { type: String }, // Para manejo en AWS S3 o Cloudinary
+                public_id: { type: String }, // Referencia para AWS S3 o Cloudinary
             },
         ],
         stock: {
             type: Number,
-            required: true,
-            default: 0,
+            required: [true, 'El stock es obligatorio'],
+            min: [0, 'El stock no puede ser menor a cero'],
+            default: 1,
         },
         status: {
             type: String,
-            enum: ['disponible', 'mantenimiento', 'en_vuelo', 'fuera_servicio'],
+            enum: {
+                values: ['disponible', 'mantenimiento', 'en_vuelo', 'fuera_servicio'],
+                message: '{VALUE} no es un estado válido'
+            },
             default: 'disponible',
         },
-        // Útil para Drone DT: Ubicación actual del equipo
+        // GeoJSON para rastreo en tiempo real y disponibilidad por zona
         currentLocation: {
             type: {
                 type: String,
@@ -57,12 +67,15 @@ const productSchema = new mongoose.Schema(
             },
             coordinates: {
                 type: [Number],
-                default: [-74.0721, 4.7110], // Coordenadas Bogotá por defecto
+                index: '2dsphere',
+                default: [-74.0721, 4.7110], // Bogotá, Colombia
             },
         },
         rating: {
             type: Number,
             default: 0,
+            min: 0,
+            max: 5
         },
         numReviews: {
             type: Number,
@@ -71,19 +84,27 @@ const productSchema = new mongoose.Schema(
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
-            required: true, // Quién registró el equipo/servicio
+            required: [true, 'Debe haber un administrador o empleado responsable'],
         },
     },
     {
-        timestamps: true, // Crea createdAt y updatedAt automáticamente
+        timestamps: true,
+        toJSON: { virtuals: true },
+        toObject: { virtuals: true }
     }
 );
 
-// Índice para búsquedas rápidas por nombre y categoría
-productSchema.index({ name: 'text', brand: 'text' });
+// --- ÍNDICES ESTRATÉGICOS ---
 
-// Índice geoespacial para rastreo de drones en tiempo real
-productSchema.index({ currentLocation: '2dsphere' });
+// Búsqueda de texto para el buscador del Header
+productSchema.index({ name: 'text', brand: 'text', description: 'text' });
+
+// --- VIRTUALS ---
+
+// Útil para el frontend: saber si el producto se puede agendar inmediatamente
+productSchema.virtual('isBookable').get(function() {
+    return this.status === 'disponible' && this.stock > 0;
+});
 
 const Product = mongoose.model('Product', productSchema);
 
