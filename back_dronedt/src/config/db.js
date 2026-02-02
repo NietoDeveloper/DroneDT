@@ -1,40 +1,36 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 /**
- * Configuración de conexión a MongoDB para Software DT
- * Soporta múltiples eventos para monitoreo de clústeres.
+ * Configuración de conexión a MongoDB para Drone DT / Software DT
+ * Soporta múltiples eventos para monitoreo de clústeres en producción.
  */
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
-            // Mongoose 6+ ya usa estas opciones por defecto, 
-            // pero las mantenemos para asegurar compatibilidad en entornos Docker/AWS
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        // MONGO_URI debe estar en tu .env (Cluster 1 o 2 según corresponda)
+        const conn = await mongoose.connect(process.env.MONGO_URI);
 
-        console.log(`[DB] MongoDB Conectado: ${conn.connection.host}`);
+        console.log(`\x1b[36m%s\x1b[0m`, `[DB] MongoDB Conectado: ${conn.connection.host}`);
     } catch (error) {
-        console.error(`[ERROR] Fallo en conexión a MongoDB: ${error.message}`);
-        // Salir del proceso con fallo si no hay base de datos
+        console.error(`\x1b[31m%s\x1b[0m`, `[ERROR] Fallo en conexión a MongoDB: ${error.message}`);
         process.exit(1);
     }
 };
 
 // Eventos de conexión para monitoreo en tiempo real
 mongoose.connection.on('disconnected', () => {
-    console.warn('[DB] Advertencia: MongoDB desconectado. Intentando reconectar...');
+    console.warn('\x1b[33m%s\x1b[0m', '[DB] Advertencia: MongoDB desconectado. Intentando reconectar...');
 });
 
 mongoose.connection.on('error', (err) => {
     console.error(`[DB] Error de Mongoose: ${err}`);
 });
 
-// Manejo de cierre de conexión (Graceful Shutdown)
+// Manejo de cierre de conexión (Graceful Shutdown) - Vital para Docker/AWS
 process.on('SIGINT', async () => {
     await mongoose.connection.close();
     console.log('[DB] Conexión a MongoDB cerrada por terminación de la app');
     process.exit(0);
 });
 
-export default connectDB;
+// Cambiamos 'export default' por 'module.exports' para que app.js lo reconozca
+module.exports = connectDB;
