@@ -4,9 +4,9 @@
   "description": "Production-ready API for Drone DT - Scalable MERN Architecture by Manuel Nieto",
   "main": "src/server.js",
   "scripts": {
-    "start": "node \"src/server.js\"",
-    "dev": "nodemon \"src/server.js\"",
-    "seed": "node \"seeder.js\"",
+    "start": "node src/server.js",
+    "dev": "nodemon",
+    "seed": "node seeder.js",
     "test": "jest --watchAll --no-cache",
     "test:ci": "jest --ci --forceExit"
   },
