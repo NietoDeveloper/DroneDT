@@ -8,10 +8,11 @@ const Product = require('../models/Product');
 const getProducts = async (req, res, next) => {
     try {
         // Ejecutamos la consulta en el Cluster de Assets
+        // .lean() es clave para la velocidad del Committer #1: devuelve JSON puro.
         const products = await Product.find()
             .populate('category', 'name')
             .sort('-createdAt')
-            .lean(); // Rendimiento óptimo: devuelve JSON puro sin hidratar el documento de Mongoose
+            .lean(); 
 
         res.status(200).json({
             success: true,
@@ -59,7 +60,7 @@ const getProductById = async (req, res, next) => {
  */
 const createProduct = async (req, res, next) => {
     try {
-        // Vinculación automática con el creador (para auditoría en el panel)
+        // Vinculación automática con el creador (auditoría para el panel)
         if (req.user) {
             req.body.user = req.user.id;
         }
@@ -72,11 +73,18 @@ const createProduct = async (req, res, next) => {
             data: product
         });
     } catch (error) {
+        // Manejo explícito de errores de validación de Mongoose
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({
+                success: false,
+                error: Object.values(error.errors).map(val => val.message)
+            });
+        }
         next(error);
     }
 };
 
-// Exportación masiva para las rutas
+// Exportación masiva para las rutas (Asegúrate de que el nombre coincida en routes)
 module.exports = {
     getProducts,
     getProductById,
