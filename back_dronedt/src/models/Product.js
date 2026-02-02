@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
-import slugify from 'slugify';
+const mongoose = require('mongoose');
+const slugify = require('slugify');
 
 /**
  * Modelo de Producto/Drone para Drone DT
@@ -73,7 +73,7 @@ const productSchema = new mongoose.Schema(
             },
             coordinates: {
                 type: [Number],
-                default: [-74.0721, 4.7110], // Bogotá
+                default: [-74.0721, 4.7110], // Bogotá, Colombia
             },
         },
         rating: {
@@ -109,9 +109,9 @@ productSchema.pre('save', function(next) {
 });
 
 // --- ÍNDICES ---
-
+// Optimizamos la búsqueda para que el buscador de la Shop sea instantáneo
 productSchema.index({ name: 'text', brand: 'text', description: 'text' });
-productSchema.index({ currentLocation: '2dsphere' }); // Índice geoespacial correcto
+productSchema.index({ currentLocation: '2dsphere' }); 
 productSchema.index({ slug: 1 });
 
 // --- VIRTUALS ---
@@ -121,6 +121,6 @@ productSchema.virtual('isBookable').get(function() {
     return this.status === 'disponible' && this.stock > 0;
 });
 
+// Cambiamos 'export default' por 'module.exports'
 const Product = mongoose.model('Product', productSchema);
-
-export default Product;
+module.exports = Product;
