@@ -2,9 +2,9 @@
   "name": "drone-dt-backend",
   "version": "1.0.0",
   "description": "Production-ready API for Drone DT - Scalable MERN Architecture by Manuel Nieto",
-  "main": "src/server.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "node src/app.js",
     "dev": "nodemon",
     "seed": "node seeder.js",
     "test": "jest --watchAll --no-cache",

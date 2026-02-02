@@ -2,5 +2,5 @@
   "watch": ["src"],
   "ext": "js,json",
   "ignore": ["node_modules", "**/test/**"],
-  "exec": "node \"./src/server.js\""
+  "exec": "node \"./src/app.js\""
 }
