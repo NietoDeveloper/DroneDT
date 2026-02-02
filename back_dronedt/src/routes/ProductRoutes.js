@@ -1,29 +1,28 @@
 const express = require('express');
+const router = express.Router();
+
+// Importamos el controlador
+// NOTA: Asegúrate de que el archivo se llame exactamente 'productController.js' en src/controllers/
 const { 
     getProducts, 
     getProductById, 
     createProduct 
 } = require('../controllers/productController');
 
-const router = express.Router();
-
 /**
- * RUTAS PÚBLICAS - Clúster de Inventario/Assets
- * Estas alimentan el Shop y el catálogo de drones para Drone DT
+ * RUTAS PÚBLICAS - Arquitectura Drone DT
+ * Enlazadas al Clúster de Inventario/Assets
  */
 router.route('/')
-    .get(getProducts)      // GET: Lista todos los drones (para el Shop)
-    .post(createProduct);  // POST: Registro manual de drones
+    .get(getProducts)       // GET: /api/v1/products -> Catálogo Shop
+    .post(createProduct);   // POST: /api/v1/products -> Registro Manual
 
 router.route('/:id')
-    .get(getProductById);  // GET: Detalle específico (para Services.tsx y Booking)
+    .get(getProductById);   // GET: /api/v1/products/:id -> Detalle para Services/Booking
 
 /**
- * RUTAS DE ADMINISTRACIÓN - Panel de Control
- * TODO: Implementar middlewares de protección (auth, admin)
- * router.route('/:id')
- * .put(updateProduct)
- * .delete(deleteProduct);
+ * @TODO: Integrar Middlewares de Auth para el Panel de Control
+ * Próxima fase: router.use(protect).use(restrictTo('admin'))
  */
 
 module.exports = router;
