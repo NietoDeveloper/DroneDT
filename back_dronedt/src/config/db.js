@@ -32,5 +32,5 @@ process.on('SIGINT', async () => {
     process.exit(0);
 });
 
-// Cambiamos 'export default' por 'module.exports' para que app.js lo reconozca
-module.exports = connectDB;
+// LA CLAVE: Exportar como objeto para que coincida con const { connectDB } en app.js
+module.exports = { connectDB };

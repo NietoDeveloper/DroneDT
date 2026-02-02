@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-// Importamos el controlador
-// NOTA: Asegúrate de que el archivo se llame exactamente 'productController.js' en src/controllers/
+// Importamos el controlador con desestructuración
+// Importante: Si esto falla, verifica que el archivo físico NO tenga mayúsculas (productController.js)
 const { 
     getProducts, 
     getProductById, 
@@ -11,18 +11,13 @@ const {
 
 /**
  * RUTAS PÚBLICAS - Arquitectura Drone DT
- * Enlazadas al Clúster de Inventario/Assets
+ * Enlazadas al Clúster de Inventario/Assets para Shop y Services
  */
 router.route('/')
-    .get(getProducts)       // GET: /api/v1/products -> Catálogo Shop
-    .post(createProduct);   // POST: /api/v1/products -> Registro Manual
+    .get(getProducts)       // Catálogo general para la Shop
+    .post(createProduct);   // Registro inicial de drones (vía Postman/Admin)
 
 router.route('/:id')
-    .get(getProductById);   // GET: /api/v1/products/:id -> Detalle para Services/Booking
-
-/**
- * @TODO: Integrar Middlewares de Auth para el Panel de Control
- * Próxima fase: router.use(protect).use(restrictTo('admin'))
- */
+    .get(getProductById);   // Detalle específico para el flujo de Booking
 
 module.exports = router;
