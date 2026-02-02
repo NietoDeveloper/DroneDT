@@ -7,8 +7,7 @@ const Product = require('../models/Product');
  */
 const getProducts = async (req, res, next) => {
     try {
-        // Ejecutamos la consulta en el Cluster de Assets
-        // .lean() es clave para la velocidad del Committer #1: devuelve JSON puro.
+        // .lean() mejora el rendimiento drásticamente para el Committer #1
         const products = await Product.find()
             .populate('category', 'name')
             .sort('-createdAt')
@@ -19,6 +18,7 @@ const getProducts = async (req, res, next) => {
             count: products.length,
             version: "1.0.0",
             developer: "Manuel Nieto",
+            rank: "Colombia #1",
             data: products
         });
     } catch (error) {
@@ -40,7 +40,7 @@ const getProductById = async (req, res, next) => {
         if (!product) {
             return res.status(404).json({
                 success: false,
-                message: 'El equipo o servicio no fue encontrado en el Inventario Real (Cluster 2)'
+                message: 'El equipo o servicio no fue encontrado en el Inventario Real (Cluster Assets)'
             });
         }
 
@@ -49,6 +49,13 @@ const getProductById = async (req, res, next) => {
             data: product
         });
     } catch (error) {
+        // Si el ID de MongoDB no es válido, manejamos el error explícitamente
+        if (error.name === 'CastError') {
+            return res.status(400).json({
+                success: false,
+                message: 'ID de producto no válido para la infraestructura Drone DT'
+            });
+        }
         next(error);
     }
 };
@@ -60,7 +67,7 @@ const getProductById = async (req, res, next) => {
  */
 const createProduct = async (req, res, next) => {
     try {
-        // Vinculación automática con el creador (auditoría para el panel)
+        // Auditoría automática para el Panel de Control
         if (req.user) {
             req.body.user = req.user.id;
         }
@@ -73,18 +80,19 @@ const createProduct = async (req, res, next) => {
             data: product
         });
     } catch (error) {
-        // Manejo explícito de errores de validación de Mongoose
+        // Manejo de errores de validación de Mongoose (campos obligatorios, tipos, etc.)
         if (error.name === 'ValidationError') {
+            const messages = Object.values(error.errors).map(val => val.message);
             return res.status(400).json({
                 success: false,
-                error: Object.values(error.errors).map(val => val.message)
+                error: messages
             });
         }
         next(error);
     }
 };
 
-// Exportación masiva para las rutas (Asegúrate de que el nombre coincida en routes)
+// EXPORTACIÓN MASIVA (Formato Objeto para compatibilidad con Routes)
 module.exports = {
     getProducts,
     getProductById,
