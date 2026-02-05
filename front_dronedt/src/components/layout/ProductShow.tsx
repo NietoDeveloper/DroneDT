@@ -20,12 +20,6 @@ const ProductShow = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // Mock Data de alta calidad para desarrollo (basado en tu Seed)
-  const mockProducts: Product[] = [
-    { _id: "1", name: "Matrice 350 RTK", brand: "DJI Enterprise", description: "El nuevo estándar en la industria.", price: 12000, images: [{ url: "https://dji-official-fe.djicdn.com/cms/uploads/6b3e8e1.jpg" }], category: "Industrial" },
-    { _id: "2", name: "Agras T40", brand: "DJI Agriculture", description: "Revolución agrícola.", price: 15000, images: [{ url: "https://dji-official-fe.djicdn.com/cms/uploads/98b25f1.jpg" }], category: "Agriculture" },
-    { _id: "3", name: "EVO II Pro", brand: "Autel Robotics", description: "Excelencia en imagen 6K.", price: 2500, images: [{ url: "https://shop.autelrobotics.com/cdn/shop/files/1_800x.jpg" }], category: "Consumer" }
-  ];
 
   useEffect(() => {
     const fetchDrones = async () => {
