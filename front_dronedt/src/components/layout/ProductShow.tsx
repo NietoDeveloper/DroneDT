@@ -87,16 +87,7 @@ const ProductShow = () => {
           <div 
             key={item._id} 
             // CLAVE: w-[90vw] hace que se vea un 10% de la siguiente tarjeta
-            className="relative h-[85vh] min-h-[500px] w-[90vw] md:w-[100vw] flex-shrink-0 flex flex-col items-center justify-between py-10 md:py-20 snap-center overflow-hidden border-r border-white/10"
-          >
-            {/* Background Image & Overlay */}
 
-
-            {/* Content Top */}
-            <div className="relative z-10 text-center px-6">
-              <h2 className="text-[#FFD700] drop-shadow-2xl font-black text-[clamp(32px,7vw,80px)] tracking-tighter leading-none mb-2 uppercase">
-                {item.name}
-              </h2>
 
 
   );
