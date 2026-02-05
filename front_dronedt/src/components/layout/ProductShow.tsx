@@ -104,16 +104,7 @@ const ProductShow = () => {
               <h2 className="text-[#FFD700] drop-shadow-2xl font-black text-[clamp(32px,7vw,80px)] tracking-tighter leading-none mb-2 uppercase">
                 {item.name}
               </h2>
-              <p className="text-white font-medium text-[clamp(12px,1.2vw,16px)] uppercase tracking-[0.4em] opacity-90">
-                {item.brand || "DRONE DT"} — {typeof item.category === 'string' ? item.category : item.category?.name}
-              </p>
-            </div>
 
-
-            </div>
-          </div>
-        ))}
-      </div>
 
   );
 };
