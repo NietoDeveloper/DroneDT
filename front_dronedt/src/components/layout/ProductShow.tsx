@@ -14,12 +14,6 @@ interface Product {
   category: any;
 }
 
-const ProductShow = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
 
 
 export default ProductShow;
