@@ -70,14 +70,6 @@ const ProductShow = () => {
           >
 
 
-            {/* Content Top: Título Blue */}
-            <div className="relative z-10 text-center px-4 max-w-[1900px]">
-              <h2 className="text-[#0047AB] drop-shadow-[0_2px_10px_rgba(255,255,255,0.3)] font-black text-[clamp(28px,8vw,90px)] tracking-tighter leading-none mb-4 uppercase italic">
-                {item.name}
-              </h2>
-              <p className="text-gold font-bold text-[clamp(10px,1.5vw,18px)] uppercase tracking-[0.5em] drop-shadow-lg">
-                {item.brand} — {item.category as string}
-              </p>
             </div>
 
             {/* Buttons Bottom: Hover Gold Flotante */}
