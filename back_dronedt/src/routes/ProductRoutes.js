@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// Importamos el controlador
+// Importamos el controlador con la nueva función getProductMenu
 const { 
     getProducts, 
+    getProductMenu, 
     getProductById, 
     createProduct 
 } = require('../controllers/productController');
@@ -23,6 +24,10 @@ router.use((req, res, next) => {
  * [RUTAS DE FLOTA E INVENTARIO]
  * Endpoint base: /api/v1/products
  */
+
+// NUEVA RUTA: Específica para el Navbar de Drone DT
+// Se coloca antes de /:id para evitar colisiones de rutas
+router.get('/menu', getProductMenu);
 
 router.route('/')
     /**
