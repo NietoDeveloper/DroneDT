@@ -125,14 +125,6 @@ const ProductShow = () => {
         ))}
       </div>
 
-      {/* Navigation Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
-        {products.map((_, index) => (
-
-          />
-        ))}
-      </div>
-    </section>
   );
 };
 
