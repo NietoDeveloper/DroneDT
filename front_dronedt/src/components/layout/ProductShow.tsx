@@ -48,15 +48,6 @@ const ProductShow = () => {
   }, [products.length]);
 
 
-
-  const handleScroll = () => {
-    if (scrollRef.current && products.length > 0) {
-      const { scrollLeft, scrollWidth } = scrollRef.current;
-      const index = Math.round(scrollLeft / (scrollWidth / products.length));
-      if (index !== activeIndex) setActiveIndex(index);
-    }
-  };
-
   if (loading) return (
     <div className="h-[90vh] flex flex-col items-center justify-center bg-main">
       <div className="w-12 h-12 border-4 border-gold border-t-transparent rounded-full animate-spin mb-4"></div>
