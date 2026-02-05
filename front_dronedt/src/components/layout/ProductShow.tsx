@@ -90,14 +90,7 @@ const ProductShow = () => {
             className="relative h-[85vh] min-h-[500px] w-[90vw] md:w-[100vw] flex-shrink-0 flex flex-col items-center justify-between py-10 md:py-20 snap-center overflow-hidden border-r border-white/10"
           >
             {/* Background Image & Overlay */}
-            <div className="absolute inset-0 z-0">
-              <img 
-                src={getImageUrl(item)} 
-                alt={item.name} 
-                className="w-full h-full object-cover transition-transform duration-[3000ms] group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/80"></div>
-            </div>
+
 
             {/* Content Top */}
             <div className="relative z-10 text-center px-6">
