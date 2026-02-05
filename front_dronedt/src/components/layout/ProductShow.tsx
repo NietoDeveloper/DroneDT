@@ -109,17 +109,7 @@ const ProductShow = () => {
               </p>
             </div>
 
-            {/* Buttons Bottom */}
-            <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-[85%] max-w-[450px] px-4 mb-12">
-              <button 
-                onClick={() => router.push(`/shop/product/${item._id}`)}
-                className="flex-1 py-4 bg-gold text-black font-black text-[11px] rounded-sm hover:bg-white transition-all duration-300 uppercase tracking-widest shadow-xl"
-              >
-                Order Now
-              </button>
-              <button className="flex-1 py-4 bg-black/40 backdrop-blur-md text-white border border-white/30 font-black text-[11px] rounded-sm hover:bg-white/20 transition-all duration-300 uppercase tracking-widest">
-                Learn More
-              </button>
+
             </div>
           </div>
         ))}
