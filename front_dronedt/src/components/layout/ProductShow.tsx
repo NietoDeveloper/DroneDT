@@ -68,15 +68,7 @@ const ProductShow = () => {
             key={item._id} 
             className="relative h-[90vh] min-h-[500px] w-screen flex-shrink-0 flex flex-col items-center justify-between py-10 md:py-24 snap-center overflow-hidden"
           >
-            {/* Background Image & Overlay */}
-            <div className="absolute inset-0 z-0">
-              <img 
-                src={item.images[0]?.url} 
-                alt={item.name} 
-                className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/70"></div>
-            </div>
+
 
             {/* Content Top: Título Blue */}
             <div className="relative z-10 text-center px-4 max-w-[1900px]">
