@@ -72,16 +72,6 @@ const ProductShow = () => {
 
             </div>
 
-            {/* Buttons Bottom: Hover Gold Flotante */}
-            <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-[90%] max-w-[500px] px-4 mb-10">
-              <button 
-                onClick={() => router.push(`/shop/product/${item._id}`)}
-                className="flex-1 py-4 bg-white/90 backdrop-blur-md text-black font-black text-[10px] md:text-[12px] rounded-sm hover:bg-gold hover:text-white hover:-translate-y-2 transition-all duration-300 uppercase tracking-widest shadow-[0_10px_20px_rgba(0,0,0,0.3)] hover:shadow-gold/40"
-              >
-                Reservar Ahora
-              </button>
-
-            </div>
           </div>
         ))}
       </div>
