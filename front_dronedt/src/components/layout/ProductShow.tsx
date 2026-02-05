@@ -40,55 +40,7 @@ const ProductShow = () => {
 
   const scrollToId = useCallback((index: number) => {
     if (scrollRef.current && products.length > 0) {
-      const container = scrollRef.current;
-      const itemWidth = container.scrollWidth / products.length;
-      container.scrollTo({ left: index * itemWidth, behavior: 'smooth' });
-      setActiveIndex(index);
-    }
-  }, [products.length]);
 
-
-  if (loading) return (
-    <div className="h-[90vh] flex flex-col items-center justify-center bg-main">
-      <div className="w-12 h-12 border-4 border-gold border-t-transparent rounded-full animate-spin mb-4"></div>
-      <p className="text-[#003366] font-bold tracking-widest animate-pulse">DRONE DT ENGINE STARTING...</p>
-    </div>
-  );
-
-  return (
-    <section className="relative w-full bg-white overflow-hidden group">
-      <div 
-        ref={scrollRef}
-        onScroll={handleScroll}
-        className="flex flex-row overflow-x-auto snap-x snap-mandatory scrollbar-hide"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
-        {products.map((item) => (
-          <div 
-            key={item._id} 
-            className="relative h-[90vh] min-h-[500px] w-screen flex-shrink-0 flex flex-col items-center justify-between py-10 md:py-24 snap-center overflow-hidden"
-          >
-
-
-            </div>
-
-          </div>
-        ))}
-      </div>
-
-      {/* Navigation Dots */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-        {products.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToId(index)}
-            className={`h-1 transition-all duration-500 rounded-full ${
-              activeIndex === index ? "w-12 bg-gold shadow-lg" : "w-3 bg-white/30"
-            }`}
-          />
-        ))}
-      </div>
-    </section>
   );
 };
 
