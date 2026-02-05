@@ -1,19 +1,62 @@
 const Product = require('../models/Product');
 
 /**
- * @desc    Obtener lista de drones/servicios (High-Availability)
- * @route   GET /api/v1/products
+ * @desc    Obtener menú agrupado por categorías para el Navbar (High-Performance)
+ * @route   GET /api/v1/products/menu
  * @access  Public
+ */
+const getProductMenu = async (req, res, next) => {
+    try {
+        // Pipeline de agregación para que la DB haga el trabajo pesado de agrupar
+        const groupedProducts = await Product.aggregate([
+            {
+                $lookup: {
+                    from: 'categories', // Nombre de la colección de categorías en tu DB
+                    localField: 'category',
+                    foreignField: '_id',
+                    as: 'categoryData'
+                }
+            },
+            { $unwind: '$categoryData' },
+            {
+                $group: {
+                    _id: '$categoryData.name',
+                    items: {
+                        $push: {
+                            id: '$_id',
+                            name: '$name',
+                            desc: '$description',
+                            img: '$imageUrl', // Asegúrate que tu modelo use imageUrl
+                            price: '$price'
+                        }
+                    }
+                }
+            }
+        ]);
+
+        // Convertimos el array de agregación en el objeto Record<string, MenuItem[]> que espera el Navbar
+        const menuResponse = groupedProducts.reduce((acc, curr) => {
+            acc[curr._id] = curr.items;
+            return acc;
+        }, { Modelos: [], Accesorios: [], Flota: [] });
+
+        res.status(200).json(menuResponse);
+    } catch (error) {
+        next(error);
+    }
+};
+
+/**
+ * @desc    Obtener lista completa de drones/servicios
+ * @route   GET /api/v1/products
  */
 const getProducts = async (req, res, next) => {
     try {
-        // .lean() es clave para el rendimiento del Committer #1
         const products = await Product.find()
             .populate('category', 'name')
             .sort('-createdAt')
             .lean(); 
 
-        // Seteamos un Header de Cache Control para optimizar el renderizado en Next.js
         res.setHeader('Cache-Control', 'public, max-age=60');
 
         res.status(200).json({
@@ -38,7 +81,6 @@ const getProducts = async (req, res, next) => {
  */
 const getProductById = async (req, res, next) => {
     try {
-        // Buscamos y convertimos a objeto plano con .lean()
         const product = await Product.findById(req.params.id)
             .populate('category', 'name')
             .populate('user', 'name email')
@@ -57,7 +99,6 @@ const getProductById = async (req, res, next) => {
             data: product
         });
     } catch (error) {
-        // Manejo de IDs corruptos antes de que lleguen al error handler general
         if (error.name === 'CastError') {
             return res.status(400).json({
                 success: false,
@@ -69,13 +110,11 @@ const getProductById = async (req, res, next) => {
 };
 
 /**
- * @desc    Crear nuevo drone/servicio (Panel Control)
+ * @desc    Crear nuevo drone/servicio
  * @route   POST /api/v1/products
- * @access  Private/Admin
  */
 const createProduct = async (req, res, next) => {
     try {
-        // Auditoría: Asignamos el ID del usuario si el middleware de Auth está activo
         if (req.user) {
             req.body.user = req.user.id;
         }
@@ -88,7 +127,6 @@ const createProduct = async (req, res, next) => {
             data: product
         });
     } catch (error) {
-        // Interceptamos errores de validación de Mongoose para dar feedback claro al Panel
         if (error.name === 'ValidationError') {
             const messages = Object.values(error.errors).map(val => val.message);
             return res.status(400).json({
@@ -103,6 +141,7 @@ const createProduct = async (req, res, next) => {
 
 module.exports = {
     getProducts,
+    getProductMenu, // Nueva función exportada
     getProductById,
     createProduct
 };
