@@ -47,14 +47,7 @@ const ProductShow = () => {
     }
   }, [products.length]);
 
-  useEffect(() => {
-    if (products.length === 0) return;
-    const interval = setInterval(() => {
-      const nextIndex = (activeIndex + 1) % products.length;
-      scrollToId(nextIndex);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, [activeIndex, scrollToId, products.length]);
+
 
   const handleScroll = () => {
     if (scrollRef.current && products.length > 0) {
