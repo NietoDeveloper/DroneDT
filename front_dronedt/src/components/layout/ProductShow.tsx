@@ -80,9 +80,7 @@ const ProductShow = () => {
               >
                 Reservar Ahora
               </button>
-              <button className="flex-1 py-4 bg-black/50 backdrop-blur-md text-white border border-white/20 font-black text-[10px] md:text-[12px] rounded-sm hover:bg-gold/80 hover:-translate-y-2 transition-all duration-300 uppercase tracking-widest shadow-2xl">
-                Especificaciones
-              </button>
+
             </div>
           </div>
         ))}
