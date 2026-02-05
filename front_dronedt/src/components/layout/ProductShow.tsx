@@ -128,12 +128,7 @@ const ProductShow = () => {
       {/* Navigation Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {products.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToId(index)}
-            className={`h-1.5 transition-all duration-500 rounded-full ${
-              activeIndex === index ? "w-10 bg-gold" : "w-2 bg-white/40"
-            }`}
+
           />
         ))}
       </div>
