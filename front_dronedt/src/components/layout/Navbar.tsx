@@ -18,6 +18,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
   const [isLogged, setIsLogged] = useState(false);
+  const [loading, setLoading] = useState(true); // Estado para el Drone Loader
   
   const [menuContent, setMenuContent] = useState<Record<string, MenuItem[]>>({
     Modelos: [],
@@ -26,13 +27,13 @@ const Navbar = () => {
   });
 
   const fetchMenuData = useCallback(async () => {
+    setLoading(true);
     try {
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/menu`);
       if (!response.ok) throw new Error('Network response was not ok');
       
       const data = await response.json();
       
-      // Normalización robusta para Drone DT Uplink
       if (Array.isArray(data)) {
         const categorized = data.reduce((acc: any, item: MenuItem) => {
           const cat = item.category || 'Modelos';
@@ -55,12 +56,11 @@ const Navbar = () => {
         });
         setMenuContent(normalized);
       }
-
-      if (process.env.NEXT_PUBLIC_AUTH_DEBUG === 'true') {
-        console.log("🛸 Drone DT Uplink Synchronized:", data);
-      }
     } catch (error) {
       console.error("❌ Error en el Uplink de Drone DT:", error);
+    } finally {
+      // Pequeño delay para asegurar que la animación se vea fluida
+      setTimeout(() => setLoading(false), 1500);
     }
   }, []);
 
@@ -75,10 +75,29 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [fetchMenuData]);
 
-  // Bloquear scroll cuando el menú está abierto
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
+
+  // --- COMPONENTE DRONE LOADER ---
+  if (loading) return (
+    <div className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#DCDCDC]">
+       <div className="relative w-20 h-20 mb-6">
+          {/* Chasis Central */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-10 bg-black rounded-md animate-pulse"></div>
+          {/* Hélices Animadas */}
+          <div className="absolute top-0 left-0 w-7 h-7 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
+          <div className="absolute top-0 right-0 w-7 h-7 border-t-4 border-[#FFD700] rounded-full animate-spin [animation-duration:0.4s]"></div>
+          <div className="absolute bottom-0 left-0 w-7 h-7 border-t-4 border-[#FFD700] rounded-full animate-spin [animation-duration:0.6s]"></div>
+          <div className="absolute bottom-0 right-0 w-7 h-7 border-t-4 border-[#FFD700] rounded-full animate-spin [animation-duration:0.5s]"></div>
+          {/* Laser Scanner */}
+          <div className="absolute w-32 h-[1px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-60 shadow-[0_0_10px_#FFD700]"></div>
+       </div>
+       <p className="font-black text-[10px] tracking-[0.5em] text-black uppercase animate-pulse">
+         Synchronizing Drone DT Uplink
+       </p>
+    </div>
+  );
 
   const Logo = () => (
     <button 
@@ -87,7 +106,7 @@ const Navbar = () => {
     >
       <div className="flex items-baseline transition-all duration-300 group-hover:scale-105">
         <span className="text-xl sm:text-2xl font-black tracking-widest text-[#0000FF] italic">Drone</span>
-        <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-1 text-gold">DT</span>
+        <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-1 text-[#FFD700]">DT</span>
       </div>
       <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-black/40 group-hover:text-[#0000FF] transition-colors">Colombia</span>
     </button>
@@ -101,7 +120,7 @@ const Navbar = () => {
             <Logo />
             <div className="flex items-center gap-2">
                <Circle size={8} fill={isLogged ? "#22c55e" : "transparent"} className={`${isLogged ? 'text-green-500 animate-pulse' : 'text-black/10'} hidden sm:block`} />
-               {isLogged && <span className="text-[10px] font-bold text-green-600 uppercase tracking-tighter hidden md:block">System Online</span>}
+               {isLogged && <span className="text-[10px] font-bold text-green-600 uppercase tracking-tighter hidden md:block font-mono">System Online</span>}
             </div>
           </div>
 
@@ -110,7 +129,7 @@ const Navbar = () => {
               <button
                 key={item}
                 onClick={() => { setSelectedModel(item); setMenuOpen(true); }}
-                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest transition-all duration-300 hover:text-gold hover:-translate-y-1 bg-transparent cursor-pointer border-none"
+                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest transition-all duration-300 hover:text-[#FFD700] hover:-translate-y-1 bg-transparent cursor-pointer border-none"
               >
                 {item}
               </button>
@@ -120,7 +139,7 @@ const Navbar = () => {
           <div className="flex items-center justify-end gap-4 flex-1">
             <button 
               onClick={() => setMenuOpen(true)}
-              className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full transition-all duration-300 hover:bg-gold hover:text-black hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,255,0.3)] cursor-pointer border-none"
+              className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full transition-all duration-300 hover:bg-[#FFD700] hover:text-black hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,255,0.3)] cursor-pointer border-none"
             >
               Menú
             </button>
@@ -132,23 +151,57 @@ const Navbar = () => {
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         
         <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-50">
-          <div className="opacity-40 transition-opacity">
+          <div className="opacity-40">
               <span className="text-black font-black tracking-tighter text-xl italic uppercase font-sans">Uplink Selection</span>
           </div>
           <button 
             onClick={() => {setMenuOpen(false); setSelectedModel(null)}} 
-            className="p-2 text-[#0000FF] transition-all duration-300 hover:text-gold hover:scale-110 hover:rotate-90 cursor-pointer outline-none bg-transparent border-none"
+            className="p-2 text-[#0000FF] transition-all duration-300 hover:text-[#FFD700] hover:scale-110 hover:rotate-90 cursor-pointer outline-none bg-transparent border-none"
           >
             <X size={35} strokeWidth={3} />
           </button>
         </div>
         
         <div className="flex-1 overflow-y-auto px-6 sm:px-10 w-full max-w-[1800px] mx-auto flex flex-col">
+          {/* Aquí sigue el contenido del menú según tu lógica anterior */}
           {!selectedModel ? (
             <div className="flex flex-col space-y-2 md:space-y-4 pt-8">
               {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item, index) => (
                 <button 
                   key={item}
                   onClick={() => setSelectedModel(item)}
-                  style={{ animationDelay: `${index * 100}ms` }}
-                  className="animate-in fade-in slide-in-from-bottom-8 duration-700 text-5xl sm:text-7xl md:text-9xl text-black font-black
+                  className="group flex items-center justify-between text-5xl sm:text-7xl md:text-8xl text-black font-black uppercase italic tracking-tighter hover:text-[#0000FF] transition-all duration-300 text-left"
+                >
+                  <span>{item}</span>
+                  <ChevronRight size={60} className="opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 transition-all duration-500" />
+                </button>
+              ))}
+            </div>
+          ) : (
+             <div className="pt-10">
+                <button 
+                  onClick={() => setSelectedModel(null)}
+                  className="mb-8 text-[#0000FF] font-bold uppercase tracking-[0.3em] flex items-center gap-2 hover:gap-4 transition-all"
+                >
+                  ← Volver al Menú
+                </button>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                   {menuContent[selectedModel]?.map((product) => (
+                      <div key={product.id} className="group cursor-pointer">
+                         <div className="aspect-video bg-[#DCDCDC] overflow-hidden rounded-sm mb-4 border border-black/5">
+                            <img src={product.img} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                         </div>
+                         <h4 className="font-black text-xl uppercase italic group-hover:text-[#0000FF] transition-colors">{product.name}</h4>
+                         <p className="text-xs font-bold text-black/40 uppercase tracking-widest">{product.price}</p>
+                      </div>
+                   ))}
+                </div>
+             </div>
+          )}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Navbar;
