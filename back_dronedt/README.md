@@ -50,7 +50,7 @@
 │   ├── docker-compose.yml    # Compose para dev (incluye MongoDB, Redis)
 │   ├── package.json          # Dependencias (express, mongoose, redis, jwt, etc.)
 │   └── README.md             # Documentación del backend
-├── frontend/                 # Carpeta del frontend (Next.js, separada como especificaste)
+├── frontend/                 
 │   └── ...              
 ├── .git/                     # Control de versiones para el monorepo
 ├── .gitignore                # Global para el monorepo
