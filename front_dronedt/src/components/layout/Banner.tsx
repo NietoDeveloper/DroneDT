@@ -3,7 +3,15 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 
-const slides = [
+interface Slide {
+  id: number;
+  type: 'video' | 'image';
+  src: string;
+  title: string;
+  subtitle: string;
+}
+
+const slides: Slide[] = [
   { id: 1, type: 'video', src: '/Banner-1.mp4', title: 'DRONE DT', subtitle: 'Drone Colombiano • Bogotá' },
   { id: 2, type: 'image', src: '/Banner-1.png', title: 'Modelo: DT-101', subtitle: 'Fotografía y Vuelo Profesional' },
   { id: 3, type: 'image', src: '/Banner-2.png', title: 'Modelo: DT-Mini-200', subtitle: 'Vuelo Sigiloso y Ágil' },
@@ -34,21 +42,21 @@ const Banner = () => {
   // Manejo de reproducción de video
   useEffect(() => {
     if (slides[currentSlide].type === 'video' && videoRef.current) {
-      setIsVideoVisible(false); // Reset para efecto fade
+      setIsVideoVisible(false);
       videoRef.current.currentTime = 0;
       videoRef.current.play()
         .then(() => setIsVideoVisible(true))
-        .catch(() => setIsVideoVisible(true)); // Fallback si falla autoplay
+        .catch(() => setIsVideoVisible(true));
     }
   }, [currentSlide]);
 
   const handleDotClick = (index: number) => {
     if (index === currentSlide) return;
+    if (timerRef.current) clearInterval(timerRef.current); // Reiniciar el timer al hacer click manual
     setCurrentSlide(index);
   };
 
   const renderTitle = (title: string) => {
-    // Lógica optimizada de colores Software DT
     if (title.includes('DRONE')) {
       const words = title.split(' ');
       return (
@@ -93,24 +101,23 @@ const Banner = () => {
               </video>
             ) : (
               <div 
-                className="w-full h-full bg-cover bg-center transition-transform duration-[10000ms] scale-110"
+                className="w-full h-full bg-cover bg-center transition-transform duration-[10000ms] ease-out"
                 style={{ 
                   backgroundImage: `url(${slide.src})`,
                   transform: index === currentSlide ? 'scale(1)' : 'scale(1.1)'
                 }}
               />
             )}
-            {/* Overlay sutil para legibilidad de texto */}
-            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 bg-black/30" />
           </div>
         ))}
       </div>
 
-      {/* CONTENEDOR CENTRAL */}
+      {/* 2. CONTENEDOR CENTRAL */}
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
         {/* BLOQUE DE TÍTULOS */}
-        <div className="mt-[95px] flex flex-col items-center w-full">
+        <div className="mt-[10vh] md:mt-[95px] flex flex-col items-center w-full">
           <div 
             key={currentSlide} 
             className="animate-in fade-in slide-in-from-top duration-1000 w-full"
@@ -125,24 +132,24 @@ const Banner = () => {
         </div>
 
         {/* BLOQUE DE BOTONES */}
-        <div className="mb-[calc(15vh-10px)] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
+        <div className="mb-[12vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
           <Link 
             href="/shop"
-            className="flex-1 h-[84px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] hover:bg-white hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
+            className="flex-1 h-[75px] md:h-[84px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] hover:bg-white hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
           >
             Compra Ahora
           </Link>
           <Link 
             href="/services" 
-            className="flex-1 h-[84px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] border border-white/20 hover:bg-[#FFD700] hover:text-black hover:border-[#FFD700] hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
+            className="flex-1 h-[75px] md:h-[84px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] border border-white/20 hover:bg-[#FFD700] hover:text-black hover:border-[#FFD700] hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
           >
             Modelos
           </Link>
         </div>
       </div>
 
-      {/* 4. DOTS (Navegación) */}
-      <div className="absolute bottom-12 left-0 right-0 z-[50] flex justify-center items-center gap-6">
+      {/* 3. DOTS (Navegación) */}
+      <div className="absolute bottom-10 left-0 right-0 z-[50] flex justify-center items-center gap-6">
           {slides.map((_, i) => (
             <button
               key={i}
