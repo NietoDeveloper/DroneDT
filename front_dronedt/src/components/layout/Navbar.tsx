@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image'; // Optimización de Next.js
+import Image from 'next/image';
+import Link from 'next/link';
 import { X, ChevronRight, Circle } from 'lucide-react';
 
 interface MenuItem {
@@ -19,8 +20,8 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
   const [isLogged, setIsLogged] = useState(false);
-  const [loading, setLoading] = useState(true); 
-  
+  const [loading, setLoading] = useState(true);
+
   const [menuContent, setMenuContent] = useState<Record<string, MenuItem[]>>({
     Modelos: [],
     Accesorios: [],
@@ -38,9 +39,9 @@ const Navbar = () => {
     try {
       const response = await fetch(`${apiUrl}/products/menu`);
       if (!response.ok) throw new Error('Error de conexión con la flota');
-      
+
       const data = await response.json();
-      
+
       if (Array.isArray(data)) {
         const categorized = data.reduce((acc: Record<string, MenuItem[]>, item: MenuItem) => {
           const cat = item.category || 'Modelos';
@@ -51,7 +52,7 @@ const Navbar = () => {
           });
           return acc;
         }, { Modelos: [], Accesorios: [], Flota: [] });
-        
+
         setMenuContent(categorized);
       } else {
         const normalized: Record<string, MenuItem[]> = {};
@@ -66,7 +67,6 @@ const Navbar = () => {
     } catch (error) {
       console.error("❌ Error en el Uplink de Drone DT:", error);
     } finally {
-      // El delay de 1.8s le da ese toque de "sistema cargando" que buscas
       setTimeout(() => setLoading(false), 1800);
     }
   }, []);
@@ -86,37 +86,32 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
-  // Loader con estilo Drone DT
   if (loading) return (
     <div className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[#DCDCDC]">
-        <div className="relative w-24 h-24 mb-8">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse shadow-xl"></div>
-            <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin"></div>
-            <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.3s]"></div>
-            <div className="absolute bottom-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.5s]"></div>
-            <div className="absolute bottom-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.4s]"></div>
-            <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-80 shadow-[0_0_15px_#FFD700]"></div>
-        </div>
-        <div className="flex flex-col items-center gap-2">
-          <p className="font-black text-[11px] tracking-[0.6em] text-black uppercase animate-pulse">
-            Establishing Uplink
-          </p>
-        </div>
+      <div className="relative w-24 h-24 mb-8">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse shadow-xl"></div>
+        <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin"></div>
+        <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.3s]"></div>
+        <div className="absolute bottom-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.5s]"></div>
+        <div className="absolute bottom-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.4s]"></div>
+        <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-80 shadow-[0_0_15px_#FFD700]"></div>
+      </div>
+      <div className="flex flex-col items-center gap-2">
+        <p className="font-black text-[11px] tracking-[0.6em] text-black uppercase animate-pulse">
+          Establishing Uplink
+        </p>
+      </div>
     </div>
   );
 
   const Logo = () => (
-    <button 
-      onClick={() => window.location.href = "/"} 
-      className="group flex flex-col items-start cursor-pointer outline-none bg-transparent border-none p-0"
-      aria-label="Ir al inicio"
-    >
+    <Link href="/" className="group flex flex-col items-start outline-none">
       <div className="flex items-baseline transition-all duration-300 group-hover:scale-105">
         <span className="text-xl sm:text-2xl font-black tracking-widest text-[#0000FF] italic">Drone</span>
         <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-1 text-[#FFD700]">DT</span>
       </div>
       <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-black/40 group-hover:text-[#FFD700] transition-colors">Colombia</span>
-    </button>
+    </Link>
   );
 
   return (
@@ -126,13 +121,13 @@ const Navbar = () => {
           <div className="flex items-center gap-6 flex-1">
             <Logo />
             <div className="flex items-center gap-2">
-               <Circle size={8} fill={isLogged ? "#22c55e" : "transparent"} className={`${isLogged ? 'text-green-500 animate-pulse' : 'text-black/10'} hidden sm:block`} />
-               {isLogged && <span className="text-[10px] font-bold text-green-600 uppercase tracking-tighter hidden md:block font-mono">System Online</span>}
+              <Circle size={8} fill={isLogged ? "#22c55e" : "transparent"} className={`${isLogged ? 'text-green-500 animate-pulse' : 'text-black/10'} hidden sm:block`} />
+              {isLogged && <span className="text-[10px] font-bold text-green-600 uppercase tracking-tighter hidden md:block font-mono">System Online</span>}
             </div>
           </div>
 
           <div className="hidden lg:flex items-center gap-2">
-            {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
+            {['Modelos', 'Accesorios', 'Flota'].map((item) => (
               <button
                 key={item}
                 onClick={() => { setSelectedModel(item); setMenuOpen(true); }}
@@ -174,7 +169,7 @@ const Navbar = () => {
               {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
                 <button 
                   key={item}
-                  onClick={() => setSelectedModel(item)}
+                  onClick={() => item === 'Nosotros' ? (window.location.href = '/nosotros') : setSelectedModel(item)}
                   className="group flex items-center justify-between text-5xl sm:text-7xl md:text-8xl text-black font-black uppercase italic tracking-tighter hover:text-[#FFD700] transition-all duration-300 text-left border-none bg-transparent cursor-pointer"
                 >
                   <span>{item}</span>
@@ -192,13 +187,15 @@ const Navbar = () => {
                 </button>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-20">
                    {menuContent[selectedModel]?.map((product) => (
-                      <div 
+                      <Link 
+                        href={`/product/${product.id}`}
                         key={product.id} 
-                        className="group relative bg-white p-4 rounded-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_-15px_rgba(255,215,0,0.3)] border border-transparent hover:border-[#FFD700]/60 cursor-pointer"
+                        onClick={() => setMenuOpen(false)}
+                        className="group relative bg-white p-4 rounded-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_-15px_rgba(255,215,0,0.3)] border border-transparent hover:border-[#FFD700]/60"
                       >
                          <div className="aspect-square bg-[#DCDCDC] overflow-hidden rounded-lg mb-6 border border-black/5 relative shadow-inner">
                             <Image 
-                              src={product.img} 
+                              src={product.img || '/placeholder-drone.png'} 
                               alt={product.name} 
                               fill
                               className="object-cover group-hover:scale-110 transition-transform duration-700" 
@@ -219,9 +216,8 @@ const Navbar = () => {
                              </div>
                            </div>
                          </div>
-
                          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#FFD700] transition-all duration-500 group-hover:w-[80%] shadow-[0_0_15px_#FFD700]"></div>
-                      </div>
+                      </Link>
                    ))}
                 </div>
              </div>
