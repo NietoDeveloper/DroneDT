@@ -42,14 +42,3 @@
 │   │   │   └── constants.js  # Constantes del app (e.g., roles de usuario)
 │   │   └── app.js            # Archivo principal (configura Express, conecta DB, rutas, middlewares)
 │   ├── tests/                # Pruebas unitarias e integración (usa Jest y Supertest para robustez)
-│   │   ├── unit/             # Pruebas unitarias
-│   │   └── integration/      # Pruebas de integración
-│   ├── .env.example          # Ejemplo de variables de entorno (DB_URI, JWT_SECRET, etc.)
-│   ├── .gitignore            # Ignorar node_modules, .env, etc.
-│   ├── Dockerfile            # Dockerización del backend (usa Node Alpine para eficiencia)
-│   ├── docker-compose.yml    # Compose para dev (incluye MongoDB, Redis)
-│   ├── package.json          # Dependencias (express, mongoose, redis, jwt, etc.)
-│   └── README.md             # Documentación del backend
-├── frontend/                 
-│   └── ...              
-├── .git/                    
