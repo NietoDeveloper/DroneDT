@@ -1,34 +1,29 @@
 const mongoose = require('mongoose');
 
 /**
- * Drone DT - Multi-Cluster Connection Manager
- * Gestiona conexiones simultáneas a Core (Usuarios/Citas) y Assets (Productos/Empleados).
+ * Drone DT - Enterprise Multi-Cluster Manager
+ * Solución de alta disponibilidad: Inicialización inmediata para evitar errores de undefined.
  */
 
-// Objetos para exportar las conexiones y ser usados en los modelos
-let coreConnection;
-let assetsConnection;
+// Inicializamos las instancias de conexión de inmediato
+const coreConnection = mongoose.createConnection();
+const assetsConnection = mongoose.createConnection();
 
 const connectDB = async () => {
     try {
-        const uriCore = process.env.MONGO_URI_CORE ? process.env.MONGO_URI_CORE.trim() : null;
-        const uriAssets = process.env.MONGO_URI_ASSETS ? process.env.MONGO_URI_ASSETS.trim() : null;
+        const uriCore = process.env.MONGO_URI_CORE?.trim();
+        const uriAssets = process.env.MONGO_URI_ASSETS?.trim();
 
-        // Validaciones preventivas
         if (!uriCore || !uriAssets) {
             console.error('\x1b[41m\x1b[37m ERROR \x1b[0m Faltan URIs de Multiclúster en .env');
             return;
         }
 
-        // 1. Conexión al Cluster CORE (Usuarios, Bookings)
-        coreConnection = await mongoose.createConnection(uriCore, {
-            serverSelectionTimeoutMS: 5000,
-        }).asPromise();
+        // Usamos openUri para conectar las instancias ya existentes
+        const corePromise = coreConnection.openUri(uriCore, { serverSelectionTimeoutMS: 5000 });
+        const assetsPromise = assetsConnection.openUri(uriAssets, { serverSelectionTimeoutMS: 5000 });
 
-        // 2. Conexión al Cluster ASSETS (Productos, Empleados)
-        assetsConnection = await mongoose.createConnection(uriAssets, {
-            serverSelectionTimeoutMS: 5000,
-        }).asPromise();
+        await Promise.all([corePromise, assetsPromise]);
 
         console.log('\x1b[32m%s\x1b[0m', `    ✔  CORE CLUSTER   : ${coreConnection.host}`);
         console.log('\x1b[32m%s\x1b[0m', `    ✔  ASSETS CLUSTER : ${assetsConnection.host}`);
@@ -38,20 +33,11 @@ const connectDB = async () => {
     }
 };
 
-// --- GETTERS DE CONEXIÓN ---
-// Úsalos en tus modelos: const Product = getAssetsConnection().model('Product', schema);
-const getCoreConnection = () => coreConnection;
-const getAssetsConnection = () => assetsConnection;
-
-// Manejo de cierre Graceful
-process.on('SIGINT', async () => {
-    if (coreConnection) await coreConnection.close();
-    if (assetsConnection) await assetsConnection.close();
-    process.exit(0);
-});
-
+// --- EXPORTACIÓN DIRECTA ---
+// Exportamos los objetos de conexión, no funciones que los retornen, 
+// para asegurar que el método .model() esté siempre disponible.
 module.exports = { 
     connectDB, 
-    getCoreConnection, 
-    getAssetsConnection 
+    coreConnection, 
+    assetsConnection 
 };
