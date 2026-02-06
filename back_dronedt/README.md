@@ -93,3 +93,6 @@ Mantenemos un alto estándar de calidad siguiendo la meta de commits en committe
 | POST   | /api/payments     | Procesamiento de pagos (Stripe/AWS) |
 
 
+## Desarrollado por Manuel Nieto para DroneDT  
+
+##  Committer en Colombia 🇨🇴
