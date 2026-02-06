@@ -30,9 +30,22 @@ backend/
 ├── Dockerfile           # Imagen optimizada (Node Alpine)
 └── docker-compose.yml   # Orquestación Local (Mongo + Redis)
 
-Desarrollado por Manuel Nieto para DroneDT
-🏆 Number 1 Top Committers GitHub Colombia 🇨🇴
+---
 
-[![Committers Top Colombia](https://user-badge.committers.top/colombia/NietoDeveloper.svg)](https://committers.top/colombia#NietoDeveloper)
-[![Committers Top Public](https://user-badge.committers.top/colombia_public/NietoDeveloper.svg)](https://committers.top/colombia#NietoDeveloper)
-[![Committers Top Private](https://user-badge.committers.top/colombia_private/NietoDeveloper.svg)](https://committers.top/colombia#NietoDeveloper)
+## 🚀 Desarrollado por Manuel Nieto para **DroneDT**
+
+### 🏆 **Number 1 Top Committers GitHub Colombia** 🇨🇴
+
+<p align="left">
+  <a href="https://committers.top/colombia#NietoDeveloper">
+    <img src="https://user-badge.committers.top/colombia/NietoDeveloper.svg" alt="Committers Top Colombia">
+  </a>
+  <a href="https://committers.top/colombia#NietoDeveloper">
+    <img src="https://user-badge.committers.top/colombia_public/NietoDeveloper.svg" alt="Committers Top Public">
+  </a>
+  <a href="https://committers.top/colombia#NietoDeveloper">
+    <img src="https://user-badge.committers.top/colombia_private/NietoDeveloper.svg" alt="Committers Top Private">
+  </a>
+</p>
+
+---
