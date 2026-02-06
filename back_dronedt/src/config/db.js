@@ -1,58 +1,57 @@
 const mongoose = require('mongoose');
 
 /**
- * Configuración de conexión a MongoDB para Drone DT
- * Blindada para el Committer #1: Limpia espacios y evita reconexiones innecesarias.
+ * Drone DT - Multi-Cluster Connection Manager
+ * Gestiona conexiones simultáneas a Core (Usuarios/Citas) y Assets (Productos/Empleados).
  */
+
+// Objetos para exportar las conexiones y ser usados en los modelos
+let coreConnection;
+let assetsConnection;
+
 const connectDB = async () => {
-    // 1. Verificación de estado para evitar múltiples conexiones
-    if (mongoose.connection.readyState >= 1) {
-        return;
-    }
-
     try {
-        // 2. Limpieza de URI (Remueve espacios o saltos de línea accidentales)
-        const uri = process.env.MONGO_URI ? process.env.MONGO_URI.trim() : null;
+        const uriCore = process.env.MONGO_URI_CORE ? process.env.MONGO_URI_CORE.trim() : null;
+        const uriAssets = process.env.MONGO_URI_ASSETS ? process.env.MONGO_URI_ASSETS.trim() : null;
 
-        // 3. Validación preventiva del esquema
-        if (!uri || (!uri.startsWith('mongodb://') && !uri.startsWith('mongodb+srv://'))) {
-            console.error('\x1b[41m\x1b[37m ERROR \x1b[0m MONGO_URI inválida o inexistente.');
-            console.log('\x1b[33m Valor actual:\x1b[0m', `"${uri || 'VACÍO'}"`);
-            console.log('👉 Tip: Revisa que el archivo .env esté en la raíz de /back_dronedt y no tenga comillas.\n');
-            return; 
+        // Validaciones preventivas
+        if (!uriCore || !uriAssets) {
+            console.error('\x1b[41m\x1b[37m ERROR \x1b[0m Faltan URIs de Multiclúster en .env');
+            return;
         }
 
-        // 4. Intento de conexión con configuración moderna
-        const conn = await mongoose.connect(uri, {
-            serverSelectionTimeoutMS: 5000, // No esperar eternamente si Atlas no responde
-        });
+        // 1. Conexión al Cluster CORE (Usuarios, Bookings)
+        coreConnection = await mongoose.createConnection(uriCore, {
+            serverSelectionTimeoutMS: 5000,
+        }).asPromise();
 
-        console.log('\x1b[32m%s\x1b[0m', `    ✔  DB CLUSTER   : ${conn.connection.host}`);
+        // 2. Conexión al Cluster ASSETS (Productos, Empleados)
+        assetsConnection = await mongoose.createConnection(uriAssets, {
+            serverSelectionTimeoutMS: 5000,
+        }).asPromise();
+
+        console.log('\x1b[32m%s\x1b[0m', `    ✔  CORE CLUSTER   : ${coreConnection.host}`);
+        console.log('\x1b[32m%s\x1b[0m', `    ✔  ASSETS CLUSTER : ${assetsConnection.host}`);
+
     } catch (error) {
-        console.error('\x1b[31m%s\x1b[0m', `    ✘  DB ERROR     : ${error.message}`);
-        // No salimos del proceso para permitir depuración en vivo
+        console.error('\x1b[31m%s\x1b[0m', `    ✘  DB MULTI-ERROR : ${error.message}`);
     }
 };
 
-// --- MONITOREO DE ESTADO ---
+// --- GETTERS DE CONEXIÓN ---
+// Úsalos en tus modelos: const Product = getAssetsConnection().model('Product', schema);
+const getCoreConnection = () => coreConnection;
+const getAssetsConnection = () => assetsConnection;
 
-mongoose.connection.on('disconnected', () => {
-    console.warn('\x1b[33m%s\x1b[0m', '    ⚠  DB STATUS    : Desconectado. Reintentando...');
-});
-
-mongoose.connection.on('error', (err) => {
-    console.error('\x1b[31m%s\x1b[0m', `    ✘  DB CRITICAL  : ${err.message}`);
-});
-
-// Manejo de cierre (Graceful Shutdown) compatible con Docker y AWS
+// Manejo de cierre Graceful
 process.on('SIGINT', async () => {
-    try {
-        await mongoose.connection.close();
-        // console.log se maneja en app.js para evitar duplicidad
-        process.exit(0);
-    } catch (err) {
-        process.exit(1);
-    }
+    if (coreConnection) await coreConnection.close();
+    if (assetsConnection) await assetsConnection.close();
+    process.exit(0);
 });
 
-module.exports = { connectDB };
+module.exports = { 
+    connectDB, 
+    getCoreConnection, 
+    getAssetsConnection 
+};
