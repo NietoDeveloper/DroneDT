@@ -51,7 +51,7 @@
 │   ├── package.json          # Dependencias (express, mongoose, redis, jwt, etc.)
 │   └── README.md             # Documentación del backend
 ├── frontend/                 # Carpeta del frontend (Next.js, separada como especificaste)
-│   └── ...                   # Estructura de Next.js (pages/, components/, etc.)
+│   └── ...              
 ├── .git/                     # Control de versiones para el monorepo
 ├── .gitignore                # Global para el monorepo
 └── README.md                 # Documentación general del monorepo
