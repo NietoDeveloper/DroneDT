@@ -1,53 +1,38 @@
 # Drone DT Backend 🛰️
 
-Este es el motor de Drone DT, una API RESTful de alto rendimiento diseñada para la gestión de servicios de drones, eCommerce y control de flota. Construida con un enfoque en escalabilidad horizontal, seguridad JWT y arquitectura limpia.
+This is the core engine of **Drone DT**, a high-performance RESTful API designed for drone service management, eCommerce, and fleet control. Built with a focus on horizontal scalability, JWT-based security, and clean architecture.
 
-## 🚀 Tecnologías Core
+## 🚀 Core Technologies
 
 - **Runtime**: Node.js (LTS)
-- **Framework**: Express.js con arquitectura de servicios.
-- **Base de Datos**: MongoDB con Mongoose (Modelado y Agregaciones).
-- **Caching**: Redis para optimización de consultas y sesiones.
-- **Seguridad**: JWT, Bcrypt y Rate Limiting.
-- **Cloud & DevOps**: Docker, AWS (SES/SNS) y CI/CD integrado.
+- **Framework**: Express.js with a Service-Oriented Architecture.
+- **Database**: MongoDB with Mongoose (Advanced modeling & Aggregations).
+- **Caching**: Redis for query optimization and session management.
+- **Security**: JWT, Bcrypt, and Rate Limiting.
+- **Cloud & DevOps**: Docker, AWS (SES/SNS), and automated CI/CD.
 
-## 📂 Estructura del Proyecto
+## 📂 Project Structure
 
-La arquitectura sigue el patrón **Controller-Service-Repository** para asegurar que la lógica de negocio sea testeable y desacoplada.
+The architecture follows the **Controller-Service-Repository** pattern to ensure business logic is decoupled and fully testable.
 
 ```text
 backend/
 ├── src/
-│   ├── config/          # Conexiones (DB, Redis, Logger)
-│   ├── controllers/     # Manejo de peticiones HTTP
-│   ├── models/          # Schemas de Mongoose
-│   ├── routes/          # Definición de Endpoints
-│   ├── services/        # Lógica de negocio pura (Email, Pagos, Notificaciones)
-│   ├── middlewares/     # Auth, Error Handler, Validaciones (Joi/Zod)
-│   ├── utils/           # Helpers y constantes
-│   └── app.js           # Punto de entrada y Express config
-├── tests/               # Jest & Supertest (Unit e Integration)
-├── Dockerfile           # Imagen optimizada (Node Alpine)
-└── docker-compose.yml   # Orquestación Local (Mongo + Redis)
-
----
-
-## 🚀 Desarrollado por Manuel Nieto para **DroneDT**
-
-### 🏆 **Number 1 Top Committers GitHub Colombia** 🇨🇴
-
-<p align="left">
-  <a href="https://committers.top/colombia#NietoDeveloper">
-    <img src="https://user-badge.committers.top/colombia/NietoDeveloper.svg" alt="Committers Top Colombia">
-  </a>
-  <a href="https://committers.top/colombia#NietoDeveloper">
-    <img src="https://user-badge.committers.top/colombia_public/NietoDeveloper.svg" alt="Committers Top Public">
-  </a>
-  <a href="https://committers.top/colombia#NietoDeveloper">
-    <img src="https://user-badge.committers.top/colombia_private/NietoDeveloper.svg" alt="Committers Top Private">
-  </a>
-</p>
-
----
-
-### Bogota - 2026
+│   ├── config/          # Configurations (DB, Redis, Logger, AWS)
+│   ├── controllers/     # Request handling & HTTP Logic
+│   ├── models/          # Mongoose Schemas & Data Models
+│   ├── routes/          # Express Router Definitions
+│   ├── services/        # Pure Business Logic (Email, Payments, Notifications)
+│   ├── middlewares/     # Auth (JWT/Roles), Error Handler, Validation (Joi/Zod)
+│   ├── utils/           # Global helpers and constants
+│   └── app.js           # App entry point & Express configuration
+├── tests/               # Robust Testing (Jest & Supertest)
+├── Dockerfile           # Optimized Production Image (Node Alpine)
+└── docker-compose.yml   # Local Orchestration (Mongo + Redis)
+🛠️ Local SetupClone and enter the directory:Bashcd backend
+Install dependencies:Bashnpm install
+Environment Variables:Create a .env file in the backend/ root:Fragmento de códigoPORT=5000
+MONGO_URI=your_mongodb_uri
+REDIS_URL=redis://localhost:6379
+JWT_SECRET=your_secret_key
+AWS_REGION=us-east-itIntegration Tests: npm run test:integration📡 Main EndpointsMethodEndpointDescriptionPOST/api/auth/registerUser onboarding & registrationGET/api/productsDrone fleet and services catalogPOST/api/ordersOrder creation (Auth Required)POST/api/paymentsSecure payment processing (Stripe/AWS)🚀 Developed by Manuel Nieto for DroneDT🏆 Number 1 Top Committers GitHub Colombia 🇨🇴<p align="left"><a href="https://committers.top/colombia#NietoDeveloper"><img src="https://user-badge.committers.top/colombia/NietoDeveloper.svg" alt="Committers Top Colombia"></a><a href="https://committers.top/colombia#NietoDeveloper"><img src="https://user-badge.committers.top/colombia_public/NietoDeveloper.svg" alt="Committers Top Public"></a><a href="https://committers.top/colombia#NietoDeveloper"><img src="https://user-badge.committers.top/colombia_private/NietoDeveloper.svg" alt="Committers Top Private"></a></p>Bogotá - 2026
