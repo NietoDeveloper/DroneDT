@@ -30,15 +30,4 @@
 │   │   ├── services/         # Lógica de negocio reutilizable (separada de controllers para escalabilidad)
 │   │   │   ├── emailService.js       # Envío de emails (usa Nodemailer o AWS SES)
 │   │   │   ├── paymentService.js     # Integración con proveedores de pagos
-│   │   │   ├── searchService.js      # Búsquedas avanzadas (usa MongoDB aggregation o Elasticsearch para escala)
-│   │   │   └── notificationService.js # Notificaciones push (usa AWS SNS para real-time como en Tesla app)
-│   │   ├── middlewares/      # Middlewares personalizados
-│   │   │   ├── authMiddleware.js     # Verificación de JWT y roles
-│   │   │   ├── errorHandler.js       # Manejo global de errores (para logs y respuestas)
-│   │   │   ├── rateLimiter.js        # Limitador de tasas (usa express-rate-limit para prevenir abusos)
-│   │   │   └── validation.js         # Validación de inputs (usa Joi o Zod)
-│   │   ├── utils/            # Utilidades generales
-│   │   │   ├── helpers.js    # Funciones helper (e.g., formateo de fechas)
-│   │   │   └── constants.js  # Constantes del app (e.g., roles de usuario)
-│   │   └── app.js            # Archivo principal (configura Express, conecta DB, rutas, middlewares)
-│   ├── tests/                # Pruebas unitarias e integración (usa Jest y Supertest para robustez)
+│   │   │   ├── searchService.js      # Búsquedas avanzadas (usa MongoDB aggregation o ustez)
