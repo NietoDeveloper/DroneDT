@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
+const { getAssetsConnection } = require('../config/db'); // Importamos la conexión de Assets
 
 /**
  * Modelo de Producto/Drone para Drone DT
- * Optimizado para el Committer #1 con soporte GeoJSON y lógica de negocio virtual.
+ * Vinculado al Cluster ASSETS para gestión de inventario y telemetría.
  */
 const productSchema = new mongoose.Schema(
     {
@@ -14,7 +15,7 @@ const productSchema = new mongoose.Schema(
             trim: true,
             maxlength: [100, 'El nombre no puede exceder los 100 caracteres']
         },
-        slug: String, // SEO-Friendly Path
+        slug: String,
         brand: {
             type: String,
             required: [true, 'La marca del equipo es obligatoria'],
@@ -36,16 +37,16 @@ const productSchema = new mongoose.Schema(
             default: 0,
         },
         specifications: {
-            flightTime: { type: Number, default: 0 }, // Minutos
+            flightTime: { type: Number, default: 0 },
             cameraResolution: { type: String, default: '4K' }, 
-            maxRange: { type: Number, default: 0 }, // Metros
-            weight: { type: Number, default: 0 }, // Gramos
+            maxRange: { type: Number, default: 0 },
+            weight: { type: Number, default: 0 },
         },
         images: {
             type: [
                 {
                     url: { type: String, required: true },
-                    public_id: { type: String }, // Referencia para AWS S3
+                    public_id: { type: String },
                 }
             ],
             validate: [val => val.length > 0, 'Debe incluir al menos una imagen']
@@ -64,7 +65,6 @@ const productSchema = new mongoose.Schema(
             },
             default: 'disponible',
         },
-        // GeoJSON para rastreo en tiempo real
         currentLocation: {
             type: {
                 type: String,
@@ -73,7 +73,7 @@ const productSchema = new mongoose.Schema(
             },
             coordinates: {
                 type: [Number],
-                default: [-74.0721, 4.7110], // Bogotá (Longitud, Latitud)
+                default: [-74.0721, 4.7110], // Bogotá
             },
         },
         rating: {
@@ -99,26 +99,27 @@ const productSchema = new mongoose.Schema(
     }
 );
 
-// --- MIDDLEWARES (Logic Layer) ---
-
-// Generar o actualizar Slug antes de guardar
+// --- MIDDLEWARES ---
 productSchema.pre('save', function(next) {
     if (!this.isModified('name')) return next();
     this.slug = slugify(this.name, { lower: true, strict: true });
     next();
 });
 
-// --- ÍNDICES (Performance Layer) ---
+// --- ÍNDICES ---
 productSchema.index({ name: 'text', brand: 'text', description: 'text' });
-productSchema.index({ currentLocation: '2dsphere' }); // Para búsquedas por cercanía
+productSchema.index({ currentLocation: '2dsphere' });
 productSchema.index({ slug: 1 });
 
 // --- VIRTUALS ---
-
-// Disponibilidad inmediata para el flujo de reserva en Services.tsx
 productSchema.virtual('isReadyForFlight').get(function() {
     return this.status === 'disponible' && this.stock > 0;
 });
 
-const Product = mongoose.model('Product', productSchema);
+/**
+ * AJUSTE CLAVE: En lugar de mongoose.model, usamos la conexión Assets
+ */
+const connection = getAssetsConnection();
+const Product = connection.model('Product', productSchema);
+
 module.exports = Product;
