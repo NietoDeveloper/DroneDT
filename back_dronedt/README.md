@@ -13,9 +13,9 @@ Este es el motor de Drone DT, una API RESTful de alto rendimiento diseñada para
 
 ## 📂 Estructura del Proyecto
 
-La arquitectura sigue el patrón Controller-Service-Repository para asegurar que la lógica de negocio sea testeable y desacoplada.
+La arquitectura sigue el patrón **Controller-Service-Repository** para asegurar que la lógica de negocio sea testeable y desacoplada.
 
-```
+```text
 backend/
 ├── src/
 │   ├── config/          # Conexiones (DB, Redis, Logger)
@@ -29,70 +29,10 @@ backend/
 ├── tests/               # Jest & Supertest (Unit e Integration)
 ├── Dockerfile           # Imagen optimizada (Node Alpine)
 └── docker-compose.yml   # Orquestación Local (Mongo + Redis)
-```
 
-## 🛠️ Configuración Local
+Desarrollado por Manuel Nieto para DroneDT
+🏆 Number 1 Top Committers GitHub Colombia 🇨🇴
 
-1. Clonar y entrar al directorio:
-
-   ```bash
-   cd backend
-   ```
-
-2. Instalar dependencias:
-
-   ```bash
-   npm install
-   ```
-
-3. Variables de Entorno:
-
-   Crea un archivo `.env` basado en `.env.example`:
-
-   ```
-   PORT=5000
-   MONGO_URI=your_mongodb_uri
-   REDIS_URL=redis://localhost:6379
-   JWT_SECRET=your_secret_key
-   AWS_REGION=us-east-1
-   ```
-
-4. Levantar con Docker (Recomendado):
-
-   ```bash
-   docker-compose up -d
-   ```
-
-5. Modo Desarrollo:
-
-   ```bash
-   npm run dev
-   ```
-
-## 🔐 Seguridad y Escalabilidad
-
-- **Rate Limiting**: Protegido contra ataques de fuerza bruta mediante express-rate-limit.
-- **Logging**: Implementación de Winston/Pino para trazabilidad de errores en producción.
-- **Notificaciones**: Integración con AWS SNS para actualizaciones en tiempo real tipo "Tesla App".
-- **Validación**: Middlewares de validación estricta para asegurar la integridad de los datos antes de llegar a la DB.
-
-## 🧪 Testing
-
-Mantenemos un alto estándar de calidad siguiendo la meta de commits en committers.top.
-
-- **Unit Tests**: `npm run test:unit`
-- **Integration Tests**: `npm run test:integration`
-
-## 📡 Endpoints Principales (Resumen)
-
-| Método | Endpoint          | Descripción                          |
-|--------|-------------------|--------------------------------------|
-| POST   | /api/auth/register | Registro de nuevos usuarios         |
-| GET    | /api/products     | Listado de drones y servicios       |
-| POST   | /api/orders       | Creación de órdenes (Requiere Auth) |
-| POST   | /api/payments     | Procesamiento de pagos (Stripe/AWS) |
-
-
-## Desarrollado por Manuel Nieto para DroneDT  
-
-##  Number 1 Top Committers GitHub Colombia 🇨🇴
+[![Committers Top Colombia](https://user-badge.committers.top/colombia/NietoDeveloper.svg)](https://committers.top/colombia#NietoDeveloper)
+[![Committers Top Public](https://user-badge.committers.top/colombia_public/NietoDeveloper.svg)](https://committers.top/colombia#NietoDeveloper)
+[![Committers Top Private](https://user-badge.committers.top/colombia_private/NietoDeveloper.svg)](https://committers.top/colombia#NietoDeveloper)
