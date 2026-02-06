@@ -52,6 +52,4 @@
 │   └── README.md             # Documentación del backend
 ├── frontend/                 
 │   └── ...              
-├── .git/                     # Control de versiones para el monorepo
-├── .gitignore                # Global para el monorepo
-└── README.md                 # Documentación general del monorepo
+├── .git/                    
