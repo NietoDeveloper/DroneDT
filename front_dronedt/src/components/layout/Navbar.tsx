@@ -18,7 +18,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedModel, setSelectedModel] = useState<string | null>(null);
   const [isLogged, setIsLogged] = useState(false);
-  const [loading, setLoading] = useState(true); // Estado para el Drone Loader
+  const [loading, setLoading] = useState(true); 
   
   const [menuContent, setMenuContent] = useState<Record<string, MenuItem[]>>({
     Modelos: [],
@@ -59,8 +59,7 @@ const Navbar = () => {
     } catch (error) {
       console.error("❌ Error en el Uplink de Drone DT:", error);
     } finally {
-      // Pequeño delay para asegurar que la animación se vea fluida
-      setTimeout(() => setLoading(false), 1500);
+      setTimeout(() => setLoading(false), 1800);
     }
   }, []);
 
@@ -79,23 +78,24 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
-  // --- COMPONENTE DRONE LOADER ---
   if (loading) return (
-    <div className="fixed inset-0 z-[200] flex flex-col items-center justify-center bg-[#DCDCDC]">
-       <div className="relative w-20 h-20 mb-6">
-          {/* Chasis Central */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-10 bg-black rounded-md animate-pulse"></div>
-          {/* Hélices Animadas */}
-          <div className="absolute top-0 left-0 w-7 h-7 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
-          <div className="absolute top-0 right-0 w-7 h-7 border-t-4 border-[#FFD700] rounded-full animate-spin [animation-duration:0.4s]"></div>
-          <div className="absolute bottom-0 left-0 w-7 h-7 border-t-4 border-[#FFD700] rounded-full animate-spin [animation-duration:0.6s]"></div>
-          <div className="absolute bottom-0 right-0 w-7 h-7 border-t-4 border-[#FFD700] rounded-full animate-spin [animation-duration:0.5s]"></div>
-          {/* Laser Scanner */}
-          <div className="absolute w-32 h-[1px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-60 shadow-[0_0_10px_#FFD700]"></div>
-       </div>
-       <p className="font-black text-[10px] tracking-[0.5em] text-black uppercase animate-pulse">
-         Synchronizing Drone DT Uplink
-       </p>
+    <div className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[#DCDCDC]">
+        <div className="relative w-24 h-24 mb-8">
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse shadow-xl"></div>
+           <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin"></div>
+           <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.3s]"></div>
+           <div className="absolute bottom-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.5s]"></div>
+           <div className="absolute bottom-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.4s]"></div>
+           <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-80 shadow-[0_0_15px_#FFD700]"></div>
+        </div>
+        <div className="flex flex-col items-center gap-2">
+          <p className="font-black text-[11px] tracking-[0.6em] text-black uppercase animate-pulse">
+            Establishing Uplink
+          </p>
+          <div className="w-32 h-[1px] bg-black/10 overflow-hidden">
+             <div className="w-full h-full bg-[#FFD700] -translate-x-full animate-[shimmer_1.5s_infinite]"></div>
+          </div>
+        </div>
     </div>
   );
 
@@ -108,7 +108,7 @@ const Navbar = () => {
         <span className="text-xl sm:text-2xl font-black tracking-widest text-[#0000FF] italic">Drone</span>
         <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-1 text-[#FFD700]">DT</span>
       </div>
-      <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-black/40 group-hover:text-[#0000FF] transition-colors">Colombia</span>
+      <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-black/40 group-hover:text-[#FFD700] transition-colors">Colombia</span>
     </button>
   );
 
@@ -139,7 +139,7 @@ const Navbar = () => {
           <div className="flex items-center justify-end gap-4 flex-1">
             <button 
               onClick={() => setMenuOpen(true)}
-              className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full transition-all duration-300 hover:bg-[#FFD700] hover:text-black hover:scale-105 hover:shadow-[0_0_20px_rgba(0,0,255,0.3)] cursor-pointer border-none"
+              className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full transition-all duration-300 hover:bg-[#FFD700] hover:text-black hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.4)] cursor-pointer border-none"
             >
               Menú
             </button>
@@ -147,9 +147,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Fullscreen Overlay Menu */}
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
-        
         <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-50">
           <div className="opacity-40">
               <span className="text-black font-black tracking-tighter text-xl italic uppercase font-sans">Uplink Selection</span>
@@ -163,17 +161,16 @@ const Navbar = () => {
         </div>
         
         <div className="flex-1 overflow-y-auto px-6 sm:px-10 w-full max-w-[1800px] mx-auto flex flex-col">
-          {/* Aquí sigue el contenido del menú según tu lógica anterior */}
           {!selectedModel ? (
             <div className="flex flex-col space-y-2 md:space-y-4 pt-8">
-              {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item, index) => (
+              {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
                 <button 
                   key={item}
                   onClick={() => setSelectedModel(item)}
-                  className="group flex items-center justify-between text-5xl sm:text-7xl md:text-8xl text-black font-black uppercase italic tracking-tighter hover:text-[#0000FF] transition-all duration-300 text-left"
+                  className="group flex items-center justify-between text-5xl sm:text-7xl md:text-8xl text-black font-black uppercase italic tracking-tighter hover:text-[#FFD700] transition-all duration-300 text-left border-none bg-transparent cursor-pointer"
                 >
                   <span>{item}</span>
-                  <ChevronRight size={60} className="opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 transition-all duration-500" />
+                  <ChevronRight size={60} className="opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 transition-all duration-500 text-[#FFD700]" />
                 </button>
               ))}
             </div>
@@ -181,18 +178,40 @@ const Navbar = () => {
              <div className="pt-10">
                 <button 
                   onClick={() => setSelectedModel(null)}
-                  className="mb-8 text-[#0000FF] font-bold uppercase tracking-[0.3em] flex items-center gap-2 hover:gap-4 transition-all"
+                  className="mb-8 text-[#0000FF] font-black uppercase tracking-[0.3em] flex items-center gap-2 hover:text-[#FFD700] transition-all border-none bg-transparent cursor-pointer"
                 >
                   ← Volver al Menú
                 </button>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-20">
                    {menuContent[selectedModel]?.map((product) => (
-                      <div key={product.id} className="group cursor-pointer">
-                         <div className="aspect-video bg-[#DCDCDC] overflow-hidden rounded-sm mb-4 border border-black/5">
-                            <img src={product.img} alt={product.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div 
+                        key={product.id} 
+                        className="group relative bg-white p-4 rounded-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_-15px_rgba(255,215,0,0.3)] border border-transparent hover:border-[#FFD700]/60 cursor-pointer"
+                      >
+                         <div className="aspect-square bg-[#DCDCDC] overflow-hidden rounded-lg mb-6 border border-black/5 relative shadow-inner">
+                            <img 
+                              src={product.img} 
+                              alt={product.name} 
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#FFD700]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                          </div>
-                         <h4 className="font-black text-xl uppercase italic group-hover:text-[#0000FF] transition-colors">{product.name}</h4>
-                         <p className="text-xs font-bold text-black/40 uppercase tracking-widest">{product.price}</p>
+                         
+                         <div className="space-y-2">
+                           <h4 className="font-black text-2xl uppercase italic leading-tight group-hover:text-[#FFD700] transition-colors duration-300">
+                             {product.name}
+                           </h4>
+                           <div className="flex justify-between items-end">
+                             <p className="text-[14px] font-black text-[#FFD700] tracking-widest uppercase bg-black px-3 py-1 rounded-sm">
+                               {product.price || 'Elite Spec'}
+                             </p>
+                             <div className="w-10 h-10 rounded-full border border-[#0000FF] flex items-center justify-center group-hover:bg-[#FFD700] group-hover:border-[#FFD700] transition-all duration-300">
+                               <ChevronRight size={20} className="text-[#0000FF] group-hover:text-black transition-colors" />
+                             </div>
+                           </div>
+                         </div>
+
+                         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#FFD700] transition-all duration-500 group-hover:w-[80%] shadow-[0_0_15px_#FFD700]"></div>
                       </div>
                    ))}
                 </div>
