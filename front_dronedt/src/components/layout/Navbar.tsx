@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
-import { User, X, ChevronRight, Globe, Circle } from 'lucide-react';
+import Image from 'next/image'; // Optimización de Next.js
+import { X, ChevronRight, Circle } from 'lucide-react';
 
 interface MenuItem {
   id: string;
@@ -27,27 +28,33 @@ const Navbar = () => {
   });
 
   const fetchMenuData = useCallback(async () => {
-    setLoading(true);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    if (!apiUrl) {
+      console.warn("⚠️ NEXT_PUBLIC_API_URL no definida.");
+      setLoading(false);
+      return;
+    }
+
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/menu`);
-      if (!response.ok) throw new Error('Network response was not ok');
+      const response = await fetch(`${apiUrl}/products/menu`);
+      if (!response.ok) throw new Error('Error de conexión con la flota');
       
       const data = await response.json();
       
       if (Array.isArray(data)) {
-        const categorized = data.reduce((acc: any, item: MenuItem) => {
+        const categorized = data.reduce((acc: Record<string, MenuItem[]>, item: MenuItem) => {
           const cat = item.category || 'Modelos';
           if (!acc[cat]) acc[cat] = [];
           acc[cat].push({
             ...item,
-            id: item._id || item.id || Math.random().toString(36).substr(2, 9)
+            id: item._id || item.id || Math.random().toString(36).substring(2, 9)
           });
           return acc;
         }, { Modelos: [], Accesorios: [], Flota: [] });
         
         setMenuContent(categorized);
       } else {
-        const normalized: any = {};
+        const normalized: Record<string, MenuItem[]> = {};
         Object.keys(data).forEach(key => {
           normalized[key] = data[key].map((item: any) => ({
             ...item,
@@ -59,12 +66,13 @@ const Navbar = () => {
     } catch (error) {
       console.error("❌ Error en el Uplink de Drone DT:", error);
     } finally {
+      // El delay de 1.8s le da ese toque de "sistema cargando" que buscas
       setTimeout(() => setLoading(false), 1800);
     }
   }, []);
 
   useEffect(() => {
-    const token = localStorage.getItem('token');
+    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
     if (token) setIsLogged(true);
 
     fetchMenuData();
@@ -78,23 +86,21 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
+  // Loader con estilo Drone DT
   if (loading) return (
     <div className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[#DCDCDC]">
         <div className="relative w-24 h-24 mb-8">
-           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse shadow-xl"></div>
-           <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin"></div>
-           <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.3s]"></div>
-           <div className="absolute bottom-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.5s]"></div>
-           <div className="absolute bottom-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.4s]"></div>
-           <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-80 shadow-[0_0_15px_#FFD700]"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse shadow-xl"></div>
+            <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin"></div>
+            <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.3s]"></div>
+            <div className="absolute bottom-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.5s]"></div>
+            <div className="absolute bottom-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.4s]"></div>
+            <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-80 shadow-[0_0_15px_#FFD700]"></div>
         </div>
         <div className="flex flex-col items-center gap-2">
           <p className="font-black text-[11px] tracking-[0.6em] text-black uppercase animate-pulse">
             Establishing Uplink
           </p>
-          <div className="w-32 h-[1px] bg-black/10 overflow-hidden">
-             <div className="w-full h-full bg-[#FFD700] -translate-x-full animate-[shimmer_1.5s_infinite]"></div>
-          </div>
         </div>
     </div>
   );
@@ -103,6 +109,7 @@ const Navbar = () => {
     <button 
       onClick={() => window.location.href = "/"} 
       className="group flex flex-col items-start cursor-pointer outline-none bg-transparent border-none p-0"
+      aria-label="Ir al inicio"
     >
       <div className="flex items-baseline transition-all duration-300 group-hover:scale-105">
         <span className="text-xl sm:text-2xl font-black tracking-widest text-[#0000FF] italic">Drone</span>
@@ -147,6 +154,7 @@ const Navbar = () => {
         </div>
       </nav>
 
+      {/* Overlay del Menú */}
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-50">
           <div className="opacity-40">
@@ -189,10 +197,11 @@ const Navbar = () => {
                         className="group relative bg-white p-4 rounded-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_-15px_rgba(255,215,0,0.3)] border border-transparent hover:border-[#FFD700]/60 cursor-pointer"
                       >
                          <div className="aspect-square bg-[#DCDCDC] overflow-hidden rounded-lg mb-6 border border-black/5 relative shadow-inner">
-                            <img 
+                            <Image 
                               src={product.img} 
                               alt={product.name} 
-                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                              fill
+                              className="object-cover group-hover:scale-110 transition-transform duration-700" 
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-[#FFD700]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                          </div>
