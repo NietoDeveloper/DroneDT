@@ -26,7 +26,6 @@ const ProductShow = () => {
     return typeof img === 'string' ? img : img?.url || "/placeholder-drone.jpg";
   };
 
-  // 1. Fetch de Datos - Confiabilidad Software DT
   useEffect(() => {
     const fetchDrones = async () => {
       try {
@@ -42,13 +41,13 @@ const ProductShow = () => {
           { _id: "3", name: "SkyView Cinema", description: "Cámara 8K.", price: 1800, images: ["https://images.unsplash.com/photo-1473968512447-ac1155104306"], category: "Cine", brand: "DRONE DT" }
         ]);
       } finally {
-        setLoading(false);
+        // Simulación de carga para apreciar el Skeleton (Opcional: bajar a 1000ms en producción)
+        setTimeout(() => setLoading(false), 2000);
       }
     };
     fetchDrones();
   }, []);
 
-  // 2. Lógica de Scroll - Optimizada para precisión
   const scrollToId = useCallback((index: number) => {
     if (scrollRef.current && products.length > 0) {
       const container = scrollRef.current;
@@ -61,14 +60,12 @@ const ProductShow = () => {
     }
   }, [products.length]);
 
-  // Intervalo de Banner (5 segundos)
   useEffect(() => {
     if (products.length <= 1) return;
     const interval = setInterval(() => {
       const nextIndex = (activeIndex + 1) % products.length;
       scrollToId(nextIndex);
     }, 5000); 
-
     return () => clearInterval(interval);
   }, [activeIndex, products.length, scrollToId]);
 
@@ -86,10 +83,40 @@ const ProductShow = () => {
     }
   };
 
+  // --- SKELETON LOADER (Nivel #1 Colombia) ---
   if (loading) return (
-    <div className="h-[90vh] flex flex-col items-center justify-center bg-[#DCDCDC] text-black">
-      <div className="w-12 h-12 border-4 border-[#FFD700] border-t-transparent rounded-full animate-spin mb-4"></div>
-      <p className="font-bold tracking-widest animate-pulse font-mono uppercase">Drone DT Engine Starting...</p>
+    <div className="h-[85vh] w-full flex flex-col items-center justify-center bg-[#DCDCDC] relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10" 
+        style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+      </div>
+
+      <div className="relative flex flex-col items-center">
+        <div className="relative w-24 h-24 mb-8">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse"></div>
+          <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
+          <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
+          <div className="absolute bottom-0 left-0 w-8 h-8 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
+          <div className="absolute bottom-0 right-0 w-8 h-8 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
+          <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-50 shadow-[0_0_15px_#FFD700]"></div>
+        </div>
+
+        <div className="flex flex-col items-center gap-2">
+          <h3 className="font-black text-black tracking-[0.3em] text-sm uppercase">Initializing Systems</h3>
+          <div className="flex gap-1">
+            <span className="w-2 h-2 bg-black animate-bounce"></span>
+            <span className="w-2 h-2 bg-[#FFD700] animate-bounce [animation-delay:0.2s]"></span>
+            <span className="w-2 h-2 bg-black animate-bounce [animation-delay:0.4s]"></span>
+          </div>
+        </div>
+      </div>
+      
+      <div className="absolute bottom-10 left-10 hidden md:block border-l-2 border-[#FFD700] pl-4">
+        <p className="text-[10px] font-mono text-black uppercase tracking-widest leading-relaxed">
+          Status: Syncing Cluster_DT<br/>
+          Auth: Manuel_Nieto_Verified<br/>
+          Rank: #1_Colombia_Committers
+        </p>
+      </div>
     </div>
   );
 
@@ -111,7 +138,7 @@ const ProductShow = () => {
               <img 
                 src={getImageUrl(item)} 
                 alt={item.name} 
-                className="w-full h-full object-cover transition-transform duration-[3000ms] hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-[4000ms] hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/95"></div>
             </div>
@@ -145,16 +172,15 @@ const ProductShow = () => {
         ))}
       </div>
 
-      {/* Navigation Dots - Estilo Tech */}
+      {/* Navigation Dots */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {products.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollToId(index)}
             className={`h-1.5 transition-all duration-500 rounded-full ${
-              activeIndex === index ? "w-14 bg-[#FFD700] shadow-[0_0_15px_#FFD700]" : "w-4 bg-white/30 hover:bg-white/50"
+              activeIndex === index ? "w-14 bg-[#FFD700] shadow-[0_0_15px_#FFD700]" : "w-4 bg-white/30"
             }`}
-            aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
