@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const slugify = require('slugify');
-const { getAssetsConnection } = require('../config/db'); // Importamos la conexión de Assets
+const { assetsConnection } = require('../config/db'); // Importamos la conexión directamente, no el getter
 
 /**
  * Modelo de Producto/Drone para Drone DT
@@ -117,9 +117,10 @@ productSchema.virtual('isReadyForFlight').get(function() {
 });
 
 /**
- * AJUSTE CLAVE: En lugar de mongoose.model, usamos la conexión Assets
+ * IMPLEMENTACIÓN BLINDADA:
+ * Usamos la instancia 'assetsConnection' exportada de db.js.
+ * Al ser un objeto ya instanciado (aunque esté conectando), .model() no será undefined.
  */
-const connection = getAssetsConnection();
-const Product = connection.model('Product', productSchema);
+const Product = assetsConnection.models.Product || assetsConnection.model('Product', productSchema);
 
 module.exports = Product;
