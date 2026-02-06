@@ -13,17 +13,7 @@ This is the core engine of **Drone DT**, a high-performance RESTful API designed
 
 ## 📂 Project Structure
 
-The architecture follows the **Controller-Service-Repository** pattern to ensure business logic is decoupled and fully testable.
-
-```text
-backend/
-├── src/
-│   ├── config/          # Configurations (DB, Redis, Logger, AWS)
-│   ├── controllers/     # Request handling & HTTP Logic
-│   ├── models/          # Mongoose Schemas & Data Models
-│   ├── routes/          # Express Router Definitions
-│   ├── services/        # Pure Business Logic (Email, Payments, Notifications)
-│   ├── middlewares/     # Auth (JWT/Roles), Error Handler, Validation (Joi/Zod)
+s), Error Handler, Validation (Joi/Zod)
 │   ├── utils/           # Global helpers and constants
 │   └── app.js           # App entry point & Express configuration
 ├── tests/               # Robust Testing (Jest & Supertest)
