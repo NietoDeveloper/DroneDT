@@ -92,5 +92,4 @@ Mantenemos un alto estándar de calidad siguiendo la meta de commits en committe
 | POST   | /api/orders       | Creación de órdenes (Requiere Auth) |
 | POST   | /api/payments     | Procesamiento de pagos (Stripe/AWS) |
 
-Desarrollado por Manuel Nieto  
-#1 Committer Colombia 🇨🇴
+
