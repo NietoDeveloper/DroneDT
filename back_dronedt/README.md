@@ -20,14 +20,5 @@
 │   │   │   ├── Cart.js       # Esquema de carrito (sesiones o persistente)
 │   │   │   └── Category.js   # Esquema de categorías
 │   │   ├── routes/           # Definición de rutas (Express Router)
-│   │   │   ├── index.js      # Ruta raíz que agrupa todas las rutas
-│   │   │   ├── auth.js       # Rutas de auth (/api/auth/login, /register)
-│   │   │   ├── products.js   # Rutas de productos (/api/products/)
-│   │   │   ├── orders.js     # Rutas de órdenes (/api/orders/)
-│   │   │   ├── users.js      # Rutas de usuarios (/api/users/)
-│   │   │   ├── carts.js      # Rutas de carritos (/api/carts/)
-│   │   │   └── payments.js   # Rutas de pagos (/api/payments/)
-│   │   ├── services/         # Lógica de negocio reutilizable (separada de controllers para escalabilidad)
-│   │   │   ├── emailService.js       # Envío de emails (usa Nodemailer o AWS SES)
-│   │   │   ├── paymentService.js     # Integración con proveedores de pagos
+   │   ├── paymentService.js     # Integración con proveedores de pagos
 │   │   │   ├── searchService.js      # Búsquedas avanzadas (usa MongoDB aggregation o ustez)
