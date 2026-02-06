@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image'; // Optimización de Next.js
 
 interface Category {
   _id: string;
@@ -36,28 +37,35 @@ const ProductShow = () => {
     return category?.name || "General";
   };
 
-  useEffect(() => {
-    const fetchDrones = async () => {
-      try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`);
-        if (!response.ok) throw new Error("Offline");
-        const result = await response.json();
-        // Adaptación flexible según la estructura de tu API
-        const data = Array.isArray(result) ? result : result.data || [];
-        setProducts(data);
-      } catch (error) {
-        console.warn("Utilizando Mock Data (Software DT Style)");
-        setProducts([
-          { _id: "1", name: "Phantom DT-Max", description: "Inspección térmica.", price: 2500, images: ["https://images.unsplash.com/photo-1507582020474-9a35b7d455d9"], category: "Industrial", brand: "DRONE DT" },
-          { _id: "2", name: "AgriBot DT-10", description: "Fumigación pro.", price: 3800, images: ["https://images.unsplash.com/photo-1527142879024-c6c91aa9c5c9"], category: "Agricultura", brand: "DRONE DT" },
-          { _id: "3", name: "SkyView Cinema", description: "Cámara 8K.", price: 1800, images: ["https://images.unsplash.com/photo-1473968512447-ac1155104306"], category: "Cine", brand: "DRONE DT" }
-        ]);
-      } finally {
-        setTimeout(() => setLoading(false), 1500);
-      }
-    };
-    fetchDrones();
+  const fetchDrones = useCallback(async () => {
+    try {
+      // Usamos el fallback a localhost si la variable de entorno no está definida
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+      const response = await fetch(`${apiUrl}/products`);
+      
+      if (!response.ok) throw new Error("API Offline");
+      
+      const result = await response.json();
+      const data = Array.isArray(result) ? result : result.data || [];
+      
+      if (data.length === 0) throw new Error("Empty Data");
+      setProducts(data);
+    } catch (error) {
+      console.warn("Drone DT Engine: Activando Mock Data de Seguridad");
+      setProducts([
+        { _id: "1", name: "Phantom DT-Max", description: "Inspección térmica.", price: 2500, images: ["https://images.unsplash.com/photo-1507582020474-9a35b7d455d9"], category: "Industrial", brand: "DRONE DT" },
+        { _id: "2", name: "AgriBot DT-10", description: "Fumigación pro.", price: 3800, images: ["https://images.unsplash.com/photo-1527142879024-c6c91aa9c5c9"], category: "Agricultura", brand: "DRONE DT" },
+        { _id: "3", name: "SkyView Cinema", description: "Cámara 8K.", price: 1800, images: ["https://images.unsplash.com/photo-1473968512447-ac1155104306"], category: "Cine", brand: "DRONE DT" }
+      ]);
+    } finally {
+      // Delay artificial para lucir el loader de Software DT
+      setTimeout(() => setLoading(false), 1200);
+    }
   }, []);
+
+  useEffect(() => {
+    fetchDrones();
+  }, [fetchDrones]);
 
   const scrollToId = useCallback((index: number) => {
     if (scrollRef.current) {
@@ -68,7 +76,6 @@ const ProductShow = () => {
     }
   }, []);
 
-  // Autoplay mejorado
   useEffect(() => {
     if (products.length <= 1 || loading) return;
     
@@ -78,7 +85,7 @@ const ProductShow = () => {
         scrollToId(nextIndex);
         return nextIndex;
       });
-    }, 6000); 
+    }, 7000); 
 
     return () => clearInterval(interval);
   }, [products.length, loading, scrollToId]);
@@ -103,13 +110,11 @@ const ProductShow = () => {
         <div className="relative w-24 h-24 mb-8">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse"></div>
           <div className="absolute top-0 left-0 w-8 h-8 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
-          <div className="absolute top-0 right-0 w-8 h-8 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
-          <div className="absolute bottom-0 left-0 w-8 h-8 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
-          <div className="absolute bottom-0 right-0 w-8 h-8 border-t-4 border-[#FFD700] rounded-full animate-spin"></div>
+          <div className="absolute bottom-0 right-0 w-8 h-8 border-t-4 border-[#FFD700] rounded-full animate-spin [animation-delay:0.5s]"></div>
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <h3 className="font-black text-black tracking-[0.3em] text-sm uppercase">Initializing Systems</h3>
+          <h3 className="font-black text-black tracking-[0.3em] text-sm uppercase">Engine Telemetry Active</h3>
           <div className="flex gap-1">
             <span className="w-2 h-2 bg-black animate-bounce"></span>
             <span className="w-2 h-2 bg-[#FFD700] animate-bounce [animation-delay:0.2s]"></span>
@@ -120,16 +125,16 @@ const ProductShow = () => {
       
       <div className="absolute bottom-10 left-10 hidden md:block border-l-2 border-[#FFD700] pl-4">
         <p className="text-[10px] font-mono text-black uppercase tracking-widest leading-relaxed">
-          Status: Syncing Cluster_DT<br/>
-          Auth: Manuel_Nieto_Verified<br/>
-          Rank: #1_Colombia_Committers
+          Sincronizando Clusters...<br/>
+          Dev: Manuel Nieto<br/>
+          Status: Committer #1 COL
         </p>
       </div>
     </div>
   );
 
   return (
-    <section className="relative w-full bg-black overflow-hidden">
+    <section className="relative w-full bg-black overflow-hidden border-y border-white/5">
       <div 
         ref={scrollRef}
         onScroll={handleScroll}
@@ -139,42 +144,42 @@ const ProductShow = () => {
         {products.map((item) => (
           <div 
             key={item._id} 
-            className="relative h-[85vh] min-h-[500px] w-full flex-shrink-0 flex flex-col items-center justify-between py-10 md:py-20 snap-center overflow-hidden"
+            className="relative h-[85vh] min-h-[600px] w-full flex-shrink-0 flex flex-col items-center justify-between py-12 md:py-24 snap-center overflow-hidden"
           >
             {/* Background Image & Overlay */}
             <div className="absolute inset-0 z-0">
               <img 
                 src={getImageUrl(item)} 
                 alt={item.name} 
-                className="w-full h-full object-cover transition-transform duration-[6000ms] ease-out hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-[10000ms] ease-linear scale-105 group-hover:scale-110"
               />
-              {/* Overlay gradiente premium */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/20 to-black/90"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black/90"></div>
             </div>
 
             {/* Content Top */}
-            <div className="relative z-10 text-center px-6 mt-10">
-              <h2 className="text-[#FFD700] drop-shadow-[0_5px_15px_rgba(0,0,0,0.9)] font-black text-[clamp(40px,8vw,90px)] tracking-tighter leading-none mb-3 uppercase italic">
+            <div className="relative z-10 text-center px-6">
+              <span className="text-[#FFD700] font-bold text-xs tracking-[0.5em] uppercase mb-4 block animate-fade-in">
+                {getCategoryName(item.category)}
+              </span>
+              <h2 className="text-white font-black text-[clamp(45px,10vw,110px)] tracking-tighter leading-[0.85] mb-4 uppercase italic">
                 {item.name}
               </h2>
-              <p className="text-white font-bold text-[clamp(12px,1.5vw,16px)] uppercase tracking-[0.6em] opacity-90">
-                {item.brand || "DRONE DT"} — {getCategoryName(item.category)}
-              </p>
+              <div className="h-1 w-20 bg-[#FFD700] mx-auto mb-6"></div>
             </div>
 
             {/* Buttons Bottom */}
-            <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-[90%] max-w-[500px] px-4 mb-16">
+            <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-[90%] max-w-[550px] px-4 mb-20">
               <button 
                 onClick={() => router.push(`/shop/product/${item._id}`)}
-                className="flex-1 py-4 bg-[#FFD700] text-black font-black text-[12px] rounded-sm hover:bg-white transition-all duration-300 uppercase tracking-[0.2em] shadow-lg active:scale-95"
+                className="flex-[2] py-5 bg-[#FFD700] text-black font-black text-[13px] rounded-none hover:bg-white transition-all duration-500 uppercase tracking-[0.2em] shadow-[0_10px_30px_rgba(255,215,0,0.3)] active:scale-95"
               >
-                Reservar Ahora
+                Configurar Unidad
               </button>
               <button 
                 onClick={() => router.push(`/shop/product/${item._id}`)}
-                className="flex-1 py-4 bg-white/5 backdrop-blur-xl text-white border border-white/20 font-black text-[12px] rounded-sm hover:bg-[#FFD700] hover:text-black transition-all duration-300 uppercase tracking-[0.2em] active:scale-95"
+                className="flex-1 py-5 bg-white/5 backdrop-blur-md text-white border border-white/20 font-black text-[11px] rounded-none hover:bg-white hover:text-black transition-all duration-500 uppercase tracking-[0.2em] active:scale-95"
               >
-                Especificaciones
+                Specs
               </button>
             </div>
           </div>
@@ -182,17 +187,25 @@ const ProductShow = () => {
       </div>
 
       {/* Navigation Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center gap-4">
         {products.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollToId(index)}
-            aria-label={`Go to slide ${index + 1}`}
-            className={`h-1.5 transition-all duration-500 rounded-full ${
-              activeIndex === index ? "w-12 bg-[#FFD700] shadow-[0_0_15px_#FFD700]" : "w-3 bg-white/20 hover:bg-white/50"
+            className={`transition-all duration-700 ${
+              activeIndex === index 
+              ? "w-16 h-[3px] bg-[#FFD700] shadow-[0_0_15px_#FFD700]" 
+              : "w-4 h-[2px] bg-white/30 hover:bg-white/60"
             }`}
           />
         ))}
+      </div>
+
+      {/* Side HUD Decor */}
+      <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8 opacity-40">
+        <div className="rotate-90 origin-right text-[10px] font-mono tracking-[0.5em] text-white uppercase whitespace-nowrap">
+          Drone DT // Autonomous Systems
+        </div>
       </div>
     </section>
   );
