@@ -3,84 +3,96 @@
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// Forzamos la carga dinámica con manejo de errores básico
+// Optimizamos la carga dinámica para evitar Layout Shift
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { 
   ssr: false,
   loading: () => <div className="h-20 bg-black w-full" /> 
 });
-const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
+
+const Banner = dynamic(() => import("@/components/layout/Banner"), { 
+  ssr: false,
+  loading: () => <div className="h-[90vh] bg-black w-full animate-pulse" />
+});
+
 const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { 
   ssr: false,
   loading: () => <div className="h-screen bg-black w-full" />
 });
+
 const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-gold selection:text-black font-montserrat">
+    <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-[#FFD700] selection:text-black font-montserrat">
       <Navbar />
 
       <main className="flex flex-col w-full">
         
-        {/* SECCIÓN 1: BANNER HERO */}
+        {/* SECCIÓN 1: BANNER HERO - Altura consistente con el componente interno */}
         <section className="relative h-[90vh] w-full z-10 overflow-hidden bg-black">
           <Banner />
         </section>
 
-        {/* SECCIÓN CATÁLOGO - Asegúrate de que el archivo existe en src/components/sections/ProductShow.tsx */}
-        <ProductShow />
+        {/* SECCIÓN CATÁLOGO */}
+        <div className="relative z-20">
+          <ProductShow />
+        </div>
 
         {/* SECCIÓN 2: SPECS Y BRANDING */}
-        <section className="relative z-20 bg-black pt-24 pb-32 px-6 md:px-12">
+        <section className="relative z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5">
           <div className="max-w-[1900px] mx-auto">
             
-            {/* GRID DE STATS */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-4 mb-24 border-y border-white/5 py-16 lg:py-24">
-              <div className="flex flex-col items-center text-center group md:border-r border-white/10 last:border-0">
-                <h3 className="text-5xl lg:text-6xl font-black text-white group-hover:text-gold transition-all duration-500 italic">
-                  4K <span className="text-[10px] md:text-xs not-italic text-white/30 tracking-widest block md:inline uppercase">60FPS</span>
+            {/* GRID DE STATS - Estilo Industrial / High-Tech */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 mb-24 py-16 lg:py-24 border-b border-white/5">
+              <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
+                <h3 className="text-6xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
+                  4K <span className="text-[12px] not-italic text-white/30 tracking-[0.3em] block mt-2 uppercase font-bold">60 FPS PRO</span>
                 </h3>
-                <p className="text-[9px] text-white/40 tracking-[0.4em] uppercase mt-4 font-bold">Ingeniería Óptica Pro</p>
+                <p className="text-[10px] text-white/40 tracking-[0.5em] uppercase mt-6 font-bold">Ingeniería Óptica</p>
               </div>
               
-              <div className="flex flex-col items-center text-center group md:border-r border-white/10 last:border-0">
-                <h3 className="text-5xl lg:text-6xl font-black text-white group-hover:text-gold transition-all duration-500 italic">
-                  45 <span className="text-[10px] md:text-xs not-italic text-white/30 tracking-widest block md:inline uppercase">MIN</span>
+              <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
+                <h3 className="text-6xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
+                  45 <span className="text-[12px] not-italic text-white/30 tracking-[0.3em] block mt-2 uppercase font-bold">MINUTOS</span>
                 </h3>
-                <p className="text-[9px] text-white/40 tracking-[0.4em] uppercase mt-4 font-bold">Autonomía de Misión</p>
+                <p className="text-[10px] text-white/40 tracking-[0.5em] uppercase mt-6 font-bold">Autonomía Real</p>
               </div>
 
-              <div className="flex flex-col items-center text-center group last:border-0">
-                <h3 className="text-5xl lg:text-6xl font-black text-white group-hover:text-gold transition-all duration-500 italic">
-                  10 <span className="text-[10px] md:text-xs not-italic text-white/30 tracking-widest block md:inline uppercase">KM</span>
+              <div className="flex flex-col items-center text-center group px-8">
+                <h3 className="text-6xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
+                  10 <span className="text-[12px] not-italic text-white/30 tracking-[0.3em] block mt-2 uppercase font-bold">KM RANGO</span>
                 </h3>
-                <p className="text-[9px] text-white/40 tracking-[0.4em] uppercase mt-4 font-bold">Rango de Operación O3</p>
+                <p className="text-[10px] text-white/40 tracking-[0.5em] uppercase mt-6 font-bold">Transmisión O3</p>
               </div>
             </div>
 
             {/* BRANDING CENTRAL */}
-            <div className="flex flex-col items-center text-center space-y-10 py-10">
-              <div className="space-y-4">
-                <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[100px] font-black tracking-tighter uppercase leading-none">
+            <div className="flex flex-col items-center text-center space-y-12 py-10">
+              <div className="space-y-6">
+                <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[120px] font-black tracking-tighter uppercase leading-none">
                   <span className="text-white">DRONE</span>
-                  <span className="text-gold italic">DT</span>
+                  <span className="text-[#FFD700] italic">DT</span>
                 </h1>
-                <p className="text-[10px] md:text-xs tracking-[0.6em] text-white/40 font-bold uppercase">
-                  Estándar de Clase Mundial • Bogotá
-                </p>
+                <div className="flex items-center justify-center gap-4">
+                  <span className="h-[1px] w-12 bg-[#FFD700]/50"></span>
+                  <p className="text-[10px] md:text-xs tracking-[0.8em] text-white/60 font-black uppercase">
+                    Bogotá • Colombia • Global
+                  </p>
+                  <span className="h-[1px] w-12 bg-[#FFD700]/50"></span>
+                </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-5 w-full max-w-lg pt-6">
+              <div className="flex flex-col sm:flex-row gap-6 w-full max-w-xl pt-10">
                 <Link
                   href="/shop"
-                  className="flex-1 h-14 flex items-center justify-center rounded-[4px] bg-white text-black text-[11px] font-black tracking-widest uppercase transition-all duration-300 hover:bg-gold active:scale-95"
+                  className="flex-1 h-16 flex items-center justify-center rounded-[4px] bg-[#FFD700] text-black text-[12px] font-black tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white hover:scale-[1.05] active:scale-95 shadow-[0_0_30px_rgba(255,215,0,0.2)]"
                 >
                   Explorar Tienda
                 </Link>
                 
                 <Link
                   href="/services"
-                  className="flex-1 h-14 flex items-center justify-center rounded-[4px] bg-transparent text-white border border-white/20 text-[11px] font-black tracking-widest uppercase transition-all duration-300 hover:border-gold hover:text-gold active:scale-95"
+                  className="flex-1 h-16 flex items-center justify-center rounded-[4px] bg-transparent text-white border border-white/20 text-[12px] font-black tracking-[0.2em] uppercase transition-all duration-300 hover:border-[#FFD700] hover:text-[#FFD700] active:scale-95"
                 >
                   Servicios Técnicos
                 </Link>
@@ -89,9 +101,10 @@ export default function Home() {
 
           </div>
 
+          {/* EFECTOS DE FONDO (Glow y Noise) */}
           <div className="absolute inset-0 z-[-1] pointer-events-none overflow-hidden">
-             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1400px] h-[600px] bg-gold/5 blur-[150px] rounded-full" />
-             <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[1000px] bg-[#FFD700]/5 blur-[180px] rounded-full opacity-50" />
+              <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
           </div>
         </section>
       </main>
