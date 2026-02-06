@@ -85,9 +85,13 @@ docker build -t drone-dt-frontend .
 docker run -p 3000:3000 drone-dt-frontend
 ```
 
-## 👨‍💻 Developed by
+🚀 Developed by Manuel Nieto for DroneDT  
+🏆 Number 1 Top Committers GitHub Colombia 🇨🇴  
 
-Manuel Nieto  
-Full-Stack Software Engineer  
-NietoDeveloper — #1 GitHub Contributor in Colombia 🇨🇴  
-January 2026
+<p align="left">
+  <a href="https://committers.top/colombia#NietoDeveloper"><img src="https://user-badge.committers.top/colombia/NietoDeveloper.svg" alt="Committers Top Colombia"></a>
+  <a href="https://committers.top/colombia#NietoDeveloper"><img src="https://user-badge.committers.top/colombia_public/NietoDeveloper.svg" alt="Committers Top Public"></a>
+  <a href="https://committers.top/colombia#NietoDeveloper"><img src="https://user-badge.committers.top/colombia_private/NietoDeveloper.svg" alt="Committers Top Private"></a>
+</p>
+
+Bogotá - 2026
