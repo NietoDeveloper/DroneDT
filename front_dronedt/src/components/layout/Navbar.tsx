@@ -149,14 +149,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Overlay del Menú */}
-      <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
-        <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-50">
-          <div className="opacity-40">
-              <span className="text-black font-black tracking-tighter text-xl italic uppercase font-sans">Uplink Selection</span>
-          </div>
 
-          ) : (
    
         </div>
       </div>
