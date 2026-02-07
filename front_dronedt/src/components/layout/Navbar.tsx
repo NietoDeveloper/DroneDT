@@ -205,7 +205,7 @@ const Navbar = () => {
                          
                          <div className="space-y-2">
                            <h4 className="font-black text-2xl uppercase italic leading-tight group-hover:text-[#FFD700] transition-colors duration-300">
-                             {product.name}
+                   
                            </h4>
                            <div className="flex justify-between items-end">
                              <p className="text-[14px] font-black text-[#FFD700] tracking-widest uppercase bg-black px-3 py-1 rounded-sm">
