@@ -1,17 +1,17 @@
 const Product = require('../models/Product');
 
 /**
- * @desc    Obtener menú agrupado por categorías para el Navbar (High-Performance)
+ * @desc    Obtener menú agrupado por categorías para el Navbar (High-Performance Aggregation)
  * @route   GET /api/v1/products/menu
  * @access  Public
  */
 const getProductMenu = async (req, res, next) => {
     try {
-        // Pipeline de agregación para que la DB haga el trabajo pesado de agrupar
         const groupedProducts = await Product.aggregate([
             {
+                // Unimos con la colección de categorías
                 $lookup: {
-                    from: 'categories', // Nombre de la colección de categorías en tu DB
+                    from: 'categories', 
                     localField: 'category',
                     foreignField: '_id',
                     as: 'categoryData'
@@ -19,6 +19,7 @@ const getProductMenu = async (req, res, next) => {
             },
             { $unwind: '$categoryData' },
             {
+                // Agrupamos por el nombre de la categoría
                 $group: {
                     _id: '$categoryData.name',
                     items: {
@@ -26,28 +27,46 @@ const getProductMenu = async (req, res, next) => {
                             id: '$_id',
                             name: '$name',
                             desc: '$description',
-                            img: '$imageUrl', // Asegúrate que tu modelo use imageUrl
+                            // Priorizamos imageUrl, fallback a la primera imagen del array si existe
+                            img: { $ifNull: ['$imageUrl', { $arrayElemAt: ['$images', 0] }] },
                             price: '$price'
                         }
                     }
                 }
+            },
+            {
+                // Limpiamos el resultado: solo categorías con items
+                $match: { "items.0": { $exists: true } }
             }
         ]);
 
-        // Convertimos el array de agregación en el objeto Record<string, MenuItem[]> que espera el Navbar
+        // Mapeo inteligente para asegurar que coincida con las pestañas del Navbar
+        // Esto normaliza nombres como "Drones" -> "Modelos" si es necesario
+        const categoryMapping = {
+            'Drones': 'Modelos',
+            'Accesorios': 'Accesorios',
+            'Servicios': 'Flota',
+            'Industrial': 'Flota'
+        };
+
         const menuResponse = groupedProducts.reduce((acc, curr) => {
-            acc[curr._id] = curr.items;
+            const label = categoryMapping[curr._id] || curr._id;
+            
+            if (!acc[label]) acc[label] = [];
+            acc[label] = [...acc[label], ...curr.items];
+            
             return acc;
         }, { Modelos: [], Accesorios: [], Flota: [] });
 
         res.status(200).json(menuResponse);
     } catch (error) {
+        console.error("❌ Uplink Error en Aggregation:", error);
         next(error);
     }
 };
 
 /**
- * @desc    Obtener lista completa de drones/servicios
+ * @desc    Obtener lista completa con metadatos de alto nivel
  * @route   GET /api/v1/products
  */
 const getProducts = async (req, res, next) => {
@@ -66,7 +85,8 @@ const getProducts = async (req, res, next) => {
                 version: "1.0.0",
                 lead_engineer: "Manuel Nieto",
                 rank: "Colombia #1",
-                system: "Drone DT Asset Cluster"
+                system: "Drone DT Asset Cluster",
+                status: "Operational"
             },
             data: products
         });
@@ -76,8 +96,7 @@ const getProducts = async (req, res, next) => {
 };
 
 /**
- * @desc    Obtener un solo drone por ID
- * @route   GET /api/v1/products/:id
+ * @desc    Obtener un solo drone por ID con validación de telemetría
  */
 const getProductById = async (req, res, next) => {
     try {
@@ -110,11 +129,11 @@ const getProductById = async (req, res, next) => {
 };
 
 /**
- * @desc    Crear nuevo drone/servicio
- * @route   POST /api/v1/products
+ * @desc    Crear nuevo drone/servicio (Registrar en Flota)
  */
 const createProduct = async (req, res, next) => {
     try {
+        // Asignar el committer/operador actual
         if (req.user) {
             req.body.user = req.user.id;
         }
@@ -123,7 +142,7 @@ const createProduct = async (req, res, next) => {
 
         res.status(201).json({
             success: true,
-            message: 'Unidad de flota registrada exitosamente',
+            message: 'Unidad de flota registrada exitosamente en el Cluster',
             data: product
         });
     } catch (error) {
@@ -141,7 +160,7 @@ const createProduct = async (req, res, next) => {
 
 module.exports = {
     getProducts,
-    getProductMenu, // Nueva función exportada
+    getProductMenu,
     getProductById,
     createProduct
 };
