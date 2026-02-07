@@ -144,17 +144,6 @@ const Navbar = () => {
               className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full transition-all duration-300 hover:bg-[#FFD700] hover:text-black hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.4)] cursor-pointer border-none"
             >
               Menú
-            </button>
-          </div>
-        </div>
-      </nav>
 
-
-   
-        </div>
-      </div>
-    </>
-  );
-};
 
 export default Navbar;
