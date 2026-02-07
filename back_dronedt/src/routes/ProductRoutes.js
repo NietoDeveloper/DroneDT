@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// Importamos el controlador optimizado
+// Importamos el controlador optimizado para rendimiento NietoDeveloper
 const { 
     getProducts, 
     getProductMenu, 
@@ -13,10 +13,11 @@ const {
 /**
  * [MIDDLEWARE DE TELEMETRÍA LOCAL]
  * Log de tráfico para auditoría de rendimiento del Cluster Drone DT
+ * Indispensable para el monitoreo de carga en el despliegue de producción.
  */
 router.use((req, res, next) => {
     const timestamp = new Date().toISOString();
-    // Color Magenta para tráfico de productos
+    // Color Magenta (\x1b[35m) para identificar tráfico de activos
     console.log(`\x1b[35m[DRONE-ASSET-LOG]\x1b[0m ${timestamp} - \x1b[32m${req.method}\x1b[0m ${req.originalUrl}`);
     next();
 });
@@ -27,8 +28,11 @@ router.use((req, res, next) => {
  */
 
 // 1. RUTA DE ALTO RENDIMIENTO (Navbar / Menu Grouping)
-// @desc: Solo trae name, price, images, category.
-// Ubicada arriba para evitar colisión con el parámetro :id
+/**
+ * @route   GET /api/v1/products/menu
+ * @desc    Ligero: name, price, images, category.
+ * Ubicada arriba para evitar colisión con el parámetro :id.
+ */
 router.get('/menu', getProductMenu);
 
 // 2. RUTAS DE COLECCIÓN (Raíz)
@@ -49,10 +53,10 @@ router.route('/')
 router.route('/:id')
     /**
      * @route   GET /api/v1/products/:id
-     * @desc    Detalle técnico y telemetría para flujo de reserva
+     * @desc    Detalle técnico y telemetría para flujo de reserva.
+     * Incluye pre-validación de ID de MongoDB.
      */
     .get((req, res, next) => {
-        // Validación de integridad del ID antes de la consulta a la DB
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return res.status(400).json({
                 success: false,
