@@ -179,12 +179,7 @@ const Navbar = () => {
             </div>
           ) : (
              <div className="pt-10">
-                <button 
-                  onClick={() => setSelectedModel(null)}
-                  className="mb-8 text-[#0000FF] font-black uppercase tracking-[0.3em] flex items-center gap-2 hover:text-[#FFD700] transition-all border-none bg-transparent cursor-pointer"
-                >
-                  ← Volver al Menú
-                </button>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-20">
                    {menuContent[selectedModel]?.map((product) => (
 
