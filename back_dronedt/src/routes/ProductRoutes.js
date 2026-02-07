@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// Importamos el controlador con la nueva función getProductMenu
+// Importamos el controlador optimizado
 const { 
     getProducts, 
     getProductMenu, 
@@ -12,11 +12,12 @@ const {
 
 /**
  * [MIDDLEWARE DE TELEMETRÍA LOCAL]
- * Monitorea el tráfico específico de productos en la consola
+ * Log de tráfico para auditoría de rendimiento del Cluster Drone DT
  */
 router.use((req, res, next) => {
-    const timestamp = new Date().toLocaleTimeString();
-    console.log(`\x1b[35m[PRODUCT-TRAFFIC]\x1b[0m ${timestamp} - ${req.method} ${req.originalUrl}`);
+    const timestamp = new Date().toISOString();
+    // Color Magenta para tráfico de productos
+    console.log(`\x1b[35m[DRONE-ASSET-LOG]\x1b[0m ${timestamp} - \x1b[32m${req.method}\x1b[0m ${req.originalUrl}`);
     next();
 });
 
@@ -25,35 +26,37 @@ router.use((req, res, next) => {
  * Endpoint base: /api/v1/products
  */
 
-// NUEVA RUTA: Específica para el Navbar de Drone DT
-// Se coloca antes de /:id para evitar colisiones de rutas
+// 1. RUTA DE ALTO RENDIMIENTO (Navbar / Menu Grouping)
+// Ubicada arriba para evitar colisión con el parámetro :id
 router.get('/menu', getProductMenu);
 
+// 2. RUTAS DE COLECCIÓN (Raíz)
 router.route('/')
     /**
      * @route   GET /api/v1/products
-     * @desc    Obtener catálogo completo para la Shop (Next.js)
+     * @desc    Obtener catálogo completo para la Shop (Next.js 15)
      */
     .get(getProducts)
     
     /**
      * @route   POST /api/v1/products
-     * @desc    Crear nuevo dron en el clúster (Admin/Postman)
+     * @desc    Registro de nueva unidad en el clúster (Admin/Postman)
      */
     .post(createProduct);
 
+// 3. RUTAS DE INSTANCIA (ID Específico)
 router.route('/:id')
     /**
      * @route   GET /api/v1/products/:id
-     * @desc    Detalle técnico para el flujo de reserva y product page
+     * @desc    Detalle técnico y telemetría para flujo de reserva
      */
     .get((req, res, next) => {
-        // Validación express del ID antes de pasar al controlador
+        // Validación de integridad del ID antes de la consulta a la DB
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
             return res.status(400).json({
                 success: false,
                 system_code: 'INVALID_DRONE_ID',
-                message: 'El ID de telemetría proporcionado no es un formato válido de MongoDB Atlas.'
+                message: 'El ID de telemetría no es un formato válido de MongoDB Atlas.'
             });
         }
         next();
