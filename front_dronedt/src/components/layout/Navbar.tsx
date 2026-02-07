@@ -126,14 +126,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="hidden lg:flex items-center gap-2">
-            {['Modelos', 'Accesorios', 'Flota'].map((item) => (
-              <button
-                key={item}
-                onClick={() => { setSelectedModel(item); setMenuOpen(true); }}
-                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest transition-all duration-300 hover:text-[#FFD700] hover:-translate-y-1 bg-transparent cursor-pointer border-none"
-              >
-                {item}
 
 
 
