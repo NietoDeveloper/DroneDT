@@ -116,11 +116,7 @@ productSchema.virtual('isReadyForFlight').get(function() {
     return this.status === 'disponible' && this.stock > 0;
 });
 
-/**
- * IMPLEMENTACIÓN BLINDADA:
- * Usamos la instancia 'assetsConnection' exportada de db.js.
- * Al ser un objeto ya instanciado (aunque esté conectando), .model() no será undefined.
- */
+
 const Product = assetsConnection.models.Product || assetsConnection.model('Product', productSchema);
 
 module.exports = Product;
