@@ -204,9 +204,7 @@ const Navbar = () => {
                          </div>
                          
                          <div className="space-y-2">
-                           <h4 className="font-black text-2xl uppercase italic leading-tight group-hover:text-[#FFD700] transition-colors duration-300">
-                   
-                           </h4>
+       
 
                          </div>
                          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#FFD700] transition-all duration-500 group-hover:w-[80%] shadow-[0_0_15px_#FFD700]"></div>
