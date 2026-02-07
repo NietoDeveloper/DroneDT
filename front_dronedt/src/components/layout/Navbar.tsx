@@ -28,17 +28,6 @@ const Navbar = () => {
     Flota: [],
   });
 
-  const fetchMenuData = useCallback(async () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-    if (!apiUrl) {
-      console.warn("⚠️ NEXT_PUBLIC_API_URL no definida.");
-      setLoading(false);
-      return;
-    }
-
-    try {
-      const response = await fetch(`${apiUrl}/products/menu`);
-      if (!response.ok) throw new Error('Error de conexión con la flota');
 
 
 
