@@ -117,14 +117,7 @@ const Navbar = () => {
   return (
     <>
       <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'}`}>
-        <div className="max-w-[1900px] mx-auto flex justify-between items-center px-6 sm:px-10">
-          <div className="flex items-center gap-6 flex-1">
-            <Logo />
-            <div className="flex items-center gap-2">
-              <Circle size={8} fill={isLogged ? "#22c55e" : "transparent"} className={`${isLogged ? 'text-green-500 animate-pulse' : 'text-black/10'} hidden sm:block`} />
-              {isLogged && <span className="text-[10px] font-bold text-green-600 uppercase tracking-tighter hidden md:block font-mono">System Online</span>}
-            </div>
-          </div>
+
 
 
 
