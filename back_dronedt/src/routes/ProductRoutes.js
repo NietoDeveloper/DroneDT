@@ -27,6 +27,7 @@ router.use((req, res, next) => {
  */
 
 // 1. RUTA DE ALTO RENDIMIENTO (Navbar / Menu Grouping)
+// @desc: Solo trae name, price, images, category.
 // Ubicada arriba para evitar colisión con el parámetro :id
 router.get('/menu', getProductMenu);
 
