@@ -21,10 +21,16 @@ const productSchema = new mongoose.Schema(
             required: [true, 'La marca del equipo es obligatoria'],
             default: 'Software DT Tech',
         },
+        // AJUSTE TÉCNICO: Enum estricto para evitar fallos de mapeo en el Front
         category: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Category',
+            type: String,
             required: [true, 'Debes asignar una categoría técnica'],
+            enum: {
+                values: ['drone', 'accessory', 'fleet', 'industrial'],
+                message: '{VALUE} no es una categoría permitida (drone, accessory, fleet, industrial)'
+            },
+            lowercase: true,
+            trim: true
         },
         description: {
             type: String,
@@ -36,7 +42,6 @@ const productSchema = new mongoose.Schema(
             min: [0, 'El precio no puede ser negativo'],
             default: 0,
         },
-        // Mantenemos imageUrl como campo principal para el Front (Next.js Optimization)
         imageUrl: {
             type: String,
             description: 'URL de la imagen principal para renderizado rápido'
@@ -113,7 +118,6 @@ productSchema.pre('save', function(next) {
     if (!this.isModified('name')) return next();
     this.slug = slugify(this.name, { lower: true, strict: true });
     
-    // Auto-poblar imageUrl si no se envía pero hay imágenes en el array
     if (!this.imageUrl && this.images && this.images.length > 0) {
         this.imageUrl = this.images[0].url;
     }
@@ -124,7 +128,7 @@ productSchema.pre('save', function(next) {
 productSchema.index({ name: 'text', brand: 'text', description: 'text' });
 productSchema.index({ currentLocation: '2dsphere' });
 productSchema.index({ slug: 1 });
-productSchema.index({ category: 1 }); // Importante para la agregación del Navbar
+productSchema.index({ category: 1 }); // Mantenemos el índice para el filtrado rápido
 
 // --- VIRTUALS ---
 productSchema.virtual('isReadyForFlight').get(function() {
@@ -132,8 +136,7 @@ productSchema.virtual('isReadyForFlight').get(function() {
 });
 
 /**
- * EXPORTACIÓN SOBRE CONEXIÓN ESPECÍFICA:
- * Usamos 'assetsConnection' para asegurar que este modelo viva en el cluster de inventario.
+ * EXPORTACIÓN SOBRE CONEXIÓN ESPECÍFICA (Cluster ASSETS)
  */
 const Product = assetsConnection.models.Product || assetsConnection.model('Product', productSchema);
 
