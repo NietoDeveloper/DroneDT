@@ -196,12 +196,7 @@ const Navbar = () => {
                          <div className="aspect-square bg-[#DCDCDC] overflow-hidden rounded-lg mb-6 border border-black/5 relative shadow-inner">
                             <Image 
                               src={product.img || '/placeholder-drone.png'} 
-                          
-                              fill
-                              className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#FFD700]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                         </div>
+               
                          
                          <div className="space-y-2">
        
