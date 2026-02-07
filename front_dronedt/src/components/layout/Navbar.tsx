@@ -197,11 +197,7 @@ const Navbar = () => {
                             <Image 
                               src={product.img || '/placeholder-drone.png'} 
                
-                         
-                         <div className="space-y-2">
-       
-
-                         </div>
+              
                          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#FFD700] transition-all duration-500 group-hover:w-[80%] shadow-[0_0_15px_#FFD700]"></div>
                       </Link>
                    ))}
