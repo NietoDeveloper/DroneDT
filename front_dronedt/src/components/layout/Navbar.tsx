@@ -40,15 +40,6 @@ const Navbar = () => {
       const response = await fetch(`${apiUrl}/products/menu`);
       if (!response.ok) throw new Error('Error de conexión con la flota');
 
-      const data = await response.json();
-
-      if (Array.isArray(data)) {
-        const categorized = data.reduce((acc: Record<string, MenuItem[]>, item: MenuItem) => {
-          const cat = item.category || 'Modelos';
-          if (!acc[cat]) acc[cat] = [];
-          acc[cat].push({
-            ...item,
-
 
 
 
