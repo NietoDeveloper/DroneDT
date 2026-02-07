@@ -164,11 +164,7 @@ const Navbar = () => {
         </div>
         
         <div className="flex-1 overflow-y-auto px-6 sm:px-10 w-full max-w-[1800px] mx-auto flex flex-col">
-          {!selectedModel ? (
-            <div className="flex flex-col space-y-2 md:space-y-4 pt-8">
-              {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
 
-              ))}
             </div>
           ) : (
    
