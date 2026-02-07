@@ -106,18 +106,6 @@ const Navbar = () => {
 
   const Logo = () => (
     <Link href="/" className="group flex flex-col items-start outline-none">
-      <div className="flex items-baseline transition-all duration-300 group-hover:scale-105">
-        <span className="text-xl sm:text-2xl font-black tracking-widest text-[#0000FF] italic">Drone</span>
-        <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-1 text-[#FFD700]">DT</span>
-      </div>
-      <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-black/40 group-hover:text-[#FFD700] transition-colors">Colombia</span>
-    </Link>
-  );
-
-  return (
-    <>
-      <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'}`}>
-
 
 
 
