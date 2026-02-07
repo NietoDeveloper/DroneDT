@@ -196,7 +196,7 @@ const Navbar = () => {
                          <div className="aspect-square bg-[#DCDCDC] overflow-hidden rounded-lg mb-6 border border-black/5 relative shadow-inner">
                             <Image 
                               src={product.img || '/placeholder-drone.png'} 
-                              alt={product.name} 
+                          
                               fill
                               className="object-cover group-hover:scale-110 transition-transform duration-700" 
                             />
