@@ -193,13 +193,7 @@ const Navbar = () => {
                         onClick={() => setMenuOpen(false)}
                         className="group relative bg-white p-4 rounded-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_-15px_rgba(255,215,0,0.3)] border border-transparent hover:border-[#FFD700]/60"
                       >
-                         <div className="aspect-square bg-[#DCDCDC] overflow-hidden rounded-lg mb-6 border border-black/5 relative shadow-inner">
-                            <Image 
-                              src={product.img || '/placeholder-drone.png'} 
-               
-              
-                         <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#FFD700] transition-all duration-500 group-hover:w-[80%] shadow-[0_0_15px_#FFD700]"></div>
-                      </Link>
+                  
                    ))}
                 </div>
              </div>
