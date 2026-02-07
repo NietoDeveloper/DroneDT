@@ -208,9 +208,7 @@ const Navbar = () => {
                    
                            </h4>
                            <div className="flex justify-between items-end">
-                             <p className="text-[14px] font-black text-[#FFD700] tracking-widest uppercase bg-black px-3 py-1 rounded-sm">
-                               {product.price || 'Elite Spec'}
-                             </p>
+                
                              <div className="w-10 h-10 rounded-full border border-[#0000FF] flex items-center justify-center group-hover:bg-[#FFD700] group-hover:border-[#FFD700] transition-all duration-300">
                                <ChevronRight size={20} className="text-[#0000FF] group-hover:text-black transition-colors" />
                              </div>
