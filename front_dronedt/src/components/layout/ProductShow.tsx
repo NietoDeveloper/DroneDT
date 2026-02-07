@@ -28,7 +28,6 @@ const ProductShow = () => {
   const getImageUrl = (product: Product) => {
     if (!product.images || product.images.length === 0) return "/placeholder-drone.jpg";
     const img = product.images[0];
-    // Maneja si la imagen es un string de URL o un objeto con propiedad url
     return typeof img === 'string' ? img : img?.url || "/placeholder-drone.jpg";
   };
 
@@ -42,13 +41,12 @@ const ProductShow = () => {
       setLoading(true);
       const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
       
-      // Añadimos un pequeño timeout al fetch para evitar esperas infinitas
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      const timeoutId = setTimeout(() => controller.abort(), 4000); // Timeout más agresivo
 
       const response = await fetch(`${apiUrl}/products`, { 
         signal: controller.signal,
-        cache: 'no-store' // Evita el problema 304 que bloquea datos nuevos
+        cache: 'no-store' 
       });
       
       clearTimeout(timeoutId);
@@ -56,26 +54,25 @@ const ProductShow = () => {
       if (!response.ok) throw new Error("API Offline");
       
       const result = await response.json();
-      
-      // Lógica de extracción: busca en result directo o en result.data
       let data = Array.isArray(result) ? result : (result.data || []);
       
+      // CAMBIO CLAVE: Si no hay datos, lanzamos error interno capturado por el catch
       if (!Array.isArray(data) || data.length === 0) {
-        throw new Error("No hay productos en DB");
+        throw new Error("Empty DB");
       }
 
       setProducts(data);
     } catch (error) {
-      console.error("Drone DT Engine Error:", error);
-      // Mock Data de respaldo para mantener la estética de "Producción"
+      console.warn("Drone DT Engine: Usando Backup Data (DB Desconectada)");
+      // Mock Data de Respaldo para mantener el estilo Software DT
       setProducts([
         { _id: "m1", name: "Phantom DT-Max", description: "Inspección térmica.", price: 2500, images: ["https://images.unsplash.com/photo-1507582020474-9a35b7d455d9"], category: "Industrial", brand: "DRONE DT" },
         { _id: "m2", name: "AgriBot DT-10", description: "Fumigación pro.", price: 3800, images: ["https://images.unsplash.com/photo-1527142879024-c6c91aa9c5c9"], category: "Agricultura", brand: "DRONE DT" },
         { _id: "m3", name: "SkyView Cinema", description: "Cámara 8K.", price: 1800, images: ["https://images.unsplash.com/photo-1473968512447-ac1155104306"], category: "Cine", brand: "DRONE DT" }
       ]);
     } finally {
-      // Delay artificial para branding
-      setTimeout(() => setLoading(false), 1000);
+      // Delay de 1.2s para que el loader de Software DT sea visible y elegante
+      setTimeout(() => setLoading(false), 1200);
     }
   }, []);
 
@@ -92,15 +89,12 @@ const ProductShow = () => {
     }
   }, []);
 
-  // Auto-scroll del Reel
   useEffect(() => {
     if (products.length <= 1 || loading) return;
-    
     const interval = setInterval(() => {
       const nextIndex = (activeIndex + 1) % products.length;
       scrollToId(nextIndex);
     }, 6000); 
-
     return () => clearInterval(interval);
   }, [products.length, loading, activeIndex, scrollToId]);
 
@@ -115,77 +109,83 @@ const ProductShow = () => {
   };
 
   if (loading) return (
-    <div className="h-[85vh] w-full flex flex-col items-center justify-center bg-[#DCDCDC] relative">
+    <div className="h-[85vh] w-full flex flex-col items-center justify-center bg-[#DCDCDC]">
       <div className="relative flex flex-col items-center">
-        <div className="w-16 h-16 border-4 border-black/10 border-t-[#FFD700] rounded-full animate-spin mb-4"></div>
-        <h3 className="font-black text-black tracking-widest text-xs uppercase animate-pulse">
-          Sincronizando Drones...
+        {/* Loader con color corporativo Gold de Software DT */}
+        <div className="w-16 h-16 border-4 border-black/5 border-t-[#FFD700] rounded-full animate-spin mb-6"></div>
+        <h3 className="font-black text-black tracking-[0.3em] text-[10px] uppercase animate-pulse">
+          Sincronizando Sistemas Aeroespaciales
         </h3>
       </div>
     </div>
   );
 
   return (
-    <section className="relative w-full bg-black overflow-hidden border-y border-white/10">
+    <section className="relative w-full bg-black overflow-hidden border-y border-white/5">
       <div 
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex flex-row overflow-x-auto snap-x snap-mandatory no-scrollbar"
+        className="flex flex-row overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {products.map((item) => (
           <div 
             key={item._id} 
-            className="relative h-[85vh] min-h-[600px] w-full flex-shrink-0 flex flex-col items-center justify-between py-12 snap-center overflow-hidden"
+            className="relative h-[85vh] min-h-[600px] w-full flex-shrink-0 flex flex-col items-center justify-between py-16 snap-center"
           >
-            {/* Background */}
+            {/* Background con Overlay */}
             <div className="absolute inset-0 z-0">
               <img 
                 src={getImageUrl(item)} 
                 alt={item.name} 
-                className="w-full h-full object-cover opacity-70"
+                className="w-full h-full object-cover opacity-60"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/60"></div>
+              <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
             </div>
 
-            {/* Content */}
-            <div className="relative z-10 text-center px-6 mt-10">
-              <span className="text-[#FFD700] font-bold text-xs tracking-[0.4em] uppercase mb-4 block">
-                {getCategoryName(item.category)}
-              </span>
-              <h2 className="text-white font-black text-[clamp(40px,8vw,100px)] tracking-tighter leading-[0.9] mb-4 uppercase italic">
+            {/* Top Info */}
+            <div className="relative z-10 text-center px-6 transition-all duration-700">
+              <div className="overflow-hidden mb-2">
+                <span className="text-[#FFD700] font-bold text-[10px] tracking-[0.5em] uppercase block animate-in slide-in-from-bottom duration-500">
+                  {getCategoryName(item.category)}
+                </span>
+              </div>
+              <h2 className="text-white font-black text-[clamp(45px,10vw,110px)] tracking-tighter leading-[0.8] mb-4 uppercase italic">
                 {item.name}
               </h2>
-              <p className="text-white/60 font-mono text-sm tracking-widest uppercase">{item.brand || 'Drone DT Core'}</p>
+              <div className="h-[1px] w-12 bg-[#FFD700] mx-auto mb-4"></div>
+              <p className="text-white/40 font-mono text-[10px] tracking-[0.4em] uppercase">
+                {item.brand || 'DRONE DT ENGINE'}
+              </p>
             </div>
 
-            {/* Actions */}
-            <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-[90%] max-w-[500px] mb-12">
+            {/* Action Buttons */}
+            <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-[90%] max-w-[550px] mb-8">
               <button 
                 onClick={() => router.push(`/shop/product/${item._id}`)}
-                className="flex-[2] py-4 bg-[#FFD700] text-black font-black text-xs uppercase tracking-widest hover:bg-white transition-colors"
+                className="flex-[2] py-5 bg-[#FFD700] text-black font-black text-xs uppercase tracking-[0.2em] hover:bg-white transition-all transform hover:scale-[1.02] active:scale-95 shadow-2xl"
               >
                 Configurar Unidad
               </button>
               <button 
                 onClick={() => router.push(`/shop/product/${item._id}`)}
-                className="flex-1 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-black transition-all"
+                className="flex-1 py-5 bg-black/40 backdrop-blur-xl text-white border border-white/10 font-black text-[10px] uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all"
               >
-                Specs
+                Especificaciones
               </button>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Pagination */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+      {/* Indicador de Posición */}
+      <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center gap-3">
         {products.map((_, index) => (
           <button
             key={index}
             onClick={() => scrollToId(index)}
-            className={`h-1 transition-all duration-500 ${
-              activeIndex === index ? "w-12 bg-[#FFD700]" : "w-4 bg-white/20"
+            className={`h-1 rounded-full transition-all duration-700 ${
+              activeIndex === index ? "w-16 bg-[#FFD700]" : "w-3 bg-white/10 hover:bg-white/30"
             }`}
           />
         ))}
