@@ -8,9 +8,10 @@ const errorHandler = (err, req, res, next) => {
     let message = err.message || 'Error interno en el sistema Drone DT';
 
     // 1. Logging Profesional (Mantiene el rastro en Railway/Vercel)
-    console.error(`[DRONE-DT-ERROR] ${req.method} ${req.url}:`, {
+    // Usamos colores en consola para identificar errores rápidamente
+    console.error(`\x1b[31m[DRONE-DT-ERROR]\x1b[0m ${req.method} ${req.url}:`, {
         message: err.message,
-        stack: process.env.NODE_ENV === 'production' ? '🥞' : err.stack,
+        stack: process.env.NODE_ENV === 'production' ? '🥞 Oculto en Producción' : err.stack,
         timestamp: new Date().toISOString()
     });
 
@@ -20,41 +21,43 @@ const errorHandler = (err, req, res, next) => {
         message = Object.values(err.errors).map(val => val.message).join(', ');
     }
 
-    // 3. Error de Mongoose: Valor duplicado (E.g. mismo número de serie de drone)
+    // 3. Error de Mongoose: Valor duplicado (E.g. mismo número de serie o nombre de unidad)
     if (err.code === 11000) {
         statusCode = 400;
-        const field = Object.keys(err.keyValue || {});
-        message = `Error de duplicidad: El valor en el campo '${field}' ya existe en la base de datos.`;
+        const field = Object.keys(err.keyValue || {})[0];
+        message = `Conflicto de Identidad: El valor en el campo [${field}] ya está registrado en el Clúster DT.`;
     }
 
     // 4. Error de Mongoose: ID mal formado (CastError)
-    // Muy común cuando se pasan IDs de drones inexistentes desde el Front
     if (err.name === 'CastError') {
         statusCode = 404;
-        message = `Recurso no localizado. El ID especificado no es válido para la flota DT.`;
+        message = `Recurso no localizado. El ID ${err.value} no es válido para la flota DT.`;
     }
 
-    // 5. Errores de Seguridad JWT (Para el Panel de Empleados futuro)
+    // 5. Errores de Seguridad JWT (Para el Panel de Empleados)
     if (err.name === 'JsonWebTokenError') {
         statusCode = 401;
-        message = 'Acceso denegado. Token de seguridad inválido.';
+        message = 'Acceso denegado. Token de seguridad inválido o corrupto.';
     }
 
     if (err.name === 'TokenExpiredError') {
         statusCode = 401;
-        message = 'Sesión expirada. Por favor, reautentíquese en el panel de Drone DT.';
+        message = 'Sesión de Operador expirada. Por favor, reautentíquese en el panel.';
     }
 
     // --- Respuesta Final Estandarizada ---
     res.status(statusCode).json({
         success: false,
         message,
-        // En producción ocultamos el stack para no exponer vulnerabilidades
+        // En producción ocultamos el stack para seguridad y cumplimiento de estándares
         stack: process.env.NODE_ENV === 'production' ? null : err.stack,
-        developer: "NietoDeveloper",
-        region: "Colombia-Cluster"
+        metadata: {
+            engineer: "Manuel Nieto",
+            rank: "Colombia #1",
+            system: "Drone DT Proprietary Engine",
+            region: "LATAM-Cluster"
+        }
     });
 };
 
-// Exportación compatible con tu server.js actual
 module.exports = { errorHandler };
