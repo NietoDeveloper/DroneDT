@@ -189,13 +189,7 @@ const Navbar = () => {
                    {menuContent[selectedModel]?.map((product) => (
                       <Link 
                         href={`/product/${product.id}`}
-                        key={product.id} 
-                        onClick={() => setMenuOpen(false)}
-                        className="group relative bg-white p-4 rounded-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_-15px_rgba(255,215,0,0.3)] border border-transparent hover:border-[#FFD700]/60"
-                      >
-                  
-                   ))}
-                </div>
+
              </div>
           )}
         </div>
