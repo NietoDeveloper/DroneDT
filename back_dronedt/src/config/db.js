@@ -20,8 +20,6 @@ const connectDB = async () => {
             return;
         }
 
-        // Conexión paralela para máxima velocidad de arranque
-        // Usamos openUri sobre las instancias ya creadas arriba
         await Promise.all([
             coreConnection.openUri(uriCore, { 
                 serverSelectionTimeoutMS: 5000,
@@ -57,7 +55,7 @@ const closeConnections = async () => {
 // --- EXPORTACIÓN DIRECTA ---
 // Exportamos los objetos para que modelos como Product.js los usen directamente
 module.exports = { 
-    connectDB, 
+     connectDB, 
     coreConnection, 
-    assetsConnection 
+    assetsConnection
 };
