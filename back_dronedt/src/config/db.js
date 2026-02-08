@@ -11,11 +11,6 @@ const coreConnection = mongoose.createConnection();
 const assetsConnection = mongoose.createConnection();
 
 
-const closeConnections = async () => {
-    await Promise.all([
-        coreConnection.close(),
-        assetsConnection.close()
-    ]);
 
 };
 
