@@ -5,8 +5,7 @@ const mongoose = require('mongoose');
 
 
 // Inicializamos las instancias de conexión de inmediato como objetos de Mongoose
-const coreConnection = mongoose.createConnection();
-const assetsConnection = mongoose.createConnection();
+
 
 
 };
