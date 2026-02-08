@@ -55,9 +55,6 @@ const closeConnections = async () => {
     process.exit(0);
 };
 
-process.on('SIGINT', closeConnections);
-process.on('SIGTERM', closeConnections);
-
 // --- EXPORTACIÓN DIRECTA ---
 // Exportamos los objetos para que modelos como Product.js los usen directamente
 module.exports = { 
