@@ -10,22 +10,7 @@ const mongoose = require('mongoose');
 const coreConnection = mongoose.createConnection();
 const assetsConnection = mongoose.createConnection();
 
-const connectDB = async () => {
-    try {
-        const uriCore = process.env.MONGO_URI_CORE?.trim();
-        const uriAssets = process.env.MONGO_URI_ASSETS?.trim();
 
-
-        console.log('\x1b[32m%s\x1b[0m', `    ✔  CORE CLUSTER   : ${coreConnection.host}`);
-        console.log('\x1b[32m%s\x1b[0m', `    ✔  ASSETS CLUSTER : ${assetsConnection.host}`);
-
-
-};
-
-/**
- * GRACEFUL SHUTDOWN
- * Garantiza que las conexiones a ambos clústeres se cierren limpiamente
- */
 const closeConnections = async () => {
     await Promise.all([
         coreConnection.close(),
