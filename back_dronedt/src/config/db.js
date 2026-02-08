@@ -15,13 +15,6 @@ const connectDB = async () => {
         const uriCore = process.env.MONGO_URI_CORE?.trim();
         const uriAssets = process.env.MONGO_URI_ASSETS?.trim();
 
-        if (!uriCore || !uriAssets) {
-            console.error('\x1b[41m\x1b[37m ERROR \x1b[0m Faltan URIs de Multiclúster en .env');
-            return;
-        }
-
-    
-        ]);
 
         console.log('\x1b[32m%s\x1b[0m', `    ✔  CORE CLUSTER   : ${coreConnection.host}`);
         console.log('\x1b[32m%s\x1b[0m', `    ✔  ASSETS CLUSTER : ${assetsConnection.host}`);
