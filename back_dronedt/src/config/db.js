@@ -25,10 +25,7 @@ const connectDB = async () => {
                 serverSelectionTimeoutMS: 5000,
                 heartbeatFrequencyMS: 10000 
             }),
-            assetsConnection.openUri(uriAssets, { 
-                serverSelectionTimeoutMS: 5000,
-                heartbeatFrequencyMS: 10000 
-            })
+    
         ]);
 
         console.log('\x1b[32m%s\x1b[0m', `    ✔  CORE CLUSTER   : ${coreConnection.host}`);
