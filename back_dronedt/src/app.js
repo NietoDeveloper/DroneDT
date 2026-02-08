@@ -16,16 +16,16 @@ const app = express();
 
 /**
  * [SYSTEM INITIALIZATION]
- * Conexión a la red de clústeres de MongoDB Atlas
+ * Conexión a la red de clústeres de MongoDB Atlas (Core & Assets)
  */
 connectDB();
 
 /**
  * [SECURITY LAYER - HARDENED]
  */
-app.set('trust proxy', 1); // Necesario para despliegues en Railway/Vercel/Heroku
+app.set('trust proxy', 1); // Indispensable para Railway/Vercel
 
-// 1. Helmet para Headers de Seguridad (Protección contra XSS, Clickjacking, etc.)
+// 1. Helmet para Headers de Seguridad (Protección contra XSS, Clickjacking)
 app.use(helmet()); 
 
 // 2. CORS dinámico para producción y local
@@ -37,6 +37,7 @@ const allowedOrigins = [
 
 app.use(cors({
     origin: function (origin, callback) {
+        // Permitir peticiones sin origen (como Postman) o si están en la lista blanca
         if (!origin || allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
             callback(null, true);
         } else {
@@ -47,7 +48,7 @@ app.use(cors({
     credentials: true
 }));
 
-// 3. Sanitización de Datos (Previene NoSQL Injection)
+// 3. Sanitización de Datos (Previene NoSQL Injection en el Clúster)
 app.use(mongoSanitize());
 
 // 4. Prevención de Polución de Parámetros (HPP)
@@ -62,7 +63,7 @@ const neuralLimiter = rateLimit({
     message: {
         success: false,
         system_code: 'DRONE_LIMIT_EXCEEDED',
-        message: 'Protocolo de seguridad: Demasiadas peticiones detectadas desde esta IP.',
+        message: 'Protocolo de seguridad: Demasiadas peticiones detectadas.',
         engineer: "Manuel Nieto"
     }
 });
@@ -71,7 +72,7 @@ app.use('/api/', neuralLimiter);
 /**
  * [DATA PARSING & LOGGING]
  */
-app.use(express.json({ limit: '15kb' })); // Payload controlado para evitar ataques DoS
+app.use(express.json({ limit: '15kb' })); // Evita ataques DoS por payloads masivos
 app.use(express.urlencoded({ extended: true, limit: '15kb' }));
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
@@ -87,13 +88,13 @@ app.get('/', (req, res) => {
         status: 'Online',
         lead_engineer: 'Manuel Nieto',
         rank: 'Colombia #1 Committer',
-        security: 'Active (HPP, Helmet, Sanitized)',
+        security: 'Hardened',
         uptime: `${Math.floor(process.uptime())}s`,
         timestamp: new Date().toISOString()
     });
 });
 
-// Operaciones de Flota e Inventario
+// Operaciones de Flota e Inventario (Conexión al controlador optimizado)
 app.use('/api/v1/products', productRoutes);
 
 /**
@@ -118,7 +119,7 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(PORT, () => {
-    // Limpieza estética de consola al iniciar
+    // Limpieza estética de consola al iniciar en desarrollo
     if (process.env.NODE_ENV !== 'production') process.stdout.write('\x1Bc'); 
     
     console.log(`
@@ -142,9 +143,9 @@ process.on('unhandledRejection', (err) => {
     server.close(() => process.exit(1));
 });
 
-// Manejo de señales de terminación para despliegues CI/CD
+// Manejo de señales de terminación para CI/CD (Vercel/Railway)
 process.on('SIGTERM', () => {
-    console.log('\x1b[31m[SIGTERM]\x1b[0m Señal recibida. Cerrando clúster de forma segura...');
+    console.log('\x1b[31m[SIGTERM]\x1b[0m Cerrando clúster de forma segura...');
     server.close(() => {
         console.log('\x1b[32m[DONE]\x1b[0m Procesos finalizados.');
     });
