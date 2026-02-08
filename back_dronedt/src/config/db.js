@@ -1,20 +1,21 @@
 const mongoose = require('mongoose');
-const db = require('../config/db'); // Importamos el objeto completo
 
-const productSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    category: { type: String, required: true },
-    price: { type: Number, required: true },
-    description: String,
-    image: String,
-    stock: { type: Number, default: 0 }
-}, { timestamps: true });
+// Creamos las instancias de conexión
+const coreConnection = mongoose.createConnection();
+const assetsConnection = mongoose.createConnection();
 
-/**
- * DRONE DT - ASSETS CLUSTER MODEL
- * Usamos db.assetsConnection para asegurar que la referencia exista 
- * al momento de la compilación del modelo.
- */
-const Product = db.assetsConnection.model('Product', productSchema, 'products');
+const connectDB = async () => {
+    try {
+        await Promise.all([
+            coreConnection.openUri(process.env.MONGO_URI_CORE),
+            assetsConnection.openUri(process.env.MONGO_URI_ASSETS)
+        ]);
+        console.log('✅ Clústeres CORE y ASSETS sincronizados.');
+    } catch (error) {
+        console.error('❌ Error de conexión:', error.message);
+        process.exit(1);
+    }
+};
 
-module.exports = Product;
+// Exportamos las conexiones para que los modelos las usen
+module.exports = { connectDB, coreConnection, assetsConnection };

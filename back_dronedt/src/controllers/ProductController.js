@@ -1,4 +1,4 @@
-const Product = require('../models/Product');
+const Product = require('../models/productModel'); // Asegúrate que el path sea correcto (minúscula/mayúscula)
 const mongoose = require('mongoose');
 
 /**
@@ -8,30 +8,35 @@ const mongoose = require('mongoose');
 const getProductMenu = async (req, res, next) => {
     try {
         // PROYECCIÓN: Solo traemos lo estrictamente necesario para el performance
-        // Usamos .lean() para obtener POJO (Plain Old JavaScript Objects) y ganar velocidad
+        // .lean() es clave para la velocidad del Committer #1
         const products = await Product.find({})
             .select('name price images category imageUrl')
             .lean();
 
-        // Mapeo para asegurar que cada item tenga una propiedad 'img' consistente
+        // Mapeo profesional para el frontend: Garantizamos la propiedad 'img'
         const formattedData = products.map(product => ({
             _id: product._id,
             name: product.name,
             price: product.price,
             category: product.category,
-            // Prioridad: imageUrl > primera imagen del array > placeholder
-            img: product.imageUrl || (product.images && product.images.length > 0 ? product.images[0].url : null)
+            // Lógica de fallback de imagen para evitar broken links en Next.js
+            img: product.imageUrl || 
+                 (product.images && product.images.length > 0 ? product.images[0].url : '/placeholder-drone.png')
         }));
+
+        // Log de telemetría en consola
+        console.log(`\x1b[36m[MENU FETCH]\x1b[0m ${formattedData.length} drones enviados al frontend.`);
 
         res.status(200).json({
             success: true,
-            data: formattedData // Estructura solicitada: Array de objetos
+            count: formattedData.length,
+            data: formattedData 
         });
     } catch (error) {
         console.error("❌ Menu Fetch Error:", error);
         res.status(500).json({
             success: false,
-            message: "Error al obtener el menú del clúster"
+            message: "Error al obtener el menú del clúster de Assets"
         });
     }
 };
@@ -41,7 +46,6 @@ const getProductMenu = async (req, res, next) => {
  */
 const getProducts = async (req, res, next) => {
     try {
-        // Clonamos el query para filtrar
         const queryObj = { ...req.query };
         const excludeFields = ['page', 'sort', 'limit', 'fields'];
         excludeFields.forEach(el => delete queryObj[el]);
@@ -56,7 +60,8 @@ const getProducts = async (req, res, next) => {
             data: products
         });
     } catch (error) {
-        next(error);
+        console.error("❌ Get Products Error:", error);
+        res.status(500).json({ success: false, message: error.message });
     }
 };
 
@@ -70,7 +75,7 @@ const getProductById = async (req, res, next) => {
         if (!product) {
             return res.status(404).json({
                 success: false,
-                message: 'Unidad no encontrada en Drone DT'
+                message: 'Unidad no encontrada en el inventario de Drone DT'
             });
         }
 
@@ -79,23 +84,30 @@ const getProductById = async (req, res, next) => {
             data: product
         });
     } catch (error) {
-        next(error);
+        console.error("❌ Get ID Error:", error);
+        res.status(500).json({ success: false, message: "ID inválido o error de clúster" });
     }
 };
 
 /**
- * @desc    Registro de nuevo producto
+ * @desc    Registro de nuevo producto (Write to Assets Cluster)
  */
 const createProduct = async (req, res, next) => {
     try {
         const product = await Product.create(req.body);
+        console.log(`\x1b[32m[NEW ASSET]\x1b[0m Drone registrado: ${product.name}`);
 
         res.status(201).json({
             success: true,
             data: product
         });
     } catch (error) {
-        next(error);
+        console.error("❌ Create Error:", error);
+        res.status(400).json({
+            success: false,
+            message: "No se pudo registrar el drone",
+            error: error.message
+        });
     }
 };
 
