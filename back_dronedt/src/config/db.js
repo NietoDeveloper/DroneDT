@@ -20,11 +20,6 @@ const connectDB = async () => {
             return;
         }
 
-        await Promise.all([
-            coreConnection.openUri(uriCore, { 
-                serverSelectionTimeoutMS: 5000,
-                heartbeatFrequencyMS: 10000 
-            }),
     
         ]);
 
