@@ -1,14 +1,19 @@
-const Product = require('../models/productModel'); // Asegúrate que el path sea correcto (minúscula/mayúscula)
+// IMPORTANTE: Si tu archivo en models se llama 'Product.js', cámbialo aquí a '../models/Product'
+// Si se llama 'productModel.js', déjalo así. 
+const Product = require('../models/Product'); 
 const mongoose = require('mongoose');
 
 /**
  * @desc    Obtener menú ligero (name, price, images, category)
  * @route   GET /api/v1/products/menu
+ * @access  Public
  */
 const getProductMenu = async (req, res, next) => {
     try {
-        // PROYECCIÓN: Solo traemos lo estrictamente necesario para el performance
-        // .lean() es clave para la velocidad del Committer #1
+        /**
+         * PROYECCIÓN: Solo traemos lo estrictamente necesario para el performance.
+         * .lean() es clave para la velocidad del Committer #1 (evita hidratar el POJO de Mongoose).
+         */
         const products = await Product.find({})
             .select('name price images category imageUrl')
             .lean();
@@ -24,7 +29,7 @@ const getProductMenu = async (req, res, next) => {
                  (product.images && product.images.length > 0 ? product.images[0].url : '/placeholder-drone.png')
         }));
 
-        // Log de telemetría en consola
+        // Log de telemetría en consola (Cyan para visibilidad)
         console.log(`\x1b[36m[MENU FETCH]\x1b[0m ${formattedData.length} drones enviados al frontend.`);
 
         res.status(200).json({
@@ -43,6 +48,7 @@ const getProductMenu = async (req, res, next) => {
 
 /**
  * @desc    Obtener catálogo completo con filtros opcionales
+ * @route   GET /api/v1/products
  */
 const getProducts = async (req, res, next) => {
     try {
@@ -67,6 +73,7 @@ const getProducts = async (req, res, next) => {
 
 /**
  * @desc    Detalle de producto por ID
+ * @route   GET /api/v1/products/:id
  */
 const getProductById = async (req, res, next) => {
     try {
@@ -91,6 +98,7 @@ const getProductById = async (req, res, next) => {
 
 /**
  * @desc    Registro de nuevo producto (Write to Assets Cluster)
+ * @route   POST /api/v1/products
  */
 const createProduct = async (req, res, next) => {
     try {
