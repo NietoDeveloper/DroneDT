@@ -19,10 +19,7 @@ const connectDB = async () => {
         console.log('\x1b[32m%s\x1b[0m', `    ✔  CORE CLUSTER   : ${coreConnection.host}`);
         console.log('\x1b[32m%s\x1b[0m', `    ✔  ASSETS CLUSTER : ${assetsConnection.host}`);
 
-    } catch (error) {
-        console.error('\x1b[31m%s\x1b[0m', `    ✘  DB MULTI-ERROR : ${error.message}`);
-        process.exit(1); // En producción, si falla la DB, el proceso debe reiniciarse
-    }
+
 };
 
 /**
