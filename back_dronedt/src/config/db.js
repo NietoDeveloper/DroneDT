@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 const dbOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    maxPoolSize: 10, // Optimiza el flujo de peticiones simultáneas
+    maxPoolSize: 10,
     serverSelectionTimeoutMS: 5000,
     socketTimeoutMS: 45000,
 };
@@ -22,9 +22,13 @@ const assetsConnection = mongoose.createConnection();
  * [MONITORING] Telemetría de la base de datos
  */
 const monitorConnection = (conn, name) => {
-    conn.on('connected', () => console.log(`\x1b[32m✔ [DB ${name}]\x1b[0m Conectado exitosamente.`));
+    conn.on('connected', () => {
+        // Obtenemos el nombre de la DB desde la conexión activa para el log
+        const dbName = conn.name;
+        console.log(`\x1b[32m✔ [DB ${name}]\x1b[0m Vinculado a: \x1b[37m${dbName}\x1b[0m`);
+    });
     conn.on('error', (err) => console.error(`\x1b[31m✘ [DB ${name}]\x1b[0m Error crítico:`, err));
-    conn.on('disconnected', () => console.log(`\x1b[33m! [DB ${name}]\x1b[0m Desconectado. Reintentando...`));
+    conn.on('disconnected', () => console.log(`\x1b[33m! [DB ${name}]\x1b[0m Desconectado.`));
 };
 
 monitorConnection(coreConnection, 'CORE');
@@ -51,9 +55,9 @@ const connectDB = async () => {
 
         console.log(`
     \x1b[44m\x1b[37m DATABASE STATUS \x1b[0m
-    \x1b[36m» CORE CLUSTER   :\x1b[0m Online
-    \x1b[36m» ASSETS CLUSTER :\x1b[0m Online
-    \x1b[35m[SYSTEM] Arquitectura Multi-Clúster Drone DT lista.\x1b[0m
+    \x1b[36m» CORE CLUSTER   :\x1b[0m Online (\x1b[37m${coreConnection.name}\x1b[0m)
+    \x1b[36m» ASSETS CLUSTER :\x1b[0m Online (\x1b[37m${assetsConnection.name}\x1b[0m)
+    \x1b[35m[SYSTEM] Arquitectura Drone DT sincronizada con Atlas.\x1b[0m
         `);
     } catch (error) {
         console.error('\x1b[41m\x1b[37m FATAL DATABASE FAILURE \x1b[0m', error.message);
