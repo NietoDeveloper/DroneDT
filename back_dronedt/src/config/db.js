@@ -51,8 +51,7 @@ const closeConnections = async () => {
         coreConnection.close(),
         assetsConnection.close()
     ]);
-    console.log('\x1b[33m%s\x1b[0m', '    ⚠  Conexiones de clúster cerradas.');
-    process.exit(0);
+
 };
 
 // --- EXPORTACIÓN DIRECTA ---
