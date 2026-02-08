@@ -11,13 +11,4 @@ const coreConnection = mongoose.createConnection();
 const assetsConnection = mongoose.createConnection();
 
 
-
-};
-
-// --- EXPORTACIÓN DIRECTA ---
-// Exportamos los objetos para que modelos como Product.js los usen directamente
-module.exports = { 
-     connectDB, 
-    coreConnection, 
-    assetsConnection
 };
