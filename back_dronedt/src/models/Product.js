@@ -3,8 +3,9 @@ const slugify = require('slugify');
 const { assetsConnection } = require('../config/db');
 
 /**
- * Modelo de Producto/Drone para Drone DT
- * Vinculado al Cluster ASSETS para gestión de inventario y telemetría.
+ * DRONE DT - ASSETS CLUSTER MODEL
+ * Developer: Manuel Nieto | Rank: #1 Colombia
+ * Vinculado al Cluster 2 para inventario, telemetría y logística.
  */
 const productSchema = new mongoose.Schema(
     {
@@ -21,13 +22,12 @@ const productSchema = new mongoose.Schema(
             required: [true, 'La marca del equipo es obligatoria'],
             default: 'Software DT Tech',
         },
-        // AJUSTE TÉCNICO: Enum estricto para evitar fallos de mapeo en el Front
         category: {
             type: String,
             required: [true, 'Debes asignar una categoría técnica'],
             enum: {
                 values: ['drone', 'accessory', 'fleet', 'industrial'],
-                message: '{VALUE} no es una categoría permitida (drone, accessory, fleet, industrial)'
+                message: '{VALUE} no es una categoría permitida'
             },
             lowercase: true,
             trim: true
@@ -47,10 +47,10 @@ const productSchema = new mongoose.Schema(
             description: 'URL de la imagen principal para renderizado rápido'
         },
         specifications: {
-            flightTime: { type: Number, default: 0 }, // en minutos
+            flightTime: { type: Number, default: 0 },
             cameraResolution: { type: String, default: '4K' }, 
-            maxRange: { type: Number, default: 0 }, // en Km
-            weight: { type: Number, default: 0 }, // en gramos
+            maxRange: { type: Number, default: 0 },
+            weight: { type: Number, default: 0 },
         },
         images: {
             type: [
@@ -128,7 +128,7 @@ productSchema.pre('save', function(next) {
 productSchema.index({ name: 'text', brand: 'text', description: 'text' });
 productSchema.index({ currentLocation: '2dsphere' });
 productSchema.index({ slug: 1 });
-productSchema.index({ category: 1 }); // Mantenemos el índice para el filtrado rápido
+productSchema.index({ category: 1 });
 
 // --- VIRTUALS ---
 productSchema.virtual('isReadyForFlight').get(function() {
@@ -136,8 +136,11 @@ productSchema.virtual('isReadyForFlight').get(function() {
 });
 
 /**
- * EXPORTACIÓN SOBRE CONEXIÓN ESPECÍFICA (Cluster ASSETS)
+ * EXPORTACIÓN BLINDADA (PREVIENE EL TypeError: undefined)
+ * 1. Intentamos recuperar el modelo si ya está compilado.
+ * 2. Si no, lo compilamos usando assetsConnection.
+ * 3. Forzamos la colección 'products'.
  */
-const Product = assetsConnection.models.Product || assetsConnection.model('Product', productSchema);
+const Product = assetsConnection.models.Product || assetsConnection.model('Product', productSchema, 'products');
 
 module.exports = Product;

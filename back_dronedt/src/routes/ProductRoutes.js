@@ -17,7 +17,7 @@ const {
  */
 router.use((req, res, next) => {
     const timestamp = new Date().toISOString();
-    // Color Magenta (\x1b[35m) para identificar tráfico de activos
+    // Color Magenta (\x1b[35m) para identificar tráfico de activos hacia Atlas
     console.log(`\x1b[35m[DRONE-ASSET-LOG]\x1b[0m ${timestamp} - \x1b[32m${req.method}\x1b[0m ${req.originalUrl}`);
     next();
 });
@@ -31,7 +31,7 @@ router.use((req, res, next) => {
 /**
  * @route   GET /api/v1/products/menu
  * @desc    Ligero: name, price, images, category.
- * Ubicada arriba para evitar colisión con el parámetro :id.
+ * Prioridad máxima: Se define antes que el parámetro :id para evitar colisiones.
  */
 router.get('/menu', getProductMenu);
 
@@ -54,7 +54,7 @@ router.route('/:id')
     /**
      * @route   GET /api/v1/products/:id
      * @desc    Detalle técnico y telemetría para flujo de reserva.
-     * Incluye pre-validación de ID de MongoDB.
+     * Incluye pre-validación de ID de MongoDB para evitar errores de casting en el clúster.
      */
     .get((req, res, next) => {
         if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
