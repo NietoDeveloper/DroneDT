@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { assetsConnection } = require('../config/db');
+const db = require('../config/db'); // Importamos el objeto completo
 
 const productSchema = new mongoose.Schema({
     name: { type: String, required: true },
@@ -12,10 +12,9 @@ const productSchema = new mongoose.Schema({
 
 /**
  * DRONE DT - ASSETS CLUSTER MODEL
- * 1. Vincula el modelo al clúster de Assets (Clúster 2).
- * 2. Verifica si el modelo ya está compilado para evitar el crash de 'undefined'.
- * 3. Fuerza el nombre de la colección a 'products'.
+ * Usamos db.assetsConnection para asegurar que la referencia exista 
+ * al momento de la compilación del modelo.
  */
-const Product = assetsConnection.models.Product || assetsConnection.model('Product', productSchema, 'products');
+const Product = db.assetsConnection.model('Product', productSchema, 'products');
 
 module.exports = Product;
