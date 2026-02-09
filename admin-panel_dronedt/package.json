@@ -8,7 +8,20 @@
     "build": "next build",
     "start": "next start"
   },
-  "keywords": ["drones", "e-commerce", "admin"],
+  "keywords": [
+    "drones",
+    "e-commerce",
+    "admin"
+  ],
   "author": "Tu Nombre",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^25.2.2",
+    "@types/react": "^19.2.13",
+    "@types/react-dom": "^19.2.3",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "^5.9.3"
+  }
 }
