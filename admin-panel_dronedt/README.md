@@ -33,6 +33,7 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 ---
 
 ## 📂 Project Structure
+
 ```plaintext
 dronedt-admin/
 ├── src/
@@ -93,28 +94,33 @@ dronedt-admin/
 ## 🔑 Key Features
 
 ### 📊 Intelligence & Analytics
+
 - **Real-time Dashboard:** Advanced visualization of sales, production status, and drone telemetry
 - **Financial Reports:** Integrated finance module for profit/loss tracking and revenue analysis
 - **Customer Analytics:** Behavior patterns and segmentation insights
 
 ### 📦 Operational Management
+
 - **Order Lifecycle:** Complete tracking from purchase to manufacturing and shipping
 - **Inventory Control:** Real-time stock management of drone components and finished products
 - **Manufacturing Module:** Monitor assembly line status, production schedules, and quality control
 - **Logistics & Shipping:** Route optimization and delivery tracking
 
 ### 🤖 Automation & AI
+
 - **AI-Bot Integration:** Management and monitoring of AI-driven customer service
 - **Support Center:** Advanced ticketing system for technical drone assistance
 - **Automated Workflows:** Smart notifications and process automation
 
 ### 🛡 Security & Access Control
+
 - **RBAC (Role-Based Access Control):** Granular permissions for employees and administrators
 - **Secure Authentication:** Enterprise-grade login/reset-password flows using NextAuth.js
 - **Audit Logs:** Complete tracking of administrative actions
 - **Two-Factor Authentication:** Optional 2FA for enhanced security
 
 ### 🎨 User Experience
+
 - **Responsive Design:** Optimized for desktop, tablet, and mobile devices
 - **Dark Mode:** Eye-friendly theme for extended work sessions
 - **Customizable Dashboard:** Drag-and-drop widget configuration
@@ -125,6 +131,7 @@ dronedt-admin/
 ## ⚙️ Getting Started
 
 ### Prerequisites
+
 - **Node.js** 18+ or 20+
 - **Docker** (Optional for containerized development)
 - **npm** or **pnpm** package manager
@@ -133,24 +140,28 @@ dronedt-admin/
 ### Installation
 
 1. **Clone the repository:**
+
 ```bash
 git clone https://github.com/NietoDeveloper/dronedt-admin.git
 cd dronedt-admin
 ```
 
-2. **Install dependencies:**
+1. **Install dependencies:**
+
 ```bash
 npm install
 # or
 pnpm install
 ```
 
-3. **Setup environment variables:**
+1. **Setup environment variables:**
+
 ```bash
 cp .env.example .env.local
 ```
 
 Edit `.env.local` with your configuration:
+
 ```env
 # Application
 NEXT_PUBLIC_APP_NAME=DroneDT Admin
@@ -180,7 +191,8 @@ STRIPE_SECRET_KEY=sk_test_xxx
 STRIPE_WEBHOOK_SECRET=whsec_xxx
 ```
 
-4. **Run the development server:**
+1. **Run the development server:**
+
 ```bash
 npm run dev
 ```
@@ -192,11 +204,13 @@ Open [http://localhost:3001](http://localhost:3001) in your browser.
 ## 🐳 Docker Deployment
 
 ### Development Environment
+
 ```bash
 docker-compose up -d
 ```
 
 ### Production Build
+
 ```bash
 # Build the image
 docker build -t dronedt-admin:latest .
@@ -208,6 +222,7 @@ docker run -p 3001:3001 \
 ```
 
 ### Multi-stage Production Deployment
+
 ```bash
 docker-compose -f docker-compose.prod.yml up -d
 ```
@@ -291,16 +306,13 @@ All rights reserved © 2025 Manuel Nieto
 ## 📧 Contact
 
 **Manuel Nieto** - Full-Stack Software Engineer  
+
 - GitHub: [@NietoDeveloper](https://github.com/NietoDeveloper)
 - LinkedIn: [Manuel Nieto](https://linkedin.com/in/manuelnietodeveloper)
-- Email: contact@nietodev.com
+- Email: <contact@nietodev.com>
 
 ---
 
-<div align="center">
-
 **Built with precision and passion by NietoDeveloper** 🚀
 
-*Empowering Colombia's drone industry through world-class software engineering*
-
-</div>
+## *Empowering Colombia's drone industry through world-class software engineering*
