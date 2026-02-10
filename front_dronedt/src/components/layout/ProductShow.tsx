@@ -60,17 +60,6 @@ const ProductShow = () => {
       // Mock Data con la estética de Drone DT
       setProducts([
 rand: "SOFTWARE DT" 
-        }
-      ]);
-    } finally {
-      // Delay elegante de Software DT
-      setTimeout(() => setLoading(false), 1000);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchDrones();
-  }, [fetchDrones]);
 
 
 
