@@ -3,7 +3,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight } from 'lucide-react';
 
 interface Drone {
   id: string;
@@ -20,85 +19,102 @@ const ProductShow = () => {
   const fetchDrones = useCallback(async () => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
     try {
-      const response = await fetch(`${apiUrl}/products?category=drone`, { cache: 'no-store' });
-      if (!response.ok) throw new Error('Error');
+      const response = await fetch(`${apiUrl}/products?category=drone`, { 
+        next: { revalidate: 60 } 
+      });
+      
       const result = await response.json();
-      const productsArray = Array.isArray(result.data) ? result.data : result;
+      const productsArray = result.data || result;
 
-      const formattedDrones = productsArray.slice(0, 4).map((item: any) => ({
-        id: item._id || item.id,
-        name: item.name,
-        price: item.price ? `Desde $${item.price.toLocaleString()}` : 'Contactar Ventas',
-        tag: item.category?.name || 'Pro Series',
-        img: item.imageUrl || (item.images?.[0]?.url || item.images?.[0] || '/placeholder.png')
-      }));
-      setDrones(formattedDrones);
+      if (Array.isArray(productsArray)) {
+        const formatted = productsArray.slice(0, 4).map((item: any) => ({
+          id: item._id || item.id,
+          name: item.name,
+          price: item.price ? `Desde $${item.price.toLocaleString()}` : 'Contactar Ventas',
+          tag: item.category?.name || 'Pro Series',
+          img: item.imageUrl || (item.images?.[0]?.url || item.images?.[0] || '/placeholder.png')
+        }));
+        setDrones(formatted);
+      }
     } catch (error) {
-      console.error(error);
+      console.error("Fetch error:", error);
     } finally {
       setLoading(false);
     }
   }, []);
 
-  useEffect(() => { fetchDrones(); }, [fetchDrones]);
+  useEffect(() => {
+    fetchDrones();
+  }, [fetchDrones]);
 
-  if (loading) return <div className="h-screen bg-black" />;
+  if (loading) {
+    return (
+      <div className="h-screen w-full bg-white flex items-center justify-center">
+        <div className="w-12 h-12 border-4 border-black border-t-[#FFD700] rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  if (drones.length === 0) return null;
 
   return (
-    <section className="relative w-full bg-white">
-      {/* Contenedor Scroll Horizontal (Snap) */}
-      <div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+    <section className="relative w-full h-screen bg-white overflow-hidden">
+      {/* Contenedor Scroll Horizontal Estilo Tesla */}
+      <div 
+        className="flex h-full overflow-x-auto snap-x snap-mandatory scroll-smooth" 
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
         {drones.map((drone) => (
           <div 
             key={drone.id} 
-            className="relative flex-none w-full md:w-[85vw] lg:w-[100vw] h-screen snap-center overflow-hidden border-r border-gray-100"
+            className="relative flex-none w-full h-full snap-center flex flex-col items-center justify-between py-24"
           >
-            {/* Texto Superior (Estilo Tesla) */}
-            <div className="absolute top-[15%] w-full text-center z-20 px-4">
-              <h2 className="text-5xl md:text-7xl font-bold text-black tracking-tight mb-2">
+            {/* Texto Superior */}
+            <div className="z-20 text-center space-y-2">
+              <h2 className="text-5xl md:text-7xl font-bold text-black tracking-tight uppercase">
                 {drone.name}
               </h2>
-              <p className="text-lg md:text-xl font-medium text-black/80">
+              <p className="text-lg font-medium text-black/70 border-b border-black w-fit mx-auto pb-1">
                 {drone.price}
               </p>
-              <p className="text-sm font-bold text-[#0000FF] mt-2 tracking-widest uppercase">
-                {drone.tag}
-              </p>
             </div>
 
-            {/* Imagen de Fondo (Full) */}
-            <div className="absolute inset-0 z-10">
-              <Image 
-                src={drone.img} 
-                alt={drone.name} 
-                fill 
-                className="object-contain md:object-cover p-10 md:p-0"
-                priority
-              />
+            {/* Imagen Central */}
+            <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
+              <div className="relative w-full h-[65%] max-w-6xl">
+                <Image 
+                  src={drone.img} 
+                  alt={drone.name} 
+                  fill 
+                  className="object-contain"
+                  priority
+                />
+              </div>
             </div>
 
-            {/* Botones Inferiores (Tesla UX) */}
-            <div className="absolute bottom-[10%] w-full flex flex-col md:flex-row items-center justify-center gap-4 px-6 z-20">
+            {/* Botones Inferiores Estilo Model Y */}
+            <div className="z-20 w-full flex flex-col md:flex-row items-center justify-center gap-4 px-6">
               <Link
                 href={`/shop/product/${drone.id}`}
-                className="w-full max-w-[280px] h-12 flex items-center justify-center bg-black/80 backdrop-blur-md text-white rounded-md text-sm font-bold uppercase tracking-wider hover:bg-black transition-all"
+                className="w-full max-w-[280px] h-12 flex items-center justify-center bg-[#171A20CC] backdrop-blur-sm text-white rounded-md text-[12px] font-bold uppercase tracking-widest hover:bg-black transition-all"
               >
                 Order Now
               </Link>
               <Link
                 href="/services"
-                className="w-full max-w-[280px] h-12 flex items-center justify-center bg-white/70 backdrop-blur-md text-black rounded-md text-sm font-bold uppercase tracking-wider hover:bg-white transition-all"
+                className="w-full max-w-[280px] h-12 flex items-center justify-center bg-[#F4F4F4A6] backdrop-blur-sm text-[#393C41] rounded-md text-[12px] font-bold uppercase tracking-widest hover:bg-white transition-all"
               >
                 Learn More
               </Link>
             </div>
-
-            {/* Indicador de más contenido a la derecha */}
-            <div className="absolute right-10 top-1/2 -translate-y-1/2 z-20 hidden md:flex items-center gap-2 text-black/20 animate-pulse">
-               <span className="text-[10px] font-black rotate-90 uppercase tracking-[0.5em]">Scroll</span>
-               <ChevronRight size={40} />
-            </div>
           </div>
+        ))}
+      </div>
+
+      {/* Indicadores de posición */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+        {drones.map((_, idx) => (
+          <div key={idx} className="w-2 h-2 rounded-full bg-black/10" />
         ))}
       </div>
     </section>
