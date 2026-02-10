@@ -36,20 +36,6 @@ const Navbar = () => {
     }
 
 
-  if (loading) return (
-    <div className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[#DCDCDC]">
-      <div className="relative w-24 h-24 mb-8">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse shadow-xl"></div>
-        <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin"></div>
-        <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.3s]"></div>
-        <div className="absolute bottom-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.5s]"></div>
-        <div className="absolute bottom-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.4s]"></div>
-        <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-80 shadow-[0_0_15px_#FFD700]"></div>
-      </div>
-      <p className="font-black text-[11px] tracking-[0.6em] text-black uppercase animate-pulse">Establishing Uplink</p>
-    </div>
-  );
-
   return (
     <>
       <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'}`}>
