@@ -38,14 +38,17 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+    // Cambiado a 127.0.0.1 para evitar colisiones de resolución en Windows
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000/api/v1';
 
     try {
       const response = await fetch(`${apiUrl}/products/menu`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
         cache: 'no-store'
       });
       
-      if (!response.ok) throw new Error('Error de conexión');
+      if (!response.ok) throw new Error('Uplink Refused');
 
       const result = await response.json();
       const productsArray = Array.isArray(result.data) ? result.data : (Array.isArray(result) ? result : []);
@@ -77,9 +80,11 @@ const Navbar = () => {
 
       setMenuContent(categorized);
     } catch (error) {
-      console.error("❌ Drone DT Uplink Error:", error);
+      // Error silencioso para el usuario pero trackeado en consola
+      console.error("❌ Drone DT Uplink Offline:", error);
     } finally {
-      setTimeout(() => setLoading(false), 800);
+      // Garantizamos que el loader desaparezca incluso si falla el fetch
+      setLoading(false);
     }
   }, []);
 
@@ -227,6 +232,9 @@ const Navbar = () => {
                          <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-[3px] bg-[#FFD700] transition-all duration-500 group-hover:w-[80%] shadow-[0_0_15px_#FFD700]"></div>
                       </Link>
                     ))}
+                    {menuContent[selectedModel]?.length === 0 && (
+                      <p className="text-black/30 font-bold uppercase tracking-widest">No hay productos disponibles en esta categoría</p>
+                    )}
                 </div>
              </div>
           )}
