@@ -40,22 +40,6 @@ const Navbar = () => {
     <>
       
 
-      
-        
-        <div className="flex-1 overflow-y-auto px-6 sm:px-10 w-full max-w-[1800px] mx-auto flex flex-col">
-          {!selectedModel ? (
-            <div className="flex flex-col space-y-2 md:space-y-4 pt-8">
-              {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
-                <button 
-                  key={item}
-                  onClick={() => item === 'Nosotros' ? (window.location.href = '/nosotros') : setSelectedModel(item)}
-                  className="group flex items-center justify-between text-5xl sm:text-7xl md:text-8xl text-black font-black uppercase italic tracking-tighter hover:text-[#FFD700] transition-all duration-300 text-left border-none bg-transparent cursor-pointer"
-                >
-                  <span>{item}</span>
-                  <ChevronRight size={60} className="opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 transition-all duration-500 text-[#FFD700]" />
-                </button>
-              ))}
-            </div>
           ) : (
              <div className="pt-10">
                 <button 
