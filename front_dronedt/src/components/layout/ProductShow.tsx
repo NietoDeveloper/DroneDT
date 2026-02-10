@@ -33,22 +33,5 @@ const ProductShow = () => {
     return typeof category === 'string' ? category : "General";
   };
 
-  const fetchDrones = useCallback(async () => {
-    try {
-      setLoading(true);
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
-      
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-      
-      clearTimeout(timeoutId);
-
-      if (!response.ok) throw new Error("Server Error");
-      
-      const result = await response.json();
-      // Ajuste para la estructura de respuesta estándar { success: true, data: [...] }
-      const data = result.data || result;
-
 
 export default ProductShow;
