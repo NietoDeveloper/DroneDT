@@ -105,16 +105,7 @@ rand: "SOFTWARE DT"
   );
 
   return (
-    <section className="relative w-full bg-black overflow-hidden border-y border-white/5">
 
-
-      {/* Indicador Progressivo */}
-      <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center gap-4">
-        {products.map((_, index) => (
-
-        ))}
-      </div>
-    </section>
   );
 };
 
