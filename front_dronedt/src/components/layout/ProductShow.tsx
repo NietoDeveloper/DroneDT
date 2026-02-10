@@ -59,15 +59,7 @@ const ProductShow = () => {
       console.warn("Drone DT Engine: Usando Backup Data (DB Desconectada)");
       // Mock Data con la estética de Drone DT
       setProducts([
-
-        { 
-            _id: "m2", 
-            name: "AgriBot DT-10", 
-            description: "Fumigación de precisión.", 
-            price: 3800, 
-            images: [{ url: "https://images.unsplash.com/photo-1527142879024-c6c91aa9c5c9" }], 
-            category: "Agro", 
-            brand: "SOFTWARE DT" 
+rand: "SOFTWARE DT" 
         }
       ]);
     } finally {
