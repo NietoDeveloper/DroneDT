@@ -3,70 +3,75 @@
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// Optimizamos la carga dinámica para evitar Layout Shift
+// Optimizamos la carga dinámica con esqueletos de carga que respetan el diseño
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { 
   ssr: false,
-  loading: () => <div className="h-20 bg-black w-full" /> 
+  loading: () => <div className="h-20 bg-[#DCDCDC]/10 w-full fixed top-0 z-[100]" /> 
 });
 
 const Banner = dynamic(() => import("@/components/layout/Banner"), { 
   ssr: false,
-  loading: () => <div className="h-[90vh] bg-black w-full animate-pulse" />
+  loading: () => <div className="h-[90vh] bg-black w-full animate-pulse flex items-center justify-center">
+    <span className="text-white/10 font-black tracking-[1em] uppercase text-xs">Uplink System</span>
+  </div>
 });
 
 const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { 
   ssr: false,
-  loading: () => <div className="h-screen bg-black w-full" />
+  loading: () => <div className="h-screen bg-[#DCDCDC] w-full" />
 });
 
-const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
+const Footer = dynamic(() => import("@/components/layout/Footer"), { 
+  ssr: false,
+  loading: () => <div className="h-64 bg-black w-full" />
+});
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-[#FFD700] selection:text-black font-montserrat">
+    <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-[#FFD700] selection:text-black font-sans">
       <Navbar />
 
       <main className="flex flex-col w-full">
         
-        {/* SECCIÓN 1: BANNER HERO - Altura consistente con el componente interno */}
+        {/* SECCIÓN 1: BANNER HERO - Altura controlada para evitar saltos */}
         <section className="relative h-[90vh] w-full z-10 overflow-hidden bg-black">
           <Banner />
         </section>
 
-        {/* SECCIÓN CATÁLOGO */}
+        {/* SECCIÓN CATÁLOGO - Conexión directa al Backend */}
         <div className="relative z-20">
           <ProductShow />
         </div>
 
-        {/* SECCIÓN 2: SPECS Y BRANDING */}
+        {/* SECCIÓN 2: SPECS Y BRANDING INDUSTRIAL */}
         <section className="relative z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5">
           <div className="max-w-[1900px] mx-auto">
             
-            {/* GRID DE STATS - Estilo Industrial / High-Tech */}
+            {/* GRID DE STATS - Estilo Drone DT Elite */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 mb-24 py-16 lg:py-24 border-b border-white/5">
               <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
                 <h3 className="text-6xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
-                  4K <span className="text-[12px] not-italic text-white/30 tracking-[0.3em] block mt-2 uppercase font-bold">60 FPS PRO</span>
+                  4K <span className="text-[12px] not-italic text-[#FFD700] tracking-[0.3em] block mt-2 uppercase font-bold">60 FPS PRO</span>
                 </h3>
                 <p className="text-[10px] text-white/40 tracking-[0.5em] uppercase mt-6 font-bold">Ingeniería Óptica</p>
               </div>
               
               <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
                 <h3 className="text-6xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
-                  45 <span className="text-[12px] not-italic text-white/30 tracking-[0.3em] block mt-2 uppercase font-bold">MINUTOS</span>
+                  45 <span className="text-[12px] not-italic text-[#FFD700] tracking-[0.3em] block mt-2 uppercase font-bold">MINUTOS</span>
                 </h3>
                 <p className="text-[10px] text-white/40 tracking-[0.5em] uppercase mt-6 font-bold">Autonomía Real</p>
               </div>
 
               <div className="flex flex-col items-center text-center group px-8">
                 <h3 className="text-6xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
-                  10 <span className="text-[12px] not-italic text-white/30 tracking-[0.3em] block mt-2 uppercase font-bold">KM RANGO</span>
+                  10 <span className="text-[12px] not-italic text-[#FFD700] tracking-[0.3em] block mt-2 uppercase font-bold">KM RANGO</span>
                 </h3>
                 <p className="text-[10px] text-white/40 tracking-[0.5em] uppercase mt-6 font-bold">Transmisión O3</p>
               </div>
             </div>
 
-            {/* BRANDING CENTRAL */}
+            {/* BRANDING CENTRAL - Manuel Nieto Signature Style */}
             <div className="flex flex-col items-center text-center space-y-12 py-10">
               <div className="space-y-6">
                 <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[120px] font-black tracking-tighter uppercase leading-none">
@@ -101,7 +106,7 @@ export default function Home() {
 
           </div>
 
-          {/* EFECTOS DE FONDO (Glow y Noise) */}
+          {/* EFECTOS DE FONDO (Glow y Noise) - Identidad Visual Drone DT */}
           <div className="absolute inset-0 z-[-1] pointer-events-none overflow-hidden">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[1000px] bg-[#FFD700]/5 blur-[180px] rounded-full opacity-50" />
               <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
