@@ -111,13 +111,7 @@ rand: "SOFTWARE DT"
       {/* Indicador Progressivo */}
       <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center gap-4">
         {products.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => scrollToId(index)}
-            className={`h-[3px] transition-all duration-500 ${
-              activeIndex === index ? "w-12 bg-[#FFD700]" : "w-4 bg-white/20"
-            }`}
-          />
+
         ))}
       </div>
     </section>
