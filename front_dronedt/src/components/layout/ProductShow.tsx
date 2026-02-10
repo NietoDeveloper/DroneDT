@@ -91,15 +91,6 @@ rand: "SOFTWARE DT"
     return () => clearInterval(interval);
   }, [products.length, loading, activeIndex, scrollToId]);
 
-  const handleScroll = () => {
-    if (scrollRef.current) {
-      const { scrollLeft, offsetWidth } = scrollRef.current;
-      const index = Math.round(scrollLeft / offsetWidth);
-      if (index !== activeIndex && index >= 0 && index < products.length) {
-        setActiveIndex(index);
-      }
-    }
-  };
 
   if (loading) return (
     <div className="h-[85vh] w-full flex flex-col items-center justify-center bg-[#DCDCDC]">
