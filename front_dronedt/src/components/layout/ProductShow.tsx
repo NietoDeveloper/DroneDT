@@ -119,11 +119,6 @@ rand: "SOFTWARE DT"
           >
             {/* Background con Overlay Cinematográfico */}
             <div className="absolute inset-0 z-0">
-              <img 
-                src={getImageUrl(item)} 
-                alt={item.name} 
-                className="w-full h-full object-cover opacity-50 grayscale-[30%] hover:grayscale-0 transition-all duration-1000"
-              />
               <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
             </div>
 
