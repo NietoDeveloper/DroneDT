@@ -3,45 +3,28 @@
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// Optimizamos la carga dinámica con esqueletos de carga que respetan el diseño
-const Navbar = dynamic(() => import("@/components/layout/Navbar"), { 
-  ssr: false,
-  loading: () => <div className="h-20 bg-[#DCDCDC]/10 w-full fixed top-0 z-[100]" /> 
-});
-
-const Banner = dynamic(() => import("@/components/layout/Banner"), { 
-  ssr: false,
-  loading: () => <div className="h-[90vh] bg-black w-full animate-pulse flex items-center justify-center">
-    <span className="text-white/10 font-black tracking-[1em] uppercase text-xs">Uplink System</span>
-  </div>
-});
-
-const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { 
-  ssr: false,
-  loading: () => <div className="h-screen bg-[#DCDCDC] w-full" />
-});
-
-const Footer = dynamic(() => import("@/components/layout/Footer"), { 
-  ssr: false,
-  loading: () => <div className="h-64 bg-black w-full" />
-});
+// Cargamos dinámicamente pero sin esqueletos pesados, ya que el Preloader global cubre la carga inicial
+const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
+const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
+const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { ssr: false });
+const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-[#FFD700] selection:text-black font-sans">
+    <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-[#FFD700] selection:text-black">
       <Navbar />
 
       <main className="flex flex-col w-full">
         
-        {/* SECCIÓN 1: BANNER HERO - Altura controlada para evitar saltos */}
-        <section className="relative h-[90vh] w-full z-10 overflow-hidden bg-black">
+        {/* SECCIÓN 1: BANNER HERO - Impacto Visual Inmediato */}
+        <section className="relative h-screen w-full z-10 overflow-hidden bg-black">
           <Banner />
         </section>
 
-        {/* SECCIÓN CATÁLOGO - Conexión directa al Backend */}
-        <div className="relative z-20">
+        {/* SECCIÓN CATÁLOGO - Elevamos el Z-Index para asegurar visibilidad */}
+        <section id="catalog" className="relative z-30 bg-white">
           <ProductShow />
-        </div>
+        </section>
 
         {/* SECCIÓN 2: SPECS Y BRANDING INDUSTRIAL */}
         <section className="relative z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5">
@@ -71,7 +54,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* BRANDING CENTRAL - Manuel Nieto Signature Style */}
+            {/* BRANDING CENTRAL */}
             <div className="flex flex-col items-center text-center space-y-12 py-10">
               <div className="space-y-6">
                 <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[120px] font-black tracking-tighter uppercase leading-none">
@@ -90,7 +73,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-6 w-full max-w-xl pt-10">
                 <Link
                   href="/shop"
-                  className="flex-1 h-16 flex items-center justify-center rounded-[4px] bg-[#FFD700] text-black text-[12px] font-black tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white hover:scale-[1.05] active:scale-95 shadow-[0_0_30px_rgba(255,215,0,0.2)]"
+                  className="flex-1 h-16 flex items-center justify-center rounded-[4px] bg-[#FFD700] text-black text-[12px] font-black tracking-[0.2em] uppercase transition-all duration-300 hover:bg-white hover:scale-[1.05] active:scale-95 shadow-[0_0_30px_rgba(255,215,0,0.3)]"
                 >
                   Explorar Tienda
                 </Link>
@@ -103,13 +86,11 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-
           </div>
 
-          {/* EFECTOS DE FONDO (Glow y Noise) - Identidad Visual Drone DT */}
+          {/* EFECTOS DE FONDO */}
           <div className="absolute inset-0 z-[-1] pointer-events-none overflow-hidden">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[1000px] bg-[#FFD700]/5 blur-[180px] rounded-full opacity-50" />
-              <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
           </div>
         </section>
       </main>
