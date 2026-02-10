@@ -5,15 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { X, ChevronRight, Circle } from 'lucide-react';
 
-interface MenuItem {
-  id: string;
-  _id?: string;
-  name: string;
-  price?: string;
-  desc?: string;
-  img: string;
-  category?: string;
-}
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
