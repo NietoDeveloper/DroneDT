@@ -1,9 +1,7 @@
-"use client";
-
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// Cargamos dinámicamente pero sin esqueletos pesados, ya que el Preloader global cubre la carga inicial
+// Mantenemos Server Component. El dinamismo (SSR: false) ya gestiona el entorno cliente para los hijos.
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
 const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { ssr: false });
@@ -21,7 +19,7 @@ export default function Home() {
           <Banner />
         </section>
 
-        {/* SECCIÓN CATÁLOGO - Elevamos el Z-Index para asegurar visibilidad */}
+        {/* SECCIÓN CATÁLOGO - Elevamos el Z-Index para asegurar visibilidad sobre el fondo */}
         <section id="catalog" className="relative z-30 bg-white">
           <ProductShow />
         </section>
