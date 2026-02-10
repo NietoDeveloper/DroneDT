@@ -122,17 +122,6 @@ rand: "SOFTWARE DT"
               <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
             </div>
 
-            {/* Info Section */}
-            <div className="relative z-10 text-center px-6">
-
-              <h2 className="text-white font-black text-[clamp(40px,8vw,100px)] tracking-tighter leading-[0.85] mb-4 uppercase italic">
-                {item.name}
-              </h2>
-              <div className="h-[2px] w-16 bg-[#FFD700] mx-auto mb-6"></div>
-              <p className="text-white/50 font-mono text-[11px] tracking-[0.3em] uppercase max-w-md mx-auto">
-                {item.description}
-              </p>
-            </div>
 
             {/* Buttons - Software DT Style */}
             <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-[90%] max-w-[600px] mb-8">
