@@ -35,54 +35,6 @@ const Navbar = () => {
       return;
     }
 
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-      const response = await fetch(`${apiUrl}/products/menu`, {
-        signal: controller.signal,
-        cache: 'no-store'
-      });
-      
-      clearTimeout(timeoutId);
-
-      if (!response.ok) throw new Error('Error de conexión con la flota');
-
-      const data = await response.json();
-
-      const categorized: Record<string, MenuItem[]> = { Modelos: [], Accesorios: [], Flota: [] };
-      const productsArray = Array.isArray(data) ? data : (data.products || []);
-
-
-      setMenuContent(categorized);
-    } catch (error) {
-      console.error("❌ Error en el Uplink de Drone DT:", error);
-    } finally {
-      setTimeout(() => setLoading(false), 1200);
-    }
-  }, []);
-
-  useEffect(() => {
-    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-    if (token) setIsLogged(true);
-
-    fetchMenuData();
-
-    const handleScroll = () => setIsScrolled(window.scrollY > 30);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [fetchMenuData]);
-
-
-  const Logo = () => (
-    <Link href="/" className="group flex flex-col items-start outline-none">
-      <div className="flex items-baseline transition-all duration-300 group-hover:scale-105">
-        <span className="text-xl sm:text-2xl font-black tracking-widest text-[#0000FF] italic">Drone</span>
-        <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-1 text-[#FFD700]">DT</span>
-      </div>
-      <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-black/40 group-hover:text-[#FFD700] transition-colors">Colombia</span>
-    </Link>
-  );
 
   if (loading) return (
     <div className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[#DCDCDC]">
