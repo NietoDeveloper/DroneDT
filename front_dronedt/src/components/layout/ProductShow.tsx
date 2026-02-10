@@ -124,11 +124,7 @@ rand: "SOFTWARE DT"
 
             {/* Info Section */}
             <div className="relative z-10 text-center px-6">
-              <div className="overflow-hidden mb-2">
-                <span className="text-[#FFD700] font-bold text-[10px] tracking-[0.5em] uppercase block">
-                  {getCategoryName(item.category)}
-                </span>
-              </div>
+
               <h2 className="text-white font-black text-[clamp(40px,8vw,100px)] tracking-tighter leading-[0.85] mb-4 uppercase italic">
                 {item.name}
               </h2>
