@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
-import Preloader from "@/components/Preloader"; // <--- Asegúrate de crear este archivo
+import Preloader from "@/components/Preloader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +25,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://drone-dt.vercel.app"), // FIX: Elimina el warning de Vercel
+  metadataBase: new URL("https://drone-dt.vercel.app"),
   title: {
     default: "DRONE DT | Ingeniería Aeroespacial & Tecnología Autónoma",
     template: "%s | DRONE DT"
@@ -35,18 +35,22 @@ export const metadata: Metadata = {
   authors: [{ name: "Manuel Nieto", url: "https://github.com/NietoDeveloper" }],
   creator: "NietoDeveloper",
   publisher: "Software DT",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     locale: "es_CO",
     url: "https://drone-dt.vercel.app",
     title: "DRONE DT | Tecnología Aérea Avanzada",
     siteName: "DRONE DT",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Drone DT Industrial" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "DRONE DT | Ingeniería Aeroespacial",
     creator: "@NietoDeveloper",
+    images: ["/og-image.png"],
   },
 };
 
@@ -76,15 +80,18 @@ export default function RootLayout({
         {/* SISTEMA DE CARGA AEROESPACIAL */}
         <Preloader />
 
-        <div className="fixed inset-0 pointer-events-none z-[9999] opacity-[0.02] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        {/* TEXTURA DE RUIDO INDUSTRIAL - Z-Index bajo para no bloquear clicks */}
+        <div className="fixed inset-0 pointer-events-none z-[1] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         
-        <main className="flex-grow w-full relative flex flex-col">
+        <main className="flex-grow w-full relative flex flex-col z-10">
           {children}
         </main>
 
+        {/* ESTILOS GLOBALES DE UTILIDAD */}
         <style dangerouslySetInnerHTML={{ __html: `
           .no-scrollbar::-webkit-scrollbar { display: none; }
           .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+          ::selection { background: #FFD700; color: #000000; }
         `}} />
       </body>
     </html>
