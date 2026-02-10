@@ -38,39 +38,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-md py-2' : 'bg-transparent py-4'}`}>
-        <div className="max-w-[1900px] mx-auto flex justify-between items-center px-6 sm:px-10">
-          <div className="flex items-center gap-6 flex-1">
-            <Logo />
-            <div className="flex items-center gap-2">
-              {/* Ajuste: Usando #FFD700 para consistencia con Software DT */}
-              <Circle size={8} fill={isLogged ? "#FFD700" : "transparent"} className={`${isLogged ? 'text-[#FFD700] animate-pulse' : 'text-black/10'} hidden sm:block`} />
-              {isLogged && <span className="text-[10px] font-bold text-[#FFD700] uppercase tracking-tighter hidden md:block font-mono">System Online</span>}
-            </div>
-          </div>
-
-          <div className="hidden lg:flex items-center gap-2">
-            {['Modelos', 'Accesorios', 'Flota'].map((item) => (
-              <button
-                key={item}
-                onClick={() => { setSelectedModel(item); setMenuOpen(true); }}
-                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest transition-all duration-300 hover:text-[#FFD700] hover:-translate-y-1 bg-transparent cursor-pointer border-none"
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-
-          <div className="flex items-center justify-end gap-4 flex-1">
-            <button 
-              onClick={() => setMenuOpen(true)}
-              className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full transition-all duration-300 hover:bg-[#FFD700] hover:text-black hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.4)] cursor-pointer border-none"
-            >
-              Menú
-            </button>
-          </div>
-        </div>
-      </nav>
+      
 
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-50">
