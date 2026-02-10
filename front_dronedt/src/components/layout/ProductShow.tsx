@@ -8,17 +8,5 @@ interface Category {
   name: string;
 }
 
-interface Product {
-  _id: string;
-  name: string;
-  brand?: string;
-  description: string;
-  price: number;
-  imageUrl?: string; // Prioridad para rendimiento
-  images: { url: string; public_id?: string }[]; 
-  category: string | Category;
-}
-
-
 
 export default ProductShow;
