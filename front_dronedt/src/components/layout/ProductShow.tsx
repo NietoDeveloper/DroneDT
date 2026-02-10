@@ -106,41 +106,7 @@ rand: "SOFTWARE DT"
 
   return (
     <section className="relative w-full bg-black overflow-hidden border-y border-white/5">
-      <div 
-        ref={scrollRef}
-        onScroll={handleScroll}
-        className="flex flex-row overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
-        {products.map((item) => (
-          <div 
-            key={item._id} 
-            className="relative h-[85vh] min-h-[600px] w-full flex-shrink-0 flex flex-col items-center justify-between py-16 snap-center"
-          >
-            {/* Background con Overlay Cinematográfico */}
-            <div className="absolute inset-0 z-0">
-              <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
-            </div>
 
-
-            {/* Buttons - Software DT Style */}
-            <div className="relative z-10 flex flex-col sm:flex-row gap-4 w-[90%] max-w-[600px] mb-8">
-              <button 
-                onClick={() => router.push(`/shop/product/${item._id}`)}
-                className="flex-[2] py-5 bg-[#FFD700] text-black font-black text-xs uppercase tracking-[0.2em] hover:bg-white transition-all transform hover:translate-y-[-2px] active:scale-95"
-              >
-                Configurar Unidad
-              </button>
-              <button 
-                onClick={() => router.push(`/shop/product/${item._id}`)}
-                className="flex-1 py-5 bg-white/5 backdrop-blur-md text-white border border-white/20 font-black text-[10px] uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all"
-              >
-                Specs
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
 
       {/* Indicador Progressivo */}
       <div className="absolute bottom-10 left-0 right-0 z-20 flex justify-center gap-4">
