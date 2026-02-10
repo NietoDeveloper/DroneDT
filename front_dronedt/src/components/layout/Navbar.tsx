@@ -39,24 +39,6 @@ const Navbar = () => {
   return (
     <>
       
-
-                              src={product.img} 
-                              alt={product.name} 
-                              fill
-                              sizes="(max-width: 768px) 100vw, 33vw"
-                              className="object-cover group-hover:scale-110 transition-transform duration-700" 
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#FFD700]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                         </div>
-                         
-                         <div className="space-y-2">
-                           <h4 className="font-black text-2xl uppercase italic leading-tight group-hover:text-[#FFD700] transition-colors duration-300">
-                             {product.name}
-                           </h4>
-                           <div className="flex justify-between items-end">
-                             <p className="text-[14px] font-black text-[#FFD700] tracking-widest uppercase bg-black px-3 py-1 rounded-sm">
-                               {product.price}
-                             </p>
                              <div className="w-10 h-10 rounded-full border border-[#0000FF] flex items-center justify-center group-hover:bg-[#FFD700] group-hover:border-[#FFD700] transition-all duration-300">
                                <ChevronRight size={20} className="text-[#0000FF] group-hover:text-black transition-colors" />
                              </div>
