@@ -40,18 +40,7 @@ const Navbar = () => {
     <>
       
 
-      <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
-        <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-50">
-          <div className="opacity-40">
-              <span className="text-black font-black tracking-tighter text-xl italic uppercase font-sans">Uplink Selection</span>
-          </div>
-          <button 
-            onClick={() => {setMenuOpen(false); setSelectedModel(null)}} 
-            className="p-2 text-[#0000FF] transition-all duration-300 hover:text-[#FFD700] hover:scale-110 hover:rotate-90 cursor-pointer outline-none bg-transparent border-none"
-          >
-            <X size={35} strokeWidth={3} />
-          </button>
-        </div>
+      
         
         <div className="flex-1 overflow-y-auto px-6 sm:px-10 w-full max-w-[1800px] mx-auto flex flex-col">
           {!selectedModel ? (
