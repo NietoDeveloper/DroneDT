@@ -19,19 +19,6 @@ interface Product {
   category: string | Category;
 }
 
-const ProductShow = () => {
-  const [products, setProducts] = useState<Product[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
-
-
-
-  const getCategoryName = (category: string | Category) => {
-    if (typeof category === 'object' && category !== null) return category.name;
-    return typeof category === 'string' ? category : "General";
-  };
 
 
 export default ProductShow;
