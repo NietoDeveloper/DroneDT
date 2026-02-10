@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { X, ChevronRight, Circle, Drone } from 'lucide-react'; // Importamos Drone
+import { X, ChevronRight, Circle } from 'lucide-react'; 
 
 interface MenuItem {
   id: string;
@@ -100,18 +100,37 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
-  // LOGO ACTUALIZADO CON LA FIGURA DEL DRONE
+  // LOGO ACTUALIZADO: SVG Custom con hélices animadas
   const Logo = () => (
     <Link href="/" className="group flex items-center gap-3 outline-none">
       <div className="relative flex items-center justify-center">
-        {/* Icono de Drone animado */}
-        <Drone 
-          size={isScrolled ? 28 : 34} 
-          className="text-[#FFD700] transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-110" 
-          strokeWidth={2.5}
-        />
-        {/* Efecto de propulsión sutil */}
-        <div className="absolute -bottom-1 w-4 h-1 bg-[#0000FF]/20 blur-sm rounded-full group-hover:bg-[#0000FF]/40 transition-all" />
+        <svg 
+          width={isScrolled ? "30" : "36"} 
+          height={isScrolled ? "30" : "36"} 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          stroke="#FFD700" 
+          strokeWidth="2.5" 
+          strokeLinecap="round" 
+          strokeLinejoin="round" 
+          className="transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-110 z-10"
+        >
+          <path d="M12 10V4" />
+          {/* Hélices superiores con animación de rotación */}
+          <path d="m17 2 3 3" className="animate-[pulse_0.5s_infinite]" />
+          <path d="m7 2-3 3" className="animate-[pulse_0.4s_infinite]" />
+          <path d="M2 10h20" />
+          <path d="m22 10-3 3" />
+          <path d="m2 10 3 3" />
+          <path d="M12 10v12" />
+          {/* Hélices inferiores */}
+          <path d="m17 22 3-3" className="animate-[pulse_0.6s_infinite]" />
+          <path d="m7 22-3-3" className="animate-[pulse_0.3s_infinite]" />
+          <circle cx="12" cy="10" r="2" fill="#0000FF" stroke="none" />
+        </svg>
+        
+        {/* Resplandor de motor */}
+        <div className="absolute inset-0 bg-[#FFD700]/10 blur-md rounded-full group-hover:bg-[#FFD700]/30 transition-all scale-150" />
       </div>
       
       <div className="flex flex-col items-start leading-none">
@@ -173,6 +192,7 @@ const Navbar = () => {
         </div>
       </nav>
 
+      {/* Menu Overlay */}
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-50">
           <div className="opacity-40">
