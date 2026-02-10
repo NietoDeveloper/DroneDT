@@ -41,10 +41,6 @@ const ProductShow = () => {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 5000);
 
-      const response = await fetch(`${apiUrl}/products`, { 
-        signal: controller.signal,
-        cache: 'no-store' 
-      });
       
       clearTimeout(timeoutId);
 
