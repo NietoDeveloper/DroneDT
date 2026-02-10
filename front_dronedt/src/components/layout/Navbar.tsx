@@ -53,13 +53,6 @@ const Navbar = () => {
       const categorized: Record<string, MenuItem[]> = { Modelos: [], Accesorios: [], Flota: [] };
       const productsArray = Array.isArray(data) ? data : (data.products || []);
 
-      productsArray.forEach((item: any) => {
-        const rawCat = (item.category || 'drone').toLowerCase();
-        const targetCat = categoryMap[rawCat] || 'Modelos';
-
-        if (!categorized[targetCat]) categorized[targetCat] = [];
-
-      });
 
       setMenuContent(categorized);
     } catch (error) {
