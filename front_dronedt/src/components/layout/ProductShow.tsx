@@ -17,11 +17,17 @@ const ProductShow = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchDrones = useCallback(async () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api/v1';
+    // Intentar usar 127.0.0.1 para evitar problemas de resolución de localhost en Windows
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000/api/v1';
+    
     try {
       const response = await fetch(`${apiUrl}/products?category=drone`, { 
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
         next: { revalidate: 60 } 
       });
+      
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       
       const result = await response.json();
       const productsArray = result.data || result;
@@ -37,7 +43,8 @@ const ProductShow = () => {
         setDrones(formatted);
       }
     } catch (error) {
-      console.error("Fetch error:", error);
+      // Log detallado para diagnóstico pero permitimos que loading termine
+      console.error("❌ ProductShow Fetch Error:", error);
     } finally {
       setLoading(false);
     }
@@ -55,11 +62,11 @@ const ProductShow = () => {
     );
   }
 
+  // Si no hay drones por error de fetch, el componente no renderiza nada en lugar de romperse
   if (drones.length === 0) return null;
 
   return (
     <section className="relative w-full h-screen bg-white overflow-hidden">
-      {/* Contenedor Scroll Horizontal Estilo Tesla */}
       <div 
         className="flex h-full overflow-x-auto snap-x snap-mandatory scroll-smooth" 
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -69,7 +76,6 @@ const ProductShow = () => {
             key={drone.id} 
             className="relative flex-none w-full h-full snap-center flex flex-col items-center justify-between py-24"
           >
-            {/* Texto Superior */}
             <div className="z-20 text-center space-y-2">
               <h2 className="text-5xl md:text-7xl font-bold text-black tracking-tight uppercase">
                 {drone.name}
@@ -79,7 +85,6 @@ const ProductShow = () => {
               </p>
             </div>
 
-            {/* Imagen Central */}
             <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
               <div className="relative w-full h-[65%] max-w-6xl">
                 <Image 
@@ -92,7 +97,6 @@ const ProductShow = () => {
               </div>
             </div>
 
-            {/* Botones Inferiores Estilo Model Y */}
             <div className="z-20 w-full flex flex-col md:flex-row items-center justify-center gap-4 px-6">
               <Link
                 href={`/shop/product/${drone.id}`}
@@ -111,7 +115,6 @@ const ProductShow = () => {
         ))}
       </div>
 
-      {/* Indicadores de posición */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-30">
         {drones.map((_, idx) => (
           <div key={idx} className="w-2 h-2 rounded-full bg-black/10" />
