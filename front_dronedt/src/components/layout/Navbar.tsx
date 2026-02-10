@@ -59,14 +59,6 @@ const Navbar = () => {
 
         if (!categorized[targetCat]) categorized[targetCat] = [];
 
-        categorized[targetCat].push({
-          id: item._id || item.id,
-          name: item.name,
-          price: item.price ? `$${item.price.toLocaleString()}` : 'Elite Spec',
-          img: item.images?.[0] || item.img || '/placeholder-drone.png',
-          desc: item.description || item.desc,
-          category: targetCat
-        });
       });
 
       setMenuContent(categorized);
