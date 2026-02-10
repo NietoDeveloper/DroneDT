@@ -59,15 +59,7 @@ const ProductShow = () => {
       console.warn("Drone DT Engine: Usando Backup Data (DB Desconectada)");
       // Mock Data con la estética de Drone DT
       setProducts([
-        { 
-            _id: "m1", 
-            name: "Phantom DT-Max", 
-            description: "Inspección térmica avanzada.", 
-            price: 2500, 
-            images: [{ url: "https://images.unsplash.com/photo-1507582020474-9a35b7d455d9" }], 
-            category: "Industrial", 
-            brand: "SOFTWARE DT" 
-        },
+
         { 
             _id: "m2", 
             name: "AgriBot DT-10", 
