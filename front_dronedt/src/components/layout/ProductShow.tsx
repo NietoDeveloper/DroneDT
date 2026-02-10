@@ -72,41 +72,6 @@ rand: "SOFTWARE DT"
     fetchDrones();
   }, [fetchDrones]);
 
-  const scrollToId = useCallback((index: number) => {
-    if (scrollRef.current) {
-      const container = scrollRef.current;
-      const itemWidth = container.offsetWidth;
-      container.scrollTo({ left: index * itemWidth, behavior: 'smooth' });
-      setActiveIndex(index);
-    }
-  }, []);
 
-  // Auto-scroll cada 6 segundos
-  useEffect(() => {
-    if (products.length <= 1 || loading) return;
-    const interval = setInterval(() => {
-      const nextIndex = (activeIndex + 1) % products.length;
-      scrollToId(nextIndex);
-    }, 6000); 
-    return () => clearInterval(interval);
-  }, [products.length, loading, activeIndex, scrollToId]);
-
-
-  if (loading) return (
-    <div className="h-[85vh] w-full flex flex-col items-center justify-center bg-[#DCDCDC]">
-      <div className="relative flex flex-col items-center">
-        {/* Loader Gold de Software DT */}
-        <div className="w-16 h-16 border-4 border-black/10 border-t-[#FFD700] rounded-full animate-spin mb-6"></div>
-        <h3 className="font-black text-black tracking-[0.3em] text-[11px] uppercase animate-pulse">
-          Accediendo a Cluster Assets
-        </h3>
-      </div>
-    </div>
-  );
-
-  return (
-
-  );
-};
 
 export default ProductShow;
