@@ -316,3 +316,5 @@ All rights reserved © 2025 Manuel Nieto
 **Built with precision and passion by NietoDeveloper** 🚀
 
 ## *Empowering Colombia's drone industry through world-class software engineering*
+
+### 2026
