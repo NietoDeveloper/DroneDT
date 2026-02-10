@@ -14,17 +14,19 @@ interface Drone {
 
 const ProductShow = () => {
   const [drones, setDrones] = useState<Drone[]>([]);
-  const [loading, setLoading] = useState(true);
+  // Eliminamos el spinner interno para no chocar con tu nuevo Preloader de Drone
 
   const fetchDrones = useCallback(async () => {
-    // Intentar usar 127.0.0.1 para evitar problemas de resolución de localhost en Windows
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000/api/v1';
+    // Detectamos si estamos en Vercel o Local
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const apiUrl = isLocal 
+      ? 'http://127.0.0.1:5000/api/v1' 
+      : process.env.NEXT_PUBLIC_API_URL;
     
     try {
       const response = await fetch(`${apiUrl}/products?category=drone`, { 
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
-        next: { revalidate: 60 } 
+        headers: { 'Content-Type': 'application/json' }
       });
       
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -38,15 +40,12 @@ const ProductShow = () => {
           name: item.name,
           price: item.price ? `Desde $${item.price.toLocaleString()}` : 'Contactar Ventas',
           tag: item.category?.name || 'Pro Series',
-          img: item.imageUrl || (item.images?.[0]?.url || item.images?.[0] || '/placeholder.png')
+          img: item.imageUrl || (item.images?.[0]?.url || item.images?.[0] || '/drone-placeholder.png')
         }));
         setDrones(formatted);
       }
     } catch (error) {
-      // Log detallado para diagnóstico pero permitimos que loading termine
       console.error("❌ ProductShow Fetch Error:", error);
-    } finally {
-      setLoading(false);
     }
   }, []);
 
@@ -54,70 +53,76 @@ const ProductShow = () => {
     fetchDrones();
   }, [fetchDrones]);
 
-  if (loading) {
-    return (
-      <div className="h-screen w-full bg-white flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-black border-t-[#FFD700] rounded-full animate-spin"></div>
-      </div>
-    );
-  }
-
-  // Si no hay drones por error de fetch, el componente no renderiza nada en lugar de romperse
-  if (drones.length === 0) return null;
+  // Si aún no hay drones, retornamos un espacio vacío del tamaño de la pantalla
+  // Esto evita que el footer suba mientras el Preloader está activo
+  if (drones.length === 0) return <div className="h-screen bg-white" />;
 
   return (
     <section className="relative w-full h-screen bg-white overflow-hidden">
+      {/* Container de Scroll Vertical Snap (Estilo Tesla Reel) */}
       <div 
-        className="flex h-full overflow-x-auto snap-x snap-mandatory scroll-smooth" 
+        className="h-full overflow-y-auto snap-y snap-mandatory scroll-smooth" 
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {drones.map((drone) => (
           <div 
             key={drone.id} 
-            className="relative flex-none w-full h-full snap-center flex flex-col items-center justify-between py-24"
+            className="relative flex-none w-full h-screen snap-start flex flex-col items-center justify-between py-24 px-4"
           >
-            <div className="z-20 text-center space-y-2">
-              <h2 className="text-5xl md:text-7xl font-bold text-black tracking-tight uppercase">
+            {/* Cabecera del Producto */}
+            <div className="z-20 text-center space-y-2 mt-10">
+              <h2 className="text-5xl md:text-7xl font-black text-black tracking-tighter uppercase">
                 {drone.name}
               </h2>
-              <p className="text-lg font-medium text-black/70 border-b border-black w-fit mx-auto pb-1">
+              <p className="text-sm md:text-lg font-medium text-zinc-600 tracking-widest uppercase">
                 {drone.price}
               </p>
             </div>
 
-            <div className="absolute inset-0 z-10 flex items-center justify-center px-4">
-              <div className="relative w-full h-[65%] max-w-6xl">
+            {/* Imagen Central - Optimizada para no romperse */}
+            <div className="absolute inset-0 z-10 flex items-center justify-center p-6">
+              <div className="relative w-full h-[60%] max-w-5xl transition-transform duration-700 hover:scale-105">
                 <Image 
                   src={drone.img} 
                   alt={drone.name} 
                   fill 
                   className="object-contain"
                   priority
+                  sizes="(max-width: 1200px) 100vw, 1200px"
                 />
               </div>
             </div>
 
-            <div className="z-20 w-full flex flex-col md:flex-row items-center justify-center gap-4 px-6">
+            {/* Acciones Inferiores */}
+            <div className="z-20 w-full flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
               <Link
                 href={`/shop/product/${drone.id}`}
-                className="w-full max-w-[280px] h-12 flex items-center justify-center bg-[#171A20CC] backdrop-blur-sm text-white rounded-md text-[12px] font-bold uppercase tracking-widest hover:bg-black transition-all"
+                className="w-full max-w-[280px] h-10 flex items-center justify-center bg-zinc-900/90 backdrop-blur-md text-white rounded-[4px] text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-black transition-all duration-300"
               >
-                Order Now
+                Ordenar Ahora
               </Link>
               <Link
                 href="/services"
-                className="w-full max-w-[280px] h-12 flex items-center justify-center bg-[#F4F4F4A6] backdrop-blur-sm text-[#393C41] rounded-md text-[12px] font-bold uppercase tracking-widest hover:bg-white transition-all"
+                className="w-full max-w-[280px] h-10 flex items-center justify-center bg-white/70 backdrop-blur-md text-zinc-900 border border-zinc-200 rounded-[4px] text-[11px] font-bold uppercase tracking-[0.2em] hover:bg-white transition-all duration-300"
               >
-                Learn More
+                Especificaciones
               </Link>
+            </div>
+
+            {/* Indicador de "Scroll Down" en la primera tarjeta */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="black" strokeWidth="2">
+                  <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+               </svg>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-30">
+      {/* Indicadores Laterales de Página (Dots) */}
+      <div className="absolute right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-30 hidden md:flex">
         {drones.map((_, idx) => (
-          <div key={idx} className="w-2 h-2 rounded-full bg-black/10" />
+          <div key={idx} className="w-1.5 h-1.5 rounded-full bg-black/20" />
         ))}
       </div>
     </section>
