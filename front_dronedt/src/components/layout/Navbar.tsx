@@ -40,24 +40,6 @@ const Navbar = () => {
     <>
       
 
-          ) : (
-             <div className="pt-10">
-                <button 
-                  onClick={() => setSelectedModel(null)}
-                  className="mb-8 text-[#0000FF] font-black uppercase tracking-[0.3em] flex items-center gap-2 hover:text-[#FFD700] transition-all border-none bg-transparent cursor-pointer"
-                >
-                  ← Volver al Menú
-                </button>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-20">
-                    {menuContent[selectedModel]?.map((product) => (
-                      <Link 
-                        href={`/shop/product/${product.id}`}
-                        key={product.id} 
-                        onClick={() => setMenuOpen(false)}
-                        className="group relative bg-white p-4 rounded-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_-15px_rgba(255,215,0,0.3)] border border-transparent hover:border-[#FFD700]/60"
-                      >
-                         <div className="aspect-square bg-[#DCDCDC] overflow-hidden rounded-lg mb-6 border border-black/5 relative shadow-inner">
-                            <Image 
                               src={product.img} 
                               alt={product.name} 
                               fill
