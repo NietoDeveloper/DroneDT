@@ -26,12 +26,7 @@ const ProductShow = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
-  // Helper para extraer la imagen de forma segura
-  const getImageUrl = (product: Product) => {
-    if (product.imageUrl) return product.imageUrl;
-    if (product.images && product.images.length > 0) return product.images[0].url;
-    return "/placeholder-drone.jpg";
-  };
+
 
   const getCategoryName = (category: string | Category) => {
     if (typeof category === 'object' && category !== null) return category.name;
