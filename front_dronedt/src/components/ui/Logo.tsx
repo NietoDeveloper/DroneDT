@@ -13,7 +13,7 @@ const Logo = ({ className = "", iconSize = 28 }: LogoProps) => {
       href="/" 
       className={`flex items-center gap-2 group transition-all ${className} outline-none`}
     >
-      {/* Icono de Drone Manual (SVG Puro para evitar errores de Lucide) */}
+      {/* Icono de Drone DT - Ingeniería de Precisión */}
       <div className="relative flex items-center justify-center">
         <svg 
           width={iconSize} 
@@ -21,11 +21,12 @@ const Logo = ({ className = "", iconSize = 28 }: LogoProps) => {
           viewBox="0 0 24 24" 
           fill="none" 
           stroke="#FFD700" 
-          strokeWidth="2.5" 
+          strokeWidth="2.2" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
           className="transition-transform duration-500 group-hover:rotate-[15deg] group-hover:scale-110 z-10"
         >
+          {/* Hélices y Chasis */}
           <path d="M12 10V4" />
           <path d="m17 2 3 3" />
           <path d="m7 2-3 3" />
@@ -35,20 +36,26 @@ const Logo = ({ className = "", iconSize = 28 }: LogoProps) => {
           <path d="M12 10v12" />
           <path d="m17 22 3-3" />
           <path d="m7 22-3-3" />
-          <circle cx="12" cy="10" r="2" fill="#0000FF" stroke="none" />
+          {/* Núcleo Central - Cambiado de azul a un punto de poder blanco/dorado */}
+          <circle cx="12" cy="10" r="2" fill="#FFD700" className="group-hover:fill-white transition-colors" />
         </svg>
         
-        {/* Resplandor sutil con los colores del branding */}
+        {/* Glow de Motor Autónomo */}
         <div className="absolute inset-0 bg-[#FFD700]/20 blur-md rounded-full group-hover:bg-[#FFD700]/40 transition-all scale-150" />
       </div>
 
-      {/* Texto de la Marca - Estilo Software DT */}
+      {/* Texto de la Marca - Drone DT Elite Style */}
       <div className="flex flex-col items-start leading-none">
         <div className="flex items-baseline">
-          <span className="text-xl sm:text-2xl font-black tracking-tight text-[#0000FF] italic">Drone</span>
+          <span className="text-xl sm:text-2xl font-black tracking-tight text-white italic">DRONE</span>
           <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-0.5 text-[#FFD700]">DT</span>
         </div>
-        <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-black/40 group-hover:text-[#0000FF] transition-colors">Colombia</span>
+        <div className="flex items-center gap-1.5">
+          <span className="h-[1px] w-3 bg-[#FFD700]/40"></span>
+          <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-white/50 group-hover:text-[#FFD700] transition-colors">
+            Colombia
+          </span>
+        </div>
       </div>
     </Link>
   );

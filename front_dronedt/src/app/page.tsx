@@ -1,7 +1,9 @@
+"use client";
+
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// Mantenemos Server Component. El dinamismo (SSR: false) ya gestiona el entorno cliente para los hijos.
+// En Next.js App Router, para usar ssr: false, el componente padre DEBE ser "use client"
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
 const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { ssr: false });
