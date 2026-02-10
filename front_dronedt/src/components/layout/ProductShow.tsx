@@ -49,18 +49,6 @@ const ProductShow = () => {
       const result = await response.json();
       // Ajuste para la estructura de respuesta estándar { success: true, data: [...] }
       const data = result.data || result;
-      
-      if (!Array.isArray(data) || data.length === 0) {
-        throw new Error("Empty Storage");
-      }
-
-      setProducts(data);
-    } catch (error) {
-      console.warn("Drone DT Engine: Usando Backup Data (DB Desconectada)");
-      // Mock Data con la estética de Drone DT
-      setProducts([
-rand: "SOFTWARE DT" 
-
 
 
 export default ProductShow;
