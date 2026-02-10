@@ -73,9 +73,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [fetchMenuData]);
 
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
-  }, [menuOpen]);
 
   const Logo = () => (
     <Link href="/" className="group flex flex-col items-start outline-none">
