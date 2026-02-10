@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { X, ChevronRight, Circle } from 'lucide-react';
+import { X, ChevronRight, Circle, Drone } from 'lucide-react'; // Importamos Drone
 
 interface MenuItem {
   id: string;
@@ -38,7 +38,6 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    // Cambiado a 127.0.0.1 para evitar colisiones de resolución en Windows
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000/api/v1';
 
     try {
@@ -80,10 +79,8 @@ const Navbar = () => {
 
       setMenuContent(categorized);
     } catch (error) {
-      // Error silencioso para el usuario pero trackeado en consola
       console.error("❌ Drone DT Uplink Offline:", error);
     } finally {
-      // Garantizamos que el loader desaparezca incluso si falla el fetch
       setLoading(false);
     }
   }, []);
@@ -103,13 +100,27 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
+  // LOGO ACTUALIZADO CON LA FIGURA DEL DRONE
   const Logo = () => (
-    <Link href="/" className="group flex flex-col items-start outline-none">
-      <div className="flex items-baseline transition-all duration-300 group-hover:scale-105">
-        <span className="text-xl sm:text-2xl font-black tracking-widest text-[#0000FF] italic">Drone</span>
-        <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-1 text-[#FFD700]">DT</span>
+    <Link href="/" className="group flex items-center gap-3 outline-none">
+      <div className="relative flex items-center justify-center">
+        {/* Icono de Drone animado */}
+        <Drone 
+          size={isScrolled ? 28 : 34} 
+          className="text-[#FFD700] transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-110" 
+          strokeWidth={2.5}
+        />
+        {/* Efecto de propulsión sutil */}
+        <div className="absolute -bottom-1 w-4 h-1 bg-[#0000FF]/20 blur-sm rounded-full group-hover:bg-[#0000FF]/40 transition-all" />
       </div>
-      <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-black/40 group-hover:text-[#FFD700] transition-colors">Colombia</span>
+      
+      <div className="flex flex-col items-start leading-none">
+        <div className="flex items-baseline">
+          <span className="text-xl sm:text-2xl font-black tracking-tight text-[#0000FF] italic">Drone</span>
+          <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-0.5 text-[#FFD700]">DT</span>
+        </div>
+        <span className="text-[7px] font-bold tracking-[0.5em] uppercase text-black/60 group-hover:text-[#0000FF] transition-colors">Colombia</span>
+      </div>
     </Link>
   );
 
