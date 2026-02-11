@@ -69,10 +69,7 @@ const Banner = () => {
     if (title.includes('Modelo')) {
       const [prefix, model] = title.split(':');
       return (
-        <>
-          <span className="text-white">{prefix}:</span>
-          <span className="text-[#FFD700]">{model}</span>
-        </>
+
       );
     }
     return title;
