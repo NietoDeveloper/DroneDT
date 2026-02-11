@@ -89,14 +89,7 @@ const Banner = () => {
               index === currentSlide ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            {slide.type === 'video' ? (
 
-            ) : (
-
-       
-          </div>
-        ))}
-      </div>
 
       {/* 2. CONTENEDOR CENTRAL */}
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
