@@ -17,39 +17,5 @@ const slides: Slide[] = [
   { id: 3, type: 'image', src: '/Banner-2.png', title: 'Modelo: Mini_A2-Pro5', subtitle: 'Vuelo Sigiloso y Ágil' },
 ];
 
-const Banner = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVideoVisible, setIsVideoVisible] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const startTimer = useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    
-    // Duración dinámica: 8s para video, 6s para imagen
-    const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
-    
-    timerRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, duration);
-  }, [currentSlide]);
-
-  useEffect(() => {
-    startTimer();
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [startTimer]);
-
-  // Manejo de reproducción de video
-  useEffect(() => {
-    if (slides[currentSlide].type === 'video' && videoRef.current) {
-      setIsVideoVisible(false);
-      videoRef.current.currentTime = 0;
-      videoRef.current.play()
-        .then(() => setIsVideoVisible(true))
-        .catch(() => setIsVideoVisible(true));
-    }
-  }, [currentSlide]);
-
-
 
 
