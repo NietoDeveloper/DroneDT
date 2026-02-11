@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 
-// 1. DEFINICIÓN DE SLIDES (Evita el ReferenceError)
 interface Slide {
   id: number;
   type: 'video' | 'image';
@@ -24,7 +23,6 @@ const Banner = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // 2. LÓGICA DE RENDERIZADO DE TÍTULOS
   const renderTitle = (title: string) => {
     if (title.toUpperCase().includes('DRONE')) {
       const words = title.split(' ');
@@ -47,7 +45,6 @@ const Banner = () => {
     return <span className="text-white">{title}</span>;
   };
 
-  // 3. LÓGICA DEL TEMPORIZADOR
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
@@ -78,8 +75,8 @@ const Banner = () => {
   };
 
   return (
-    /* AJUSTE: h-[75vh] para permitir ver el componente de abajo (Efecto Tesla) */
-    <section className="relative w-full h-[75vh] bg-black overflow-hidden font-montserrat">
+    /* h-full para que respete el 80vh definido en el page.tsx */
+    <section className="relative w-full h-full bg-black overflow-hidden font-montserrat">
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
           <div
@@ -114,8 +111,8 @@ const Banner = () => {
 
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
-        {/* AJUSTE: Margen superior optimizado para h-[75vh] */}
-        <div className="mt-[12vh] md:mt-[100px] flex flex-col items-center w-full">
+        {/* AJUSTE: pt-[30px] para bajar el bloque de título y subtítulo según lo pedido */}
+        <div className="mt-[12vh] md:mt-[100px] pt-[30px] flex flex-col items-center w-full">
           <div key={currentSlide} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
             <h1 className="text-4xl md:text-[68px] lg:text-[72px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.6)]">
               {renderTitle(slides[currentSlide].title)}
@@ -126,8 +123,7 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* AJUSTE: Margen inferior y altura de botones para h-[75vh] */}
-        <div className="mb-[10vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
+        <div className="mb-[8vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
           <Link 
             href="/shop"
             className="flex-1 h-[65px] md:h-[74px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] hover:bg-[#0000FF] hover:text-white hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
@@ -143,7 +139,6 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* AJUSTE: Indicadores de slide */}
       <div className="absolute bottom-6 left-0 right-0 z-[50] flex justify-center items-center gap-6">
           {slides.map((_, i) => (
             <button
