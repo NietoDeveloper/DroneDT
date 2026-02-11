@@ -92,10 +92,7 @@ const Banner = () => {
             {slide.type === 'video' ? (
 
             ) : (
-              <div 
 
-              />
-            )}
        
           </div>
         ))}
