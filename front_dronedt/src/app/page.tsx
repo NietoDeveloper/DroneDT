@@ -13,22 +13,24 @@ export default function Home() {
     <div className="relative bg-white selection:bg-[#FFD700] selection:text-black">
       <Navbar />
 
-      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth hide-scrollbar">
+      {/* Eliminamos hide-scrollbar para permitir la barra de scroll estilo Tesla */}
+      <main className="h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth custom-scrollbar">
         
-        {/* SECCIÓN 1: BANNER HERO (80% Tesla Style) */}
+        {/* SECCIÓN 1: BANNER HERO (80vh para asomar la siguiente sección) */}
         <section className="relative h-[80vh] w-full snap-start z-10 overflow-hidden bg-black">
           <Banner />
+          {/* Sombra de transición al catálogo (Gainsboro) */}
           <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#DCDCDC] to-transparent z-20 pointer-events-none" />
         </section>
 
-        {/* SECCIÓN CATÁLOGO: Solo el carrusel de productos */}
+        {/* SECCIÓN CATÁLOGO: Carrusel Atlas 80/20 Interno */}
         <section id="catalog" className="relative z-30 bg-[#DCDCDC] min-h-screen snap-start flex flex-col justify-center overflow-hidden">
           <div className="w-full">
             <ProductShow />
           </div>
         </section>
 
-        {/* SECCIÓN 2: SPECS Y BRANDING */}
+        {/* SECCIÓN 2: SPECS Y BRANDING (Ingeniería Drone DT) */}
         <section className="relative min-h-screen snap-start z-20 bg-black py-20 px-6 md:px-12 border-t border-white/5 flex flex-col justify-center">
           <div className="max-w-[1900px] mx-auto w-full">
             
@@ -57,9 +59,8 @@ export default function Home() {
 
             <div className="flex flex-col items-center text-center space-y-12">
               <div className="space-y-6">
-                <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[120px] font-black tracking-tighter uppercase leading-none">
-                  <span className="text-white">DRONE</span>
-                  <span className="text-[#FFD700] italic">DT</span>
+                <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[120px] font-black tracking-tighter uppercase leading-none text-white">
+                  DRONE <span className="text-[#FFD700] italic">DT</span>
                 </h1>
                 <div className="flex items-center justify-center gap-4">
                   <span className="h-[1px] w-12 bg-[#FFD700]/50"></span>
@@ -93,6 +94,24 @@ export default function Home() {
           <Footer />
         </footer>
       </main>
+
+      {/* Inyección de estilos para la barra de scroll personalizada (Tesla Style) */}
+      <style jsx global>{`
+        .custom-scrollbar::-webkit-scrollbar {
+          width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+          background: #000;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+          background: #333;
+          border-radius: 10px;
+          transition: background 0.3s ease;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: #FFD700;
+        }
+      `}</style>
     </div>
   );
 }
