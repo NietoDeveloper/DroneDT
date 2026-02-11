@@ -1,51 +1,166 @@
 "use client";
 
-import dynamic from 'next/dynamic';
+import { useEffect, useRef, useState, useCallback } from "react";
+import Link from "next/link";
 
-const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
-const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
-const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { ssr: false });
-const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
-
-export default function Home() {
-  return (
-    /* bg-white para que cuando asome el catálogo se vea el contraste limpio */
-    <div className="relative bg-white selection:bg-[#FFD700] selection:text-black">
-      <Navbar />
-
-      {/* CONFIGURACIÓN TESLA:
-          h-screen + overflow-y-auto + snap-y es lo que permite que 
-          cada sección se "pegue" a la pantalla al scrollear.
-      */}
-      <main className="relative h-screen overflow-y-auto snap-y snap-mandatory scroll-smooth">
-        
-        {/* SECCIÓN 1: BANNER HERO 
-            Como tu Banner.tsx tiene h-[80vh], esta sección DEBE medir h-[80vh].
-            Esto hace que el 20% restante de la pantalla lo ocupe el primer producto de Atlas.
-        */}
-        <section className="relative h-[80vh] w-full snap-start z-10 bg-black">
-          <Banner />
-        </section>
-
-        {/* SECCIÓN 2: CATÁLOGO DINÁMICO (ATLAS)
-            ProductShow mapea varias <section className="h-screen snap-start">.
-            Cada dron será una parada completa del scroll.
-        */}
-        <ProductShow />
-
-        {/* SECCIÓN 3: SPECS & FOOTER 
-            Unimos las specs con el footer en una última parada de snap 
-            para que no quede el footer volando.
-        */}
-        <section className="relative min-h-screen snap-start z-40 bg-black">
-           {/* Aquí iría tu grid de stats y branding central que tenías antes */}
-           <div className="pt-24 pb-12">
-              {/* ... Contenido de Specs ... */}
-           </div>
-           <Footer />
-        </section>
-
-      </main>
-    </div>
-  );
+// 1. DEFINICIÓN DE SLIDES (Evita el ReferenceError)
+interface Slide {
+  id: number;
+  type: 'video' | 'image';
+  src: string;
+  title: string;
+  subtitle: string;
 }
+
+const slides: Slide[] = [
+  { id: 1, type: 'video', src: '/Banner-1.mp4', title: 'DRONE DT', subtitle: 'Drone Colombiano • Bogotá' },
+  { id: 2, type: 'image', src: '/Banner-1.png', title: 'Modelo: Mid_B2-Pro8', subtitle: 'Fotografía y Vuelo Profesional' },
+  { id: 3, type: 'image', src: '/Banner-2.png', title: 'Modelo: Mini_A2-Pro5', subtitle: 'Vuelo Sigiloso y Ágil' },
+];
+
+const Banner = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // 2. LÓGICA DE RENDERIZADO DE TÍTULOS
+  const renderTitle = (title: string) => {
+    if (title.toUpperCase().includes('DRONE')) {
+      const words = title.split(' ');
+      return (
+        <>
+          <span className="text-[#0000FF]">{words[0]}</span>{" "}
+          <span className="text-[#FFD700]">{words[1]}</span>
+        </>
+      );
+    }
+    if (title.includes('Modelo')) {
+      const [prefix, model] = title.split(':');
+      return (
+        <>
+          <span className="text-[#0000FF]">{prefix}:</span>{" "}
+          <span className="text-[#FFD700]">{model}</span>
+        </>
+      );
+    }
+    return <span className="text-white">{title}</span>;
+  };
+
+  // 3. LÓGICA DEL TEMPORIZADOR
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
+    timerRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, duration);
+  }, [currentSlide]);
+
+  useEffect(() => {
+    startTimer();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [startTimer]);
+
+  useEffect(() => {
+    if (slides[currentSlide].type === 'video' && videoRef.current) {
+      setIsVideoVisible(false);
+      videoRef.current.currentTime = 0;
+      videoRef.current.play()
+        .then(() => setIsVideoVisible(true))
+        .catch(() => setIsVideoVisible(true));
+    }
+  }, [currentSlide]);
+
+  const handleDotClick = (index: number) => {
+    if (index === currentSlide) return;
+    if (timerRef.current) clearInterval(timerRef.current);
+    setCurrentSlide(index);
+  };
+
+  return (
+    /* AJUSTE: h-[75vh] para permitir ver el componente de abajo (Efecto Tesla) */
+    <section className="relative w-full h-[75vh] bg-black overflow-hidden font-montserrat">
+      <div className="absolute inset-0 z-0">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            {slide.type === 'video' ? (
+              <video
+                ref={index === currentSlide ? videoRef : null}
+                autoPlay loop muted playsInline
+                className={`w-full h-full object-cover transition-opacity duration-1000 ${
+                  index === currentSlide && isVideoVisible ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <source src={slide.src} type="video/mp4" />
+              </video>
+            ) : (
+              <div 
+                className="w-full h-full bg-cover bg-center transition-transform duration-[10000ms] ease-out"
+                style={{ 
+                  backgroundImage: `url(${slide.src})`,
+                  transform: index === currentSlide ? 'scale(1)' : 'scale(1.1)'
+                }}
+              />
+            )}
+            <div className="absolute inset-0 bg-black/30" />
+          </div>
+        ))}
+      </div>
+
+      <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
+        
+        {/* AJUSTE: Margen superior optimizado para h-[75vh] */}
+        <div className="mt-[12vh] md:mt-[100px] flex flex-col items-center w-full">
+          <div key={currentSlide} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
+            <h1 className="text-4xl md:text-[68px] lg:text-[72px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.6)]">
+              {renderTitle(slides[currentSlide].title)}
+            </h1>
+            <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
+              {slides[currentSlide].subtitle}
+            </p>
+          </div>
+        </div>
+
+        {/* AJUSTE: Margen inferior y altura de botones para h-[75vh] */}
+        <div className="mb-[10vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
+          <Link 
+            href="/shop"
+            className="flex-1 h-[65px] md:h-[74px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] hover:bg-[#0000FF] hover:text-white hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
+          >
+            Compra Ahora
+          </Link>
+          <Link 
+            href="/services" 
+            className="flex-1 h-[65px] md:h-[74px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] border border-white/20 hover:bg-[#0000FF] hover:text-white hover:border-[#0000FF] hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
+          >
+            Modelos
+          </Link>
+        </div>
+      </div>
+
+      {/* AJUSTE: Indicadores de slide */}
+      <div className="absolute bottom-6 left-0 right-0 z-[50] flex justify-center items-center gap-6">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => handleDotClick(i)}
+              className={`
+                h-1.5 transition-all duration-500 cursor-pointer rounded-full
+                ${i === currentSlide 
+                  ? 'w-16 bg-[#FFD700] shadow-[0_0_15px_#FFD700]' 
+                  : 'w-4 bg-white/30 hover:bg-white/60'}
+              `}
+              aria-label={`Ir al slide ${i + 1}`}
+            />
+          ))}
+      </div>
+    </section>
+  );
+};
+
+export default Banner;
