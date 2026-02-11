@@ -14,7 +14,7 @@ interface Slide {
 const slides: Slide[] = [
   { id: 1, type: 'video', src: '/Banner-1.mp4', title: 'DRONE DT', subtitle: 'Drone Colombiano • Bogotá' },
   { id: 2, type: 'image', src: '/Banner-1.png', title: 'Modelo: DT-101', subtitle: 'Fotografía y Vuelo Profesional' },
-  { id: 3, type: 'image', src: '/Banner-2.png', title: 'Modelo: DT-Mini-200', subtitle: 'Vuelo Sigiloso y Ágil' },
+  { id: 3, type: 'image', src: '/Banner-2.png', title: 'Modelo: MiniA2Pro5', subtitle: 'Vuelo Sigiloso y Ágil' },
 ];
 
 const Banner = () => {
