@@ -17,7 +17,6 @@ const ProductShow = () => {
   const [error, setError] = useState<string | null>(null);
 
   const fetchDrones = useCallback(async () => {
-    // Lógica de URL limpia
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     const baseUrl = isLocal ? 'http://127.0.0.1:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
     const fullUrl = `${baseUrl}/products?category=drone`;
@@ -31,7 +30,6 @@ const ProductShow = () => {
       if (!response.ok) throw new Error(`Status: ${response.status}`);
       
       const result = await response.json();
-      // Atlas suele envolver en .data, si no, tomamos el result
       const productsArray = result.data || result;
 
       if (Array.isArray(productsArray) && productsArray.length > 0) {
@@ -56,12 +54,11 @@ const ProductShow = () => {
     fetchDrones();
   }, [fetchDrones]);
 
-  // Si no hay datos, mostramos el error técnico en lugar de pantalla blanca
   if (drones.length === 0) {
     return (
-      <div className="h-screen bg-white flex flex-col items-center justify-center p-10">
+      <div className="h-[50vh] bg-white flex flex-col items-center justify-center p-10">
         <div className="animate-pulse text-black font-black text-2xl mb-4">DRONE DT</div>
-        <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest">
+        <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest text-center">
           {error || "Sincronizando con Atlas..."}
         </p>
       </div>
@@ -69,71 +66,67 @@ const ProductShow = () => {
   }
 
   return (
-    <section className="relative w-full h-screen bg-white overflow-hidden font-montserrat">
-      {/* Scroll Snap Container estilo Tesla */}
-      <div 
-        className="h-full overflow-y-auto snap-y snap-mandatory scroll-smooth hide-scrollbar" 
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
+    /* CAMBIO CLAVE: Quitamos h-screen del contenedor principal 
+       para que el snap-y funcione a nivel de página si es necesario 
+    */
+    <section className="relative w-full bg-white font-montserrat">
+      <div className="flex flex-col">
         {drones.map((drone) => (
           <div 
             key={drone.id} 
-            className="relative w-full h-screen snap-start flex flex-col items-center justify-between py-20 px-4"
+            className="relative w-full h-screen snap-start flex flex-col items-center justify-between py-24 px-4 border-b border-zinc-100"
           >
             {/* Cabecera: Tesla Style */}
-            <div className="z-20 text-center mt-12">
-              <h2 className="text-5xl md:text-[72px] font-black text-black tracking-tighter uppercase mb-2 leading-none">
+            <div className="z-20 text-center mt-10">
+              <h2 className="text-4xl md:text-[64px] font-black text-black tracking-tighter uppercase mb-2 leading-none">
                 {drone.name}
               </h2>
-              <p className="text-[14px] md:text-[16px] font-bold text-zinc-800 tracking-[0.3em] uppercase underline underline-offset-8 decoration-1">
+              <p className="text-[14px] md:text-[15px] font-medium text-zinc-600 tracking-[0.2em] uppercase">
                 {drone.price}
               </p>
             </div>
 
-            {/* Imagen: Conexión Atlas */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center p-8 pointer-events-none">
-              <div className="relative w-full h-[60%] max-w-6xl">
+            {/* Imagen: Conexión Atlas - Ajustada para no tapar textos */}
+            <div className="absolute inset-0 z-10 flex items-center justify-center p-4 pointer-events-none">
+              <div className="relative w-full h-[50%] max-w-5xl">
                 <Image 
                   src={drone.img} 
                   alt={drone.name} 
                   fill 
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
                   priority
-                  sizes="100vw"
+                  sizes="(max-width: 768px) 100vw, 1200px"
                 />
               </div>
             </div>
 
             {/* Acciones: Estilo Drone DT */}
-            <div className="z-20 w-full flex flex-col sm:flex-row items-center justify-center gap-5 mb-14">
+            <div className="z-20 w-full flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
               <Link
                 href={`/shop/product/${drone.id}`}
-                className="w-full max-w-[280px] h-[48px] flex items-center justify-center bg-[#171A20CC] backdrop-blur-md text-white rounded-[4px] text-[12px] font-black uppercase tracking-[0.2em] hover:bg-[#0000FF] transition-all duration-300"
+                className="w-full max-w-[260px] h-[44px] flex items-center justify-center bg-[#171A20CC] backdrop-blur-md text-white rounded-[4px] text-[12px] font-bold uppercase tracking-[0.15em] hover:bg-black transition-all duration-300"
               >
-                Ordenar Ahora
+                Explorar
               </Link>
               <Link
                 href="/services"
-                className="w-full max-w-[280px] h-[48px] flex items-center justify-center bg-[#F4F4F4A6] backdrop-blur-md text-[#393C41] border border-transparent rounded-[4px] text-[12px] font-black uppercase tracking-[0.2em] hover:bg-[#FFD700] hover:text-black transition-all duration-300"
+                className="w-full max-w-[260px] h-[44px] flex items-center justify-center bg-[#F4F4F4A6] backdrop-blur-md text-[#393C41] rounded-[4px] text-[12px] font-bold uppercase tracking-[0.15em] hover:bg-[#E2E2E2] transition-all duration-300"
               >
-                Especificaciones
+                Soporte Técnico
               </Link>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
-               <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-black">
-                  <path d="M7 10l5 5 5-5" strokeLinecap="round" strokeLinejoin="round"/>
-               </svg>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Nav Lateral */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col gap-5 z-30 hidden lg:flex">
+      {/* Nav Lateral Minimalista */}
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-30 hidden lg:flex">
         {drones.map((_, idx) => (
-          <div key={idx} className="w-[2px] h-10 bg-black/10 hover:bg-black transition-all cursor-pointer" />
+          <div 
+            key={idx} 
+            className="w-[3px] h-8 bg-zinc-200 hover:bg-gold transition-colors cursor-pointer" 
+            title={`Producto ${idx + 1}`}
+          />
         ))}
       </div>
     </section>

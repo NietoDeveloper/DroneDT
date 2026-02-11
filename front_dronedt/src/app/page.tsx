@@ -10,30 +10,42 @@ const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false 
 
 export default function Home() {
   return (
-    // bg-white aquí es clave: si hay algún espacio entre componentes, será blanco (como el ProductShow) y no negro
-    <div className="relative min-h-screen bg-white selection:bg-[#FFD700] selection:text-black">
+    <div className="relative bg-white selection:bg-[#FFD700] selection:text-black">
       <Navbar />
 
-      <main className="flex flex-col w-full">
+      {/* CAMBIO CLAVE: El contenedor main ahora controla el snap scroll.
+          h-screen + overflow-y-scroll + snap-y + snap-mandatory 
+      */}
+      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth hide-scrollbar">
         
-        {/* SECCIÓN 1: BANNER HERO - Altura reducida al 75% para mostrar lo que viene abajo */}
-        <section className="relative h-[75vh] w-full z-10 overflow-hidden bg-black">
+        {/* SECCIÓN 1: BANNER HERO - Altura 100vh para que el snap encaje perfecto */}
+        <section className="relative h-screen w-full snap-start z-10 overflow-hidden bg-black">
           <Banner />
-          {/* Sutil gradiente inferior para suavizar la transición al blanco si es necesario */}
-          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/20 to-transparent z-20 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/40 to-transparent z-20 pointer-events-none" />
+          
+          {/* Indicador de scroll para guiar al usuario hacia el catálogo */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 animate-bounce">
+             <p className="text-white/40 text-[10px] tracking-[0.3em] uppercase mb-2 text-center">Catálogo</p>
+             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white mx-auto opacity-50">
+                <path d="M7 10l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+             </svg>
+          </div>
         </section>
 
-        {/* SECCIÓN CATÁLOGO - Se asoma 25% en el primer scroll */}
-        <section id="catalog" className="relative z-30 bg-white -mt-[1px]">
+        {/* SECCIÓN CATÁLOGO: 
+            ProductShow internamente ya tiene sus propios divs con snap-start, 
+            por lo que fluirán dentro de este scroll principal. 
+        */}
+        <section id="catalog" className="relative z-30 bg-white">
           <ProductShow />
         </section>
 
-        {/* SECCIÓN 2: SPECS Y BRANDING INDUSTRIAL */}
-        <section className="relative z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5">
-          <div className="max-w-[1900px] mx-auto">
+        {/* SECCIÓN 2: SPECS Y BRANDING - snap-start para que frene aquí */}
+        <section className="relative min-h-screen snap-start z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5 flex flex-col justify-center">
+          <div className="max-w-[1900px] mx-auto w-full">
             
             {/* GRID DE STATS */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 mb-24 py-16 lg:py-24 border-b border-white/5">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 mb-24 py-16 lg:py-24 border-b border-white/10">
               <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
                 <h3 className="text-6xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
                   4K <span className="text-[12px] not-italic text-[#FFD700] tracking-[0.3em] block mt-2 uppercase font-bold">60 FPS PRO</span>
@@ -57,7 +69,7 @@ export default function Home() {
             </div>
 
             {/* BRANDING CENTRAL */}
-            <div className="flex flex-col items-center text-center space-y-12 py-10">
+            <div className="flex flex-col items-center text-center space-y-12">
               <div className="space-y-6">
                 <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[120px] font-black tracking-tighter uppercase leading-none">
                   <span className="text-white">DRONE</span>
@@ -95,9 +107,12 @@ export default function Home() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[1000px] bg-[#FFD700]/5 blur-[180px] rounded-full opacity-50" />
           </div>
         </section>
-      </main>
 
-      <Footer />
+        {/* FOOTER: Con snap-start para que el scroll lo detecte al final */}
+        <footer className="snap-start bg-black">
+          <Footer />
+        </footer>
+      </main>
     </div>
   );
 }
