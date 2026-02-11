@@ -17,28 +17,27 @@ export default function Home() {
 
       <main className="h-screen overflow-y-scroll snap-y snap-proximity scroll-smooth custom-scrollbar relative">
         
-        {/* SECCIÓN 1: BANNER HERO (80/20) */}
-        <section className="relative h-screen w-full snap-start snap-always z-10 bg-black">
+        {/* SECCIÓN 1: BANNER (80/20) */}
+        <section className="relative h-screen w-full snap-start snap-always z-10 bg-black overflow-visible">
           <div className="h-[80vh] w-full overflow-hidden">
             <Banner />
           </div>
-          
-          {/* El 20% inferior es el espacio donde las tarjetas ASOMAN naturalmente desde abajo */}
-          <div className="h-[20vh] w-full bg-[#DCDCDC]" />
+          {/* El 20% inferior ahora tiene overflow-visible para permitir que el hijo asome */}
+          <div className="h-[20vh] w-full bg-[#DCDCDC] relative overflow-visible" />
         </section>
 
-        {/* SECCIÓN 2: CATÁLOGO (Un solo componente, sin duplicados ni saltos) */}
-        <section id="catalog" className="relative z-30 bg-[#DCDCDC] h-screen snap-start snap-always flex flex-col items-center justify-center">
-          {/* Usamos un margin-top negativo sutil en el contenedor interno 
-              para que el componente esté físicamente más arriba y sea visible 
-              desde el final de la Sección 1 sin duplicar código.
+        {/* SECCIÓN 2: CATÁLOGO (Subida agresiva) */}
+        <section id="catalog" className="relative z-30 bg-[#DCDCDC] h-screen snap-start snap-always flex flex-col items-center justify-start overflow-visible">
+          {/* -mt-[35vh]: Subimos el componente para que la mitad de la tarjeta 
+              ya sea visible mientras el usuario está en el primer Snap.
+              Al ser items-start, la tarjeta no se estira, solo se posiciona más arriba.
           */}
-          <div className="w-full -mt-[15vh]"> 
+          <div className="w-full -mt-[25vh] md:-mt-[30vh] z-40"> 
             <ProductShow />
           </div>
         </section>
 
-        {/* SECCIÓN 3: SPECS Y BRANDING */}
+        {/* SECCIÓN 3: SPECS */}
         <section className="relative h-screen snap-start snap-always z-20 bg-black flex flex-col justify-center px-6 md:px-12 border-t border-white/5">
           <div className="max-w-[1900px] mx-auto w-full">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 mb-12 py-8 border-b border-white/10">
@@ -48,14 +47,12 @@ export default function Home() {
                 </h3>
                 <p className="text-[9px] text-white/40 tracking-[0.5em] uppercase mt-4 font-bold">Ingeniería Óptica</p>
               </div>
-              
               <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
                 <h3 className="text-5xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
                   45 <span className="text-[10px] font-bold text-[#FFD700] block mt-2 uppercase">MINUTOS</span>
                 </h3>
                 <p className="text-[9px] text-white/40 tracking-[0.5em] uppercase mt-4 font-bold">Autonomía Real</p>
               </div>
-
               <div className="flex flex-col items-center text-center group px-8">
                 <h3 className="text-5xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
                   10 <span className="text-[10px] font-bold text-[#FFD700] block mt-2 uppercase">KM RANGO</span>
@@ -69,7 +66,7 @@ export default function Home() {
                 DRONE <span className="text-[#FFD700] italic">DT</span>
               </h1>
               <div className="flex flex-col sm:flex-row gap-5 w-full max-w-xl pt-4">
-                <Link href="/shop" className="flex-1 h-14 flex items-center justify-center rounded-[4px] bg-[#FFD700] text-black text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:bg-white">
+                <Link href="/shop" className="flex-1 h-14 flex items-center justify-center rounded-[4px] bg-[#FFD700] text-black text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:bg-white shadow-lg">
                   Explorar Tienda
                 </Link>
                 <Link href="/services" className="flex-1 h-14 flex items-center justify-center rounded-[4px] bg-transparent text-white border border-white/20 text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:border-[#FFD700] hover:text-[#FFD700]">
@@ -86,13 +83,7 @@ export default function Home() {
       </main>
 
       <style jsx global>{`
-        html, body { 
-          overflow: hidden; 
-          height: 100%; 
-          margin: 0; 
-          padding: 0; 
-          background: #DCDCDC;
-        }
+        html, body { overflow: hidden; height: 100%; margin: 0; padding: 0; background: #DCDCDC; }
         .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
