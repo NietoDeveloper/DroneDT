@@ -93,12 +93,12 @@ const ProductShow = () => {
   if (loading || drones.length === 0) return null;
 
   return (
-    <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 pt-16 md:pt-28 pb-12">
+    <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 pt-8 md:pt-16 pb-7">
       
-      {/* Container con más altura para evitar el corte visual */}
+      {/* Container Ajustado - Eliminado py-8 para recortar espacio arriba de tarjetas */}
       <div 
-        className="relative w-full overflow-hidden py-8"
-        style={{ height: '85vh', minHeight: '750px' }}
+        className="relative w-full overflow-hidden py-2"
+        style={{ height: '82vh', minHeight: '720px' }}
       >
         <div 
           className={`flex h-full ${isTransitioning ? 'transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
@@ -114,10 +114,8 @@ const ProductShow = () => {
               className="h-full flex-shrink-0 w-full px-4 md:px-12"
               style={{ width: `${100 / extendedDrones.length}%` }}
             >
-              {/* Card Individualizada con sombra profunda y bordes definidos */}
               <div className="flex flex-col md:flex-row h-full w-full overflow-hidden rounded-[2.5rem] md:rounded-[4rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] bg-white border border-white">
                 
-                {/* Lado Imagen - 60% en Desktop */}
                 <div className="w-full md:w-[60%] h-[40%] md:h-full bg-zinc-50 relative flex items-center justify-center p-8 md:p-20">
                   <div className="relative w-full h-full transform transition-all duration-1000 hover:scale-105">
                     <Image 
@@ -135,7 +133,6 @@ const ProductShow = () => {
                   </div>
                 </div>
 
-                {/* Lado Contenido - 40% en Desktop para más aire */}
                 <div className="w-full md:w-[40%] h-[60%] md:h-full flex flex-col justify-between p-10 md:p-20 bg-white">
                   <div className="space-y-6">
                     <h3 className="text-4xl md:text-[65px] font-black uppercase italic leading-[0.8] tracking-tighter text-black">
@@ -176,8 +173,8 @@ const ProductShow = () => {
         </div>
       </div>
 
-      {/* Dots más integrados con el nuevo espaciado */}
-      <div className="flex gap-4 mt-4 mb-10 z-[60]">
+      {/* Dots con margen inferior recortado (mb-5) */}
+      <div className="flex gap-4 mt-4 mb-5 z-[60]">
         {drones.map((_, idx) => {
           const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
           return (
