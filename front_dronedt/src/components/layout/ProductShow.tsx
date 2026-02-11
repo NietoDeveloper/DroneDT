@@ -21,14 +21,18 @@ const ProductShow = () => {
 
   const fetchDrones = useCallback(async () => {
     setLoading(true);
+    // Lógica de URL basada en tu arquitectura MERN
     const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
     const baseUrl = isLocal ? 'http://127.0.0.1:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
     const fullUrl = `${baseUrl}/products?category=drone`;
     
     try {
       const response = await fetch(fullUrl);
+      if (!response.ok) throw new Error("Error en la conexión con la DB");
+      
       const result = await response.json();
-      let rawData = result.data?.products || result.data || result;
+      // Ajuste según la estructura de respuesta de tu Backend
+      let rawData = result.data?.products || result.products || result.data || result;
 
       if (Array.isArray(rawData) && rawData.length > 0) {
         const formatted = rawData.map((item: any) => ({
@@ -39,18 +43,11 @@ const ProductShow = () => {
           img: item.imageUrl || (item.images?.[0]?.url || item.images?.[0] || '/drone-placeholder.png')
         }));
         setDrones(formatted);
-      } else {
-        throw new Error("Empty DB");
       }
     } catch (err) {
-      const fallbackDrones = [
-        { id: 'fb-1', name: 'Mavic 3 Pro DT', price: 'Desde $14,500,000', tag: 'Aeroespacial', img: '/drone-placeholder.png' },
-        { id: 'fb-2', name: 'Matrice 300 DT', price: 'Desde $45,000,000', tag: 'Industrial', img: '/drone-placeholder.png' },
-        { id: 'fb-3', name: 'Air 3 DT Edition', price: 'Desde $8,900,000', tag: 'Cinematográfico', img: '/drone-placeholder.png' },
-        { id: 'fb-4', name: 'Mini 4 Pro DT', price: 'Desde $5,200,000', tag: 'Ultra Light', img: '/drone-placeholder.png' },
-        { id: 'fb-5', name: 'Inspire 3 DT', price: 'Desde $62,000,000', tag: 'Cine Pro', img: '/drone-placeholder.png' },
-      ];
-      setDrones(fallbackDrones);
+      console.error("DB Fetch Error:", err);
+      // Manuel, aquí ya no hay fallbacks de ejemplo. Si falla, el componente queda limpio.
+      setDrones([]); 
     } finally {
       setLoading(false);
     }
@@ -95,10 +92,9 @@ const ProductShow = () => {
     setCurrentIndex(idx + 1);
   };
 
-  if (loading) return null;
+  if (loading || drones.length === 0) return null;
 
   return (
-    /* AJUSTE: pb-0 y pt-12 md:pt-24 para equilibrar la subida y eliminar el aire de abajo */
     <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 pt-12 md:pt-24 pb-0">
       
       <div 
@@ -166,15 +162,6 @@ const ProductShow = () => {
                       Ver Todo
                     </Link>
                   </div>
-
-                  <div className="mt-12 w-full bg-zinc-100 h-[3px] relative overflow-hidden rounded-full">
-                    <div 
-                      className="absolute top-0 left-0 h-full bg-[#FFD700] transition-all duration-700"
-                      style={{ 
-                        width: `${(currentIndex === 0 ? drones.length : currentIndex === drones.length + 1 ? 1 : currentIndex) / drones.length * 100}%` 
-                      }}
-                    />
-                  </div>
                 </div>
               </div>
             </div>
@@ -182,21 +169,21 @@ const ProductShow = () => {
         </div>
       </div>
 
-      {/* INDICADORES (Pagination Dots) 
-          AJUSTE: mt-6 (antes mt-12) para subir los dots 5px-8px adicionales y mb-4 para compactar 
+      {/* INDICADORES: GOLD FLOTANTE (Pagination Dots)
+          Diseño Premium Software DT: Fondo traslúcido y dots Gold.
       */}
-      <div className="flex gap-4 mt-6 mb-4 py-4 px-8 bg-white/80 backdrop-blur-xl rounded-full z-[60] border border-zinc-200 shadow-xl">
+      <div className="flex gap-4 mt-8 mb-6 py-4 px-10 bg-black/5 backdrop-blur-xl rounded-full z-[60] border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] translate-y-[-5px]">
         {drones.map((_, idx) => (
           <button
             key={idx}
             onClick={() => handleDotClick(idx)}
-            className="group relative p-3 focus:outline-none"
+            className="group relative focus:outline-none"
           >
             <div
-              className={`h-2 transition-all duration-500 rounded-full ${
+              className={`h-2.5 transition-all duration-500 rounded-full ${
                 (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx 
-                  ? 'w-12 bg-[#0000FF] shadow-[0_0_10px_rgba(0,0,255,0.3)]' 
-                  : 'w-4 bg-zinc-300 group-hover:bg-[#FFD700]'
+                  ? 'w-16 bg-[#FFD700] shadow-[0_0_15px_#FFD700]' 
+                  : 'w-4 bg-zinc-400/50 group-hover:bg-[#FFD700]/70'
               }`}
             />
           </button>
