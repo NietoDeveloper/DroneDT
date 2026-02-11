@@ -72,18 +72,18 @@ export default function RootLayout({
           bg-black 
           text-white 
           min-h-screen 
-          flex 
-          flex-col 
+          overflow-hidden
           selection:bg-[#FFD700] selection:text-black
         `}
       >
         {/* SISTEMA DE CARGA AEROESPACIAL */}
         <Preloader />
 
-        {/* TEXTURA DE RUIDO INDUSTRIAL - Z-Index bajo para no bloquear clicks */}
+        {/* TEXTURA DE RUIDO INDUSTRIAL */}
         <div className="fixed inset-0 pointer-events-none z-[1] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         
-        <main className="flex-grow w-full relative flex flex-col z-10">
+        {/* REMOVIDO: flex-col para no romper el snap scroll del page.tsx */}
+        <main className="w-full relative z-10">
           {children}
         </main>
 
@@ -91,6 +91,8 @@ export default function RootLayout({
         <style dangerouslySetInnerHTML={{ __html: `
           .no-scrollbar::-webkit-scrollbar { display: none; }
           .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+          .hide-scrollbar::-webkit-scrollbar { display: none; }
+          .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
           ::selection { background: #FFD700; color: #000000; }
         `}} />
       </body>
