@@ -1,10 +1,84 @@
-// ... (mismo código de imports y slides)
+"use client";
+
+import { useEffect, useRef, useState, useCallback } from "react";
+import Link from "next/link";
+
+// 1. DEFINICIÓN DE SLIDES (Evita el ReferenceError)
+interface Slide {
+  id: number;
+  type: 'video' | 'image';
+  src: string;
+  title: string;
+  subtitle: string;
+}
+
+const slides: Slide[] = [
+  { id: 1, type: 'video', src: '/Banner-1.mp4', title: 'DRONE DT', subtitle: 'Drone Colombiano • Bogotá' },
+  { id: 2, type: 'image', src: '/Banner-1.png', title: 'Modelo: Mid_B2-Pro8', subtitle: 'Fotografía y Vuelo Profesional' },
+  { id: 3, type: 'image', src: '/Banner-2.png', title: 'Modelo: Mini_A2-Pro5', subtitle: 'Vuelo Sigiloso y Ágil' },
+];
 
 const Banner = () => {
-  // ... (mismo código de estado y lógica de video)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  // 2. LÓGICA DE RENDERIZADO DE TÍTULOS
+  const renderTitle = (title: string) => {
+    if (title.toUpperCase().includes('DRONE')) {
+      const words = title.split(' ');
+      return (
+        <>
+          <span className="text-[#0000FF]">{words[0]}</span>{" "}
+          <span className="text-[#FFD700]">{words[1]}</span>
+        </>
+      );
+    }
+    if (title.includes('Modelo')) {
+      const [prefix, model] = title.split(':');
+      return (
+        <>
+          <span className="text-[#0000FF]">{prefix}:</span>{" "}
+          <span className="text-[#FFD700]">{model}</span>
+        </>
+      );
+    }
+    return <span className="text-white">{title}</span>;
+  };
+
+  // 3. LÓGICA DEL TEMPORIZADOR
+  const startTimer = useCallback(() => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
+    timerRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, duration);
+  }, [currentSlide]);
+
+  useEffect(() => {
+    startTimer();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [startTimer]);
+
+  useEffect(() => {
+    if (slides[currentSlide].type === 'video' && videoRef.current) {
+      setIsVideoVisible(false);
+      videoRef.current.currentTime = 0;
+      videoRef.current.play()
+        .then(() => setIsVideoVisible(true))
+        .catch(() => setIsVideoVisible(true));
+    }
+  }, [currentSlide]);
+
+  const handleDotClick = (index: number) => {
+    if (index === currentSlide) return;
+    if (timerRef.current) clearInterval(timerRef.current);
+    setCurrentSlide(index);
+  };
 
   return (
-    /* AJUSTE: h-[75vh] para permitir ver el componente de abajo */
+    /* AJUSTE: h-[75vh] para permitir ver el componente de abajo (Efecto Tesla) */
     <section className="relative w-full h-[75vh] bg-black overflow-hidden font-montserrat">
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -40,7 +114,7 @@ const Banner = () => {
 
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
-        {/* AJUSTE: mt-[12vh] o mt-[100px] para que el título no quede muy arriba en 75vh */}
+        {/* AJUSTE: Margen superior optimizado para h-[75vh] */}
         <div className="mt-[12vh] md:mt-[100px] flex flex-col items-center w-full">
           <div key={currentSlide} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
             <h1 className="text-4xl md:text-[68px] lg:text-[72px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.6)]">
@@ -52,7 +126,7 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* AJUSTE: Reducción del margen inferior (mb) para que quepa bien en 75vh */}
+        {/* AJUSTE: Margen inferior y altura de botones para h-[75vh] */}
         <div className="mb-[10vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
           <Link 
             href="/shop"
@@ -69,7 +143,7 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* AJUSTE: bottom-6 para subir un poco los puntitos */}
+      {/* AJUSTE: Indicadores de slide */}
       <div className="absolute bottom-6 left-0 right-0 z-[50] flex justify-center items-center gap-6">
           {slides.map((_, i) => (
             <button
