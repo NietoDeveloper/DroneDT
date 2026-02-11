@@ -56,24 +56,7 @@ const Banner = () => {
     setCurrentSlide(index);
   };
 
-  const renderTitle = (title: string) => {
-    if (title.includes('DRONE')) {
-      const words = title.split(' ');
-      return (
-        <>
-          <span className="text-white">{words[0]}</span>{" "}
-          <span className="text-[#FFD700]">{words[1]}</span>
-        </>
-      );
-    }
-    if (title.includes('Modelo')) {
-      const [prefix, model] = title.split(':');
-      return (
 
-      );
-    }
-    return title;
-  };
 
   return (
     <section className="relative w-full h-[90vh] bg-black overflow-hidden font-montserrat">
