@@ -15,25 +15,19 @@ export default function Home() {
 
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth hide-scrollbar">
         
-        {/* SECCIÓN 1: BANNER HERO - Ajustado al 80% de la pantalla */}
+        {/* SECCIÓN 1: BANNER HERO - 80% del viewport */}
         <section className="relative h-[80vh] w-full snap-start z-10 overflow-hidden bg-black">
           <Banner />
-          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/40 to-transparent z-20 pointer-events-none" />
-          
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 animate-bounce">
-             <p className="text-white/40 text-[10px] tracking-[0.3em] uppercase mb-2 text-center">Catálogo</p>
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white mx-auto opacity-50">
-                <path d="M7 10l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-             </svg>
-          </div>
+          {/* Sombra sutil inferior para dar profundidad a la entrada del catálogo blanco */}
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/60 to-transparent z-20 pointer-events-none" />
         </section>
 
-        {/* SECCIÓN CATÁLOGO: Ocupa el 20% restante para completar el 100vh inicial */}
-        <section id="catalog" className="relative z-30 bg-white min-h-[20vh]">
+        {/* SECCIÓN CATÁLOGO: Inicio del 20% restante y despliegue de productos Atlas */}
+        <section id="catalog" className="relative z-30 bg-white min-h-screen">
           <ProductShow />
         </section>
 
-        {/* SECCIÓN 2: SPECS Y BRANDING */}
+        {/* SECCIÓN 2: SPECS Y BRANDING - Ingeniería Drone DT */}
         <section className="relative min-h-screen snap-start z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5 flex flex-col justify-center">
           <div className="max-w-[1900px] mx-auto w-full">
             
