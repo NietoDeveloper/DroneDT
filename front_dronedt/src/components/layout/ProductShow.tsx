@@ -31,15 +31,30 @@ const ProductShow = () => {
       const result = await response.json();
 
       if (result.success && Array.isArray(result.data)) {
-        const formatted = result.data.map((item: any) => ({
-          id: item._id || item.id,
-          name: item.name || "DRONE DT MODEL",
-          price: typeof item.price === 'number' 
-            ? `Desde $${item.price.toLocaleString()}` 
-            : (item.price || 'Contactar Ventas'),
-          tag: typeof item.category === 'string' ? item.category : (item.category?.name || 'Pro Series'),
-          img: item.img || '/drone-placeholder.png'
-        }));
+        const formatted = result.data.map((item: any) => {
+          // --- Lógica de Corrección de Rutas para Carpeta Public ---
+          let imagePath = item.img || '/drone-placeholder.png';
+          
+          // Si el path trae "public/", lo removemos para que Next.js lo busque en la raíz del servidor
+          if (imagePath.startsWith('public/')) {
+            imagePath = imagePath.replace('public/', '/');
+          }
+          
+          // Asegurar que empiece con / si no es una URL externa (AWS)
+          if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
+            imagePath = `/${imagePath}`;
+          }
+
+          return {
+            id: item._id || item.id,
+            name: item.name || "DRONE DT MODEL",
+            price: typeof item.price === 'number' 
+              ? `Desde $${item.price.toLocaleString()}` 
+              : (item.price || 'Contactar Ventas'),
+            tag: typeof item.category === 'string' ? item.category : (item.category?.name || 'Pro Series'),
+            img: imagePath
+          };
+        });
         setDrones(formatted);
       }
     } catch (err) {
@@ -95,7 +110,6 @@ const ProductShow = () => {
   return (
     <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 pt-6 md:pt-12 pb-7">
       
-      {/* Container con padding-top eliminado para recortar los 10px adicionales */}
       <div 
         className="relative w-full overflow-hidden"
         style={{ height: '82vh', minHeight: '720px' }}
