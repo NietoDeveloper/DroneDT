@@ -15,13 +15,13 @@ export default function Home() {
 
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth hide-scrollbar">
         
-        {/* SECCIÓN 1: BANNER HERO */}
-        <section className="relative h-screen w-full snap-start z-10 overflow-hidden bg-black">
+        {/* SECCIÓN 1: BANNER HERO (80% Tesla Style) */}
+        <section className="relative h-[80vh] w-full snap-start z-10 overflow-hidden bg-black">
           <Banner />
-          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-black/60 to-transparent z-20 pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#DCDCDC] to-transparent z-20 pointer-events-none" />
         </section>
 
-        {/* SECCIÓN CATÁLOGO ATLAS: Ajuste de estabilidad */}
+        {/* SECCIÓN CATÁLOGO: Solo el carrusel de productos */}
         <section id="catalog" className="relative z-30 bg-[#DCDCDC] min-h-screen snap-start flex flex-col justify-center overflow-hidden">
           <div className="w-full">
             <ProductShow />
