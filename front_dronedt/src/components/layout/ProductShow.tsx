@@ -21,30 +21,23 @@ const ProductShow = () => {
 
   const fetchDrones = useCallback(async () => {
     setLoading(true);
-    
     const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
     const baseUrl = isLocal ? 'http://127.0.0.1:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
-    
-    // Conexión al endpoint de alto rendimiento /menu
     const fullUrl = `${baseUrl}/products/menu`;
     
     try {
       const response = await fetch(fullUrl);
       if (!response.ok) throw new Error("Error en la conexión con la DB");
-      
       const result = await response.json();
 
-      // Sincronización con la respuesta del Backend: { success: true, data: [...] }
       if (result.success && Array.isArray(result.data)) {
         const formatted = result.data.map((item: any) => ({
           id: item._id || item.id,
           name: item.name || "DRONE DT MODEL",
-          // Formateo de precio para producción
           price: typeof item.price === 'number' 
             ? `Desde $${item.price.toLocaleString()}` 
             : (item.price || 'Contactar Ventas'),
           tag: typeof item.category === 'string' ? item.category : (item.category?.name || 'Pro Series'),
-          // Usamos 'img' que ya viene procesada por tu controlador NietoDeveloper
           img: item.img || '/drone-placeholder.png'
         }));
         setDrones(formatted);
@@ -92,7 +85,9 @@ const ProductShow = () => {
   }, [drones, isTransitioning]);
 
   const handleDotClick = (idx: number) => {
+    // Limpieza inmediata del timer para evitar saltos
     if (timeoutRef.current) clearInterval(timeoutRef.current);
+    setIsTransitioning(true);
     setCurrentIndex(idx + 1);
   };
 
@@ -102,11 +97,11 @@ const ProductShow = () => {
     <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 pt-12 md:pt-24 pb-0">
       
       <div 
-        className="relative w-full overflow-visible"
+        className="relative w-full overflow-hidden"
         style={{ height: '75vh', minHeight: '600px' }}
       >
         <div 
-          className={`flex h-full ${isTransitioning ? 'transition-transform duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]' : ''}`}
+          className={`flex h-full ${isTransitioning ? 'transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
           onTransitionEnd={handleTransitionEnd}
           style={{ 
             transform: `translateX(-${currentIndex * (100 / (extendedDrones.length || 1))}%)`,
@@ -173,22 +168,27 @@ const ProductShow = () => {
         </div>
       </div>
 
-      <div className="flex gap-4 mt-8 mb-6 py-4 px-10 bg-black/5 backdrop-blur-xl rounded-full z-[60] border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] translate-y-[-5px]">
-        {drones.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => handleDotClick(idx)}
-            className="group relative focus:outline-none"
-          >
-            <div
-              className={`h-2.5 transition-all duration-500 rounded-full ${
-                (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx 
-                  ? 'w-16 bg-[#FFD700] shadow-[0_0_15px_#FFD700]' 
-                  : 'w-4 bg-zinc-400/50 group-hover:bg-[#FFD700]/70'
-              }`}
-            />
-          </button>
-        ))}
+      {/* DOTS LIMPIOS - Estilo Banner Inicial */}
+      <div className="flex gap-3 mt-10 mb-8 z-[60]">
+        {drones.map((_, idx) => {
+          const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
+          return (
+            <button
+              key={idx}
+              onClick={() => handleDotClick(idx)}
+              className="relative py-2 focus:outline-none"
+              aria-label={`Go to slide ${idx + 1}`}
+            >
+              <div
+                className={`h-1.5 transition-all duration-500 rounded-full ${
+                  isActive 
+                    ? 'w-12 bg-[#FFD700] shadow-[0_0_10px_rgba(255,215,0,0.4)]' 
+                    : 'w-3 bg-zinc-400/40 hover:bg-zinc-500/60'
+                }`}
+              />
+            </button>
+          );
+        })}
       </div>
     </section>
   );
