@@ -91,11 +91,7 @@ const Banner = () => {
           >
             {slide.type === 'video' ? (
               <video
-                ref={index === currentSlide ? videoRef : null}
-                autoPlay loop muted playsInline
-                className={`w-full h-full object-cover transition-opacity duration-1000 ${
-                  index === currentSlide && isVideoVisible ? 'opacity-100' : 'opacity-0'
-                }`}
+
               >
     
               </video>
