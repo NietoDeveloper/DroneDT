@@ -53,7 +53,6 @@ const Banner = () => {
   };
 
   const renderTitle = (title: string) => {
-    // Caso 1: DRONE (Blue) DT (Gold)
     if (title.toUpperCase().includes('DRONE')) {
       const words = title.split(' ');
       return (
@@ -63,7 +62,6 @@ const Banner = () => {
         </>
       );
     }
-    // Caso 2: Modelo (Blue) : Título (Gold)
     if (title.includes('Modelo')) {
       const [prefix, model] = title.split(':');
       return (
@@ -112,8 +110,8 @@ const Banner = () => {
 
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
-        {/* BLOQUE DE TÍTULOS - Ajustado a 145px (+20px extra) */}
-        <div className="mt-[12vh] md:mt-[145px] flex flex-col items-center w-full">
+        {/* BLOQUE DE TÍTULOS - Ajustado a 185px (40px adicionales al anterior) */}
+        <div className="mt-[18vh] md:mt-[185px] flex flex-col items-center w-full">
           <div key={currentSlide} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
             <h1 className="text-4xl md:text-[68px] lg:text-[72px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.6)]">
               {renderTitle(slides[currentSlide].title)}
