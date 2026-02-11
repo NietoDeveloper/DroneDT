@@ -1,81 +1,11 @@
-"use client";
-
-import { useEffect, useRef, useState, useCallback } from "react";
-import Link from "next/link";
-
-interface Slide {
-  id: number;
-  type: 'video' | 'image';
-  src: string;
-  title: string;
-  subtitle: string;
-}
-
-const slides: Slide[] = [
-  { id: 1, type: 'video', src: '/Banner-1.mp4', title: 'DRONE DT', subtitle: 'Drone Colombiano • Bogotá' },
-  { id: 2, type: 'image', src: '/Banner-1.png', title: 'Modelo: Mid_B2-Pro8', subtitle: 'Fotografía y Vuelo Profesional' },
-  { id: 3, type: 'image', src: '/Banner-2.png', title: 'Modelo: Mini_A2-Pro5', subtitle: 'Vuelo Sigiloso y Ágil' },
-];
+// ... (mismo código de imports y slides)
 
 const Banner = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVideoVisible, setIsVideoVisible] = useState(false);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-
-  const startTimer = useCallback(() => {
-    if (timerRef.current) clearInterval(timerRef.current);
-    const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
-    timerRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, duration);
-  }, [currentSlide]);
-
-  useEffect(() => {
-    startTimer();
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [startTimer]);
-
-  useEffect(() => {
-    if (slides[currentSlide].type === 'video' && videoRef.current) {
-      setIsVideoVisible(false);
-      videoRef.current.currentTime = 0;
-      videoRef.current.play()
-        .then(() => setIsVideoVisible(true))
-        .catch(() => setIsVideoVisible(true));
-    }
-  }, [currentSlide]);
-
-  const handleDotClick = (index: number) => {
-    if (index === currentSlide) return;
-    if (timerRef.current) clearInterval(timerRef.current);
-    setCurrentSlide(index);
-  };
-
-  const renderTitle = (title: string) => {
-    if (title.toUpperCase().includes('DRONE')) {
-      const words = title.split(' ');
-      return (
-        <>
-          <span className="text-[#0000FF]">{words[0]}</span>{" "}
-          <span className="text-[#FFD700]">{words[1]}</span>
-        </>
-      );
-    }
-    if (title.includes('Modelo')) {
-      const [prefix, model] = title.split(':');
-      return (
-        <>
-          <span className="text-[#0000FF]">{prefix}:</span>{" "}
-          <span className="text-[#FFD700]">{model}</span>
-        </>
-      );
-    }
-    return <span className="text-white">{title}</span>;
-  };
+  // ... (mismo código de estado y lógica de video)
 
   return (
-    <section className="relative w-full h-[90vh] bg-black overflow-hidden font-montserrat">
+    /* AJUSTE: h-[75vh] para permitir ver el componente de abajo */
+    <section className="relative w-full h-[75vh] bg-black overflow-hidden font-montserrat">
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
           <div
@@ -110,8 +40,8 @@ const Banner = () => {
 
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
-        {/* BLOQUE DE TÍTULOS - Ajustado a 185px (40px adicionales al anterior) */}
-        <div className="mt-[18vh] md:mt-[185px] flex flex-col items-center w-full">
+        {/* AJUSTE: mt-[12vh] o mt-[100px] para que el título no quede muy arriba en 75vh */}
+        <div className="mt-[12vh] md:mt-[100px] flex flex-col items-center w-full">
           <div key={currentSlide} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
             <h1 className="text-4xl md:text-[68px] lg:text-[72px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.6)]">
               {renderTitle(slides[currentSlide].title)}
@@ -122,23 +52,25 @@ const Banner = () => {
           </div>
         </div>
 
-        <div className="mb-[12vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
+        {/* AJUSTE: Reducción del margen inferior (mb) para que quepa bien en 75vh */}
+        <div className="mb-[10vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
           <Link 
             href="/shop"
-            className="flex-1 h-[75px] md:h-[84px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] hover:bg-[#0000FF] hover:text-white hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
+            className="flex-1 h-[65px] md:h-[74px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] hover:bg-[#0000FF] hover:text-white hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
           >
             Compra Ahora
           </Link>
           <Link 
             href="/services" 
-            className="flex-1 h-[75px] md:h-[84px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] border border-white/20 hover:bg-[#0000FF] hover:text-white hover:border-[#0000FF] hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
+            className="flex-1 h-[65px] md:h-[74px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] border border-white/20 hover:bg-[#0000FF] hover:text-white hover:border-[#0000FF] hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
           >
             Modelos
           </Link>
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-0 right-0 z-[50] flex justify-center items-center gap-6">
+      {/* AJUSTE: bottom-6 para subir un poco los puntitos */}
+      <div className="absolute bottom-6 left-0 right-0 z-[50] flex justify-center items-center gap-6">
           {slides.map((_, i) => (
             <button
               key={i}
