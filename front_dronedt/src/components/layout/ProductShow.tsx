@@ -58,7 +58,6 @@ const ProductShow = () => {
 
   useEffect(() => { fetchDrones(); }, [fetchDrones]);
 
-  // Clonación para carrusel infinito
   const extendedDrones = drones.length > 0 
     ? [drones[drones.length - 1], ...drones, drones[0]] 
     : [];
@@ -99,10 +98,9 @@ const ProductShow = () => {
   if (loading) return null;
 
   return (
-    /* py-20 para asegurar el espacio de 50px+ respecto al Banner */
-    <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 py-12 md:py-24">
+    /* AJUSTE: pb-0 y pt-12 md:pt-24 para equilibrar la subida y eliminar el aire de abajo */
+    <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 pt-12 md:pt-24 pb-0">
       
-      {/* Contenedor del Carrusel: width dinámico basado en el total de clones */}
       <div 
         className="relative w-full overflow-visible"
         style={{ height: '75vh', minHeight: '600px' }}
@@ -123,7 +121,6 @@ const ProductShow = () => {
             >
               <div className="flex flex-col md:flex-row h-full w-full overflow-hidden rounded-[2rem] md:rounded-[3.5rem] shadow-2xl bg-white border border-white/20">
                 
-                {/* IMAGEN (Blue background style) */}
                 <div className="w-full md:w-[70%] h-[45%] md:h-full bg-zinc-50 relative flex items-center justify-center p-8 md:p-16">
                   <div className="relative w-full h-full transform transition-all duration-1000 hover:scale-105">
                     <Image 
@@ -141,7 +138,6 @@ const ProductShow = () => {
                   </div>
                 </div>
 
-                {/* INFO (Blue text and Gold Hover) */}
                 <div className="w-full md:w-[30%] h-[55%] md:h-full flex flex-col justify-center p-8 md:p-14 bg-white">
                   <div className="space-y-4">
                     <h3 className="text-3xl md:text-[50px] font-black uppercase italic leading-[0.85] tracking-tighter text-black">
@@ -171,7 +167,6 @@ const ProductShow = () => {
                     </Link>
                   </div>
 
-                  {/* Barra de Progreso Gold */}
                   <div className="mt-12 w-full bg-zinc-100 h-[3px] relative overflow-hidden rounded-full">
                     <div 
                       className="absolute top-0 left-0 h-full bg-[#FFD700] transition-all duration-700"
@@ -187,8 +182,10 @@ const ProductShow = () => {
         </div>
       </div>
 
-      {/* INDICADORES (Pagination Dots) */}
-      <div className="flex gap-4 mt-12 py-4 px-8 bg-white/80 backdrop-blur-xl rounded-full z-[60] border border-zinc-200 shadow-xl">
+      {/* INDICADORES (Pagination Dots) 
+          AJUSTE: mt-6 (antes mt-12) para subir los dots 5px-8px adicionales y mb-4 para compactar 
+      */}
+      <div className="flex gap-4 mt-6 mb-4 py-4 px-8 bg-white/80 backdrop-blur-xl rounded-full z-[60] border border-zinc-200 shadow-xl">
         {drones.map((_, idx) => (
           <button
             key={idx}
@@ -198,7 +195,7 @@ const ProductShow = () => {
             <div
               className={`h-2 transition-all duration-500 rounded-full ${
                 (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx 
-                  ? 'w-12 bg-[#0000FF]' 
+                  ? 'w-12 bg-[#0000FF] shadow-[0_0_10px_rgba(0,0,255,0.3)]' 
                   : 'w-4 bg-zinc-300 group-hover:bg-[#FFD700]'
               }`}
             />

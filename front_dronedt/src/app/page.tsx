@@ -17,30 +17,31 @@ export default function Home() {
 
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
         
-        {/* SECCIÓN 1: BANNER (80% Video / 20% Transición) */}
+        {/* SECCIÓN 1: BANNER 
+            AJUSTE: h-[calc(80vh+20px)] para darle los 20px extra a la zona de video
+        */}
         <section className="relative h-screen w-full snap-start snap-always z-10 bg-black overflow-hidden">
-          <div className="h-[80vh] w-full">
+          <div className="h-[calc(80vh+20px)] w-full">
             <Banner />
           </div>
-          <div className="h-[20vh] w-full bg-[#DCDCDC]" />
+          <div className="h-[calc(20vh-20px)] w-full bg-[#DCDCDC]" />
         </section>
 
         {/* SECCIÓN 2: CATÁLOGO (ProductShow) 
-            Ajuste: pb-0 y h-auto para recortar los 30px sobrantes abajo 
+            AJUSTE: Reducimos el -mt para que el componente baje. 
+            Antes: -mt-[28vh] -> Ahora: -mt-[18vh] (Corre hacia abajo)
         */}
         <section 
           id="catalog" 
           className="relative z-30 bg-[#DCDCDC] h-auto min-h-[90vh] snap-start snap-always flex flex-col items-center justify-start pb-0"
         >
-          {/* El ProductShow sube para morder el banner */}
-          <div className="w-full -mt-[28vh] md:-mt-[32vh] z-40"> 
+          {/* Bajamos el ProductShow reduciendo el margen negativo */}
+          <div className="w-full -mt-[18vh] md:-mt-[22vh] z-40"> 
             <ProductShow />
           </div>
         </section>
 
-        {/* SECCIÓN 3: SPECS (Fondo Negro Industrial) 
-            Subimos ligeramente con un margin negativo para cerrar cualquier gap visual
-        */}
+        {/* SECCIÓN 3: SPECS */}
         <section className="relative h-screen snap-start snap-always z-20 bg-black flex flex-col justify-center px-6 md:px-12 -mt-10 md:-mt-16">
           <div className="max-w-[1900px] mx-auto w-full">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 mb-12 py-8 border-b border-white/10">
@@ -80,7 +81,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FOOTER */}
         <section className="snap-start snap-always bg-black">
           <Footer />
         </section>

@@ -75,7 +75,6 @@ const Banner = () => {
   };
 
   return (
-    /* h-full para que respete el 80vh definido en el page.tsx */
     <section className="relative w-full h-full bg-black overflow-hidden font-montserrat">
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -104,26 +103,26 @@ const Banner = () => {
                 }}
               />
             )}
-            <div className="absolute inset-0 bg-black/30" />
+            <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
-        {/* AJUSTE: pt-[30px] para bajar el bloque de título y subtítulo según lo pedido */}
-        <div className="mt-[12vh] md:mt-[100px] pt-[30px] flex flex-col items-center w-full">
+        <div className="mt-[15vh] md:mt-[120px] pt-[55px] flex flex-col items-center w-full">
           <div key={currentSlide} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
-            <h1 className="text-4xl md:text-[68px] lg:text-[72px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.6)]">
+            <h1 className="text-5xl md:text-[72px] lg:text-[80px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_15px_15px_rgba(0,0,0,0.8)]">
               {renderTitle(slides[currentSlide].title)}
             </h1>
-            <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
+            <p className="text-white text-[11px] md:text-[13px] tracking-[0.6em] uppercase font-bold drop-shadow-lg mt-6 opacity-90">
               {slides[currentSlide].subtitle}
             </p>
           </div>
         </div>
 
-        <div className="mb-[8vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
+        {/* AJUSTE: mb-[14vh] se mantiene para dar aire al bloque inferior */}
+        <div className="mb-[14vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
           <Link 
             href="/shop"
             className="flex-1 h-[65px] md:h-[74px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] hover:bg-[#0000FF] hover:text-white hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
@@ -139,16 +138,17 @@ const Banner = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-6 left-0 right-0 z-[50] flex justify-center items-center gap-6">
+      {/* AJUSTE RESPONSIVO: bottom-[5vh] para bajar los dots unos 15px adicionales respecto a la versión anterior */}
+      <div className="absolute bottom-[5vh] left-0 right-0 z-[50] flex justify-center items-center gap-6">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => handleDotClick(i)}
               className={`
-                h-1.5 transition-all duration-500 cursor-pointer rounded-full
+                h-2.5 transition-all duration-500 cursor-pointer rounded-full border border-black/20
                 ${i === currentSlide 
-                  ? 'w-16 bg-[#FFD700] shadow-[0_0_15px_#FFD700]' 
-                  : 'w-4 bg-white/30 hover:bg-white/60'}
+                  ? 'w-16 bg-[#FFD700] shadow-[0_0_25px_rgba(255,215,0,0.8)]' 
+                  : 'w-5 bg-white/40 hover:bg-white/80'}
               `}
               aria-label={`Ir al slide ${i + 1}`}
             />
