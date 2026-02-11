@@ -91,9 +91,7 @@ const Banner = () => {
           >
 
 
-      {/* 2. CONTENEDOR CENTRAL */}
-      <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
-        
+    
         {/* BLOQUE DE TÍTULOS */}
         <div className="mt-[10vh] md:mt-[95px] flex flex-col items-center w-full">
           <div 
