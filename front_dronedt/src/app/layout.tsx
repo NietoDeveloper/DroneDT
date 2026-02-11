@@ -1,16 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat, Inter } from "next/font/google"; // Importación esencial
+import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
 
-// 1. Instanciar Inter (Esto es lo que te falta para quitar el error)
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
 
-// 2. Instanciar Montserrat
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
@@ -81,24 +79,37 @@ export default function RootLayout({
         {/* SISTEMA DE CARGA AEROESPACIAL */}
         <Preloader />
 
-        {/* TEXTURA DE RUIDO INDUSTRIAL */}
-        <div className="fixed inset-0 pointer-events-none z-[1] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        {/* TEXTURA DE RUIDO INDUSTRIAL - Z-0 para seguridad total */}
+        <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         
-        {/* El main gestiona el snap scroll definido en el page.tsx */}
-        <main className="w-full relative z-10">
+        {/* Contenedor relativo para el contenido inyectado */}
+        <div className="relative z-10 w-full min-h-screen">
           {children}
-        </main>
+        </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
+          /* Reset y estabilidad */
+          html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+          }
+
+          /* Scrollbar Utils */
           .no-scrollbar::-webkit-scrollbar { display: none; }
           .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
           .hide-scrollbar::-webkit-scrollbar { display: none; }
           .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-          ::selection { background: #FFD700; color: #000000; }
           
-          /* Estabilidad para el viewport */
-          html, body {
-            height: 100%;
+          /* Suavizado Premium */
+          body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+
+          ::selection { 
+            background: #FFD700 !important; 
+            color: #000000 !important; 
           }
         `}} />
       </body>
