@@ -54,17 +54,7 @@ const Banner = () => {
 
 
 
-  return (
-    <section className="relative w-full h-[90vh] bg-black overflow-hidden font-montserrat">
-      {/* 1. FONDO - MULTIMEDIA */}
-      <div className="absolute inset-0 z-0">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-[1500ms] ease-in-out ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
+
 
 
     
