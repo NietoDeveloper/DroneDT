@@ -10,32 +10,34 @@ const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false 
 
 export default function Home() {
   return (
-    <div className="relative bg-white selection:bg-[#FFD700] selection:text-black">
+    <div className="relative bg-white selection:bg-[#FFD700] selection:text-black overflow-x-hidden">
       <Navbar />
 
-      {/* QUITAMOS h-screen del main para evitar que colapse el contenido dinámico.
-          Mantenemos snap-y en el body o en un contenedor que permita altura automática.
-      */}
-      <main className="relative w-full snap-y snap-mandatory overflow-x-hidden">
+      <main className="relative w-full snap-y snap-mandatory">
         
         {/* SECCIÓN 1: BANNER HERO 
-            Lo bajamos a h-[80vh] para forzar que el ProductShow (blanco) SE VEA abajo.
+            Ajustamos a h-screen pero eliminamos cualquier posible padding/margin.
         */}
-        <section className="relative h-[80vh] w-full snap-start z-10 overflow-hidden bg-black">
+        <section className="relative h-screen w-full snap-start z-10 bg-black overflow-hidden">
           <Banner />
-          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
+          {/* Eliminamos el div del degradado blanco anterior para evitar ruidos visuales */}
         </section>
 
-        {/* SECCIÓN CATÁLOGO: 
-            Le damos un min-h-screen para asegurar que el espacio exista 
-            mientras Atlas carga los datos.
+        {/* SECCIÓN CATÁLOGO
+            -mt-[10vh] o -mt-px: Forzamos que la sección blanca suba y se pegue al banner.
+            z-20 para que esté por encima de cualquier residuo del banner.
         */}
-        <section id="catalog" className="relative z-30 bg-white snap-start min-h-screen">
+        <section 
+          id="catalog" 
+          className="relative z-20 bg-white snap-start min-h-screen -mt-[2px] pt-0"
+        >
           <ProductShow />
         </section>
 
-        {/* SECCIÓN 2: SPECS Y BRANDING */}
-        <section className="relative min-h-screen snap-start z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5 flex flex-col justify-center">
+        {/* SECCIÓN 2: SPECS Y BRANDING 
+            Usamos border-none y -mt-px para que la transición de blanco a negro sea quirúrgica.
+        */}
+        <section className="relative min-h-screen snap-start z-30 bg-black -mt-px pt-24 pb-32 px-6 md:px-12 flex flex-col justify-center">
           <div className="max-w-[1900px] mx-auto w-full">
             
             {/* GRID DE STATS */}
