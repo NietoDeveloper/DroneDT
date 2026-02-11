@@ -21,32 +21,36 @@ const ProductShow = () => {
 
   const fetchDrones = useCallback(async () => {
     setLoading(true);
-    // Lógica de URL basada en tu arquitectura MERN
+    
     const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
     const baseUrl = isLocal ? 'http://127.0.0.1:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
-    const fullUrl = `${baseUrl}/products?category=drone`;
+    
+    // Conexión al endpoint de alto rendimiento /menu
+    const fullUrl = `${baseUrl}/products/menu`;
     
     try {
       const response = await fetch(fullUrl);
       if (!response.ok) throw new Error("Error en la conexión con la DB");
       
       const result = await response.json();
-      // Ajuste según la estructura de respuesta de tu Backend
-      let rawData = result.data?.products || result.products || result.data || result;
 
-      if (Array.isArray(rawData) && rawData.length > 0) {
-        const formatted = rawData.map((item: any) => ({
+      // Sincronización con la respuesta del Backend: { success: true, data: [...] }
+      if (result.success && Array.isArray(result.data)) {
+        const formatted = result.data.map((item: any) => ({
           id: item._id || item.id,
           name: item.name || "DRONE DT MODEL",
-          price: item.price ? `Desde $${Number(item.price).toLocaleString()}` : 'Contactar Ventas',
-          tag: item.category?.name || 'Pro Series',
-          img: item.imageUrl || (item.images?.[0]?.url || item.images?.[0] || '/drone-placeholder.png')
+          // Formateo de precio para producción
+          price: typeof item.price === 'number' 
+            ? `Desde $${item.price.toLocaleString()}` 
+            : (item.price || 'Contactar Ventas'),
+          tag: typeof item.category === 'string' ? item.category : (item.category?.name || 'Pro Series'),
+          // Usamos 'img' que ya viene procesada por tu controlador NietoDeveloper
+          img: item.img || '/drone-placeholder.png'
         }));
         setDrones(formatted);
       }
     } catch (err) {
       console.error("DB Fetch Error:", err);
-      // Manuel, aquí ya no hay fallbacks de ejemplo. Si falla, el componente queda limpio.
       setDrones([]); 
     } finally {
       setLoading(false);
@@ -169,9 +173,6 @@ const ProductShow = () => {
         </div>
       </div>
 
-      {/* INDICADORES: GOLD FLOTANTE (Pagination Dots)
-          Diseño Premium Software DT: Fondo traslúcido y dots Gold.
-      */}
       <div className="flex gap-4 mt-8 mb-6 py-4 px-10 bg-black/5 backdrop-blur-xl rounded-full z-[60] border border-white/40 shadow-[0_10px_30px_rgba(0,0,0,0.05)] translate-y-[-5px]">
         {drones.map((_, idx) => (
           <button
