@@ -13,34 +13,28 @@ export default function Home() {
     <div className="relative bg-white selection:bg-[#FFD700] selection:text-black">
       <Navbar />
 
-      {/* CAMBIO CLAVE: El contenedor main ahora controla el snap scroll.
-          h-screen + overflow-y-scroll + snap-y + snap-mandatory 
+      {/* QUITAMOS h-screen del main para evitar que colapse el contenido dinámico.
+          Mantenemos snap-y en el body o en un contenedor que permita altura automática.
       */}
-      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth hide-scrollbar">
+      <main className="relative w-full snap-y snap-mandatory overflow-x-hidden">
         
-        {/* SECCIÓN 1: BANNER HERO - Altura 100vh para que el snap encaje perfecto */}
-        <section className="relative h-screen w-full snap-start z-10 overflow-hidden bg-black">
+        {/* SECCIÓN 1: BANNER HERO 
+            Lo bajamos a h-[80vh] para forzar que el ProductShow (blanco) SE VEA abajo.
+        */}
+        <section className="relative h-[80vh] w-full snap-start z-10 overflow-hidden bg-black">
           <Banner />
-          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/40 to-transparent z-20 pointer-events-none" />
-          
-          {/* Indicador de scroll para guiar al usuario hacia el catálogo */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 animate-bounce">
-             <p className="text-white/40 text-[10px] tracking-[0.3em] uppercase mb-2 text-center">Catálogo</p>
-             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white mx-auto opacity-50">
-                <path d="M7 10l5 5 5-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-             </svg>
-          </div>
+          <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black to-transparent z-20 pointer-events-none" />
         </section>
 
         {/* SECCIÓN CATÁLOGO: 
-            ProductShow internamente ya tiene sus propios divs con snap-start, 
-            por lo que fluirán dentro de este scroll principal. 
+            Le damos un min-h-screen para asegurar que el espacio exista 
+            mientras Atlas carga los datos.
         */}
-        <section id="catalog" className="relative z-30 bg-white">
+        <section id="catalog" className="relative z-30 bg-white snap-start min-h-screen">
           <ProductShow />
         </section>
 
-        {/* SECCIÓN 2: SPECS Y BRANDING - snap-start para que frene aquí */}
+        {/* SECCIÓN 2: SPECS Y BRANDING */}
         <section className="relative min-h-screen snap-start z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5 flex flex-col justify-center">
           <div className="max-w-[1900px] mx-auto w-full">
             
@@ -101,14 +95,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* EFECTOS DE FONDO */}
-          <div className="absolute inset-0 z-[-1] pointer-events-none overflow-hidden">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[1000px] bg-[#FFD700]/5 blur-[180px] rounded-full opacity-50" />
-          </div>
         </section>
 
-        {/* FOOTER: Con snap-start para que el scroll lo detecte al final */}
         <footer className="snap-start bg-black">
           <Footer />
         </footer>
