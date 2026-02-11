@@ -93,11 +93,11 @@ const ProductShow = () => {
   if (loading || drones.length === 0) return null;
 
   return (
-    <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 pt-8 md:pt-16 pb-7">
+    <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 pt-6 md:pt-12 pb-7">
       
-      {/* Container Ajustado - Eliminado py-8 para recortar espacio arriba de tarjetas */}
+      {/* Container con padding-top eliminado para recortar los 10px adicionales */}
       <div 
-        className="relative w-full overflow-hidden py-2"
+        className="relative w-full overflow-hidden"
         style={{ height: '82vh', minHeight: '720px' }}
       >
         <div 
@@ -173,7 +173,6 @@ const ProductShow = () => {
         </div>
       </div>
 
-      {/* Dots con margen inferior recortado (mb-5) */}
       <div className="flex gap-4 mt-4 mb-5 z-[60]">
         {drones.map((_, idx) => {
           const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
