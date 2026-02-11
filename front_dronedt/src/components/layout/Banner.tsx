@@ -133,12 +133,7 @@ const Banner = () => {
 
         {/* BLOQUE DE BOTONES */}
         <div className="mb-[12vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
-          <Link 
-            href="/shop"
-            className="flex-1 h-[75px] md:h-[84px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] hover:bg-white hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
-          >
-            Compra Ahora
-          </Link>
+
           <Link 
             href="/services" 
             className="flex-1 h-[75px] md:h-[84px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] border border-white/20 hover:bg-[#FFD700] hover:text-black hover:border-[#FFD700] hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
