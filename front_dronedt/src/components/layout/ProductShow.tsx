@@ -15,13 +15,13 @@ interface Drone {
 const ProductShow = () => {
   const [drones, setDrones] = useState<Drone[]>([]);
   const [loading, setLoading] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(1); // Empezamos en 1 por el clon inicial
+  const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const fetchDrones = useCallback(async () => {
     setLoading(true);
-    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
     const baseUrl = isLocal ? 'http://127.0.0.1:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
     const fullUrl = `${baseUrl}/products?category=drone`;
     
@@ -58,7 +58,7 @@ const ProductShow = () => {
 
   useEffect(() => { fetchDrones(); }, [fetchDrones]);
 
-  // Lógica de Carrusel Infinito (Circular)
+  // Clonación para carrusel infinito perfecta
   const extendedDrones = drones.length > 0 
     ? [drones[drones.length - 1], ...drones, drones[0]] 
     : [];
@@ -75,7 +75,10 @@ const ProductShow = () => {
 
   useEffect(() => {
     if (!isTransitioning) {
-      setTimeout(() => setIsTransitioning(true), 50);
+      const raf = requestAnimationFrame(() => {
+        setIsTransitioning(true);
+      });
+      return () => cancelAnimationFrame(raf);
     }
   }, [isTransitioning]);
 
@@ -88,15 +91,23 @@ const ProductShow = () => {
     return () => { if (timeoutRef.current) clearInterval(timeoutRef.current); };
   }, [drones, isTransitioning]);
 
+  const handleDotClick = (idx: number) => {
+    if (timeoutRef.current) clearInterval(timeoutRef.current);
+    setCurrentIndex(idx + 1);
+  };
+
   if (loading) return null;
 
   return (
-    <section className="relative w-full h-[95vh] md:h-[90vh] bg-[#DCDCDC] overflow-hidden flex items-center px-2 md:px-10 font-montserrat">
+    /* Ajuste: py-10 para dar espacio (50px aprox) y evitar traslape con el componente superior */
+    <section className="relative w-full h-auto bg-[#DCDCDC] overflow-visible flex flex-col items-center px-4 md:px-10 font-montserrat z-10 py-12 md:py-20">
+      
+      {/* Carrusel: Ancho calculado dinámicamente según extendedDrones */}
       <div 
-        className={`flex h-[85vh] w-full ${isTransitioning ? 'transition-transform duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]' : ''}`}
+        className={`flex h-[75vh] md:h-[80vh] w-full ${isTransitioning ? 'transition-transform duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]' : ''}`}
         onTransitionEnd={handleTransitionEnd}
         style={{ 
-          transform: `translateX(-${currentIndex * (100 / extendedDrones.length)}%)`,
+          transform: `translateX(-${currentIndex * (100 / (extendedDrones.length || 1))}%)`,
           width: `${extendedDrones.length * 100}%` 
         }}
       >
@@ -106,86 +117,88 @@ const ProductShow = () => {
             className="h-full flex-shrink-0 w-full px-2 md:px-6"
             style={{ width: `${100 / extendedDrones.length}%` }}
           >
-            {/* TARJETA PREMIM BORDER RADIUS */}
-            <div className="flex flex-col md:flex-row h-full w-full overflow-hidden rounded-[1.5rem] md:rounded-[3rem] shadow-2xl bg-white border border-white/20">
+            <div className="flex flex-col md:flex-row h-full w-full overflow-hidden rounded-[2rem] md:rounded-[3.5rem] shadow-2xl bg-white border border-white/20">
               
-              {/* IMAGEN 70% (Responsive) */}
-              <div className="w-full md:w-[70%] h-[50%] md:h-full bg-[#F5F5F5] relative flex items-center justify-center p-8 md:p-20">
-                <div className="relative w-full h-full transform transition-all duration-1000 hover:scale-110">
+              {/* IMAGEN 70% */}
+              <div className="w-full md:w-[70%] h-[45%] md:h-full bg-[#F5F5F5] relative flex items-center justify-center p-8 md:p-16">
+                <div className="relative w-full h-full transform transition-all duration-1000 hover:scale-105">
                   <Image 
                     src={drone.img} 
                     alt={drone.name} 
                     fill 
-                    className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)] p-4 md:p-10" 
+                    className="object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] p-4 md:p-10" 
                     priority 
                   />
                 </div>
-                <div className="absolute top-6 left-6 md:top-10 md:left-10">
-                  <span className="text-[10px] font-black tracking-[0.4em] text-zinc-400 uppercase border-l-2 border-[#FFD700] pl-4">
+                <div className="absolute top-8 left-8 md:top-12 md:left-12">
+                  <span className="text-[10px] font-black tracking-[0.4em] text-zinc-400 uppercase border-l-4 border-[#FFD700] pl-4">
                     {drone.tag}
                   </span>
                 </div>
               </div>
 
-              {/* INFO 30% (Responsive desde 310px) */}
-              <div className="w-full md:w-[30%] h-[50%] md:h-full flex flex-col justify-center p-6 md:p-12">
+              {/* INFO 30% */}
+              <div className="w-full md:w-[30%] h-[55%] md:h-full flex flex-col justify-center p-8 md:p-14 bg-white">
                 <div className="space-y-4">
-                  <h3 className="text-3xl sm:text-4xl md:text-[50px] font-black uppercase italic leading-[0.85] tracking-tighter text-black">
+                  <h3 className="text-3xl md:text-[50px] font-black uppercase italic leading-[0.85] tracking-tighter text-black">
                     {drone.name.split(' ').map((word, i) => (
-                      <span key={i} className={word.toUpperCase() === 'DT' ? 'text-[#FFD700] block' : 'text-[#0000FF] block'}>
+                      <span key={i} className={word.toUpperCase() === 'DT' ? 'text-[#FFD700] block' : 'text-black block'}>
                         {word}
                       </span>
                     ))}
                   </h3>
-                  <p className="text-sm md:text-lg font-bold text-zinc-400 tracking-tighter uppercase">
-                    Tecnología de Punta • {drone.price}
+                  <p className="text-[11px] md:text-xs font-bold text-zinc-400 tracking-[0.1em] uppercase">
+                    Software DT Engineering • {drone.price}
                   </p>
                 </div>
 
-                {/* BOTONES AJUSTADOS (Consistencia con Banner) */}
-                <div className="flex flex-col gap-3 mt-8">
+                <div className="flex flex-col gap-3 mt-10">
                   <Link 
                     href={`/shop/product/${drone.id}`} 
-                    className="w-full h-14 md:h-16 flex items-center justify-center bg-[#FFD700] text-black text-[12px] font-black uppercase tracking-[0.2em] transition-all rounded-[4px] hover:bg-[#0000FF] hover:text-white hover:scale-[1.03] shadow-md"
+                    className="w-full h-14 md:h-16 flex items-center justify-center bg-[#FFD700] text-black text-[12px] font-black uppercase tracking-[0.2em] transition-all rounded-md hover:bg-black hover:text-white shadow-lg active:scale-95"
                   >
-                    Compra Ahora
+                    Detalles Técnicos
                   </Link>
-                  
                   <Link 
-                    href="/services" 
-                    className="w-full h-14 md:h-16 flex items-center justify-center bg-black/5 text-black border border-black/10 text-[12px] font-black uppercase tracking-[0.2em] transition-all rounded-[4px] hover:bg-[#0000FF] hover:text-white hover:border-[#0000FF] hover:scale-[1.03]"
+                    href="/shop" 
+                    className="w-full h-14 md:h-16 flex items-center justify-center bg-zinc-50 text-black border border-zinc-200 text-[12px] font-black uppercase tracking-[0.2em] transition-all rounded-md hover:border-black active:scale-95"
                   >
-                    Modelos
+                    Catálogo Completo
                   </Link>
                 </div>
 
-                {/* Barra de Progreso Software DT Style */}
+                {/* Barra de Progreso */}
                 <div className="mt-12 w-full bg-zinc-100 h-[3px] relative overflow-hidden rounded-full">
                   <div 
-                    className="absolute top-0 left-0 h-full bg-[#0000FF] transition-all duration-700"
+                    className="absolute top-0 left-0 h-full bg-[#FFD700] transition-all duration-700"
                     style={{ 
                       width: `${(currentIndex === 0 ? drones.length : currentIndex === drones.length + 1 ? 1 : currentIndex) / drones.length * 100}%` 
                     }}
                   />
                 </div>
               </div>
-
             </div>
           </div>
         ))}
       </div>
 
-      {/* INDICADORES MINIMALISTAS */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-40">
+      {/* INDICADORES (Pagination Dots) */}
+      <div className="flex gap-4 mt-12 py-4 px-8 bg-white/80 backdrop-blur-xl rounded-full z-[60] border border-zinc-200 shadow-xl">
         {drones.map((_, idx) => (
-          <div
+          <button
             key={idx}
-            className={`h-1.5 transition-all duration-500 rounded-full ${
-              (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx 
-                ? 'w-12 bg-[#0000FF]' 
-                : 'w-4 bg-zinc-300'
-            }`}
-          />
+            onClick={() => handleDotClick(idx)}
+            className="group relative p-3 focus:outline-none"
+            aria-label={`Go to slide ${idx + 1}`}
+          >
+            <div
+              className={`h-2 transition-all duration-500 rounded-full ${
+                (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx 
+                  ? 'w-12 bg-black' 
+                  : 'w-4 bg-zinc-300 group-hover:bg-zinc-500'
+              }`}
+            />
+          </button>
         ))}
       </div>
     </section>
