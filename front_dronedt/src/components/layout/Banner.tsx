@@ -101,9 +101,6 @@ const Banner = () => {
             className="animate-in fade-in slide-in-from-top duration-1000 w-full"
           >
 
-            <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
-
-            </p>
           </div>
         </div>
 
