@@ -143,23 +143,7 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* 3. DOTS (Navegación) */}
-      <div className="absolute bottom-10 left-0 right-0 z-[50] flex justify-center items-center gap-6">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => handleDotClick(i)}
-              className={`
-                h-1.5 transition-all duration-500 cursor-pointer rounded-full
-                ${i === currentSlide 
-                  ? 'w-16 bg-[#FFD700] shadow-[0_0_15px_#FFD700]' 
-                  : 'w-4 bg-white/30 hover:bg-white/60'}
-              `}
-              aria-label={`Ir al slide ${i + 1}`}
-            />
-          ))}
-      </div>
-    </section>
+      
   );
 };
 
