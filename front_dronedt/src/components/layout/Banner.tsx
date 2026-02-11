@@ -93,11 +93,7 @@ const Banner = () => {
 
             ) : (
               <div 
-                className="w-full h-full bg-cover bg-center transition-transform duration-[10000ms] ease-out"
-                style={{ 
-                  backgroundImage: `url(${slide.src})`,
-                  transform: index === currentSlide ? 'scale(1)' : 'scale(1.1)'
-                }}
+
               />
             )}
        
