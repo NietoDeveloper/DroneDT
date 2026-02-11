@@ -50,11 +50,7 @@ const Banner = () => {
     }
   }, [currentSlide]);
 
-  const handleDotClick = (index: number) => {
-    if (index === currentSlide) return;
-    if (timerRef.current) clearInterval(timerRef.current); // Reiniciar el timer al hacer click manual
-    setCurrentSlide(index);
-  };
+
 
 
 
