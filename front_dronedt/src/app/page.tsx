@@ -15,33 +15,33 @@ export default function Home() {
         <Navbar />
       </div>
 
-      <main className="h-screen overflow-y-scroll snap-y snap-proximity scroll-smooth custom-scrollbar relative">
+      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
         
-        {/* SECCIÓN 1: BANNER (80/20) */}
-        <section className="relative h-screen w-full snap-start snap-always z-10 bg-black overflow-visible">
-          <div className="h-[80vh] w-full overflow-hidden">
+        {/* SECCIÓN 1: BANNER (80% Video / 20% Transición) */}
+        <section className="relative h-screen w-full snap-start snap-always z-10 bg-black overflow-hidden">
+          <div className="h-[80vh] w-full">
             <Banner />
           </div>
-          {/* El 20% inferior Gainsboro */}
-          <div className="h-[20vh] w-full bg-[#DCDCDC] relative overflow-visible" />
+          <div className="h-[20vh] w-full bg-[#DCDCDC]" />
         </section>
 
-        {/* SECCIÓN 2: CATÁLOGO - RECORTE EXTRA DE 20px */}
+        {/* SECCIÓN 2: CATÁLOGO (ProductShow) 
+            Ajuste: pb-0 y h-auto para recortar los 30px sobrantes abajo 
+        */}
         <section 
           id="catalog" 
-          className="relative z-30 bg-[#DCDCDC] h-[78vh] snap-start snap-always flex flex-col items-center justify-start overflow-visible"
+          className="relative z-30 bg-[#DCDCDC] h-auto min-h-[90vh] snap-start snap-always flex flex-col items-center justify-start pb-0"
         >
-          {/* Mantenemos el margin-top negativo para que muerda el Banner,
-              pero al reducir la altura de la sección a 78vh (aprox 80vh - 20px),
-              la sección negra de abajo sube y elimina el espacio muerto.
-          */}
-          <div className="w-full -mt-[25vh] md:-mt-[30vh] z-40"> 
+          {/* El ProductShow sube para morder el banner */}
+          <div className="w-full -mt-[28vh] md:-mt-[32vh] z-40"> 
             <ProductShow />
           </div>
         </section>
 
-        {/* SECCIÓN 3: SPECS - AHORA MÁS ARRIBA */}
-        <section className="relative h-screen snap-start snap-always z-20 bg-black flex flex-col justify-center px-6 md:px-12 border-t border-white/5">
+        {/* SECCIÓN 3: SPECS (Fondo Negro Industrial) 
+            Subimos ligeramente con un margin negativo para cerrar cualquier gap visual
+        */}
+        <section className="relative h-screen snap-start snap-always z-20 bg-black flex flex-col justify-center px-6 md:px-12 -mt-10 md:-mt-16">
           <div className="max-w-[1900px] mx-auto w-full">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 mb-12 py-8 border-b border-white/10">
               <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
@@ -80,6 +80,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FOOTER */}
         <section className="snap-start snap-always bg-black">
           <Footer />
         </section>
