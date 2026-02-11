@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,7 +15,8 @@ interface Drone {
 const ProductShow = () => {
   const [drones, setDrones] = useState<Drone[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const fetchDrones = useCallback(async () => {
     setLoading(true);
@@ -30,15 +31,9 @@ const ProductShow = () => {
       });
       
       const result = await response.json();
-      
-      // LOGICA DE EXTRACCIÓN MEJORADA: 
-      // Basado en tus logs, la data viene en result.data o result.data.products
       let rawData = result.data?.products || result.data || result;
 
-      // Si por alguna razón no es un array, intentamos convertirlo o usamos fallback
-      if (!Array.isArray(rawData)) {
-        rawData = [];
-      }
+      if (!Array.isArray(rawData)) rawData = [];
 
       if (rawData.length > 0) {
         const formatted = rawData.map((item: any) => ({
@@ -53,125 +48,142 @@ const ProductShow = () => {
         throw new Error("Empty Array");
       }
     } catch (err: any) {
-      console.warn("⚠️ Atlas Sync Fallback Activated:", err.message);
-      // FALLBACK: Si falla Atlas, mostramos el modelo insignia para no dejar la pantalla vacía
+      console.warn("⚠️ Atlas Sync Fallback:", err.message);
       setDrones([{
         id: 'fallback-1',
         name: 'Mini A2-Pro5 DT',
         price: 'Desde $14,500,000',
         tag: 'Insígnia',
-        img: '/drone-placeholder.png' // Asegúrate de tener esta imagen o cámbiala por una válida
+        img: '/drone-placeholder.png'
       }]);
-      setError("Visualizando catálogo local.");
     } finally {
       setLoading(false);
     }
   }, []);
 
+  const resetTimeout = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+  };
+
   useEffect(() => {
     fetchDrones();
   }, [fetchDrones]);
 
+  useEffect(() => {
+    resetTimeout();
+    if (drones.length > 1) {
+      timeoutRef.current = setTimeout(
+        () => setCurrentIndex((prevIndex) => (prevIndex === drones.length - 1 ? 0 : prevIndex + 1)),
+        5000 
+      );
+    }
+    return () => resetTimeout();
+  }, [currentIndex, drones]);
+
   if (loading) {
     return (
-      <div className="h-[40vh] bg-white flex flex-col items-center justify-center border-t border-zinc-100">
+      <div className="h-[60vh] w-full bg-white flex flex-col items-center justify-center">
         <div className="w-12 h-[2px] bg-[#FFD700] animate-pulse mb-4" />
-        <p className="text-black font-black text-[10px] tracking-[0.4em] uppercase">Sincronizando Sistemas Atlas</p>
+        <p className="text-black font-black text-[10px] tracking-[0.4em] uppercase">Sincronizando Atlas</p>
       </div>
     );
   }
 
   return (
-    <section className="relative w-full bg-white font-montserrat">
-      <div className="flex flex-col">
-        {drones.map((drone, index) => (
+    <section className="relative w-full bg-[#DCDCDC] py-12 md:py-20">
+      <div className="max-w-[1400px] mx-auto px-6">
+        
+        {/* Header con Navegación */}
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <span className="text-[10px] font-black tracking-[0.4em] text-blue-600 uppercase block mb-2">Sistemas de Vuelo</span>
+            <h2 className="text-4xl md:text-5xl font-black text-black tracking-tighter uppercase leading-none">
+              Nuestra <span className="text-white drop-shadow-sm">Flota</span>
+            </h2>
+          </div>
+          
+          <div className="flex gap-2 pb-2">
+            {drones.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-1 transition-all duration-500 rounded-full ${currentIndex === idx ? 'w-12 bg-blue-600' : 'w-4 bg-gray-400'}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Carrusel */}
+        <div className="relative w-full overflow-hidden rounded-xl shadow-2xl">
           <div 
-            key={drone.id} 
-            className="relative w-full h-screen snap-start flex flex-col md:flex-row items-center border-b border-zinc-100 overflow-hidden"
+            className="flex transition-transform duration-1000 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
-            {/* LADO IZQUIERDO: 60% - IMAGEN (Diseño Tesla Studio) */}
-            <div className="relative w-full md:w-[60%] h-[50vh] md:h-full bg-[#F5F5F5] flex items-center justify-center p-12 md:p-24 overflow-hidden">
-              <div className="relative w-full h-full transition-all duration-[1.5s] ease-out hover:scale-110">
-                <Image 
-                  src={drone.img} 
-                  alt={drone.name} 
-                  fill 
-                  className="object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.1)]"
-                  priority={index === 0}
-                  sizes="(max-width: 768px) 100vw, 60vw"
-                />
-              </div>
-              <div className="absolute top-12 left-12 flex items-center gap-4">
-                <span className="w-8 h-[1px] bg-zinc-300"></span>
-                <p className="text-[10px] font-black tracking-[0.6em] text-zinc-300 uppercase">
-                  Aeroespacial
-                </p>
-              </div>
-            </div>
+            {drones.map((drone) => (
+              <div key={drone.id} className="w-full flex-shrink-0">
+                <div className="bg-white flex flex-col md:flex-row min-h-[500px] md:h-[600px]">
+                  
+                  {/* Imagen del Drone */}
+                  <div className="w-full md:w-[60%] bg-[#F5F5F5] relative p-8 flex items-center justify-center group overflow-hidden">
+                    <div className="relative w-full h-64 md:h-[80%] transition-transform duration-700 group-hover:scale-110">
+                      <Image 
+                        src={drone.img} 
+                        alt={drone.name} 
+                        fill 
+                        className="object-contain drop-shadow-2xl"
+                        priority
+                      />
+                    </div>
+                    <div className="absolute top-8 left-8">
+                      <p className="text-[10px] font-black tracking-[0.3em] text-zinc-400 uppercase border-l-2 border-[#FFD700] pl-3">
+                        {drone.tag}
+                      </p>
+                    </div>
+                  </div>
 
-            {/* LADO DERECHO: 40% - INFO (Diseño Drone DT) */}
-            <div className="w-full md:w-[40%] h-[50vh] md:h-full flex flex-col justify-center px-10 md:px-20 bg-white">
-              <div className="max-w-md w-full">
-                <span className="text-[11px] font-black text-[#FFD700] tracking-[0.4em] uppercase mb-4 block">
-                  {drone.tag}
-                </span>
-                
-                <h2 className="text-5xl md:text-[64px] font-black text-black tracking-tighter uppercase leading-[0.85] mb-6">
-                  {drone.name.split(' ').map((word, i) => (
-                    <span key={i} className={word.toUpperCase() === 'DT' ? 'text-[#FFD700] italic' : ''}>
-                      {word}{' '}
-                    </span>
-                  ))}
-                </h2>
-                
-                <p className="text-[18px] md:text-[22px] font-medium text-zinc-400 tracking-tight mb-12">
-                  {drone.price}
-                </p>
+                  {/* Info y Botones (Azul CSS y Hover Gold) */}
+                  <div className="w-full md:w-[40%] p-8 md:p-12 flex flex-col justify-center">
+                    <h3 className="text-4xl md:text-6xl font-black text-black uppercase leading-[0.9] mb-4 tracking-tighter">
+                      {drone.name.split(' ').map((word, i) => (
+                        <span key={i} className={word.toUpperCase() === 'DT' ? 'text-[#FFD700] italic' : ''}>
+                          {word}{' '}
+                        </span>
+                      ))}
+                    </h3>
+                    <p className="text-xl md:text-2xl text-zinc-400 font-bold mb-10 tracking-tight">
+                      {drone.price}
+                    </p>
 
-                <div className="flex flex-col gap-4 w-full">
-                  <Link
-                    href={`/shop/product/${drone.id}`}
-                    className="group relative w-full h-[64px] flex items-center justify-center bg-black text-white rounded-[4px] text-[12px] font-black uppercase tracking-[0.2em] transition-all hover:bg-[#FFD700] hover:text-black"
-                  >
-                    Explorar Modelo
-                  </Link>
-                  <Link
-                    href="/services"
-                    className="w-full h-[64px] flex items-center justify-center bg-transparent border border-zinc-200 text-black rounded-[4px] text-[12px] font-black uppercase tracking-[0.2em] transition-all hover:border-black"
-                  >
-                    Ficha Técnica
-                  </Link>
-                </div>
+                    <div className="flex flex-col gap-4">
+                      {/* Botón Azul - Hover Gold Flotante */}
+                      <Link
+                        href={`/shop/product/${drone.id}`}
+                        className="w-full h-16 flex items-center justify-center bg-blue-700 text-white text-[12px] font-black uppercase tracking-widest transition-all duration-300 hover:bg-[#FFD700] hover:text-black hover:-translate-y-2 shadow-lg"
+                      >
+                        Ordenar Ahora
+                      </Link>
+                      
+                      {/* Botón Outline - Hover Gold Flotante */}
+                      <Link
+                        href="/services"
+                        className="w-full h-16 flex items-center justify-center border-2 border-blue-700 text-blue-700 text-[12px] font-black uppercase tracking-widest transition-all duration-300 hover:border-[#FFD700] hover:bg-[#FFD700] hover:text-black hover:-translate-y-2"
+                      >
+                        Ficha Técnica
+                      </Link>
+                    </div>
 
-                <div className="mt-16 pt-8 border-t border-zinc-100 flex justify-between items-center">
-                  <p className="text-[9px] text-zinc-400 uppercase tracking-widest font-bold">
-                    Manuel Nieto • Bogotá, CO
-                  </p>
-                  <div className="flex gap-1">
-                    <div className="w-1 h-1 bg-green-500 rounded-full animate-pulse"></div>
-                    <span className="text-[8px] text-zinc-400 uppercase font-black">Live Sync</span>
+                    <div className="mt-12 flex items-center gap-3 pt-6 border-t border-zinc-100">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                      <span className="text-[9px] font-bold text-zinc-400 uppercase tracking-widest">
+                        Atlas Sync • Bogotá Hub
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
-
-      {/* Navegación lateral tipo Tesla mejorada */}
-      <div className="fixed right-10 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-40 hidden lg:flex">
-        {drones.map((_, idx) => (
-          <button 
-            key={idx} 
-            onClick={() => window.scrollTo({ top: (idx + 1) * window.innerHeight * 0.8, behavior: 'smooth' })}
-            className="group flex items-center justify-end gap-4"
-          >
-            <span className="text-[10px] font-black text-black opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0">
-              MODEL 0{idx + 1}
-            </span>
-            <div className="w-[2px] h-10 bg-zinc-100 group-hover:bg-[#FFD700] transition-all duration-500" />
-          </button>
-        ))}
+        </div>
       </div>
     </section>
   );
