@@ -126,7 +126,7 @@ const Banner = () => {
               {renderTitle(slides[currentSlide].title)}
             </h1>
             <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
-              {slides[currentSlide].subtitle}
+
             </p>
           </div>
         </div>
