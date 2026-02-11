@@ -90,11 +90,7 @@ const Banner = () => {
             }`}
           >
             {slide.type === 'video' ? (
-              <video
 
-              >
-    
-              </video>
             ) : (
               <div 
                 className="w-full h-full bg-cover bg-center transition-transform duration-[10000ms] ease-out"
