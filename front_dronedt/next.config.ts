@@ -13,9 +13,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+
 
   /* Output optimizado para Vercel y Docker */
   output: 'standalone',
