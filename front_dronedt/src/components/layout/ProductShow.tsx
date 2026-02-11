@@ -58,7 +58,7 @@ const ProductShow = () => {
 
   useEffect(() => { fetchDrones(); }, [fetchDrones]);
 
-  // Clonación para carrusel infinito perfecta
+  // Clonación para carrusel infinito
   const extendedDrones = drones.length > 0 
     ? [drones[drones.length - 1], ...drones, drones[0]] 
     : [];
@@ -99,87 +99,92 @@ const ProductShow = () => {
   if (loading) return null;
 
   return (
-    /* Ajuste: py-10 para dar espacio (50px aprox) y evitar traslape con el componente superior */
-    <section className="relative w-full h-auto bg-[#DCDCDC] overflow-visible flex flex-col items-center px-4 md:px-10 font-montserrat z-10 py-12 md:py-20">
+    /* py-20 para asegurar el espacio de 50px+ respecto al Banner */
+    <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 py-12 md:py-24">
       
-      {/* Carrusel: Ancho calculado dinámicamente según extendedDrones */}
+      {/* Contenedor del Carrusel: width dinámico basado en el total de clones */}
       <div 
-        className={`flex h-[75vh] md:h-[80vh] w-full ${isTransitioning ? 'transition-transform duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]' : ''}`}
-        onTransitionEnd={handleTransitionEnd}
-        style={{ 
-          transform: `translateX(-${currentIndex * (100 / (extendedDrones.length || 1))}%)`,
-          width: `${extendedDrones.length * 100}%` 
-        }}
+        className="relative w-full overflow-visible"
+        style={{ height: '75vh', minHeight: '600px' }}
       >
-        {extendedDrones.map((drone, idx) => (
-          <div 
-            key={`${drone.id}-${idx}`} 
-            className="h-full flex-shrink-0 w-full px-2 md:px-6"
-            style={{ width: `${100 / extendedDrones.length}%` }}
-          >
-            <div className="flex flex-col md:flex-row h-full w-full overflow-hidden rounded-[2rem] md:rounded-[3.5rem] shadow-2xl bg-white border border-white/20">
-              
-              {/* IMAGEN 70% */}
-              <div className="w-full md:w-[70%] h-[45%] md:h-full bg-[#F5F5F5] relative flex items-center justify-center p-8 md:p-16">
-                <div className="relative w-full h-full transform transition-all duration-1000 hover:scale-105">
-                  <Image 
-                    src={drone.img} 
-                    alt={drone.name} 
-                    fill 
-                    className="object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] p-4 md:p-10" 
-                    priority 
-                  />
-                </div>
-                <div className="absolute top-8 left-8 md:top-12 md:left-12">
-                  <span className="text-[10px] font-black tracking-[0.4em] text-zinc-400 uppercase border-l-4 border-[#FFD700] pl-4">
-                    {drone.tag}
-                  </span>
-                </div>
-              </div>
-
-              {/* INFO 30% */}
-              <div className="w-full md:w-[30%] h-[55%] md:h-full flex flex-col justify-center p-8 md:p-14 bg-white">
-                <div className="space-y-4">
-                  <h3 className="text-3xl md:text-[50px] font-black uppercase italic leading-[0.85] tracking-tighter text-black">
-                    {drone.name.split(' ').map((word, i) => (
-                      <span key={i} className={word.toUpperCase() === 'DT' ? 'text-[#FFD700] block' : 'text-black block'}>
-                        {word}
-                      </span>
-                    ))}
-                  </h3>
-                  <p className="text-[11px] md:text-xs font-bold text-zinc-400 tracking-[0.1em] uppercase">
-                    Software DT Engineering • {drone.price}
-                  </p>
+        <div 
+          className={`flex h-full ${isTransitioning ? 'transition-transform duration-[1200ms] ease-[cubic-bezier(0.4,0,0.2,1)]' : ''}`}
+          onTransitionEnd={handleTransitionEnd}
+          style={{ 
+            transform: `translateX(-${currentIndex * (100 / (extendedDrones.length || 1))}%)`,
+            width: `${extendedDrones.length * 100}%` 
+          }}
+        >
+          {extendedDrones.map((drone, idx) => (
+            <div 
+              key={`${drone.id}-${idx}`} 
+              className="h-full flex-shrink-0 w-full px-2 md:px-6"
+              style={{ width: `${100 / extendedDrones.length}%` }}
+            >
+              <div className="flex flex-col md:flex-row h-full w-full overflow-hidden rounded-[2rem] md:rounded-[3.5rem] shadow-2xl bg-white border border-white/20">
+                
+                {/* IMAGEN (Blue background style) */}
+                <div className="w-full md:w-[70%] h-[45%] md:h-full bg-zinc-50 relative flex items-center justify-center p-8 md:p-16">
+                  <div className="relative w-full h-full transform transition-all duration-1000 hover:scale-105">
+                    <Image 
+                      src={drone.img} 
+                      alt={drone.name} 
+                      fill 
+                      className="object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.15)] p-4 md:p-10" 
+                      priority 
+                    />
+                  </div>
+                  <div className="absolute top-8 left-8 md:top-12 md:left-12">
+                    <span className="text-[10px] font-black tracking-[0.4em] text-[#0000FF] uppercase border-l-4 border-[#FFD700] pl-4">
+                      {drone.tag}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="flex flex-col gap-3 mt-10">
-                  <Link 
-                    href={`/shop/product/${drone.id}`} 
-                    className="w-full h-14 md:h-16 flex items-center justify-center bg-[#FFD700] text-black text-[12px] font-black uppercase tracking-[0.2em] transition-all rounded-md hover:bg-black hover:text-white shadow-lg active:scale-95"
-                  >
-                    Detalles Técnicos
-                  </Link>
-                  <Link 
-                    href="/shop" 
-                    className="w-full h-14 md:h-16 flex items-center justify-center bg-zinc-50 text-black border border-zinc-200 text-[12px] font-black uppercase tracking-[0.2em] transition-all rounded-md hover:border-black active:scale-95"
-                  >
-                    Catálogo Completo
-                  </Link>
-                </div>
+                {/* INFO (Blue text and Gold Hover) */}
+                <div className="w-full md:w-[30%] h-[55%] md:h-full flex flex-col justify-center p-8 md:p-14 bg-white">
+                  <div className="space-y-4">
+                    <h3 className="text-3xl md:text-[50px] font-black uppercase italic leading-[0.85] tracking-tighter text-black">
+                      {drone.name.split(' ').map((word, i) => (
+                        <span key={i} className={word.toUpperCase() === 'DT' ? 'text-[#FFD700] block' : 'text-[#0000FF] block'}>
+                          {word}
+                        </span>
+                      ))}
+                    </h3>
+                    <p className="text-[11px] md:text-xs font-bold text-zinc-400 tracking-[0.1em] uppercase">
+                      Ingeniería Software DT • {drone.price}
+                    </p>
+                  </div>
 
-                {/* Barra de Progreso */}
-                <div className="mt-12 w-full bg-zinc-100 h-[3px] relative overflow-hidden rounded-full">
-                  <div 
-                    className="absolute top-0 left-0 h-full bg-[#FFD700] transition-all duration-700"
-                    style={{ 
-                      width: `${(currentIndex === 0 ? drones.length : currentIndex === drones.length + 1 ? 1 : currentIndex) / drones.length * 100}%` 
-                    }}
-                  />
+                  <div className="flex flex-col gap-3 mt-10">
+                    <Link 
+                      href={`/shop/product/${drone.id}`} 
+                      className="w-full h-14 md:h-16 flex items-center justify-center bg-[#0000FF] text-white text-[12px] font-black uppercase tracking-[0.2em] transition-all rounded-md hover:bg-[#FFD700] hover:text-black shadow-lg active:scale-95"
+                    >
+                      Explorar
+                    </Link>
+                    <Link 
+                      href="/shop" 
+                      className="w-full h-14 md:h-16 flex items-center justify-center bg-transparent text-[#0000FF] border border-[#0000FF] text-[12px] font-black uppercase tracking-[0.2em] transition-all rounded-md hover:bg-[#FFD700] hover:border-[#FFD700] hover:text-black active:scale-95"
+                    >
+                      Ver Todo
+                    </Link>
+                  </div>
+
+                  {/* Barra de Progreso Gold */}
+                  <div className="mt-12 w-full bg-zinc-100 h-[3px] relative overflow-hidden rounded-full">
+                    <div 
+                      className="absolute top-0 left-0 h-full bg-[#FFD700] transition-all duration-700"
+                      style={{ 
+                        width: `${(currentIndex === 0 ? drones.length : currentIndex === drones.length + 1 ? 1 : currentIndex) / drones.length * 100}%` 
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* INDICADORES (Pagination Dots) */}
@@ -189,13 +194,12 @@ const ProductShow = () => {
             key={idx}
             onClick={() => handleDotClick(idx)}
             className="group relative p-3 focus:outline-none"
-            aria-label={`Go to slide ${idx + 1}`}
           >
             <div
               className={`h-2 transition-all duration-500 rounded-full ${
                 (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx 
-                  ? 'w-12 bg-black' 
-                  : 'w-4 bg-zinc-300 group-hover:bg-zinc-500'
+                  ? 'w-12 bg-[#0000FF]' 
+                  : 'w-4 bg-zinc-300 group-hover:bg-[#FFD700]'
               }`}
             />
           </button>
