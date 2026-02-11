@@ -13,17 +13,13 @@ export default function Home() {
     <div className="relative bg-white selection:bg-[#FFD700] selection:text-black">
       <Navbar />
 
-      {/* CAMBIO CLAVE: El contenedor main ahora controla el snap scroll.
-          h-screen + overflow-y-scroll + snap-y + snap-mandatory 
-      */}
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth hide-scrollbar">
         
-        {/* SECCIÓN 1: BANNER HERO - Altura 100vh para que el snap encaje perfecto */}
-        <section className="relative h-screen w-full snap-start z-10 overflow-hidden bg-black">
+        {/* SECCIÓN 1: BANNER HERO - Ajustado al 80% de la pantalla */}
+        <section className="relative h-[80vh] w-full snap-start z-10 overflow-hidden bg-black">
           <Banner />
           <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-black/40 to-transparent z-20 pointer-events-none" />
           
-          {/* Indicador de scroll para guiar al usuario hacia el catálogo */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 animate-bounce">
              <p className="text-white/40 text-[10px] tracking-[0.3em] uppercase mb-2 text-center">Catálogo</p>
              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-white mx-auto opacity-50">
@@ -32,19 +28,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN CATÁLOGO: 
-            ProductShow internamente ya tiene sus propios divs con snap-start, 
-            por lo que fluirán dentro de este scroll principal. 
-        */}
-        <section id="catalog" className="relative z-30 bg-white">
+        {/* SECCIÓN CATÁLOGO: Ocupa el 20% restante para completar el 100vh inicial */}
+        <section id="catalog" className="relative z-30 bg-white min-h-[20vh]">
           <ProductShow />
         </section>
 
-        {/* SECCIÓN 2: SPECS Y BRANDING - snap-start para que frene aquí */}
+        {/* SECCIÓN 2: SPECS Y BRANDING */}
         <section className="relative min-h-screen snap-start z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5 flex flex-col justify-center">
           <div className="max-w-[1900px] mx-auto w-full">
             
-            {/* GRID DE STATS */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 mb-24 py-16 lg:py-24 border-b border-white/10">
               <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
                 <h3 className="text-6xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
@@ -68,7 +60,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* BRANDING CENTRAL */}
             <div className="flex flex-col items-center text-center space-y-12">
               <div className="space-y-6">
                 <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[120px] font-black tracking-tighter uppercase leading-none">
@@ -102,13 +93,11 @@ export default function Home() {
             </div>
           </div>
 
-          {/* EFECTOS DE FONDO */}
           <div className="absolute inset-0 z-[-1] pointer-events-none overflow-hidden">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[1000px] bg-[#FFD700]/5 blur-[180px] rounded-full opacity-50" />
           </div>
         </section>
 
-        {/* FOOTER: Con snap-start para que el scroll lo detecte al final */}
         <footer className="snap-start bg-black">
           <Footer />
         </footer>
