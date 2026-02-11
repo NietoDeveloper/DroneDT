@@ -92,12 +92,7 @@ const Banner = () => {
 
 
     
-        {/* BLOQUE DE TÍTULOS */}
-        <div className="mt-[10vh] md:mt-[95px] flex flex-col items-center w-full">
-          <div 
-            key={currentSlide} 
-            className="animate-in fade-in slide-in-from-top duration-1000 w-full"
-          >
+  
 
           </div>
         </div>
