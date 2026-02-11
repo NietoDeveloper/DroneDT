@@ -6,14 +6,6 @@ const nextConfig: NextConfig = {
     reactCompiler: false,
   },
 
-  /* Configuración de imágenes AWS para tus Drones */
-  
-
-  /* Bypass de Seguridad - Vital para cumplir tu meta de commits sin bloqueos */
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-
 
   /* Output optimizado para Vercel y Docker */
   output: 'standalone',
