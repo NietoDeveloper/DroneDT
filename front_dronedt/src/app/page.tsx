@@ -3,7 +3,6 @@
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
-// En Next.js App Router, para usar ssr: false, el componente padre DEBE ser "use client"
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
 const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { ssr: false });
@@ -11,18 +10,21 @@ const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false 
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black overflow-x-hidden selection:bg-[#FFD700] selection:text-black">
+    // bg-white aquí es clave: si hay algún espacio entre componentes, será blanco (como el ProductShow) y no negro
+    <div className="relative min-h-screen bg-white selection:bg-[#FFD700] selection:text-black">
       <Navbar />
 
       <main className="flex flex-col w-full">
         
-        {/* SECCIÓN 1: BANNER HERO - Impacto Visual Inmediato */}
-        <section className="relative h-screen w-full z-10 overflow-hidden bg-black">
+        {/* SECCIÓN 1: BANNER HERO - Altura reducida al 75% para mostrar lo que viene abajo */}
+        <section className="relative h-[75vh] w-full z-10 overflow-hidden bg-black">
           <Banner />
+          {/* Sutil gradiente inferior para suavizar la transición al blanco si es necesario */}
+          <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black/20 to-transparent z-20 pointer-events-none" />
         </section>
 
-        {/* SECCIÓN CATÁLOGO - Elevamos el Z-Index para asegurar visibilidad sobre el fondo */}
-        <section id="catalog" className="relative z-30 bg-white">
+        {/* SECCIÓN CATÁLOGO - Se asoma 25% en el primer scroll */}
+        <section id="catalog" className="relative z-30 bg-white -mt-[1px]">
           <ProductShow />
         </section>
 
@@ -30,7 +32,7 @@ export default function Home() {
         <section className="relative z-20 bg-black pt-24 pb-32 px-6 md:px-12 border-t border-white/5">
           <div className="max-w-[1900px] mx-auto">
             
-            {/* GRID DE STATS - Estilo Drone DT Elite */}
+            {/* GRID DE STATS */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 mb-24 py-16 lg:py-24 border-b border-white/5">
               <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
                 <h3 className="text-6xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
