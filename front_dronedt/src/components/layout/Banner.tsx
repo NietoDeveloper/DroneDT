@@ -97,7 +97,7 @@ const Banner = () => {
                   index === currentSlide && isVideoVisible ? 'opacity-100' : 'opacity-0'
                 }`}
               >
-                <source src={slide.src} type="video/mp4" />
+    
               </video>
             ) : (
               <div 
