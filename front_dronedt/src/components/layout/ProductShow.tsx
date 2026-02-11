@@ -33,7 +33,7 @@ const ProductShow = () => {
       const productsArray = result.data || result;
 
       if (Array.isArray(productsArray) && productsArray.length > 0) {
-        const formatted = productsArray.slice(0, 5).map((item: any) => ({
+        const formatted = productsArray.map((item: any) => ({
           id: item._id || item.id,
           name: item.name || "Drone DT Model",
           price: item.price ? `Desde $${Number(item.price).toLocaleString()}` : 'Contactar Ventas',
@@ -56,76 +56,89 @@ const ProductShow = () => {
 
   if (drones.length === 0) {
     return (
-      <div className="h-[50vh] bg-white flex flex-col items-center justify-center p-10">
-        <div className="animate-pulse text-black font-black text-2xl mb-4">DRONE DT</div>
-        <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest text-center">
-          {error || "Sincronizando con Atlas..."}
+      <div className="h-[20vh] bg-white flex flex-col items-center justify-center border-t border-zinc-100">
+        <p className="text-zinc-500 font-mono text-[10px] uppercase tracking-[0.3em] animate-pulse">
+          {error || "Sincronizando Catálogo Atlas..."}
         </p>
       </div>
     );
   }
 
   return (
-    /* CAMBIO CLAVE: Quitamos h-screen del contenedor principal 
-       para que el snap-y funcione a nivel de página si es necesario 
-    */
     <section className="relative w-full bg-white font-montserrat">
       <div className="flex flex-col">
-        {drones.map((drone) => (
+        {drones.map((drone, index) => (
           <div 
             key={drone.id} 
-            className="relative w-full h-screen snap-start flex flex-col items-center justify-between py-24 px-4 border-b border-zinc-100"
+            /* h-screen para que cada producto sea una sección completa al scrollear */
+            className={`relative w-full h-screen snap-start flex flex-col md:flex-row items-center border-b border-zinc-100 overflow-hidden ${
+              index === 0 ? "pt-0" : ""
+            }`}
           >
-            {/* Cabecera: Tesla Style */}
-            <div className="z-20 text-center mt-10">
-              <h2 className="text-4xl md:text-[64px] font-black text-black tracking-tighter uppercase mb-2 leading-none">
-                {drone.name}
-              </h2>
-              <p className="text-[14px] md:text-[15px] font-medium text-zinc-600 tracking-[0.2em] uppercase">
-                {drone.price}
-              </p>
-            </div>
-
-            {/* Imagen: Conexión Atlas - Ajustada para no tapar textos */}
-            <div className="absolute inset-0 z-10 flex items-center justify-center p-4 pointer-events-none">
-              <div className="relative w-full h-[50%] max-w-5xl">
+            {/* LADO IZQUIERDO (IMAGEN): 60% del ancho en horizontal */}
+            <div className="relative w-full md:w-[60%] h-[50vh] md:h-full bg-[#f9f9f9] flex items-center justify-center p-8 md:p-20">
+              <div className="relative w-full h-full transition-transform duration-700 hover:scale-105">
                 <Image 
                   src={drone.img} 
                   alt={drone.name} 
                   fill 
-                  className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)]"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 1200px"
+                  className="object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.12)]"
+                  priority={index === 0}
+                  sizes="(max-width: 768px) 100vw, 60vw"
                 />
               </div>
+              {/* Tag de categoría estilo Drone DT */}
+              <span className="absolute top-10 left-10 text-[10px] font-black tracking-[0.5em] text-zinc-300 uppercase">
+                {drone.tag}
+              </span>
             </div>
 
-            {/* Acciones: Estilo Drone DT */}
-            <div className="z-20 w-full flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-              <Link
-                href={`/shop/product/${drone.id}`}
-                className="w-full max-w-[260px] h-[44px] flex items-center justify-center bg-[#171A20CC] backdrop-blur-md text-white rounded-[4px] text-[12px] font-bold uppercase tracking-[0.15em] hover:bg-black transition-all duration-300"
-              >
-                Explorar
-              </Link>
-              <Link
-                href="/services"
-                className="w-full max-w-[260px] h-[44px] flex items-center justify-center bg-[#F4F4F4A6] backdrop-blur-md text-[#393C41] rounded-[4px] text-[12px] font-bold uppercase tracking-[0.15em] hover:bg-[#E2E2E2] transition-all duration-300"
-              >
-                Soporte Técnico
-              </Link>
+            {/* LADO DERECHO (INFO): 40% del ancho en horizontal */}
+            <div className="w-full md:w-[40%] h-[50vh] md:h-full flex flex-col justify-center px-8 md:px-16 bg-white">
+              <div className="max-w-md">
+                <h2 className="text-4xl md:text-[54px] font-black text-black tracking-tighter uppercase leading-[0.9] mb-4">
+                  {drone.name.split(' ').map((word, i) => (
+                    <span key={i} className={word.toLowerCase() === 'dt' ? 'text-[#FFD700] italic' : ''}>
+                      {word}{' '}
+                    </span>
+                  ))}
+                </h2>
+                
+                <p className="text-[16px] md:text-[18px] font-medium text-zinc-500 tracking-tight mb-10">
+                  {drone.price}
+                </p>
+
+                <div className="flex flex-col gap-4 w-full">
+                  <Link
+                    href={`/shop/product/${drone.id}`}
+                    className="w-full h-[54px] flex items-center justify-center bg-black text-white rounded-[4px] text-[12px] font-black uppercase tracking-[0.2em] transition-all hover:bg-[#FFD700] hover:text-black active:scale-95"
+                  >
+                    Ordenar Ahora
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="w-full h-[54px] flex items-center justify-center bg-transparent border border-zinc-200 text-black rounded-[4px] text-[12px] font-black uppercase tracking-[0.2em] transition-all hover:border-black active:scale-95"
+                  >
+                    Configuración Pro
+                  </Link>
+                </div>
+                
+                <p className="mt-8 text-[10px] text-zinc-400 leading-relaxed max-w-xs">
+                  Sujeto a disponibilidad tecnológica. Entrega disponible en Bogotá y las principales ciudades de Colombia.
+                </p>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Nav Lateral Minimalista */}
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-30 hidden lg:flex">
+      {/* Indicador lateral de navegación (Tesla Style) */}
+      <div className="fixed right-8 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-40 hidden lg:flex">
         {drones.map((_, idx) => (
           <div 
             key={idx} 
-            className="w-[3px] h-8 bg-zinc-200 hover:bg-gold transition-colors cursor-pointer" 
-            title={`Producto ${idx + 1}`}
+            className="w-[2px] h-6 bg-zinc-200 hover:bg-[#FFD700] transition-all duration-300 cursor-pointer"
+            onClick={() => window.scrollTo({ top: idx * window.innerHeight, behavior: 'smooth' })}
           />
         ))}
       </div>
