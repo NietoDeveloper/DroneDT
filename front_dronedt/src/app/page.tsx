@@ -16,28 +16,24 @@ export default function Home() {
       <main className="relative w-full snap-y snap-mandatory">
         
         {/* SECCIÓN 1: BANNER HERO 
-            Ajustamos a h-screen pero eliminamos cualquier posible padding/margin.
+            AJUSTE: 75vh + 20px adicionales para mayor balance visual.
         */}
-        <section className="relative h-screen w-full snap-start z-10 bg-black overflow-hidden">
+        <section className="relative h-[calc(75vh+20px)] w-full snap-start z-10 bg-black overflow-hidden">
           <Banner />
-          {/* Eliminamos el div del degradado blanco anterior para evitar ruidos visuales */}
         </section>
 
         {/* SECCIÓN CATÁLOGO
-            -mt-[10vh] o -mt-px: Forzamos que la sección blanca suba y se pegue al banner.
-            z-20 para que esté por encima de cualquier residuo del banner.
+            Mantenemos el z-30 y el -mt-px para que la unión sea perfecta.
         */}
         <section 
           id="catalog" 
-          className="relative z-20 bg-white snap-start min-h-screen -mt-[2px] pt-0"
+          className="relative z-30 bg-white snap-start min-h-screen -mt-px pt-0"
         >
           <ProductShow />
         </section>
 
-        {/* SECCIÓN 2: SPECS Y BRANDING 
-            Usamos border-none y -mt-px para que la transición de blanco a negro sea quirúrgica.
-        */}
-        <section className="relative min-h-screen snap-start z-30 bg-black -mt-px pt-24 pb-32 px-6 md:px-12 flex flex-col justify-center">
+        {/* SECCIÓN 2: SPECS Y BRANDING */}
+        <section className="relative min-h-screen snap-start z-20 bg-black -mt-px pt-24 pb-32 px-6 md:px-12 flex flex-col justify-center">
           <div className="max-w-[1900px] mx-auto w-full">
             
             {/* GRID DE STATS */}

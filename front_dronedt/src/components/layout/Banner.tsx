@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 
-// 1. DEFINICIÓN DE SLIDES (Evita el ReferenceError)
 interface Slide {
   id: number;
   type: 'video' | 'image';
@@ -24,7 +23,6 @@ const Banner = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // 2. LÓGICA DE RENDERIZADO DE TÍTULOS
   const renderTitle = (title: string) => {
     if (title.toUpperCase().includes('DRONE')) {
       const words = title.split(' ');
@@ -47,7 +45,6 @@ const Banner = () => {
     return <span className="text-white">{title}</span>;
   };
 
-  // 3. LÓGICA DEL TEMPORIZADOR
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
@@ -78,8 +75,8 @@ const Banner = () => {
   };
 
   return (
-    /* AJUSTE: h-[75vh] para permitir ver el componente de abajo (Efecto Tesla) */
-    <section className="relative w-full h-[75vh] bg-black overflow-hidden font-montserrat">
+    /* FIJAMOS h-[80vh] para que el componente de abajo suba y se vea */
+    <section className="relative w-full h-[80vh] bg-black overflow-hidden font-montserrat">
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
           <div
@@ -112,50 +109,43 @@ const Banner = () => {
         ))}
       </div>
 
-      <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
-        
-        {/* AJUSTE: Margen superior optimizado para h-[75vh] */}
-        <div className="mt-[12vh] md:mt-[100px] flex flex-col items-center w-full">
+      {/* Ajustamos los paddings internos para que nada se corte en 80vh */}
+      <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center py-12">
+        <div className="mt-[5vh] flex flex-col items-center w-full">
           <div key={currentSlide} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
-            <h1 className="text-4xl md:text-[68px] lg:text-[72px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.6)]">
+            <h1 className="text-4xl md:text-[60px] lg:text-[65px] font-black tracking-tighter uppercase italic leading-none drop-shadow-xl">
               {renderTitle(slides[currentSlide].title)}
             </h1>
-            <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
+            <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold mt-4 opacity-90">
               {slides[currentSlide].subtitle}
             </p>
           </div>
         </div>
 
-        {/* AJUSTE: Margen inferior y altura de botones para h-[75vh] */}
-        <div className="mb-[10vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
+        <div className="mb-[2vh] flex flex-col md:flex-row gap-4 w-full max-w-[650px] pointer-events-auto">
           <Link 
             href="/shop"
-            className="flex-1 h-[65px] md:h-[74px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] hover:bg-[#0000FF] hover:text-white hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
+            className="flex-1 h-[60px] flex items-center justify-center bg-[#FFD700] text-black rounded-[4px] text-[14px] font-black uppercase tracking-[0.2em] hover:bg-white transition-all active:scale-95"
           >
             Compra Ahora
           </Link>
           <Link 
             href="/services" 
-            className="flex-1 h-[65px] md:h-[74px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[16px] md:text-[18px] font-black uppercase tracking-[0.2em] border border-white/20 hover:bg-[#0000FF] hover:text-white hover:border-[#0000FF] hover:scale-[1.02] transition-all shadow-2xl active:scale-95"
+            className="flex-1 h-[60px] flex items-center justify-center bg-black/40 backdrop-blur-md text-white rounded-[4px] text-[14px] font-black uppercase tracking-[0.2em] border border-white/20 hover:bg-white hover:text-black transition-all active:scale-95"
           >
             Modelos
           </Link>
         </div>
       </div>
 
-      {/* AJUSTE: Indicadores de slide */}
-      <div className="absolute bottom-6 left-0 right-0 z-[50] flex justify-center items-center gap-6">
+      <div className="absolute bottom-4 left-0 right-0 z-[50] flex justify-center items-center gap-4">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => handleDotClick(i)}
-              className={`
-                h-1.5 transition-all duration-500 cursor-pointer rounded-full
-                ${i === currentSlide 
-                  ? 'w-16 bg-[#FFD700] shadow-[0_0_15px_#FFD700]' 
-                  : 'w-4 bg-white/30 hover:bg-white/60'}
-              `}
-              aria-label={`Ir al slide ${i + 1}`}
+              className={`h-1 transition-all duration-500 rounded-full ${
+                  i === currentSlide ? 'w-12 bg-[#FFD700]' : 'w-3 bg-white/30'
+                }`}
             />
           ))}
       </div>
