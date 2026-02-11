@@ -25,9 +25,7 @@ const Banner = () => {
 
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
-    
     const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
-    
     timerRef.current = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, duration);
@@ -55,30 +53,31 @@ const Banner = () => {
   };
 
   const renderTitle = (title: string) => {
-    if (title.includes('DRONE')) {
+    // Caso 1: DRONE (Blue) DT (Gold)
+    if (title.toUpperCase().includes('DRONE')) {
       const words = title.split(' ');
       return (
         <>
-          <span className="text-white">{words[0]}</span>{" "}
-          <span className="text-[#0000FF]">{words[1]}</span>
+          <span className="text-[#0000FF]">{words[0]}</span>{" "}
+          <span className="text-[#FFD700]">{words[1]}</span>
         </>
       );
     }
+    // Caso 2: Modelo (Blue) : Título (Gold)
     if (title.includes('Modelo')) {
       const [prefix, model] = title.split(':');
       return (
         <>
-          <span className="text-white">{prefix}:</span>
-          <span className="text-[#0000FF]">{model}</span>
+          <span className="text-[#0000FF]">{prefix}:</span>{" "}
+          <span className="text-[#FFD700]">{model}</span>
         </>
       );
     }
-    return title;
+    return <span className="text-white">{title}</span>;
   };
 
   return (
     <section className="relative w-full h-[90vh] bg-black overflow-hidden font-montserrat">
-      {/* 1. FONDO - MULTIMEDIA */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
           <div
@@ -111,16 +110,12 @@ const Banner = () => {
         ))}
       </div>
 
-      {/* 2. CONTENEDOR CENTRAL */}
       <div className="relative z-10 flex flex-col items-center justify-between h-full max-w-[1900px] mx-auto px-4 text-center">
         
-        {/* BLOQUE DE TÍTULOS - 125px (30px extra) */}
-        <div className="mt-[10vh] md:mt-[125px] flex flex-col items-center w-full">
-          <div 
-            key={currentSlide} 
-            className="animate-in fade-in slide-in-from-top duration-1000 w-full"
-          >
-            <h1 className="text-white text-4xl md:text-[68px] lg:text-[72px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
+        {/* BLOQUE DE TÍTULOS - Ajustado a 145px (+20px extra) */}
+        <div className="mt-[12vh] md:mt-[145px] flex flex-col items-center w-full">
+          <div key={currentSlide} className="animate-in fade-in slide-in-from-top duration-1000 w-full">
+            <h1 className="text-4xl md:text-[68px] lg:text-[72px] font-black tracking-tighter uppercase italic leading-none drop-shadow-[0_10px_10px_rgba(0,0,0,0.6)]">
               {renderTitle(slides[currentSlide].title)}
             </h1>
             <p className="text-white text-[10px] md:text-[11px] tracking-[0.5em] uppercase font-bold drop-shadow-md mt-4 opacity-90">
@@ -129,7 +124,6 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* BLOQUE DE BOTONES - Actualizado con hover azul */}
         <div className="mb-[12vh] flex flex-col md:flex-row gap-4 w-full max-w-[700px] pointer-events-auto">
           <Link 
             href="/shop"
@@ -146,7 +140,6 @@ const Banner = () => {
         </div>
       </div>
 
-      {/* 3. DOTS (Navegación) */}
       <div className="absolute bottom-10 left-0 right-0 z-[50] flex justify-center items-center gap-6">
           {slides.map((_, i) => (
             <button
