@@ -7,14 +7,7 @@ const nextConfig: NextConfig = {
   },
 
   /* Configuración de imágenes AWS para tus Drones */
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**.amazonaws.com',
-      },
-    ],
-  },
+  
 
   /* Bypass de Seguridad - Vital para cumplir tu meta de commits sin bloqueos */
   eslint: {
