@@ -17,70 +17,71 @@ export default function Home() {
 
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
         
+        {/* SECCIÓN 1: BANNER */}
         <section className="relative h-screen w-full snap-start snap-always z-10 bg-black flex flex-col pb-[20vh]">
           <div className="flex-1 w-full overflow-hidden">
             <Banner />
           </div>
         </section>
 
-        {/* SECCIÓN CATÁLOGO: Ajuste h-[calc(80vh+60px)] para holgura */}
+        {/* SECCIÓN 2: CATÁLOGO (ÚLTIMO SOLAPAMIENTO 80/20) */}
         <section 
           id="catalog" 
           className="relative h-screen w-full snap-start snap-always z-20 flex flex-col -mt-[20vh]"
         >
-          <div className="h-[calc(80vh+60px)] w-full bg-white shadow-xl">
+          {/* h-full aquí para que ProductShow use todo el espacio de la sección */}
+          <div className="h-full w-full bg-white shadow-2xl">
             <ProductShow />
           </div>
-          <div className="flex-1 w-full bg-[#DCDCDC]" /> 
         </section>
 
-        <section className="relative h-screen snap-start snap-always z-30 flex flex-col -mt-[20vh]">
-          <div className="flex-1 bg-black flex flex-col justify-center px-6 md:px-12 pt-20">
+        {/* SECCIÓN 3: SPECS (FLUJO NORMAL - SIN -MT) */}
+        <section className="relative h-screen w-full snap-start snap-always z-30 bg-black flex flex-col">
+          <div className="flex-1 flex flex-col justify-center px-6 md:px-12">
             <div className="max-w-[1900px] mx-auto w-full text-center">
-              {/* Specs simplificadas para evitar desbordamiento */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 py-8 border-b border-white/10">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 py-10 border-b border-white/10">
                 <div className="flex flex-col items-center">
-                   <h3 className="text-5xl font-black text-white italic">4K</h3>
-                   <p className="text-[9px] text-white/40 tracking-widest mt-2">60 FPS PRO</p>
+                   <h3 className="text-6xl font-black text-white italic">4K</h3>
+                   <p className="text-xs text-[#FFD700] tracking-[0.3em] mt-2 uppercase font-bold">60 FPS PRO</p>
                 </div>
                 <div className="flex flex-col items-center">
-                   <h3 className="text-5xl font-black text-white italic">45M</h3>
-                   <p className="text-[9px] text-white/40 tracking-widest mt-2">AUTONOMÍA</p>
+                   <h3 className="text-6xl font-black text-white italic">45M</h3>
+                   <p className="text-xs text-[#FFD700] tracking-[0.3em] mt-2 uppercase font-bold">AUTONOMÍA</p>
                 </div>
                 <div className="flex flex-col items-center">
-                   <h3 className="text-5xl font-black text-white italic">10K</h3>
-                   <p className="text-[9px] text-white/40 tracking-widest mt-2">RANGO</p>
+                   <h3 className="text-6xl font-black text-white italic">10K</h3>
+                   <p className="text-xs text-[#FFD700] tracking-[0.3em] mt-2 uppercase font-bold">RANGO O3</p>
                 </div>
               </div>
 
-              <div className="flex flex-col items-center space-y-8">
-                <h1 className="text-6xl md:text-8xl lg:text-[100px] font-black uppercase leading-none text-white">
+              <div className="flex flex-col items-center space-y-10">
+                <h1 className="text-7xl md:text-9xl lg:text-[120px] font-black uppercase leading-none text-white tracking-tighter">
                   DRONE <span className="text-[#FFD700] italic">DT</span>
                 </h1>
-                <div className="flex flex-col sm:flex-row gap-5 w-full max-w-xl">
-                  <Link href="/shop" className="flex-1 h-14 flex items-center justify-center bg-[#FFD700] text-black text-[11px] font-black uppercase tracking-widest hover:bg-white transition-colors">
-                    Tienda
+                <div className="flex flex-col sm:flex-row gap-6 w-full max-w-2xl">
+                  <Link href="/shop" className="flex-1 h-16 flex items-center justify-center bg-[#FFD700] text-black text-xs font-black uppercase tracking-widest hover:bg-white transition-all transform hover:scale-105">
+                    EXPLORAR TIENDA
                   </Link>
-                  <Link href="/services" className="flex-1 h-14 flex items-center justify-center text-white border border-white/20 text-[11px] font-black uppercase tracking-widest hover:border-[#FFD700] transition-colors">
-                    Servicios
+                  <Link href="/services" className="flex-1 h-16 flex items-center justify-center text-white border-2 border-white/20 text-xs font-black uppercase tracking-widest hover:border-[#FFD700] hover:text-[#FFD700] transition-all transform hover:scale-105">
+                    MANTENIMIENTO
                   </Link>
                 </div>
               </div>
             </div>
           </div>
-          <div className="h-[20vh] w-full" />
         </section>
 
-        <section className="snap-start snap-always bg-black">
+        {/* SECCIÓN 4: FOOTER */}
+        <section className="snap-start snap-always bg-black h-auto">
           <Footer />
         </section>
       </main>
 
       <style jsx global>{`
         html, body { overflow: hidden; height: 100%; margin: 0; background: #DCDCDC; }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
         .custom-scrollbar::-webkit-scrollbar-track { background: #000; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #333; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #FFD700; border-radius: 10px; }
       `}</style>
     </div>
   );
