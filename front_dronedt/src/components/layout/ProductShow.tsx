@@ -1,8 +1,28 @@
 "use client";
 
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import useSWR from 'swr';
+
+// --- COMPONENTE SKELETON (Carga Estilo Drone DT) ---
+const ProductSkeleton = () => (
+  <div className="h-screen w-full bg-white flex flex-col animate-pulse">
+    {/* Placeholder Foto: Círculo difuminado que imita el drone */}
+    <div className="w-full h-[55%] md:h-[65%] flex items-center justify-center">
+      <div className="w-64 h-40 md:w-96 md:h-60 bg-zinc-100 rounded-full blur-3xl opacity-60" />
+    </div>
+    {/* Placeholder Info: Bloques de texto */}
+    <div className="w-full h-[45%] md:h-[35%] flex flex-col items-center px-6 pt-10 md:pt-0">
+      <div className="h-10 w-64 bg-zinc-100 mb-6 rounded-md" />
+      <div className="h-4 w-32 bg-zinc-50 mb-8 rounded-md" />
+      <div className="flex flex-col md:flex-row gap-3 w-full max-w-[260px] md:max-w-xl justify-center">
+        <div className="w-full md:w-52 h-12 bg-zinc-100 rounded-sm" />
+        <div className="w-full md:w-52 h-12 bg-zinc-100 rounded-sm" />
+      </div>
+    </div>
+  </div>
+);
 
 interface Drone {
   id: string;
@@ -12,52 +32,45 @@ interface Drone {
   tag: string;
 }
 
+const fetcher = (url: string) => fetch(url).then(res => res.json());
+
 const ProductShow = () => {
-  const [drones, setDrones] = useState<Drone[]>([]);
-  const [loading, setLoading] = useState(true);
+  const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+  const baseUrl = isLocal ? 'http://localhost:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
+
+  const { data: result, isLoading } = useSWR(`${baseUrl}/products/menu`, fetcher, {
+    revalidateOnFocus: false,
+    revalidateIfStale: false,
+    dedupingInterval: 3600000 
+  });
+
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  const fetchDrones = useCallback(async () => {
-    setLoading(true);
-    const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-    const baseUrl = isLocal ? 'http://localhost:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
-    
-    try {
-      const response = await fetch(`${baseUrl}/products/menu`);
-      if (!response.ok) throw new Error("Error en la conexión");
-      const result = await response.json();
+  const drones = useMemo(() => {
+    if (result && result.success && Array.isArray(result.data)) {
+      return result.data.map((item: any) => {
+        const rawName = (item.name || "").toUpperCase();
+        let finalImgPath = '/drone-placeholder.png'; 
 
-      if (result && result.success && Array.isArray(result.data)) {
-        const formatted = result.data.map((item: any) => {
-          const rawName = (item.name || "").toUpperCase();
-          let finalImgPath = '/drone-placeholder.png'; 
+        if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) finalImgPath = "/DT-BIG_C1PRO8.png";
+        else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) finalImgPath = "/DT-MID_B1PRO5.png";
+        else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) finalImgPath = "/DT-MID_B2PRO8.png";
+        else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) finalImgPath = "/DT-MINI_A1PRO4.png";
+        else if (rawName.includes("MINI_A2PRO5") || rawName.includes("MINIA2PRO5")) finalImgPath = "/DT-MINI_A2PRO5.png";
 
-          if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) finalImgPath = "/DT-BIG_C1PRO8.png";
-          else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) finalImgPath = "/DT-MID_B1PRO5.png";
-          else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) finalImgPath = "/DT-MID_B2PRO8.png";
-          else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) finalImgPath = "/DT-MINI_A1PRO4.png";
-          else if (rawName.includes("MINI_A2PRO5") || rawName.includes("MINIA2PRO5")) finalImgPath = "/DT-MINI_A2PRO5.png";
-
-          return {
-            id: item._id?.$oid || item._id || item.id || Math.random().toString(),
-            name: rawName.replace(/_/g, ' '), 
-            price: typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : (item.price?.toUpperCase() || 'CONTACTAR'),
-            tag: (item.category || 'PRO SERIES').toUpperCase(),
-            img: finalImgPath
-          };
-        });
-        setDrones(formatted);
-      }
-    } catch (err) {
-      console.error("❌ Drone DT Offline:", err);
-    } finally {
-      setLoading(false);
+        return {
+          id: item._id?.$oid || item._id || item.id || Math.random().toString(),
+          name: rawName.replace(/_/g, ' '), 
+          price: typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : (item.price?.toUpperCase() || 'CONTACTAR'),
+          tag: (item.category || 'PRO SERIES').toUpperCase(),
+          img: finalImgPath
+        };
+      });
     }
-  }, []);
-
-  useEffect(() => { fetchDrones(); }, [fetchDrones]);
+    return [];
+  }, [result]);
 
   const extendedDrones = drones.length > 0 ? [drones[drones.length - 1], ...drones, drones[0]] : [];
 
@@ -80,7 +93,8 @@ const ProductShow = () => {
     return () => { if (timeoutRef.current) clearInterval(timeoutRef.current); };
   }, [drones.length, isTransitioning]);
 
-  if (loading) return <div className="h-screen bg-white flex items-center justify-center font-black text-[#0000FF] text-2xl tracking-[0.2em]">CONECTANDO UPLINK DT...</div>;
+  // --- RETORNO DEL SKELETON MIENTRAS CARGA ---
+  if (isLoading) return <ProductSkeleton />;
   if (drones.length === 0) return null;
 
   return (
@@ -97,10 +111,9 @@ const ProductShow = () => {
         >
           {extendedDrones.map((drone, idx) => (
             <div key={`${drone.id}-${idx}`} className="h-full flex-shrink-0 w-full" style={{ width: `${100 / extendedDrones.length}%` }}>
-              
               <div className="flex flex-col h-full w-full bg-white">
                 
-                {/* ZONA SUPERIOR: FOTO (Escala aumentada en ambos dispositivos) */}
+                {/* ZONA SUPERIOR: FOTO */}
                 <div className="w-full h-[55%] md:h-[65%] relative flex items-start justify-center p-0 overflow-hidden">
                   <div className="relative w-full h-full transform scale-110 md:scale-115 transition-transform duration-1000 -mt-2 md:mt-0">
                     <Image 
@@ -114,13 +127,11 @@ const ProductShow = () => {
                   </div>
                 </div>
 
-                {/* ZONA INFERIOR: INFO Y BOTONES (Bajados 20px en mobile) */}
+                {/* ZONA INFERIOR: INFO Y BOTONES */}
                 <div className="w-full h-[45%] md:h-[35%] flex flex-col justify-start md:justify-center items-center bg-white z-10 px-6 pt-5 md:pt-0 text-center">
-                  
-                  {/* Título y Precio */}
                   <div className="mb-4 md:mb-5">
                     <h3 className="text-3xl md:text-3xl lg:text-4xl font-black uppercase italic leading-none tracking-tighter flex flex-wrap justify-center gap-x-3">
-                      {drone.name.split(' ').map((word, i) => (
+                      {drone.name.split(' ').map((word: string, i: number) => (
                         <span key={i} className={word === 'DT' ? 'text-[#FFD700]' : 'text-[#0000FF]'}>{word}</span>
                       ))}
                     </h3>
@@ -130,10 +141,9 @@ const ProductShow = () => {
                     </div>
                   </div>
 
-                  {/* BOTONES */}
                   <div className="flex flex-col md:flex-row gap-3 w-full max-w-[260px] md:max-w-xl mx-auto items-center justify-center">
                     <Link href={`/shop/checkout/${drone.id}`} 
-                      className="w-full md:w-52 h-12 md:h-13 bg-[#FFD700] border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300">
+                      className="w-full md:w-52 h-12 md:h-13 bg-[#FFD700] border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 shadow-md">
                       ORDENAR
                     </Link>
                     <Link href={`/shop/product/${drone.id}`} 
@@ -149,7 +159,7 @@ const ProductShow = () => {
         </div>
       </section>
 
-      {/* NAVEGACIÓN (DOTS) - Subidos 10px en mobile */}
+      {/* NAVEGACIÓN (DOTS) */}
       <div className="w-full h-8 md:h-10 flex justify-center items-center bg-white shrink-0 relative z-50 -translate-y-2.5 md:translate-y-0">
         <div className="flex gap-3">
           {drones.map((_, idx) => {
