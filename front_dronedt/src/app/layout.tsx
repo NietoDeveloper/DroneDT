@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#FFD700", // Color Gold DT en la barra del navegador
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -69,47 +69,39 @@ export default function RootLayout({
         className={`
           ${montserrat.className} 
           antialiased 
-          bg-black 
-          text-white 
+          bg-[#DCDCDC] 
+          text-black 
           min-h-screen 
           overflow-x-hidden
           selection:bg-[#FFD700] selection:text-black
         `}
+        style={{ overscrollBehaviorY: 'none' }} // Evita el rebote de scroll "duro" en browsers modernos
       >
         {/* SISTEMA DE CARGA AEROESPACIAL */}
         <Preloader />
 
-        {/* TEXTURA DE RUIDO INDUSTRIAL - Z-0 para seguridad total */}
+        {/* TEXTURA DE RUIDO INDUSTRIAL - Z-0 */}
         <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         
-        {/* Contenedor relativo para el contenido inyectado */}
-        <div className="relative z-10 w-full min-h-screen">
+        {/* Contenedor principal con el flujo 80/20 respetado */}
+        <main className="relative z-10 w-full min-h-screen flex flex-col">
           {children}
-        </div>
+        </main>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          /* Reset y estabilidad */
+          /* Solución definitiva al scroll pegajoso */
           html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
+            scrollbar-gutter: stable; /* Evita el salto de layout al aparecer el scroll ancho */
           }
 
-          /* Scrollbar Utils */
-          .no-scrollbar::-webkit-scrollbar { display: none; }
-          .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-          .hide-scrollbar::-webkit-scrollbar { display: none; }
-          .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-          
-          /* Suavizado Premium */
-          body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+          /* Animación de la barra de scroll Gold DT al cargar */
+          ::-webkit-scrollbar-thumb {
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
           }
 
-          ::selection { 
-            background: #FFD700 !important; 
-            color: #000000 !important; 
+          /* Suavizado de hardware para componentes pesados */
+          * {
+            -webkit-overflow-scrolling: touch;
           }
         `}} />
       </body>
