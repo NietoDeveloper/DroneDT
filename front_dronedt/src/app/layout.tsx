@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#FFD700", // Color Gold DT en la barra del navegador
+  themeColor: "#FFD700",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -69,39 +69,62 @@ export default function RootLayout({
         className={`
           ${montserrat.className} 
           antialiased 
-          bg-[#DCDCDC] 
-          text-black 
+          bg-black 
+          text-white 
           min-h-screen 
           overflow-x-hidden
           selection:bg-[#FFD700] selection:text-black
         `}
-        style={{ overscrollBehaviorY: 'none' }} // Evita el rebote de scroll "duro" en browsers modernos
       >
-        {/* SISTEMA DE CARGA AEROESPACIAL */}
         <Preloader />
 
-        {/* TEXTURA DE RUIDO INDUSTRIAL - Z-0 */}
+        {/* TEXTURA DE RUIDO INDUSTRIAL */}
         <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         
-        {/* Contenedor principal con el flujo 80/20 respetado */}
-        <main className="relative z-10 w-full min-h-screen flex flex-col">
+        <div className="relative z-10 w-full min-h-screen">
           {children}
-        </main>
+        </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          /* Solución definitiva al scroll pegajoso */
+          /* RESET TOTAL PARA ELIMINAR ESPACIOS SOBRANTES */
           html, body {
-            scrollbar-gutter: stable; /* Evita el salto de layout al aparecer el scroll ancho */
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
           }
 
-          /* Animación de la barra de scroll Gold DT al cargar */
+          /* SCROLLBAR DRONE DT - ANCHO EXACTO 13PX */
+          ::-webkit-scrollbar {
+            width: 13px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background: #000000;
+          }
+
           ::-webkit-scrollbar-thumb {
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            background: #FFD700;
+            border-radius: 2px;
+            /* Border transparente crea el efecto de que el scroll no toca los bordes */
+            border: 2px solid #000000;
           }
 
-          /* Suavizado de hardware para componentes pesados */
-          * {
-            -webkit-overflow-scrolling: touch;
+          /* HOVER GOLD FLOTANTE */
+          ::-webkit-scrollbar-thumb:hover {
+            background: #FEB60D;
+            box-shadow: 0 0 15px #FFD700;
+            cursor: pointer;
+          }
+
+          /* Utility clases */
+          .no-scrollbar::-webkit-scrollbar { display: none; }
+          .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+          
+          ::selection { 
+            background: #FFD700 !important; 
+            color: #000000 !important; 
           }
         `}} />
       </body>
