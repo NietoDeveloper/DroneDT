@@ -100,9 +100,9 @@ const ProductShow = () => {
               
               <div className="flex flex-col h-full w-full bg-white">
                 
-                {/* ZONA SUPERIOR: FOTO (Borde superior pegado, escala optimizada) */}
+                {/* ZONA SUPERIOR: FOTO (Escala aumentada en ambos dispositivos) */}
                 <div className="w-full h-[55%] md:h-[65%] relative flex items-start justify-center p-0 overflow-hidden">
-                  <div className="relative w-full h-full transform scale-100 md:scale-105 transition-transform duration-1000 -mt-2 md:mt-0">
+                  <div className="relative w-full h-full transform scale-110 md:scale-115 transition-transform duration-1000 -mt-2 md:mt-0">
                     <Image 
                       src={drone.img} 
                       alt={drone.name} 
@@ -114,11 +114,11 @@ const ProductShow = () => {
                   </div>
                 </div>
 
-                {/* ZONA INFERIOR: INFO Y BOTONES (Fuentes más pequeñas en LG) */}
-                <div className="w-full h-[45%] md:h-[35%] flex flex-col justify-start md:justify-center items-center bg-white z-10 px-6 pt-0 text-center">
+                {/* ZONA INFERIOR: INFO Y BOTONES (Bajados 20px en mobile) */}
+                <div className="w-full h-[45%] md:h-[35%] flex flex-col justify-start md:justify-center items-center bg-white z-10 px-6 pt-5 md:pt-0 text-center">
                   
-                  {/* Título y Precio - Escala reducida para no invadir */}
-                  <div className="-mt-6 md:mt-0 mb-4 md:mb-5">
+                  {/* Título y Precio */}
+                  <div className="mb-4 md:mb-5">
                     <h3 className="text-3xl md:text-3xl lg:text-4xl font-black uppercase italic leading-none tracking-tighter flex flex-wrap justify-center gap-x-3">
                       {drone.name.split(' ').map((word, i) => (
                         <span key={i} className={word === 'DT' ? 'text-[#FFD700]' : 'text-[#0000FF]'}>{word}</span>
@@ -130,7 +130,7 @@ const ProductShow = () => {
                     </div>
                   </div>
 
-                  {/* BOTONES: Medida estándar compacta */}
+                  {/* BOTONES */}
                   <div className="flex flex-col md:flex-row gap-3 w-full max-w-[260px] md:max-w-xl mx-auto items-center justify-center">
                     <Link href={`/shop/checkout/${drone.id}`} 
                       className="w-full md:w-52 h-12 md:h-13 bg-[#FFD700] border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300">
@@ -149,8 +149,8 @@ const ProductShow = () => {
         </div>
       </section>
 
-      {/* NAVEGACIÓN (DOTS) */}
-      <div className="w-full h-8 md:h-10 flex justify-center items-center bg-white shrink-0 relative z-50">
+      {/* NAVEGACIÓN (DOTS) - Subidos 10px en mobile */}
+      <div className="w-full h-8 md:h-10 flex justify-center items-center bg-white shrink-0 relative z-50 -translate-y-2.5 md:translate-y-0">
         <div className="flex gap-3">
           {drones.map((_, idx) => {
             const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
