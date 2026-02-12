@@ -4,15 +4,12 @@
 
 :root {
   /* DroneDT Official Palette */
-  --tesla-black: #000000;
-  --tesla-blue: #0000FF; /* Azul Puro DT */
-  --tesla-gold: #FFD700; /* Gold Software DT */
-  --tesla-yellow-hover: #FEB60D; /* YellowColor para hover flotante */
-  --tesla-white: #FFFFFF;
+  --dt-black: #000000;
+  --dt-blue: #0000FF;
+  --dt-gold: #FFD700;
+  --dt-gold-hover: #FEB60D;
+  --dt-white: #FFFFFF;
   --gainsboro: #DCDCDC;
-  
-  /* Gradientes de alto nivel DT */
-  --premium-gradient: linear-gradient(180deg, #000000 0%, #0000FF 100%);
 }
 
 * {
@@ -23,46 +20,53 @@
 
 html {
   scroll-behavior: smooth;
-  /* Optimización de scroll para evitar que se pegue */
-  -webkit-overflow-scrolling: touch;
+  /* Forzar que el scrollbar siempre sea visible y no se superponga */
+  overflow-y: scroll;
 }
 
 body {
-  background-color: var(--gainsboro); /* Fondo base de la app */
-  color: var(--tesla-black);
+  background-color: var(--dt-black);
+  color: var(--dt-white);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
-  /* Suavizado de fuente premium */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- SCROLLBAR DRONE DT: ANCHO DOBLE Y GOLD --- */
+/* --- SCROLLBAR MAESTRO DRONE DT (18PX) --- */
+
+/* 1. Contenedor Principal del Scroll */
 ::-webkit-scrollbar {
-  width: 20px; /* Doble de ancho para impacto visual */
+  width: 18px !important; /* Ancho masivo solicitado */
+  background-color: var(--dt-black) !important;
 }
 
+/* 2. Carril (Track) - Negro Puro para que el Oro resalte */
 ::-webkit-scrollbar-track {
-  background: var(--gainsboro); /* Fondo que funde con el 80% de la app */
-  border-left: 1px solid rgba(0,0,0,0.05);
+  background: var(--dt-black) !important;
 }
 
+/* 3. La Barra (Thumb) - Gold Software DT */
 ::-webkit-scrollbar-thumb {
-  background: var(--tesla-gold); /* Gold Software DT */
-  border-radius: 4px; /* Estilo industrial/Tesla */
-  /* El "border" crea un padding visual para que parezca flotante */
-  border: 4px solid var(--gainsboro); 
-  transition: all 0.4s ease;
+  background-color: var(--dt-gold) !important;
+  border-radius: 4px !important;
+  /* EFECTO FLOTANTE: El borde negro del mismo color que el fondo 
+     hace que la barra parezca suspendida en el aire */
+  border: 4px solid var(--dt-black) !important;
+  transition: all 0.3s ease-in-out !important;
 }
 
-/* Hover Gold Flotante con brillo */
+/* 4. HOVER GOLD FLOTANTE CON BRILLO */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--tesla-yellow-hover);
-  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(254, 182, 13, 0.6);
+  background-color: var(--dt-gold-hover) !important;
+  /* El brillo se expande hacia afuera */
+  box-shadow: 0 0 15px var(--dt-gold) !important;
+  /* Reducimos el borde en hover para que la barra se "engrose" visualmente */
+  border: 2px solid var(--dt-black) !important;
   cursor: pointer;
 }
 
-/* Solución para el scroll pegajoso en secciones de alto rendimiento */
+/* Solución para el scroll pegajoso */
 .snap-section {
   height: 100vh;
   display: flex;
@@ -70,13 +74,18 @@ body {
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-  /* GPU Acceleration para evitar lagueos */
-  transform: translateZ(0);
+  transform: translateZ(0); /* Aceleración por Hardware */
   will-change: transform;
 }
 
-/* Ajuste de selección de texto estilo DT */
+/* Ajuste de selección de texto */
 ::selection {
-  background: var(--tesla-gold);
-  color: var(--tesla-black);
+  background: var(--dt-gold);
+  color: var(--dt-black);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--dt-gold) var(--dt-black);
 }
