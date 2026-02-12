@@ -32,20 +32,28 @@ const ProductShow = () => {
       if (result && result.success && Array.isArray(result.data)) {
         const formatted = result.data.map((item: any) => {
           
-          // 1. FORZAMOS TODO A MAYÚSCULAS
-          const rawName = (item.name || "DRONE DT MODEL").toUpperCase();
+          // 1. NORMALIZACIÓN TOTAL A MAYÚSCULAS
+          const rawName = (item.name || "").toUpperCase();
           let finalImgPath = '/drone-placeholder.png'; 
 
-          // 2. MAPEO QUIRÚRGICO A ARCHIVOS PNG (Carpeta /public)
-          if (rawName.includes("MINIA1PRO4")) finalImgPath = "/DT-MINI_A1PRO4.png";
-          else if (rawName.includes("MINIA2PRO5")) finalImgPath = "/DT-MINI_A2PRO5.png";
-          else if (rawName.includes("MIDB1PRO5")) finalImgPath = "/DT-MID_B1PRO5.png";
-          else if (rawName.includes("MIDB2PRO8")) finalImgPath = "/DT-MID_B2PRO8.png";
-          else if (rawName.includes("BIGC1PRO8") || rawName.includes("BIG_C1PRO8")) finalImgPath = "/DT-BIG_C1PRO8.png";
+          // 2. MAPEO QUIRÚRGICO BASADO EN TU LISTA EXACTA (Todos .png)
+          // Buscamos la coincidencia del modelo sin importar guiones
+          if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) {
+            finalImgPath = "/DT-BIG_C1PRO8.png";
+          } else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) {
+            finalImgPath = "/DT-MID_B1PRO5.png";
+          } else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) {
+            finalImgPath = "/DT-MID_B2PRO8.png";
+          } else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) {
+            finalImgPath = "/DT-MINI_A1PRO4.png";
+          } else if (rawName.includes("MIN_A2PRO5") || rawName.includes("MINIA2PRO5")) {
+            finalImgPath = "/DT-MINI_A2PRO5.png";
+          }
 
           return {
             id: item._id?.$oid || item._id || item.id || Math.random().toString(),
-            name: rawName.replace(/_/g, ' '), // Limpieza de guiones para el split
+            // Para el título: Limpiamos guiones bajos y aseguramos MAYÚSCULAS
+            name: rawName.replace(/_/g, ' '), 
             price: typeof item.price === 'number' 
               ? `DESDE $${item.price.toLocaleString()}` 
               : (item.price?.toUpperCase() || 'CONTACTAR VENTAS'),
@@ -101,7 +109,12 @@ const ProductShow = () => {
     setCurrentIndex(idx + 1);
   };
 
-  if (loading) return <div className="h-screen bg-[#DCDCDC] flex items-center justify-center font-black text-[#0000FF] tracking-widest">CONECTANDO UPLINK DT...</div>;
+  if (loading) return (
+    <div className="h-screen bg-[#DCDCDC] flex items-center justify-center font-black text-[#0000FF] text-2xl tracking-[0.2em]">
+      CONECTANDO UPLINK DT...
+    </div>
+  );
+
   if (drones.length === 0) return null;
 
   return (
