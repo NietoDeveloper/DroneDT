@@ -27,15 +27,17 @@ export default function Home() {
         </section>
 
         {/* SECCIÓN 2: CATÁLOGO (ProductShow) 
-            AJUSTE: Forzamos h-screen para que NO se vea lo de abajo.
-            Usamos justify-between para que los dots queden siempre al fondo.
+            AJUSTE: Eliminamos el justify-between y forzamos a que el hijo ocupe el alto total.
         */}
         <section 
           id="catalog" 
-          className="relative z-30 bg-[#DCDCDC] w-full h-screen snap-start snap-always flex flex-col items-center justify-between overflow-hidden"
+          className="relative z-30 bg-[#DCDCDC] w-full h-screen snap-start snap-always flex flex-col overflow-hidden"
         >
-          {/* El margen negativo sube la tarjeta, pero el contenedor h-screen protege el fondo */}
-          <div className="w-full -mt-[20vh] md:-mt-[25vh] lg:-mt-[28vh] z-40 flex-1"> 
+          {/* - El div contenedor sube la tarjeta con el margen negativo.
+              - h-[120vh] (o similar) asegura que la tarjeta tenga espacio de sobra 
+                para cubrir el hueco y llegar hasta el fondo de la sección.
+          */}
+          <div className="w-full -mt-[20vh] md:-mt-[25vh] lg:-mt-[28vh] z-40 flex-1 h-full"> 
             <ProductShow />
           </div>
         </section>
