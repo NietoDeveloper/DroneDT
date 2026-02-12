@@ -100,7 +100,6 @@ const ProductShow = () => {
               
               <div className="flex flex-col md:flex-row h-full w-full overflow-hidden sm:rounded-[2rem] md:rounded-[3.5rem] shadow-2xl bg-white border-b border-white">
                 
-                {/* IMAGEN - 5px del borde superior como pediste */}
                 <div className="w-full md:w-1/2 h-[45%] md:h-full bg-zinc-50 relative flex items-center justify-center pt-[5px] px-6 md:p-12">
                   <div className="relative w-full h-[95%] transform scale-110 md:scale-125 transition-transform duration-700">
                     <Image 
@@ -119,7 +118,6 @@ const ProductShow = () => {
                   </div>
                 </div>
 
-                {/* INFO - Alineada abajo para dar espacio a los botones masivos */}
                 <div className="w-full md:w-1/2 h-[55%] md:h-full flex flex-col justify-end p-8 md:p-14 lg:p-24 bg-white">
                   <div className="space-y-6 md:space-y-8 mb-auto pt-10">
                     <h3 className="text-4xl sm:text-5xl md:text-[55px] lg:text-[85px] font-black uppercase italic leading-[0.75] tracking-tighter">
@@ -140,24 +138,22 @@ const ProductShow = () => {
                     </div>
                   </div>
 
-                  {/* BOTONES ESTILO DRONE DT (Inspirados en Tesla pero con Poder DT) */}
+                  {/* BOTONES AJUSTADOS - GOLD BASE / BLUE HOVER */}
                   <div className="flex flex-col sm:flex-row gap-4 mt-8 md:mt-0">
-                    {/* Botón Principal - Llenado Gold */}
                     <Link 
                       href={`/shop/checkout/${drone.id}`} 
-                      className="group relative flex-1 h-[140px] md:h-20 flex items-center justify-center bg-[#0000FF] text-white text-[16px] font-black uppercase tracking-[0.3em] rounded-[4px] overflow-hidden transition-all active:scale-95 shadow-2xl"
+                      className="group relative flex-1 h-[140px] md:h-20 flex items-center justify-center bg-[#FFD700] text-black text-[16px] font-black uppercase tracking-[0.3em] rounded-[4px] overflow-hidden transition-all active:scale-95 shadow-xl border-2 border-[#FFD700]"
                     >
-                      <span className="relative z-10 group-hover:text-black transition-colors duration-300">COMPRAR</span>
-                      <div className="absolute inset-0 bg-[#FFD700] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                      <span className="relative z-10 group-hover:text-white transition-colors duration-300">COMPRAR</span>
+                      <div className="absolute inset-0 bg-[#0000FF] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                     </Link>
 
-                    {/* Botón Secundario - Border 4px y Llenado Gold */}
                     <Link 
                       href={`/shop/product/${drone.id}`} 
-                      className="group relative flex-1 h-[140px] md:h-20 flex items-center justify-center border-[4px] border-[#0000FF] text-[#0000FF] text-[16px] font-black uppercase tracking-[0.3em] rounded-[4px] overflow-hidden transition-all active:scale-95"
+                      className="group relative flex-1 h-[140px] md:h-20 flex items-center justify-center bg-transparent border-[4px] border-[#FFD700] text-black text-[16px] font-black uppercase tracking-[0.3em] rounded-[4px] overflow-hidden transition-all active:scale-95"
                     >
-                      <span className="relative z-10 group-hover:text-black transition-colors duration-300">INFO TÉCNICA</span>
-                      <div className="absolute inset-0 bg-[#FFD700] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                      <span className="relative z-10 group-hover:text-white transition-colors duration-300">INFO TÉCNICA</span>
+                      <div className="absolute inset-0 bg-[#0000FF] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                     </Link>
                   </div>
                 </div>
@@ -168,7 +164,6 @@ const ProductShow = () => {
         </div>
       </div>
 
-      {/* Dots de navegación estilo DT */}
       <div className="flex gap-4 mt-8 z-[60]">
         {drones.map((_, idx) => {
           const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
