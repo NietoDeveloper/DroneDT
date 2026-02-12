@@ -78,7 +78,6 @@ export default function RootLayout({
       >
         <Preloader />
 
-        {/* TEXTURA DE RUIDO INDUSTRIAL */}
         <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         
         <div className="relative z-10 w-full min-h-screen">
@@ -86,49 +85,54 @@ export default function RootLayout({
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          /* RESET PARA ELIMINAR ESPACIOS SOBRANTES AL COSTADO DEL SCROLL */
-          html, body {
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            scroll-behavior: smooth;
-            background-color: #000000;
-          }
-
-          /* SCROLLBAR DRONE DT - ANCHO 18PX */
-          ::-webkit-scrollbar {
-            width: 18px;
-          }
-
-          ::-webkit-scrollbar-track {
-            background: #000000;
-          }
-
-          ::-webkit-scrollbar-thumb {
-            background: #FFD700;
-            border-radius: 4px;
-            /* El border negro genera el efecto visual de "flotado" dentro del carril */
-            border: 3px solid #000000;
-            transition: all 0.3s ease;
-          }
-
-          /* HOVER GOLD FLOTANTE CON BRILLO DT */
-          ::-webkit-scrollbar-thumb:hover {
-            background: #FEB60D;
-            /* Box shadow interno y externo para potenciar el efecto flotante */
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.2), 0 0 20px #FFD700;
-            cursor: pointer;
-            border-width: 2px; /* Se expande ligeramente al reducir el borde */
-          }
-
-          /* Utility clases */
-          .no-scrollbar::-webkit-scrollbar { display: none; }
-          .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+          /* FORZAR SCROLLBAR GOLD DRONE DT */
           
-          ::selection { 
-            background: #FFD700 !important; 
-            color: #000000 !important; 
+          /* 1. Reset y visibilidad */
+          html {
+            scrollbar-color: #FFD700 #000000 !important; /* Para Firefox */
+            scrollbar-width: auto !important;
+          }
+
+          /* 2. Ancho Maestro de 18px */
+          ::-webkit-scrollbar {
+            width: 18px !important;
+            height: 18px !important;
+            display: block !important;
+          }
+
+          /* 3. Carril Negro Puro */
+          ::-webkit-scrollbar-track {
+            background: #000000 !important;
+          }
+
+          /* 4. El Oro DT (Thumb) Flotante */
+          ::-webkit-scrollbar-thumb {
+            background-color: #FFD700 !important;
+            border-radius: 6px !important;
+            /* El borde negro de 4px hace que el oro se vea de 10px y flotando en el carril de 18px */
+            border: 4px solid #000000 !important;
+            transition: all 0.2s ease-in-out !important;
+          }
+
+          /* 5. Hover Gold Flotante Brillante */
+          ::-webkit-scrollbar-thumb:hover {
+            background-color: #FEB60D !important; /* YellowColor DT */
+            border: 2px solid #000000 !important; /* Se ensancha visualmente */
+            box-shadow: 0 0 15px #FFD700 !important;
+            cursor: pointer !important;
+          }
+
+          /* Eliminar el scroll pegajoso y saltos de layout */
+          html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow-x: hidden !important;
+            scrollbar-gutter: stable; /* Evita que el contenido salte con la barra de 18px */
+          }
+
+          body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
           }
         `}} />
       </body>
