@@ -69,8 +69,8 @@ export default function RootLayout({
         className={`
           ${montserrat.className} 
           antialiased 
-          bg-black 
-          text-white 
+          bg-[#DCDCDC] 
+          text-black 
           min-h-screen 
           overflow-x-hidden
           selection:bg-[#FFD700] selection:text-black
@@ -78,8 +78,10 @@ export default function RootLayout({
       >
         <Preloader />
 
+        {/* Capa de ruido visual */}
         <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         
+        {/* Contenedor principal relativo para permitir que las secciones snap funcionen */}
         <div className="relative z-10 w-full min-h-screen">
           {children}
         </div>
@@ -90,12 +92,13 @@ export default function RootLayout({
             padding: 0 !important;
             overflow-x: hidden !important;
             scrollbar-gutter: auto !important;
-            background-color: #000000 !important;
+            /* Cambiado a DCDCDC para que no se vea el fondo negro bajo la tarjeta */
+            background-color: #DCDCDC !important;
           }
 
           ::-webkit-scrollbar {
-            width: 15px !important;
-            height: 15px !important;
+            width: 12px !important;
+            height: 12px !important;
             display: block !important;
           }
 
@@ -106,7 +109,7 @@ export default function RootLayout({
           ::-webkit-scrollbar-thumb {
             background-color: #FFD700 !important;
             border-radius: 20px !important;
-            border: 4px solid #000000 !important;
+            border: 3px solid #000000 !important;
             transition: all 0.3s ease-in-out !important;
           }
 
