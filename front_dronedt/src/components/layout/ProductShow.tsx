@@ -97,12 +97,12 @@ const ProductShow = () => {
         >
           {extendedDrones.map((drone, idx) => (
             <div key={`${drone.id}-${idx}`} className="h-full flex-shrink-0 w-full" style={{ width: `${100 / extendedDrones.length}%` }}>
-              {/* Layout Dinámico: Columna en Desktop para llenar la tarjeta, Columna en Mobile para split vertical */}
+              
               <div className="flex flex-col h-full w-full bg-white">
                 
-                {/* ZONA SUPERIOR: FOTO (Ocupa más espacio en desktop) */}
+                {/* ZONA SUPERIOR: FOTO (Borde superior pegado, escala optimizada) */}
                 <div className="w-full h-[55%] md:h-[65%] relative flex items-start justify-center p-0 overflow-hidden">
-                  <div className="relative w-full h-full transform scale-100 md:scale-105 lg:scale-115 transition-transform duration-1000 -mt-2 md:mt-0">
+                  <div className="relative w-full h-full transform scale-100 md:scale-105 transition-transform duration-1000 -mt-2 md:mt-0">
                     <Image 
                       src={drone.img} 
                       alt={drone.name} 
@@ -114,30 +114,30 @@ const ProductShow = () => {
                   </div>
                 </div>
 
-                {/* ZONA INFERIOR: INFO Y BOTONES (Full width en desktop) */}
-                <div className="w-full h-[45%] md:h-[35%] flex flex-col justify-start items-center bg-white z-10 px-6 pt-0 md:pt-4 text-center">
+                {/* ZONA INFERIOR: INFO Y BOTONES (Fuentes más pequeñas en LG) */}
+                <div className="w-full h-[45%] md:h-[35%] flex flex-col justify-start md:justify-center items-center bg-white z-10 px-6 pt-0 text-center">
                   
-                  {/* Título y Precio - Subidos con margen negativo sutil en mobile */}
-                  <div className="-mt-4 md:mt-0 mb-4 md:mb-6">
-                    <h3 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase italic leading-[0.85] tracking-tighter flex flex-wrap justify-center gap-x-3">
+                  {/* Título y Precio - Escala reducida para no invadir */}
+                  <div className="-mt-6 md:mt-0 mb-4 md:mb-5">
+                    <h3 className="text-3xl md:text-3xl lg:text-4xl font-black uppercase italic leading-none tracking-tighter flex flex-wrap justify-center gap-x-3">
                       {drone.name.split(' ').map((word, i) => (
                         <span key={i} className={word === 'DT' ? 'text-[#FFD700]' : 'text-[#0000FF]'}>{word}</span>
                       ))}
                     </h3>
-                    <div className="mt-2 flex flex-col items-center">
-                      <p className="text-[9px] font-bold text-zinc-400 tracking-[0.5em] uppercase">AVIACIÓN CIVIL DT</p>
-                      <p className="text-2xl md:text-4xl lg:text-5xl font-black text-[#0000FF] mt-1">{drone.price}</p>
+                    <div className="mt-2 md:mt-2 flex flex-col items-center">
+                      <p className="text-[8px] md:text-[9px] font-bold text-zinc-400 tracking-[0.4em] uppercase">AVIACIÓN CIVIL DT</p>
+                      <p className="text-2xl md:text-2xl lg:text-3xl font-black text-[#0000FF] mt-1">{drone.price}</p>
                     </div>
                   </div>
 
-                  {/* BOTONES: Fila en Desktop para rellenar, Columna en Mobile */}
-                  <div className="flex flex-col md:flex-row gap-3 w-full max-w-[280px] md:max-w-4xl mx-auto items-center justify-center">
+                  {/* BOTONES: Medida estándar compacta */}
+                  <div className="flex flex-col md:flex-row gap-3 w-full max-w-[260px] md:max-w-xl mx-auto items-center justify-center">
                     <Link href={`/shop/checkout/${drone.id}`} 
-                      className="w-full md:w-64 h-14 md:h-16 bg-[#FFD700] border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300">
+                      className="w-full md:w-52 h-12 md:h-13 bg-[#FFD700] border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300">
                       ORDENAR
                     </Link>
                     <Link href={`/shop/product/${drone.id}`} 
-                      className="w-full md:w-64 h-14 md:h-16 bg-transparent border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300">
+                      className="w-full md:w-52 h-12 md:h-13 bg-transparent border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300">
                       FICHA TÉCNICA
                     </Link>
                   </div>
@@ -150,16 +150,16 @@ const ProductShow = () => {
       </section>
 
       {/* NAVEGACIÓN (DOTS) */}
-      <div className="w-full h-10 md:h-14 flex justify-center items-center bg-white shrink-0 relative z-50">
+      <div className="w-full h-8 md:h-10 flex justify-center items-center bg-white shrink-0 relative z-50">
         <div className="flex gap-3">
           {drones.map((_, idx) => {
             const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
             return (
               <button key={idx} 
                 onClick={() => { if (timeoutRef.current) clearInterval(timeoutRef.current); setIsTransitioning(true); setCurrentIndex(idx + 1); }}
-                className="py-2"
+                className="py-1"
               >
-                <div className={`h-1 transition-all duration-500 rounded-full ${isActive ? 'w-16 bg-[#FFD700]' : 'w-4 bg-zinc-200 hover:bg-[#0000FF]'}`} />
+                <div className={`h-1 transition-all duration-500 rounded-full ${isActive ? 'w-10 bg-[#FFD700]' : 'w-3 bg-zinc-200 hover:bg-[#0000FF]'}`} />
               </button>
             );
           })}
