@@ -56,18 +56,22 @@ const Navbar = () => {
       productsArray.forEach((item: any) => {
         const rawCat = (item.category?.name || item.category || 'drone').toLowerCase();
         const targetCat = categoryMap[rawCat] || 'Modelos';
+        const rawName = (item.name || "").toUpperCase();
 
-        let displayImg = '/placeholder-drone.png';
-        if (item.imageUrl) {
-          displayImg = item.imageUrl;
-        } else if (item.images && item.images.length > 0) {
-          displayImg = typeof item.images[0] === 'string' ? item.images[0] : item.images[0].url;
-        }
+        // --- MAPEO DE FOTOS (CARPETA PUBLIC) ---
+        let displayImg = '/drone-placeholder.png';
+        
+        if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
+        else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
+        else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
+        else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) displayImg = "/DT-MINI_A1PRO4.png";
+        else if (rawName.includes("MINI_A2PRO5") || rawName.includes("MINIA2PRO5")) displayImg = "/DT-MINI_A2PRO5.png";
+        else if (item.imageUrl) displayImg = item.imageUrl;
 
         if (categorized[targetCat]) {
           categorized[targetCat].push({
             id: item._id || item.id,
-            name: item.name,
+            name: rawName.replace(/_/g, ' '),
             price: item.price ? `$${item.price.toLocaleString()}` : 'Elite Spec',
             img: displayImg,
             desc: item.description || item.desc,
@@ -100,7 +104,7 @@ const Navbar = () => {
   }, [menuOpen]);
 
   const Logo = () => (
-    <a href="/" className="group flex items-center gap-3 outline-none">
+    <Link href="/" className="group flex items-center gap-3 outline-none">
       <div className="relative flex items-center justify-center">
         <svg
           width={isScrolled ? "30" : "36"}
@@ -134,7 +138,7 @@ const Navbar = () => {
         </div>
         <span className="text-[7px] font-bold tracking-[0.5em] uppercase text-black/60 group-hover:text-[#0000FF] transition-colors">Colombia</span>
       </div>
-    </a>
+    </Link>
   );
 
   if (loading) return (
@@ -226,23 +230,24 @@ const Navbar = () => {
                     onClick={() => setMenuOpen(false)}
                     className="group relative bg-white p-4 rounded-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_-15px_rgba(255,215,0,0.3)] border border-transparent hover:border-[#FFD700]/60"
                   >
-                    <div className="aspect-square bg-[#DCDCDC] overflow-hidden rounded-lg mb-6 relative shadow-inner">
+                    <div className="aspect-square bg-white overflow-hidden rounded-lg mb-6 relative">
                       <Image
                         src={product.img}
                         alt={product.name}
                         fill
+                        unoptimized
                         sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-lg"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#FFD700]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#FFD700]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
 
                     <div className="space-y-2">
-                      <h4 className="font-black text-2xl uppercase italic leading-tight group-hover:text-[#FFD700] transition-colors duration-300">
+                      <h4 className="font-black text-2xl uppercase italic leading-tight group-hover:text-[#0000FF] transition-colors duration-300">
                         {product.name}
                       </h4>
                       <div className="flex justify-between items-end">
-                        <p className="text-[14px] font-black text-[#FFD700] tracking-widest uppercase bg-black px-3 py-1 rounded-sm">
+                        <p className="text-[14px] font-black text-white tracking-widest uppercase bg-[#0000FF] px-3 py-1 rounded-sm">
                           {product.price}
                         </p>
                         <div className="w-10 h-10 rounded-full border border-[#0000FF] flex items-center justify-center group-hover:bg-[#FFD700] group-hover:border-[#FFD700] transition-all duration-300">
