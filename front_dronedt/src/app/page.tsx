@@ -18,28 +18,26 @@ export default function Home() {
 
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
         
-        {/* SECCIÓN 1: BANNER (REGLA 80/20) */}
-        <section className="relative h-screen w-full snap-start snap-always z-10 bg-[#DCDCDC] flex flex-col">
-          {/* 80% Contenido visual */}
-          <div className="h-[80vh] w-full bg-black">
+        {/* SECCIÓN 1: BANNER (SISTEMA 80/20) */}
+        <section className="relative h-screen w-full snap-start snap-always z-10 flex flex-col">
+          {/* 80% CONTENIDO VISUAL */}
+          <div className="h-[80vh] w-full bg-black overflow-hidden">
             <Banner />
           </div>
-          {/* 20% Espacio de soporte (Gainsboro) */}
+          {/* 20% SOPORTE GAINSBORO */}
           <div className="h-[20vh] w-full bg-[#DCDCDC]" />
         </section>
 
-        {/* SECCIÓN 2: CATÁLOGO (REGLA 80/20) */}
+        {/* SECCIÓN 2: CATÁLOGO (SISTEMA 80/20 CON COLISIÓN) */}
         <section 
           id="catalog" 
           className="relative h-screen w-full snap-start snap-always z-20 flex flex-col bg-[#DCDCDC]"
         >
-          {/* Subimos exactamente el 20vh para que el 80% de impacto de ProductShow 
-             alinee con el final del 80% del Banner de arriba.
-          */}
+          {/* Subimos el 80% del catálogo para que tape el 20% de aire de la sección anterior */}
           <div className="h-[80vh] w-full -mt-[20vh] z-30">
             <ProductShow />
           </div>
-          {/* 20% Espacio de soporte inferior para mantener la simetría */}
+          {/* 20% SOPORTE INFERIOR */}
           <div className="h-[20vh] w-full bg-[#DCDCDC]" />
         </section>
 
@@ -83,7 +81,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FOOTER */}
         <section className="snap-start snap-always bg-black">
           <Footer />
         </section>
