@@ -94,8 +94,8 @@ export default function RootLayout({
           }
 
           ::-webkit-scrollbar {
-            width: 16px !important;
-            height: 16px !important;
+            width: 15px !important;
+            height: 15px !important;
             display: block !important;
           }
 
@@ -105,15 +105,15 @@ export default function RootLayout({
 
           ::-webkit-scrollbar-thumb {
             background-color: #FFD700 !important;
-            border-radius: 2px !important;
-            border: 3px solid #000000 !important;
+            border-radius: 20px !important;
+            border: 4px solid #000000 !important;
             transition: all 0.3s ease-in-out !important;
           }
 
           ::-webkit-scrollbar-thumb:hover {
             background-color: #FEB60D !important;
             box-shadow: 0 0 15px #FFD700 !important;
-            border: 1px solid #000000 !important;
+            border: 2px solid #000000 !important;
             cursor: pointer !important;
           }
 
