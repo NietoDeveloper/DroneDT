@@ -21,8 +21,9 @@ const ProductShow = () => {
 
   const fetchDrones = useCallback(async () => {
     setLoading(true);
+    // Cambiado a 'localhost' para mejor compatibilidad con la resolución de red en Windows
     const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-    const baseUrl = isLocal ? 'http://127.0.0.1:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
+    const baseUrl = isLocal ? 'http://localhost:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
     const fullUrl = `${baseUrl}/products/menu`;
     
     try {
@@ -32,17 +33,14 @@ const ProductShow = () => {
 
       if (result.success && Array.isArray(result.data)) {
         const formatted = result.data.map((item: any) => {
-          // --- Lógica de Corrección de Rutas para Carpeta Public ---
+          // --- Lógica de Mapeo de Imágenes (Telemetría Drone DT) ---
           let imagePath = item.img || '/drone-placeholder.png';
           
-          // Si el path trae "public/", lo removemos para que Next.js lo busque en la raíz del servidor
-          if (imagePath.startsWith('public/')) {
-            imagePath = imagePath.replace('public/', '/');
-          }
-          
-          // Asegurar que empiece con / si no es una URL externa (AWS)
-          if (!imagePath.startsWith('/') && !imagePath.startsWith('http')) {
-            imagePath = `/${imagePath}`;
+          // Si no es una URL de AWS (S3), limpiamos para buscar en /public
+          if (!imagePath.startsWith('http')) {
+            // Extrae solo el nombre del archivo (ej: "MiniA1Pro4.png") sin importar lo que venga de la DB
+            const fileName = imagePath.split('/').pop(); 
+            imagePath = `/${fileName}`;
           }
 
           return {
@@ -58,7 +56,7 @@ const ProductShow = () => {
         setDrones(formatted);
       }
     } catch (err) {
-      console.error("DB Fetch Error:", err);
+      console.error("❌ Drone DT Uplink Offline:", err);
       setDrones([]); 
     } finally {
       setLoading(false);
@@ -138,6 +136,7 @@ const ProductShow = () => {
                       fill 
                       className="object-contain drop-shadow-[0_40px_70px_rgba(0,0,0,0.2)] p-4 md:p-10" 
                       priority 
+                      unoptimized={drone.img.endsWith('.png') || drone.img.endsWith('.jpg')}
                     />
                   </div>
                   <div className="absolute top-10 left-10 md:top-16 md:left-16">
