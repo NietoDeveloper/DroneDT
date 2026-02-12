@@ -21,7 +21,6 @@ const ProductShow = () => {
 
   const fetchDrones = useCallback(async () => {
     setLoading(true);
-    // Cambiado a 'localhost' para mejor compatibilidad con la resolución de red en Windows
     const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
     const baseUrl = isLocal ? 'http://localhost:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
     const fullUrl = `${baseUrl}/products/menu`;
@@ -33,24 +32,28 @@ const ProductShow = () => {
 
       if (result.success && Array.isArray(result.data)) {
         const formatted = result.data.map((item: any) => {
-          // --- Lógica de Mapeo de Imágenes (Telemetría Drone DT) ---
-          let imagePath = item.img || '/drone-placeholder.png';
           
-          // Si no es una URL de AWS (S3), limpiamos para buscar en /public
-          if (!imagePath.startsWith('http')) {
-            // Extrae solo el nombre del archivo (ej: "MiniA1Pro4.png") sin importar lo que venga de la DB
-            const fileName = imagePath.split('/').pop(); 
-            imagePath = `/${fileName}`;
-          }
+          // --- LÓGICA DE TELEMETRÍA ATLAS -> PUBLIC ---
+          // 1. Extraemos del array 'images' (según tu JSON de Atlas)
+          const rawImagePath = (item.images && item.images.length > 0) 
+            ? item.images[0] 
+            : '/drone-placeholder.png';
+          
+          // 2. Limpieza y forzado a PNG
+          // Extrae "MidB1Pro5" de "/products/MidB1Pro5.png"
+          const baseName = rawImagePath.split('/').pop().split('.')[0];
+          
+          // 3. Ruta final limpia para /public
+          const finalImgPath = `/${baseName}.png`;
 
           return {
-            id: item._id || item.id,
+            id: item._id?.$oid || item._id || item.id,
             name: item.name || "DRONE DT MODEL",
             price: typeof item.price === 'number' 
               ? `Desde $${item.price.toLocaleString()}` 
               : (item.price || 'Contactar Ventas'),
-            tag: typeof item.category === 'string' ? item.category : (item.category?.name || 'Pro Series'),
-            img: imagePath
+            tag: item.category || 'Pro Series',
+            img: finalImgPath
           };
         });
         setDrones(formatted);
@@ -136,7 +139,7 @@ const ProductShow = () => {
                       fill 
                       className="object-contain drop-shadow-[0_40px_70px_rgba(0,0,0,0.2)] p-4 md:p-10" 
                       priority 
-                      unoptimized={drone.img.endsWith('.png') || drone.img.endsWith('.jpg')}
+                      unoptimized 
                     />
                   </div>
                   <div className="absolute top-10 left-10 md:top-16 md:left-16">
@@ -149,7 +152,7 @@ const ProductShow = () => {
                 <div className="w-full md:w-[40%] h-[60%] md:h-full flex flex-col justify-between p-10 md:p-20 bg-white">
                   <div className="space-y-6">
                     <h3 className="text-4xl md:text-[65px] font-black uppercase italic leading-[0.8] tracking-tighter text-black">
-                      {drone.name.split(' ').map((word, i) => (
+                      {drone.name.split('_').join(' ').split(' ').map((word, i) => (
                         <span key={i} className={word.toUpperCase() === 'DT' ? 'text-[#FFD700] block' : 'text-[#0000FF] block'}>
                           {word}
                         </span>
