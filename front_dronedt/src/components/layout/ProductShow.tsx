@@ -34,7 +34,6 @@ const ProductShow = () => {
           const rawName = (item.name || "").toUpperCase();
           let finalImgPath = '/drone-placeholder.png'; 
 
-          // MAPEO CORREGIDO: MINI_A2PRO5
           if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) finalImgPath = "/DT-BIG_C1PRO8.png";
           else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) finalImgPath = "/DT-MID_B1PRO5.png";
           else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) finalImgPath = "/DT-MID_B2PRO8.png";
@@ -87,7 +86,6 @@ const ProductShow = () => {
   return (
     <section className="relative w-full min-h-screen bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-2 md:px-10 font-montserrat z-10 pt-4 md:pt-10 pb-10">
       
-      {/* Contenedor Principal del Carrusel */}
       <div className="relative w-full max-w-[1900px] overflow-hidden" style={{ height: '85vh', minHeight: '650px' }}>
         <div 
           className={`flex h-full ${isTransitioning ? 'transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
@@ -100,10 +98,9 @@ const ProductShow = () => {
           {extendedDrones.map((drone, idx) => (
             <div key={`${drone.id}-${idx}`} className="h-full flex-shrink-0 w-full px-2 md:px-8" style={{ width: `${100 / extendedDrones.length}%` }}>
               
-              {/* TARJETA 50/50 */}
               <div className="flex flex-col md:flex-row h-full w-full overflow-hidden rounded-[2rem] md:rounded-[3.5rem] shadow-2xl bg-white border border-white">
                 
-                {/* MITAD IZQUIERDA: IMAGEN (50%) */}
+                {/* 50% IMAGEN */}
                 <div className="w-full md:w-1/2 h-[45%] md:h-full bg-zinc-50 relative flex items-center justify-center p-6 md:p-12">
                   <div className="relative w-full h-full transform transition-transform duration-700 hover:scale-110">
                     <Image 
@@ -115,7 +112,6 @@ const ProductShow = () => {
                       unoptimized 
                     />
                   </div>
-                  {/* TAG FLOTANTE */}
                   <div className="absolute top-6 left-6 md:top-12 md:left-12">
                     <span className="text-[10px] md:text-[12px] font-black tracking-[0.3em] text-[#0000FF] uppercase border-l-4 border-[#FFD700] pl-4">
                       {drone.tag}
@@ -123,11 +119,10 @@ const ProductShow = () => {
                   </div>
                 </div>
 
-                {/* MITAD DERECHA: INFO (50%) */}
-                <div className="w-full md:w-1/2 h-[55%] md:h-full flex flex-col justify-between p-8 md:p-16 lg:p-24 bg-white">
-                  <div className="space-y-4 md:space-y-8">
-                    {/* TÍTULO DT STYLE */}
-                    <h3 className="text-3xl sm:text-4xl md:text-[55px] lg:text-[75px] font-black uppercase italic leading-[0.85] tracking-tighter">
+                {/* 50% INFO */}
+                <div className="w-full md:w-1/2 h-[55%] md:h-full flex flex-col justify-between p-8 md:p-14 lg:p-20 bg-white">
+                  <div className="space-y-4 md:space-y-6">
+                    <h3 className="text-3xl sm:text-4xl md:text-[50px] lg:text-[70px] font-black uppercase italic leading-[0.85] tracking-tighter">
                       {drone.name.split(' ').map((word, i) => (
                         <span key={i} className={word === 'DT' ? 'text-[#FFD700] block' : 'text-[#0000FF] block'}>
                           {word}
@@ -135,24 +130,29 @@ const ProductShow = () => {
                       ))}
                     </h3>
                     
-                    <div className="pt-2">
-                      <p className="text-[11px] md:text-sm font-bold text-zinc-400 tracking-[0.2em] uppercase">
+                    <div className="pt-1">
+                      <p className="text-[10px] md:text-[12px] font-bold text-zinc-400 tracking-[0.2em] uppercase">
                         INGENIERÍA SOFTWARE DT
                       </p>
-                      <p className="text-xl md:text-3xl font-black text-[#0000FF] mt-2">
+                      <p className="text-xl md:text-2xl font-black text-[#0000FF] mt-1">
                         {drone.price}
                       </p>
                     </div>
                   </div>
 
-                  {/* BOTÓN DE ACCIÓN */}
-                  <div className="mt-6 md:mt-0">
+                  {/* ACCIONES: BOTONES MÁS PEQUEÑOS */}
+                  <div className="flex flex-col sm:flex-row gap-3 mt-6">
+                    <Link 
+                      href={`/shop/checkout/${drone.id}`} 
+                      className="flex-1 h-12 md:h-14 flex items-center justify-center bg-[#0000FF] text-white text-[11px] font-black uppercase tracking-[0.2em] rounded-lg transition-all hover:bg-[#0000CC] active:scale-95 shadow-lg"
+                    >
+                      COMPRAR
+                    </Link>
                     <Link 
                       href={`/shop/product/${drone.id}`} 
-                      className="group relative w-full h-14 md:h-20 flex items-center justify-center bg-[#0000FF] text-white text-[12px] md:text-[14px] font-black uppercase tracking-[0.3em] overflow-hidden rounded-xl transition-all hover:shadow-[0_0_30px_rgba(0,0,255,0.3)] active:scale-95"
+                      className="flex-1 h-12 md:h-14 flex items-center justify-center border-2 border-[#0000FF] text-[#0000FF] text-[11px] font-black uppercase tracking-[0.2em] rounded-lg transition-all hover:bg-[#0000FF] hover:text-white active:scale-95"
                     >
-                      <span className="relative z-10 transition-colors group-hover:text-black">EXPLORAR UNIDAD</span>
-                      <div className="absolute inset-0 bg-[#FFD700] transform translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
+                      INFO TÉCNICA
                     </Link>
                   </div>
                 </div>
@@ -163,7 +163,6 @@ const ProductShow = () => {
         </div>
       </div>
 
-      {/* DOTS DE NAVEGACIÓN */}
       <div className="flex gap-3 mt-6 z-[60]">
         {drones.map((_, idx) => {
           const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
