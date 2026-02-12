@@ -86,7 +86,6 @@ const ProductShow = () => {
   return (
     <div className="bg-white w-full h-full flex flex-col relative z-30 overflow-hidden">
       
-      {/* SECCIÓN SLIDER: Ajustada para pegar al borde superior */}
       <section className="relative w-full flex-grow overflow-hidden">
         <div 
           className={`flex h-full ${isTransitioning ? 'transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
@@ -98,44 +97,47 @@ const ProductShow = () => {
         >
           {extendedDrones.map((drone, idx) => (
             <div key={`${drone.id}-${idx}`} className="h-full flex-shrink-0 w-full" style={{ width: `${100 / extendedDrones.length}%` }}>
-              <div className="flex flex-col md:flex-row h-full w-full bg-white">
+              {/* Layout Dinámico: Columna en Desktop para llenar la tarjeta, Columna en Mobile para split vertical */}
+              <div className="flex flex-col h-full w-full bg-white">
                 
-                {/* LADO IZQUIERDO: FOTO pegada arriba */}
-                <div className="w-full md:w-[60%] h-[55%] md:h-full relative flex items-start md:items-center justify-center pt-2 md:pt-0">
-                  <div className="relative w-full h-full transform scale-100 md:scale-125 transition-transform duration-1000">
+                {/* ZONA SUPERIOR: FOTO (Ocupa más espacio en desktop) */}
+                <div className="w-full h-[55%] md:h-[65%] relative flex items-start justify-center p-0 overflow-hidden">
+                  <div className="relative w-full h-full transform scale-100 md:scale-105 lg:scale-115 transition-transform duration-1000 -mt-2 md:mt-0">
                     <Image 
                       src={drone.img} 
                       alt={drone.name} 
                       fill 
-                      className="object-contain object-top md:object-center drop-shadow-xl" 
+                      className="object-contain object-top md:object-center drop-shadow-2xl" 
                       priority 
                       unoptimized 
                     />
                   </div>
                 </div>
 
-                {/* LADO DERECHO: INFO */}
-                <div className="w-full md:w-[40%] h-[45%] md:h-full flex flex-col justify-start md:justify-center px-8 md:pr-16 bg-white z-10 pt-4 md:pt-0">
-                  <div className="mb-4 md:mb-8">
-                    <h3 className="text-3xl md:text-5xl lg:text-[60px] font-black uppercase italic leading-[0.85] tracking-tighter">
+                {/* ZONA INFERIOR: INFO Y BOTONES (Full width en desktop) */}
+                <div className="w-full h-[45%] md:h-[35%] flex flex-col justify-start items-center bg-white z-10 px-6 pt-0 md:pt-4 text-center">
+                  
+                  {/* Título y Precio - Subidos con margen negativo sutil en mobile */}
+                  <div className="-mt-4 md:mt-0 mb-4 md:mb-6">
+                    <h3 className="text-3xl md:text-5xl lg:text-6xl font-black uppercase italic leading-[0.85] tracking-tighter flex flex-wrap justify-center gap-x-3">
                       {drone.name.split(' ').map((word, i) => (
-                        <span key={i} className={word === 'DT' ? 'text-[#FFD700] block' : 'text-[#0000FF] block'}>{word}</span>
+                        <span key={i} className={word === 'DT' ? 'text-[#FFD700]' : 'text-[#0000FF]'}>{word}</span>
                       ))}
                     </h3>
-                    <div className="mt-2 md:mt-4">
-                      <p className="text-[10px] font-bold text-zinc-400 tracking-[0.5em] uppercase">AVIACIÓN CIVIL DT</p>
-                      <p className="text-2xl md:text-5xl font-black text-[#0000FF] mt-1">{drone.price}</p>
+                    <div className="mt-2 flex flex-col items-center">
+                      <p className="text-[9px] font-bold text-zinc-400 tracking-[0.5em] uppercase">AVIACIÓN CIVIL DT</p>
+                      <p className="text-2xl md:text-4xl lg:text-5xl font-black text-[#0000FF] mt-1">{drone.price}</p>
                     </div>
                   </div>
 
-                  {/* BOTONES: Estilo Software DT */}
-                  <div className="flex flex-col gap-3 w-full max-w-xs">
+                  {/* BOTONES: Fila en Desktop para rellenar, Columna en Mobile */}
+                  <div className="flex flex-col md:flex-row gap-3 w-full max-w-[280px] md:max-w-4xl mx-auto items-center justify-center">
                     <Link href={`/shop/checkout/${drone.id}`} 
-                      className="h-14 md:h-16 bg-[#FFD700] border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300">
+                      className="w-full md:w-64 h-14 md:h-16 bg-[#FFD700] border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300">
                       ORDENAR
                     </Link>
                     <Link href={`/shop/product/${drone.id}`} 
-                      className="h-14 md:h-16 bg-transparent border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300">
+                      className="w-full md:w-64 h-14 md:h-16 bg-transparent border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-300">
                       FICHA TÉCNICA
                     </Link>
                   </div>
@@ -147,8 +149,8 @@ const ProductShow = () => {
         </div>
       </section>
 
-      {/* ÁREA NAVEGACIÓN (DOTS): Muy compacta para no quitar espacio */}
-      <div className="w-full h-12 md:h-16 flex justify-center items-center bg-white shrink-0 relative z-50">
+      {/* NAVEGACIÓN (DOTS) */}
+      <div className="w-full h-10 md:h-14 flex justify-center items-center bg-white shrink-0 relative z-50">
         <div className="flex gap-3">
           {drones.map((_, idx) => {
             const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
@@ -157,7 +159,7 @@ const ProductShow = () => {
                 onClick={() => { if (timeoutRef.current) clearInterval(timeoutRef.current); setIsTransitioning(true); setCurrentIndex(idx + 1); }}
                 className="py-2"
               >
-                <div className={`h-1.5 transition-all duration-500 rounded-full ${isActive ? 'w-16 bg-[#FFD700]' : 'w-4 bg-zinc-200 hover:bg-[#0000FF]'}`} />
+                <div className={`h-1 transition-all duration-500 rounded-full ${isActive ? 'w-16 bg-[#FFD700]' : 'w-4 bg-zinc-200 hover:bg-[#0000FF]'}`} />
               </button>
             );
           })}
