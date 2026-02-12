@@ -85,55 +85,43 @@ export default function RootLayout({
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          /* FORZAR SCROLLBAR GOLD DRONE DT */
-          
-          /* 1. Reset y visibilidad */
-          html {
-            scrollbar-color: #FFD700 #000000 !important; /* Para Firefox */
-            scrollbar-width: auto !important;
-          }
-
-          /* 2. Ancho Maestro de 18px */
-          ::-webkit-scrollbar {
-            width: 18px !important;
-            height: 18px !important;
-            display: block !important;
-          }
-
-          /* 3. Carril Negro Puro */
-          ::-webkit-scrollbar-track {
-            background: #000000 !important;
-          }
-
-          /* 4. El Oro DT (Thumb) Flotante */
-          ::-webkit-scrollbar-thumb {
-            background-color: #FFD700 !important;
-            border-radius: 6px !important;
-            /* El borde negro de 4px hace que el oro se vea de 10px y flotando en el carril de 18px */
-            border: 4px solid #000000 !important;
-            transition: all 0.2s ease-in-out !important;
-          }
-
-          /* 5. Hover Gold Flotante Brillante */
-          ::-webkit-scrollbar-thumb:hover {
-            background-color: #FEB60D !important; /* YellowColor DT */
-            border: 2px solid #000000 !important; /* Se ensancha visualmente */
-            box-shadow: 0 0 15px #FFD700 !important;
-            cursor: pointer !important;
-          }
-
-          /* Eliminar el scroll pegajoso y saltos de layout */
           html, body {
             margin: 0 !important;
             padding: 0 !important;
             overflow-x: hidden !important;
-            scrollbar-gutter: stable; /* Evita que el contenido salte con la barra de 18px */
+            scrollbar-gutter: auto !important;
+            background-color: #000000 !important;
           }
 
-          body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+          ::-webkit-scrollbar {
+            width: 16px !important;
+            height: 16px !important;
+            display: block !important;
           }
+
+          ::-webkit-scrollbar-track {
+            background: #000000 !important;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            background-color: #FFD700 !important;
+            border-radius: 2px !important;
+            border: 3px solid #000000 !important;
+            transition: all 0.3s ease-in-out !important;
+          }
+
+          ::-webkit-scrollbar-thumb:hover {
+            background-color: #FEB60D !important;
+            box-shadow: 0 0 15px #FFD700 !important;
+            border: 1px solid #000000 !important;
+            cursor: pointer !important;
+          }
+
+          * {
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .no-scrollbar::-webkit-scrollbar { display: none; }
         `}} />
       </body>
     </html>
