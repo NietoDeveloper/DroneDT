@@ -3,15 +3,16 @@
 @tailwind utilities;
 
 :root {
-  /* Tesla & DroneDT Palette */
+  /* DroneDT Official Palette */
   --tesla-black: #000000;
-  --tesla-blue: #004976; /* Azul Rey / Royal Blue */
+  --tesla-blue: #0000FF; /* Azul Puro DT */
   --tesla-gold: #FFD700; /* Gold Software DT */
+  --tesla-yellow-hover: #FEB60D; /* YellowColor para hover flotante */
   --tesla-white: #FFFFFF;
   --gainsboro: #DCDCDC;
   
-  /* Gradientes de alto nivel */
-  --premium-gradient: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,73,118,1) 100%);
+  /* Gradientes de alto nivel DT */
+  --premium-gradient: linear-gradient(180deg, #000000 0%, #0000FF 100%);
 }
 
 * {
@@ -21,32 +22,47 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Scroll suave estilo Tesla */
+  scroll-behavior: smooth;
+  /* Optimización de scroll para evitar que se pegue */
+  -webkit-overflow-scrolling: touch;
 }
 
 body {
-  background-color: var(--tesla-black);
-  color: var(--tesla-white);
+  background-color: var(--gainsboro); /* Fondo base de la app */
+  color: var(--tesla-black);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
+  /* Suavizado de fuente premium */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Scrollbar minimalista */
+/* --- SCROLLBAR DRONE DT: ANCHO DOBLE Y GOLD --- */
 ::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--tesla-black);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--tesla-blue);
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--tesla-gold);
+  width: 20px; /* Doble de ancho para impacto visual */
 }
 
-/* Clase para secciones tipo Hero de Tesla (Full Screen) */
+::-webkit-scrollbar-track {
+  background: var(--gainsboro); /* Fondo que funde con el 80% de la app */
+  border-left: 1px solid rgba(0,0,0,0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tesla-gold); /* Gold Software DT */
+  border-radius: 4px; /* Estilo industrial/Tesla */
+  /* El "border" crea un padding visual para que parezca flotante */
+  border: 4px solid var(--gainsboro); 
+  transition: all 0.4s ease;
+}
+
+/* Hover Gold Flotante con brillo */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tesla-yellow-hover);
+  box-shadow: inset 0 0 10px rgba(255, 215, 0, 0.5), 0 0 20px rgba(254, 182, 13, 0.6);
+  cursor: pointer;
+}
+
+/* Solución para el scroll pegajoso en secciones de alto rendimiento */
 .snap-section {
   height: 100vh;
   display: flex;
@@ -54,4 +70,13 @@ body {
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
+  /* GPU Acceleration para evitar lagueos */
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Ajuste de selección de texto estilo DT */
+::selection {
+  background: var(--tesla-gold);
+  color: var(--tesla-black);
 }
