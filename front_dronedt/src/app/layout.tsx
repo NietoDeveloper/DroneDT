@@ -86,18 +86,19 @@ export default function RootLayout({
         </div>
 
         <style dangerouslySetInnerHTML={{ __html: `
-          /* RESET TOTAL PARA ELIMINAR ESPACIOS SOBRANTES */
+          /* RESET PARA ELIMINAR ESPACIOS SOBRANTES AL COSTADO DEL SCROLL */
           html, body {
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             scroll-behavior: smooth;
+            background-color: #000000;
           }
 
-          /* SCROLLBAR DRONE DT - ANCHO EXACTO 13PX */
+          /* SCROLLBAR DRONE DT - ANCHO 18PX */
           ::-webkit-scrollbar {
-            width: 13px;
+            width: 18px;
           }
 
           ::-webkit-scrollbar-track {
@@ -106,16 +107,19 @@ export default function RootLayout({
 
           ::-webkit-scrollbar-thumb {
             background: #FFD700;
-            border-radius: 2px;
-            /* Border transparente crea el efecto de que el scroll no toca los bordes */
-            border: 2px solid #000000;
+            border-radius: 4px;
+            /* El border negro genera el efecto visual de "flotado" dentro del carril */
+            border: 3px solid #000000;
+            transition: all 0.3s ease;
           }
 
-          /* HOVER GOLD FLOTANTE */
+          /* HOVER GOLD FLOTANTE CON BRILLO DT */
           ::-webkit-scrollbar-thumb:hover {
             background: #FEB60D;
-            box-shadow: 0 0 15px #FFD700;
+            /* Box shadow interno y externo para potenciar el efecto flotante */
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2), 0 0 20px #FFD700;
             cursor: pointer;
+            border-width: 2px; /* Se expande ligeramente al reducir el borde */
           }
 
           /* Utility clases */
