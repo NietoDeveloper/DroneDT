@@ -23,36 +23,33 @@ const ProductShow = () => {
     setLoading(true);
     const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
     const baseUrl = isLocal ? 'http://localhost:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
-    const fullUrl = `${baseUrl}/products/menu`;
     
     try {
-      const response = await fetch(fullUrl);
+      const response = await fetch(`${baseUrl}/products/menu`);
       if (!response.ok) throw new Error("Error en la conexión con la DB");
       const result = await response.json();
 
-      if (result.success && Array.isArray(result.data)) {
+      if (result && result.success && Array.isArray(result.data)) {
         const formatted = result.data.map((item: any) => {
           
-          // --- LÓGICA DE TELEMETRÍA ATLAS -> PUBLIC ---
-          // 1. Extraemos del array 'images' (según tu JSON de Atlas)
-          const rawImagePath = (item.images && item.images.length > 0) 
-            ? item.images[0] 
-            : '/drone-placeholder.png';
-          
-          // 2. Limpieza y forzado a PNG
-          // Extrae "MidB1Pro5" de "/products/MidB1Pro5.png"
-          const baseName = rawImagePath.split('/').pop().split('.')[0];
-          
-          // 3. Ruta final limpia para /public
-          const finalImgPath = `/${baseName}.png`;
+          // 1. FORZAMOS TODO A MAYÚSCULAS
+          const rawName = (item.name || "DRONE DT MODEL").toUpperCase();
+          let finalImgPath = '/drone-placeholder.png'; 
+
+          // 2. MAPEO QUIRÚRGICO A ARCHIVOS PNG (Carpeta /public)
+          if (rawName.includes("MINIA1PRO4")) finalImgPath = "/DT-MINI_A1PRO4.png";
+          else if (rawName.includes("MINIA2PRO5")) finalImgPath = "/DT-MINI_A2PRO5.png";
+          else if (rawName.includes("MIDB1PRO5")) finalImgPath = "/DT-MID_B1PRO5.png";
+          else if (rawName.includes("MIDB2PRO8")) finalImgPath = "/DT-MID_B2PRO8.png";
+          else if (rawName.includes("BIGC1PRO8") || rawName.includes("BIG_C1PRO8")) finalImgPath = "/DT-BIG_C1PRO8.png";
 
           return {
-            id: item._id?.$oid || item._id || item.id,
-            name: item.name || "DRONE DT MODEL",
+            id: item._id?.$oid || item._id || item.id || Math.random().toString(),
+            name: rawName.replace(/_/g, ' '), // Limpieza de guiones para el split
             price: typeof item.price === 'number' 
-              ? `Desde $${item.price.toLocaleString()}` 
-              : (item.price || 'Contactar Ventas'),
-            tag: item.category || 'Pro Series',
+              ? `DESDE $${item.price.toLocaleString()}` 
+              : (item.price?.toUpperCase() || 'CONTACTAR VENTAS'),
+            tag: (item.category || 'PRO SERIES').toUpperCase(),
             img: finalImgPath
           };
         });
@@ -83,22 +80,20 @@ const ProductShow = () => {
   };
 
   useEffect(() => {
-    if (!isTransitioning) {
-      const raf = requestAnimationFrame(() => {
-        setIsTransitioning(true);
-      });
+    if (!isTransitioning && drones.length > 0) {
+      const raf = requestAnimationFrame(() => setIsTransitioning(true));
       return () => cancelAnimationFrame(raf);
     }
-  }, [isTransitioning]);
+  }, [isTransitioning, drones.length]);
 
   useEffect(() => {
-    if (drones.length > 0 && isTransitioning) {
+    if (drones.length > 1 && isTransitioning) {
       timeoutRef.current = setInterval(() => {
         setCurrentIndex((prev) => prev + 1);
       }, 5000);
     }
     return () => { if (timeoutRef.current) clearInterval(timeoutRef.current); };
-  }, [drones, isTransitioning]);
+  }, [drones.length, isTransitioning]);
 
   const handleDotClick = (idx: number) => {
     if (timeoutRef.current) clearInterval(timeoutRef.current);
@@ -106,15 +101,13 @@ const ProductShow = () => {
     setCurrentIndex(idx + 1);
   };
 
-  if (loading || drones.length === 0) return null;
+  if (loading) return <div className="h-screen bg-[#DCDCDC] flex items-center justify-center font-black text-[#0000FF] tracking-widest">CONECTANDO UPLINK DT...</div>;
+  if (drones.length === 0) return null;
 
   return (
     <section className="relative w-full h-auto bg-[#DCDCDC] overflow-hidden flex flex-col items-center px-4 md:px-10 font-montserrat z-10 pt-6 md:pt-12 pb-7">
       
-      <div 
-        className="relative w-full overflow-hidden"
-        style={{ height: '82vh', minHeight: '720px' }}
-      >
+      <div className="relative w-full overflow-hidden" style={{ height: '82vh', minHeight: '720px' }}>
         <div 
           className={`flex h-full ${isTransitioning ? 'transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
           onTransitionEnd={handleTransitionEnd}
@@ -124,11 +117,7 @@ const ProductShow = () => {
           }}
         >
           {extendedDrones.map((drone, idx) => (
-            <div 
-              key={`${drone.id}-${idx}`} 
-              className="h-full flex-shrink-0 w-full px-4 md:px-12"
-              style={{ width: `${100 / extendedDrones.length}%` }}
-            >
+            <div key={`${drone.id}-${idx}`} className="h-full flex-shrink-0 w-full px-4 md:px-12" style={{ width: `${100 / extendedDrones.length}%` }}>
               <div className="flex flex-col md:flex-row h-full w-full overflow-hidden rounded-[2.5rem] md:rounded-[4rem] shadow-[0_20px_50px_rgba(0,0,0,0.15)] bg-white border border-white">
                 
                 <div className="w-full md:w-[60%] h-[40%] md:h-full bg-zinc-50 relative flex items-center justify-center p-8 md:p-20">
@@ -151,16 +140,16 @@ const ProductShow = () => {
 
                 <div className="w-full md:w-[40%] h-[60%] md:h-full flex flex-col justify-between p-10 md:p-20 bg-white">
                   <div className="space-y-6">
-                    <h3 className="text-4xl md:text-[65px] font-black uppercase italic leading-[0.8] tracking-tighter text-black">
-                      {drone.name.split('_').join(' ').split(' ').map((word, i) => (
-                        <span key={i} className={word.toUpperCase() === 'DT' ? 'text-[#FFD700] block' : 'text-[#0000FF] block'}>
+                    <h3 className="text-4xl md:text-[65px] font-black uppercase italic leading-[0.8] tracking-tighter">
+                      {drone.name.split(' ').map((word, i) => (
+                        <span key={i} className={word === 'DT' ? 'text-[#FFD700] block' : 'text-[#0000FF] block'}>
                           {word}
                         </span>
                       ))}
                     </h3>
                     <div className="pt-2">
                       <p className="text-[13px] md:text-sm font-bold text-zinc-400 tracking-[0.15em] uppercase">
-                        Ingeniería Software DT
+                        INGENIERÍA SOFTWARE DT
                       </p>
                       <p className="text-lg md:text-xl font-black text-[#0000FF] mt-1">
                         {drone.price}
@@ -173,13 +162,7 @@ const ProductShow = () => {
                       href={`/shop/product/${drone.id}`} 
                       className="w-full h-16 md:h-20 flex items-center justify-center bg-[#0000FF] text-white text-[13px] font-black uppercase tracking-[0.25em] transition-all rounded-xl hover:bg-[#FFD700] hover:text-black shadow-xl active:scale-95"
                     >
-                      Explorar Unidad
-                    </Link>
-                    <Link 
-                      href="/shop" 
-                      className="w-full h-16 md:h-20 flex items-center justify-center bg-transparent text-[#0000FF] border-2 border-[#0000FF] text-[13px] font-black uppercase tracking-[0.25em] transition-all rounded-xl hover:bg-[#FFD700] hover:border-[#FFD700] hover:text-black active:scale-95"
-                    >
-                      Catálogo Completo
+                      EXPLORAR UNIDAD
                     </Link>
                   </div>
                 </div>
@@ -193,18 +176,8 @@ const ProductShow = () => {
         {drones.map((_, idx) => {
           const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
           return (
-            <button
-              key={idx}
-              onClick={() => handleDotClick(idx)}
-              className="relative py-3 focus:outline-none"
-            >
-              <div
-                className={`h-2 transition-all duration-500 rounded-full ${
-                  isActive 
-                    ? 'w-16 bg-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.6)]' 
-                    : 'w-4 bg-zinc-400/40 hover:bg-zinc-500/60'
-                }`}
-              />
+            <button key={idx} onClick={() => handleDotClick(idx)} className="relative py-3 focus:outline-none">
+              <div className={`h-2 transition-all duration-500 rounded-full ${isActive ? 'w-16 bg-[#FFD700] shadow-[0_0_15px_rgba(255,215,0,0.6)]' : 'w-4 bg-zinc-400/40 hover:bg-zinc-500/60'}`} />
             </button>
           );
         })}
