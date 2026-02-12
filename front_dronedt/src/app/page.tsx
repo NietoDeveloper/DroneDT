@@ -18,69 +18,69 @@ export default function Home() {
 
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
         
-        {/* SECCIÓN 1: BANNER (SISTEMA 80/20) */}
-        <section className="relative h-screen w-full snap-start snap-always z-10 flex flex-col">
-          {/* 80% CONTENIDO VISUAL */}
-          <div className="h-[80vh] w-full bg-black overflow-hidden">
+        {/* SECCIÓN 1: BANNER (ESTÉTICA 80/20) */}
+        <section className="relative h-screen w-full snap-start snap-always z-10 bg-black flex flex-col pb-[20vh]">
+          <div className="flex-1 w-full overflow-hidden">
             <Banner />
           </div>
-          {/* 20% SOPORTE GAINSBORO */}
-          <div className="h-[20vh] w-full bg-[#DCDCDC]" />
         </section>
 
-        {/* SECCIÓN 2: CATÁLOGO (SISTEMA 80/20 CON COLISIÓN) */}
+        {/* SECCIÓN 2: CATÁLOGO (AJUSTE +20px PARA BOTONES COMPLETOS) */}
         <section 
           id="catalog" 
-          className="relative h-screen w-full snap-start snap-always z-20 flex flex-col bg-[#DCDCDC]"
+          className="relative h-screen w-full snap-start snap-always z-20 flex flex-col -mt-[20vh]"
         >
-          {/* Subimos el 80% del catálogo para que tape el 20% de aire de la sección anterior */}
-          <div className="h-[80vh] w-full -mt-[20vh] z-30">
+          {/* Aumentamos la base del contenedor para que ProductShow respire mejor */}
+          <div className="h-[calc(80vh+20px)] w-full bg-white">
             <ProductShow />
           </div>
-          {/* 20% SOPORTE INFERIOR */}
-          <div className="h-[20vh] w-full bg-[#DCDCDC]" />
+          <div className="flex-1 w-full bg-[#DCDCDC]" /> {/* Soporte Gainsboro que absorbe el resto */}
         </section>
 
-        {/* SECCIÓN 3: SPECS */}
-        <section className="relative h-screen snap-start snap-always z-10 bg-black flex flex-col justify-center px-6 md:px-12">
-          <div className="max-w-[1900px] mx-auto w-full py-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 mb-12 py-8 border-b border-white/10">
-              <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
-                <h3 className="text-5xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
-                  4K <span className="text-[10px] font-bold text-[#FFD700] block mt-2 uppercase">60 FPS PRO</span>
-                </h3>
-                <p className="text-[9px] text-white/40 tracking-[0.5em] uppercase mt-4 font-bold">Ingeniería Óptica</p>
+        {/* SECCIÓN 3: SPECS (ESTÉTICA 80/20) */}
+        <section className="relative h-screen snap-start snap-always z-30 flex flex-col -mt-[20vh]">
+          <div className="flex-1 bg-black flex flex-col justify-center px-6 md:px-12 pt-20">
+            <div className="max-w-[1900px] mx-auto w-full">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-0 mb-12 py-8 border-b border-white/10">
+                <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
+                  <h3 className="text-5xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
+                    4K <span className="text-[10px] font-bold text-[#FFD700] block mt-2 uppercase">60 FPS PRO</span>
+                  </h3>
+                  <p className="text-[9px] text-white/40 tracking-[0.5em] uppercase mt-4 font-bold">Ingeniería Óptica</p>
+                </div>
+                <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
+                  <h3 className="text-5xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
+                    45 <span className="text-[10px] font-bold text-[#FFD700] block mt-2 uppercase">MINUTOS</span>
+                  </h3>
+                  <p className="text-[9px] text-white/40 tracking-[0.5em] uppercase mt-4 font-bold">Autonomía Real</p>
+                </div>
+                <div className="flex flex-col items-center text-center group px-8">
+                  <h3 className="text-5xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
+                    10 <span className="text-[10px] font-bold text-[#FFD700] block mt-2 uppercase">KM RANGO</span>
+                  </h3>
+                  <p className="text-[9px] text-white/40 tracking-[0.5em] uppercase mt-4 font-bold">Transmisión O3</p>
+                </div>
               </div>
-              <div className="flex flex-col items-center text-center group md:border-r border-white/10 px-8">
-                <h3 className="text-5xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
-                  45 <span className="text-[10px] font-bold text-[#FFD700] block mt-2 uppercase">MINUTOS</span>
-                </h3>
-                <p className="text-[9px] text-white/40 tracking-[0.5em] uppercase mt-4 font-bold">Autonomía Real</p>
-              </div>
-              <div className="flex flex-col items-center text-center group px-8">
-                <h3 className="text-5xl lg:text-7xl font-black text-white group-hover:text-[#FFD700] transition-all duration-500 italic leading-none">
-                  10 <span className="text-[10px] font-bold text-[#FFD700] block mt-2 uppercase">KM RANGO</span>
-                </h3>
-                <p className="text-[9px] text-white/40 tracking-[0.5em] uppercase mt-4 font-bold">Transmisión O3</p>
-              </div>
-            </div>
 
-            <div className="flex flex-col items-center text-center space-y-8">
-              <h1 className="text-6xl sm:text-7xl md:text-9xl lg:text-[110px] font-black tracking-tighter uppercase leading-none text-white">
-                DRONE <span className="text-[#FFD700] italic">DT</span>
-              </h1>
-              <div className="flex flex-col sm:flex-row gap-5 w-full max-w-xl pt-4">
-                <Link href="/shop" className="flex-1 h-14 flex items-center justify-center rounded-[4px] bg-[#FFD700] text-black text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:bg-white shadow-lg">
-                  Explorar Tienda
-                </Link>
-                <Link href="/services" className="flex-1 h-14 flex items-center justify-center rounded-[4px] bg-transparent text-white border border-white/20 text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:border-[#FFD700] hover:text-[#FFD700]">
-                  Servicios Técnicos
-                </Link>
+              <div className="flex flex-col items-center text-center space-y-8">
+                <h1 className="text-6xl sm:text-7xl md:text-9xl lg:text-[110px] font-black tracking-tighter uppercase leading-none text-white">
+                  DRONE <span className="text-[#FFD700] italic">DT</span>
+                </h1>
+                <div className="flex flex-col sm:flex-row gap-5 w-full max-w-xl pt-4">
+                  <Link href="/shop" className="flex-1 h-14 flex items-center justify-center rounded-[4px] bg-[#FFD700] text-black text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:bg-white shadow-lg">
+                    Explorar Tienda
+                  </Link>
+                  <Link href="/services" className="flex-1 h-14 flex items-center justify-center rounded-[4px] bg-transparent text-white border border-white/20 text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:border-[#FFD700] hover:text-[#FFD700]">
+                    Servicios Técnicos
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
+          <div className="h-[20vh] w-full" />
         </section>
 
+        {/* FOOTER */}
         <section className="snap-start snap-always bg-black">
           <Footer />
         </section>
