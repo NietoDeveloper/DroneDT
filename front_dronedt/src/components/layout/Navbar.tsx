@@ -58,7 +58,6 @@ const Navbar = () => {
         const targetCat = categoryMap[rawCat] || 'Modelos';
         const rawName = (item.name || "").toUpperCase();
 
-        // --- MAPEO DE FOTOS (CARPETA PUBLIC) ---
         let displayImg = '/drone-placeholder.png';
         
         if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
@@ -103,8 +102,9 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
+  // AJUSTE: Se cambió <Link> por <a> para forzar recarga total
   const Logo = () => (
-    <Link href="/" className="group flex items-center gap-3 outline-none">
+    <a href="/" className="group flex items-center gap-3 outline-none">
       <div className="relative flex items-center justify-center">
         <svg
           width={isScrolled ? "30" : "36"}
@@ -138,7 +138,7 @@ const Navbar = () => {
         </div>
         <span className="text-[7px] font-bold tracking-[0.5em] uppercase text-black/60 group-hover:text-[#0000FF] transition-colors">Colombia</span>
       </div>
-    </Link>
+    </a>
   );
 
   if (loading) return (
@@ -220,7 +220,7 @@ const Navbar = () => {
                 onClick={() => setSelectedModel(null)}
                 className="mb-8 text-[#0000FF] font-black uppercase tracking-[0.3em] flex items-center gap-2 hover:text-[#FFD700] transition-all cursor-pointer"
               >
-                ← Volver al Menú
+                &larr; Volver al Menú
               </button>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-20">
                 {menuContent[selectedModel]?.map((product) => (
