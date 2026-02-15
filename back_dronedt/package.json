@@ -4,17 +4,6 @@
   "description": "Production-ready API for Drone DT - Scalable MERN Architecture by Manuel Nieto #1 Colombia",
   "main": "src/app.js",
   "engines": {
-    "node": ">=22.19.0"
-  },
-  "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
-    "seed": "node src/seeder.js",
-    "test": "jest --watchAll --no-cache",
-    "test:ci": "jest --ci --forceExit",
-    "lint": "eslint src/**/*.js",
-    "clean": "rm -rf node_modules package-lock.json && npm install"
-  },
 
 
 }
