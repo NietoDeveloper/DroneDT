@@ -15,13 +15,6 @@
     "lint": "eslint src/**/*.js",
     "clean": "rm -rf node_modules package-lock.json && npm install"
   },
-  "keywords": [
-    "drone-dt",
-    "express",
-    "mongodb-atlas",
-    "mern-stack",
-    "nietodeveloper",
-    "colombia-rank-1"
-  ],
+
 
 }
