@@ -1,9 +1,0 @@
-{
-  "name": "drone-dt-backend",
-  "version": "1.2.0",
-  "description": "Production-ready API for Drone DT - Scalable MERN Architecture by Manuel Nieto #1 Colombia",
-  "main": "src/app.js",
-  "engines": {
-
-
-}
