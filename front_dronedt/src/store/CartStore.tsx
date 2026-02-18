@@ -26,7 +26,6 @@ interface CartState {
   getTotalItems: () => number;
   getTotalPrice: () => number;
 }
-
 /**
  * CartStore: Gestión de estado global para Drone DT.
  * Utiliza persistencia para no perder datos en refresh.
