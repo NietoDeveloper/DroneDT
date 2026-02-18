@@ -16,19 +16,7 @@ export default function Home() {
       </div>
 
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
-        
-        {/* SECCIÓN 1: BANNER */}
-        <section className="relative h-screen w-full snap-start snap-always z-10 bg-black flex flex-col pb-[20vh]">
-          <div className="flex-1 w-full overflow-hidden">
-            <Banner />
-          </div>
-        </section>
 
-        {/* SECCIÓN 2: CATÁLOGO (ÚLTIMO SOLAPAMIENTO 80/20) */}
-        <section 
-          id="catalog" 
-          className="relative h-screen w-full snap-start snap-always z-20 flex flex-col -mt-[20vh]"
-        >
           {/* h-full aquí para que ProductShow use todo el espacio de la sección */}
           <div className="h-full w-full bg-white shadow-2xl">
             <ProductShow />
