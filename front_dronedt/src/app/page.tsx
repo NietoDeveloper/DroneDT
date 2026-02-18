@@ -9,19 +9,7 @@ const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { s
 const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
 
 export default function Home() {
-  return (
-    <div className="relative bg-[#DCDCDC] selection:bg-[#FFD700] selection:text-black">
-      <div className="fixed top-0 left-0 w-full z-[100]">
-        <Navbar />
-      </div>
 
-      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
-
-          {/* h-full aquí para que ProductShow use todo el espacio de la sección */}
-          <div className="h-full w-full bg-white shadow-2xl">
-            <ProductShow />
-          </div>
-        </section>
 
         {/* SECCIÓN 3: SPECS (FLUJO NORMAL - SIN -MT) */}
         <section className="relative h-screen w-full snap-start snap-always z-30 bg-black flex flex-col">
