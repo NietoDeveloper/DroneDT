@@ -8,21 +8,6 @@ const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false 
 const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { ssr: false });
 const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
 
-export default function Home() {
-  return (
-    <div className="relative bg-[#DCDCDC] selection:bg-[#FFD700] selection:text-black">
-      <div className="fixed top-0 left-0 w-full z-[100]">
-        <Navbar />
-      </div>
-
-      <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
-        
-        {/* SECCIÓN 1: BANNER */}
-        <section className="relative h-screen w-full snap-start snap-always z-10 bg-black flex flex-col pb-[20vh]">
-          <div className="flex-1 w-full overflow-hidden">
-            <Banner />
-          </div>
-        </section>
 
         
 
