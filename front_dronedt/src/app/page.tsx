@@ -11,24 +11,6 @@ const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false 
 
         
 
-        {/* SECCIÓN 3: SPECS (FLUJO NORMAL - SIN -MT) */}
-        <section className="relative h-screen w-full snap-start snap-always z-30 bg-black flex flex-col">
-          <div className="flex-1 flex flex-col justify-center px-6 md:px-12">
-            <div className="max-w-[1900px] mx-auto w-full text-center">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 py-10 border-b border-white/10">
-                <div className="flex flex-col items-center">
-                   <h3 className="text-6xl font-black text-white italic">4K</h3>
-                   <p className="text-xs text-[#FFD700] tracking-[0.3em] mt-2 uppercase font-bold">60 FPS PRO</p>
-                </div>
-                <div className="flex flex-col items-center">
-                   <h3 className="text-6xl font-black text-white italic">45M</h3>
-                   <p className="text-xs text-[#FFD700] tracking-[0.3em] mt-2 uppercase font-bold">AUTONOMÍA</p>
-                </div>
-                <div className="flex flex-col items-center">
-                   <h3 className="text-6xl font-black text-white italic">10K</h3>
-                   <p className="text-xs text-[#FFD700] tracking-[0.3em] mt-2 uppercase font-bold">RANGO O3</p>
-                </div>
-              </div>
 
               <div className="flex flex-col items-center space-y-10">
                 <h1 className="text-7xl md:text-9xl lg:text-[120px] font-black uppercase leading-none text-white tracking-tighter">
