@@ -9,7 +9,7 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 **Developed by:** Manuel Nieto (NietoDeveloper)  
 **Role:** Full-Stack Software Engineer
 
-- 🏆 **Rank:** #1 Committer in Colombia | #4 in South & Central America ([committers.top](https://committers.top))
+- 🏆 **Rank:** #1 Committer in Colombia | #3 in South & Central America ([committers.top](https://committers.top))
 - 💻 **Stack:** MERN + Next.js + TypeScript + AWS + Docker
 - 🎯 **Focus:** High-performance, production-grade systems
 
