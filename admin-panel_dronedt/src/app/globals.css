@@ -1,28 +1,41 @@
 @import "tailwindcss";
 
 @theme {
-  /* Identidad de marca Drone DT */
-  --color-gainsboro: #DCDCDC;
-  --color-gold: #FFD700;
-  --color-yellow-color: #FEB60D;
-  --color-heading-color: #000000;
-  --color-text-color: #000000;
+  /* Identidad Drone DT – dorado premium, gainsboro suave, negro para textos */
+  --color-gainsboro:     #DCDCDC;
+  --color-gold:          #FFD700;       /* oro Tesla-like */
+  --color-yellow-color:  #FEB60D;       /* amarillo vibrante para hovers/acentos */
+  --color-heading:       #000000;       /* headings fuertes */
+  --color-text:          #1A1A1A;       /* texto principal más suave que puro black */
+  --color-main:          #F8F8F8;       /* fondo principal claro/gris muy suave (mejor que gainsboro directo) */
+  --color-card:          #FFFFFF;       /* tarjetas blancas puras con glass */
+  --color-border:        #E5E5E5;       /* bordes sutiles */
 
-  /* Mapeo de fondos para que bg-main y bg-card funcionen */
-  --color-main: #DCDCDC;
-  --color-card: #FFFFFF;
+  /* Opcional: spacings, fonts, shadows para vibe futurista */
+  --font-heading: "Inter", "Helvetica Neue", sans-serif;
+  --font-body:    "Inter", system-ui, sans-serif;
+  --shadow-sm:    0 1px 3px rgba(0,0,0,0.08);
 }
 
-/* Base futurista estilo Tesla/SpaceX */
+/* Base – estilos globales DroneDT / Tesla-inspired */
 @layer base {
-  body {
-    /* Usamos las variables definidas en el tema */
-    background-color: var(--color-main);
-    color: var(--color-text-color);
-    @apply antialiased min-h-screen transition-colors duration-300;
+  :root {
+    --background: var(--color-main);
+    --foreground: var(--color-text);
   }
 
-  /* Scrollbar Minimalista Drone DT */
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply antialiased min-h-screen transition-colors duration-300;
+    font-feature-settings: "liga" 1, "calt" 1; /* tipografía moderna */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-heading tracking-tight;
+  }
+
+  /* Scrollbar minimalista dorado – premium feel */
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -33,16 +46,53 @@
     background: var(--color-gold);
     border-radius: 10px;
   }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-yellow-color);
+  }
 }
 
-/* Componentes de Clase Mundial */
+/* Componentes reutilizables estilo DroneDT */
 @layer components {
   .btn-primary {
-    /* bg-gold y text-black se generan desde el theme */
-    @apply bg-[--color-gold] text-black font-bold py-2 px-4 rounded-full hover:bg-[--color-yellow-color] transition-all active:scale-95 cursor-pointer;
+    @apply 
+      bg-gold 
+      text-black 
+      font-bold 
+      py-3 px-6 
+      rounded-full 
+      hover:bg-yellow-color 
+      hover:shadow-md 
+      active:scale-95 
+      transition-all 
+      duration-200 
+      cursor-pointer 
+      shadow-sm;
   }
-  
+
+  .btn-outline {
+    @apply 
+      border-2 border-gold 
+      text-gold 
+      font-bold 
+      py-3 px-6 
+      rounded-full 
+      hover:bg-gold 
+      hover:text-black 
+      transition-all 
+      duration-200;
+  }
+
   .glass-panel {
-    @apply bg-white/80 backdrop-blur-md border border-[--color-gainsboro] shadow-sm;
+    @apply 
+      bg-white/70 
+      backdrop-blur-xl 
+      border border-gainsboro/50 
+      shadow-[0_4px_30px_rgba(0,0,0,0.06)] 
+      rounded-2xl 
+      overflow-hidden;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24;
   }
 }
