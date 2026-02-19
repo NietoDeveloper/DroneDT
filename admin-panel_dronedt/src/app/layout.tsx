@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-// Al estar en src/app/layout.tsx, "../" sube a src/ para encontrar globals.css
-import "../globals.css";
+// Usamos el alias @ que apunta a la carpeta /src definida en tsconfig.json
+import "@/globals.css";
 
 export const metadata: Metadata = {
   title: "Drone DT | Admin Control Panel",
@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* Usamos bg-main y text-textColor definidos en tu tailwind.config.ts */}
+      {/* Aplicamos la identidad de Drone DT: bg-main (#DCDCDC) y textColor (#000000) */}
       <body className="bg-main text-textColor antialiased">
         {children}
       </body>
