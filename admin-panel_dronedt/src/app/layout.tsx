@@ -11,11 +11,3 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-      <body className="bg-main text-textColor antialiased">
-        {children}
-      </body>
-    </html>
-  );
-}
