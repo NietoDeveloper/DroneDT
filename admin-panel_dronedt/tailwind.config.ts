@@ -1,10 +1,9 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  // Simplificamos a un solo patrón para que no se le escape nada a Turbopack
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -15,6 +14,7 @@ const config: Config = {
         headingColor: "#000000",
         textColor: "#000000",
       },
+      // Definimos backgroundColors explícitos para tus clases bg-main y bg-card
       backgroundColor: {
         'main': '#DCDCDC',
         'card': '#FFFFFF',
