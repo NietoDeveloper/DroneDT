@@ -1,31 +1,32 @@
 @import "tailwindcss";
 
+/* Configuración de Tema Estilo Drone DT / Tesla */
 @theme {
-  /* Identidad Técnica Drone DT */
   --color-gainsboro: #DCDCDC;
   --color-gold: #FFD700;
   --color-yellowColor: #FEB60D;
   --color-headingColor: #000000;
   --color-textColor: #000000;
-  
-  /* Colores de fondo */
+
   --background-main: #DCDCDC;
   --background-card: #FFFFFF;
 }
 
-/* Estilos base para el look futurista y limpio */
+/* Base futurista */
 @layer base {
   body {
-    @apply bg-[--background-main] text-[--color-textColor] antialiased;
-    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Usamos las variables definidas arriba */
+    background-color: var(--background-main);
+    color: var(--color-textColor);
+    @apply antialiased min-h-screen transition-colors duration-300;
   }
 
-  /* Scrollbar estilo Tesla/SpaceX */
+  /* Scrollbar Minimalista para el Admin */
   ::-webkit-scrollbar {
-    width: 5px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--color-gainsboro);
+    background: transparent;
   }
   ::-webkit-scrollbar-thumb {
     background: var(--color-gold);
@@ -33,9 +34,13 @@
   }
 }
 
-/* Utility classes personalizadas */
+/* Clases de Utilidad para el Dashboard */
 @layer components {
-  .glass-card {
-    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  .btn-primary {
+    @apply bg-gold text-black font-bold py-2 px-4 rounded-full hover:bg-yellowColor transition-all active:scale-95;
+  }
+  
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-gainsboro shadow-sm;
   }
 }
