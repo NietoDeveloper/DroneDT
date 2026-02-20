@@ -1,24 +1,80 @@
 @import "tailwindcss";
 
 @theme {
-  /* Identidad Drone DT - Convención v4 */
+  /* Identidad Drone DT - Convención v4 compatible */
+  /* Al usar --color-name, Tailwind v4 crea automáticamente bg-name, text-name, border-name */
   --color-gainsboro: #DCDCDC;
   --color-gold: #FFD700;
   --color-yellow-color: #FEB60D;
   --color-heading: #000000;
   --color-text: #1A1A1A;
+  
+  /* Mapeo para bg-main y bg-card */
   --color-main: #F8F8F8;
   --color-card: #FFFFFF;
   --color-border: #E5E5E5;
 
-  /* Tipografía Futurista */
+  /* Tipografía */
   --font-heading: "Inter", "Helvetica Neue", sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   
-  /* Sombras Tesla-style */
+  /* Sombras */
   --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.1);
 }
 
 /* Base – DroneDT Identity */
 @layer base {
   body {
+    /* Aplicamos las variables del theme */
+    background-color: var(--color-main);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    @apply antialiased min-h-screen transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+    @apply tracking-tight font-bold;
+  }
+
+  /* Scrollbar Dorado Premium - Estilo Tesla */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #FFD700; /* Color Gold directo para asegurar render */
+    border-radius: 10px;
+  }
+}
+
+/* Componentes Pro */
+@layer components {
+  .btn-primary {
+    /* En v4, usamos las utilidades generadas por el @theme */
+    @apply 
+      bg-gold 
+      text-black 
+      font-bold 
+      py-3 px-6 
+      rounded-full 
+      hover:bg-yellow-color 
+      active:scale-95 
+      transition-all 
+      duration-200 
+      cursor-pointer 
+      shadow-sm;
+  }
+
+  .glass-panel {
+    @apply 
+      bg-white/70 
+      backdrop-blur-xl 
+      border border-gainsboro
+      shadow-premium
+      rounded-2xl;
+  }
+}
