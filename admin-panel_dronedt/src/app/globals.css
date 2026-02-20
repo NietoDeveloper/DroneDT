@@ -22,18 +22,3 @@
 /* Base – DroneDT Identity */
 @layer base {
   body {
-    /* Usamos directamente las variables del theme */
-    background-color: var(--color-main);
-    color: var(--color-text);
-    font-family: var(--font-body);
-    @apply antialiased min-h-screen transition-colors duration-300;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
-    color: var(--color-heading);
-    @apply tracking-tight font-bold;
-  }
-
-  /* Scrollbar Dorado Premium */
-  ::-webkit-scrollbar {
