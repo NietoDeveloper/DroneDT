@@ -49,7 +49,7 @@ export default function RootLayout({
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                  
                 </div>
-                <span>Engineered by NietoDeveloper</span>
+   
               </div>
             </div>
           </footer>
