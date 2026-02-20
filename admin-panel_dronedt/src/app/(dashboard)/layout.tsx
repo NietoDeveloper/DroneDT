@@ -59,19 +59,6 @@ export default function DashboardLayout({
         </div>
       </main>
 
-      {/* 3. Footer de Integridad Técnica */}
-      <footer className="h-10 border-t border-gainsboro bg-white/80 backdrop-blur-md flex items-center justify-between px-6 z-40">
-        <div className="flex items-center gap-4 text-[9px] font-mono text-zinc-500 uppercase tracking-widest">
-          <span className="opacity-60 italic">Standard v2.6.0</span>
-          <span className="text-gainsboro">|</span>
-          <a 
-            href="https://softwaredt.vercel.app/" 
-            target="_blank" 
-            className="hover:text-gold hover:tracking-[0.2em] transition-all duration-300 font-bold"
-          >
-            Software DT
-          </a>
-        </div>
         
         <div className="flex items-center gap-3 group cursor-help">
           <span className="text-[9px] font-mono text-zinc-400 uppercase">
