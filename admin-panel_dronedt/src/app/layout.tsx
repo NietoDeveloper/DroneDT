@@ -47,7 +47,7 @@ export default function RootLayout({
               <div className="flex items-center gap-4 mt-2 md:mt-0">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                  <span>Atlas-MERN Cluster Live</span>
+                 
                 </div>
                 <span>Engineered by NietoDeveloper</span>
               </div>
