@@ -44,13 +44,7 @@ export default function RootLayout({
             <div className="flex flex-col md:flex-row justify-between items-center text-xs uppercase tracking-wider text-gray-500 font-mono">
               <span>© 2026 Drone DT – Bogotá, Colombia</span>
               
-              <div className="flex items-center gap-4 mt-2 md:mt-0">
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                 
-                </div>
-   
-              </div>
+             
             </div>
           </footer>
         </div>
