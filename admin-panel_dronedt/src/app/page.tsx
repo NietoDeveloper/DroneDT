@@ -1,12 +1,22 @@
 "use client";
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import Logo from '@/components/ui/Logo';
 
 /** * LoginPage - Drone DT Intelligence System
  * Engineered by: NietoDeveloper (Top 1 Colombia)
  */
 export default function LoginPage() {
+  const router = useRouter();
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Aquí irá la lógica de validación de credenciales.
+    // Por ahora, redirige al Dashboard (Panel de Control).
+    router.push('/dashboard'); 
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden bg-main">
       
@@ -31,10 +41,9 @@ export default function LoginPage() {
           <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-70" />
           
           <div className="flex flex-col items-center mb-10 text-center">
-            {/* Integración del Logo SVG - Contenedor con contraste industrial */}
+            {/* Integración del Logo SVG */}
             <div className="mb-6 transform transition-all duration-700 hover:scale-105">
               <div className="bg-zinc-950 p-6 rounded-2xl border border-gold/20 shadow-xl relative group">
-                {/* Efecto Glow dinámico al pasar el mouse */}
                 <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
                 <Logo iconSize={42} className="relative z-10" />
               </div>
@@ -47,17 +56,21 @@ export default function LoginPage() {
               </span>
             </div>
             
-            <p className="text-[11px] font-mono text-zinc-500 uppercase tracking-[0.2em]">
+            <h2 className="text-xl font-black text-heading uppercase tracking-tight mb-1">
+              Panel Control APP DroneDT
+            </h2>
+            <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.2em]">
               Management Intelligence System
             </p>
           </div>
           
-          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-5" onSubmit={handleLogin}>
             <div className="group">
               <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2 ml-1">
                 Operator Credentials
               </label>
               <input 
+                required
                 type="email" 
                 className="w-full p-4 bg-gainsboro/30 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white/90 transition-all duration-300 outline-none text-sm font-medium text-heading shadow-inner"
                 placeholder="EMAIL_ADDRESS"
@@ -69,6 +82,7 @@ export default function LoginPage() {
                 Access Key
               </label>
               <input 
+                required
                 type="password" 
                 className="w-full p-4 bg-gainsboro/30 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white/90 transition-all duration-300 outline-none text-sm font-medium text-heading shadow-inner"
                 placeholder="••••••••"
@@ -80,13 +94,13 @@ export default function LoginPage() {
                 type="submit"
                 className="btn-primary w-full flex items-center justify-center gap-3 group h-14"
               >
-                <span className="text-xs font-black tracking-widest uppercase">Authorize Access</span>
+                <span className="text-xs font-black tracking-widest uppercase italic">Authorize Access</span>
                 <span className="text-black group-hover:translate-x-1 transition-transform font-bold text-xl">→</span>
               </button>
             </div>
           </form>
           
-          {/* Metadata de Sesión - Integridad Técnica */}
+          {/* Metadata de Sesión */}
           <div className="mt-8 flex justify-between items-center border-t border-gainsboro pt-6">
             <div className="text-[9px] font-mono text-zinc-400 leading-relaxed uppercase">
               ID: <span className="text-zinc-600 font-bold">NIETO_DEV_01</span> <br />
@@ -99,7 +113,6 @@ export default function LoginPage() {
           </div>
         </div>
 
-        {/* Footer Minimalista de Drone DT */}
         <p className="text-center mt-8 text-[10px] text-zinc-400 font-mono tracking-[0.4em] uppercase opacity-70">
           DroneDT Operational Engine &copy; 2026
         </p>
