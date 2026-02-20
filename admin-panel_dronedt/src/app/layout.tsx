@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css"; 
 import Preloader from "@/components/ui/Preloader";
-import Logo from "@/components/ui/Logo"; // Importamos tu nuevo logo SVG
+import Logo from "@/components/ui/Logo";
 
 export const metadata: Metadata = {
   title: {
@@ -10,8 +10,9 @@ export const metadata: Metadata = {
   },
   description: "Fabricación, personalización y venta de drones de alto rendimiento en Colombia. Soluciones para logística, inspección y más.",
   icons: {
-    // Asegúrate de que el archivo SVG o ICO esté en /public/favicon.ico
-    icon: '/favicon.ico', 
+    // Usamos icon.svg para que el navegador use el mismo logo vectorial
+    icon: '/icon.svg', 
+    apple: '/icon.svg',
   },
 };
 
@@ -25,33 +26,32 @@ export default function RootLayout({
       <body 
         className="
           bg-main 
-          text-text 
           antialiased 
           min-h-screen 
           selection:bg-gold 
           selection:text-black
         "
       >
-        {/* Capa de Pre-carga - Sincronizada con el tiempo de calibración (3.5s) */}
+        {/* Capa de Pre-carga */}
         <Preloader />
 
         <div className="relative flex min-h-screen flex-col">
-          {/* Barra superior dorada – Vibe Aeroespacial Drone DT */}
+          {/* Barra superior dorada – Vibe Aeroespacial */}
           <div className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold via-yellowColor to-gold z-[9999]" />
 
-          {/* Contenedor de la Aplicación */}
+          {/* Contenedor Principal */}
           <main className="flex-1 flex flex-col relative z-10">
             {children}
           </main>
 
-          {/* Footer de Integridad Técnica - Engineered by NietoDeveloper */}
+          {/* Footer de Integridad Técnica */}
           <footer className="py-8 px-6 md:px-12 border-t border-gainsboro bg-white/40 backdrop-blur-xl relative z-20">
             <div className="max-w-7xl mx-auto">
               <div className="flex flex-col md:flex-row justify-between items-center gap-6">
                 
-                {/* Logo en el Footer - Versión Minimalista */}
-                <div className="opacity-80 hover:opacity-100 transition-opacity">
-                  <Logo iconSize={24} className="scale-75 origin-left" />
+                {/* Logo en Footer - Invertimos colores si el fondo es claro */}
+                <div className="opacity-80 hover:opacity-100 transition-opacity filter brightness-0">
+                  <Logo iconSize={24} className="scale-75 origin-left" hideText={false} />
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-zinc-500 font-mono">
