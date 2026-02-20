@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  /* Identidad Drone DT - Convención v4 */
+  --color-gainsboro: #DCDCDC;
+  --color-gold: #FFD700;
+  --color-yellow-color: #FEB60D;
+  --color-heading: #000000;
+  --color-text: #1A1A1A;
+  --color-main: #F8F8F8;
+  --color-card: #FFFFFF;
+  --color-border: #E5E5E5;
+
+  /* Tipografía Futurista */
+  --font-heading: "Inter", "Helvetica Neue", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  
+  /* Sombras Tesla-style */
+  --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.1);
+}
+
+/* Base – DroneDT Identity */
+@layer base {
+  body {
+    /* Usamos directamente las variables del theme */
+    background-color: var(--color-main);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    @apply antialiased min-h-screen transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-heading);
+    @apply tracking-tight font-bold;
+  }
+
+  /* Scrollbar Dorado Premium */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 10px;
+  }
+}
+
+/* Componentes de Clase Mundial */
+@layer components {
+  .btn-primary {
+    @apply 
+      bg-[--color-gold] 
+      text-black 
+      font-bold 
+      py-3 px-6 
+      rounded-full 
+      hover:bg-[--color-yellow-color] 
+      active:scale-95 
+      transition-all 
+      duration-200 
+      cursor-pointer 
+      shadow-sm;
+  }
+
+  .glass-panel {
+    @apply 
+      bg-white/70 
+      backdrop-blur-xl 
+      border border-[--color-gainsboro]
+      shadow-[--shadow-premium]
+      rounded-2xl;
+  }
+}
