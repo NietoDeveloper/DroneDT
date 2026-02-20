@@ -16,6 +16,7 @@
   "author": "Tu Nombre",
   "license": "ISC",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.2.0",
     "@types/node": "^25.2.2",
     "@types/react": "^19.2.13",
     "@types/react-dom": "^19.2.3",
