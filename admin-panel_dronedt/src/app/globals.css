@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
+/* FUERZA EL ESCANEO DE TUS ARCHIVOS (Ajusta la ruta según tu estructura) */
+@source "../"; 
+
 @theme {
-  /* Identidad Drone DT - Convención v4 compatible */
-  /* Al usar --color-name, Tailwind v4 crea automáticamente bg-name, text-name, border-name */
+  /* Identidad Drone DT - Convención v4 */
   --color-gainsboro: #DCDCDC;
   --color-gold: #FFD700;
   --color-yellow-color: #FEB60D;
@@ -22,10 +24,8 @@
   --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.1);
 }
 
-/* Base – DroneDT Identity */
 @layer base {
   body {
-    /* Aplicamos las variables del theme */
     background-color: var(--color-main);
     color: var(--color-text);
     font-family: var(--font-body);
@@ -33,28 +33,22 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+    @apply font-bold tracking-tight;
     color: var(--color-heading);
-    @apply tracking-tight font-bold;
   }
 
-  /* Scrollbar Dorado Premium - Estilo Tesla */
+  /* Scrollbar Dorado Drone DT */
   ::-webkit-scrollbar {
     width: 6px;
   }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
   ::-webkit-scrollbar-thumb {
-    background: #FFD700; /* Color Gold directo para asegurar render */
+    background: #FFD700;
     border-radius: 10px;
   }
 }
 
-/* Componentes Pro */
 @layer components {
   .btn-primary {
-    /* En v4, usamos las utilidades generadas por el @theme */
     @apply 
       bg-gold 
       text-black 
@@ -65,8 +59,7 @@
       active:scale-95 
       transition-all 
       duration-200 
-      cursor-pointer 
-      shadow-sm;
+      cursor-pointer;
   }
 
   .glass-panel {
