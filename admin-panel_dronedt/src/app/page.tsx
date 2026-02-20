@@ -12,8 +12,7 @@ export default function LoginPage() {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí irá la lógica de validación de credenciales.
-    // Por ahora, redirige al Dashboard (Panel de Control).
+    // Simulación de autorización para el flujo del MVP
     router.push('/dashboard'); 
   };
 
@@ -41,7 +40,7 @@ export default function LoginPage() {
           <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-70" />
           
           <div className="flex flex-col items-center mb-10 text-center">
-            {/* Integración del Logo SVG */}
+            {/* Integración del Logo SVG con contenedor industrial */}
             <div className="mb-6 transform transition-all duration-700 hover:scale-105">
               <div className="bg-zinc-950 p-6 rounded-2xl border border-gold/20 shadow-xl relative group">
                 <div className="absolute inset-0 bg-gold/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
@@ -56,6 +55,7 @@ export default function LoginPage() {
               </span>
             </div>
             
+            {/* Título de la Aplicación */}
             <h2 className="text-xl font-black text-heading uppercase tracking-tight mb-1">
               Panel Control Empresa Drone DT
             </h2>
@@ -100,9 +100,9 @@ export default function LoginPage() {
             </div>
           </form>
           
-          {/* Metadata de Sesión */}
+          {/* Metadata de Sesión - Integridad Técnica */}
           <div className="mt-8 flex justify-between items-center border-t border-gainsboro pt-6">
-            <div className="text-[9px] font-mono text-zinc-400 leading-relaxed uppercase">
+            <div className="text-[9px] font-mono text-zinc-400 leading-relaxed uppercase text-left">
               ID: <span className="text-zinc-600 font-bold">NIETO_DEV_01</span> <br />
               LOC: <span className="text-zinc-600 font-bold">COL_BOG_CLUSTER</span>
             </div>
@@ -113,6 +113,7 @@ export default function LoginPage() {
           </div>
         </div>
 
+        {/* Footer Minimalista */}
         <p className="text-center mt-8 text-[10px] text-zinc-400 font-mono tracking-[0.4em] uppercase opacity-70">
           DroneDT Operational Engine &copy; 2026
         </p>
