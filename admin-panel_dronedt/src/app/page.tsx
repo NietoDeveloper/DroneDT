@@ -94,7 +94,7 @@ export default function LoginPage() {
                 type="submit"
                 className="btn-primary w-full flex items-center justify-center gap-3 group h-14"
               >
-                <span className="text-xs font-black tracking-widest uppercase italic">Authorize Access</span>
+                <span className="text-xs font-black tracking-widest uppercase italic">Ingresar</span>
                 <span className="text-black group-hover:translate-x-1 transition-transform font-bold text-xl">→</span>
               </button>
             </div>

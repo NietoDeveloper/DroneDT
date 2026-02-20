@@ -10,7 +10,7 @@ import Logo from "@/components/ui/Logo";
 export const metadata: Metadata = {
   title: {
     template: '%s | Panel Control Empresa Drone DT',
-    default: 'Panel Control APP DroneDT',
+    default: 'Panel Control Empresa DroneDT',
   },
   description: "Sistema de Inteligencia y Gestión Drone DT. Ingeniería de alto rendimiento por NietoDeveloper.",
 };
