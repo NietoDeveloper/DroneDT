@@ -37,19 +37,3 @@
 
   /* Scrollbar Dorado Premium */
   ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-
-  .glass-panel {
-    @apply 
-      bg-white/70 
-      backdrop-blur-xl 
-      border border-[--color-gainsboro]
-      shadow-[--shadow-premium]
-      rounded-2xl;
-  }
-}
