@@ -13,26 +13,7 @@ export default function LoginPage() {
           backgroundSize: '40px 40px' 
         }} 
       />
-      
-      <div className="max-w-md w-full z-10">
-        {/* Panel principal con Glassmorphism */}
-        <div className="bg-white/70 backdrop-blur-2xl p-10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/40 relative overflow-hidden">
-          
-          {/* Línea de seguridad superior - Identidad Drone DT */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" />
-          
- 
-            
-            <div className="group">
-              <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2 ml-1">
-                Access Key
-              </label>
-              <input 
-                type="password" 
-                className="w-full p-4 bg-gainsboro/40 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white transition-all duration-300 outline-none text-sm font-medium text-headingColor"
-                placeholder="••••••••"
-              />
-            </div>
+
 
             <div className="pt-2">
               <button 
