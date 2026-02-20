@@ -39,14 +39,7 @@ export default function RootLayout({
             {children}
           </main>
 
-          {/* Footer minimalista y técnico – buen toque DroneDT */}
-          <footer className="py-4 px-6 md:px-12 border-t border-gray-800/50 bg-black/40 backdrop-blur-md">
-            <div className="flex flex-col md:flex-row justify-between items-center text-xs uppercase tracking-wider text-gray-500 font-mono">
-              <span>© 2026 Drone DT – Bogotá, Colombia</span>
-              
-             
-            </div>
-          </footer>
+
         </div>
       </body>
     </html>
