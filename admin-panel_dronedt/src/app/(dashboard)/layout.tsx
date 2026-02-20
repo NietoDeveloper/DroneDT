@@ -38,18 +38,5 @@ export default function DashboardLayout({
             <span className="text-[9px] font-mono font-bold text-white uppercase tracking-tighter">Atlas-MERN Connected</span>
           </div>
 
-          {/* User Avatar con Hover Gold Elevado */}
-          <button className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-gold to-yellowColor rounded-full blur opacity-25 group-hover:opacity-75 transition duration-500" />
-            <div className="relative w-9 h-9 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center text-[10px] text-white font-black group-hover:border-gold transition-all duration-300 shadow-xl">
-              MN
-            </div>
-          </button>
-        </div>
-      </header>
-
-      {/* 2. Contenedor Principal (Dashboard Engine) */}
-      <main className="flex-1 overflow-hidden relative z-10">
-        {/* Glows de fondo para dar profundidad al contenido */}
 
 }
