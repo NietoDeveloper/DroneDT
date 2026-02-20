@@ -15,7 +15,7 @@ export default function LoginPage() {
     e.preventDefault();
     setIsAuthorizing(true);
     
-    // Pequeño delay para simular validación de sistema antes de saltar al dashboard
+    // Simulación de latencia de red para el sistema MERN
     setTimeout(() => {
       router.push('/dashboard'); 
     }, 800);
@@ -43,9 +43,8 @@ export default function LoginPage() {
           <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-70" />
           
           <div className="flex flex-col items-center mb-10 text-center">
-            <div className="mb-6 transform transition-all duration-700 hover:scale-105 hover:rotate-3">
+            <div className="mb-6 transform transition-all duration-700 hover:scale-105 hover:rotate-3 cursor-crosshair">
               <div className="bg-zinc-950 p-6 rounded-2xl border border-gold/20 shadow-xl relative group">
-                {/* Glow flotante detrás del logo */}
                 <div className="absolute -inset-2 bg-gold/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
                 <Logo iconSize={42} className="relative z-10" />
               </div>
@@ -74,7 +73,7 @@ export default function LoginPage() {
               <input 
                 required
                 type="email" 
-                className="w-full p-4 bg-gainsboro/30 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white/90 transition-all duration-300 outline-none text-sm font-medium text-heading shadow-inner"
+                className="w-full p-4 bg-gainsboro/30 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white/90 transition-all duration-300 outline-none text-sm font-medium text-heading shadow-inner cursor-text"
                 placeholder="EMAIL_ADDRESS"
               />
             </div>
@@ -86,19 +85,19 @@ export default function LoginPage() {
               <input 
                 required
                 type="password" 
-                className="w-full p-4 bg-gainsboro/30 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white/90 transition-all duration-300 outline-none text-sm font-medium text-heading shadow-inner"
+                className="w-full p-4 bg-gainsboro/30 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white/90 transition-all duration-300 outline-none text-sm font-medium text-heading shadow-inner cursor-text"
                 placeholder="••••••••"
               />
             </div>
 
             <div className="pt-2 relative group">
-              {/* Resplandor Gold Flotante detrás del botón */}
-              <div className="absolute -inset-1 bg-gold blur opacity-20 group-hover:opacity-60 transition duration-500 rounded-xl" />
+              {/* Resplandor Gold Flotante - Se expande en hover */}
+              <div className="absolute -inset-1 bg-gold blur opacity-20 group-hover:opacity-80 group-hover:blur-xl transition duration-500 rounded-xl" />
               
               <button 
                 type="submit"
                 disabled={isAuthorizing}
-                className="relative w-full flex items-center justify-center gap-3 h-14 bg-zinc-950 text-white rounded-xl border border-gold/30 hover:border-gold transition-all duration-300 disabled:opacity-50 group"
+                className="relative w-full flex items-center justify-center gap-3 h-14 bg-zinc-950 text-white rounded-xl border border-gold/30 hover:border-gold hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,215,0,0.2)] transition-all duration-300 disabled:opacity-50 cursor-pointer active:scale-95"
               >
                 <span className="text-xs font-black tracking-[0.3em] uppercase italic ml-4">
                   {isAuthorizing ? 'Conectando...' : 'Ingresar'}
