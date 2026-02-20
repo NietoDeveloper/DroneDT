@@ -97,12 +97,22 @@ export default function LoginPage() {
               <button 
                 type="submit"
                 disabled={isAuthorizing}
-                className="relative w-full flex items-center justify-center gap-3 h-14 bg-zinc-950 text-white rounded-xl border border-gold/30 hover:border-gold hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,215,0,0.2)] transition-all duration-300 disabled:opacity-50 cursor-pointer active:scale-95"
+                className="
+                  relative w-full flex items-center justify-center gap-3 h-14 
+                  bg-zinc-950 text-white rounded-xl border border-gold/30 
+                  hover:bg-gold hover:text-black hover:border-gold 
+                  hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(255,215,0,0.4)] 
+                  transition-all duration-300 disabled:opacity-50 cursor-pointer 
+                  active:scale-95 group
+                "
               >
                 <span className="text-xs font-black tracking-[0.3em] uppercase italic ml-4">
                   {isAuthorizing ? 'Conectando...' : 'Ingresar'}
                 </span>
-                <span className="text-gold group-hover:translate-x-2 transition-transform font-bold text-xl">
+                <span className="
+                  text-gold group-hover:text-black group-hover:translate-x-2 
+                  transition-all duration-300 font-bold text-xl
+                ">
                   {isAuthorizing ? '●' : '→'}
                 </span>
               </button>
