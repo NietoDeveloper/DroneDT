@@ -57,7 +57,7 @@ export default function LoginPage() {
             </div>
             
             <h2 className="text-xl font-black text-heading uppercase tracking-tight mb-1">
-              Panel Control APP DroneDT
+              Panel Control Empresa Drone DT
             </h2>
             <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.2em]">
               Management Intelligence System

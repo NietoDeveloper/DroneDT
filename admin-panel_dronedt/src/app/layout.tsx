@@ -9,7 +9,7 @@ import Logo from "@/components/ui/Logo";
  */
 export const metadata: Metadata = {
   title: {
-    template: '%s | Panel Control APP DroneDT',
+    template: '%s | Panel Control Empresa Drone DT',
     default: 'Panel Control APP DroneDT',
   },
   description: "Sistema de Inteligencia y Gestión Drone DT. Ingeniería de alto rendimiento por NietoDeveloper.",
@@ -54,7 +54,14 @@ export default function RootLayout({
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-zinc-500 font-mono">
-                  <span className="opacity-80">© 2026 Drone DT — Industry Standard</span>
+                  <a 
+                    href="https://softwaredt.vercel.app/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="opacity-80 hover:text-gold transition-colors cursor-pointer"
+                  >
+                    © 2026 <span className="font-bold">Software DT</span> — Industry Standard
+                  </a>
                   
                   <div className="flex items-center gap-6">
                     {/* Indicador de Conexión en Tiempo Real */}
@@ -63,9 +70,17 @@ export default function RootLayout({
                       <span className="text-green-600/80">Atlas-MERN: Connected</span>
                     </div>
                     
-                    {/* Créditos del Desarrollador #1 Colombia */}
+                    {/* Créditos del Desarrollador #1 Colombia con Link a GitHub */}
                     <span className="font-bold text-heading tracking-widest">
-                      System by <span className="text-gold">NietoDeveloper</span>
+                      System by{" "}
+                      <a 
+                        href="https://github.com/NietoDeveloper" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gold hover:text-yellowColor transition-all underline underline-offset-4 decoration-gold/30"
+                      >
+                        NietoDeveloper
+                      </a>
                     </span>
                   </div>
                 </div>
