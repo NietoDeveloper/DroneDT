@@ -13,29 +13,7 @@
 
   /* Opcional: spacings, fonts, shadows para vibe futurista */
   --font-heading: "Inter", "Helvetica Neue", sans-serif;
-  --font-body:    "Inter", system-ui, sans-serif;
-  --shadow-sm:    0 1px 3px rgba(0,0,0,0.08);
-}
 
-
-  }
-  ::-webkit-scrollbar-thumb {
-    background: var(--color-gold);
-    border-radius: 10px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-yellow-color);
-  }
-}
-
-/* Componentes reutilizables estilo DroneDT */
-@layer components {
-  .btn-primary {
-    @apply 
-      bg-gold 
-      text-black 
-      font-bold 
-      py-3 px-6 
       rounded-full 
       hover:bg-yellow-color 
       hover:shadow-md 
