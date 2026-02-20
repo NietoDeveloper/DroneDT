@@ -36,9 +36,7 @@ export default function RootLayout({
           {/* Contenido principal con padding para no quedar debajo de la barra fija si fuera necesario */}
           <main className="flex-1 flex flex-col">
             {children}
-          </main>
-
-          {/* Footer Técnico - Estilo Committer #1 */}
+          </main> {/* Footer Técnico - Estilo Committer #1 */}
           <footer className="py-6 px-6 md:px-12 border-t border-gainsboro bg-white/50 backdrop-blur-md">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.2em] text-gray-500 font-mono">
               <span>© 2026 Drone DT – Bogotá, Colombia</span>
