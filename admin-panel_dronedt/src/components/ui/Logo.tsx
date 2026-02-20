@@ -1,21 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import React from "react";
 
 interface LogoProps {
   className?: string;
   iconSize?: number;
+  hideText?: boolean; // Útil para lugares pequeños
 }
 
 /**
  * Logo Component - Drone DT
- * Diseño de ingeniería de precisión con soporte para escalabilidad y efectos hover.
+ * Ingeniería de precisión by NietoDeveloper
  */
-const Logo = ({ className = "", iconSize = 28 }: LogoProps) => {
+const Logo = ({ className = "", iconSize = 28, hideText = false }: LogoProps) => {
   return (
     <Link 
       href="/" 
-      className={`flex items-center gap-2 group transition-all ${className} outline-none`}
+      className={`flex items-center gap-3 group transition-all ${className} outline-none`}
     >
       {/* Icono de Drone DT - Ingeniería de Precisión */}
       <div className="relative flex items-center justify-center">
@@ -41,7 +43,7 @@ const Logo = ({ className = "", iconSize = 28 }: LogoProps) => {
           <path d="m17 22 3-3" />
           <path d="m7 22-3-3" />
           
-          {/* Núcleo Central - Punto de poder dinámico */}
+          {/* Núcleo Central */}
           <circle 
             cx="12" 
             cy="10" 
@@ -51,23 +53,25 @@ const Logo = ({ className = "", iconSize = 28 }: LogoProps) => {
           />
         </svg>
         
-        {/* Glow de Motor Autónomo - Aura dorada */}
+        {/* Glow de Motor Autónomo */}
         <div className="absolute inset-0 bg-[#FFD700]/20 blur-md rounded-full group-hover:bg-[#FFD700]/40 transition-all duration-500 scale-150" />
       </div>
 
-      {/* Texto de la Marca - Drone DT Elite Style */}
-      <div className="flex flex-col items-start leading-none">
-        <div className="flex items-baseline">
-          <span className="text-xl sm:text-2xl font-black tracking-tight text-white italic">DRONE</span>
-          <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-0.5 text-[#FFD700]">DT</span>
+      {/* Texto de la Marca */}
+      {!hideText && (
+        <div className="flex flex-col items-start leading-none">
+          <div className="flex items-baseline">
+            <span className="text-xl sm:text-2xl font-black tracking-tight text-white italic">DRONE</span>
+            <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-0.5 text-[#FFD700]">DT</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <span className="h-[1px] w-3 bg-[#FFD700]/40"></span>
+            <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-white/50 group-hover:text-[#FFD700] transition-colors duration-300">
+              Colombia
+            </span>
+          </div>
         </div>
-        <div className="flex items-center gap-1.5">
-          <span className="h-[1px] w-3 bg-[#FFD700]/40"></span>
-          <span className="text-[7px] font-bold tracking-[0.4em] uppercase text-white/50 group-hover:text-[#FFD700] transition-colors duration-300">
-            Colombia
-          </span>
-        </div>
-      </div>
+      )}
     </Link>
   );
 };
