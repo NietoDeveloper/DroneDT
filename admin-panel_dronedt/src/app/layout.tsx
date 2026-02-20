@@ -11,25 +11,7 @@ export const metadata: Metadata = {
     icon: '/favicon.ico',       // pon tu logo real aquí después
     // apple: '/apple-icon.png', // opcional
   },
-};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="es" className="scroll-smooth">
-      <body 
-        className="
-          bg-main           // ← asegúrate que estos custom colors estén en tailwind.config
-          text-textColor 
-          antialiased 
-          min-h-screen 
-          selection:bg-gold 
-          selection:text-black
-        "
-      >
         <div className="relative flex min-h-screen flex-col">
           {/* Barra superior dorada – vibe Tesla / high-tech */}
           <div className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-yellow-400 to-gold z-[9999]" />
