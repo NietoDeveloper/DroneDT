@@ -17,12 +17,6 @@
   --shadow-sm:    0 1px 3px rgba(0,0,0,0.08);
 }
 
-/* Base – estilos globales DroneDT / Tesla-inspired */
-@layer base {
-  :root {
-    --background: var(--color-main);
-    --foreground: var(--color-text);
-  }
 
   body {
     background-color: var(--background);
