@@ -1,41 +1,4 @@
-@import "tailwindcss";
 
-@theme {
-  /* Identidad Drone DT – dorado premium, gainsboro suave, negro para textos */
-  --color-gainsboro:     #DCDCDC;
-  --color-gold:          #FFD700;       /* oro Tesla-like */
-  --color-yellow-color:  #FEB60D;       /* amarillo vibrante para hovers/acentos */
-  --color-heading:       #000000;       /* headings fuertes */
-  --color-text:          #1A1A1A;       /* texto principal más suave que puro black */
-  --color-main:          #F8F8F8;       /* fondo principal claro/gris muy suave (mejor que gainsboro directo) */
-  --color-card:          #FFFFFF;       /* tarjetas blancas puras con glass */
-  --color-border:        #E5E5E5;       /* bordes sutiles */
-
-  /* Opcional: spacings, fonts, shadows para vibe futurista */
-  --font-heading: "Inter", "Helvetica Neue", sans-serif;
-
-      rounded-full 
-      hover:bg-yellow-color 
-      hover:shadow-md 
-      active:scale-95 
-      transition-all 
-      duration-200 
-      cursor-pointer 
-      shadow-sm;
-  }
-
-  .btn-outline {
-    @apply 
-      border-2 border-gold 
-      text-gold 
-      font-bold 
-      py-3 px-6 
-      rounded-full 
-      hover:bg-gold 
-      hover:text-black 
-      transition-all 
-      duration-200;
-  }
 
   .glass-panel {
     @apply 
