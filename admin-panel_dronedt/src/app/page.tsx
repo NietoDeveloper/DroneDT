@@ -63,16 +63,6 @@ export default function LoginPage() {
               />
             </div>
 
-            <div className="pt-2">
-              <button 
-                type="submit"
-                className="btn-primary w-full flex items-center justify-center gap-3 group"
-              >
-                <span className="text-sm tracking-widest uppercase">Authorize Access</span>
-                <span className="text-black group-hover:translate-x-1 transition-transform font-bold">→</span>
-              </button>
-            </div>
-          </form>
           
           {/* Metadata de Sesión - Ingeniería NietoDeveloper */}
           <div className="mt-8 flex justify-between items-center border-t border-gainsboro pt-6">
