@@ -21,33 +21,7 @@ export default function LoginPage() {
           {/* Línea de seguridad superior - Identidad Drone DT */}
           <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold to-transparent opacity-60" />
           
-          <div className="text-center mb-10">
-            <div className="inline-block px-3 py-1 mb-4 rounded-full bg-gold/10 border border-gold/20">
-              <span className="text-[10px] font-mono font-bold text-gold tracking-widest uppercase flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
-                Secure Access Node
-              </span>
-            </div>
-            
-            <h1 className="text-4xl font-black text-headingColor tracking-tighter">
-              DRONE <span className="text-gold">DT</span>
-            </h1>
-            <p className="text-[11px] font-mono text-gray-500 uppercase tracking-[0.2em] mt-2">
-              Management Intelligence System
-            </p>
-          </div>
-          
-          <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-            <div className="group">
-              <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2 ml-1">
-                Operator Credentials
-              </label>
-              <input 
-                type="email" 
-                className="w-full p-4 bg-gainsboro/40 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white transition-all duration-300 outline-none text-sm font-medium text-headingColor"
-                placeholder="EMAIL_ADDRESS"
-              />
-            </div>
+ 
             
             <div className="group">
               <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2 ml-1">
