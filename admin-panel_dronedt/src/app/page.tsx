@@ -55,24 +55,7 @@ export default function LoginPage() {
             <div className="group">
               <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-wider mb-2 ml-1">
                 Access Key
-              </label>
-              <input 
-                type="password" 
-                className="w-full p-4 bg-gainsboro/30 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white/80 transition-all duration-300 outline-none text-sm font-medium text-heading"
-                placeholder="••••••••"
-              />
-            </div>
-
-          
-          {/* Metadata de Sesión - Ingeniería NietoDeveloper */}
-          <div className="mt-8 flex justify-between items-center border-t border-gainsboro pt-6">
-            <div className="text-[9px] font-mono text-zinc-400 leading-relaxed">
-              ID: NIETO_DEV_01 <br />
-              LOC: COL_BOG_CLUSTER
-            </div>
-            <div className="text-[9px] font-mono text-right text-zinc-400 uppercase leading-relaxed">
-              Encrypted Session <br />
-              AES-256 Bit
+ Bit
             </div>
           </div>
         </div>
