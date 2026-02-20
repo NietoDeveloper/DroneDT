@@ -51,22 +51,5 @@ export default function DashboardLayout({
       {/* 2. Contenedor Principal (Dashboard Engine) */}
       <main className="flex-1 overflow-hidden relative z-10">
         {/* Glows de fondo para dar profundidad al contenido */}
-        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-gold/5 blur-[100px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-yellowColor/5 blur-[80px] rounded-full pointer-events-none" />
-        
-        <div className="relative h-full">
-          {children}
-        </div>
-      </main>
 
-        
-        <div className="flex items-center gap-3 group cursor-help">
-          <span className="text-[9px] font-mono text-zinc-400 uppercase">
-            Developed by <span className="text-heading font-black group-hover:text-gold transition-colors">NietoDeveloper</span>
-          </span>
-          <div className="w-2 h-2 rounded-full bg-gold shadow-[0_0_10px_#FFD700] group-hover:scale-150 transition-transform" />
-        </div>
-      </footer>
-    </div>
-  );
 }
