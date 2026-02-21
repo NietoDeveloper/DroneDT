@@ -31,64 +31,52 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 | **Charts** | Recharts / Chart.js |
 
 ---
-
-## 📂 Project Structure
-
-```plaintext
 dronedt-admin/
 ├── src/
-│   ├── app/                # Next.js App Router (Auth & Dashboard route groups)
-│   │   ├── (auth)/        # Authentication pages (login, reset-password)
-│   │   ├── (dashboard)/   # Main dashboard and admin modules
-│   │   └── api/           # API routes (NextAuth, uploads, webhooks)
-│   ├── components/         # Atomic UI components, Layouts, and Charts
-│   │   ├── ui/            # Base components (Button, Input, Modal, Table)
-│   │   ├── layout/        # Sidebar, Header, PageHeader
-│   │   ├── charts/        # Data visualization components
-│   │   ├── dashboard/     # Dashboard-specific widgets
-│   │   ├── orders/        # Order management components
-│   │   └── products/      # Product management components
-│   ├── lib/               # API clients, utilities, and shared constants
-│   │   ├── api/           # Axios client and endpoint definitions
-│   │   ├── auth/          # NextAuth configuration and RBAC
-│   │   ├── utils/         # Helper functions and formatters
-│   │   └── constants/     # App-wide constants and configurations
-│   ├── hooks/             # Custom React hooks
-│   │   ├── useAuth.ts     # Authentication hook
-│   │   ├── usePermissions.ts  # Role-based access control
-│   │   └── useDebounce.ts # Performance optimization hooks
-│   ├── store/             # Global state management (Redux/Zustand)
-│   │   ├── slices/        # Feature-based state slices
-│   │   └── index.ts       # Store configuration
-│   ├── services/          # Business logic abstraction (API calls)
-│   │   ├── authService.ts
-│   │   ├── orderService.ts
-│   │   ├── productService.ts
-│   │   └── customerService.ts
-│   ├── types/             # Strict TypeScript definitions
-│   │   ├── order.types.ts
-│   │   ├── product.types.ts
-│   │   └── user.types.ts
-│   └── config/            # Application configuration
-│       ├── navigation.ts  # Sidebar navigation structure
-│       └── permissions.ts # RBAC permission matrix
-├── public/                # Static assets
-│   ├── images/           # Images and logos
-│   ├── icons/            # Icon assets
-│   └── fonts/            # Custom fonts
-├── tests/                # Testing suites
-│   ├── unit/             # Unit tests
-│   └── e2e/              # End-to-End tests (Playwright/Cypress)
-├── .env.example          # Environment variables template
-├── .env.local            # Local environment configuration
-├── next.config.js        # Next.js configuration
-├── tailwind.config.ts    # Tailwind CSS configuration
-├── tsconfig.json         # TypeScript configuration
-├── Dockerfile            # Docker containerization
-├── docker-compose.yml    # Multi-container orchestration
-└── README.md             # This file
-```
-
+│   ├── app/
+│   │   ├── (auth)/                # Flujo de Acceso
+│   │   │   ├── login/page.tsx      # Login con botón Gold e identidad visual
+│   │   │   └── layout.tsx          # Fondo de malla y centrado de paneles
+│   │   ├── (dashboard)/           # Centro de Mando Operativo
+│   │   │   ├── layout.tsx          # Orquestador con Sidebar y Navbar
+│   │   │   ├── page.tsx            # Dashboard Principal (Ventas Totales D/M/A)
+│   │   │   ├── users/page.tsx      # Gestión de usuarios: autorizar, crear, borrar
+│   │   │   ├── products/page.tsx   # CRUD de productos e inventarios
+│   │   │   ├── chat/page.tsx       # Mensajería en tiempo real
+│   │   │   └── cms-manager/page.tsx # Actualización de títulos/secciones del front
+│   │   └── api/                    # Backend interno (Serverless Functions)
+│   │       ├── auth/[...nextauth]/route.ts
+│   │       └── upload-video/route.ts
+│   ├── components/
+│   │   ├── ui/                     # Botones, inputs, modales (Estilo Software DT)
+│   │   ├── layout/                 # Sidebar.tsx, Navbar.tsx
+│   │   ├── charts/                 # Gráficos dinámicos de ventas
+│   │   ├── dashboard/              # SalesCentralizer.tsx, LiveVideoPlayer.tsx
+│   │   ├── users/                  # UserManagementTable.tsx
+│   │   └── products/               # ProductActionForm.tsx
+│   ├── store/                      # Gestión de Estado Global (Zustand)
+│   │   ├── slices/                 # Estados independientes
+│   │   │   ├── useSalesStore.ts    # Centralización de ventas en tiempo real
+│   │   │   ├── useInventoryStore.ts 
+│   │   │   ├── useChatStore.ts
+│   │   │   └── useUserAdminStore.ts
+│   │   └── index.ts                # Exportación unificada de stores
+│   ├── services/                   # Comunicación con Backend Express
+│   │   ├── userService.ts          # Lógica para autorizar y borrar usuarios
+│   │   ├── productService.ts       # API para productos
+│   │   └── cmsService.ts           # Servicio para actualizar el Frontend
+│   ├── lib/
+│   │   ├── api/socket-client.ts    # Cliente para WebSockets / Real-time
+│   │   └── utils/formatters.ts     # Formateo de moneda y fechas
+│   ├── types/                      # Definiciones estrictas de TS
+│   │   ├── user.types.ts           # Roles y permisos (Admin/Operador)
+│   │   ├── sales.types.ts          # Estructuras de ventas D/M/A
+│   │   └── product.types.ts
+│   └── config/
+│       ├── navigation.ts           # Estructura del menú Sidebar
+│       └── permissions.ts          # Matriz de autorización (RBAC)
+├── tailwind.config.ts              # Colores Gold (#FFD700) y Gainsboro (#DCDCDC)
+└── README.md                       # Identidad Técnica NietoDeveloper
 ---
 
 ## 🔑 Key Features
