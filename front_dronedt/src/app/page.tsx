@@ -9,19 +9,7 @@ const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { s
 const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
 
 export default function Home() {
-  return (
 
-
-        {/* SECCIÓN 2: CATÁLOGO (ÚLTIMO SOLAPAMIENTO 80/20) */}
-        <section 
-          id="catalog" 
-          className="relative h-screen w-full snap-start snap-always z-20 flex flex-col -mt-[20vh]"
-        >
-          {/* h-full aquí para que ProductShow use todo el espacio de la sección */}
-          <div className="h-full w-full bg-white shadow-2xl">
-            <ProductShow />
-          </div>
-        </section>
 
         {/* SECCIÓN 3: SPECS (FLUJO NORMAL - SIN -MT) */}
         <section className="relative h-screen w-full snap-start snap-always z-30 bg-black flex flex-col">
