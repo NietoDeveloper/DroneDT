@@ -23,27 +23,6 @@ const Banner = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const renderTitle = (title: string) => {
-    if (title.toUpperCase().includes('DRONE')) {
-      const words = title.split(' ');
-      return (
-        <>
-          <span className="text-[#0000FF]">{words[0]}</span>{" "}
-          <span className="text-[#FFD700]">{words[1]}</span>
-        </>
-      );
-    }
-    if (title.includes('Modelo')) {
-      const [prefix, model] = title.split(':');
-      return (
-        <>
-          <span className="text-[#0000FF]">{prefix}:</span>{" "}
-          <span className="text-[#FFD700]">{model}</span>
-        </>
-      );
-    }
-    return <span className="text-white">{title}</span>;
-  };
 
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
