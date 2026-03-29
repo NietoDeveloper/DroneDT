@@ -1,26 +1,5 @@
 "use client";
-      setLoading(false);
-    }
-  }, []);
-
-  useEff3" />
-          <path d="m2 10 3 3" />
-          <path d="M12 10v12" />
-          <path d="m17 22 3-3" className="animate-pulse" />
-          <path d="m7 22-3-3" className="animate-pulse" />
-          <circle cx="12" cy="10" r="2" fill="#0000FF" stroke="none" />
-        </svg>
-        <div className="absolute inset-0 bg-[#FFD700]/10 blur-md rounded-full group-hover:bg-[#FFD700]/30 transition-all scale-150" />
-      </div>
-
-      <div className="flex flex-col items-start leading-none">
-        <div className="flex items-baseline">
-          <span className="text-xl sm:text-2xl font-black tracking-tight text-[#0000FF] italic">Drone</span>
-          <span className="text-xl sm:text-2xl font-black tracking-tighter not-italic ml-0.5 text-[#FFD700]">DT</span>
-        </div>
-        <span className="text-[7px] font-bold tracking-[0.5em] uppercase text-black/60 group-hover:text-[#0000FF] transition-colors">Colombia</span>
-      </div>
-    </a>
+      setLoading(fa
   );
 
   if (loading) return (
