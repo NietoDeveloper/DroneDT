@@ -35,17 +35,6 @@ export const ResearchPage = () => {
     <main className="min-h-screen bg-[#DCDCDC] py-20 px-6">
       <div className="max-w-6xl mx-auto">
         
-        {/* Header de Investigación */}
-        <div className="mb-16 border-l-8 border-[#FFD700] pl-8">
-          <h1 className="text-5xl md:text-7xl font-black text-[#000000] uppercase tracking-tighter">
-            R&D <br />
-            <span className="text-[#FEB60D]">CENTER</span>
-          </h1>
-          <p className="mt-4 text-gray-600 font-mono text-sm max-w-xl">
-            // INVESTIGACIÓN Y DESARROLLO DE DRONE DT. <br />
-            EXPLORANDO LOS LÍMITES DE LA AUTONOMÍA AÉREA.
-          </p>
-        </div>
 
         {/* Grid de Proyectos de Investigación */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
