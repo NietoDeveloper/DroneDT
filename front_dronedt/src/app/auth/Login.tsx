@@ -2,27 +2,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-
-/**
- * Componente: Lminal
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Campo Email */}
-            <div>
-              <label className="block text-[10px] font-black uppercase text-gray-500 mb-1 ml-1">
-                Corporate Email
-              </label>
-              <input
-                type="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 bg-[#F5F5F5] border-b-2 border-transparent focus:border-[#FFD700] text-[#000000] outline-none transition-all font-medium"
-                placeholder="n.developer@softwaredt.com"
-              />
+import Link from 'nex
             </div>
 
             {/* Campo Password */}
