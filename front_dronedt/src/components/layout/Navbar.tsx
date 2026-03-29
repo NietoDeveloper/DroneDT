@@ -3,25 +3,7 @@
     }
   }, []);
 
-  useEffect(() => {
-    const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-    if (tosName="relative flex items-center justify-center">
-        <svg
-          width={isScrolled ? "30" : "36"}
-          height={isScrolled ? "30" : "36"}
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#FFD700"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-110 z-10"
-        >
-          <path d="M12 10V4" />
-          <path d="m17 2 3 3" className="animate-pulse" />
-          <path d="m7 2-3 3" className="animate-pulse" />
-          <path d="M2 10h20" />
-          <path d="m22 10-3 3" />
+  useEff3" />
           <path d="m2 10 3 3" />
           <path d="M12 10v12" />
           <path d="m17 22 3-3" className="animate-pulse" />
