@@ -17,30 +17,7 @@ const GALLERY_DATA: GalleryItem[] = [
     url: '/videos/drone-flight-industrial.mp4',
     title: 'Inspección de Torres',
     category: 'Industrial',
-    span: 'md:col-span-2 md:row-span-2'
-  },
-  
-        {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px]">
-          {GALLERY_DATA.map((item) => (
-            <div 
-              key={item.id} 
-              className={`relative group overflow-hidden bg-black border-2 border-transparent hover:border-[#FFD700] transition-all duration-500 ${item.span}`}
-            >
-              {item.type === 'video' ? (
-                <video 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity"
-                >
-                  <source src={item.url} type="video/mp4" />
-                </video>
-              ) : (
-                <img 
-                  src={item.url} 
-                  alt={item.title} 
+
                   className="w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700"
                 />
               )}
