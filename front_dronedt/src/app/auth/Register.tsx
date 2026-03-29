@@ -1,29 +1,4 @@
-// src/app/auth/Register.tsx
-'use client';
-
-
-                type="email"
-                name="email"
-                required
-                onChange={handleChange}
-                className="input-style"
-                placeholder="developer@softwaredt.com"
-              />
-            </div>
-
-            {/* Company Name */}
-            <div className="md:col-span-2">
-              <label className="label-style">Company Name (Optional)</label>
-              <input
-                type="text"
-                name="company"
-                onChange={handleChange}
-                className="input-style"
-                placeholder="Software DT Inc."
-              />
-            </div>
-
-            {/* Password */}
+// src/app/auth/ */}
             <div className="md:col-span-1">
               <label className="label-style">Access Key</label>
               <input
