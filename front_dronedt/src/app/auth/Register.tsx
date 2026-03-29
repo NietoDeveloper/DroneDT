@@ -2,29 +2,6 @@
 'use client';
 
 
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí conectarás con tu API de Node.js / MongoDB
-    console.log('Registrando usuario:', formData);
-  };
-            {/* Full Name */}
-            <div className="md:col-span-2">
-              <label className="label-style">Full Name / Operator Name</label>
-              <input
-                type="text"
-                name="fullName"
-                required
-                onChange={handleChange}
-                className="input-style"
-                placeholder="Manuel Nieto"
-              />
-            </div>
-
-            {/* Email */}
-            <div className="md:col-span-2">
-              <label className="label-style">Work Email</label>
-              <input
                 type="email"
                 name="email"
                 required
