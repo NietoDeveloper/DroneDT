@@ -1,17 +1,7 @@
 // src/app/auth/Register.tsx
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
 
-
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
