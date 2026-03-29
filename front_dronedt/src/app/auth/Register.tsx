@@ -8,18 +8,6 @@
     // Aquí conectarás con tu API de Node.js / MongoDB
     console.log('Registrando usuario:', formData);
   };
-
-  return (Name="mb-8">
-            <h1 className="text-3xl font-black text-[#000000] tracking-tighter uppercase">
-              UNIRSE A <span className="text-[#FFD700]">DRONE DT</span>
-            </h1>
-            <p className="text-[10px] font-bold text-gray-400 mt-1 tracking-widest uppercase italic">
-              // Fleet Management Registration
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            
             {/* Full Name */}
             <div className="md:col-span-2">
               <label className="label-style">Full Name / Operator Name</label>
