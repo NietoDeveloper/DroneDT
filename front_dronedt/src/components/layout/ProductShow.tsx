@@ -5,19 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 
-// --- COMPONENTE SKELETON (Carga Estilo Drone DT) ---
-const ProductSkeleton = () => (
-
-);
-
-interface Drone {
-  id: string;
-  name: string;
-  price: string;
-  img: string;
-  tag: string;
-}
-
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 const ProductShow = () => {
