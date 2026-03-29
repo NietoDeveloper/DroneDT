@@ -9,14 +9,7 @@
     console.log('Registrando usuario:', formData);
   };
 
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-[#DCDCDC] px-4 py-12">
-      {/* Card de Registro */}
-      <div className="max-w-lg w-full bg-white shadow-2xl overflow-hidden border-t-8 border-[#FEB60D]">
-        
-        <div className="p-8 md:p-10">
-          {/* Encabezado */}
-          <div className="mb-8">
+  return (Name="mb-8">
             <h1 className="text-3xl font-black text-[#000000] tracking-tighter uppercase">
               UNIRSE A <span className="text-[#FFD700]">DRONE DT</span>
             </h1>
