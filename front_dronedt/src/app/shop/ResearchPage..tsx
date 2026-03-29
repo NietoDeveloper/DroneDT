@@ -48,10 +48,7 @@ export const ResearchPage = () => {
               <h2 className="text-2xl font-black text-[#000000] mb-4 group-hover:text-[#FEB60D] transition-colors">
                 {project.title}
               </h2>
-              
-              <p className="text-gray-700 mb-6 text-sm leading-relaxed">
-                {project.description}
-              </p>
+
 
               <div className="space-y-4">
                 <div>
