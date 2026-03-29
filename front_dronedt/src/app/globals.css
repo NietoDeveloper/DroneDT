@@ -1,19 +1,5 @@
 
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: 'Inter', Arial, Helvetica, sans-serif; /* Look más moderno */
-  margin: 0;
-  padding: 0;
-  transition: background-color 0.3s ease;
-}
-
-/* Clases de utilidad personalizadas DroneDT */
-.btn-tesla {
-  @apply bg-[#212121] text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all;
-}
-
 .text-gold {
   color: var(--gold);
 }
