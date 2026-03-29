@@ -42,28 +42,7 @@ export const ResearchPage = () => {
             <div 
               key={project.id} 
               className="bg-white p-8 border border-gray-200 hover:border-[#FFD700] transition-colors relative group overflow-hidden"
-            >
 
-
-              <h2 className="text-2xl font-black text-[#000000] mb-4 group-hover:text-[#FEB60D] transition-colors">
-                {project.title}
-              </h2>
-
-
-              <div className="space-y-4">
-
-
-                <div className="flex flex-wrap gap-2">
-                  {project.techStack.map((tech) => (
-                    <span key={tech} className="bg-[#DCDCDC] text-[9px] font-bold px-2 py-1 rounded-sm uppercase">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
 
         {/* Banner de Innovación Estilo Software DT */}
         <div className="mt-16 bg-[#000000] p-12 text-center text-white">
