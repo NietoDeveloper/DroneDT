@@ -1,30 +1,4 @@
-"use client";
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
-export default function Preloader() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // 3.5 segundos: tiempo perfecto para sincronizar con el scroll-lock
-    const timer = setTimeout(() => {
-      setLoading(false);
-      document.body.style.overflow = "auto";
-    }, 3500);
-    
-    // Bloqueamos scroll mientras carga
-    document.body.style.overflow = "hidden";
-    
-    return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = "auto";
-    };
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {loading && (
-        <motion.div
           exit={{ 
             opacity: 0, 
             scale: 1.2,
