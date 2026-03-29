@@ -4,18 +4,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-/**
- * Componente: Register
- * Registro de nuevos usuarios y flotas en el ecosistema Drone DT.
- */
-export const Register = () => {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    company: '',
-    password: '',
-    confirmPassword: '',
-  });
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
