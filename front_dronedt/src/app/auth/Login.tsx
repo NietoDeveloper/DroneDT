@@ -5,21 +5,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 /**
- * Componente: Login
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-[#DCDCDC] px-4">
-      {/* Card de Autenticación */}
-      <div className="max-w-md w-full bg-white shadow-2xl overflow-hidden border-t-8 border-[#FFD700]">
-        
-        <div className="p-8 md:p-12">
-          {/* Logo y Título */}
-          <div className="text-center mb-10">
-            <h1 className="text-4xl font-black text-[#000000] tracking-tighter uppercase">
-              DRONE <span className="text-[#FFD700]">DT</span>
-            </h1>
-            <p className="text-xs font-bold text-gray-400 mt-2 tracking-[0.2em] uppercase">
-              Secure Access Terminal
+ * Componente: Lminal
             </p>
           </div>
 
