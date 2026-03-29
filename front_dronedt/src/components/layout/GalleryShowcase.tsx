@@ -19,45 +19,7 @@ const GALLERY_DATA: GalleryItem[] = [
     category: 'Industrial',
     span: 'md:col-span-2 md:row-span-2'
   },
-  {
-    id: 'g2',
-    type: 'image',
-    url: '/images/gallery/agriculture-drone.jpg',
-    title: 'Fumigación de Precisión',
-    category: 'Agro',
-    span: 'md:col-span-1'
-  },
-  {
-    id: 'g3',
-    type: 'image',
-    url: '/images/gallery/cinema-drone.jpg',
-    title: 'Captura 8K Cine',
-    category: 'Media',
-    span: 'md:col-span-1'
-  },
-  {
-    id: 'g4',
-    type: 'image',
-    url: '/images/gallery/night-vision.jpg',
-    title: 'Vigilancia Térmica',
-    category: 'Security',
-    span: 'md:col-span-2'
-  }
-];
-
-export const GalleryShowcase = () => {
-  return (
-    <section className="bg-[#DCDCDC] py-20 px-4 md:px-10">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* Cabecera de la Galería */}
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-6xl font-black text-[#000000] uppercase tracking-tighter">
-            DRONE <span className="text-[#FFD700]">IN ACTION</span>
-          </h2>
-          <div className="w-24 h-2 bg-[#FEB60D] mt-2"></div>
-        </div>
-
+  
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px]">
           {GALLERY_DATA.map((item) => (
