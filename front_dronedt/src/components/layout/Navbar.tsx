@@ -1,29 +1,4 @@
 "use client";
-
-import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
-],
-  });awName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
-        else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) displayImg = "/DT-MINI_A1PRO4.png";
-        else if (rawName.includes("MINI_A2PRO5") || rawName.includes("MINIA2PRO5")) displayImg = "/DT-MINI_A2PRO5.png";
-        else if (item.imageUrl) displayImg = item.imageUrl;
-
-        if (categorized[targetCat]) {
-          categorized[targetCat].push({
-            id: item._id || item.id,
-            name: rawName.replace(/_/g, ' '),
-            price: item.price ? `$${item.price.toLocaleString()}` : 'Elite Spec',
-            img: displayImg,
-            desc: item.description || item.desc,
-            category: targetCat
-          });
-        }
-      });
-
-      setMenuContent(categorized);
-    } catch (error) {
-      console.error("❌ Drone DT Uplink Offline:", error);
-    } finally {
       setLoading(false);
     }
   }, []);
