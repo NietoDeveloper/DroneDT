@@ -1,25 +1,6 @@
 // src/app/auth/Login.tsx
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'nex
-            </div>
-
-            {/* Campo Password */}
-            <div>
-              <label className="block text-[10px] font-black uppercase text-gray-500 mb-1 ml-1">
-                Access Key
-              </label>
-              <input
-                type="password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 bg-[#F5F5F5] border-b-2 border-transparent focus:border-[#FFD700] text-[#000000] outline-none transition-all font-medium"
-                placeholder="••••••••"
-              />
-            </div>
-
             {/* Botón de Acción */}
             <button
               type="submit"
