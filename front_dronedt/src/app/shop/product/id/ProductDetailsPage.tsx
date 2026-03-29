@@ -26,9 +26,7 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({ product,
                   alt={product.model} 
                   className="w-full h-auto max-h-[450px] object-contain transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute top-0 right-0 bg-[#000000] text-[#FFD700] px-4 py-1 text-xs font-black tracking-widest uppercase">
-                  {product.status}
-                </div>
+
               </div>
             </div>
 
