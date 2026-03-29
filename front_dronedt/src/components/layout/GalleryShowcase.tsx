@@ -22,23 +22,6 @@ const GALLERY_DATA: GalleryItem[] = [
                 />
               )}
 
-              {/* Overlay con Información */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0 transition-transform">
-                <span className="text-[#FFD700] text-[10px] font-black tracking-widest uppercase mb-1">
-                  {item.category}
-                </span>
-                <h3 className="text-white text-xl font-bold uppercase tracking-tight">
-                  {item.title}
-                </h3>
-              </div>
-              
-              {/* Badge de "LIVE" para Videos */}
-              {item.type === 'video' && (
-                <div className="absolute top-4 right-4 flex items-center gap-2 bg-red-600 text-white text-[10px] font-black px-2 py-1 rounded-sm animate-pulse">
-                  <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                  REC
-                </div>
-              )}
             </div>
           ))}
         </div>
