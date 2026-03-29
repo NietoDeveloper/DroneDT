@@ -7,21 +7,7 @@ import useSWR from 'swr';
 
 // --- COMPONENTE SKELETON (Carga Estilo Drone DT) ---
 const ProductSkeleton = () => (
-  <div className="h-screen w-full bg-white flex flex-col animate-pulse">
-    {/* Placeholder Foto: Círculo difuminado que imita el drone */}
-    <div className="w-full h-[55%] md:h-[65%] flex items-center justify-center">
-      <div className="w-64 h-40 md:w-96 md:h-60 bg-zinc-100 rounded-full blur-3xl opacity-60" />
-    </div>
-    {/* Placeholder Info: Bloques de texto */}
-    <div className="w-full h-[45%] md:h-[35%] flex flex-col items-center px-6 pt-10 md:pt-0">
-      <div className="h-10 w-64 bg-zinc-100 mb-6 rounded-md" />
-      <div className="h-4 w-32 bg-zinc-50 mb-8 rounded-md" />
-      <div className="flex flex-col md:flex-row gap-3 w-full max-w-[260px] md:max-w-xl justify-center">
-        <div className="w-full md:w-52 h-12 bg-zinc-100 rounded-sm" />
-        <div className="w-full md:w-52 h-12 bg-zinc-100 rounded-sm" />
-      </div>
-    </div>
-  </div>
+
 );
 
 interface Drone {
