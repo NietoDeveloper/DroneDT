@@ -24,16 +24,6 @@ export const DeleteAccount = () => {
     }
   };
 
-  return (
-    <div className="bg-white border-2 border-[#DCDCDC] p-8 mt-12 shadow-sm">
-      <div className="flex items-center gap-4 mb-6">
-        <div className="w-12 h-12 bg-red-600 flex items-center justify-center text-white font-black text-2xl">
-         text-xs text-gray-500 font-bold uppercase tracking-widest">
-            Danger Zone / Irreversible Action
-          </p>
-        </div>
-      </div>
-
       <div className="space-y-4">
         <p className="text-sm text-gray-700 leading-relaxed">
           Al eliminar tu cuenta, se perderán todos los datos de vuelo, historial de servicios en 
