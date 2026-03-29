@@ -28,13 +28,7 @@ export const DeleteAccount = () => {
     <div className="bg-white border-2 border-[#DCDCDC] p-8 mt-12 shadow-sm">
       <div className="flex items-center gap-4 mb-6">
         <div className="w-12 h-12 bg-red-600 flex items-center justify-center text-white font-black text-2xl">
-          !
-        </div>
-        <div>
-          <h3 className="text-xl font-black text-[#000000] uppercase tracking-tighter">
-            Zona de Peligro
-          </h3>
-          <p className="text-xs text-gray-500 font-bold uppercase tracking-widest">
+         text-xs text-gray-500 font-bold uppercase tracking-widest">
             Danger Zone / Irreversible Action
           </p>
         </div>
