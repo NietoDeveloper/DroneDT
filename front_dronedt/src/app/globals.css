@@ -5,17 +5,7 @@
 :root {
 
   --gainsboro: #ffff;
-  --gold: #FFD700;
-  --yellow-color: #FEB60D;
-  
-  /* Paleta Inspirada en Tesla / DroneDT High-Tech */
-  --primary: #061dcbe6;       /* Azul eléctrico tecnología */
-  --secondary: #212121;     /* Fondo oscuro minimalista */
-  --accent: #CC0000;        /* Rojo Tesla para alertas/vínculos */
-  --neutral-light: #FAFAFA;
-  --neutral-dark: #818181;
-  
-  /* Variables de aplicación */
+  --/
   --background: var(--gainsboro);
   --foreground: #000000;
 }
