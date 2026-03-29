@@ -9,17 +9,6 @@ const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 const ProductShow = () => {
   const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-  const baseUrl = isLocal ? 'http://localhost:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
-
-  const { data: result, isLoading } = useSWR(`${baseUrl}/products/menu`, fetcher, {
-    revalidateOnFocus: false,
-    revalidateIfStale: false,
-    dedupingInterval: 3600000 
-  });
-
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const drones = useMemo(() => {
     if (result && result.success && Array.isArray(result.data)) {
