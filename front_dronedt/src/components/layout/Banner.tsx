@@ -27,22 +27,7 @@ const Banner = () => {
   const startTimer = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
     const duration = slides[currentSlide].type === 'video' ? 8000 : 6000;
-    timerRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, duration);
-  }, [currentSlide]);
 
-  useEffect(() => {
-    startTimer();
-    return () => { if (timerRef.current) clearInterval(timerRef.current); };
-  }, [startTimer]);
-
-  useEffect(() => {
-    if (slides[currentSlide].type === 'video' && videoRef.current) {
-      setIsVideoVisible(false);
-      videoRef.current.currentTime = 0;
-      videoRef.current.play()
-        .then(() => setIsVideoVisible(true))
         .catch(() => setIsVideoVisible(true));
     }
   }, [currentSlide]);
