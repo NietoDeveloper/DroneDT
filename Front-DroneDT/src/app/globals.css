@@ -3,49 +3,88 @@
 @tailwind utilities;
 
 :root {
-
-  --gainsboro: #ffff;
-  --gold: #FFD700;
-  --yellow-color: #FEB60D;
+  /* Paleta Base DroneDT - High Contrast */
+  --gainsboro: #DCDCDC;       /* Gris industrial base */
+  --white-pure: #FFFFFF;
+  --gold: #FFD700;            /* Oro DroneDT */
+  --yellow-brand: #FEB60D;    /* Amarillo Software DT */
   
-  /* Paleta Inspirada en Tesla / DroneDT High-Tech */
-  --primary: #061dcbe6;       /* Azul eléctrico tecnología */
-  --secondary: #212121;     /* Fondo oscuro minimalista */
-  --accent: #CC0000;        /* Rojo Tesla para alertas/vínculos */
-  --neutral-light: #FAFAFA;
-  --neutral-dark: #818181;
+  /* Paleta High-Tech (Tesla Inspired) */
+  --primary-tech: #061dcbe6;  /* Azul eléctrico con alfa */
+  --secondary-dark: #141414;  /* Negro mate profundo */
+  --accent-red: #CC0000;      /* Alertas y REC mode */
   
-  /* Variables de aplicación */
+  /* Semantic Colors */
   --background: var(--gainsboro);
   --foreground: #000000;
+  --card-bg: rgba(255, 255, 255, 0.8);
 }
 
-/* Soporte para Modo Oscuro Automático (Media) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--secondary);
-    --foreground: #FFFFFF;
+/* Soporte Nativo para Dark Mode (Opcional pero recomendado) */
+[data-theme='dark'] {
+  --background: var(--secondary-dark);
+  --foreground: #FFFFFF;
+  --card-bg: rgba(20, 20, 20, 0.9);
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)] antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Reset para asegurar el Snap Scrolling */
+  html, body {
+    @apply h-full overflow-hidden;
   }
 }
 
-body {
-  background-color: var(--background);
-  color: var(--foreground);
-  font-family: 'Inter', Arial, Helvetica, sans-serif; /* Look más moderno */
-  margin: 0;
-  padding: 0;
-  transition: background-color 0.3s ease;
+@layer components {
+  /* Botón Estilo Tesla/SpaceX */
+  .btn-tesla {
+    @apply relative overflow-hidden bg-[var(--secondary-dark)] text-white px-8 py-3 
+           text-xs font-black uppercase tracking-[0.2em] transition-all duration-500
+           hover:bg-white hover:text-black active:scale-95 disabled:opacity-50;
+  }
+
+  /* Botón Gold (Primary Action) */
+  .btn-gold {
+    @apply bg-[var(--gold)] text-black px-8 py-3 text-xs font-black uppercase 
+           tracking-[0.2em] hover:bg-white transition-all duration-500 shadow-xl;
+  }
+
+  /* Contenedor de Vidrio (Glassmorphism) para Dashboards */
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl;
+  }
 }
 
-/* Clases de utilidad personalizadas DroneDT */
-.btn-tesla {
-  @apply bg-[#212121] text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition-all;
-}
+@layer utilities {
+  .text-gold {
+    color: var(--gold);
+  }
 
-.text-gold {
-  color: var(--gold);
-}
+  .bg-primary-drone {
+    background-color: var(--primary-tech);
+  }
 
-.bg-primary-drone {
-  background-color: var(--primary);
+  /* Utilidad para el stroke del texto (Gallery Showcase) */
+  .text-outline {
+    -webkit-text-stroke: 1px currentColor;
+  }
+
+  /* Scrollbar Personalizada DroneDT */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 0px;
+  }
 }

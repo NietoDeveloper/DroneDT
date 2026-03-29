@@ -2,7 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
+import React from "react";
 
+// Configuración de fuentes con variables CSS para uso en Tailwind
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -25,23 +27,23 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://drone-dt.vercel.app"),
+  metadataBase: new URL("https://dronedt.vercel.app"), // URL actualizada a tu despliegue
   title: {
     default: "DRONE DT | Ingeniería Aeroespacial & Tecnología Autónoma",
     template: "%s | DRONE DT"
   },
-  description: "Líderes en tecnología de drones industriales y soluciones autónomas. Ingeniería de clase mundial desarrollada en Bogotá por Software DT.",
-  keywords: ["Drones industriales Colombia", "Drone DT", "Software DT", "Manuel Nieto Software"],
+  description: "Líderes en tecnología de drones industriales y soluciones autónomas. Ingeniería de clase mundial desarrollada en Bogotá por Nieto Laboratory.",
+  keywords: ["Drones industriales Colombia", "Drone DT", "Software DT", "Manuel Nieto Software", "Nieto Laboratory"],
   authors: [{ name: "Manuel Nieto", url: "https://github.com/NietoDeveloper" }],
   creator: "NietoDeveloper",
-  publisher: "Software DT",
+  publisher: "Nieto Laboratory",
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
     locale: "es_CO",
-    url: "https://drone-dt.vercel.app",
+    url: "https://dronedt.vercel.app",
     title: "DRONE DT | Tecnología Aérea Avanzada",
     siteName: "DRONE DT",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Drone DT Industrial" }],
@@ -76,30 +78,31 @@ export default function RootLayout({
           selection:bg-[#FFD700] selection:text-black
         `}
       >
+        {/* Preloader con prioridad de renderizado */}
         <Preloader />
 
-        {/* Capa de ruido visual */}
-        <div className="fixed inset-0 pointer-events-none z-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+        {/* Capa de ruido visual (Texture Overlay) */}
+        <div className="fixed inset-0 pointer-events-none z-[1] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
         
-        {/* Contenedor principal relativo para permitir que las secciones snap funcionen */}
+        {/* Contenedor principal: z-index ajustado para no tapar el Preloader pero estar sobre el ruido */}
         <div className="relative z-10 w-full min-h-screen">
           {children}
         </div>
 
+        {/* Estilos Globales Críticos (Inyectados de forma segura) */}
         <style dangerouslySetInnerHTML={{ __html: `
           html, body {
             margin: 0 !important;
             padding: 0 !important;
             overflow-x: hidden !important;
-            scrollbar-gutter: auto !important;
-            /* Cambiado a DCDCDC para que no se vea el fondo negro bajo la tarjeta */
             background-color: #DCDCDC !important;
+            height: 100%;
           }
 
+          /* Scrollbar Estilo Drone DT Gold & Black */
           ::-webkit-scrollbar {
-            width: 12px !important;
-            height: 12px !important;
-            display: block !important;
+            width: 10px !important;
+            height: 10px !important;
           }
 
           ::-webkit-scrollbar-track {
@@ -108,23 +111,22 @@ export default function RootLayout({
 
           ::-webkit-scrollbar-thumb {
             background-color: #FFD700 !important;
-            border-radius: 20px !important;
-            border: 3px solid #000000 !important;
-            transition: all 0.3s ease-in-out !important;
+            border-radius: 0px !important; /* Estilo industrial cuadrado */
+            border: 2px solid #000000 !important;
           }
 
           ::-webkit-scrollbar-thumb:hover {
             background-color: #FEB60D !important;
-            box-shadow: 0 0 15px #FFD700 !important;
-            border: 2px solid #000000 !important;
-            cursor: pointer !important;
           }
 
+          /* Optimización de Scroll para iOS */
           * {
             -webkit-overflow-scrolling: touch;
           }
 
-          .no-scrollbar::-webkit-scrollbar { display: none; }
+          .no-scrollbar::-webkit-scrollbar { 
+            display: none !important; 
+          }
         `}} />
       </body>
     </html>
