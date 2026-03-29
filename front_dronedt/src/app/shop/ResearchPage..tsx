@@ -43,10 +43,7 @@ export const ResearchPage = () => {
               key={project.id} 
               className="bg-white p-8 border border-gray-200 hover:border-[#FFD700] transition-colors relative group overflow-hidden"
             >
-              {/* Indicador de Fase */}
-              <div className="absolute top-0 right-0 bg-[#000000] text-[#FFD700] px-4 py-1 text-[10px] font-black uppercase">
-                {project.phase}
-              </div>
+
 
               <h2 className="text-2xl font-black text-[#000000] mb-4 group-hover:text-[#FEB60D] transition-colors">
                 {project.title}
