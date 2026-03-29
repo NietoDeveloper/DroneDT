@@ -3,28 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 ],
-  });
-ent-Type': 'application/json' },
-        cache: 'no-store'
-      });
-
-      if (!response.ok) throw new Error('Uplink Refused');
-
-      const result = await response.json();
-      const productsArray = result.data || (Array.isArray(result) ? result : []);
-
-      const categorized: Record<string, MenuItem[]> = { Modelos: [], Accesorios: [], Flota: [] };
-
-      productsArray.forEach((item: any) => {
-        const rawCat = (item.category?.name || item.category || 'drone').toLowerCase();
-        const targetCat = categoryMap[rawCat] || 'Modelos';
-        const rawName = (item.name || "").toUpperCase();
-
-        let displayImg = '/drone-placeholder.png';
-        
-        if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
-        else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
-        else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
+  });awName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
         else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) displayImg = "/DT-MINI_A1PRO4.png";
         else if (rawName.includes("MINI_A2PRO5") || rawName.includes("MINIA2PRO5")) displayImg = "/DT-MINI_A2PRO5.png";
         else if (item.imageUrl) displayImg = item.imageUrl;
