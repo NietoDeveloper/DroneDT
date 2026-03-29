@@ -4,23 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 ],
   });
-
-  const categoryMap: Record<string, string> = {
-    'drone': 'Modelos',
-    'accessory': 'Accesorios',
-    'accesorios': 'Accesorios',
-    'fleet': 'Flota',
-    'industrial': 'Flota',
-    'agro': 'Flota'
-  };
-
-  const fetchMenuData = useCallback(async () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000/api/v1';
-
-    try {
-      const response = await fetch(`${apiUrl}/products/menu`, {
-        method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
+ent-Type': 'application/json' },
         cache: 'no-store'
       });
 
