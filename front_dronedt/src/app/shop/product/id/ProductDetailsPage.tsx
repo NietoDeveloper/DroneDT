@@ -21,10 +21,7 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({ product,
             {/* Visualización del Drone */}
             <div className="p-8 bg-[#F8F8F8] flex flex-col items-center justify-center border-r border-[#DCDCDC]">
               <div className="relative group">
-                <img 
-                  src={product.image} 
-                  alt={product.model} 
-                  className="w-full h-auto max-h-[450px] object-contain transition-transform duration-500 group-hover:scale-110"
+className="w-full h-auto max-h-[450px] object-contain transition-transform duration-500 group-hover:scale-110"
                 />
 
               </div>
