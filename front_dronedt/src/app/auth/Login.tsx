@@ -6,17 +6,6 @@ import Link from 'next/link';
 
 /**
  * Componente: Login
- * Gestión de acceso para clientes y operadores de Drone DT.
- */
-export const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Aquí conectarás con tu lógica de Auth (NextAuth o JWT en Node.js)
-    console.log('Iniciando sesión con:', { email, password });
-  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#DCDCDC] px-4">
