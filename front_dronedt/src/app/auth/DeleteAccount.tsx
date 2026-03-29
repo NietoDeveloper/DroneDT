@@ -20,17 +20,7 @@ export const DeleteAccount = () => {
     setIsDeleting(true);
     
     try {
-      // Aquí conectarás con tu API de Node.js (DELETE /api/users/:id)
-      console.log('Solicitando eliminación definitiva de la cuenta...');
-      // Simulando delay de red
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      alert('Cuenta eliminada exitosamente.');
-      // Redirigir al home o login
-    } catch (error) {
-      console.error('Error al eliminar cuenta:', error);
-    } finally {
-      setIsDeleting(false);
+
     }
   };
 
