@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* DroneDT Official Palette */
+  --dt-black: #000000;
+  --dt-blue: #0000FF;
+  --dt-gold: #FFD700;
+  --dt-gold-hover: #FEB60D;
+  --dt-white: #FFFFFF;
+  --gainsboro: #DCDCDC;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Forzar que el scrollbar siempre sea visible y no se superponga */
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--dt-black);
+  color: var(--dt-white);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- SCROLLBAR MAESTRO DRONE DT (18PX) --- */
+
+/* 1. Contenedor Principal del Scroll */
+::-webkit-scrollbar {
+  width: 18px !important; /* Ancho masivo solicitado */
+  background-color: var(--dt-black) !important;
+}
+
+/* 2. Carril (Track) - Negro Puro para que el Oro resalte */
+::-webkit-scrollbar-track {
+  background: var(--dt-black) !important;
+}
+
+/* 3. La Barra (Thumb) - Gold Software DT */
+::-webkit-scrollbar-thumb {
+  background-color: var(--dt-gold) !important;
+  border-radius: 4px !important;
+  /* EFECTO FLOTANTE: El borde negro del mismo color que el fondo 
+     hace que la barra parezca suspendida en el aire */
+  border: 4px solid var(--dt-black) !important;
+  transition: all 0.3s ease-in-out !important;
+}
+
+/* 4. HOVER GOLD FLOTANTE CON BRILLO */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dt-gold-hover) !important;
+  /* El brillo se expande hacia afuera */
+  box-shadow: 0 0 15px var(--dt-gold) !important;
+  /* Reducimos el borde en hover para que la barra se "engrose" visualmente */
+  border: 2px solid var(--dt-black) !important;
+  cursor: pointer;
+}
+
+/* Solución para el scroll pegajoso */
+.snap-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  transform: translateZ(0); /* Aceleración por Hardware */
+  will-change: transform;
+}
+
+/* Ajuste de selección de texto */
+::selection {
+  background: var(--dt-gold);
+  color: var(--dt-black);
+}
+
+/* Firefox Support */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: var(--dt-gold) var(--dt-black);
+}
