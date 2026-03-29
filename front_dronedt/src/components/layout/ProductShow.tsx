@@ -5,41 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
-
-const ProductShow = () => {
-  const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-
-  const drones = useMemo(() => {
-    if (result && result.success && Array.isArray(result.data)) {
-      return result.data.map((item: any) => {
-        const rawName = (item.name || "").toUpperCase();
-        let finalImgPath = '/drone-placeholder.png'; 
-
-        if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) finalImgPath = "/DT-BIG_C1PRO8.png";
-        else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) finalImgPath = "/DT-MID_B1PRO5.png";
-        else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) finalImgPath = "/DT-MID_B2PRO8.png";
-        else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) finalImgPath = "/DT-MINI_A1PRO4.png";
-        else if (rawName.includes("MINI_A2PRO5") || rawName.includes("MINIA2PRO5")) finalImgPath = "/DT-MINI_A2PRO5.png";
-
-        return {
-          id: item._id?.$oid || item._id || item.id || Math.random().toString(),
-          name: rawName.replace(/_/g, ' '), 
-          price: typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : (item.price?.toUpperCase() || 'CONTACTAR'),
-          tag: (item.category || 'PRO SERIES').toUpperCase(),
-          img: finalImgPath
-        };
-      });
-    }
-    return [];
-  }, [result]);
-
-  const extendedDrones = drones.length > 0 ? [drones[drones.length - 1], ...drones, drones[0]] : [];
-
-  const handleTransitionEnd = () => {
-    if (currentIndex === 0) { setIsTransitioning(false); setCurrentIndex(drones.length); }
-    else if (currentIndex === drones.length + 1) { setIsTransitioning(false); setCurrentIndex(1); }
-  };
 
   useEffect(() => {
     if (!isTransitioning && drones.length > 0) {
