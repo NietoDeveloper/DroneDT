@@ -51,10 +51,7 @@ export const ResearchPage = () => {
 
 
               <div className="space-y-4">
-                <div>
-                  <h4 className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-2">Impacto Directo</h4>
-                  <p className="text-sm font-bold text-[#000000]">{project.impact}</p>
-                </div>
+
 
                 <div className="flex flex-wrap gap-2">
                   {project.techStack.map((tech) => (
