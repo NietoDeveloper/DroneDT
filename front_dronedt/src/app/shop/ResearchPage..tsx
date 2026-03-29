@@ -11,14 +11,7 @@ interface ResearchProject {
 }
 
 const PROJECTS: ResearchProject[] = [
-  {
-    id: 'rd-01',
-    title: 'AI Swarm Intelligence',
-    phase: 'Testing',
-    description: 'Algoritmos de coordinación para flotas de drones autónomos operando en enjambre para búsqueda y rescate.',
-    techStack: ['Python', 'TensorFlow', 'ROS 2'],
-    impact: 'Reducción del 40% en tiempo de cobertura de área.'
-  },
+
   {
     id: 'rd-02',
     title: 'Hydrogen Power Cells',
