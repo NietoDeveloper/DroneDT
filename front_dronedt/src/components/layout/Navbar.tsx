@@ -5,23 +5,7 @@
 
   useEffect(() => {
     const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
-    if (token) setIsLogged(true);
-
-    fetchMenuData();
-
-    const handleScroll = () => setIsScrolled(window.scrollY > 30);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [fetchMenuData]);
-
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
-  }, [menuOpen]);
-
-  // AJUSTE: Se cambió <Link> por <a> para forzar recarga total
-  const Logo = () => (
-    <a href="/" className="group flex items-center gap-3 outline-none">
-      <div className="relative flex items-center justify-center">
+    if (tosName="relative flex items-center justify-center">
         <svg
           width={isScrolled ? "30" : "36"}
           height={isScrolled ? "30" : "36"}
