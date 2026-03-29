@@ -1,28 +1,3 @@
-// src/app/auth/ */}
-            <div className="md:col-span-1">
-              <label className="label-style">Access Key</label>
-              <input
-                type="password"
-                name="password"
-                required
-                onChange={handleChange}
-                className="input-style"
-                placeholder="••••••••"
-              />
-            </div>
-
-            {/* Confirm Password */}
-            <div className="md:col-span-1">
-              <label className="label-style">Confirm Key</label>
-              <input
-                type="password"
-                name="confirmPassword"
-                required
-                onChange={handleChange}
-                className="input-style"
-                placeholder="••••••••"
-              />
-            </div>
 
             {/* Submit Button */}
             <div className="md:col-span-2 mt-4">
