@@ -1,0 +1,56 @@
+# --- DEPENDENCIES ---
+node_modules/
+jspm_packages/
+.pnp
+.pnp.js
+
+# --- NEXT.JS / PRODUCTION BUILDS ---
+.next/
+out/
+build/
+dist/
+.cache/
+
+# --- ENVIRONMENT VARIABLES (CRITICAL) ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env.bak
+
+# --- DEBUG & LOGS ---
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+logs
+*.log
+
+# --- TESTING ---
+coverage/
+.nyc_output
+
+# --- IDE / SYSTEM ---
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# --- DOCKER ---
+.dockerignore
+pgdata/
+mongodb_data/
+
+# --- TYPESCRIPT ---
+*.tsbuildinfo
+# Asegurar que los archivos de definición NO se ignoren
+!next-env.d.ts
+
+# --- VERCEL ---
+.vercel
