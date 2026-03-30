@@ -37,27 +37,25 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    // 🛰️ UPLINK: El '/' inicial es VITAL para que la ruta sea absoluta desde la raíz
+    // 🛰️ UPLINK: El proxy de Next.js interceptará esta ruta y la enviará a Railway
     const endpoint = '/api/v1/products/menu';
 
     try {
       const response = await fetch(endpoint, {
         method: 'GET',
         headers: { 
-          'Accept': 'application/json',
-          'Cache-Control': 'no-cache'
+          'Accept': 'application/json'
         }
       });
 
       if (!response.ok) {
-        // Log detallado para diagnosticar el 404 o 500
-        console.error(`📡 [UPLINK ERROR] Status: ${response.status} | URL solicitada: ${response.url}`);
+        console.error(`📡 [UPLINK ERROR] Status: ${response.status} | URL: ${response.url}`);
         throw new Error(`Uplink Refused: ${response.status}`);
       }
 
       const result = await response.json();
       
-      // Manejo de la estructura de respuesta del backend (soporta .data o array directo)
+      // Sincronización con la estructura del Backend (soporta .data o array directo)
       const productsArray = result.success ? result.data : (Array.isArray(result) ? result : []);
 
       const categorized: Record<string, MenuItem[]> = { 
@@ -69,12 +67,12 @@ const Navbar = () => {
       productsArray.forEach((item: any) => {
         if (!item) return;
 
-        // Normalización de categorías para el mapeo
+        // Normalización de categorías
         const rawCat = (item.category?.name || item.category || 'drone').toString().toLowerCase();
         const targetCat = categoryMap[rawCat] || 'Modelos';
         const rawName = (item.name || "UNNAMED UNIT").toString().toUpperCase();
 
-        // Lógica de imágenes por modelo (Drone DT Assets)
+        // Lógica de imágenes (Drone DT Static Assets)
         let displayImg = '/drone-placeholder.png';
         if (rawName.includes("BIG_C1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
         else if (rawName.includes("MID_B1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
@@ -117,7 +115,7 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
-  // --- SUB-COMPONENTE LOGO ---
+  // --- SUB-COMPONENTE LOGO (Drone DT Identity) ---
   const Logo = () => (
     <Link href="/" className="group flex items-center gap-3 outline-none">
       <div className="relative flex items-center justify-center">
