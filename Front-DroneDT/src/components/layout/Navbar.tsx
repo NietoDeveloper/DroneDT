@@ -37,10 +37,7 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    /** * 🛰️ UPLINK STRATEGY: 
-     * Usamos ruta relativa para que el proxy de next.config.ts intercepte
-     * la petición y evitemos errores de CORS en local.
-     */
+    // 🛰️ UPLINK STRATEGY: La ruta DEBE empezar con /api para que next.config.ts la intercepte
     const endpoint = '/api/v1/products/menu';
 
     try {
@@ -58,7 +55,7 @@ const Navbar = () => {
 
       const result = await response.json();
       
-      // Normalización de respuesta del cluster
+      // Normalización de respuesta del cluster de Railway
       const productsArray = result.success ? result.data : (Array.isArray(result) ? result : []);
 
       const categorized: Record<string, MenuItem[]> = { 
@@ -74,7 +71,6 @@ const Navbar = () => {
         const targetCat = categoryMap[rawCat] || 'Modelos';
         const rawName = (item.name || "UNNAMED UNIT").toString().toUpperCase();
 
-        // Mapeo de Assets Estáticos
         let displayImg = '/drone-placeholder.png';
         if (rawName.includes("BIG_C1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
         else if (rawName.includes("MID_B1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
@@ -97,7 +93,7 @@ const Navbar = () => {
 
       setMenuContent(categorized);
     } catch (error) {
-      console.error("❌ Drone DT Uplink Offline:", error);
+      console.warn("⚠️ Uplink Retrying...");
     } finally {
       setLoading(false);
     }
@@ -117,7 +113,6 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
-  // --- UI COMPONENTS ---
   const Logo = () => (
     <Link href="/" className="group flex items-center gap-3 outline-none">
       <div className="relative flex items-center justify-center">
@@ -189,7 +184,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Fullscreen Overlay */}
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-100">
           <span className="text-black/40 font-black tracking-tighter text-xl italic uppercase">Uplink Selection</span>
