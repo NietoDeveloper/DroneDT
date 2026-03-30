@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    // 🛰️ UPLINK: Esta ruta es interceptada por el rewrite en next.config.ts
+    // 🛰️ UPLINK: El '/' inicial es VITAL para que la ruta sea absoluta desde la raíz
     const endpoint = '/api/v1/products/menu';
 
     try {
@@ -50,13 +50,15 @@ const Navbar = () => {
       });
 
       if (!response.ok) {
-        // Si aquí recibes 404, el rewrite en next.config.ts no está redirigiendo correctamente
+        // Log detallado para diagnosticar el 404 o 500
+        console.error(`📡 [UPLINK ERROR] Status: ${response.status} | URL solicitada: ${response.url}`);
         throw new Error(`Uplink Refused: ${response.status}`);
       }
 
       const result = await response.json();
-      const rawData = result.data || result;
-      const productsArray = Array.isArray(rawData) ? rawData : [];
+      
+      // Manejo de la estructura de respuesta del backend (soporta .data o array directo)
+      const productsArray = result.success ? result.data : (Array.isArray(result) ? result : []);
 
       const categorized: Record<string, MenuItem[]> = { 
         Modelos: [], 
@@ -67,17 +69,18 @@ const Navbar = () => {
       productsArray.forEach((item: any) => {
         if (!item) return;
 
+        // Normalización de categorías para el mapeo
         const rawCat = (item.category?.name || item.category || 'drone').toString().toLowerCase();
         const targetCat = categoryMap[rawCat] || 'Modelos';
         const rawName = (item.name || "UNNAMED UNIT").toString().toUpperCase();
 
+        // Lógica de imágenes por modelo (Drone DT Assets)
         let displayImg = '/drone-placeholder.png';
-        
-        if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
-        else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
-        else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
-        else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) displayImg = "/DT-MINI_A1PRO4.png";
-        else if (rawName.includes("MINI_A2PRO5") || rawName.includes("MINIA2PRO5")) displayImg = "/DT-MINI_A2PRO5.png";
+        if (rawName.includes("BIG_C1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
+        else if (rawName.includes("MID_B1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
+        else if (rawName.includes("MID_B2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
+        else if (rawName.includes("MINI_A1PRO4")) displayImg = "/DT-MINI_A1PRO4.png";
+        else if (rawName.includes("MINI_A2PRO5")) displayImg = "/DT-MINI_A2PRO5.png";
         else if (item.imageUrl) displayImg = item.imageUrl;
 
         if (categorized[targetCat]) {
@@ -86,7 +89,7 @@ const Navbar = () => {
             name: rawName.replace(/_/g, ' '),
             price: item.price ? `$${Number(item.price).toLocaleString()}` : 'Elite Spec',
             img: displayImg,
-            desc: item.description || item.desc || "",
+            desc: item.description || "",
             category: targetCat
           });
         }
@@ -114,6 +117,7 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
+  // --- SUB-COMPONENTE LOGO ---
   const Logo = () => (
     <Link href="/" className="group flex items-center gap-3 outline-none">
       <div className="relative flex items-center justify-center">
@@ -151,7 +155,6 @@ const Navbar = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse" />
         <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin" />
         <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.3s]" />
-        <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-80" />
       </div>
       <p className="font-black text-[11px] tracking-[0.6em] text-black uppercase animate-pulse">Establishing Uplink</p>
     </div>

@@ -18,16 +18,6 @@ const getProductMenu = async (req, res, next) => {
             .select('name price images category imageUrl')
             .lean();
 
-        // Formateo robusto para el Uplink del Frontend (Next.js 15)
-        const formattedData = products.map(product => ({
-            _id: product._id,
-            name: product.name,
-            price: product.price,
-            category: product.category,
-            // Fallback inteligente para evitar imágenes rotas en producción
-            img: product.imageUrl || 
-                 (product.images && product.images.length > 0 ? product.images[0].url : '/placeholder-drone.png')
-        }));
 
         console.log(`\x1b[36m[ASSETS-CLUSTER]\x1b[0m Telemetría enviada: ${formattedData.length} unidades.`);
 
