@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// --- IMPORTACIÓN CRÍTICA (PascalCase exacto para evitar MODULE_NOT_FOUND en Linux) ---
+// --- IMPORTACIÓN CRÍTICA (PascalCase exacto) ---
 const { 
     getProducts, 
     getProductMenu, 
@@ -27,26 +27,28 @@ router.use((req, res, next) => {
  */
 
 // 1. RUTA DE NAVEGACIÓN (Menu / Categorías)
+// Accesible vía: GET /api/v1/products/menu
 router.get('/menu', getProductMenu);
 
 // 2. RUTAS DE COLECCIÓN
+// Accesible vía: /api/v1/products/
 router.route('/')
-    .get(getProducts) // Catálogo para la Shop
+    .get(getProducts)    // Catálogo para la Shop
     .post(createProduct); // Admin: Registro de nuevas unidades
 
 // 3. RUTAS DE INSTANCIA (ID Validado)
-router.route('/:id')
-    .get((req, res, next) => {
-        if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-            console.error(`\x1b[31m[SECURITY]\x1b[0m ID inválido: ${req.params.id}`);
-            return res.status(400).json({
-                success: false,
-                system_code: 'INVALID_DRONE_ID',
-                message: 'El ID proporcionado no es un formato válido de MongoDB Atlas.'
-            });
-        }
-        next();
-    }, getProductById);
+// Accesible vía: GET /api/v1/products/:id
+router.get('/:id', (req, res, next) => {
+    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+        console.error(`\x1b[31m[SECURITY]\x1b[0m ID inválido detectado: ${req.params.id}`);
+        return res.status(400).json({
+            success: false,
+            system_code: 'INVALID_DRONE_ID',
+            message: 'El ID proporcionado no es un formato válido de MongoDB Atlas.'
+        });
+    }
+    next();
+}, getProductById);
 
 /**
  * [CATCH-ALL ERROR HANDLER] 
@@ -54,11 +56,11 @@ router.route('/:id')
  */
 router.use((err, req, res, next) => {
     console.error(`\x1b[41m[PRODUCT-ROUTE-ERROR]\x1b[0m`, err.stack);
-    res.status(500).json({
+    res.status(err.status || 500).json({
         success: false,
         system_code: 'INTERNAL_PRODUCT_ERROR',
         engineer: 'Manuel Nieto',
-        rank: 'Colombia #1 | 3 Badges Distinción' // Actualizado según tu perfil 2026
+        rank: 'Colombia #1 | S+ Performance' 
     });
 });
 

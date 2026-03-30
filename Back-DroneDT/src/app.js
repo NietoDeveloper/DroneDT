@@ -25,17 +25,16 @@ app.use(helmet({
 
 // --- DRONE DT - ECOSISTEMA EXCLUSIVO ---
 const allowedOrigins = [
-    'https://dronedt.vercel.app',        // TU ÚNICA URL OFICIAL
+    'https://dronedt.vercel.app',
     'http://localhost:3000',
     'http://127.0.0.1:3000'
 ];
 
 app.use(cors({
     origin: (origin, callback) => {
-        // Limpiamos el origin de barras finales para evitar desajustes
-        const cleanOrigin = origin ? origin.replace(/\/$/, "") : null;
-        
-        if (!origin || allowedOrigins.includes(cleanOrigin) || process.env.NODE_ENV === 'development') {
+        // 🛰️ AJUSTE UPLINK: Permitimos peticiones sin origin (como el server-side de Next.js)
+        // y normalizamos los dominios permitidos.
+        if (!origin || allowedOrigins.includes(origin.replace(/\/$/, "")) || process.env.NODE_ENV === 'development') {
             callback(null, true);
         } else {
             console.error(`🚨 ACCESO DENEGADO - ORIGEN NO AUTORIZADO: ${origin}`);
@@ -74,12 +73,15 @@ app.get('/', (req, res) => {
     });
 });
 
+// 🛸 EJE CENTRAL DE PRODUCTOS
+// Si tu URL es /api/v1/products/menu, en ProductRoutes.js el path DEBE ser solo '/menu'
 app.use('/api/v1/products', productRoutes);
 
+// Manejo de rutas no encontradas (404)
 app.use((req, res) => {
     res.status(404).json({
         success: false,
-        message: `La coordenada ${req.originalUrl} no existe.`
+        message: `La coordenada ${req.originalUrl} no existe en Drone DT.`
     });
 });
 
@@ -98,9 +100,9 @@ const startEngine = async () => {
     \x1b[33m╔══════════════════════════════════════════════════════╗
     \x1b[33m║\x1b[36m     🛸 DRONE DT ENGINE - CORE SYSTEM OPERATIONAL      \x1b[33m║
     \x1b[33m╠══════════════════════════════════════════════════════╣\x1b[0m
-    \x1b[33m║\x1b[0m  \x1b[32m✔\x1b[0m  PORT        : \x1b[37m${PORT}\x1b[0m                       \x1b[33m║
-    \x1b[33m║\x1b[0m  \x1b[32m✔\x1b[0m  DATABASE    : \x1b[32mMulti-Cluster Active\x1b[0m           \x1b[33m║
-    \x1b[33m║\x1b[0m  \x1b[32m✔\x1b[0m  ENGINEER    : \x1b[37mManuel Nieto (Rank #1)\x1b[0m           \x1b[33m║
+    \x1b[33m║\x1b[0m  \x1b[32m✔\x1b[0m  PORT        : \x1b[37m${PORT}\x1b[0m                        \x1b[33m║
+    \x1b[33m║\x1b[0m  \x1b[32m✔\x1b[0m  DATABASE    : \x1b[32mMulti-Cluster Active\x1b[0m            \x1b[33m║
+    \x1b[33m║\x1b[0m  \x1b[32m✔\x1b[0m  ENGINEER    : \x1b[37mManuel Nieto (Rank #1)\x1b[0m            \x1b[33m║
     \x1b[33m╚══════════════════════════════════════════════════════╝
             `);
         });
