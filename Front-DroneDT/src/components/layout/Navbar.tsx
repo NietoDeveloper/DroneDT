@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    // 🛰️ UPLINK: Ruta sincronizada con el 'source' del rewrite
+    // 🛰️ UPLINK: Ruta relativa para activar el rewrite de next.config.ts
     const endpoint = '/api/v1/products/menu';
 
     try {
@@ -71,6 +71,7 @@ const Navbar = () => {
 
         let displayImg = '/drone-placeholder.png';
         
+        // Lógica de imágenes basada en nomenclatura técnica
         if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
         else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
         else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
