@@ -18,13 +18,13 @@ const getProductMenu = async (req, res, next) => {
             .select('name price images category imageUrl')
             .lean();
 
-
-        console.log(`\x1b[36m[ASSETS-CLUSTER]\x1b[0m Telemetría enviada: ${formattedData.length} unidades.`);
+        // 🛰️ TELEMETRÍA DE CLUSTER
+        console.log(`\x1b[36m[ASSETS-CLUSTER]\x1b[0m Telemetría enviada: ${products.length} unidades.`);
 
         res.status(200).json({
             success: true,
-            count: formattedData.length,
-            data: formattedData 
+            count: products.length,
+            data: products // Corregido: antes usaba 'formattedData' inexistente
         });
     } catch (error) {
         console.error("\x1b[31m❌ Menu Fetch Error:\x1b[0m", error);
