@@ -1,41 +1,25 @@
 // --- INFRASTRUCTURE MODEL ---
+// Ajustado a PascalCase para coherencia con la arquitectura del Cluster Drone DT
 const Product = require('../models/Product'); 
 const mongoose = require('mongoose');
 
 /**
- * @desc    Obtener menú ligero (Ajustado para el Uplink del Navbar)
+ * @desc    Obtener menú ligero (name, price, images, category)
  * @route   GET /api/v1/products/menu
  * @access  Public
  */
 const getProductMenu = async (req, res, next) => {
     try {
         /**
-         * PERFORMANCE TUNING:
-         * .lean() para evitar la hidratación de documentos Mongoose.
-         * .populate('category') solo si manejas referencias a otra colección.
+         * PROYECCIÓN Y PERFORMANCE:
+         * .lean() optimiza el uso de memoria en el servidor Railway.
          */
         const products = await Product.find({})
-            .select('name price images category imageUrl description')
+            .select('name price images category imageUrl')
             .lean();
 
-        // Formateo robusto para el mapeo del Frontend (categoryMap compatible)
-        const formattedData = products.map(product => {
-            // Aseguramos que category sea un string plano para el categoryMap del Front
-            const categoryName = product.category?.name || product.category || 'drone';
-            
-            return {
-                _id: product._id,
-                name: product.name || "UNNAMED UNIT",
-                price: product.price || 0,
-                category: categoryName,
-                description: product.description || "",
-                // Prioridad: 1. imageUrl directo, 2. Array de imágenes, 3. Placeholder
-                imageUrl: product.imageUrl || 
-                         (product.images && product.images.length > 0 ? product.images[0].url : null)
-            };
-        });
 
-        console.log(`\x1b[36m[ASSETS-CLUSTER]\x1b[0m Telemetría enviada: ${formattedData.length} unidades al Front.`);
+        console.log(`\x1b[36m[ASSETS-CLUSTER]\x1b[0m Telemetría enviada: ${formattedData.length} unidades.`);
 
         res.status(200).json({
             success: true,
@@ -83,11 +67,6 @@ const getProducts = async (req, res, next) => {
  */
 const getProductById = async (req, res, next) => {
     try {
-        // Validar si el ID es un ObjectId válido para evitar crash del clúster
-        if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-            return res.status(400).json({ success: false, message: "ID de unidad inválido" });
-        }
-
         const product = await Product.findById(req.params.id).lean();
 
         if (!product) {
@@ -104,7 +83,7 @@ const getProductById = async (req, res, next) => {
         });
     } catch (error) {
         console.error("\x1b[31m❌ Get ID Error:\x1b[0m", error);
-        res.status(500).json({ success: false, message: "Error interno del clúster al buscar unidad" });
+        res.status(500).json({ success: false, message: "ID inválido o error de clúster" });
     }
 };
 
