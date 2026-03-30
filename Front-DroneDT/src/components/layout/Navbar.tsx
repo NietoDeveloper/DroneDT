@@ -37,6 +37,7 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
+    // Usamos la ruta relativa que Next.js resolverá vía rewrites en next.config.mjs
     const apiUrl = '/api/v1'; 
 
     try {
@@ -46,11 +47,10 @@ const Navbar = () => {
         cache: 'no-store'
       });
 
-      if (!response.ok) throw new Error('Uplink Refused');
+      if (!response.ok) throw new Error(`Uplink Refused: ${response.status}`);
 
       const result = await response.json();
       
-      // 🛡️ Validación profunda de la data para evitar errores rojos
       const rawData = result.data || result;
       const productsArray = Array.isArray(rawData) ? rawData : [];
 
@@ -69,7 +69,6 @@ const Navbar = () => {
 
         let displayImg = '/drone-placeholder.png';
         
-        // Lógica de imágenes basada en el nombre
         if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
         else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
         else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
@@ -92,6 +91,7 @@ const Navbar = () => {
       setMenuContent(categorized);
     } catch (error) {
       console.error("❌ Drone DT Uplink Offline:", error);
+      // Fallback: Si el backend falla, podrías setear datos por defecto aquí
     } finally {
       setLoading(false);
     }
@@ -170,7 +170,7 @@ const Navbar = () => {
               <button
                 key={item}
                 onClick={() => { setSelectedModel(item); setMenuOpen(true); }}
-                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest hover:text-[#FFD700] transition-all bg-transparent cursor-pointer"
+                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest hover:text-[#FFD700] transition-all bg-transparent cursor-pointer outline-none"
               >
                 {item}
               </button>
@@ -180,7 +180,7 @@ const Navbar = () => {
           <div className="flex items-center justify-end gap-4 flex-1">
             <button
               onClick={() => setMenuOpen(true)}
-              className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full hover:bg-[#FFD700] hover:text-black transition-all cursor-pointer"
+              className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full hover:bg-[#FFD700] hover:text-black transition-all cursor-pointer outline-none"
             >
               Menú
             </button>
@@ -192,7 +192,7 @@ const Navbar = () => {
       <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-100">
           <span className="text-black/40 font-black tracking-tighter text-xl italic uppercase">Uplink Selection</span>
-          <button onClick={() => { setMenuOpen(false); setSelectedModel(null); }} className="p-2 text-[#0000FF] hover:rotate-90 transition-all cursor-pointer">
+          <button onClick={() => { setMenuOpen(false); setSelectedModel(null); }} className="p-2 text-[#0000FF] hover:rotate-90 transition-all cursor-pointer outline-none">
             <X size={35} strokeWidth={3} />
           </button>
         </div>
@@ -204,7 +204,7 @@ const Navbar = () => {
                 <button
                   key={item}
                   onClick={() => item === 'Nosotros' ? (window.location.href = '/nosotros') : setSelectedModel(item)}
-                  className="group flex items-center justify-between text-5xl sm:text-7xl md:text-8xl text-black font-black uppercase italic tracking-tighter hover:text-[#FFD700] transition-all cursor-pointer"
+                  className="group flex items-center justify-between text-5xl sm:text-7xl md:text-8xl text-black font-black uppercase italic tracking-tighter hover:text-[#FFD700] transition-all cursor-pointer outline-none text-left"
                 >
                   <span>{item}</span>
                   <ChevronRight size={60} className="opacity-0 group-hover:opacity-100 transition-all text-[#FFD700]" />
@@ -213,32 +213,36 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="pt-10">
-              <button onClick={() => setSelectedModel(null)} className="mb-8 text-[#0000FF] font-black uppercase tracking-[0.3em] flex items-center gap-2 hover:text-[#FFD700] transition-all cursor-pointer">
+              <button onClick={() => setSelectedModel(null)} className="mb-8 text-[#0000FF] font-black uppercase tracking-[0.3em] flex items-center gap-2 hover:text-[#FFD700] transition-all cursor-pointer outline-none">
                 &larr; Volver
               </button>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-20">
-                {menuContent[selectedModel]?.map((product) => (
-                  <Link
-                    href={`/shop/product/${product.id}`}
-                    key={product.id}
-                    onClick={() => setMenuOpen(false)}
-                    className="group bg-white p-4 rounded-xl transition-all hover:-translate-y-4 border border-transparent hover:border-[#FFD700]/60 shadow-sm hover:shadow-xl"
-                  >
-                    <div className="aspect-square bg-white overflow-hidden rounded-lg mb-6 relative">
-                      <Image
-                        src={product.img}
-                        alt={product.name}
-                        fill
-                        unoptimized
-                        className="object-contain group-hover:scale-110 transition-transform duration-700"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="font-black text-2xl uppercase italic group-hover:text-[#0000FF]">{product.name}</h4>
-                      <p className="inline-block text-[14px] font-black text-white bg-[#0000FF] px-3 py-1 rounded-sm">{product.price}</p>
-                    </div>
-                  </Link>
-                ))}
+                {menuContent[selectedModel]?.length > 0 ? (
+                  menuContent[selectedModel].map((product) => (
+                    <Link
+                      href={`/shop/product/${product.id}`}
+                      key={product.id}
+                      onClick={() => setMenuOpen(false)}
+                      className="group bg-white p-4 rounded-xl transition-all hover:-translate-y-4 border border-transparent hover:border-[#FFD700]/60 shadow-sm hover:shadow-xl"
+                    >
+                      <div className="aspect-square bg-white overflow-hidden rounded-lg mb-6 relative">
+                        <Image
+                          src={product.img}
+                          alt={product.name}
+                          fill
+                          unoptimized
+                          className="object-contain group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                      <div className="space-y-2">
+                        <h4 className="font-black text-2xl uppercase italic group-hover:text-[#0000FF]">{product.name}</h4>
+                        <p className="inline-block text-[14px] font-black text-white bg-[#0000FF] px-3 py-1 rounded-sm">{product.price}</p>
+                      </div>
+                    </Link>
+                  ))
+                ) : (
+                  <p className="text-black/30 font-black uppercase tracking-widest italic">No units detected in this sector.</p>
+                )}
               </div>
             </div>
           )}
