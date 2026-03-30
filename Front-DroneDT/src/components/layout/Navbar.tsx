@@ -37,11 +37,12 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    // Usamos la ruta relativa que Next.js resolverá vía rewrites en next.config.mjs
-    const apiUrl = '/api/v1'; 
+    // 🛰️ Prioridad: Variable de entorno de producción. Fallback: ruta relativa para rewrite.
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || '/api/v1'; 
+    const endpoint = `${baseUrl}/products/menu`;
 
     try {
-      const response = await fetch(`${apiUrl}/products/menu`, {
+      const response = await fetch(endpoint, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         cache: 'no-store'
@@ -91,7 +92,6 @@ const Navbar = () => {
       setMenuContent(categorized);
     } catch (error) {
       console.error("❌ Drone DT Uplink Offline:", error);
-      // Fallback: Si el backend falla, podrías setear datos por defecto aquí
     } finally {
       setLoading(false);
     }

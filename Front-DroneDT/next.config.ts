@@ -31,9 +31,9 @@ const nextConfig: NextConfig = {
     return [
       {
         // Intercepta /api/v1/ y lo redirige al clúster de Railway
-        // IMPORTANTE: Asegúrate de que esta URL sea la misma de tu .env
+        // Sincronizado con: https://drone-dt-api.up.railway.app/api/v1
         source: '/api/v1/:path*',
-        destination: 'https://tu-api-real.up.railway.app/api/v1/:path*',
+        destination: 'https://drone-dt-api.up.railway.app/api/v1/:path*',
       },
     ];
   },
