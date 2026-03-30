@@ -22,12 +22,15 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // 🛰️ UPLINK TUNNEL: Apuntamos a la base de la URL para evitar duplicidad de segmentos
+  // 🛰️ UPLINK TUNNEL: Sincronización con la raíz de Railway
   async rewrites() {
     return [
       {
+        // Cuando pidas /api/v1/products/menu...
         source: '/api/v1/:path*',
-        destination: 'https://drone-dt-api.up.railway.app/api/v1/:path*',
+        // ...se enviará a https://drone-dt-api.up.railway.app/api/v1/products/menu
+        // Eliminamos el duplicado manual de '/api/v1' en el destination
+        destination: 'https://drone-dt-api.up.railway.app/:path*',
       },
     ];
   },
