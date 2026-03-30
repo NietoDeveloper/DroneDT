@@ -37,9 +37,8 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    // 🛰️ Prioridad: Variable de entorno de producción. Fallback: ruta relativa para rewrite.
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || '/api/v1'; 
-    const endpoint = `${baseUrl}/products/menu`;
+    // 🛰️ UPLINK: Forzamos ruta relativa para activar el rewrite del config.
+    const endpoint = '/api/v1/products/menu';
 
     try {
       const response = await fetch(endpoint, {
@@ -51,7 +50,6 @@ const Navbar = () => {
       if (!response.ok) throw new Error(`Uplink Refused: ${response.status}`);
 
       const result = await response.json();
-      
       const rawData = result.data || result;
       const productsArray = Array.isArray(rawData) ? rawData : [];
 

@@ -1,18 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // ⚡ Rendimiento & Core
   reactStrictMode: true,
   compress: true,
-  
-  // 🛡️ Despliegue de Alta Seguridad (Emerald/Drone DT Standard)
   output: 'standalone', 
   
   typescript: {
     ignoreBuildErrors: false, 
   },
 
-  // 🖼️ Assets Externos (S3 & Cloudinary)
   images: {
     remotePatterns: [
       {
@@ -26,12 +22,10 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // 🛰️ UPLINK REDIRECT (Túnel directo a Producción)
+  // 🛰️ UPLINK TUNNEL
   async rewrites() {
     return [
       {
-        // Intercepta /api/v1/ y lo redirige al clúster de Railway
-        // Sincronizado con: https://drone-dt-api.up.railway.app/api/v1
         source: '/api/v1/:path*',
         destination: 'https://drone-dt-api.up.railway.app/api/v1/:path*',
       },
