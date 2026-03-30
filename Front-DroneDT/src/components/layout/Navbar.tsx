@@ -37,7 +37,7 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:5000/api/v1';
+    const apiUrl = '/api/v1'; 
 
     try {
       const response = await fetch(`${apiUrl}/products/menu`, {
@@ -49,17 +49,27 @@ const Navbar = () => {
       if (!response.ok) throw new Error('Uplink Refused');
 
       const result = await response.json();
-      const productsArray = result.data || (Array.isArray(result) ? result : []);
+      
+      // 🛡️ Validación profunda de la data para evitar errores rojos
+      const rawData = result.data || result;
+      const productsArray = Array.isArray(rawData) ? rawData : [];
 
-      const categorized: Record<string, MenuItem[]> = { Modelos: [], Accesorios: [], Flota: [] };
+      const categorized: Record<string, MenuItem[]> = { 
+        Modelos: [], 
+        Accesorios: [], 
+        Flota: [] 
+      };
 
       productsArray.forEach((item: any) => {
-        const rawCat = (item.category?.name || item.category || 'drone').toLowerCase();
+        if (!item) return;
+
+        const rawCat = (item.category?.name || item.category || 'drone').toString().toLowerCase();
         const targetCat = categoryMap[rawCat] || 'Modelos';
-        const rawName = (item.name || "").toUpperCase();
+        const rawName = (item.name || "UNNAMED UNIT").toString().toUpperCase();
 
         let displayImg = '/drone-placeholder.png';
         
+        // Lógica de imágenes basada en el nombre
         if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
         else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
         else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
@@ -69,11 +79,11 @@ const Navbar = () => {
 
         if (categorized[targetCat]) {
           categorized[targetCat].push({
-            id: item._id || item.id,
+            id: (item._id || item.id || Math.random().toString()).toString(),
             name: rawName.replace(/_/g, ' '),
-            price: item.price ? `$${item.price.toLocaleString()}` : 'Elite Spec',
+            price: item.price ? `$${Number(item.price).toLocaleString()}` : 'Elite Spec',
             img: displayImg,
-            desc: item.description || item.desc,
+            desc: item.description || item.desc || "",
             category: targetCat
           });
         }
@@ -90,7 +100,6 @@ const Navbar = () => {
   useEffect(() => {
     const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
     if (token) setIsLogged(true);
-
     fetchMenuData();
 
     const handleScroll = () => setIsScrolled(window.scrollY > 30);
@@ -102,9 +111,8 @@ const Navbar = () => {
     document.body.style.overflow = menuOpen ? 'hidden' : 'unset';
   }, [menuOpen]);
 
-  // AJUSTE: Se cambió <Link> por <a> para forzar recarga total
   const Logo = () => (
-    <a href="/" className="group flex items-center gap-3 outline-none">
+    <Link href="/" className="group flex items-center gap-3 outline-none">
       <div className="relative flex items-center justify-center">
         <svg
           width={isScrolled ? "30" : "36"}
@@ -117,20 +125,13 @@ const Navbar = () => {
           strokeLinejoin="round"
           className="transition-all duration-500 group-hover:rotate-[15deg] group-hover:scale-110 z-10"
         >
-          <path d="M12 10V4" />
-          <path d="m17 2 3 3" className="animate-pulse" />
-          <path d="m7 2-3 3" className="animate-pulse" />
-          <path d="M2 10h20" />
-          <path d="m22 10-3 3" />
-          <path d="m2 10 3 3" />
-          <path d="M12 10v12" />
-          <path d="m17 22 3-3" className="animate-pulse" />
-          <path d="m7 22-3-3" className="animate-pulse" />
+          <path d="M12 10V4" /><path d="m17 2 3 3" className="animate-pulse" /><path d="m7 2-3 3" className="animate-pulse" />
+          <path d="M2 10h20" /><path d="m22 10-3 3" /><path d="m2 10 3 3" /><path d="M12 10v12" />
+          <path d="m17 22 3-3" className="animate-pulse" /><path d="m7 22-3-3" className="animate-pulse" />
           <circle cx="12" cy="10" r="2" fill="#0000FF" stroke="none" />
         </svg>
         <div className="absolute inset-0 bg-[#FFD700]/10 blur-md rounded-full group-hover:bg-[#FFD700]/30 transition-all scale-150" />
       </div>
-
       <div className="flex flex-col items-start leading-none">
         <div className="flex items-baseline">
           <span className="text-xl sm:text-2xl font-black tracking-tight text-[#0000FF] italic">Drone</span>
@@ -138,16 +139,16 @@ const Navbar = () => {
         </div>
         <span className="text-[7px] font-bold tracking-[0.5em] uppercase text-black/60 group-hover:text-[#0000FF] transition-colors">Colombia</span>
       </div>
-    </a>
+    </Link>
   );
 
   if (loading) return (
     <div className="fixed inset-0 z-[300] flex flex-col items-center justify-center bg-[#DCDCDC]">
       <div className="relative w-24 h-24 mb-8">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse"></div>
-        <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin"></div>
-        <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.3s]"></div>
-        <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-80 shadow-[0_0_15px_#FFD700]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-12 bg-black rounded-lg animate-pulse" />
+        <div className="absolute top-0 left-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin" />
+        <div className="absolute top-0 right-0 w-8 h-8 border-t-[3px] border-[#FFD700] rounded-full animate-spin [animation-duration:0.3s]" />
+        <div className="absolute w-40 h-[2px] bg-[#FFD700] left-1/2 -translate-x-1/2 animate-bounce opacity-80" />
       </div>
       <p className="font-black text-[11px] tracking-[0.6em] text-black uppercase animate-pulse">Establishing Uplink</p>
     </div>
@@ -161,7 +162,6 @@ const Navbar = () => {
             <Logo />
             <div className="flex items-center gap-2">
               <Circle size={8} fill={isLogged ? "#FFD700" : "transparent"} className={`${isLogged ? 'text-[#FFD700] animate-pulse' : 'text-black/10'} hidden sm:block`} />
-              {isLogged && <span className="text-[10px] font-bold text-[#FFD700] uppercase tracking-tighter hidden md:block font-mono">System Online</span>}
             </div>
           </div>
 
@@ -170,7 +170,7 @@ const Navbar = () => {
               <button
                 key={item}
                 onClick={() => { setSelectedModel(item); setMenuOpen(true); }}
-                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest transition-all duration-300 hover:text-[#FFD700] hover:-translate-y-1 bg-transparent cursor-pointer"
+                className="px-5 py-2 text-[#0000FF] font-black text-[13px] uppercase tracking-widest hover:text-[#FFD700] transition-all bg-transparent cursor-pointer"
               >
                 {item}
               </button>
@@ -180,7 +180,7 @@ const Navbar = () => {
           <div className="flex items-center justify-end gap-4 flex-1">
             <button
               onClick={() => setMenuOpen(true)}
-              className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full transition-all duration-300 hover:bg-[#FFD700] hover:text-black hover:scale-105 hover:shadow-[0_0_20px_rgba(255,215,0,0.4)] cursor-pointer"
+              className="px-6 py-2 text-white font-black text-[13px] uppercase tracking-[0.2em] bg-[#0000FF] rounded-full hover:bg-[#FFD700] hover:text-black transition-all cursor-pointer"
             >
               Menú
             </button>
@@ -189,38 +189,32 @@ const Navbar = () => {
       </nav>
 
       {/* Menu Overlay */}
-      <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
+      <div className={`fixed inset-0 bg-white z-[110] transition-all duration-700 ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'} flex flex-col overflow-hidden`}>
         <div className="flex justify-between items-center px-6 sm:px-10 py-6 border-b border-gray-100">
           <span className="text-black/40 font-black tracking-tighter text-xl italic uppercase">Uplink Selection</span>
-          <button
-            onClick={() => { setMenuOpen(false); setSelectedModel(null); }}
-            className="p-2 text-[#0000FF] transition-all duration-300 hover:text-[#FFD700] hover:rotate-90 cursor-pointer"
-          >
+          <button onClick={() => { setMenuOpen(false); setSelectedModel(null); }} className="p-2 text-[#0000FF] hover:rotate-90 transition-all cursor-pointer">
             <X size={35} strokeWidth={3} />
           </button>
         </div>
 
-        <div className="flex-1 overflow-y-auto px-6 sm:px-10 w-full max-w-[1800px] mx-auto flex flex-col">
+        <div className="flex-1 overflow-y-auto px-6 sm:px-10 w-full max-w-[1800px] mx-auto">
           {!selectedModel ? (
             <div className="flex flex-col space-y-4 pt-8">
               {['Modelos', 'Accesorios', 'Flota', 'Nosotros'].map((item) => (
                 <button
                   key={item}
                   onClick={() => item === 'Nosotros' ? (window.location.href = '/nosotros') : setSelectedModel(item)}
-                  className="group flex items-center justify-between text-5xl sm:text-7xl md:text-8xl text-black font-black uppercase italic tracking-tighter hover:text-[#FFD700] transition-all duration-300 text-left cursor-pointer"
+                  className="group flex items-center justify-between text-5xl sm:text-7xl md:text-8xl text-black font-black uppercase italic tracking-tighter hover:text-[#FFD700] transition-all cursor-pointer"
                 >
                   <span>{item}</span>
-                  <ChevronRight size={60} className="opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 transition-all duration-500 text-[#FFD700]" />
+                  <ChevronRight size={60} className="opacity-0 group-hover:opacity-100 transition-all text-[#FFD700]" />
                 </button>
               ))}
             </div>
           ) : (
             <div className="pt-10">
-              <button
-                onClick={() => setSelectedModel(null)}
-                className="mb-8 text-[#0000FF] font-black uppercase tracking-[0.3em] flex items-center gap-2 hover:text-[#FFD700] transition-all cursor-pointer"
-              >
-                &larr; Volver al Menú
+              <button onClick={() => setSelectedModel(null)} className="mb-8 text-[#0000FF] font-black uppercase tracking-[0.3em] flex items-center gap-2 hover:text-[#FFD700] transition-all cursor-pointer">
+                &larr; Volver
               </button>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 pb-20">
                 {menuContent[selectedModel]?.map((product) => (
@@ -228,7 +222,7 @@ const Navbar = () => {
                     href={`/shop/product/${product.id}`}
                     key={product.id}
                     onClick={() => setMenuOpen(false)}
-                    className="group relative bg-white p-4 rounded-xl transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_30px_60px_-15px_rgba(255,215,0,0.3)] border border-transparent hover:border-[#FFD700]/60"
+                    className="group bg-white p-4 rounded-xl transition-all hover:-translate-y-4 border border-transparent hover:border-[#FFD700]/60 shadow-sm hover:shadow-xl"
                   >
                     <div className="aspect-square bg-white overflow-hidden rounded-lg mb-6 relative">
                       <Image
@@ -236,24 +230,12 @@ const Navbar = () => {
                         alt={product.name}
                         fill
                         unoptimized
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                        className="object-contain group-hover:scale-110 transition-transform duration-700 drop-shadow-lg"
+                        className="object-contain group-hover:scale-110 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#FFD700]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
-
                     <div className="space-y-2">
-                      <h4 className="font-black text-2xl uppercase italic leading-tight group-hover:text-[#0000FF] transition-colors duration-300">
-                        {product.name}
-                      </h4>
-                      <div className="flex justify-between items-end">
-                        <p className="text-[14px] font-black text-white tracking-widest uppercase bg-[#0000FF] px-3 py-1 rounded-sm">
-                          {product.price}
-                        </p>
-                        <div className="w-10 h-10 rounded-full border border-[#0000FF] flex items-center justify-center group-hover:bg-[#FFD700] group-hover:border-[#FFD700] transition-all duration-300">
-                          <ChevronRight size={20} className="text-[#0000FF] group-hover:text-black transition-colors" />
-                        </div>
-                      </div>
+                      <h4 className="font-black text-2xl uppercase italic group-hover:text-[#0000FF]">{product.name}</h4>
+                      <p className="inline-block text-[14px] font-black text-white bg-[#0000FF] px-3 py-1 rounded-sm">{product.price}</p>
                     </div>
                   </Link>
                 ))}
