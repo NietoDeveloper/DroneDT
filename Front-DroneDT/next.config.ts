@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**.amazonaws.com', 
+        hostname: '*.amazonaws.com', 
       },
       {
         protocol: 'https',
@@ -27,9 +27,8 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        // Intercepta cualquier llamada que empiece por /api/v1
+        // Intercepta peticiones locales y las redirige al backend online
         source: '/api/v1/:path*',
-        // La redirige INTEGRALMENTE al cluster remoto
         destination: 'https://drone-dt-api.up.railway.app/api/v1/:path*',
       },
     ];
