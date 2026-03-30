@@ -1,14 +1,27 @@
 "use client";
 
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Link from "next/link";
 
+// Mantenemos los imports dinámicos para evitar conflictos con el DOM global
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
 const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { ssr: false });
 const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
 
 export default function Home() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Si no ha montado, retornamos un contenedor vacío con el fondo base para evitar el salto visual
+  if (!isMounted) {
+    return <div className="bg-[#DCDCDC] h-screen w-full" />;
+  }
+
   return (
     <div className="relative bg-[#DCDCDC] selection:bg-[#FFD700] selection:text-black">
       <div className="fixed top-0 left-0 w-full z-[100]">
@@ -24,18 +37,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECCIÓN 2: CATÁLOGO (ÚLTIMO SOLAPAMIENTO 80/20) */}
+        {/* SECCIÓN 2: CATÁLOGO */}
         <section 
           id="catalog" 
           className="relative h-screen w-full snap-start snap-always z-20 flex flex-col -mt-[20vh]"
         >
-          {/* h-full aquí para que ProductShow use todo el espacio de la sección */}
           <div className="h-full w-full bg-white shadow-2xl">
             <ProductShow />
           </div>
         </section>
 
-        {/* SECCIÓN 3: SPECS (FLUJO NORMAL - SIN -MT) */}
+        {/* SECCIÓN 3: SPECS */}
         <section className="relative h-screen w-full snap-start snap-always z-30 bg-black flex flex-col">
           <div className="flex-1 flex flex-col justify-center px-6 md:px-12">
             <div className="max-w-[1900px] mx-auto w-full text-center">
