@@ -37,20 +37,22 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    // 🛰️ UPLINK: Ruta relativa para activar el rewrite de next.config.ts
+    // 🛰️ UPLINK: Esta ruta es interceptada por el rewrite en next.config.ts
     const endpoint = '/api/v1/products/menu';
 
     try {
       const response = await fetch(endpoint, {
         method: 'GET',
         headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        cache: 'no-store'
+          'Accept': 'application/json',
+          'Cache-Control': 'no-cache'
+        }
       });
 
-      if (!response.ok) throw new Error(`Uplink Refused: ${response.status}`);
+      if (!response.ok) {
+        // Si aquí recibes 404, el rewrite en next.config.ts no está redirigiendo correctamente
+        throw new Error(`Uplink Refused: ${response.status}`);
+      }
 
       const result = await response.json();
       const rawData = result.data || result;
@@ -71,7 +73,6 @@ const Navbar = () => {
 
         let displayImg = '/drone-placeholder.png';
         
-        // Lógica de imágenes basada en nomenclatura técnica
         if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) displayImg = "/DT-BIG_C1PRO8.png";
         else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) displayImg = "/DT-MID_B1PRO5.png";
         else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) displayImg = "/DT-MID_B2PRO8.png";
