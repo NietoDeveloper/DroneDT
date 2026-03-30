@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   compress: true,
+  // 💡 Mantenemos standalone para producción (Railway/Docker)
   output: 'standalone', 
   
   typescript: {
@@ -22,16 +23,13 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // 🛰️ UPLINK TUNNEL: Sincronización con la raíz de Railway
+  // 🛰️ UPLINK TUNNEL: Conexión blindada con el Cluster de Railway
   async rewrites() {
     return [
       {
-        /**
-         * ❌ ERROR ANTERIOR: destination: 'https://drone-dt-api.up.railway.app/:path*'
-         * El :path* solo capturaba "products/menu", eliminando el prefijo "api/v1".
-         * * ✅ SOLUCIÓN: Mapear el path completo incluyendo el prefijo que el Back espera.
-         */
+        // Intercepta cualquier llamada que empiece por /api/v1
         source: '/api/v1/:path*',
+        // La redirige INTEGRALMENTE al cluster remoto
         destination: 'https://drone-dt-api.up.railway.app/api/v1/:path*',
       },
     ];
