@@ -12,19 +12,6 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false, // Mantenemos la integridad del tipado en producción
   },
 
-  // 🖼️ Configuración de Assets Externos (S3 y Cloudinary)
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: '**.amazonaws.com', // Soporta todos los buckets de AWS S3
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-      },
-    ],
-  },
 
 
 
