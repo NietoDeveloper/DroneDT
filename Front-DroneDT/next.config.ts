@@ -26,13 +26,14 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // 🛰️ UPLINK REDIRECT (Local Link al Puerto 5000)
+  // 🛰️ UPLINK REDIRECT (Túnel directo a Producción)
   async rewrites() {
     return [
       {
-        // Intercepta /api/v1/ y lo manda a tu servidor local de Node.js
+        // Intercepta /api/v1/ y lo redirige al clúster de Railway
+        // IMPORTANTE: Asegúrate de que esta URL sea la misma de tu .env
         source: '/api/v1/:path*',
-        destination: 'http://localhost:5000/api/v1/:path*',
+        destination: 'https://tu-api-real.up.railway.app/api/v1/:path*',
       },
     ];
   },
