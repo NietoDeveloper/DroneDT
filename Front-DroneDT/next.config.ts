@@ -26,16 +26,6 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // 🛰️ TÚNEL DE COMUNICACIÓN (Uplink Redirect)
-  async rewrites() {
-    return [
-      {
-        // Intercepta todas las llamadas locales a /api/v1/ y las redirige al clúster de Railway
-        source: '/api/v1/:path*',
-        destination: 'https://tu-api-real.up.railway.app/api/v1/:path*', 
-      },
-    ];
-  },
-};
+
 
 export default nextConfig;
