@@ -26,11 +26,13 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        // Cuando pidas /api/v1/products/menu...
+        /**
+         * ❌ ERROR ANTERIOR: destination: 'https://drone-dt-api.up.railway.app/:path*'
+         * El :path* solo capturaba "products/menu", eliminando el prefijo "api/v1".
+         * * ✅ SOLUCIÓN: Mapear el path completo incluyendo el prefijo que el Back espera.
+         */
         source: '/api/v1/:path*',
-        // ...se enviará a https://drone-dt-api.up.railway.app/api/v1/products/menu
-        // Eliminamos el duplicado manual de '/api/v1' en el destination
-        destination: 'https://drone-dt-api.up.railway.app/:path*',
+        destination: 'https://drone-dt-api.up.railway.app/api/v1/:path*',
       },
     ];
   },
