@@ -27,9 +27,9 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       {
-        // Intercepta peticiones locales y las redirige al backend online
-        source: '/api/v1/:path*',
-        destination: 'https://drone-dt-api.up.railway.app/api/v1/:path*',
+        // 🛠️ AJUSTE CRÍTICO: Captura todo desde la raíz de /api para evitar el 404 local
+        source: '/api/:path*',
+        destination: 'https://drone-dt-api.up.railway.app/api/:path*',
       },
     ];
   },
