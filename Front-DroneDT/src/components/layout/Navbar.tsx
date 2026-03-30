@@ -37,13 +37,16 @@ const Navbar = () => {
   };
 
   const fetchMenuData = useCallback(async () => {
-    // 🛰️ UPLINK: Forzamos ruta relativa para activar el rewrite del config.
+    // 🛰️ UPLINK: Ruta sincronizada con el 'source' del rewrite
     const endpoint = '/api/v1/products/menu';
 
     try {
       const response = await fetch(endpoint, {
         method: 'GET',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         cache: 'no-store'
       });
 

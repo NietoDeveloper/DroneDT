@@ -22,7 +22,7 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // 🛰️ UPLINK TUNNEL
+  // 🛰️ UPLINK TUNNEL: Apuntamos a la base de la URL para evitar duplicidad de segmentos
   async rewrites() {
     return [
       {
