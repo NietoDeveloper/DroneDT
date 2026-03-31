@@ -1,6 +1,6 @@
 # 🛸 Drone DT — Frontend
 
-## World-Class Drone Digital Ecosystem
+## Drone Digital Ecosystem
 
 Built for Scalability, Performance, and Precision.
 
