@@ -23,13 +23,16 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // 🛰️ UPLINK TUNNEL: Conexión blindada con el Cluster de Railway
+  // 🛰️ UPLINK TUNNEL: Conexión blindada con el Cluster de Railway (Nieto Laboratory)
   async rewrites() {
     return [
       {
-        // 🛠️ AJUSTE CRÍTICO: Captura todo desde la raíz de /api para evitar el 404 local
-        source: '/api/:path*',
-        destination: 'https://drone-dt-api.up.railway.app/api/:path*',
+        /** * 🛠️ AJUSTE CRÍTICO: 
+         * Mapeamos /api/v1/:path* para que el Navbar.tsx encuentre los productos
+         * sin causar CORS ni 404 en localhost.
+         */
+        source: '/api/v1/:path*',
+        destination: 'https://back-dronedt-production.up.railway.app/api/v1/:path*',
       },
     ];
   },
