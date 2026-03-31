@@ -5,6 +5,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 /**
  * ARCHITECT: Manuel Nieto | Rank #1 Colombia
  * ECOSISTEMA: Drone DT Visual Intelligence
+ * UBICACIÓN: src/components/layout/GalleryShowcase.tsx
  */
 
 interface GalleryItem {
@@ -16,7 +17,6 @@ interface GalleryItem {
   span?: string; 
 }
 
-// Data de respaldo (Fallback) por si el Uplink con Railway falla
 const FALLBACK_DATA: GalleryItem[] = [
   {
     id: 'g1',
@@ -52,13 +52,13 @@ const FALLBACK_DATA: GalleryItem[] = [
   }
 ];
 
+// Cambiamos a exportación nombrada para que coincida exactamente con el import dinámico
 export const GalleryShowcase: React.FC = () => {
   const [gallery, setGallery] = useState<GalleryItem[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fetchGalleryData = useCallback(async () => {
     try {
-      // 🛰️ UPLINK: Petición relativa que Next.js redirige a Railway
       const response = await fetch('/api/v1/gallery');
       if (!response.ok) throw new Error('Uplink Gallery Failed');
       
@@ -80,7 +80,6 @@ export const GalleryShowcase: React.FC = () => {
     <section className="bg-[#DCDCDC] py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
       <div className="max-w-[1900px] mx-auto">
         
-        {/* Cabecera Estilo High-Tech */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2">
             <span className="text-[#FEB60D] font-black tracking-[0.3em] text-xs uppercase">
@@ -101,7 +100,6 @@ export const GalleryShowcase: React.FC = () => {
           </p>
         </div>
 
-        {/* Bento Grid Interactivo con Data Real */}
         <div className={`grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] md:auto-rows-[350px] transition-opacity duration-1000 ${loading ? 'opacity-50' : 'opacity-100'}`}>
           {gallery.map((item) => (
             <div 
@@ -152,7 +150,6 @@ export const GalleryShowcase: React.FC = () => {
           ))}
         </div>
 
-        {/* Action Footer */}
         <div className="mt-16 pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
@@ -184,4 +181,5 @@ export const GalleryShowcase: React.FC = () => {
   );
 };
 
+// Mantenemos también el default export por si acaso, pero el import dinámico prefiere el nombrado en esta config
 export default GalleryShowcase;
