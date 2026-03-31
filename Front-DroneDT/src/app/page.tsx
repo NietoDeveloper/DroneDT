@@ -6,14 +6,20 @@ import Link from "next/link";
 
 /**
  * ARCHITECT: Manuel Nieto | Rank #1 Colombia
- * ECOSISTEMA: Drone DT - Home Engine v1.3
- * UPDATE: Tesla-style Overlap (80/20 Visibility) & AboutDT Integration
+ * ECOSISTEMA: Drone DT - Home Engine v1.4
+ * UPDATE: Integración de Hydration Guard & Dynamic Recovery
  */
 
-// Optimización de hidratación y carga diferida
+// --- CARGA DINÁMICA DE COMPONENTES (Layer 100-30) ---
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
-const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { ssr: false });
+
+// ProductShow con Skeleton para evitar el salto visual durante la recuperación de datos
+const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { 
+  ssr: false,
+  loading: () => <div className="h-screen w-full bg-white animate-pulse" />
+});
+
 const GalleryShowcase = dynamic(() => import("@/components/layout/GalleryShowcase"), { ssr: false });
 const AboutDT = dynamic(() => import("@/components/layout/AboutDT"), { ssr: false });
 const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
@@ -32,6 +38,7 @@ export default function Home() {
 
   return (
     <div className="relative bg-[#DCDCDC] selection:bg-[#FFD700] selection:text-black">
+      
       {/* 🛸 NAVEGACIÓN FIJA (LAYER 100) */}
       <div className="fixed top-0 left-0 w-full z-[100]">
         <Navbar />
@@ -40,7 +47,7 @@ export default function Home() {
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
         
         {/* SECCIÓN 1: BANNER (HERO - SPACE X STYLE) */}
-        {/* ✅ AJUSTE: pb-[20vh] para dejar ver el componente inferior */}
+        {/* ✅ PB-[20vh] permite que el catálogo asome por debajo al final del scroll */}
         <section className="relative h-screen w-full snap-start snap-always z-10 bg-black flex flex-col pb-[20vh]">
           <div className="flex-1 w-full overflow-hidden">
             <Banner />
@@ -48,17 +55,17 @@ export default function Home() {
         </section>
 
         {/* SECCIÓN 2: CATÁLOGO (ELITE UNITS - MERN CLUSTER DATA) */}
-        {/* ✅ AJUSTE: -mt-[20vh] para solapar y crear el efecto de asomada */}
+        {/* ✅ -MT-[20vh] genera el solapamiento visual característico de Tesla */}
         <section 
           id="catalog" 
           className="relative h-screen w-full snap-start snap-always z-20 flex flex-col -mt-[20vh]"
         >
-          <div className="h-full w-full bg-white shadow-2xl overflow-hidden">
+          <div className="h-full w-full bg-white shadow-[0_-20px_50px_rgba(0,0,0,0.3)] overflow-hidden">
             <ProductShow />
           </div>
         </section>
 
-        {/* SECCIÓN 3: GALLERY SHOWCASE (VISUAL INTELLIGENCE - UPLINK LIVE) */}
+        {/* SECCIÓN 3: GALLERY SHOWCASE (VISUAL INTELLIGENCE) */}
         <section 
           id="gallery" 
           className="relative min-h-screen w-full snap-start snap-always z-30 bg-[#DCDCDC]"
@@ -135,7 +142,7 @@ export default function Home() {
           background: #DCDCDC; 
         }
         
-        /* Scrollbar Minimalista Industrial */
+        /* Scrollbar Industrial Nieto Lab */
         .custom-scrollbar::-webkit-scrollbar { 
           width: 4px; 
         }
@@ -147,9 +154,11 @@ export default function Home() {
           border-radius: 0px; 
         }
 
-        /* Fix para suavizar el snapping */
+        /* Suavizado de snapping para experiencia fluida */
         main {
           -webkit-overflow-scrolling: touch;
+          scrollbar-width: thin;
+          scrollbar-color: #FFD700 #000;
         }
       `}</style>
     </div>
