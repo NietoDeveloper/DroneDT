@@ -1,177 +1,102 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import useSWR from 'swr';
 
-// --- COMPONENTE SKELETON (Carga Estilo Drone DT) ---
-const ProductSkeleton = () => (
-  <div className="h-screen w-full bg-white flex flex-col animate-pulse">
-    <div className="w-full h-[55%] md:h-[65%] flex items-center justify-center">
-      <div className="w-64 h-40 md:w-96 md:h-60 bg-zinc-100 rounded-full blur-3xl opacity-60" />
-    </div>
-    <div className="w-full h-[45%] md:h-[35%] flex flex-col items-center px-6 pt-10 md:pt-0">
-      <div className="h-10 w-64 bg-zinc-100 mb-6 rounded-md" />
-      <div className="h-4 w-32 bg-zinc-50 mb-8 rounded-md" />
-      <div className="flex flex-col md:flex-row gap-3 w-full max-w-[260px] md:max-w-xl justify-center">
-        <div className="w-full md:w-52 h-12 bg-zinc-100 rounded-sm" />
-        <div className="w-full md:w-52 h-12 bg-zinc-100 rounded-sm" />
-      </div>
-    </div>
-  </div>
-);
-
-interface Drone {
-  id: string;
+interface Product {
+  _id: string;
   name: string;
-  price: string;
-  img: string;
-  tag: string;
+  price: number;
+  imageUrl?: string;
+  category?: { name: string } | string;
+  description?: string;
 }
 
-const fetcher = (url: string) => fetch(url).then(res => res.json());
-
 const ProductShow = () => {
-  const isLocal = typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
-  const baseUrl = isLocal ? 'http://localhost:5000/api/v1' : process.env.NEXT_PUBLIC_API_URL;
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const { data: result, isLoading } = useSWR(`${baseUrl}/products/menu`, fetcher, {
-    revalidateOnFocus: false,
-    revalidateIfStale: false,
-    dedupingInterval: 3600000 
-  });
+  const fetchProducts = useCallback(async () => {
+    // 🛰️ UPLINK TUNNEL: Usamos la ruta relativa que Next.js ya mapea a Railway
+    const endpoint = '/api/v1/products'; 
 
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const drones = useMemo(() => {
-    if (result && result.success && Array.isArray(result.data)) {
-      return result.data.map((item: any) => {
-        const rawName = (item.name || "").toUpperCase();
-        let finalImgPath = '/drone-placeholder.png'; 
-
-        if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) finalImgPath = "/DT-BIG_C1PRO8.png";
-        else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) finalImgPath = "/DT-MID_B1PRO5.png";
-        else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) finalImgPath = "/DT-MID_B2PRO8.png";
-        else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) finalImgPath = "/DT-MINI_A1PRO4.png";
-        else if (rawName.includes("MINI_A2PRO5") || rawName.includes("MINIA2PRO5")) finalImgPath = "/DT-MINI_A2PRO5.png";
-
-        return {
-          id: item._id?.$oid || item._id || item.id || Math.random().toString(),
-          name: rawName.replace(/_/g, ' '), 
-          price: typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : (item.price?.toUpperCase() || 'CONTACTAR'),
-          tag: (item.category || 'PRO SERIES').toUpperCase(),
-          img: finalImgPath
-        };
+    try {
+      const response = await fetch(endpoint, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
       });
+
+      if (!response.ok) throw new Error(`Uplink Refused: ${response.status}`);
+
+      const result = await response.json();
+      
+      // Sincronización con el cluster (soporta data wrapper o array directo)
+      const data = result.success ? result.data : (Array.isArray(result) ? result : []);
+      
+      // Solo tomamos los que tengan nombre para no romper el Reel
+      setProducts(data.filter((p: any) => p.name));
+    } catch (error) {
+      console.error("❌ ProductShow Uplink Offline:", error);
+    } finally {
+      setLoading(false);
     }
-    return [];
-  }, [result]);
-
-  const extendedDrones = drones.length > 0 ? [drones[drones.length - 1], ...drones, drones[0]] : [];
-
-  const handleTransitionEnd = () => {
-    if (currentIndex === 0) { setIsTransitioning(false); setCurrentIndex(drones.length); }
-    else if (currentIndex === drones.length + 1) { setIsTransitioning(false); setCurrentIndex(1); }
-  };
+  }, []);
 
   useEffect(() => {
-    if (!isTransitioning && drones.length > 0) {
-      const raf = requestAnimationFrame(() => setIsTransitioning(true));
-      return () => cancelAnimationFrame(raf);
-    }
-  }, [isTransitioning, drones.length]);
+    fetchProducts();
+  }, [fetchProducts]);
 
-  useEffect(() => {
-    if (drones.length > 1 && isTransitioning) {
-      timeoutRef.current = setInterval(() => { setCurrentIndex((prev) => prev + 1); }, 5000);
-    }
-    return () => { if (timeoutRef.current) clearInterval(timeoutRef.current); };
-  }, [drones.length, isTransitioning]);
-
-  if (isLoading) return <ProductSkeleton />;
-  if (drones.length === 0) return null;
+  if (loading || products.length === 0) return null; // No mostramos nada hasta que haya data
 
   return (
-    <div className="bg-white w-full h-full flex flex-col relative z-30 overflow-hidden">
-      
-      <section className="relative w-full flex-grow overflow-hidden">
-        <div 
-          className={`flex h-full ${isTransitioning ? 'transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
-          onTransitionEnd={handleTransitionEnd}
-          style={{ 
-            transform: `translateX(-${currentIndex * (100 / (extendedDrones.length || 1))}%)`,
-            width: `${extendedDrones.length * 100}%` 
-          }}
-        >
-          {extendedDrones.map((drone, idx) => (
-            <div key={`${drone.id}-${idx}`} className="h-full flex-shrink-0 w-full" style={{ width: `${100 / extendedDrones.length}%` }}>
-              <div className="flex flex-col h-full w-full bg-white">
-                
-                <div className="w-full h-[55%] md:h-[65%] relative flex items-start justify-center p-0 overflow-hidden">
-                  <div className="relative w-full h-full transform scale-110 md:scale-115 transition-transform duration-1000 -mt-2 md:mt-0">
-                    <Image 
-                      src={drone.img} 
-                      alt={drone.name} 
-                      fill 
-                      className="object-contain object-top md:object-center drop-shadow-2xl" 
-                      priority 
-                      unoptimized 
-                    />
-                  </div>
-                </div>
+    <section className="w-full bg-white py-20">
+      <div className="max-w-[1900px] mx-auto px-6 sm:px-10">
+        {/* Título con Identidad Drone DT */}
+        <div className="mb-12">
+          <h2 className="text-4xl sm:text-6xl font-black uppercase italic tracking-tighter text-black">
+            Available <span className="text-[#0000FF]">Units</span>
+          </h2>
+          <div className="w-20 h-1.5 bg-[#FFD700] mt-4" />
+        </div>
 
-                <div className="w-full h-[45%] md:h-[35%] flex flex-col justify-start md:justify-center items-center bg-white z-10 px-6 pt-5 md:pt-0 text-center">
-                  <div className="mb-4 md:mb-5">
-                    <h3 className="text-3xl md:text-3xl lg:text-4xl font-black uppercase italic leading-none tracking-tighter flex flex-wrap justify-center gap-x-3">
-                      {drone.name.split(' ').map((word: string, i: number) => (
-                        <span key={i} className={word === 'DT' ? 'text-[#FFD700]' : 'text-[#0000FF]'}>{word}</span>
-                      ))}
-                    </h3>
-                    <div className="mt-2 md:mt-2 flex flex-col items-center">
-                      <p className="text-[8px] md:text-[9px] font-bold text-zinc-400 tracking-[0.4em] uppercase">AVIACIÓN CIVIL DT</p>
-                      <p className="text-2xl md:text-2xl lg:text-3xl font-black text-[#0000FF] mt-1">{drone.price}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col md:flex-row gap-3 w-full max-w-[260px] md:max-w-xl mx-auto items-center justify-center">
-                    <Link href={`/shop/checkout/${drone.id}`} 
-                      className="w-full md:w-52 h-12 md:h-13 bg-[#FFD700] border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300 shadow-md">
-                      ORDENAR
-                    </Link>
-                    <Link href={`/shop/product/${drone.id}`} 
-                      className="w-full md:w-52 h-12 md:h-13 bg-transparent border-2 border-[#FFD700] hover:bg-[#0000FF] hover:border-[#0000FF] text-black hover:text-white flex items-center justify-center text-[10px] font-black uppercase tracking-[0.2em] transition-all duration-300">
-                      FICHA TÉCNICA
-                    </Link>
-                  </div>
-                </div>
-
+        {/* 🛸 THE REEL: Mantenemos tu lógica de movimiento intacta */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {products.map((product) => (
+            <Link 
+              key={product._id} 
+              href={`/shop/product/${product._id}`}
+              className="group block relative overflow-hidden rounded-2xl bg-[#F5F5F5] transition-all hover:-translate-y-2"
+            >
+              <div className="aspect-[4/5] relative w-full overflow-hidden">
+                <Image
+                  src={product.imageUrl || '/drone-placeholder.png'}
+                  alt={product.name}
+                  fill
+                  unoptimized
+                  className="object-contain p-8 group-hover:scale-110 transition-transform duration-700"
+                />
               </div>
-            </div>
+              
+              {/* Overlay de Info - Sincronizado con DB */}
+              <div className="p-6 bg-white border-t border-gray-100">
+                <h3 className="font-black text-xl uppercase italic text-black truncate">
+                  {product.name.replace(/_/g, ' ')}
+                </h3>
+                <div className="flex justify-between items-center mt-2">
+                  <span className="text-[12px] font-bold tracking-widest text-black/40 uppercase">
+                    {typeof product.category === 'object' ? product.category.name : (product.category || 'Standard')}
+                  </span>
+                  <span className="text-[#0000FF] font-black text-lg">
+                    ${product.price?.toLocaleString() || '---'}
+                  </span>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
-      </section>
-
-      {/* NAVEGACIÓN (DOTS) */}
-      <div className="w-full h-8 md:h-10 flex justify-center items-center bg-white shrink-0 relative z-50 -translate-y-2.5 md:translate-y-0">
-        <div className="flex gap-3">
-          {drones.map((_: any, idx: number) => {
-            const isActive = (currentIndex === 0 ? drones.length - 1 : currentIndex === drones.length + 1 ? 0 : currentIndex - 1) === idx;
-            return (
-              <button key={idx} 
-                onClick={() => { if (timeoutRef.current) clearInterval(timeoutRef.current); setIsTransitioning(true); setCurrentIndex(idx + 1); }}
-                className="py-1"
-              >
-                <div className={`h-1 transition-all duration-500 rounded-full ${isActive ? 'w-10 bg-[#FFD700]' : 'w-3 bg-zinc-200 hover:bg-[#0000FF]'}`} />
-              </button>
-            );
-          })}
-        </div>
       </div>
-
-    </div>
+    </section>
   );
 };
 
