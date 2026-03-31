@@ -7,18 +7,15 @@ import Link from "next/link";
 /**
  * ARCHITECT: Manuel Nieto | Rank #1 Colombia
  * ECOSISTEMA: Drone DT - Home Engine v1.2
+ * UPDATE: Integrated AboutDT Section
  */
 
 // Optimización de hidratación y carga diferida
 const Navbar = dynamic(() => import("@/components/layout/Navbar"), { ssr: false });
 const Banner = dynamic(() => import("@/components/layout/Banner"), { ssr: false });
 const ProductShow = dynamic(() => import("@/components/layout/ProductShow"), { ssr: false });
-
-/** * ✅ AJUSTE CRÍTICO: 
- * El módulo ha sido movido a la carpeta layout para mantener la estructura unificada.
- */
 const GalleryShowcase = dynamic(() => import("@/components/layout/GalleryShowcase"), { ssr: false });
-
+const AboutDT = dynamic(() => import("@/components/layout/AboutDT"), { ssr: false });
 const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: false });
 
 export default function Home() {
@@ -109,13 +106,21 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-
             </div>
           </div>
         </section>
 
-        {/* SECCIÓN 5: FOOTER (SYSTEM TERMINATION) */}
-        <section className="snap-start snap-always bg-black">
+        {/* SECCIÓN 5: ABOUT (CORPORATE VISION) */}
+        {/* ✅ INTERVENCIÓN: Ubicado antes del footer para consolidar la marca */}
+        <section 
+          id="about" 
+          className="relative min-h-screen w-full snap-start snap-always z-50 bg-white"
+        >
+          <AboutDT />
+        </section>
+
+        {/* SECCIÓN 6: FOOTER (SYSTEM TERMINATION) */}
+        <section className="snap-start snap-always bg-black z-60">
           <Footer />
         </section>
       </main>
