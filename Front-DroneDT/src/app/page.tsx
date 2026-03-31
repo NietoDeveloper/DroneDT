@@ -111,39 +111,3 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* SECCIÓN 5: FOOTER (SYSTEM TERMINATION) */}
-        <section className="snap-start snap-always bg-black">
-          <Footer />
-        </section>
-      </main>
-
-      {/* ESTILOS GLOBALES DE INTERFAZ */}
-      <style jsx global>{`
-        html, body { 
-          overflow: hidden; 
-          height: 100%; 
-          margin: 0; 
-          background: #DCDCDC; 
-        }
-        
-        /* Scrollbar Minimalista Industrial */
-        .custom-scrollbar::-webkit-scrollbar { 
-          width: 4px; 
-        }
-        .custom-scrollbar::-webkit-scrollbar-track { 
-          background: #000; 
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb { 
-          background: #FFD700; 
-          border-radius: 0px; 
-        }
-
-        /* Fix para suavizar el snapping */
-        main {
-          -webkit-overflow-scrolling: touch;
-        }
-      `}</style>
-    </div>
-  );
-}
