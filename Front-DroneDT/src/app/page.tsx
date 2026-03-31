@@ -94,16 +94,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* SECCIÓN 4: FOOTER (SYSTEM TERMINATION) */}
-        <section className="snap-start snap-always bg-black">
-          <Footer />
-        </section>
-      </main>
-
-      {/* ESTILOS GLOBALES DE INTERFAZ */}
-      <style jsx global>{`
-        html, body { 
+y { 
 
     </div>
   );
