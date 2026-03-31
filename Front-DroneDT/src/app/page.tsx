@@ -6,8 +6,8 @@ import Link from "next/link";
 
 /**
  * ARCHITECT: Manuel Nieto | Rank #1 Colombia
- * ECOSISTEMA: Drone DT - Home Engine v1.2
- * UPDATE: Integrated AboutDT Section
+ * ECOSISTEMA: Drone DT - Home Engine v1.3
+ * UPDATE: Tesla-style Overlap (80/20 Visibility) & AboutDT Integration
  */
 
 // Optimización de hidratación y carga diferida
@@ -40,16 +40,18 @@ export default function Home() {
       <main className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth custom-scrollbar relative">
         
         {/* SECCIÓN 1: BANNER (HERO - SPACE X STYLE) */}
-        <section className="relative h-screen w-full snap-start snap-always z-10 bg-black flex flex-col">
+        {/* ✅ AJUSTE: pb-[20vh] para dejar ver el componente inferior */}
+        <section className="relative h-screen w-full snap-start snap-always z-10 bg-black flex flex-col pb-[20vh]">
           <div className="flex-1 w-full overflow-hidden">
             <Banner />
           </div>
         </section>
 
         {/* SECCIÓN 2: CATÁLOGO (ELITE UNITS - MERN CLUSTER DATA) */}
+        {/* ✅ AJUSTE: -mt-[20vh] para solapar y crear el efecto de asomada */}
         <section 
           id="catalog" 
-          className="relative h-screen w-full snap-start snap-always z-20 flex flex-col"
+          className="relative h-screen w-full snap-start snap-always z-20 flex flex-col -mt-[20vh]"
         >
           <div className="h-full w-full bg-white shadow-2xl overflow-hidden">
             <ProductShow />
@@ -111,7 +113,6 @@ export default function Home() {
         </section>
 
         {/* SECCIÓN 5: ABOUT (CORPORATE VISION) */}
-        {/* ✅ INTERVENCIÓN: Ubicado antes del footer para consolidar la marca */}
         <section 
           id="about" 
           className="relative min-h-screen w-full snap-start snap-always z-50 bg-white"
@@ -120,7 +121,7 @@ export default function Home() {
         </section>
 
         {/* SECCIÓN 6: FOOTER (SYSTEM TERMINATION) */}
-        <section className="snap-start snap-always bg-black z-60">
+        <section className="snap-start snap-always bg-black z-[60]">
           <Footer />
         </section>
       </main>
