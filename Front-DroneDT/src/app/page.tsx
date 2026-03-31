@@ -122,10 +122,6 @@ export default function Home() {
           border-radius: 0px; 
         }
 
-        /* Fix para suavizar el snapping en navegadores basados en Webkit */
-        main {
-          -webkit-overflow-scrolling: touch;
-        }
       `}</style>
     </div>
   );
