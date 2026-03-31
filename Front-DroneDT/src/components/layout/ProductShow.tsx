@@ -5,7 +5,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
 
-// --- COMPONENTE SKELETON (Carga Estilo Drone DT) ---
+/**
+ * ARCHITECT: Manuel Nieto | Rank #1 Colombia
+ * COMPONENT: ProductShow v2.0 - High Availability Engine
+ * ESTRATEGIA: Cache Inmortal con Persistencia Local (No more white screens)
+ */
+
 const ProductSkeleton = () => (
   <div className="h-screen w-full bg-white flex flex-col animate-pulse">
     <div className="w-full h-[55%] md:h-[65%] flex items-center justify-center">
@@ -33,24 +38,41 @@ interface Drone {
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 const ProductShow = () => {
-  // 🛰️ UPLINK ADJUSTMENT:
-  // Usamos ruta relativa para que el túnel de next.config.ts intercepte la petición
-  // y la redirija a back-dronedt-production.up.railway.app sin errores de CORS.
   const baseUrl = '/api/v1';
+  const CACHE_KEY = 'dronedt_products_cache';
 
+  // 1. ESTADO DE PERSISTENCIA LOCAL (El "Safe Mode")
+  const [localCache, setLocalCache] = useState<any>(null);
+
+  // Cargar cache de emergencia al montar
+  useEffect(() => {
+    const saved = localStorage.getItem(CACHE_KEY);
+    if (saved) setLocalCache(JSON.parse(saved));
+  }, []);
+
+  // 2. CONFIGURACIÓN SWR ROBUSTA
   const { data: result, isLoading } = useSWR(`${baseUrl}/products/menu`, fetcher, {
-    revalidateOnFocus: false,
-    revalidateIfStale: false,
-    dedupingInterval: 3600000 
+    revalidateOnFocus: true, // Cambiado a TRUE para asegurar frescura al volver
+    revalidateIfStale: true,
+    dedupingInterval: 60000, // 1 minuto de gracia
+    onSuccess: (data) => {
+      if (data?.success) {
+        localStorage.setItem(CACHE_KEY, JSON.stringify(data));
+        setLocalCache(data);
+      }
+    }
   });
+
+  // 3. SELECCIÓN DE DATA (Prioridad: SWR -> LocalCache -> Vacio)
+  const activeData = result || localCache;
 
   const [currentIndex, setCurrentIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const drones = useMemo(() => {
-    if (result && result.success && Array.isArray(result.data)) {
-      return result.data.map((item: any) => {
+    if (activeData && activeData.success && Array.isArray(activeData.data)) {
+      return activeData.data.map((item: any) => {
         const rawName = (item.name || "").toUpperCase();
         let finalImgPath = '/drone-placeholder.png'; 
 
@@ -70,7 +92,7 @@ const ProductShow = () => {
       });
     }
     return [];
-  }, [result]);
+  }, [activeData]);
 
   const extendedDrones = drones.length > 0 ? [drones[drones.length - 1], ...drones, drones[0]] : [];
 
@@ -88,17 +110,18 @@ const ProductShow = () => {
 
   useEffect(() => {
     if (drones.length > 1 && isTransitioning) {
+      if (timeoutRef.current) clearInterval(timeoutRef.current);
       timeoutRef.current = setInterval(() => { setCurrentIndex((prev) => prev + 1); }, 5000);
     }
     return () => { if (timeoutRef.current) clearInterval(timeoutRef.current); };
   }, [drones.length, isTransitioning]);
 
-  if (isLoading) return <ProductSkeleton />;
+  // Pantalla de carga solo si no hay NI SWR NI Cache local
+  if (isLoading && !localCache) return <ProductSkeleton />;
   if (drones.length === 0) return null;
 
   return (
     <div className="bg-white w-full h-full flex flex-col relative z-30 overflow-hidden">
-      
       <section className="relative w-full flex-grow overflow-hidden">
         <div 
           className={`flex h-full ${isTransitioning ? 'transition-transform duration-[800ms] ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
@@ -149,14 +172,12 @@ const ProductShow = () => {
                     </Link>
                   </div>
                 </div>
-
               </div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* NAVEGACIÓN (DOTS) */}
       <div className="w-full h-8 md:h-10 flex justify-center items-center bg-white shrink-0 relative z-50 -translate-y-2.5 md:translate-y-0">
         <div className="flex gap-3">
           {drones.map((_: any, idx: number) => {
@@ -172,7 +193,6 @@ const ProductShow = () => {
           })}
         </div>
       </div>
-
     </div>
   );
 };
