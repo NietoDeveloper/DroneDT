@@ -1,11 +1,10 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 /**
- * NOTA PARA EL DESARROLLADOR:
- * Para que el efecto de texto (outline) funcione sin errores de TS, 
- * he usado una clase personalizada en el <span>.
+ * ARCHITECT: Manuel Nieto | Rank #1 Colombia
+ * ECOSISTEMA: Drone DT Visual Intelligence
  */
 
 interface GalleryItem {
@@ -17,7 +16,8 @@ interface GalleryItem {
   span?: string; 
 }
 
-const GALLERY_DATA: GalleryItem[] = [
+// Data de respaldo (Fallback) por si el Uplink con Railway falla
+const FALLBACK_DATA: GalleryItem[] = [
   {
     id: 'g1',
     type: 'video',
@@ -53,6 +53,29 @@ const GALLERY_DATA: GalleryItem[] = [
 ];
 
 export const GalleryShowcase: React.FC = () => {
+  const [gallery, setGallery] = useState<GalleryItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchGalleryData = useCallback(async () => {
+    try {
+      // 🛰️ UPLINK: Petición relativa que Next.js redirige a Railway
+      const response = await fetch('/api/v1/gallery');
+      if (!response.ok) throw new Error('Uplink Gallery Failed');
+      
+      const data = await response.json();
+      setGallery(data.success ? data.data : FALLBACK_DATA);
+    } catch (error) {
+      console.warn('⚠️ Gallery Uplink Retrying / Using Fallback:', error);
+      setGallery(FALLBACK_DATA);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchGalleryData();
+  }, [fetchGalleryData]);
+
   return (
     <section className="bg-[#DCDCDC] py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
       <div className="max-w-[1900px] mx-auto">
@@ -78,9 +101,9 @@ export const GalleryShowcase: React.FC = () => {
           </p>
         </div>
 
-        {/* Bento Grid Interactivo */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
-          {GALLERY_DATA.map((item) => (
+        {/* Bento Grid Interactivo con Data Real */}
+        <div className={`grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] md:auto-rows-[350px] transition-opacity duration-1000 ${loading ? 'opacity-50' : 'opacity-100'}`}>
+          {gallery.map((item) => (
             <div 
               key={item.id} 
               className={`relative group overflow-hidden rounded-sm cursor-pointer shadow-2xl transition-all duration-700 hover:shadow-[#FFD700]/20 ${item.span || ''}`}
