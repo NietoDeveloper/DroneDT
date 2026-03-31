@@ -2,12 +2,6 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 
-/**
- * ARCHITECT: Manuel Nieto | Rank #1 Colombia
- * ECOSISTEMA: Drone DT Visual Intelligence
- * UBICACIÓN: src/components/layout/GalleryShowcase.tsx
- */
-
 interface GalleryItem {
   id: string;
   type: 'image' | 'video';
