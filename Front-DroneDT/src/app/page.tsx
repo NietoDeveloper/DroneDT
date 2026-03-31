@@ -104,25 +104,7 @@ export default function Home() {
       {/* ESTILOS GLOBALES DE INTERFAZ */}
       <style jsx global>{`
         html, body { 
-          overflow: hidden; 
-          height: 100%; 
-          margin: 0; 
-          background: #DCDCDC; 
-        }
-        
-        /* Scrollbar Minimalista Industrial */
-        .custom-scrollbar::-webkit-scrollbar { 
-          width: 4px; 
-        }
-        .custom-scrollbar::-webkit-scrollbar-track { 
-          background: #000; 
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb { 
-          background: #FFD700; 
-          border-radius: 0px; 
-        }
 
-      `}</style>
     </div>
   );
 }
