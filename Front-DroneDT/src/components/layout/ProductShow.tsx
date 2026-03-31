@@ -4,11 +4,12 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import useSWR from 'swr';
+import { useProductStore } from '@/store/useProductStore';
 
 /**
- * ARCHITECT: Manuel Nieto | Rank #1 Colombia
- * COMPONENT: ProductShow v2.0 - High Availability Engine
- * ESTRATEGIA: Cache Inmortal con Persistencia Local (No more white screens)
+ * ARCHITECT: Manuel Nieto | Nieto Laboratory
+ * COMPONENT: ProductShow v3.0 - Ultra High Availability
+ * ESTRATEGIA: Zustand Persist + SWR Bridge + Re-mount on Focus
  */
 
 const ProductSkeleton = () => (
@@ -27,75 +28,67 @@ const ProductSkeleton = () => (
   </div>
 );
 
-interface Drone {
-  id: string;
-  name: string;
-  price: string;
-  img: string;
-  tag: string;
-}
-
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 const ProductShow = () => {
   const baseUrl = '/api/v1';
-  const CACHE_KEY = 'dronedt_products_cache';
+  
+  // 1. CONEXIÓN AL VAULT (Zustand)
+  const { drones: storedDrones, setDrones, lastSync } = useProductStore();
+  
+  // 2. ESTADOS DE CONTROL DE FLUJO
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isMounted, setIsMounted] = useState(false); // Evita errores de hidratación
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // 1. ESTADO DE PERSISTENCIA LOCAL (El "Safe Mode")
-  const [localCache, setLocalCache] = useState<any>(null);
-
-  // Cargar cache de emergencia al montar
-  useEffect(() => {
-    const saved = localStorage.getItem(CACHE_KEY);
-    if (saved) setLocalCache(JSON.parse(saved));
-  }, []);
-
-  // 2. CONFIGURACIÓN SWR ROBUSTA
+  // 3. SWR PARA ACTUALIZACIÓN SILENCIOSA
   const { data: result, isLoading } = useSWR(`${baseUrl}/products/menu`, fetcher, {
-    revalidateOnFocus: true, // Cambiado a TRUE para asegurar frescura al volver
+    revalidateOnFocus: true,
     revalidateIfStale: true,
-    dedupingInterval: 60000, // 1 minuto de gracia
+    dedupingInterval: 30000,
     onSuccess: (data) => {
-      if (data?.success) {
-        localStorage.setItem(CACHE_KEY, JSON.stringify(data));
-        setLocalCache(data);
-      }
+      if (data?.success) setDrones(data.data);
     }
   });
 
-  // 3. SELECCIÓN DE DATA (Prioridad: SWR -> LocalCache -> Vacio)
-  const activeData = result || localCache;
+  // 4. HIDRATACIÓN SEGURA
+  useEffect(() => {
+    setIsMounted(true);
+    // Forzar limpieza de cualquier timer huérfano al montar
+    return () => { if (timeoutRef.current) clearInterval(timeoutRef.current); };
+  }, []);
 
-  const [currentIndex, setCurrentIndex] = useState(1);
-  const [isTransitioning, setIsTransitioning] = useState(true);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
+  // 5. SELECCIÓN DE DATA RESILIENTE (Prioridad Absoluta al Store si SWR falla)
   const drones = useMemo(() => {
-    if (activeData && activeData.success && Array.isArray(activeData.data)) {
-      return activeData.data.map((item: any) => {
-        const rawName = (item.name || "").toUpperCase();
-        let finalImgPath = '/drone-placeholder.png'; 
+    const rawData = result?.data || storedDrones;
+    if (!rawData || !Array.isArray(rawData) || rawData.length === 0) return [];
 
-        if (rawName.includes("BIG_C1PRO8") || rawName.includes("BIGC1PRO8")) finalImgPath = "/DT-BIG_C1PRO8.png";
-        else if (rawName.includes("MID_B1PRO5") || rawName.includes("MIDB1PRO5")) finalImgPath = "/DT-MID_B1PRO5.png";
-        else if (rawName.includes("MID_B2PRO8") || rawName.includes("MIDB2PRO8")) finalImgPath = "/DT-MID_B2PRO8.png";
-        else if (rawName.includes("MINI_A1PRO4") || rawName.includes("MINIA1PRO4")) finalImgPath = "/DT-MINI_A1PRO4.png";
-        else if (rawName.includes("MINI_A2PRO5") || rawName.includes("MINIA2PRO5")) finalImgPath = "/DT-MINI_A2PRO5.png";
+    return rawData.map((item: any) => {
+      const rawName = (item.name || "").toUpperCase();
+      let finalImgPath = '/drone-placeholder.png'; 
 
-        return {
-          id: item._id?.$oid || item._id || item.id || Math.random().toString(),
-          name: rawName.replace(/_/g, ' '), 
-          price: typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : (item.price?.toUpperCase() || 'CONTACTAR'),
-          tag: (item.category || 'PRO SERIES').toUpperCase(),
-          img: finalImgPath
-        };
-      });
-    }
-    return [];
-  }, [activeData]);
+      if (rawName.includes("BIG_C1PRO8")) finalImgPath = "/DT-BIG_C1PRO8.png";
+      else if (rawName.includes("MID_B1PRO5")) finalImgPath = "/DT-MID_B1PRO5.png";
+      else if (rawName.includes("MID_B2PRO8")) finalImgPath = "/DT-MID_B2PRO8.png";
+      else if (rawName.includes("MINI_A1PRO4")) finalImgPath = "/DT-MINI_A1PRO4.png";
+      else if (rawName.includes("MINI_A2PRO5")) finalImgPath = "/DT-MINI_A2PRO5.png";
 
-  const extendedDrones = drones.length > 0 ? [drones[drones.length - 1], ...drones, drones[0]] : [];
+      return {
+        id: item._id?.$oid || item._id || item.id || Math.random().toString(),
+        name: rawName.replace(/_/g, ' '), 
+        price: typeof item.price === 'number' ? `$${item.price.toLocaleString()}` : (item.price?.toUpperCase() || 'CONTACTAR'),
+        tag: (item.category || 'PRO SERIES').toUpperCase(),
+        img: finalImgPath
+      };
+    });
+  }, [result, storedDrones]);
 
+  const extendedDrones = useMemo(() => 
+    drones.length > 0 ? [drones[drones.length - 1], ...drones, drones[0]] : [],
+  [drones]);
+
+  // 6. LÓGICA DE CARRUSEL PROTEGIDA
   const handleTransitionEnd = () => {
     if (currentIndex === 0) { setIsTransitioning(false); setCurrentIndex(drones.length); }
     else if (currentIndex === drones.length + 1) { setIsTransitioning(false); setCurrentIndex(1); }
@@ -111,13 +104,16 @@ const ProductShow = () => {
   useEffect(() => {
     if (drones.length > 1 && isTransitioning) {
       if (timeoutRef.current) clearInterval(timeoutRef.current);
-      timeoutRef.current = setInterval(() => { setCurrentIndex((prev) => prev + 1); }, 5000);
+      timeoutRef.current = setInterval(() => { 
+        setCurrentIndex((prev) => prev + 1); 
+      }, 5000);
     }
     return () => { if (timeoutRef.current) clearInterval(timeoutRef.current); };
   }, [drones.length, isTransitioning]);
 
-  // Pantalla de carga solo si no hay NI SWR NI Cache local
-  if (isLoading && !localCache) return <ProductSkeleton />;
+  // 🛡️ CONTROL DE RENDERIZADO
+  if (!isMounted) return <ProductSkeleton />;
+  if (isLoading && drones.length === 0) return <ProductSkeleton />;
   if (drones.length === 0) return null;
 
   return (
@@ -134,7 +130,6 @@ const ProductShow = () => {
           {extendedDrones.map((drone, idx) => (
             <div key={`${drone.id}-${idx}`} className="h-full flex-shrink-0 w-full" style={{ width: `${100 / extendedDrones.length}%` }}>
               <div className="flex flex-col h-full w-full bg-white">
-                
                 <div className="w-full h-[55%] md:h-[65%] relative flex items-start justify-center p-0 overflow-hidden">
                   <div className="relative w-full h-full transform scale-110 md:scale-115 transition-transform duration-1000 -mt-2 md:mt-0">
                     <Image 
@@ -142,7 +137,7 @@ const ProductShow = () => {
                       alt={drone.name} 
                       fill 
                       className="object-contain object-top md:object-center drop-shadow-2xl" 
-                      priority 
+                      priority={idx === currentIndex}
                       unoptimized 
                     />
                   </div>
@@ -178,6 +173,7 @@ const ProductShow = () => {
         </div>
       </section>
 
+      {/* NAVEGACIÓN */}
       <div className="w-full h-8 md:h-10 flex justify-center items-center bg-white shrink-0 relative z-50 -translate-y-2.5 md:translate-y-0">
         <div className="flex gap-3">
           {drones.map((_: any, idx: number) => {
