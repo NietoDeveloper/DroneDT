@@ -102,15 +102,7 @@ export const GalleryShowcase: React.FC = () => {
             >
                 )}
               </div>
-
-              <div className="absolute in
-                  </h3>
-                  <div className="w-0 group-hover:w-full h-[1px] bg-white/50 transition-all duration-700" />
-                </div>
-              </div>
-              
-              {item.type === 'video' && (
-                <div className="absolute top-6 right-6 z-30 flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/20 text-white text-[9px] font-black px-3 py-1.5 tracking-tighter uppercase rounded-full">
+op-6 right-6 z-30 flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/20 text-white text-[9px] font-black px-3 py-1.5 tracking-tighter uppercase rounded-full">
                   <span className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
                   4K Stream
                 </div>
