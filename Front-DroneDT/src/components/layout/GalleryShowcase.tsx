@@ -100,9 +100,6 @@ export const GalleryShowcase: React.FC = () => {
               key={item.id} 
               className={`relative group overflow-hidden rounded-sm cursor-pointer shadow-2xl transition-all duration-700 hover:shadow-[#FFD700]/20 ${item.span || ''}`}
             >
-              <div className="absolute inset-0 z-0">
-                {item.type === 'video' ? (
-
                   <img 
                     src={item.url} 
                     alt={item.title} 
