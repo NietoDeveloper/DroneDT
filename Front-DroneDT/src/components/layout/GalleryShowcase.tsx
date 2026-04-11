@@ -27,6 +27,3 @@ const FALLBACK_DATA: GalleryItem[] = [
     title: 'Fumigación de Precisión',
     category: 'Agro',
     span: 'md:col-span-1 md:row-span-1'
-  },
-  {
-
