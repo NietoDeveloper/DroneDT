@@ -96,16 +96,7 @@ export const GalleryShowcase: React.FC = () => {
 
         <div className={`grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] md:auto-rows-[350px] transition-opacity duration-1000 ${loading ? 'opacity-50' : 'opacity-100'}`}>
           {gallery.map((item) => (viewBox="0 0 100 100" className="absolute">
-                  <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="10 10" />
-               </svg>
-               <span className="text-2xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
-            </div>
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-};
+                  <circle cx="50" c
 
 // Mantenemos también el default export por si acaso, pero el import dinámico prefiere el nombrado en esta config
 export default GalleryShowcase;
