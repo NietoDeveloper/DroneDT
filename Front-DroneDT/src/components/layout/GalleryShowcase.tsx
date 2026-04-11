@@ -22,7 +22,7 @@ const FALLBACK_DATA: GalleryItem[] = [
     id: 'g1',
     type: 'video',
     // Video: Drone industrial inspeccionando estructuras
-    url: 'https://cdn.pixabay.com/video/2023/10/20/185852-876615712_large.mp4', 
+    url: 'https://motionarray.com/stock-video/drone-ascends-above-winding-river-in-el-penon-de-guatape-colombia-at-midday-2603066/', 
     title: 'Inspección de Torres',
     category: 'Industrial',
     span: 'md:col-span-2 md:row-span-2'
