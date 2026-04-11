@@ -40,8 +40,7 @@ const FALLBACK_DATA: GalleryItem[] = [
     id: 'g4',
     type: 'image',
     url: '/images/gallery/night-vision.jpg',
-    title: 'Vigilancia Térmica',
-    category: 'Security',
+    title: 'Vigilanci,
     span: 'md:col-span-2 md:row-span-1'
   }
 ];
