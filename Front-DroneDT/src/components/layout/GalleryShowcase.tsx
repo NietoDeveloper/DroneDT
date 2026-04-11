@@ -33,10 +33,4 @@ const FALLBACK_DATA: GalleryItem[] = [
     type: 'image',
     url: '/images/gallery/cinema-drone.jpg',
     title: 'Captura 8K Cine',
-    category: 'Media',
-    span: 'md:col-span-1 md:row-span-1'
-  },
-  {
-    id: 'g4',ld:row-span-1'
-  }
-];
+    ca
