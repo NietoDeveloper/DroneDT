@@ -19,5 +19,21 @@ const FALLBACK_DATA: GalleryItem[] = [
     title: 'Inspección de Torres',
     category: 'Industrial',
     span: 'md:col-span-2 md:row-span-2'
-'Captura 8K Cine',
-    ca
+  },
+  {
+    id: 'g2',
+    type: 'image',
+    url: '/images/gallery/agriculture-drone.jpg',
+    title: 'Fumigación de Precisión',
+    category: 'Agro',
+    span: 'md:col-span-1 md:row-span-1'
+  },
+  {
+    id: 'g3',
+    type: 'image',
+    url: '/images/gallery/cinema-drone.jpg',
+    title: 'Captura 8K Cine',
+    category: 'Media',
+    span: 'md:col-span-1 md:row-span-1'
+  },
+  {
