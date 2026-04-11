@@ -103,9 +103,6 @@ export const GalleryShowcase: React.FC = () => {
               <div className="absolute inset-0 z-0">
                 {item.type === 'video' ? (
 
-                    <source src={item.url} type="video/mp4" />
-                  </video>
-                ) : (
                   <img 
                     src={item.url} 
                     alt={item.title} 
