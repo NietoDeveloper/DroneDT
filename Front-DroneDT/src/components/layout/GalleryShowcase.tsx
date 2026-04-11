@@ -21,7 +21,4 @@ const FALLBACK_DATA: GalleryItem[] = [
     span: 'md:col-span-2 md:row-span-2'
   },
   {
-    id: 'g2',
-    type: 'image',
-    url: '/images/gallery/agriculture-drone.jpg',
-    title: 'Fumigación de Precisión',
+tle: 'Fumigación de Precisión',
