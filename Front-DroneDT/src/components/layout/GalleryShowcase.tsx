@@ -100,13 +100,7 @@ export const GalleryShowcase: React.FC = () => {
               key={item.id} mate-pulse"></span>
                   4K Stream
                 </div>tems-center gap-4">
-            <div className="flex -space-x-3">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full bg-[#000000] border-2 border-[#DCDCDC] flex items-center justify-center text-[10px] text-white font-bold">
-                  DT
-                </div>
-              ))}
-            </div>
+            <div className="flex -
             <p className="text-[10px] font-black uppercase tracking-widest text-black/60">
               +50 Proyectos ejecutados en 2026
             </p>
