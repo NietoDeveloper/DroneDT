@@ -103,8 +103,6 @@ export const GalleryShowcase: React.FC = () => {
                   <img 
                     src={item.url} 
                     alt={item.title} 
-                    className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
-                  />
                 )}
               </div>
 
