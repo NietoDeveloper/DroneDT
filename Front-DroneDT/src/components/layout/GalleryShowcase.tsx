@@ -11,9 +11,4 @@ interface GalleryItem {
   span?: string; 
 }
 
-const FALLBACK_DATA: GalleryItem[] = [
-  {
-    id: 'g1',
-    type: 'video',
-    url: '/videos/drone-flight-industrial.mp4',
-    title: 'Inspección de Torres',
+const FAL
