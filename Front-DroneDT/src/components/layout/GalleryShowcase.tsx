@@ -103,11 +103,7 @@ export const GalleryShowcase: React.FC = () => {
                 )}
               </div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500 z-10" />
-classegory}
-                  </span>
-                  <h3 className="text-white text-2xl md:text-3xl font-black uppercase tracking-tight leading-none mb-2">
-                    {item.title}
+              <div className="absolute in
                   </h3>
                   <div className="w-0 group-hover:w-full h-[1px] bg-white/50 transition-all duration-700" />
                 </div>
