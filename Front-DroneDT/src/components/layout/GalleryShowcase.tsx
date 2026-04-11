@@ -32,6 +32,4 @@ const FALLBACK_DATA: GalleryItem[] = [
     id: 'g3',
     type: 'image',
     url: '/images/gallery/cinema-drone.jpg',
-    title: 'Captura 8K Cine',
-    category: 'Media',
 
