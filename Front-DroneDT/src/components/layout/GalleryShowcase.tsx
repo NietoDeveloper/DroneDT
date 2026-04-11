@@ -92,7 +92,4 @@ export const GalleryShowcase: React.FC = () => {
           <p className="max-w-md text-[#333] font-medium text-sm md:text-right leading-relaxed uppercase italic">
             Tecnología de vanguardia aplicada a los sectores más exigentes de Colombia.
           </p>m) => (viewBox="0 0 100 100" className="absolute">
-                  <circle cx="50" c
-
-// Mantenemos también el default export por si acaso, pero el import dinámico prefiere el nombrado en esta config
-export default GalleryShowcase;
+                  <circle cx="50"
