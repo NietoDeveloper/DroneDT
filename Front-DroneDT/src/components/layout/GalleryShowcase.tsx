@@ -17,8 +17,3 @@ const FALLBACK_DATA: GalleryItem[] = [
     type: 'video',
     url: '/videos/drone-flight-industrial.mp4',
     title: 'Inspección de Torres',
-    category: 'Industrial',
-    span: 'md:col-span-2 md:row-span-2'
-  },
-  {
-tle: 'Fumigación de Precisión',
