@@ -29,4 +29,4 @@ const FALLBACK_DATA: GalleryItem[] = [
     span: 'md:col-span-1 md:row-span-1'
   },
   {
-    id: 'g3',
+
