@@ -100,10 +100,7 @@ export const GalleryShowcase: React.FC = () => {
               key={item.id} 
               className={`relative group overflow-hidden rounded-sm cursor-pointer shadow-2xl transition-all duration-700 hover:shadow-[#FFD700]/20 ${item.span || ''}`}
             >
-                )}
-              </div>
-op-6 right-6 z-30 flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/20 text-white text-[9px] font-black px-3 py-1.5 tracking-tighter uppercase rounded-full">
-                  <span className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
+                )}bg-red-600 rounded-full animate-pulse"></span>
                   4K Stream
                 </div>tems-center gap-4">
             <div className="flex -space-x-3">
