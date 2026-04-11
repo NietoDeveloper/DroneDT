@@ -45,14 +45,3 @@ const FALLBACK_DATA: GalleryItem[] = [
     span: 'md:col-span-2 md:row-span-1'
   }
 ];
-
-// Cambiamos a exportación nombrada para que coincida exactamente con el import dinámico
-export const GalleryShowcase: React.FC = () => {
-  const [gallery, setGallery] = useState<GalleryItem[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  const fetchGalleryData = useCallback(async () => {
-    try {
-      const response = await fetch('/api/v1/gallery');
-      if (!response.ok) throw new Error('Uplink Gallery Failed');
-      
