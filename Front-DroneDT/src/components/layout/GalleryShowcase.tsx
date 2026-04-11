@@ -102,13 +102,7 @@ export const GalleryShowcase: React.FC = () => {
             >
               <div className="absolute inset-0 z-0">
                 {item.type === 'video' ? (
-                  <video 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-                  >
+
                     <source src={item.url} type="video/mp4" />
                   </video>
                 ) : (
