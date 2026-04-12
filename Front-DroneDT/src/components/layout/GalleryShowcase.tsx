@@ -74,10 +74,7 @@ export const GalleryShowcase: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, []);
 
-  useEffect(() => {
-    fetchGalleryData();
 
 
 
