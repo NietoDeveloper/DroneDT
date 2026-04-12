@@ -88,11 +88,7 @@ export const GalleryShowcase: React.FC = () => {
                 
             
 
-
-          
-            </span>
-            <div className="relative w-14 h-14 flex items-center justify-center transition-all duration-500 group-hover:rotate-45">
-               <svg width="40" height="40" viewBox="0 0 100 100" className="absolute">
+ewBox="0 0 100 100" className="absolute">
                   <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="10 10" />
                </svg>
                <span className="text-2xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
