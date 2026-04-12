@@ -71,10 +71,7 @@ export const GalleryShowcase: React.FC = () => {
     } catch (error) {
       // Silenciamos el error para no ensuciar la consola de desarrollo constantemente
       setGallery(FALLBACK_DATA);
-    } finally {
-      setLoading(false);
-    }
-
+  
 
 
 
