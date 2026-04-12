@@ -94,11 +94,7 @@ export const GalleryShowcase: React.FC = () => {
               DRONE <span 
                 className="text-transparent" 
                 style={{ WebkitTextStroke: '1px black' } as React.CSSProperties}
-              >
-       
-              </span>
-            </h2>a
-            <div className="w-40 h-ectores más exigentes de Colombia.
+              >xigentes de Colombia.
           </p>
         </div>
 
