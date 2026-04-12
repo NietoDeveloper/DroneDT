@@ -98,10 +98,7 @@ export const GalleryShowcase: React.FC = () => {
           </p>
         </div>
 
-        {/* GRID Dull h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-                  >
-                    {/* Al usar fuentes externas, es vital el atributo key para forzar recarga si cambia */}
-                    <source key={item.url} src={item.url} type="video/mp4" />
+        {/* GRID Dull h-full obje} src={item.url} type="video/mp4" />
                   </video>
                 ) : (
                   <img 
