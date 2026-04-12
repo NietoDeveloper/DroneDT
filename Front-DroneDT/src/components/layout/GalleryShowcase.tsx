@@ -61,9 +61,6 @@ export const GalleryShowcase: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchGalleryData = useCallback(async () => {
-    try {
-      // Intento de conexión al backend local/remoto
-  );
 };
 
 export default GalleryShowcase;
