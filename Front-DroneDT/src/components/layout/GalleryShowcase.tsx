@@ -36,21 +36,7 @@ const FALLBACK_DATA: GalleryItem[] = [
     category: 'Agro',
     span: 'md:col-span-1 md:row-span-1'
   },
-  {
-    id: 'g3',
-    type: 'image',
-    // Image: Drone profesional de cine (Media)
-    url: 'https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=1600&auto=format&fit=crop',
-    title: 'Captura 8K Cine',
-    category: 'Media',
-    span: 'md:col-span-1 md:row-span-1'
-  },
-  {
-    id: 'g4',
-    type: 'image',
-    // Image: Drone en entorno oscuro/seguridad (Security)
-    url: 'https://images.unsplash.com/photo-1527142879024-c6c91aa64200?q=80&w=1600&auto=format&fit=crop',
-    title: 'Vigilancia Térmica',
+
 
 
 export default GalleryShowcase;
