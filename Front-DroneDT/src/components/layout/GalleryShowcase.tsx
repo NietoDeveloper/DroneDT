@@ -90,10 +90,6 @@ export const GalleryShowcase: React.FC = () => {
 
         {/* FOOTER DE SECCborder-black/10 flex flex-col sm:flex-row items-center justify-between gap-8">
    
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full bg-[#000000] border-2 border-[#DCDCDC] flex items-center justify-center text-[10px] text-white font-bold">
-                  DT
-                </div>
               ))}
             </div>
             <p className="text-[10px] font-black uppercase tracking-widest text-black/60">
