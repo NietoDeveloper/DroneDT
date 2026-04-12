@@ -64,11 +64,6 @@ export const GalleryShowcase: React.FC = () => {
     try {
       // Intento de conexión al backend local/remoto
       const response = await fetch('/api/v1/gallery');
-      if (!response.ok) throw new Error('Uplink Gallery Offline');
-      
-      const data = await response.json();
-
-      </div>
     </section>
   );
 };
