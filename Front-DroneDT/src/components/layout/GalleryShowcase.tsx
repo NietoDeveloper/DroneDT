@@ -17,25 +17,7 @@ interface GalleryItem {
   span?: string; 
 }
 
-const FALLBACK_DATA: GalleryItem[] = [
-  {
-    id: 'g1',
-    type: 'video',
-    // Video: Drone industrial inspeccionando estructuras
-    url: 'https://motionarray.com/stock-video/drone-ascends-above-winding-river-in-el-penon-de-guatape-colombia-at-midday-2603066/', 
-    title: 'Inspección de Torres',
-    category: 'Industrial',
-    span: 'md:col-span-2 md:row-span-2'
-  },
-  {
-    id: 'g2',
-    type: 'image',
-    // Image: Drone sobre campos agrícolas (Agro)
-    url: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1600&auto=format&fit=crop',
-    title: 'Fumigación de Precisión',
-    category: 'Agro',
-    span: 'md:col-span-1 md:row-span-1'
-  },
+
 
 
 
