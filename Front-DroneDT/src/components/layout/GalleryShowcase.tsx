@@ -70,13 +70,7 @@ export const GalleryShowcase: React.FC = () => {
       setGallery(data.success ? data.data : FALLBACK_DATA);
     } catch (error) {
       // Silenciamos el error para no ensuciar la consola de desarrollo constantemente
-      setGallery(FALLBACK_DATA);
-  
 
-
-
-                  <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="10 10" />
-               </svg>
         
         </div>
       </div>
