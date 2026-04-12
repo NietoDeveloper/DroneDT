@@ -88,10 +88,6 @@ export const GalleryShowcase: React.FC = () => {
                 
             
 
-            <p className="text-[10px] font-black uppercase tracking-widest text-black/60">
-              +50 Proyectos ejecutados en 2026
-            </p>
-          </div>
 
           <button className="relative flex items-center gap-6 text-[#000000] font-black uppercase tracking-[.25em] group text-sm">
             <span className="relative z-10 group-hover:text-[#FEB60D] transition-colors duration-300">
