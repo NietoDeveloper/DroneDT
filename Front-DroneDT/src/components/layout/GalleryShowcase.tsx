@@ -93,8 +93,7 @@ export const GalleryShowcase: React.FC = () => {
             <h2 className="text-5xl md:text-7xl font-black text-[#000000] uppercase tracking-tighter leading-none">
               DRONE <span 
     
-          </p>
-        </div>
+       
 
       
               <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
