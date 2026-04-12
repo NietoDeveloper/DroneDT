@@ -67,12 +67,7 @@ export const GalleryShowcase: React.FC = () => {
       if (!response.ok) throw new Error('Uplink Gallery Offline');
       
       const data = await response.json();
-      setGallery(data.success ? data.data : FALLBACK_DATA);
-    } catch (error) {
-      // Silenciamos el error para no ensuciar la consola de desarrollo constantemente
 
-        
-        </div>
       </div>
     </section>
   );
