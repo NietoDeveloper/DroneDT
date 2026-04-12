@@ -98,10 +98,7 @@ export const GalleryShowcase: React.FC = () => {
        
               </span>
             </h2>a
-            <div className="w-40 h-1.5 bg-[#000000]"></div>
-          </div>
-          <p className="max-w-md text-[#333] font-medium text-sm md:text-right leading-relaxed uppercase italic">
-            Tecnología de vanguardia alicada a los sectores más exigentes de Colombia.
+            <div className="w-40 h-ectores más exigentes de Colombia.
           </p>
         </div>
 
