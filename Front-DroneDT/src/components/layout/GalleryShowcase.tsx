@@ -99,10 +99,7 @@ export const GalleryShowcase: React.FC = () => {
         </div>
 
         {/* GRID DE GALERÍA */}
-        <div className={`grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] md:auto-rows-[350px] transition-opacity duration-1000 ${loading ? 'opacity-50' : 'opacity-100'}`}>
-          {gallery.map((it
-                  <video 
-                    autoPlay 
+        <div className={
                     loop 
                     muted 
                     playsInline 
