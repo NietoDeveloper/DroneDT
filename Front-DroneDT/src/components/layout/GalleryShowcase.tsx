@@ -77,9 +77,7 @@ export const GalleryShowcase: React.FC = () => {
 
                   <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="10 10" />
                </svg>
-               <span className="text-2xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
-            </div>
-          </button>
+        
         </div>
       </div>
     </section>
