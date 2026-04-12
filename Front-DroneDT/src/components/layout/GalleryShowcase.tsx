@@ -80,15 +80,7 @@ export const GalleryShowcase: React.FC = () => {
     fetchGalleryData();
   }, [fetchGalleryData]);
 
-  return (
-    <section className="bg-[#DCDCDC] py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
-   
-   
-       
-                
-            
 
-ewBox="0 0 100 100" className="absolute">
                   <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="10 10" />
                </svg>
                <span className="text-2xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
