@@ -94,8 +94,6 @@ export const GalleryShowcase: React.FC = () => {
               DRONE <span 
     
        
-me="inline-block bg-[#FFD700] text-black text-[9px] font-black tracking-widest uppercase px-3 py-1 mb-3">
-                    {item.category}
                   </span>
                   <h3 className="text-white text-2xl md:text-3xl font-black uppercase tracking-tight leading-none mb-2">
                     {item.title}
