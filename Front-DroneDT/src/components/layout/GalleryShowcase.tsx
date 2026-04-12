@@ -105,8 +105,7 @@ export const GalleryShowcase: React.FC = () => {
           ))}
         </div>
 
-        {/* FOOTER DE SECCIÓN */}
-        <div className="mt-16 pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-8">
+        {/* FOOTER DE SECCborder-black/10 flex flex-col sm:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
             <div className="flex -space-x-3">
               {[1, 2, 3].map((i) => (
