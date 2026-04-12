@@ -100,10 +100,7 @@ export const GalleryShowcase: React.FC = () => {
 
         {/* GRID Dull h-full obje} src={item.url} type="video/mp4" />
                   </video>
-                ) : ("w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x600?text=Asset+Offline';
-                    }}
+                ) : ("w-full h-full object-cover
                   />
                 )}
               </div>
