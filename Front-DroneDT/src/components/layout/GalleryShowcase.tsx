@@ -100,10 +100,7 @@ export const GalleryShowcase: React.FC = () => {
 
         {/* GRID DE GALERÍA */}
         <div className={`grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] md:auto-rows-[350px] transition-opacity duration-1000 ${loading ? 'opacity-50' : 'opacity-100'}`}>
-          {gallery.map((item) => (
-            <div 
-              key={item.id} 
-              className={`relative group overflow-hidden rounded-sm cursor-pointer shadow-2xl transition-all duration-700 hover:shadow-[#FFD700]/20 ${item.span || ''}`}
+          {gallery.map((item) => (den rounded-sm cursor-pointer shadow-2xl transition-all duration-700 hover:shadow-[#FFD700]/20 ${item.span || ''}`}
             >
               <div className="absolute inset-0 z-0">
                 {item.type === 'video' ? (
