@@ -82,9 +82,7 @@ export const GalleryShowcase: React.FC = () => {
 
   return (
     <section className="bg-[#DCDCDC] py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
-      <div className="max-w-[1900px] mx-auto">
-        
-        {/* HEADER DE SECCIÓN */}
+   
    
        
                 
