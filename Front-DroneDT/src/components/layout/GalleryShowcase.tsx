@@ -85,11 +85,7 @@ export const GalleryShowcase: React.FC = () => {
       <div className="max-w-[1900px] mx-auto">
         
         {/* HEADER DE SECCIÓN */}
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-2">
-            <span className="text-[#FEB60D] font-black tracking-[0.3em] text-xs uppercase">
-              Visual Intelligence
-            <
+   
        
                 
             
