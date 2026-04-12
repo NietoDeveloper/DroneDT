@@ -100,8 +100,6 @@ export const GalleryShowcase: React.FC = () => {
 
         {/* GRID Dull h-full obje} src={item.url} type="video/mp4" />
                   
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500 z-10" />
-
               {/* INFO DEL ITEM */}
               <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
                 <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
