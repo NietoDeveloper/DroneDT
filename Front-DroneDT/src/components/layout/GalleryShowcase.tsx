@@ -56,11 +56,5 @@ const FALLBACK_DATA: GalleryItem[] = [
   }
 ];
 
-export const GalleryShowcase: React.FC = () => {
-  const [gallery, setGallery] = useState<GalleryItem[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  const fetchGalleryData = useCallback(async () => {
-};
 
 export default GalleryShowcase;
