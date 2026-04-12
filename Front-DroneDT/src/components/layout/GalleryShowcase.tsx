@@ -95,7 +95,7 @@ export const GalleryShowcase: React.FC = () => {
                 className="text-transparent" 
                 style={{ WebkitTextStroke: '1px black' } as React.CSSProperties}
               >
-                IN ACTION
+       
               </span>
             </h2>
             <div className="w-40 h-1.5 bg-[#000000]"></div>
