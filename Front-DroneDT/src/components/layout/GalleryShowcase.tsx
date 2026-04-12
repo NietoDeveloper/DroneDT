@@ -78,7 +78,7 @@ export const GalleryShowcase: React.FC = () => {
 
   useEffect(() => {
     fetchGalleryData();
-  }, [fetchGalleryData]);
+
 
 
                   <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="10 10" />
