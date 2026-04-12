@@ -98,9 +98,7 @@ export const GalleryShowcase: React.FC = () => {
           </p>
         </div>
 
-        {/* GRID Dull h-full obje} src={item.url} type="video/mp4" />
-                  
-              {/* INFO DEL ITEM */}
+      
               <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
                 <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="inline-block bg-[#FFD700] text-black text-[9px] font-black tracking-widest uppercase px-3 py-1 mb-3">
