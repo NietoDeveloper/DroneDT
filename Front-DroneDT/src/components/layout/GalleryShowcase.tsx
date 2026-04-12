@@ -94,10 +94,7 @@ export const GalleryShowcase: React.FC = () => {
               DRONE <span 
     
        
-                  </span
-                  <h3 className="text-white text-2xl md:text-3xl font-black uppercase tracking-tight leading-none mb-2">
-                    {item.title}
-                  </h3>
+                  </spa
                   <div className="w-0 group-hover:w-full h-[1px] bg-white/50 transition-all duration-700" />
                 </div>
               </div>
