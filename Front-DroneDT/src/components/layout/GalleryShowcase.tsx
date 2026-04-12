@@ -89,9 +89,7 @@ export const GalleryShowcase: React.FC = () => {
             
 
 
-          <button className="relative flex items-center gap-6 text-[#000000] font-black uppercase tracking-[.25em] group text-sm">
-            <span className="relative z-10 group-hover:text-[#FEB60D] transition-colors duration-300">
-              Explorar Flota Completa
+          
             </span>
             <div className="relative w-14 h-14 flex items-center justify-center transition-all duration-500 group-hover:rotate-45">
                <svg width="40" height="40" viewBox="0 0 100 100" className="absolute">
