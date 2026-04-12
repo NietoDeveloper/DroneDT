@@ -63,8 +63,6 @@ export const GalleryShowcase: React.FC = () => {
   const fetchGalleryData = useCallback(async () => {
     try {
       // Intento de conexión al backend local/remoto
-      const response = await fetch('/api/v1/gallery');
-    </section>
   );
 };
 
