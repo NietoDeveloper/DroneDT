@@ -94,7 +94,7 @@ export const GalleryShowcase: React.FC = () => {
               DRONE <span 
     
        
-                  </span>
+                  </span
                   <h3 className="text-white text-2xl md:text-3xl font-black uppercase tracking-tight leading-none mb-2">
                     {item.title}
                   </h3>
