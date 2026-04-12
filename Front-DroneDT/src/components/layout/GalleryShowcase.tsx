@@ -99,9 +99,7 @@ export const GalleryShowcase: React.FC = () => {
               
               {ie="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
 
-                </div>
-              )}
-            </div>
+              
           ))}
         </div>
 
