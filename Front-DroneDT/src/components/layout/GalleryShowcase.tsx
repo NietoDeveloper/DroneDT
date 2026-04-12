@@ -88,10 +88,6 @@ export const GalleryShowcase: React.FC = () => {
                 
             
 
-        {/* FOOTER DE SECCborder-black/10 flex flex-col sm:flex-row items-center justify-between gap-8">
-   
-              ))}
-            </div>
             <p className="text-[10px] font-black uppercase tracking-widest text-black/60">
               +50 Proyectos ejecutados en 2026
             </p>
