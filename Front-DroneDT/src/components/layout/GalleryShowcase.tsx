@@ -95,13 +95,7 @@ export const GalleryShowcase: React.FC = () => {
     
        
                 
-              </div>
-              
-              {ie="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
-
-              
-          ))}
-        </div>
+            
 
         {/* FOOTER DE SECCborder-black/10 flex flex-col sm:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-4">
