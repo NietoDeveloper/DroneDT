@@ -94,9 +94,7 @@ export const GalleryShowcase: React.FC = () => {
               DRONE <span 
     
        
-                  </spa
-                  <div className="w-0 group-hover:w-full h-[1px] bg-white/50 transition-all duration-700" />
-                </div>
+                
               </div>
               
               {item.type === 'video' && (
