@@ -51,10 +51,6 @@ const FALLBACK_DATA: GalleryItem[] = [
     // Image: Drone en entorno oscuro/seguridad (Security)
     url: 'https://images.unsplash.com/photo-1527142879024-c6c91aa64200?q=80&w=1600&auto=format&fit=crop',
     title: 'Vigilancia Térmica',
-    category: 'Security',
-    span: 'md:col-span-2 md:row-span-1'
-  }
-];
 
 
 export default GalleryShowcase;
