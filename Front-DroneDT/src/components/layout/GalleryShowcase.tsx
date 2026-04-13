@@ -69,9 +69,7 @@ export const GalleryShowcase: React.FC = () => {
     }
   }, []);
 
-  useEffect(() => {
-    fetchGalleryData();
-  }, [fetchGalleryData]);
+  useEffect((
 
   return (
     <section className="bg-[#DCDCDC] py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
