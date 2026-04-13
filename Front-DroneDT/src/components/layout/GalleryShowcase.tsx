@@ -68,7 +68,7 @@ export const GalleryShowcase: React.FC = () => {
       setLoading(false);
     }RAW FEEDngine v2.0 | {new Date().getFullYear()}
             </p>
-          </div>
+          </div
  width="40" height="40" viewBox="0 0 100 100" className="absolute">
                   <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="10 10" />
                </svg>
