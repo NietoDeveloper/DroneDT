@@ -24,16 +24,5 @@ const FALLBACK_DATA: GalleryItem[] = [
     url: '/videos/industrial-inspection.mp4', // <--- Ajusta este nombre si es necesario
     title: 'Inspección de Torres',
     category: 'Industrial',
-    span: 'md:col-span-2 md:row-span-2'
-  },
-  {
-    id: 'g2',
-    type: 'video',
-    url: '/videos/agro-precision.mp4', // <--- Ajusta este nombre si es necesario
-    title: 'Fumigación de Precisión',
-    category: 'Agro',
-    span: 'md:col-span-1 md:row-span-1'
-  },
-  {
-
+    span: 'md:col-span-
 export default GalleryShowcase;
