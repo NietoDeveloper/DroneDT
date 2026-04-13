@@ -69,11 +69,7 @@ export const GalleryShowcase: React.FC = () => {
     }
   }, []);toPlay 
                     loop 
-                    ce src={item.url} type="video/mp4" />
-                  </video>
-                ) : (itle} 
-              {/* VIDEO TAG */}
-              <div className="absolute top-6 right-6 z-30 flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/20 text-white text-[9px] font-black px-3 py-1.5 tracking-tighter uppercase rounded-full">
+                    ce src={="absolute top-6 right-6 z-30 flex items-center gap-2 bg-black/40 backdrop-blur-md border border-white/20 text-white text-[9px] font-black px-3 py-1.5 tracking-tighter uppercase rounded-full">
                 <span className="w-2 h-2 bg-red-600 rounded-full animate-pulse"></span>
                 RAW FEED
               </div>
