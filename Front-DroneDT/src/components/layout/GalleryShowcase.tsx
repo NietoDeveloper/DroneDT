@@ -126,20 +126,7 @@ export const GalleryShowcase: React.FC = () => {
                     alt={item.title} 
                     className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
                   />
-                )}
-              </div>
-
-              {/* OVERLAY - High Quality Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500 z-10" />
-              
-              {/* STATUS TAG */}
-              <div className="absolute top-4 right-4 md:top-6 md:right-6 z-30 flex items-center gap-2 bg-black/50 backdrop-blur-md border border-white/10 text-white text-[8px] md:text-[9px] font-black px-3 py-1.5 tracking-tighter uppercase rounded-full">
-                <span className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></span>
-                LIVE FEED
-              </div>
-            </div>
-          ))}
-        </div>
+ 
 
         {/* FOOTER - Asset Orchestration info */}
         <div className="mt-12 md:mt-16 pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-8">
