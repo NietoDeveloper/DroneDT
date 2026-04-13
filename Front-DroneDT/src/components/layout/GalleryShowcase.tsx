@@ -66,15 +66,7 @@ export const GalleryShowcase: React.FC = () => {
       setGallery(FALLBACK_DATA);
     } finally {
       setLoading(false);
-    }RAW FEED
-              </div>
-            </div>
-          ))}
-                </div>
-              ))}
-            </div>
-            <p className="text-[10px] font-black uppercase tracking-widest text-black/60">
-              Visual Engine v2.0 | {new Date().getFullYear()}
+    }RAW FEEDngine v2.0 | {new Date().getFullYear()}
             </p>
           </div>
 
