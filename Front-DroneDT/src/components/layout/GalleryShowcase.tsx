@@ -70,11 +70,6 @@ export const GalleryShowcase: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>ex items-center gap-4">
-            <div className="flex -space-x-3">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-10 h-10 rounded-full bg-[#000000] border-2 border-[#DCDCDC] flex items-center justify-center text-[10px] text-white font-bold italic">
-                  DT
                 </div>
               ))}
             </div>
