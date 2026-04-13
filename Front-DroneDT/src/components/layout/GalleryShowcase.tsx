@@ -5,7 +5,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 /**
  * ARCHITECT: Manuel Nieto | Nieto Laboratory
  * COMPONENT: GalleryShowcase v2.0 - Production Ready
- * UPDATE: Conexión final de activos optimizados (H.265) con sufijo -fixed
+ * UPDATE: Conexión final de activos con sufijo -fixed y corrección de sintaxis JSX
  * RESPONSIVE: 310px - 1900px
  */
 
@@ -64,7 +64,6 @@ export const GalleryShowcase: React.FC = () => {
       const data = await response.json();
       setGallery(data.success ? data.data : FALLBACK_DATA);
     } catch (error) {
-      // Fallback a los archivos locales del Nieto Laboratory
       setGallery(FALLBACK_DATA);
     } finally {
       setLoading(false);
@@ -129,10 +128,8 @@ export const GalleryShowcase: React.FC = () => {
                 )}
               </div>
 
-              {/* OVERLAY */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500 z-10" />
 
-              {/* INFO */}
               <div className="absolute inset-0 z-20 p-6 md:p-8 flex flex-col justify-end">
                 <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="inline-block bg-[#FFD700] text-black text-[8px] md:text-[9px] font-black tracking-widest uppercase px-3 py-1 mb-3">
@@ -145,7 +142,6 @@ export const GalleryShowcase: React.FC = () => {
                 </div>
               </div>
               
-              {/* STATUS TAG */}
               <div className="absolute top-4 right-4 md:top-6 md:right-6 z-30 flex items-center gap-2 bg-black/50 backdrop-blur-md border border-white/10 text-white text-[8px] md:text-[9px] font-black px-3 py-1.5 tracking-tighter uppercase rounded-full">
                 <span className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></span>
                 LIVE FEED
