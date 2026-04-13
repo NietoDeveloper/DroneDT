@@ -76,10 +76,7 @@ export const GalleryShowcase: React.FC = () => {
                   >
                     <source src={item.url} type="video/mp4" />
                   </video>
-                ) : (
-                  <img 
-                    src={item.url} 
-                    alt={item.title} 
+                ) : (itle} 
                     className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
                   />
                 )}
