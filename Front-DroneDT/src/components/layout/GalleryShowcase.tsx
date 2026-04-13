@@ -69,15 +69,6 @@ export const GalleryShowcase: React.FC = () => {
     }
   }, []);
 
-  useEffect((
-
-  return (
-    <section ssName="w-40 h-1.5 bg-[#000000]"></div>
-          </div>
-          <p className="max-w-md text-[#333] font-medium text-sm md:text-right leading-relaxed uppercase italic">
-            Tecnología de vanguardia aplicada a los sectores más exigentes de Colombia.
-          </p>
-        </div>
 
         {/* GRID */}
         <div className={`grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px] md:auto-rows-[350px] transition-opacity duration-1000 ${loading ? 'opacity-50' : 'opacity-100'}`}>
