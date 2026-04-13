@@ -72,12 +72,7 @@ export const GalleryShowcase: React.FC = () => {
                     ce src={item.url} type="video/mp4" />
                   </video>
                 ) : (itle} 
-                    className="w-full h-full object-cover grayscale-[50%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
-                  />
-                )}
-              </div>
-
-              {/* OVERLAY */}
+                    cLAY */}
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500 z-10" />
 
               {/* INFO */}
