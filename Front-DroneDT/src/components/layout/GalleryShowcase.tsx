@@ -76,11 +76,7 @@ export const GalleryShowcase: React.FC = () => {
             <h2 className="text-5xl md:text-7xl font-black text-[#000000] uppercase tracking-tighter leading-none">
               DRONE <span 
                 className="text-transparent" 
-                style={{ WebkitTextStroke: '1px black' } as React.CSSProperties}
-              >
-                IN ACTION
-              </span>
-            </h2>
+                
             <div className="w-40 h-1.5 bg-[#000000]"></div>
           </div>
           <p className="max-w-md text-[#333] font-medium text-sm md:text-right leading-relaxed uppercase italic">
