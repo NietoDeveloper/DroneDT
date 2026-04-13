@@ -23,7 +23,7 @@ const FALLBACK_DATA: GalleryItem[] = [
     id: 'g1',
     type: 'video',
     url: '/videos/industrial-inspection-fixed.mp4', 
-    title: 'Altas Perspectivas ',
+    title: 'Perspectivas Diferentes',
     category: 'Industrial',
     span: 'md:col-span-2 md:row-span-2'
   },
