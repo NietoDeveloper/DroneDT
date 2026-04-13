@@ -31,7 +31,7 @@ const FALLBACK_DATA: GalleryItem[] = [
     id: 'g2',
     type: 'video',
     url: '/videos/agro-precision-fixed.mp4', 
-    title: 'Fumigación de Precisión',
+    title: 'Fumigación o Ganaderia',
     category: 'Agro',
     span: 'md:col-span-1 md:row-span-1'
   },
