@@ -93,50 +93,7 @@ export const GalleryShowcase: React.FC = () => {
                 IN ACTION
               </span>
             </h2>
-            <div className="w-24 md:w-40 h-1.5 bg-[#000000]"></div>
-          </div>
-          <p className="max-w-md text-[#333] font-medium text-xs md:text-sm md:text-right leading-relaxed uppercase italic">
-            Tecnología de vanguardia aplicada a los sectores más exigentes de Colombia.
-          </p>
-        </div>
-
-        {/* GRID - Responsive from 310px to 1900px */}
-        <div className={`grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[280px] md:auto-rows-[350px] transition-opacity duration-1000 ${loading ? 'opacity-50' : 'opacity-100'}`}>
-          {gallery.map((item) => (
-            <div 
-              key={item.id} 
-              className={`relative group overflow-hidden rounded-sm cursor-pointer shadow-xl transition-all duration-700 hover:shadow-[#FFD700]/20 ${item.span || ''}`}
-            >
-              <div className="absolute inset-0 z-0">
-                {item.type === 'video' ? (
-                  <video 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    preload="auto"
-                    key={item.url} 
-                    className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
-                  >
-                    <source src={item.url} type="video/mp4" />
-                  </video>
-                ) : (
-                  <img 
-                    src={item.url} 
-                    alt={item.title} 
-                    className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-110"
-                  />
- 
-
-        {/* FOOTER - Asset Orchestration info */}
-        <div className="mt-12 md:mt-16 pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-4">
-            <div className="flex -space-x-3">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#000000] border-2 border-[#DCDCDC] flex items-center justify-center text-[8px] md:text-[10px] text-white font-bold italic">
-                  DT
-                </div>
-              ))}
+        
             </div>
             <p className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-black/60">
               Visual Engine v2.0 | Nieto Laboratory © {new Date().getFullYear()}
