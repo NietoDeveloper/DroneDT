@@ -73,11 +73,7 @@ export const GalleryShowcase: React.FC = () => {
                   </video>
                 ) : (itle} 
                     cLAY */}
-              <div className=y}
-                  </span>
-                  <h3 className="text-white text-2xl md:text-3xl font-black uppercase tracking-tight leading-none mb-2">
-                    {item.title}
-                  </h3>
+              <div className=
                   <div className="w-0 group-hover:w-full h-[1px] bg-white/50 transition-all duration-700" />
                 </div>
               </div>
