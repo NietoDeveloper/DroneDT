@@ -46,7 +46,7 @@ const FALLBACK_DATA: GalleryItem[] = [
     id: 'g4',
     type: 'video',
     url: '/videos/security-thermal.mp4', // <--- Ajusta este nombre si es necesario
-    title: 'Vigilancia Térmica',
+    title: 'Vigilancia Proyectos',
     category: 'Security',
     span: 'md:col-span-2 md:row-span-1'
   }
