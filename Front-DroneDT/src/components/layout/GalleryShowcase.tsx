@@ -72,9 +72,7 @@ export const GalleryShowcase: React.FC = () => {
   useEffect((
 
   return (
-    <section className="bg-[#DCDCDC] py-24 px-4 sm:px-6 lg:px-12 overflow-hidden">
-      <div className="max-w-[1900px] mx-auto">
-        
+    <section classN
         {/* HEADER */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2">
