@@ -73,13 +73,7 @@ export const GalleryShowcase: React.FC = () => {
                   </video>
                 ) : (itle} 
                     cLAY */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-500 z-10" />
-
-              {/* INFO */}
-              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-end">
-                <div className="translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="inline-block bg-[#FFD700] text-black text-[9px] font-black tracking-widest uppercase px-3 py-1 mb-3">
-                    {item.category}
+              <div className=y}
                   </span>
                   <h3 className="text-white text-2xl md:text-3xl font-black uppercase tracking-tight leading-none mb-2">
                     {item.title}
