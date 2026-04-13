@@ -93,21 +93,6 @@ export const GalleryShowcase: React.FC = () => {
                 IN ACTION
               </span>
             </h2>
-        
-            </div>
-            <p className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-black/60">
-              Visual Engine v2.0 | Nieto Laboratory © {new Date().getFullYear()}
-            </p>
-          </div>
-
-          <button className="relative flex items-center gap-4 md:gap-6 text-[#000000] font-black uppercase tracking-[.25em] group text-xs md:text-sm">
-            <span className="relative z-10 group-hover:text-[#FEB60D] transition-colors duration-300">
-              Ver Catálogo Completo
-            </span>
-            <div className="relative w-10 h-10 md:w-14 md:h-14 flex items-center justify-center transition-all duration-500 group-hover:rotate-45">
-               <svg width="100%" height="100%" viewBox="0 0 100 100" className="absolute">
-                  <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="10 10" />
-               </svg>
                <span className="text-xl md:text-2xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
             </div>
           </button>
