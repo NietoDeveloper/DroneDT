@@ -82,7 +82,7 @@ export const GalleryShowcase: React.FC = () => {
         <div className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2">
             <span className="text-[#FEB60D] font-black tracking-[0.3em] text-[10px] md:text-xs uppercase">
-              Visual Intelligence
+              Visual Superior
             </span>
             <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-[#000000] uppercase tracking-tighter leading-none">
               DRONE <span 
