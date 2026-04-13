@@ -72,10 +72,7 @@ export const GalleryShowcase: React.FC = () => {
   useEffect((
 
   return (
-    <section classN
-        {/* HEADER */}
-        <div className="m
-            </span>
+    <section 
             <h2 className="text-5xl md:text-7xl font-black text-[#000000] uppercase tracking-tighter leading-none">
               DRONE <span 
                 className="text-transparent" 
