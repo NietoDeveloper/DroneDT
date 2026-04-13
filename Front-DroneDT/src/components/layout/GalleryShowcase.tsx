@@ -61,10 +61,7 @@ export const GalleryShowcase: React.FC = () => {
       const response = await fetch('/api/v1/gallery');
       if (!response.ok) throw new Error('Uplink Gallery Offline');
       const data = await response.json();
-      setGallery(data.success ? data.data : FALLBACK_DATA);
-    } catch (error) {
-      setGallery(FALLBACK_DATA);
-    } finally {
+      setGallery(data.s
     </section>
   );
 };
