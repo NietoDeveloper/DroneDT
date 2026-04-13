@@ -74,10 +74,7 @@ export const GalleryShowcase: React.FC = () => {
   return (
     <section classN
         {/* HEADER */}
-        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-2">
-            <span className="text-[#FEB60D] font-black tracking-[0.3em] text-xs uppercase">
-              Visual Intelligence
+        <div className="m
             </span>
             <h2 className="text-5xl md:text-7xl font-black text-[#000000] uppercase tracking-tighter leading-none">
               DRONE <span 
