@@ -131,19 +131,6 @@ export const GalleryShowcase: React.FC = () => {
 
               {/* OVERLAY - High Quality Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500 z-10" />
-
-              {/* INFO - UI Elements */}
-              <div className="absolute inset-0 z-20 p-6 md:p-8 flex flex-col justify-end">
-                <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="inline-block bg-[#FFD700] text-black text-[8px] md:text-[9px] font-black tracking-widest uppercase px-3 py-1 mb-3">
-                    {item.category}
-                  </span>
-                  <h3 className="text-white text-xl md:text-3xl font-black uppercase tracking-tight leading-none mb-2">
-                    {item.title}
-                  </h3>
-                  <div className="w-0 group-hover:w-full h-[1px] bg-white/50 transition-all duration-700" />
-                </div>
-              </div>
               
               {/* STATUS TAG */}
               <div className="absolute top-4 right-4 md:top-6 md:right-6 z-30 flex items-center gap-2 bg-black/50 backdrop-blur-md border border-white/10 text-white text-[8px] md:text-[9px] font-black px-3 py-1.5 tracking-tighter uppercase rounded-full">
