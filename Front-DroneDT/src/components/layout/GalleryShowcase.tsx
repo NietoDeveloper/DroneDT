@@ -5,7 +5,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 /**
  * ARCHITECT: Manuel Nieto | Nieto Laboratory
  * COMPONENT: GalleryShowcase v2.0 - Production Ready
- * UPDATE: Conexión final de activos con sufijo -fixed y corrección de sintaxis JSX
+ * UPDATE: Conexión final de activos con sufijo -fixed y optimización de renderizado
  * RESPONSIVE: 310px - 1900px
  */
 
@@ -106,14 +106,14 @@ export const GalleryShowcase: React.FC = () => {
               key={item.id} 
               className={`relative group overflow-hidden rounded-sm cursor-pointer shadow-xl transition-all duration-700 hover:shadow-[#FFD700]/20 ${item.span || ''}`}
             >
-              <div className="absolute inset-0 z-0">
+              <div className="absolute inset-0 z-0 bg-black">
                 {item.type === 'video' ? (
                   <video 
                     autoPlay 
                     loop 
                     muted 
                     playsInline 
-                    preload="auto"
+                    preload="metadata"
                     key={item.url} 
                     className="w-full h-full object-cover grayscale-[40%] group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
                   >
@@ -128,8 +128,10 @@ export const GalleryShowcase: React.FC = () => {
                 )}
               </div>
 
+              {/* OVERLAY */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-70 transition-opacity duration-500 z-10" />
 
+              {/* INFO */}
               <div className="absolute inset-0 z-20 p-6 md:p-8 flex flex-col justify-end">
                 <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
                   <span className="inline-block bg-[#FFD700] text-black text-[8px] md:text-[9px] font-black tracking-widest uppercase px-3 py-1 mb-3">
@@ -142,6 +144,7 @@ export const GalleryShowcase: React.FC = () => {
                 </div>
               </div>
               
+              {/* STATUS TAG */}
               <div className="absolute top-4 right-4 md:top-6 md:right-6 z-30 flex items-center gap-2 bg-black/50 backdrop-blur-md border border-white/10 text-white text-[8px] md:text-[9px] font-black px-3 py-1.5 tracking-tighter uppercase rounded-full">
                 <span className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></span>
                 LIVE FEED
