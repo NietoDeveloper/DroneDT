@@ -35,35 +35,5 @@ const FALLBACK_DATA: GalleryItem[] = [
     span: 'md:col-span-1 md:row-span-1'
   },
   {
-    id: 'g3',
-    type: 'video',
-    url: '/videos/cinema-8k.mp4', // <--- Ajusta este nombre si es necesario
-    title: 'Captura 8K Cine',
-    category: 'Media',
-    span: 'md:col-span-1 md:row-span-1'
-  },
-  {
-    id: 'g4',
-    type: 'video',
-    url: '/videos/security-thermal.mp4', // <--- Ajusta este nombre si es necesario
-    title: 'Vigilancia Proyectos',
-    category: 'Security',
-    span: 'md:col-span-2 md:row-span-1'
-  }
-];
-
-export const GalleryShowcase: React.FC = () => {
-  const [gallery, setGallery] = useState<GalleryItem[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  const fetchGalleryData = useCallback(async () => {
-    try {
-      const response = await fetch('/api/v1/gallery');
-      if (!response.ok) throw new Error('Uplink Gallery Offline');
-      const data = await response.json();
-      setGallery(data.s
-    </section>
-  );
-};
 
 export default GalleryShowcase;
