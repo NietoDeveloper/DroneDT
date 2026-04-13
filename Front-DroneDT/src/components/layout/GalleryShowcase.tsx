@@ -66,14 +66,7 @@ export const GalleryShowcase: React.FC = () => {
       setGallery(FALLBACK_DATA);
     } finally {
       setLoading(false);
-    }RAW FEEDngine v2.0 | {new Date().getFullYear()}
-            </p>
-          </div
- width="40" height="40" viewBox="0 0 100 100" className="absolute">
-                  <circle cx="50" cy="50" r="48" stroke="currentColor" strokeWidth="1" fill="none" strokeDasharray="10 10" />
-               </svg>
-               <span className="text-2xl group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
-            </div>
+    }RAW FEEDngine v2.0 
           </button>
         </div>
       </div>
