@@ -65,11 +65,6 @@ export const GalleryShowcase: React.FC = () => {
     } catch (error) {
       setGallery(FALLBACK_DATA);
     } finally {
-      setLoading(false);
-    }RAW FEEDngine v2.0 
-          </button>
-        </div>
-      </div>
     </section>
   );
 };
