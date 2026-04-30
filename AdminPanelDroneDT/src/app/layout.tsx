@@ -8,13 +8,7 @@ import Logo from "@/components/ui/Logo";
  */
 
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {ón de sistema (3.5s) */}
-        <Preloader />
-
+export default fu
           {/* Área de Contenido Principal */}
           <main className="flex-1 flex flex-col relative z-10">
             {children}
