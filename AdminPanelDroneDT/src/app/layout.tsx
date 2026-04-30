@@ -4,13 +4,7 @@ import Preloader from "@/components/ui/Preloader";
 import Logo from "@/components/ui/Logo";
 xport default f
                   
-                  <div className="flex items-center gap-6">
-                    {/* Indicador de Conexión en Tiempo Real */}
-                    <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/5 border border-green-500/10">
-                   
-                    
-                    {/* Créditos del Desarrollador #1 Colombia con Link a GitHub */}
-                    <span className="font-bold text-heading tracking-widest">
+                  <div className="flex iext-heading tracking-widest">
                       System by{" "}
       
                         NietoDeveloper
