@@ -16,11 +16,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body 
-    
-          min-h-screen 
-          selection:bg-gold 
-          selection:text-black
-        "
+
       >
         {/* Preloader con calibración de sistema (3.5s) */}
         <Preloader />
