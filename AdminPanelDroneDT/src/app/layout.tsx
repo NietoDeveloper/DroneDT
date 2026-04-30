@@ -13,11 +13,7 @@ export default fu
           <main className="flex-1 flex flex-col relative z-10">
             {children}
           </main>
-
-          {/* Footer Técnico de Drone DT */}
-          <footer className="py-8 px-6 md:px-12 border-trder-gainsboro bg-white/40 backdrop-blur-xl relative z-20">
-            <div className="max-w-7xl mx-auto">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+ex-col md:flex-row justify-between items-center gap-6">
                 
                 {/* Logo en el Footer linkeado a la página principal */}
                 <div className="opacity-80 hover:opacity-100 transition-opacity filter brightness-0">
