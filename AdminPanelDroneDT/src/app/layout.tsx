@@ -1,2 +1,2 @@
-import type { M
+import typ
 
