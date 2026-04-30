@@ -11,9 +11,7 @@ import Logo from "@/components/ui/Logo";
 export default fu
           {/* Área de Contenido Principal */}
           <main classNam
-                
-                {/* Logo en el Footer linkeado a la página principal */}
-              
+
 
                 <div classNam
                     href="https://softwaredt.vercel.app/" 
