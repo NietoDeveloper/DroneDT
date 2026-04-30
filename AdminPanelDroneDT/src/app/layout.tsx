@@ -14,12 +14,7 @@ xport default f
                     {/* Créditos del Desarrollador #1 Colombia con Link a GitHub */}
                     <span className="font-bold text-heading tracking-widest">
                       System by{" "}
-                      <a 
-                        href="https://github.com/NietoDeveloper" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-gold hover:text-yellowColor transition-all underline underline-offset-4 decoration-gold/30"
-                      >
+      
                         NietoDeveloper
                       </a>
                     </span>
