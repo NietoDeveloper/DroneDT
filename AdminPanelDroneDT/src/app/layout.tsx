@@ -7,13 +7,7 @@ import Logo from "@/components/ui/Logo";
  * Metadata - Drone DT Intelligence System
  * El archivo 'src/app/icon.svg' es detectado automáticamente por Next.js
  */
-export const metadata: Metadata = {
-  title: {
-    template: '%s | Panel Control Empresa Drone DT',
-    default: 'Panel Control Empresa DroneDT',
-  },
-  description: "Sistema de Inteligencia y Gestión Drone DT. Ingeniería de alto rendimiento por NietoDeveloper.",
-};
+
 
 export default function RootLayout({
   children,
