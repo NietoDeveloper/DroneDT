@@ -9,8 +9,6 @@ import Logo from "@/components/ui/Logo";
 
 
 export default fu
-          {/* Área de Contenido Principal */}
-          <main classNam
 
 
                 <div classNam
