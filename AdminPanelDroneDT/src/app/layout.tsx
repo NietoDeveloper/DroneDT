@@ -2,17 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css"; 
 import Preloader from "@/components/ui/Preloader";
 import Logo from "@/components/ui/Logo";
-xport default fu
-
-
-                <div classNam
-                    href="https://softwaredt.vercel.app/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="opacity-80 hover:text-gold transition-colors cursor-pointer"
-                  >
-                    © 2026 <span className="font-bold">Software DT</span> — Industry Standard
-                  </a>
+xport default f
                   
                   <div className="flex items-center gap-6">
                     {/* Indicador de Conexión en Tiempo Real */}
