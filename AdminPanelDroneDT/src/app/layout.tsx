@@ -13,8 +13,6 @@ xport default f
                   </div>
                 </div>
 
-              </div>
-            </div>
           </footer>
         </div>
       </body>
