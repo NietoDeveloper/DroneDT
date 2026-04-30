@@ -12,13 +12,7 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
-  return (
-    <html lang="es" className="scroll-smooth">
-      <body 
-
-      >
-        {/* Preloader con calibración de sistema (3.5s) */}
+}) {ón de sistema (3.5s) */}
         <Preloader />
 
         <div className="relative flex min-h-screen flex-col">
