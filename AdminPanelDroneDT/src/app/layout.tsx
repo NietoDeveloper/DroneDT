@@ -11,9 +11,7 @@ xport default f
                       </a>
                     </span>
                   </div>
-                </div
-        </div>
-      </body>
+ 
     </html>
   );
 }
