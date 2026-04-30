@@ -7,8 +7,7 @@ xport default f
                   <div className="flex iext-heading tracking-widest">
                       System by{" "}
       
-                        NietoDeveloper
-                      </a>
+                       
                    
  
     </html>
