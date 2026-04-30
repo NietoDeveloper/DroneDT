@@ -15,8 +15,7 @@ export default fu
                 {/* Logo en el Footer linkeado a la página principal */}
               
 
-                <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-zinc-500 font-mono">
-                  <a 
+                <div classNam
                     href="https://softwaredt.vercel.app/" 
                     target="_blank" 
                     rel="noopener noreferrer"
