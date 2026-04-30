@@ -10,8 +10,7 @@ import Logo from "@/components/ui/Logo";
 
 export default fu
           {/* Área de Contenido Principal */}
-          <main className="flex-1 flex flex-col relative z-10">
-            {children}center gap-6">
+          <main classNam
                 
                 {/* Logo en el Footer linkeado a la página principal */}
                 <div className="opacity-80 hover:opacity-100 transition-opacity filter brightness-0">
