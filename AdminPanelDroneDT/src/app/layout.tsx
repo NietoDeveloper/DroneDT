@@ -4,8 +4,7 @@ import Preloader from "@/components/ui/Preloader";
 import Logo from "@/components/ui/Logo";
 
 /**
- * Metadata - Drone DT Intelligence System
- * El archivo 'src/app/icon.svg' es detectado automáticamente por Next.js
+ * Metadats detectado automáticamente por Next.js
  */
 
 
