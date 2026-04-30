@@ -1,2 +1,2 @@
-import type { Metadata } from "next";
+import type { Metadat
 import "./g
