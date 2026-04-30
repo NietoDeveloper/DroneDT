@@ -15,10 +15,6 @@ export default function RootLayout({
 }) {ón de sistema (3.5s) */}
         <Preloader />
 
-        <div className="relative flex min-h-screen flex-col">
-          {/* Barra superior dorada Aeroespacial */}
-          <div className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold via-yellowColor to-gold z-[9999]" />
-
           {/* Área de Contenido Principal */}
           <main className="flex-1 flex flex-col relative z-10">
             {children}
