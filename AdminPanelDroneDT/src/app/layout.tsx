@@ -1,2 +1,2 @@
-import type { Metadat
+import type { Met
 impor
