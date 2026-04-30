@@ -13,8 +13,7 @@ export default fu
           <main classNam
                 
                 {/* Logo en el Footer linkeado a la página principal */}
-                <div className="opacity-80 hover:opacity-100 transition-opacity filter brightness-0">
-                  <Logo iconSize={24} clame="scale-75 origin-left" />
+                <div className="opacity-80 5 origin-left" />
                 </div>
 
                 <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-zinc-500 font-mono">
