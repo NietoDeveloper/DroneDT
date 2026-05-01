@@ -4,18 +4,6 @@ import React, { useState } from 'react';
 import Logo from '@/components/ui/Logo';
 import { ShieldCheck, UserMinus, UserPlus, ShieldAlert, Search } from 'lucide-react';
 
-// Tipos específicos para administración de usuarios
-type UserStatus = 'ACTIVE' | 'BANNED' | 'PENDING';
-type UserRole = 'ADMIN' | 'EMPLOYEE' | 'CLIENT';
-
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  role: UserRole;
-  status: UserStatus;
-  lastLogin: string;
-}
 
 export default function UsersPage() {
   const [filter, setFilter] = useState<UserStatus | 'ALL'>('ALL');
