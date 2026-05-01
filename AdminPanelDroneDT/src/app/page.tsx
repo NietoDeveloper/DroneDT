@@ -48,8 +48,4 @@ export default function LoginPage() {
             </h2>
             <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.2em]">
               Management Intelligence System
-            </p>
-          </div>
-          
-          <form className="space-y-5" onSubmit={handleLogin}>
-            <div c
+ 
