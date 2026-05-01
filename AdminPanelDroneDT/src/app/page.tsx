@@ -14,11 +14,7 @@ export default function LoginPage() {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setIsAuthorizing(true);
-    
-    // Simulación de latencia de red para el sistema MERN
-    setTimeout(() => {
-      router.push('/dashboard'); 
-    }, 800);
+
   };
 
   return (
