@@ -55,12 +55,7 @@ export default function LoginPage() {
             <div className="group">
               <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2 ml-1">
                 Operator Credentials
-              </label>
-              <input 
-                required
-                type="email" 
-                className="w-full p-4 bg-gainsboro/30 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white/90 transition-all duration-300 outline-none text-sm font-medium text-heading shadow-inner cursor-text"
-                placeholder="EMAIL_ADDRESS"
+aceholder="EMAIL_ADDRESS"
               />
             </div>
             
