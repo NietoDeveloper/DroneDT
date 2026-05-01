@@ -26,8 +26,7 @@ export default function LoginPage() {
         
         <div className="glass-panel p-10 relative overflow-hidden bg-white/80 backdrop-blur-xl border border-white/40 shadow-2xl rounded-2xl">
           
-          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-70" />
-           bg-gold/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-tran2xl" />
                 <Logo iconSize={42} className="relative z-10" />
               </div>
             </div>
