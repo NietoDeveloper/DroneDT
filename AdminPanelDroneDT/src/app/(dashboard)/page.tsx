@@ -2,18 +2,7 @@
 
 import React, { useState } from 'react';
 import Logo from '@/components/ui/Logo';
-import { ShieldCheck, UserMinus, UserPlus, ShieldAlert, Search } from 'lucide-react';
-
-
-
-  return (
-    <div className="h-[calc(100vh-140px)
-        </div>
-
-        <nav className="flex gap-1">
-          {['ALL', 'ACTIVE', 'BANNED', 'PENDING'].map((tab) => (
-            <button
-              key={tab}
+import { ShieldCheck, UserMinu
               onClick={() => setFilter(tab as any)}
               className={`px-4 py-2 text-xs font-semibold rounded-t-lg border-b-2 transition-all ${
                 filter === tab 
