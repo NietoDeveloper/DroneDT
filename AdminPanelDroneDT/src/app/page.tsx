@@ -79,7 +79,6 @@ export default function LoginPage() {
               LOC: <span className="text-zinc-600 font-bold">COL_BOG_CLUSTER</span>
 >
             </div>            </div>
-            <div className="text-[9px] font-mono text-right text-zinc-400 uppercase leading-relaxed">
               Security: <span className="text-zinc-600 font-bold">AES-256</span> <br />
               Status: <span className="text-green-600 font-bold animate-pulse italic">Encry
           </div>
