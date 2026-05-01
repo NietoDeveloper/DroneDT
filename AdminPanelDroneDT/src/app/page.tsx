@@ -73,7 +73,7 @@ export default function LoginPage() {
             </div>
           </form>
           
-          <div className="mt-8 flex justify-between items-center borde
+          <div className="mt-8 flex justiborde
               ID: <span className="text-zinc-600 font-bold">NIETO_DEV_01</span> <br />
 
         </div>
