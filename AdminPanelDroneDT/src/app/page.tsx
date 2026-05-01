@@ -59,7 +59,7 @@ export default function LoginPage() {
 
 
             <div className="pt-2 relative group">
-              {/* Resplandor Gold Flotante - Se expande en hover */}
+              {/* Resplandor Gold Flotante - Se expande en hover 
               <di
                   t '→'}
     
