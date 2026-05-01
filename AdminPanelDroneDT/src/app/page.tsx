@@ -64,9 +64,7 @@ export default function LoginPage() {
               
 
                 <span className="
-                  text-gold group-hover:text-black group-hover:translate-x-2 
-                  transition-all d
-                  {isAuthorizing ? '●' : '→'}
+                  t '→'}
     
       </div>
     </div>
