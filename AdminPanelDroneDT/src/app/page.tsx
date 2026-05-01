@@ -23,9 +23,6 @@ export default function LoginPage() {
       <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] bg-gold/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-md w-full z-10">
-        
-          
-              </div>
-            </div>
+   
             
  
