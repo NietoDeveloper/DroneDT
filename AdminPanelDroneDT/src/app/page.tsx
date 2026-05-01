@@ -60,10 +60,7 @@ export default function LoginPage() {
 
             <div className="pt-2 relative group">
               {/* Resplandor Gold Flotante - Se expande en hover */}
-              <div className="absolute -inset-1 bg-gold blur opacity-20 group-hover:opacity-80 group-hover:blur-xl transition duration-500 rounded-xl" />
-              
-
-                <span className="
+              <di
                   t '→'}
     
       </div>
