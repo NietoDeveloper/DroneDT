@@ -12,11 +12,5 @@ export default function LoginPage() {
   const [isAuthorizing, setIsAuthorizing] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsAuthorizing(true);
-
-  };
-
-  return (
-    <div className="min-h-screen flex items-center justify-center px-4 relative ovow-hbg-main">
+    e.preventDefault();enter px-4 relative ovow-hbg-main">
 
