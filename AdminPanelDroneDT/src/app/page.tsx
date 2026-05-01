@@ -18,5 +18,5 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hbg-main">
+    <div className="min-h-screen flex items-center justify-center px-4 relative ovow-hbg-main">
 
