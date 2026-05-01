@@ -7,15 +7,7 @@ import { ShieldCheck, UserMinus, UserPlus, ShieldAlert, Search } from 'lucide-re
 
 
   return (
-    <div className="h-[calc(100vh-140px)] flex flex-col p-4 md:p-6 gap-6 bg-main overflow-hidden">
-      
-      {/* Header Estilo GitHub Tabs */}
-      <header className="flex flex-col gap-4 border-b border-gainsboro pb-2">
-        <div className="flex items-center gap-4">
-          <Logo iconSize={30} hideText={true} className="brightness-0" />
-          <h1 className="text-sm font-bold text-heading uppercase tracking-tighter">
-            Control de Personal / <span className="text-zinc-500 font-medium lowercase">users_management</span>
-          </h1>
+    <div className="h-[calc(100vh-140px)
         </div>
 
         <nav className="flex gap-1">
