@@ -9,8 +9,5 @@ import Logo from '@/components/ui/Logo';
  */
 export default function LoginPage() {
   const router = useRouter();
-  const [isAuthorizing, setIsAuthorizing] = useState(false);
-
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();enter px-4 relative ovow-hbg-main">
+  const [isAuthorizing, setIsAuthorizi
 
