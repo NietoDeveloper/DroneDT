@@ -27,11 +27,7 @@ export default function LoginPage() {
         <div className="glass-panel p-10 relative overflow-hidden bg-white/80 backdrop-blur-xl border border-white/40 shadow-2xl rounded-2xl">
           
           <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent opacity-70" />
-          
-          <div className="flex flex-col items-center mb-10 text-center">
-            <div className="mb-6 transform transition-all duration-700 hover:scale-105 hover:rotate-3 cursor-crosshair">
-              <div className="bg-zinc-950 p-6 rounded-2xl border border-gold/20 shadow-xl relative group">
-                <div className="absolute -inset-2 bg-gold/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
+           bg-gold/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl" />
                 <Logo iconSize={42} className="relative z-10" />
               </div>
             </div>
