@@ -2,7 +2,52 @@
 
 import React, { useState } from 'react';
 import Logo from '@/components/ui/Logo';
-import { ShieldCheck, UserMinu
+import { ShieldCheck, UserMinus, UserPlus, ShieldAlert, Search } from 'lucide-react';
+
+// Tipos específicos para administración de usuarios
+type UserStatus = 'ACTIVE' | 'BANNED' | 'PENDING';
+type UserRole = 'ADMIN' | 'EMPLOYEE' | 'CLIENT';
+
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  role: UserRole;
+  status: UserStatus;
+  lastLogin: string;
+}
+
+export default function UsersPage() {
+  const [filter, setFilter] = useState<UserStatus | 'ALL'>('ALL');
+
+  // Datos simulados
+  const [users, setUsers] = useState<User[]>([
+    { id: '1', name: 'Manuel Nieto', email: 'manuel@softwaredt.com', role: 'ADMIN', status: 'ACTIVE', lastLogin: '2 mins ago' },
+    { id: '2', name: 'Juan Perez', email: 'juan@dronedt.com', role: 'EMPLOYEE', status: 'ACTIVE', lastLogin: '1 hour ago' },
+    { id: '3', name: 'User Test', email: 'test@client.com', role: 'CLIENT', status: 'BANNED', lastLogin: '2 days ago' },
+  ]);
+
+  const handleStatusChange = (id: string, newStatus: UserStatus) => {
+    setUsers(users.map(u => u.id === id ? { ...u, status: newStatus } : u));
+  };
+
+  return (
+    /* Ajuste de altura para evitar scroll global: h-[calc(100vh-180px)] */
+    <div className="h-[calc(100vh-160px)] flex flex-col p-4 md:p-6 gap-6 bg-main overflow-hidden">
+      
+      {/* Header Estilo GitHub Tabs */}
+      <header className="flex flex-col gap-4 border-b border-gainsboro pb-2 flex-shrink-0">
+        <div className="flex items-center gap-4">
+          <Logo iconSize={30} hideText={true} className="brightness-0" />
+          <h1 className="text-sm font-bold text-heading uppercase tracking-tighter">
+            Control de Personal / <span className="text-zinc-500 font-medium lowercase">users_management</span>
+          </h1>
+        </div>
+
+        <nav className="flex gap-1">
+          {['ALL', 'ACTIVE', 'BANNED', 'PENDING'].map((tab) => (
+            <button
+              key={tab}
               onClick={() => setFilter(tab as any)}
               className={`px-4 py-2 text-xs font-semibold rounded-t-lg border-b-2 transition-all ${
                 filter === tab 
@@ -19,7 +64,7 @@ import { ShieldCheck, UserMinu
       <div className="flex-1 flex flex-col md:flex-row gap-6 overflow-hidden">
         
         {/* Lado Izquierdo: Acciones Rápidas */}
-        <aside className="w-full md:w-1/4 flex flex-col gap-4">
+        <aside className="w-full md:w-1/4 flex flex-col gap-4 flex-shrink-0">
           <div className="bg-white border border-gainsboro rounded-xl p-5 shadow-sm">
             <h3 className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-4">Autorizaciones</h3>
             <button className="w-full flex items-center justify-between p-3 bg-zinc-50 hover:bg-[#FFD700]/10 border border-gainsboro rounded-lg transition-all group">
@@ -30,22 +75,22 @@ import { ShieldCheck, UserMinu
             </button>
           </div>
 
-          <div className="bg-zinc-950 text-white rounded-xl p-5 shadow-xl flex-1 hidden md:block">
+          <div className="bg-zinc-950 text-white rounded-xl p-5 shadow-xl flex-1 hidden md:block overflow-hidden">
             <div className="flex items-center gap-2 mb-4">
               <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
               <span className="text-[10px] font-mono text-red-500 uppercase tracking-tighter">Security Logs</span>
             </div>
-            <div className="h-full border-l border-white/10 ml-1 pl-4 space-y-4">
-              <div className="text-[9px] font-mono text-white/40 italic">-- Access Control --</div>
-              <div className="text-[9px] font-mono text-zinc-400"> [AUTH] Admin authorized new employee</div>
-              <div className="text-[9px] font-mono text-red-400"> [BAN] User_ID: 03 restricted by System</div>
+            <div className="h-full border-l border-white/10 ml-1 pl-4 space-y-4 font-mono">
+              <div className="text-[9px] text-white/40 italic">-- Access Control --</div>
+              <div className="text-[9px] text-zinc-400"> [AUTH] Admin authorized new employee</div>
+              <div className="text-[9px] text-red-400"> [BAN] User_ID: 03 restricted by System</div>
             </div>
           </div>
         </aside>
 
         {/* Lado Derecho: Tabla de Usuarios */}
         <main className="flex-1 bg-white border border-gainsboro rounded-xl shadow-sm overflow-hidden flex flex-col">
-          <div className="p-4 border-b border-gainsboro flex justify-between items-center bg-zinc-50/50">
+          <div className="p-4 border-b border-gainsboro flex justify-between items-center bg-zinc-50/50 flex-shrink-0">
             <div className="relative w-64">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={14} />
               <input 
@@ -56,9 +101,10 @@ import { ShieldCheck, UserMinu
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto">
+          {/* Contenedor de tabla con scroll interno para no romper el layout */}
+          <div className="flex-1 overflow-y-auto custom-scrollbar">
             <table className="w-full text-left">
-              <thead className="bg-zinc-50 border-b border-gainsboro">
+              <thead className="bg-zinc-50 border-b border-gainsboro sticky top-0 z-10">
                 <tr>
                   <th className="px-6 py-3 text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Usuario</th>
                   <th className="px-6 py-3 text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Rol</th>
