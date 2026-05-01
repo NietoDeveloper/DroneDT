@@ -63,13 +63,6 @@ export default function LoginPage() {
               <div className="absolute -inset-1 bg-gold blur opacity-20 group-hover:opacity-80 group-hover:blur-xl transition duration-500 rounded-xl" />
               
 
-                  relative w-full flex items-center justify-center gap-3 h-14 
-                  bg-zinc-950 text-white rounded-xl border border-gold/30 
-   
-              >
-                <span className="text-xs font-black tracking-[0.3em] uppercase italic ml-4">
-                  {isAuthorizing ? 'Conectando...' : 'Ingresar'}
-                </span>
                 <span className="
                   text-gold group-hover:text-black group-hover:translate-x-2 
                   transition-all duration-300 font-bold text-xl
