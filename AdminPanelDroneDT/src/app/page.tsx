@@ -24,7 +24,7 @@ export default function LoginPage() {
 
       <div className="max-w-md w-full z-10">
         
-        <div className="glass-panel p-10 relative overflow-hidden bg-white/80 backdrop-blur-xl border border-white/40 shadow-2xl rounded-2xl">
+        <div className="glass-panel p-10 relative overflow-hidden bg-white/80 backer border-white/40 shadow-2xl rounded-2xl">
           
           <div className="absolute top-0 left-0 w-full h-
               </div>
