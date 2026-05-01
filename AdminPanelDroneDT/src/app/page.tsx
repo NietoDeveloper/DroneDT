@@ -62,10 +62,7 @@ export default function LoginPage() {
               {/* Resplandor Gold Flotante - Se expande en hover */}
               <div className="absolute -inset-1 bg-gold blur opacity-20 group-hover:opacity-80 group-hover:blur-xl transition duration-500 rounded-xl" />
               
-              <button 
-                type="submit"
-                disabled={isAuthorizing}
-                className="
+
                   relative w-full flex items-center justify-center gap-3 h-14 
                   bg-zinc-950 text-white rounded-xl border border-gold/30 
                   hover:bg-gold hover:text-black hover:border-gold 
