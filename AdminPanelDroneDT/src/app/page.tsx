@@ -68,13 +68,7 @@ export default function LoginPage() {
                   transition-all duration-300 font-bold text-xl
                 ">
                   {isAuthorizing ? '●' : '→'}
-                </span>
-              </button>
-            </div>
-          </form>
-
-        </div>
-
+    
       </div>
     </div>
   );
