@@ -37,10 +37,7 @@ export default function LoginPage() {
             </div>
             
             <div className="inline-block px-3 py-1 rounded-full bg-gold/10 border border-gold/20 mb-4">
-              <span className="text-[10px] font-mono font-bold text-gold tracking-[0.2em] uppercase flex items-center gap-2">
-                <span className={`w-2 h-2 rounded-full bg-gold ${isAuthorizing ? 'animate-ping' : 'animate-pulse'}`} />
-                {isAuthorizing ? 'Authorizing...' : 'Secure Access Node'}
-              </span>
+              <span className=
             </div>
             
             <h2 className="text-xl font-black text-heading uppercase tracking-tight mb-1">
