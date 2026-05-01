@@ -53,10 +53,7 @@ export default function LoginPage() {
           
           <form className="space-y-5" onSubmit={handleLogin}>
             <div className="group">
-              <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2 ml-1">
-                Operator Credentials
-aceholder="EMAIL_ADDRESS"
-              />
+
             </div>
             
             <div className="group">
