@@ -76,9 +76,7 @@ export default function LoginPage() {
           <div className="mt-8 flex justify-between items-center border-t border-gainsboro pt-6">
             <div className="text-[9px] font-mono text-zinc-400 leading-relaxed uppercase text-left">
               ID: <span className="text-zinc-600 font-bold">NIETO_DEV_01</span> <br />
-              LOC: <span className="text-zinc-600 font-bold">COL_BOG_CLUSTER</span>
->
-            </div>            </div>
+
               Security: <span className="text-zinc-600 font-bold">AES-256</span> <br />
               Status: <span className="text-green-600 font-bold animate-pulse italic">Encry
           </div>
