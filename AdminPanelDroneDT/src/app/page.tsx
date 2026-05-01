@@ -36,9 +36,6 @@ export default function LoginPage() {
               </div>
             </div>
             
-            <div className="inline-block px-3 py-1 rounded-full bg-gold/10 border border-gold/20 mb-4">
-              <span className=
-            </div>
             
             <h2 className="text-xl font-black text-heading uppercase tracking-tight mb-1">
               Panel Control Empresa Drone DT
