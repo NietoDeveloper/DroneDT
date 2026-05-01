@@ -26,7 +26,7 @@ export default function LoginPage() {
         
         <div className="glass-panel p-10 relative overflow-hidden bg-white/80 backdrop-blur-xl border border-white/40 shadow-2xl rounded-2xl">
           
-          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r 
+          <div className="absolute top-0 left-0 w-full h-
               </div>
             </div>
             
