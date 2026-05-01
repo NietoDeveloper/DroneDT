@@ -52,7 +52,4 @@ export default function LoginPage() {
           </div>
           
           <form className="space-y-5" onSubmit={handleLogin}>
-            <div className="group">
-
-            </div>
-            
+            <div c
