@@ -77,7 +77,6 @@ export default function LoginPage() {
             <div className="text-[9px] font-mono text-zinc-400 leading-relaxed uppercase text-left">
               ID: <span className="text-zinc-600 font-bold">NIETO_DEV_01</span> <br />
 
-              Security: <span className="text-zinc-600 font-bo
         </div>
 
       </div>
