@@ -56,17 +56,7 @@ export default function LoginPage() {
 
             </div>
             
-            <div className="group">
-              <label className="block text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2 ml-1">
-                Access Key
-              </label>
-              <input 
-                required
-                type="password" 
-                className="w-full p-4 bg-gainsboro/30 border border-transparent rounded-xl focus:border-gold/50 focus:bg-white/90 transition-all duration-300 outline-none text-sm font-medium text-heading shadow-inner cursor-text"
-                placeholder="••••••••"
-              />
-            </div>
+
 
             <div className="pt-2 relative group">
               {/* Resplandor Gold Flotante - Se expande en hover */}
