@@ -5,19 +5,6 @@ import Logo from '@/components/ui/Logo';
 import { ShieldCheck, UserMinus, UserPlus, ShieldAlert, Search } from 'lucide-react';
 
 
-export default function UsersPage() {
-  const [filter, setFilter] = useState<UserStatus | 'ALL'>('ALL');
-
-  // Datos simulados (Esto vendría de tu backend Express)
-  const [users, setUsers] = useState<User[]>([
-    { id: '1', name: 'Manuel Nieto', email: 'manuel@softwaredt.com', role: 'ADMIN', status: 'ACTIVE', lastLogin: '2 mins ago' },
-    { id: '2', name: 'Juan Perez', email: 'juan@dronedt.com', role: 'EMPLOYEE', status: 'ACTIVE', lastLogin: '1 hour ago' },
-    { id: '3', name: 'User Test', email: 'test@client.com', role: 'CLIENT', status: 'BANNED', lastLogin: '2 days ago' },
-  ]);
-
-  const handleStatusChange = (id: string, newStatus: UserStatus) => {
-    setUsers(users.map(u => u.id === id ? { ...u, status: newStatus } : u));
-  };
 
   return (
     <div className="h-[calc(100vh-140px)] flex flex-col p-4 md:p-6 gap-6 bg-main overflow-hidden">
