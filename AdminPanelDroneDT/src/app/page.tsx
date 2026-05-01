@@ -85,9 +85,6 @@ export default function LoginPage() {
           </div>
         </div>
 
-        <p className="text-center mt-8 text-[10px] text-zinc-400 font-mono tracking-[0.4em] uppercase opacity-70">
-          DroneDT Operational Engine &copy; 2026
-        </p>
       </div>
     </div>
   );
