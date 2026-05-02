@@ -22,8 +22,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
   const { isSidebarOpen, toggleSidebar, userProfile } = useDashboardStore();
 
   const navigation = [
-    { name: 'Overview', icon: LayoutDashboard, href: '/dashboard' },
-    { name: 'Inventario RT', icon: Package, href: '/dashboard/' },
+
 
   ];
 
