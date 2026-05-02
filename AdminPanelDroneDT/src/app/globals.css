@@ -1,17 +1,5 @@
 @import "tailwindcss";
 
-/* FUERZA EL ESCANEO DE TUS ARCHIVOS (Ajusta la ruta según tu estructura) */
-@source "../"; 
-
-@theme {
-  /* Identidad Drone DT - Convención v4 */
-  --color-gainsboro: #DCDCDC;
-  --color-gold: #FFD700;
-  --color-yellow-color: #FEB60D;
-  --color-heading: #000000;
-  --color-text: #1A1A1A;
-  
-
 
   /* Tipografía */
   --font-heading: "Inter", "Helvetica Neue", sans-serif;
