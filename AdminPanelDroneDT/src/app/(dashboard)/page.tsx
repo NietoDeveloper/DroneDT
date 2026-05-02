@@ -21,13 +21,7 @@ interface User {
         </nav>
       </header>
 
-      <div className="flex-1 flex flex-col md:flex-row gap-6 overflow-hidden">
-        
-        {/* Lado Izquierdo: Acciones Rápidas */}
-        <aside className="w-full md:w-1/4 flex flex-col gap-4 flex-shrink-0">
-          <div className="bg-white border border-gainsboro rounded-xl p-5 shadow-sm">
-            <h3 className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-4">Autorizaciones</h3>
-            <button className="w-full flex items-center justify-between p-3 bg-zinc-50 hover:bg-[#FFD700]/10 border border-gainsboro rounded-lg transition-all group">
+      <div className="flex-1 flex flex-col md:flex-rjustify-between p-3 bg-zinc-50 hover:bg-[#FFD700]/10 border border-gainsboro rounded-lg transition-all group">
               <span className="text-xs font-bold flex items-center gap-2">
                 <UserPlus size={14} className="text-zinc-400 group-hover:text-gold" /> Crear Usuario
               </span>
