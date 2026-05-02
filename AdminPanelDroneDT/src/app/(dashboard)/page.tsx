@@ -10,24 +10,6 @@ type UserRole = 'ADMIN' | 'EMPLOYEE' | 'CLIENT';
 
 interface User {
   id: string;
-  name: string;
-  email: string;
-  role: UserRole;
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </nav>
-      </header> tracking-tighter">Security Logs</span>
-            </div>items-center bg-zinc-50/50 flex-shrink-0">
-            <div className="relative w-64">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={14} />
-              <input 
-                type="text" 
-                placeholder="Buscar por email o nombre..." 
-                className="w-full pl-9 pr-4 py-1.5 text-xs bg-white border border-gainsboro rounded-md focus:outline-none focus:ring-1 focus:ring-gold"
-              />
             </div>
           </div>
 
