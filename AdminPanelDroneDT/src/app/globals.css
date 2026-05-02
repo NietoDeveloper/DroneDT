@@ -11,10 +11,7 @@
   --color-heading: #000000;
   --color-text: #1A1A1A;
   
-  /* Mapeo para bg-main y bg-card */
-  --color-main: #F8F8F8;
-  --color-card: #FFFFFF;
-  --color-border: #E5E5E5;
+
 
   /* Tipografía */
   --font-heading: "Inter", "Helvetica Neue", sans-serif;
