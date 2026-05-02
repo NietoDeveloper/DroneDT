@@ -54,9 +54,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
               <div className="w-8 h-8 rounded-full bg-[#FEB60D] border border-[#FFD700]" />
               <div className="overflow-hidden">
                 <p className="text-sm font-bold text-white truncate">{userProfile?.name}</p>
-                <p className="text-[10px] text-[#FFD700] uppercase tracking-widest">{userProfile?.role}</p>
-              </div>
-            </div>
+  
           </div>
         )}
 
