@@ -25,9 +25,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
     { name: 'Overview', icon: LayoutDashboard, href: '/dashboard' },
     { name: 'Inventario RT', icon: Package, href: '/dashboard/inventory' },
     { name: 'Ventas', icon: ShoppingCart, href: '/dashboard/sales' },
-    { name: 'Usuarios', icon: Users, href: '/dashboard/users' },
-    { name: 'Mensajería', icon: MessageSquare, href: '/dashboard/messages' },
-    { name: 'Digital Twins Video', icon: Video, href: '/dashboard/videos' },
+
   ];
 
   return (
