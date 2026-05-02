@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* FUERZA EL ESCANEO DE TUS ARCHIVOS */
+@source "../"; 
+
+@theme {
+  /* Identidad Drone DT - Convención v4 */
+  --color-gainsboro: #DCDCDC;
+  --color-gold: #FFD700;
+  --color-yellow-color: #FEB60D;
+  --color-heading: #000000;
+  --color-text: #1A1A1A;
+  
+  /* Mapeo para bg-main y bg-card */
+  --color-main: #F8F8F8;
+  --color-card: #FFFFFF;
+  --color-border: #E5E5E5;
+
+  /* Estética Industrial / SpaceX */
+  --color-true-black: #050505;
+  --color-zinc-950: #09090b;
+
+  /* Tipografía */
+  --font-heading: "Inter", "Helvetica Neue", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  
+  /* Sombras */
+  --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.1);
+
+  /* Responsive Dinámico L5 (310px - 1900px) */
+  --breakpoint-xs: 310px;
+  --breakpoint-uw: 1900px;
+}
+
+@layer base {
+  /* ARQUITECTURA VIEWPORT CANVAS (No Scroll) */
+  html, body {
+    height: 100%;
+    overflow: hidden; /* Bloquea el scroll global del navegador */
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--color-main);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    @apply antialiased transition-colors duration-300 flex flex-col;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+    color: var(--color-heading);
+  }
+
+  /* Scrollbar Minimalista para Componentes Internos */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 10px;
+    opacity: 0.5;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--color-yellow-color);
+  }
+}
+
+@layer components {
+  /* Botón de alto rendimiento */
+  .btn-primary {
+    @apply 
+      bg-gold 
+      text-black 
+      font-bold 
+      py-3 px-6 
+      rounded-full 
+      hover:bg-yellow-color 
+      active:scale-95 
+      transition-all 
+      duration-200 
+      cursor-pointer;
+  }
+
+  /* Estética Cinematográfica Emerald/Drone */
+  .glass-panel {
+    @apply 
+      bg-white/70 
+      backdrop-blur-xl 
+      border border-gainsboro
+      shadow-premium
+      rounded-2xl;
+  }
+
+  /* Panel Industrial Estilo SpaceX para Dashboard */
+  .industrial-card {
+    @apply 
+      bg-zinc-950/40 
+      backdrop-blur-md 
+      border border-white/5 
+      rounded-sm 
+      transition-all 
+      duration-500;
+  }
+}
