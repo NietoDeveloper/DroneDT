@@ -23,7 +23,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
 
   const navigation = [
     { name: 'Overview', icon: LayoutDashboard, href: '/dashboard' },
-    { name: 'Inventario RT', icon: Package, href: '/dashboard/inventory' },
+    { name: 'Inventario RT', icon: Package, href: '/dashboard/' },
 
   ];
 
