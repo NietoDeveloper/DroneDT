@@ -30,13 +30,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
     <div className="min-h-screen bg-[#DCDCDC] text-black flex">
       {/* SIDEBAR AEROESPACIAL */}
       <aside 
-        className={`${
-          isSideba
 
-        )}
-
-          </div>
-        </section>
       </main>
     </div>
   );
