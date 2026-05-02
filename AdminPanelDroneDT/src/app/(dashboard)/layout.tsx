@@ -45,17 +45,6 @@ export default function DashboardLayout({ children }: LayoutProps) {
           </button>
         </div>
 
-        <nav className="flex-1 mt-4 px-3 space-y-2">
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="flex items-center p-3 text-[#DCDCDC] hover:bg-[#FFD700] hover:text-black rounded-lg transition-colors group"
-            >
-              <item.icon size={22} className="min-w-[22px]" />
-              {isSidebarOpen && <span className="ml-4 font-medium">{item.name}</span>}
-            </a>
-          ))}
         </nav>
 
         {/* PROFILE SECTION (ZUSTAND DATA) */}
