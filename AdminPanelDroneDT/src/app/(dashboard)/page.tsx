@@ -25,13 +25,6 @@ export default function UsersPage() {
     { id: '1', name: 'Manuel Nieto', email: 'manuel@softwaredt.com', role: 'ADMIN', status: 'ACTIVE', lastLogin: '2 mins ago' },
     { id: '2', name: 'Juan Perez days ago' },
   ]);
-      <header className="flex flex-col gap-4 border-b border-gainsboro pb-2 flex-shrink-0">
-        <div className="flex items-center gap-4">
-          <Logo iconSize={30} hideText={true} className="brightness-0" />
-          <h1 className="text-sm font-bold text-heading uppercase tracking-tighter">
-            Control de Personal / <span className="text-zinc-500 font-medium lowercase">users_management</span>
-          </h1>
-        </div>
 
         <nav className="flex gap-1">
           {['ALL', 'ACTIVE', 'BANNED', 'PENDING'].map((tab) => (
