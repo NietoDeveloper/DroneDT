@@ -26,11 +26,7 @@ export default function UsersPage() {
     { id: '2', name: 'Juan Perez days ago' },
   ]);
 
-  const handleStatusChange = (id: string, newStatus: UserStatus) => {
-    setUsers(users.map(u => u.id === id ? { ...u, status: newStatus } : u));
-  };
-
-  return (
+  const handleStatusChan
     /* Ajuste de altura para evitar scroll global: h-[calc(100vh-180px)] */
     <div className="h-[calc(100vh-160px)] flex flex-col p-4 md:p-6 gap-6 bg-main overflow-hidden">
       
