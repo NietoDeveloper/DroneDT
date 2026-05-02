@@ -25,12 +25,6 @@ export default function UsersPage() {
     { id: '1', name: 'Manuel Nieto', email: 'manuel@softwaredt.com', role: 'ADMIN', status: 'ACTIVE', lastLogin: '2 mins ago' },
     { id: '2', name: 'Juan Perez days ago' },
   ]);
-
-  const handleStatusChan
-    /* Ajuste de altura para evitar scroll global: h-[calc(100vh-180px)] */
-    <div className="h-[calc(100vh-160px)] flex flex-col p-4 md:p-6 gap-6 bg-main overflow-hidden">
-      
-      {/* Header Estilo GitHub Tabs */}
       <header className="flex flex-col gap-4 border-b border-gainsboro pb-2 flex-shrink-0">
         <div className="flex items-center gap-4">
           <Logo iconSize={30} hideText={true} className="brightness-0" />
