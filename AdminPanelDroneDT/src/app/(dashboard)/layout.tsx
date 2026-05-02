@@ -70,16 +70,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
             <span className="flex items-center gap-1">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
               LIVE SYSTEM
-            </span>
-            <span className="bg-[#FFD700] px-2 py-1 rounded text-[10px] font-bold">
-              MVP 30-MAR
-            </span>
-          </div>
-        </header>
-
-        {/* SCROLLABLE CONTENT */}
-        <section className="flex-1 overflow-y-auto p-6">
-          <div className="max-w-7xl mx-auto">
+  
             {children}
           </div>
         </section>
