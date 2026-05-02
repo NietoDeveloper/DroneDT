@@ -19,15 +19,7 @@ interface User {
             </button>
           ))}
         </nav>
-      </header>
-
-      <div className="flex-1 flex flex-col md:flex-rjustify-between p-3 bg-zinc-50 hover:bg-[#FFD700]/10 border border-gainsboro rounded-lg transition-all group">
-              <span className="text-xs font-bold flex items-center gap-2">
-
-          <div className="bg-zinc-950 text-white rounded-xl p-5 shadow-xl flex-1 hidden md:block overflow-hidden">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-              <span className="text-[10px] font-mono text-red-500 uppercase tracking-tighter">Security Logs</span>
+      </header> tracking-tighter">Security Logs</span>
             </div>
             <div className="h-full border-l border-white/10 ml-1 pl-4 space-y-4 font-mono">
               <div className="text-[9px] text-white/40 italic">-- Access Control --</div>
