@@ -21,12 +21,7 @@ interface User {
         </nav>
       </header> tracking-tighter">Security Logs</span>
             </div>
-            <div className="h-full border-l border-white/10 ml-1 pl-4 space-y-4 font-mono">
-              <div className="text-[9px] text-white/40 italic">-- Access Control --</div>
-              <div className="text-[9px] text-zinc-400"> [AUTH] Admin authorized new employee</div>
-              <div className="text-[9px] text-red-400"> [BAN] User_ID: 03 restricted by System</div>
-            </div>
-          </div>
+            <div className="h-full border-l border-white/10 ml-1 pl-4 spac
         </aside>
 
         {/* Lado Derecho: Tabla de Usuarios */}
