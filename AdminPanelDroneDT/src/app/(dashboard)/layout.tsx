@@ -24,14 +24,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
   const navigation = [
 
 
-  ];
-
-  return (
-    <div className="min-h-screen bg-[#DCDCDC] text-black flex">
-      {/* SIDEBAR AEROESPACIAL */}
-      <aside 
-
-      </main>
+  
     </div>
   );
 }
