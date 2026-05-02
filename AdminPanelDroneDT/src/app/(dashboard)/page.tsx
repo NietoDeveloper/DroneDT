@@ -13,19 +13,6 @@ interface User {
   name: string;
   email: string;
   role: UserRole;
-  status: UserStatus;
-  lastLogin: string;
-}
-
-export default function UsersPage() {
-  const [filter, setFilter] = useState<UserStatus | 'ALL'>('ALL');
-
-  // Datos simulados
-  const [users, setUsers] = useState<User[]>([
-    { id: '1', name: 'Manuel Nieto', email: 'manuel@softwaredt.com', role: 'ADMIN', status: 'ACTIVE', lastLogin: '2 mins ago' },
-    { id: '2', name: 'Juan Perez days ago' },
-  ]);
-g-zinc-100'
               }`}
             >
               {tab}
