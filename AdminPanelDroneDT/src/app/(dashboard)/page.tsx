@@ -20,13 +20,7 @@ interface User {
           ))}
         </nav>
       </header> tracking-tighter">Security Logs</span>
-            </div>
-            <div className="h-full border-l border-white/10 ml-1 pl-4 spac
-        </aside>
-
-        {/* Lado Derecho: Tabla de Usuarios */}
-        <main className="flex-1 bg-white border border-gainsboro rounded-xl shadow-sm overflow-hidden flex flex-col">
-          <div className="p-4 border-b border-gainsboro flex justify-between items-center bg-zinc-50/50 flex-shrink-0">
+            </div>items-center bg-zinc-50/50 flex-shrink-0">
             <div className="relative w-64">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={14} />
               <input 
