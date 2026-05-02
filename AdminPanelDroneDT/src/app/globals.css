@@ -1,21 +1,6 @@
 @import "tailwindcss";
 
 
-  /* Tipografía */
-  --font-heading: "Inter", "Helvetica Neue", sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  
-  /* Sombras */
-  --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.1);
-}
-
-@layer base {
-  body {
-    background-color: var(--color-main);
-    color: var(--color-text);
-    font-family: var(--font-body);
-    @apply antialiased min-h-screen transition-colors duration-300;
-  }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
