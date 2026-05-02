@@ -10,22 +10,6 @@ type UserRole = 'ADMIN' | 'EMPLOYEE' | 'CLIENT';
 
 interface User {
   id: string;
-              </thead>
-              <tbody className="divide-y divide-gainsboro">
-                {users.filter(u => filter === 'ALL' || u.status === filter).map((user) => (
-                  <tr key={user.id} className="hover:bg-zinc-50/50 transition-colors">
-                    <td className="px-6 py-4">
-                      <div className="flex flex-col">
-                        <span className="text-xs font-bold text-heading">{user.name}</span>
-                        <span className="text-[10px] text-zinc-400 font-mono">{user.email}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
-                        user.role === 'ADMIN' ? 'bg-black text-gold' : 'bg-zinc-100 text-zinc-600'
-                      }`}>
-                        {user.role}
-                      </span>
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2">
