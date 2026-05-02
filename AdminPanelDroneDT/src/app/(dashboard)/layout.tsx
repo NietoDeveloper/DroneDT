@@ -32,13 +32,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
       <aside 
         className={`${
           isSideba
-        </nav>
 
-        {/* PROFILE SECTION (ZUSTAND DATA) */}
-        {isSidebarOpen && (
-          <div className="p-4 nt-bold text-white truncate">{userProfile?.name}</p>
-  
-          </div>
         )}
 
           </div>
