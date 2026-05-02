@@ -23,11 +23,6 @@ interface User {
 
       <div className="flex-1 flex flex-col md:flex-rjustify-between p-3 bg-zinc-50 hover:bg-[#FFD700]/10 border border-gainsboro rounded-lg transition-all group">
               <span className="text-xs font-bold flex items-center gap-2">
-                <UserPlus size={14} className="text-zinc-400 group-hover:text-gold" /> Crear Usuario
-              </span>
-              <span className="text-[10px] bg-zinc-200 px-1.5 rounded text-zinc-500">N</span>
-            </button>
-          </div>
 
           <div className="bg-zinc-950 text-white rounded-xl p-5 shadow-xl flex-1 hidden md:block overflow-hidden">
             <div className="flex items-center gap-2 mb-4">
