@@ -25,16 +25,7 @@ export default function UsersPage() {
     { id: '1', name: 'Manuel Nieto', email: 'manuel@softwaredt.com', role: 'ADMIN', status: 'ACTIVE', lastLogin: '2 mins ago' },
     { id: '2', name: 'Juan Perez days ago' },
   ]);
-
-        <nav className="flex gap-1">
-          {['ALL', 'ACTIVE', 'BANNED', 'PENDING'].map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setFilter(tab as any)}
-              className={`px-4 py-2 text-xs font-semibold rounded-t-lg border-b-2 transition-all ${
-                filter === tab 
-                ? 'border-gold bg-white text-heading shadow-sm' 
-                : 'border-transparent text-zinc-500 hover:bg-zinc-100'
+g-zinc-100'
               }`}
             >
               {tab}
