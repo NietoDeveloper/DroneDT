@@ -10,19 +10,6 @@ type UserRole = 'ADMIN' | 'EMPLOYEE' | 'CLIENT';
 
 interface User {
   id: string;
-            </div>
-          </div>
-
-          {/* Contenedor de tabla con scroll interno para no romper el layout */}
-          <div className="flex-1 overflow-y-auto custom-scrollbar">
-            <table className="w-full text-left">
-              <thead className="bg-zinc-50 border-b border-gainsboro sticky top-0 z-10">
-                <tr>
-                  <th className="px-6 py-3 text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Usuario</th>
-                  <th className="px-6 py-3 text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Rol</th>
-                  <th className="px-6 py-3 text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Estado</th>
-                  <th className="px-6 py-3 text-[10px] font-bold text-zinc-500 uppercase tracking-wider">Acciones</th>
-                </tr>
               </thead>
               <tbody className="divide-y divide-gainsboro">
                 {users.filter(u => filter === 'ALL' || u.status === filter).map((user) => (
