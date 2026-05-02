@@ -23,8 +23,7 @@ export default function UsersPage() {
   // Datos simulados
   const [users, setUsers] = useState<User[]>([
     { id: '1', name: 'Manuel Nieto', email: 'manuel@softwaredt.com', role: 'ADMIN', status: 'ACTIVE', lastLogin: '2 mins ago' },
-    { id: '2', name: 'Juan Perez', email: 'juan@dronedt.com', role: 'EMPLOYEE', status: 'ACTIVE', lastLogin: '1 hour ago' },
-    { id: '3', name: 'User Test', email: 'test@client.com', role: 'CLIENT', status: 'BANNED', lastLogin: '2 days ago' },
+    { id: '2', name: 'Juan Perez days ago' },
   ]);
 
   const handleStatusChange = (id: string, newStatus: UserStatus) => {
