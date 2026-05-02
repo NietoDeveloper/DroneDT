@@ -49,11 +49,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
 
         {/* PROFILE SECTION (ZUSTAND DATA) */}
         {isSidebarOpen && (
-          <div className="p-4 border-t border-[#FFD700]/20 bg-zinc-900">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#FEB60D] border border-[#FFD700]" />
-              <div className="overflow-hidden">
-                <p className="text-sm font-bold text-white truncate">{userProfile?.name}</p>
+          <div className="p-4 nt-bold text-white truncate">{userProfile?.name}</p>
   
           </div>
         )}
