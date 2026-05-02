@@ -59,11 +59,6 @@ export default function DashboardLayout({ children }: LayoutProps) {
             </div>
           </div>
         )}
-      </aside>
-
-      {/* MAIN CONTENT AREA */}
-      <main className="flex-1 flex flex-col overflow-hidden">
-        {/* TOPBAR */}
 
           </div>
         </section>
