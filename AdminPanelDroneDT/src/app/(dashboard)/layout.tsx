@@ -5,17 +5,7 @@ import { useDashboardStore } from '@/store/useDashboardStore';
 import { 
   LayoutDashboard, 
   Package, 
-  ShoppingCart, 
-  Users, 
-  MessageSquare, 
-  Video, 
-  Settings,
-  Menu,
-  X
-} from 'lucide-react';
 
-interface LayoutProps {
-  children: ReactNode;
 }
 
 export default function DashboardLayout({ children }: LayoutProps) {
