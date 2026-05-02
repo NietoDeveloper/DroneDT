@@ -31,20 +31,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
       {/* SIDEBAR AEROESPACIAL */}
       <aside 
         className={`${
-          isSidebarOpen ? 'w-64' : 'w-20'
-        } bg-[#000000] transition-all duration-300 ease-in-out flex flex-col border-r border-[#FFD700]/30`}
-      >
-        <div className="p-6 flex items-center justify-between">
-          {isSidebarOpen && (
-            <span className="text-[#FFD700] font-bold text-xl tracking-tighter">
-              DRONE <span className="text-[#FEB60D]">DT</span>
-            </span>
-          )}
-          <button onClick={toggleSidebar} className="text-[#DCDCDC] hover:text-[#FFD700]">
-            {isSidebarOpen ? <X size={20} /> : <Menu size={24} />}
-          </button>
-        </div>
-
+          isSideba
         </nav>
 
         {/* PROFILE SECTION (ZUSTAND DATA) */}
