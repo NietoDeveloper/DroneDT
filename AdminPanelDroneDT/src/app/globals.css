@@ -1,21 +1,4 @@
-@import "tailwindcss";
 
-
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
-    color: var(--color-heading);
-  }
-
-  /* Scrollbar Dorado Drone DT */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #FFD700;
-    border-radius: 10px;
-  }
-}
 
 @layer components {
   .btn-primary {
