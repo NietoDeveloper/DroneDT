@@ -1,12 +1,4 @@
 {
-  "name": "dronedt-admin-panel",
-  "version": "1.0.0",
-  "description": "Panel de administración para DroneDT - Inspirado en Tesla.com",
-  "main": "index.js",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
+
 
 }
