@@ -42,8 +42,7 @@
   }
     @apply 
       bg-zinc-950/40 
-      backdrop-blur-md 
-      border border-white/5 
+
       rounded-sm 
       transition-all 
       duration-500;
