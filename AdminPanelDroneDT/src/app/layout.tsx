@@ -24,13 +24,7 @@ export default function RootLayout({
 
 
         <div className="relative flex min-h-screen flex-col">
-          {/* Barra superior dorada Aeroespacial - Línea de identidad Drone DT */}
-          <div className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold via-yellowColor to-gold z-[9999]" />
 
-          {/* Área de Contenido Principal */}
-          <main className="flex-1 flex flex-col relative z-10">
-            {children}
-          </main>
 
           {/* Footer Técnico - Visible en el área de acceso */}
           <footer className="py-8 px-6 md:px-12 border-t border-gainsboro bg-white/40 backdrop-blur-xl relative z-20">
