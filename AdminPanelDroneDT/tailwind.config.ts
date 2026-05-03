@@ -10,12 +10,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Paleta de Identidad: "High-Value Asset Management"
-        "gainsboro": "#DCDCDC",
-        "gold": "#FFD700",
-        "yellow-color": "#FEB60D",
-        "heading": "#000000",
-        "main": "#DCDCDC", // Fondo base de la app
       },
 
       backgroundImage: {
