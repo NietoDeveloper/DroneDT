@@ -75,20 +75,7 @@
 }
 
 @layer components {
-  /* Botón de alto rendimiento */
-  .btn-primary {
-    @apply 
-      bg-gold 
-      text-black 
-      font-bold 
-      py-3 px-6 
-      rounded-full 
-      hover:bg-yellow-color 
-      active:scale-95 
-      transition-all 
-      duration-200 
-      cursor-pointer;
-  }
+  /* Botón de alto rendimiento *
 
   /* Panel Industrial Estilo SpaceX para Dashboard */
   .industrial-card {
