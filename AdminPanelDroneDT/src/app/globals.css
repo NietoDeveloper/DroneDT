@@ -42,8 +42,6 @@
   }
     @apply 
       bg-zinc-950/40 
-
-      rounded-sm 
       transition-all 
       duration-500;
   }
