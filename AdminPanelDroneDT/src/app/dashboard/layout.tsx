@@ -110,13 +110,3 @@ export default function DashboardLayout({ children }: LayoutProps) {
               Control Panel / <span className="text-zinc-400 font-medium">L5_Architecture</span>
             </h2>
           </div>
-          
-          <div className="flex items-center gap-6">
-            <div className="hidden sm:flex flex-col items-end font-mono">
-              <span className="flex items-center gap-1.5 text-[9px] font-bold text-black">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                SISTEMA_ACTIVO
-              </span>
-              <span className="text-[8px] text-zinc-400">LATENCY: 14MS</span>
-            </div>
-     
