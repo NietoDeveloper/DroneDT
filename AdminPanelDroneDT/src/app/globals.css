@@ -27,7 +27,4 @@
   /* Sombras */
   --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.1);
 
-  /* Responsive Dinámico L5 (310px - 1900px) */
-  --breakpoint-xs: 310px;
-  --breakpoint-uw: 1900px;
 }
