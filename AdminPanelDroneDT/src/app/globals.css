@@ -33,12 +33,5 @@
 }
 
 @layer base {
-  /* ARQUITECTURA VIEWPORT CANVAS (No Scroll) */
-  html, body {
-    height: 100%;
-    overflow: hidden; /* Bloquea el scroll global del navegador */
-    margin: 0;
-    padding: 0;
-  }
 
 }
