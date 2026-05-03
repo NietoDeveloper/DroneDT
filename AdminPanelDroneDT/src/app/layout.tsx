@@ -27,8 +27,7 @@ export default function RootLayout({
           bg-main 
           antialiased 
           min-h-screen 
-          selection:bg-gold 
-          selection:text-black
+
           overflow-x-hidden
         "
       >
