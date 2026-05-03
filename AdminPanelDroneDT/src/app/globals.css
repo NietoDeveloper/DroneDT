@@ -40,11 +40,6 @@
     margin: 0;
     padding: 0;
   }
-@layer components {
-  /* Botón de alto rendimiento *
-
-  /* Panel Industrial Estilo SpaceX para Dashboard */
-  .industrial-card {
     @apply 
       bg-zinc-950/40 
       backdrop-blur-md 
