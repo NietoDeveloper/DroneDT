@@ -119,26 +119,4 @@ export default function DashboardLayout({ children }: LayoutProps) {
               </span>
               <span className="text-[8px] text-zinc-400">LATENCY: 14MS</span>
             </div>
-            <div className="h-8 w-[1px] bg-gainsboro" />
-            <span className="bg-black text-gold px-3 py-1 rounded-sm text-[9px] font-black tracking-widest border border-gold/20 shadow-sm">
-              MVP_Q2_2026
-            </span>
-          </div>
-        </header>
-
-        {/* LIENZO DE COMPONENTES: Aquí es donde vive la magia de Emerald DT */}
-        <section className="flex-1 relative overflow-hidden bg-[#F8F8F8]">
-          {/* Este contenedor es el que recibe los hijos, los cuales manejarán su propio scroll si es necesario */}
-          <div className="absolute inset-0 p-6 md:p-8">
-            <div className="h-full w-full max-w-[1900px] mx-auto">
-              {children}
-            </div>
-          </div>
-          
-          {/* Decoración de fondo minimalista */}
-  
-        </section>
-      </main>
-    </div>
-  );
-}
+     
