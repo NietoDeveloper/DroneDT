@@ -90,16 +90,6 @@
       cursor-pointer;
   }
 
-  /* Estética Cinematográfica Emerald/Drone */
-  .glass-panel {
-    @apply 
-      bg-white/70 
-      backdrop-blur-xl 
-      border border-gainsboro
-      shadow-premium
-      rounded-2xl;
-  }
-
   /* Panel Industrial Estilo SpaceX para Dashboard */
   .industrial-card {
     @apply 
