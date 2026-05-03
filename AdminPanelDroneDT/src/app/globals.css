@@ -20,11 +20,4 @@
   --color-true-black: #050505;
   --color-zinc-950: #09090b;
 
-  /* Tipografía */
-  --font-heading: "Inter", "Helvetica Neue", sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
-  
-  /* Sombras */
-  --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.1);
-
 }
