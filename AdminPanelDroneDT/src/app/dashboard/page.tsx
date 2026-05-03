@@ -110,35 +110,7 @@ export default function UsersPage() {
               <div className="text-green-400 border-l border-zinc-800 pl-3">
                 <span className="text-zinc-600">[09:45:02]</span> AUTH_SUCCESS: Operator "M. Nieto" logged in from Bogotá_Node.
               </div>
-              <div className="text-red-400 border-l border-zinc-800 pl-3">
-                <span className="text-zinc-600">[10:12:44]</span> BAN_TRIGGER: User_ID_03 restricted by policy "Level_5_Security".
-              </div>
-              <div className="text-zinc-500 border-l border-zinc-800 pl-3">
-                <span className="text-zinc-600">[11:05:19]</span> DB_SYNC: Inventory updated (Railway.app).
-              </div>
-            </div>
-          </div>
-        </aside>
-
-        {/* PANEL DERECHO: DATAGRID */}
-        <main className="flex-1 bg-white border border-gainsboro rounded-sm shadow-sm overflow-hidden flex flex-col">
-          <div className="p-4 border-b border-gainsboro flex justify-between items-center bg-zinc-50 flex-shrink-0">
-            <div className="relative w-full max-w-sm">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={12} />
-              <input 
-                type="text" 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Filtrar por identidad o acceso..." 
-                className="w-full pl-9 pr-4 py-2 text-[10px] bg-white border border-gainsboro rounded-sm focus:outline-none focus:border-gold font-bold uppercase tracking-widest placeholder:text-zinc-300 transition-all"
-              />
-            </div>
-          </div>
-
-          <div className="flex-1 overflow-y-auto custom-scrollbar">
-            <table className="w-full text-left border-collapse">
-
-          </div>
+   
         </main>
       </div>
     </div>
