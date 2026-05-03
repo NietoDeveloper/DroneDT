@@ -63,15 +63,7 @@
     background: transparent;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: var(--color-gold);
-    border-radius: 10px;
-    opacity: 0.5;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: var(--color-yellow-color);
-  }
+  .custom-scrollbar::-webkit-scrollbar-thumb
 }
 
 @layer components {
