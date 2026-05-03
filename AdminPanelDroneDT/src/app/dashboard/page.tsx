@@ -161,25 +161,7 @@ export default function UsersPage() {
                         : 'bg-zinc-100 text-zinc-600 border-zinc-200'
                       }`}>
                         {user.role}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-2">
-                        <div className={`w-1.5 h-1.5 rounded-full ${
-                          user.status === 'ACTIVE' ? 'bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.4)]' : 'bg-red-500'
-                        }`} />
-                        <span className="text-[10px] font-bold uppercase tracking-tighter text-zinc-700">{user.status}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-right">
-                      <div className="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                        {user.status === 'ACTIVE' ? (
-                        ize={14} />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+                      </s
               </tbody>
             </table>
           </div>
