@@ -10,39 +10,14 @@ import Logo from "@/components/ui/Logo";
 export const metadata: Metadata = {
   title: {
     template: '%s | Panel Control Empresa Drone DT',
-    default: 'Panel Control Empresa DroneDT',
-  },
-  description: "Sistema de Inteligencia y Gestión Drone DT. Ingeniería de alto rendimiento por NietoDeveloper.",
-};
-
-export default function RootLayout({
-  children,
-
-  return (
-
-      >
-
-
-        <div className="relative flex min-h-screen flex-col">
-
-
-          {/* Footer Técnico - Visible en el área de acceso */}
-          <footer className="py-8 px-6 md:px-12 border-t border-gainsboro bg-white/40 backdrop-blur-xl relative z-20">
-            <div className="max-w-7xl mx-auto">
-              <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-                
-                {/* Logo con filtro para estética técnica */}
-                <div className="opacity-80 hover:opacity-100 transition-opacity filter brightness-0">
-
-                </div>
+    d
 
                 <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-zinc-500 font-mono">
                   <a 
                     href="https://softwaredt.vercel.app/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="opacity-80 hover:text-gold transition-colors cursor-pointer"
-                  >
+                    className="opacity-80 hover:text
                     © 2026 <span className="font-bold">Software DT</span> — Industry Standard
                   </a>
                   
