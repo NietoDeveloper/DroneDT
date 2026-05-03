@@ -53,19 +53,6 @@
     color: var(--color-heading);
   }
 
-  /* Scrollbar Minimalista para Componentes Internos */
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb
-}
-
 @layer components {
   /* Botón de alto rendimiento *
 
