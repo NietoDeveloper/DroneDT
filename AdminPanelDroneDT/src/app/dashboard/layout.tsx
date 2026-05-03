@@ -57,20 +57,3 @@ export default function DashboardLayout({ children }: LayoutProps) {
         <nav className="flex-1 mt-6 px-3 space-y-1 overflow-y-auto custom-scrollbar">
           {navigation.map((item) => (
             <a
-              key={item.name}
-              href={item.href}
-              className="flex items-center p-3 text-gainsboro hover:bg-gold hover:text-black rounded-lg transition-all duration-300 group relative"
-            >
-              <item.icon size={20} className="min-w-[20px]" />
-              {isSidebarOpen && (
-                <span className="ml-4 text-xs font-bold uppercase tracking-tight animate-in slide-in-from-left-2">
-                  {item.name}
-                </span>
-              )}
-              {!isSidebarOpen && (
-                <div className="absolute left-14 bg-black text-gold text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity border border-gold/30 whitespace-nowrap z-50">
-                  {item.name}
-                </div>
-              )}
-            </a>
-          ))}
