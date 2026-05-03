@@ -21,8 +21,7 @@ export default function RootLayout({
   return (
 
       >
-        {/* Preloader con calibración de sistema (3.5s) */}
-        <Preloader />
+
 
         <div className="relative flex min-h-screen flex-col">
           {/* Barra superior dorada Aeroespacial - Línea de identidad Drone DT */}
