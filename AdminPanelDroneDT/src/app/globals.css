@@ -40,13 +40,6 @@
     margin: 0;
     padding: 0;
   }
-
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold tracking-tight;
-    color: var(--color-heading);
-  }
-
 @layer components {
   /* Botón de alto rendimiento *
 
