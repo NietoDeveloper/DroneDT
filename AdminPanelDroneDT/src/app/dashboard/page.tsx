@@ -66,27 +66,5 @@ export default function UsersPage() {
           {['ALL', 'ACTIVE', 'BANNED', 'PENDING'].map((tab) => (
             <button
               key={tab}
-              onClick={() => setFilter(tab as any)}
-              className={`px-6 py-2 text-[10px] font-black uppercase tracking-widest transition-all relative ${
-                filter === tab 
-                ? 'text-black after:absolute after:bottom-[-1px] after:left-0 after:w-full after:h-[2px] after:bg-gold' 
-                : 'text-zinc-400 hover:text-zinc-600'
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </nav>
-      </header>
-
-      {/* CUERPO DEL DASHBOARD */}
-      <div className="flex-1 flex flex-col md:flex-row gap-6 overflow-hidden">
-        
-        {/* PANEL IZQUIERDO: ACCIONES Y LOGS */}
-        <aside className="w-full md:w-72 flex flex-col gap-4 flex-shrink-0">
-          <div className="bg-white border border-gainsboro rounded-sm p-5 shadow-sm">
-            <h3 className="text-[9px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-4">Security Protocol</h3>
-            <button className="w-full flex items-center justify-between p-3 bg-black text-white hover:bg-zinc-800 rounded-sm transition-all group border border-transparent hover:border-gold/50">
-     
-  );
+    
 }
