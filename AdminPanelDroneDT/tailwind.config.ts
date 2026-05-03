@@ -17,7 +17,7 @@ const config: Config = {
         "heading": "#000000",
         "main": "#DCDCDC", // Fondo base de la app
       },
-      // Extensiones para el Look & Feel de SpaceX / Industrial
+
       backgroundImage: {
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
