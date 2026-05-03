@@ -53,7 +53,3 @@ export default function DashboardLayout({ children }: LayoutProps) {
             {isSidebarOpen ? <X size={18} /> : <Menu size={22} />}
           </button>
         </div>
-
-        <nav className="flex-1 mt-6 px-3 space-y-1 overflow-y-auto custom-scrollbar">
-          {navigation.map((item) => (
-            <a
