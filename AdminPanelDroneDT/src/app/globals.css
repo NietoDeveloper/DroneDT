@@ -40,9 +40,5 @@
     margin: 0;
     padding: 0;
   }
-    @apply 
-      bg-zinc-950/40 
-      transition-all 
-      duration-500;
-  }
+
 }
