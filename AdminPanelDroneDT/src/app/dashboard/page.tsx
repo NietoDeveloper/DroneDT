@@ -87,32 +87,6 @@ export default function UsersPage() {
           <div className="bg-white border border-gainsboro rounded-sm p-5 shadow-sm">
             <h3 className="text-[9px] font-black text-zinc-400 uppercase tracking-[0.2em] mb-4">Security Protocol</h3>
             <button className="w-full flex items-center justify-between p-3 bg-black text-white hover:bg-zinc-800 rounded-sm transition-all group border border-transparent hover:border-gold/50">
-              <span className="text-[10px] font-bold uppercase tracking-widest flex items-center gap-3">
-                <UserPlus size={14} className="text-gold" /> Add Operator
-              </span>
-              <kbd className="text-[9px] bg-zinc-800 px-1.5 py-0.5 rounded text-zinc-400 font-mono">NEW</kbd>
-            </button>
-          </div>
-
-          <div className="bg-zinc-950 text-white rounded-sm p-5 shadow-2xl flex-1 flex flex-col overflow-hidden border-t-2 border-gold/30">
-            <div className="flex items-center justify-between mb-4 flex-shrink-0">
-              <div className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-[9px] font-mono text-zinc-400 uppercase">Audit_Logs</span>
-              </div>
-              <span className="text-[8px] text-zinc-600 font-mono italic">v2.0.4</span>
-            </div>
-            
-            <div className="flex-1 overflow-y-auto font-mono text-[9px] space-y-3 custom-scrollbar pr-2">
-              <div className="text-zinc-500 border-l border-zinc-800 pl-3">
-                <span className="text-gold/50">[09:22:10]</span> SYSTEM_READY: Double cluster initialized.
-              </div>
-              <div className="text-green-400 border-l border-zinc-800 pl-3">
-                <span className="text-zinc-600">[09:45:02]</span> AUTH_SUCCESS: Operator "M. Nieto" logged in from Bogotá_Node.
-              </div>
-   
-        </main>
-      </div>
-    </div>
+     
   );
 }
