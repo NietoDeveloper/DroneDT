@@ -27,7 +27,7 @@ const config: Config = {
     },
   },
   plugins: [
-    // Aquí puedes añadir tailwind-animate si decides usar ShadcnUI más adelante
+
   ],
 };
 
