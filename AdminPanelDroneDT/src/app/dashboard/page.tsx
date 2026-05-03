@@ -174,22 +174,7 @@ export default function UsersPage() {
                     <td className="px-6 py-4 text-right">
                       <div className="flex justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                         {user.status === 'ACTIVE' ? (
-                          <button 
-                            onClick={() => handleStatusChange(user.id, 'BANNED')}
-                            className="p-2 text-zinc-400 hover:text-red-500 hover:bg-red-50 rounded-sm"
-                          >
-                            <UserMinus size={14} />
-                          </button>
-                        ) : (
-                          <button 
-                            onClick={() => handleStatusChange(user.id, 'ACTIVE')}
-                            className="p-2 text-zinc-400 hover:text-green-500 hover:bg-green-50 rounded-sm"
-                          >
-                            <ShieldCheck size={14} />
-                          </button>
-                        )}
-                        <button className="p-2 text-zinc-400 hover:text-gold hover:bg-zinc-950 rounded-sm transition-colors">
-                          <ShieldAlert size={14} />
+                        ize={14} />
                         </button>
                       </div>
                     </td>
