@@ -19,7 +19,7 @@ const config: Config = {
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
-      // Configuraciones de sombra para los widgets tipo "Canvas"
+
       boxShadow: {
         'l5-inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
         'gold-glow': '0 0 15px -3px rgba(255, 215, 0, 0.3)',
