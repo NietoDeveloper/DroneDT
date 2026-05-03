@@ -23,10 +23,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body 
-        className="
-          bg-main 
-          antialiased 
-          min-h-screen 
+
 
           overflow-x-hidden
         "
