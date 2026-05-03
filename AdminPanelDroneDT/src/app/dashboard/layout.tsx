@@ -136,9 +136,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
           </div>
           
           {/* Decoración de fondo minimalista */}
-          <div className="absolute bottom-4 right-6 pointer-events-none opacity-5">
-             <span className="text-[80px] font-black text-black tracking-tighter select-none">DT</span>
-          </div>
+  
         </section>
       </main>
     </div>
