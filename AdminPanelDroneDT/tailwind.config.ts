@@ -12,11 +12,6 @@ const config: Config = {
       colors: {
       },
 
-
-
-      boxShadow: {
-
-      }
     },
   },
   plugins: [
