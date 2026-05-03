@@ -1,0 +1,41 @@
+{
+  "name": "dronedt-admin-panel",
+  "version": "1.1.0",
+  "description": "Nivel L5 Admin Panel - Drone DT & Emerald DT Ecosystem",
+  "author": "Manuel Nieto",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "drones",
+    "digital-twin",
+    "emerald-dt",
+    "mern",
+    "nextjs15"
+  ],
+  "dependencies": {
+    "next": "15.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lucide-react": "^0.468.0",
+    "framer-motion": "^11.13.1",
+    "zustand": "^5.0.2",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "tailwindcss": "^3.4.16",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "15.1.0"
+  }
+}
