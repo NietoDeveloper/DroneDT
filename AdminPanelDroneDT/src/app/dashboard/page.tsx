@@ -137,33 +137,7 @@ export default function UsersPage() {
 
           <div className="flex-1 overflow-y-auto custom-scrollbar">
             <table className="w-full text-left border-collapse">
-              <thead className="bg-zinc-50 border-b border-gainsboro sticky top-0 z-20">
-                <tr>
-                  <th className="px-6 py-4 text-[9px] font-black text-zinc-400 uppercase tracking-[0.2em]">Operator_Identity</th>
-                  <th className="px-6 py-4 text-[9px] font-black text-zinc-400 uppercase tracking-[0.2em]">Security_Level</th>
-                  <th className="px-6 py-4 text-[9px] font-black text-zinc-400 uppercase tracking-[0.2em]">Status</th>
-                  <th className="px-6 py-4 text-[9px] font-black text-zinc-400 uppercase tracking-[0.2em] text-right">Commands</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gainsboro">
-                {filteredUsers.map((user) => (
-                  <tr key={user.id} className="group hover:bg-zinc-50 transition-all duration-200">
-                    <td className="px-6 py-4">
-                      <div className="flex flex-col">
-                        <span className="text-[11px] font-black text-heading uppercase tracking-tight">{user.name}</span>
-                        <span className="text-[9px] text-zinc-400 font-mono italic">{user.email}</span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <span className={`text-[9px] px-2 py-0.5 rounded-sm font-black border tracking-widest ${
-                        user.role === 'ADMIN' 
-                        ? 'bg-black text-gold border-gold/30' 
-                        : 'bg-zinc-100 text-zinc-600 border-zinc-200'
-                      }`}>
-                        {user.role}
-                      </s
-              </tbody>
-            </table>
+
           </div>
         </main>
       </div>
