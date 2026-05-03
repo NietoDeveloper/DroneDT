@@ -21,12 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className="scroll-smooth">
-      <body 
 
-
-          overflow-x-hidden
-        "
       >
         {/* Preloader con calibración de sistema (3.5s) */}
         <Preloader />
