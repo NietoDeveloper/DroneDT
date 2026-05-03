@@ -74,19 +74,3 @@ export default function DashboardLayout({ children }: LayoutProps) {
               )}
             </a>
           ))}
-        </nav>
-
-        {/* PROFILE SECTION: Datos de Zustand */}
-        <div className={`p-4 border-t border-white/5 bg-zinc-950/50 ${!isSidebarOpen && 'flex justify-center'}`}>
-          <div className="flex items-center gap-3">
-            <div className="relative">
-               <div className="w-8 h-8 rounded-full bg-yellow-color border border-gold flex items-center justify-center shadow-[0_0_10px_rgba(255,215,0,0.3)]">
-                  <ShieldCheck size={14} className="text-black" />
-               </div>
-               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-black rounded-full" />
-            </div>
-            {isSidebarOpen && (
-              <div className="overflow-hidden animate-in fade-in duration-500">
-                <p className="text-[11px] font-bold text-white truncate leading-none mb-1">
-                  {userProfile?.name || 'OPERADOR_01'}
-                </p>
