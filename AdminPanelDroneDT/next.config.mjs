@@ -25,39 +25,3 @@ const nextConfig = {
     ],
   },
 
-  /* 
-      DOCKER & RAILWAY OPTIMIZATION
-      'standalone' reduce drásticamente el tamaño de la imagen Docker al copiar
-      solo los archivos necesarios para el servidor Node.js.
-  */
-  output: 'standalone',
-
-  /* 
-      PERFORMANCE & EXPERIMENTAL
-      Forzamos el 'tree-shaking' en librerías pesadas de UI para 
-      maximizar la velocidad de carga en el Dashboard.
-  */
-  experimental: {
-    optimizePackageImports: [
-      'lucide-react', 
-      '@headlessui/react', 
-      'framer-motion'
-    ],
-  },
-
-  /* 
-      STRICT VALIDATION
-      No se permiten errores de TypeScript ni advertencias de ESLint en el Build.
-      Mantiene el estándar de calidad de Nieto Laboratory.
-  */
-  typescript: {
-    ignoreBuildErrors: false,
-  },
-  
-  eslint: {
-    // Nota: Aunque Turbopack es estricto, forzamos la validación en el build
-    ignoreDuringBuilds: false,
-  },
-};
-
-export default nextConfig;
