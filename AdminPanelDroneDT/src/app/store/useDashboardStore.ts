@@ -21,33 +21,47 @@ interface DashboardState {
   toggleSidebar: () => void;
   setUserProfile: (profile: UserProfile) => void;
   updateSales: (amount: number) => void;
+  setActiveUsers: (count: number) => void;
 }
 
 export const useDashboardStore = create<DashboardState>()(
   persist(
     (set) => ({
-      // Initial States
+      // Initial States: Valores por defecto consistentes
       isSidebarOpen: true,
       userProfile: {
-        name: "Manuel Nieto",
-        role: "Software Architect #1",
+        name: "MANUEL NIETO",
+        role: "SYSTEM_ADMIN",
         status: 'online'
       },
       totalSalesToday: 0,
-      activeUsers: 0,
+      activeUsers: 24, // Mock inicial de tráfico industrial
 
-      // Functions
-      toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
+      // Actions
+      toggleSidebar: () => set((state) => ({ 
+        isSidebarOpen: !state.isSidebarOpen 
+      })),
       
-      setUserProfile: (profile) => set({ userProfile: profile }),
+      setUserProfile: (profile) => set({ 
+        userProfile: profile 
+      }),
       
       updateSales: (amount) => set((state) => ({ 
         totalSalesToday: state.totalSalesToday + amount 
       })),
+
+      setActiveUsers: (count) => set({ 
+        activeUsers: count 
+      }),
     }),
     {
-      name: 'dronedt-dashboard-storage', // Nombre de la key en localStorage
+      name: 'dronedt-dashboard-storage',
       storage: createJSONStorage(() => localStorage),
+      // Prevent hydration mismatch: Solo persistimos UI State por ahora
+      partialize: (state) => ({ 
+        isSidebarOpen: state.isSidebarOpen,
+        userProfile: state.userProfile 
+      }),
     }
   )
 );
