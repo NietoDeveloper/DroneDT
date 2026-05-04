@@ -15,7 +15,7 @@
     "moduleResolution": "bundler", // Optimizado para Next.js/Turbopack
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
