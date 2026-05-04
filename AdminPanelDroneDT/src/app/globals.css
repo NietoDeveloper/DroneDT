@@ -1,0 +1,180 @@
+@import "tailwindcss";
+
+/* 
+   FUERZA EL ESCANEO DE ARCHIVOS (Nieto Laboratory Standard)
+*/
+@source "../../"; 
+
+@theme {
+  /* Identidad Drone DT - Convención v4 */
+  --color-gainsboro: #DCDCDC;
+  --color-gold: #FFD700;
+  --color-yellow-color: #FEB60D;
+  --color-heading: #000000;
+  --color-text: #1A1A1A;
+  
+  --color-main: #F8F8F8;
+  --color-card: #FFFFFF;
+  --color-border: #E5E5E5;
+
+  /* Estética Industrial / SpaceX */
+  --color-true-black: #050505;
+  --color-zinc-950: #09090b;
+  --color-emerald-glow: #50C878;
+
+  /* Tipografía Profesional */
+  --font-heading: "Inter", "Helvetica Neue", sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  
+  /* Sombras de Alta Fidelidad */
+  --shadow-premium: 0 10px 40px -10px rgba(0,0,0,0.1);
+  --shadow-gold-glow: 0 0 20px -5px rgba(255, 215, 0, 0.4);
+
+  /* Responsive Dinámico L5 (310px - 1900px) */
+  --breakpoint-xs: 310px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-uw: 1900px; 
+}
+
+/* 
+   REGISTRO DE UTILIDADES PERSONALIZADAS (Solución al Error de Compilación)
+   En v4, usamos @utility para que @apply pueda encontrar la clase.
+*/
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-gold);
+    border-radius: 10px;
+    transition: background 0.2s;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-yellow-color);
+  }
+}
+
+@layer base {
+  /* ARQUITECTURA VIEWPORT CANVAS */
+  html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden; 
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-main);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: var(--color-heading);
+  }
+}
+
+@layer components {
+  /* BOTONES DE ALTO RENDIMIENTO */
+  .btn-primary {
+    @apply 
+      bg-gold 
+      text-black 
+      font-bold 
+      py-3 px-6 
+      rounded-full 
+      shadow-md
+      hover:bg-yellow-color 
+      hover:shadow-gold-glow
+      active:scale-95 
+      transition-all 
+      duration-200 
+      cursor-pointer 
+      flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply 
+      bg-transparent 
+      text-black 
+      border-2 border-black
+      font-semibold 
+      py-3 px-6 
+      rounded-full 
+      hover:bg-black 
+      hover:text-white
+      transition-all 
+      duration-200;
+  }
+
+  /* CONTENEDORES CINEMATOGRÁFICOS */
+  .glass-panel {
+    @apply 
+      bg-white/70 
+      backdrop-blur-xl 
+      border border-white/20
+      shadow-premium
+      rounded-2xl;
+  }
+
+  .industrial-card {
+    @apply 
+      bg-zinc-950/90 
+      backdrop-blur-md 
+      border border-white/10 
+      rounded-lg
+      text-white
+      shadow-2xl
+      transition-all 
+      duration-500;
+  }
+
+  .dashboard-widget {
+    @apply
+      bg-white
+      border border-gainsboro
+      rounded-xl
+      p-5
+      shadow-sm
+      hover:shadow-md
+      transition-shadow
+      duration-300;
+  }
+
+  /* UTILIDADES DE LAYOUT L5 */
+  .full-canvas {
+    @apply h-full w-full flex flex-col overflow-hidden;
+  }
+
+  .scroll-area {
+    /* Aquí ya no fallará porque custom-scrollbar es una @utility */
+    @apply flex-1 overflow-y-auto custom-scrollbar;
+  }
+}
+
+/* RESPONSIVE ESPECÍFICO (310px - 1900px) */
+@media (max-width: 310px) {
+  body { font-size: 13px; }
+  .btn-primary { padding: 0.5rem 0.8rem; font-size: 0.75rem; }
+}
+
+@media (min-width: 1900px) {
+  .container { max-width: 1800px; }
+}
