@@ -23,10 +23,6 @@ const nextConfig = {
     ],
   },
 
-  /* 
-     Optimización de paquetes: Asegura que Next.js no intente compilar 
-     librerías pesadas de servidor en el lado del cliente.
-  */
   experimental: {
     // Optimiza el empaquetado de componentes grandes
     optimizePackageImports: ['lucide-react'],
