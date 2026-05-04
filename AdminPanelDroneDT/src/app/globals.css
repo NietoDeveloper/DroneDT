@@ -41,16 +41,3 @@
   --breakpoint-2xl: 1536px;
   --breakpoint-uw: 1900px; /* Ultra-Wide para Dashboards */
 }
-
-@layer base {
-  /* ARQUITECTURA VIEWPORT CANVAS (No Scroll Global) */
-  /* Vital para dashboards tipo Digital Twin */
-  html, body {
-    height: 100%;
-    width: 100%;
-    overflow: hidden; /* El scroll solo ocurre dentro de componentes específicos */
-    margin: 0;
-    padding: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
