@@ -1,0 +1,60 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  /* 
+      REACT STRICT MODE
+      Detección proactiva de efectos secundarios. 
+      Mandatorio para el Ciclo S+.
+  */
+  reactStrictMode: true,
+
+  /* 
+      SECURITY & ASSET MANAGEMENT
+      Configuración optimizada para S3 (Esmeraldas) y referencias de SpaceX.
+  */
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**.amazonaws.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.spacex.com',
+      },
+    ],
+  },
+
+  /* 
+      DOCKER & RAILWAY OPTIMIZATION
+      Build standalone para máxima eficiencia en contenedores.
+  */
+  output: 'standalone',
+
+  /* 
+      PERFORMANCE & EXPERIMENTAL
+      Turbopack optimizado: tree-shaking agresivo para el Dashboard.
+  */
+  experimental: {
+    optimizePackageImports: [
+      'lucide-react', 
+      '@headlessui/react', 
+      'framer-motion'
+    ],
+  },
+
+  /* 
+      STRICT VALIDATION
+      Cero tolerancia a errores de tipado en producción.
+  */
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  /* 
+      ESLINT (Next.js 16/Turbopack Standard)
+      Se eliminó la clave 'eslint' raíz para evitar advertencias de esquema.
+      La validación se delega al proceso nativo de 'next build'.
+  */
+};
+
+export default nextConfig;
