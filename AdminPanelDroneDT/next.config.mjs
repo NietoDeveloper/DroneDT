@@ -37,8 +37,6 @@ const nextConfig = {
   */
   output: 'standalone', // Crea un build optimizado para contenedores Docker
 
-  // Evita errores de compilación por ESLint o TypeScript durante el deploy
-  // (Opcional: solo si prefieres validar manualmente antes de subir)
   eslint: {
     ignoreDuringBuilds: false,
   },
