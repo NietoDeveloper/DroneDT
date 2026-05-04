@@ -177,10 +177,6 @@
   }
 }
 
-/* 
-   REGLAS RESPONSIVE ESPECÍFICAS (310px - 1900px) 
-   Asegura que en pantallas mínimas (310px) nada se rompa.
-*/
 @media (max-width: 310px) {
   body {
     font-size: 14px;
