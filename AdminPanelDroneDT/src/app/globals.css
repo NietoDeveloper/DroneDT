@@ -158,33 +158,3 @@
   .dashboard-widget {
     @apply
       bg-white
-      border border-gainsboro
-      rounded-xl
-      p-5
-      shadow-sm
-      hover:shadow-md
-      transition-shadow
-      duration-300;
-  }
-
-  /* UTILIDADES DE LAYOUT L5 */
-  .full-canvas {
-    @apply h-full w-full flex flex-col overflow-hidden;
-  }
-
-  .scroll-area {
-    @apply flex-1 overflow-y-auto custom-scrollbar;
-  }
-}
-
-@media (max-width: 310px) {
-  body {
-    font-size: 14px;
-  }
-  .btn-primary {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-}
-
-}
