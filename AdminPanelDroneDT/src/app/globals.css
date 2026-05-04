@@ -6,20 +6,3 @@
 */
 @source "../"; 
 
-@theme {
-  /* Identidad Drone DT - Convención v4 */
-  --color-gainsboro: #DCDCDC;
-  --color-gold: #FFD700;
-  --color-yellow-color: #FEB60D;
-  --color-heading: #000000;
-  --color-text: #1A1A1A;
-  
-  /* Mapeo para bg-main y bg-card */
-  --color-main: #F8F8F8;
-  --color-card: #FFFFFF;
-  --color-border: #E5E5E5;
-
-  /* Estética Industrial / SpaceX */
-  --color-true-black: #050505;
-  --color-zinc-950: #09090b;
-  --color-emerald-glow: #50C878;
