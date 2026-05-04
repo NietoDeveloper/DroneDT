@@ -16,25 +16,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.amazonaws.com', // Permitir imágenes de tus buckets de AWS
       },
-      {
-        protocol: 'https',
-        hostname: 'www.spacex.com', // Para tus referencias visuales
-      },
-    ],
-  },
 
-  experimental: {
-    // Optimiza el empaquetado de componentes grandes
-    optimizePackageImports: ['lucide-react'],
-  },
-
-  /* 
-     Configuración de salida para despliegue en Railway/Docker
-  */
-  output: 'standalone', // Crea un build optimizado para contenedores Docker
-
-  eslint: {
-    ignoreDuringBuilds: false,
   },
 
 };
