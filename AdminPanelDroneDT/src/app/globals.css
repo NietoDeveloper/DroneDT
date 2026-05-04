@@ -168,11 +168,6 @@
   }
 }
 
-/* RESPONSIVE ESPECÍFICO (310px - 1900px) */
-@media (max-width: 310px) {
-  body {
-    font-size: 13px;
-  }
 
 }
 
