@@ -26,9 +26,6 @@ interface DashboardState {
     
       })),
 
-      
-      updateSales: (amount) => set((state) => ({ 
-        totalSalesToday: state.totalSalesToday + amount 
       })),
 
       setActiveUsers: (count) => set({ 
