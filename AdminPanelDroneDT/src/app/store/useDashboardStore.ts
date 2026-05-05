@@ -19,21 +19,7 @@ interface DashboardState {
 
   // Actions
   toggleSidebar: () => void;
-  setUserProfile: (profile: UserProfile) => void;
-  updateSales: (amount: number) => void;
-  setActiveUsers: (count: number) => void;
-}
 
-export const useDashboardStore = create<DashboardState>()(
-  persist(
-    (set) => ({
-      // Initial States: Valores por defecto consistentes
-      isSidebarOpen: true,
-      userProfile: {
-        name: "MANUEL NIETO",
-        role: "SYSTEM_ADMIN",
-        status: 'online'
-      },
       totalSalesToday: 0,
       activeUsers: 24, // Mock inicial de tráfico industrial
 
