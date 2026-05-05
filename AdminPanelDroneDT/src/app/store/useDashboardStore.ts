@@ -35,11 +35,7 @@ export const useDashboardStore = create<DashboardState>()(
       totalSalesToday: 0,
       activeUsers: 0,
 
-      // Functions
 
-    {
-      name: 'dronedt-dashboard-storage', // Nombre de la key en localStorage
-      storage: createJSONStorage(() => localStorage),
     }
   )
 );
