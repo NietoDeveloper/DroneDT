@@ -36,11 +36,7 @@ export const useDashboardStore = create<DashboardState>()(
       activeUsers: 0,
 
       // Functions
-      toggleSidebar: () => set((state) => ({ isSidebarOpen: !state.isSidebarOpen })),
-      
-      setUserProfile: (profile) => set({ userProfile: profile }),
-      
-    }),
+
     {
       name: 'dronedt-dashboard-storage', // Nombre de la key en localStorage
       storage: createJSONStorage(() => localStorage),
