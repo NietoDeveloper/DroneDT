@@ -13,13 +13,6 @@ interface DashboardState {
   isSidebarOpen: boolean;
 
 
-
-  // Actions
-  toggleSidebar: () => void;
-  setUserProfile: (profile: UserProfile) => void;
-
-}
-
 export const useDashboardStore = create<DashboardState>()(
   persist(
     (set) => ({
