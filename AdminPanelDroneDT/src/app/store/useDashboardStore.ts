@@ -57,7 +57,7 @@ export const useDashboardStore = create<DashboardState>()(
     {
       name: 'dronedt-dashboard-storage',
       storage: createJSONStorage(() => localStorage),
-      // Prevent hydration mismatch: Solo persistimos UI State por ahora
+
       partialize: (state) => ({ 
         isSidebarOpen: state.isSidebarOpen,
         userProfile: state.userProfile 
