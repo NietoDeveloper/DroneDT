@@ -6,5 +6,3 @@ interface UserProfile {
   role: string;
   avatar?: string;
 
-
-      }),
