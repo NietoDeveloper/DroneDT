@@ -20,7 +20,7 @@ interface DashboardState {
   // Actions
   toggleSidebar: () => void;
   setUserProfile: (profile: UserProfile) => void;
-  updateSales: (amount: number) => void;
+
 }
 
 export const useDashboardStore = create<DashboardState>()(
