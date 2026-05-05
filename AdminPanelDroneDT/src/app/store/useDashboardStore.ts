@@ -41,10 +41,7 @@ export const useDashboardStore = create<DashboardState>()(
       toggleSidebar: () => set((state) => ({ 
         isSidebarOpen: !state.isSidebarOpen 
       })),
-      
-      setUserProfile: (profile) => set({ 
-        userProfile: profile 
-      }),
+
       
       updateSales: (amount) => set((state) => ({ 
         totalSalesToday: state.totalSalesToday + amount 
