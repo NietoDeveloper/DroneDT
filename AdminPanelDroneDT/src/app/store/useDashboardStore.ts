@@ -14,10 +14,7 @@ interface DashboardState {
 
 
 export const useDashboardStore = create<DashboardState>()(
-  persist(
-    (set) => ({
-      // Initial States
-      isSidebarOpen: true,
+
 
 
 
