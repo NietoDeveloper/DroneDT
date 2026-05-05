@@ -28,10 +28,7 @@ export const useDashboardStore = create<DashboardState>()(
     (set) => ({
       // Initial States
       isSidebarOpen: true,
-      userProfile: {
 
-        status: 'online'
-      },
 
 
 
