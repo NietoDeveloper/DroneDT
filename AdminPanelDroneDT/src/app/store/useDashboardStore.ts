@@ -11,10 +11,7 @@ interface UserProfile {
 interface DashboardState {
   // UI State
   isSidebarOpen: boolean;
-  
-  // Real-time Data State
-  userProfile: UserProfile | null;
-  totalSalesToday: number;
+
 
 
   // Actions
