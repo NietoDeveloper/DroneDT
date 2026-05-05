@@ -6,19 +6,6 @@ interface UserProfile {
   role: string;
   avatar?: string;
   status: 'online' | 'offline';
-}
 
-interface DashboardState {
-  // UI State
-  isSidebarOpen: boolean;
-
-
-export const useDashboardStore = create<DashboardState>()(
-
-
-
-
-
-    }
   )
 );
