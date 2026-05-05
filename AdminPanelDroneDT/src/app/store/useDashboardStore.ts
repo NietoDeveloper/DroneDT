@@ -59,8 +59,7 @@ export const useDashboardStore = create<DashboardState>()(
       storage: createJSONStorage(() => localStorage),
 
       partialize: (state) => ({ 
-        isSidebarOpen: state.isSidebarOpen,
-        userProfile: state.userProfile 
+
       }),
     }
   )
