@@ -32,8 +32,7 @@ export const useDashboardStore = create<DashboardState>()(
 
         status: 'online'
       },
-      totalSalesToday: 0,
-      activeUsers: 0,
+
 
 
     }
