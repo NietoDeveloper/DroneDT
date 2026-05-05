@@ -28,10 +28,6 @@ interface DashboardState {
 
       })),
 
-      setActiveUsers: (count) => set({ 
-        activeUsers: count 
-      }),
-    }),
     {
       name: 'dronedt-dashboard-storage',
       storage: createJSONStorage(() => localStorage),
