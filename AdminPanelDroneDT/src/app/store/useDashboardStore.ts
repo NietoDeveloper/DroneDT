@@ -23,9 +23,7 @@ interface DashboardState {
       totalSalesToday: 0,
       activeUsers: 24, // Mock inicial de tráfico industrial
 
-      // Actions
-      toggleSidebar: () => set((state) => ({ 
-        isSidebarOpen: !state.isSidebarOpen 
+    
       })),
 
       
