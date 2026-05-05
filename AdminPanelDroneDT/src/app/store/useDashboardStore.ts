@@ -5,7 +5,6 @@ interface UserProfile {
   name: string;
   role: string;
   avatar?: string;
-  status: 'online' | 'offline';
 
   )
 );
