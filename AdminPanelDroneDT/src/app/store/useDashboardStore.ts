@@ -15,7 +15,7 @@ interface DashboardState {
   // Real-time Data State
   userProfile: UserProfile | null;
   totalSalesToday: number;
-  activeUsers: number;
+
 
   // Actions
   toggleSidebar: () => void;
