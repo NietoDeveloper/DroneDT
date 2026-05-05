@@ -29,8 +29,7 @@ export const useDashboardStore = create<DashboardState>()(
       // Initial States
       isSidebarOpen: true,
       userProfile: {
-        name: "Manuel Nieto",
-        role: "Software Architect #1",
+
         status: 'online'
       },
       totalSalesToday: 0,
