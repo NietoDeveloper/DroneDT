@@ -20,11 +20,6 @@ interface DashboardState {
   // Actions
   toggleSidebar: () => void;
 
-      totalSalesToday: 0,
-      activeUsers: 24, // Mock inicial de tráfico industrial
-
-    
-      })),
 
       })),
 
