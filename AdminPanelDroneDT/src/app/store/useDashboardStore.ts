@@ -40,9 +40,6 @@ export const useDashboardStore = create<DashboardState>()(
       
       setUserProfile: (profile) => set({ userProfile: profile }),
       
-      updateSales: (amount) => set((state) => ({ 
-        totalSalesToday: state.totalSalesToday + amount 
-      })),
     }),
     {
       name: 'dronedt-dashboard-storage', // Nombre de la key en localStorage
