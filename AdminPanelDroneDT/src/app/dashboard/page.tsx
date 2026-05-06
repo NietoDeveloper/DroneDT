@@ -161,11 +161,7 @@ export default function UsersPage() {
                     <td className="px-6 py-5 text-right px-10">
                       <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
                         {user.status === 'ACTIVE' ? (
-                          <button 
-                            onClick={() => handleStatusChange(user.id, 'BANNED')}
-                            className="p-2 text-zinc-400 hover:text-red-500 hover:bg-red-50 rounded-sm transition-colors cursor-pointer"
-                            title="Restrict Access"
-                          >
+
                             <UserMinus size={15} />
                           </button>
                         ) : (
