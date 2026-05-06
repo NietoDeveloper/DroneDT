@@ -159,11 +159,7 @@ export default function UsersPage() {
 
                     </td>
                     <td className="px-6 py-5 text-right px-10">
-                      <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
-                        {user.status === 'ACTIVE' ? (
 
-                            <UserMinus size={15} />
-                          </button>
                         ) : (
                           <button 
                             onClick={() => handleStatusChange(user.id, 'ACTIVE')}
