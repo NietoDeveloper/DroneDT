@@ -15,9 +15,7 @@ ABLE: { color: 'text-emerald-500', bg: 'bg-emerald-500/10', label: 'IN_STOCK' },
 
       {/* Header: SKU & Status Indicator */}
       <div className="z-10 flex items-start justify-between">
-        <div className="flex flex-col">
-          <span className="font-mono text-[9px] tracking-widest text-white/40 italic">
-            SKU_ID: {product.sku}
+   
           </span>
 
         </div>
