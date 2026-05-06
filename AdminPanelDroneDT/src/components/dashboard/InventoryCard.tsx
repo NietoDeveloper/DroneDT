@@ -49,12 +49,6 @@ export const InventoryCard = ({ product }: Props) => {
       </div>
 
 
-      {/* Bottom Actions & Time Sync */}
-      <div className="z-10 mt-1 flex items-center justify-between border-t border-white/5 pt-2">
-
-        
-      </div>
-
       {/* Security Shield Watermark (Background) */}
       <ShieldCheck className="absolute bottom-2 right-2 h-12 w-12 text-white/[0.02] pointer-events-none" />
     </motion.div>
