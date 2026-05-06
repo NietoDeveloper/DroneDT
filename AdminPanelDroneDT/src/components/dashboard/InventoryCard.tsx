@@ -53,9 +53,7 @@ export const InventoryCard = ({ product }: Props) => {
       <div className="z-10 mt-1 flex items-center justify-between border-t border-white/5 pt-2">
         <div className="flex items-center gap-1 text-white/20">
           <Clock className="h-2.5 w-2.5" />
-          <span className="font-mono text-[8px]">
-            {new Date(product.lastUpdate).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-          </span>
+
         </div>
         
       </div>
