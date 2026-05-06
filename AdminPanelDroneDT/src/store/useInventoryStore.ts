@@ -67,16 +67,5 @@ export const useInventoryStore = create<InventoryState>((set, get) => ({
 
   setLoading: (status) => set({ isLoading: status }),
 
-  // Motor interno de estadísticas: Se dispara automáticamente con cada cambio
-  calculateStats: () => {
-    const { products } = get();
-    const stats = products.reduce((acc, curr) => {
-      if (curr.status === 'AVAILABLE') {
-        acc.totalStock += 1;
-        acc.totalValue += curr.price;
-      }
-
-
-    set({ stats });
   },
 }));
