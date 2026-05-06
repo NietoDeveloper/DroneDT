@@ -160,12 +160,6 @@ export default function UsersPage() {
                     </td>
                     <td className="px-6 py-5 text-right px-10">
 
-                        ) : (
-
-                        )}
-                        <button className="p-2 text-zinc-400 hover:text-gold hover:bg-zinc-950 rounded-sm transition-all cursor-pointer">
-                          <ShieldAlert size={15} />
-                        </button>
                       </div>
                     </td>
                   </tr>
