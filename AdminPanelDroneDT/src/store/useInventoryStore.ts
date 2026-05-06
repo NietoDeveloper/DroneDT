@@ -40,17 +40,3 @@ export const useInventoryStore = create<InventoryState>((set, get) => ({
     { id: '4', sku: 'EM-CS-099', name: 'Coscuez Deep Green', carats: 1.2, price: 4500, status: 'RESERVED', lastUpdate: new Date().toISOString() },
   ],
   
-  stats: {
-    totalStock: 0,
-    totalSold: 0,
-    totalValue: 0,
-    revenue: 0,
-  },
-  
-  isLoading: false,
-
-  // Setea todos los productos (útil para el primer fetch o reconexión de socket)
-  setProducts: (products) => {
-    set({ products });
-    get().calculateStats();
-  },
