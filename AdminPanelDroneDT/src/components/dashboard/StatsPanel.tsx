@@ -98,19 +98,3 @@ const StatCard = ({ label, value, icon, trend, subLabel, isStatus }: StatCardPro
         <h4 className={`text-lg font-black tracking-tight font-mono ${isStatus ? 'text-emerald-500' : 'text-white'}`}>
           {value}
         </h4>
-        {trend && (
-          <span className="text-[8px] font-bold text-emerald-500/80 bg-emerald-500/10 px-1 py-0.5 rounded">
-            {trend}
-          </span>
-        )}
-      </div>
-
-      <p className="text-[9px] text-white/30 uppercase mt-1 tracking-wider">
-        {subLabel}
-      </p>
-
-      {/* Línea de escaneo inferior */}
-      <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-    </motion.div>
-  );
-};
