@@ -21,13 +21,7 @@ export const InventoryGrid = () => {
       {/* Header del Módulo */}
 
 
-      </div>
 
-        {products.length > 0 ? (
-          products.map((product) => (
-            <InventoryCard key={product.id} product={product} />
-          ))
-        ) : (
    
         )}
       </div>
