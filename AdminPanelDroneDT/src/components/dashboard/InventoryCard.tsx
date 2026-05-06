@@ -48,12 +48,6 @@ export const InventoryCard = ({ product }: Props) => {
         </div>
       </div>
 
-      {/* Technical Specs: Carats & Visual Indicator */}
-      <div className="z-10 flex items-center gap-4 py-1">
-
-    
-
-      </div>
 
       {/* Bottom Actions & Time Sync */}
       <div className="z-10 mt-1 flex items-center justify-between border-t border-white/5 pt-2">
