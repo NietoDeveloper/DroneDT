@@ -48,8 +48,6 @@ export const InventoryCard = ({ product }: Props) => {
         </div>
       </div>
 
-
-      {/* Security Shield Watermark (Background) */}
       <ShieldCheck className="absolute bottom-2 right-2 h-12 w-12 text-white/[0.02] pointer-events-none" />
     </motion.div>
   );
