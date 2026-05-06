@@ -46,11 +46,6 @@ export const InventoryGrid = () => {
         )}
       </div>
 
-      {/* Footer de Estado Interno */}
-      <div className="mt-3 flex items-center justify-between text-[9px] font-mono uppercase tracking-widest text-white/30">
-        <span>Nodes: Railway.app / AWS</span>
-        <span>Total Items: {products.length}</span>
-      </div>
-    </section>
+
   );
 };
