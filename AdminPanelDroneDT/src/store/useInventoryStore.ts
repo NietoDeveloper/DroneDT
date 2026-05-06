@@ -23,10 +23,3 @@ interface InventoryState {
   products: Product[];
   stats: InventoryStats;
   isLoading: boolean;
-  
-  // Acciones para el Dashboard de Control
-  setProducts: (products: Product[]) => void;
-  updateProductStatus: (id: string, status: Product['status']) => void;
-  calculateStats: () => void;
-  setLoading: (status: boolean) => void;
-}
