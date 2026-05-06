@@ -29,10 +29,6 @@ export const InventoryGrid = () => {
 
       </div>
 
-      {/* Grid Adaptativo: Sin Scroll Externo */}
-      <div className="grid flex-1 grid-cols-1 gap-3 overflow-y-auto pr-2 
-                      scrollbar-thin scrollbar-track-transparent scrollbar-thumb-white/10
-                      sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {products.length > 0 ? (
           products.map((product) => (
             <InventoryCard key={product.id} product={product} />
