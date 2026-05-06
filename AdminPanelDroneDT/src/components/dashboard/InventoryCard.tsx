@@ -36,9 +36,7 @@ export const InventoryCard = ({ product }: Props) => {
           <span className="font-mono text-[9px] tracking-widest text-white/40 italic">
             SKU_ID: {product.sku}
           </span>
-          <h3 className="text-[11px] font-bold uppercase tracking-tight text-white/90">
-            {product.name}
-          </h3>
+
         </div>
         <div className={`flex items-center gap-1 px-1.5 py-0.5 rounded-sm ${currentStatus.bg}`}>
           <div className={`h-1 w-1 rounded-full animate-pulse ${currentStatus.color.replace('text', 'bg')}`} />
