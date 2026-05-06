@@ -99,27 +99,7 @@ export default function UsersPage() {
               <div className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse" />
                 <span className="text-[9px] font-mono text-zinc-400 uppercase tracking-widest">Audit_Logs</span>
-              </div>
-              <span className="text-[8px] text-zinc-600 font-mono italic">v2.0.4</span>
-            </div>
-            
 
-          </div>
-        </aside>
-
-        {/* PANEL DERECHO: DATAGRID INDUSTRIAL */}
-        <main className="flex-1 bg-white border border-gainsboro rounded-sm shadow-sm overflow-hidden flex flex-col">
-          <div className="p-4 border-b border-gainsboro flex justify-between items-center bg-zinc-50 flex-shrink-0">
-            <div className="relative w-full max-w-sm">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-400" size={12} />
-              <input 
-                type="text" 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="FILTRAR IDENTIDAD O ACCESO..." 
-                className="w-full pl-9 pr-4 py-2.5 text-[10px] bg-white border border-gainsboro rounded-sm focus:outline-none focus:border-gold font-black uppercase tracking-[0.15em] placeholder:text-zinc-300 transition-all shadow-inner"
-              />
-            </div>
           </div>
 
           <div className="flex-1 overflow-auto custom-scrollbar">
