@@ -50,12 +50,7 @@ export const InventoryCard = ({ product }: Props) => {
 
       {/* Technical Specs: Carats & Visual Indicator */}
       <div className="z-10 flex items-center gap-4 py-1">
-        <div className="flex items-center gap-2">
 
-          <div className="flex flex-col">
-            
-          </div>
-        </div>
     
 
       </div>
