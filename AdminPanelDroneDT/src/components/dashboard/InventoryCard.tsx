@@ -58,8 +58,7 @@ export const InventoryCard = ({ product }: Props) => {
             
           </div>
         </div>
-        
-        <div className="h-8 w-[1px] bg-white/5" />
+    
 
       </div>
 
