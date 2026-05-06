@@ -154,14 +154,7 @@ export default function UsersPage() {
                         <span className="text-[9px] text-zinc-400 font-mono italic tracking-tighter">{user.email}</span>
                       </div>
                     </td>
-                    <td className="px-6 py-5">
-                      <span className={`text-[9px] px-2.5 py-1 rounded-sm font-black border tracking-widest ${
-                        user.role === 'ADMIN' 
 
-                      }`}>
-                        {user.role}
-                      </span>
-                    </td>
                     <td className="px-6 py-5">
 
                     </td>
