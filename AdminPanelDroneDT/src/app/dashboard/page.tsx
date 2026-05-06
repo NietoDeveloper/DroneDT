@@ -164,9 +164,7 @@ export default function UsersPage() {
                     </td>
                     <td className="px-6 py-5">
                       <div className="flex items-center gap-2">
-                        <div className={`w-1.5 h-1.5 rounded-full ${
-                          user.status === 'ACTIVE' ? 'bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.4)]' : 'bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.4)]'
-                        }`} />
+  
                         <span className="text-[10px] font-black uppercase tracking-tighter text-zinc-700">{user.status}</span>
                       </div>
                     </td>
