@@ -11,9 +11,3 @@ export interface Product {
   lastUpdate: string;  // Timestamp para el Live Sync
 }
 
-interface InventoryStats {
-  totalStock: number;
-  totalSold: number;
-  totalValue: number;
-  revenue: number;
-}
