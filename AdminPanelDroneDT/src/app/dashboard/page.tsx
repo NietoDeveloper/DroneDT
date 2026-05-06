@@ -158,13 +158,7 @@ export default function UsersPage() {
                     <td className="px-6 py-5">
 
                     </td>
-                    <td className="px-6 py-5 text-right px-10">
 
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
             </table>
           </div>
         </main>
