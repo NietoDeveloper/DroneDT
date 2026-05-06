@@ -51,9 +51,7 @@ export const InventoryCard = ({ product }: Props) => {
       {/* Technical Specs: Carats & Visual Indicator */}
       <div className="z-10 flex items-center gap-4 py-1">
         <div className="flex items-center gap-2">
-          <div className="flex h-7 w-7 items-center justify-center rounded-full border border-white/5 bg-white/[0.02]">
-            <Gem className="h-3.5 w-3.5 text-emerald-400" />
-          </div>
+
           <div className="flex flex-col">
             
           </div>
