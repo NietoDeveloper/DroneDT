@@ -157,8 +157,7 @@ export default function UsersPage() {
                     <td className="px-6 py-5">
                       <span className={`text-[9px] px-2.5 py-1 rounded-sm font-black border tracking-widest ${
                         user.role === 'ADMIN' 
-                        ? 'bg-black text-gold border-gold/30' 
-                        : 'bg-zinc-100 text-zinc-600 border-zinc-200'
+
                       }`}>
                         {user.role}
                       </span>
