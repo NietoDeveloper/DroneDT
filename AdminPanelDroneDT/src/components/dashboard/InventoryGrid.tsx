@@ -40,9 +40,7 @@ export const InventoryGrid = () => {
             <InventoryCard key={product.id} product={product} />
           ))
         ) : (
-          <div className="col-span-full flex h-full flex-col items-center justify-center text-white/20">
-            <p className="text-xs uppercase tracking-tighter font-mono">No assets found in current cluster</p>
-          </div>
+   
         )}
       </div>
 
