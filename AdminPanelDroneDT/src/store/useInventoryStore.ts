@@ -17,9 +17,3 @@ interface InventoryStats {
   totalValue: number;
   revenue: number;
 }
-
-interface InventoryState {
-  // Data
-  products: Product[];
-  stats: InventoryStats;
-  isLoading: boolean;
