@@ -14,17 +14,7 @@ export const InventoryGrid = () => {
         <Loader2 className="h-8 w-8 animate-spin text-emerald-500" />
       </div>
     );
-  }
 
-  return (
-    <section className="flex h-full flex-col overflow-hidden border border-white/10 bg-black/40 p-4 backdrop-blur-sm">
-      {/* Header del Módulo */}
-
-
-
-   
-        )}
-      </div>
 
 
   );
