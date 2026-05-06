@@ -3,10 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Product } from '@/store/useInventoryStore';
-import { Gem, ArrowUpRight, Clock, ShieldCheck, Zap } from 'lucide-react';
 
-interface Props {
-  product: Product;
 }
 
 ABLE: { color: 'text-emerald-500', bg: 'bg-emerald-500/10', label: 'IN_STOCK' },
