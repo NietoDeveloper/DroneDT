@@ -19,11 +19,7 @@ export const InventoryGrid = () => {
   return (
     <section className="flex h-full flex-col overflow-hidden border border-white/10 bg-black/40 p-4 backdrop-blur-sm">
       {/* Header del Módulo */}
-      <div className="mb-4 flex items-center justify-between border-b border-white/5 pb-2">
-        <div className="flex items-center gap-2">
-          <PackageSearch className="h-5 w-5 text-emerald-400" />
 
-        </div>
 
       </div>
 
