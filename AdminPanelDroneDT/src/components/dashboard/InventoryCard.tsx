@@ -51,10 +51,7 @@ export const InventoryCard = ({ product }: Props) => {
 
       {/* Bottom Actions & Time Sync */}
       <div className="z-10 mt-1 flex items-center justify-between border-t border-white/5 pt-2">
-        <div className="flex items-center gap-1 text-white/20">
-          <Clock className="h-2.5 w-2.5" />
 
-        </div>
         
       </div>
 
