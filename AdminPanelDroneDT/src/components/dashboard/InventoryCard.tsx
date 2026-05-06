@@ -13,14 +13,7 @@ export const InventoryCard = ({ product }: Props) => {
   // Configuración de colores según el estado (Estética de seguridad L5)
   const statusConfig = {
     AVAILABLE: { color: 'text-emerald-500', bg: 'bg-emerald-500/10', label: 'IN_STOCK' },
-    SOLD: { color: 'text-red-500', bg: 'bg-red-500/10', label: 'OUT_OF_STOCK' },
-    RESERVED: { color: 'text-amber-500', bg: 'bg-amber-500/10', label: 'PENDING' },
-    DRAFT: { color: 'text-slate-500', bg: 'bg-slate-500/10', label: 'DRAFT_MODE' },
-  };
 
-  const currentStatus = statusConfig[product.status] || statusConfig.DRAFT;
-
-  return (
 
 
       {/* Header: SKU & Status Indicator */}
