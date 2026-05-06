@@ -55,8 +55,7 @@ export const InventoryCard = ({ product }: Props) => {
             <Gem className="h-3.5 w-3.5 text-emerald-400" />
           </div>
           <div className="flex flex-col">
-            <span className="font-mono text-[10px] text-white">{product.carats} CT</span>
-            <span className="text-[8px] uppercase tracking-tighter text-white/30 text-[7px]">Mass_Unit</span>
+            
           </div>
         </div>
         
