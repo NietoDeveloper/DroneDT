@@ -30,7 +30,3 @@ interface InventoryState {
   calculateStats: () => void;
   setLoading: (status: boolean) => void;
 }
-
-export const useInventoryStore = create<InventoryState>((set, get) => ({
-  // Estado Inicial con Data de Prueba (Mock) para Visualización Inmediata
-  products: [
