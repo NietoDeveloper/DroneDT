@@ -76,8 +76,6 @@ export const useInventoryStore = create<InventoryState>((set, get) => ({
         acc.totalValue += curr.price;
       }
 
-      return acc;
-    }, { totalStock: 0, totalSold: 0, totalValue: 0, revenue: 0 });
 
     set({ stats });
   },
