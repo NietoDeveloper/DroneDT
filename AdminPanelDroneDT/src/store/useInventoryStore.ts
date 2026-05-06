@@ -54,18 +54,3 @@ export const useInventoryStore = create<InventoryState>((set, get) => ({
     set({ products });
     get().calculateStats();
   },
-
-  // Actualización puntual (cuando una venta ocurre en el front de clientes)
-  updateProductStatus: (id, status) => {
-    set((state) => ({
-      products: state.products.map((p) => 
-        p.id === id ? { ...p, status, lastUpdate: new Date().toISOString() } : p
-      ),
-    }));
-    get().calculateStats();
-  },
-
-  setLoading: (status) => set({ isLoading: status }),
-
-  },
-}));
