@@ -161,13 +161,7 @@ export default function UsersPage() {
                     <td className="px-6 py-5 text-right px-10">
 
                         ) : (
-                          <button 
-                            onClick={() => handleStatusChange(user.id, 'ACTIVE')}
-                            className="p-2 text-zinc-400 hover:text-green-500 hover:bg-green-50 rounded-sm transition-colors cursor-pointer"
-                            title="Restore Access"
-                          >
-                            <ShieldCheck size={15} />
-                          </button>
+
                         )}
                         <button className="p-2 text-zinc-400 hover:text-gold hover:bg-zinc-950 rounded-sm transition-all cursor-pointer">
                           <ShieldAlert size={15} />
