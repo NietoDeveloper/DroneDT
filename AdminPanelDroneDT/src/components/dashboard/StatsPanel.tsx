@@ -85,16 +85,4 @@ const StatCard = ({ label, value, icon, trend, subLabel, isStatus }: StatCardPro
         <BarChart3 className="h-16 w-16 text-white" />
       </div>
 
-      <div className="flex items-center justify-between mb-2">
-        <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/40">
-          {label}
-        </span>
-        <div className="p-1.5 rounded-md bg-white/[0.03] border border-white/5">
-          {icon}
-        </div>
-      </div>
 
-      <div className="flex items-baseline gap-2">
-        <h4 className={`text-lg font-black tracking-tight font-mono ${isStatus ? 'text-emerald-500' : 'text-white'}`}>
-          {value}
-        </h4>
