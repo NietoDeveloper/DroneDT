@@ -62,12 +62,6 @@ export const InventoryCard = ({ product }: Props) => {
         
         <div className="h-8 w-[1px] bg-white/5" />
 
-        <div className="flex flex-col">
-          <span className="font-mono text-[10px] text-emerald-400">
-            ${product.price.toLocaleString()} <span className="text-[8px] text-white/40">USD</span>
-          </span>
-          <span className="text-[8px] uppercase tracking-tighter text-white/30 text-[7px]">Market_Value</span>
-        </div>
       </div>
 
       {/* Bottom Actions & Time Sync */}
