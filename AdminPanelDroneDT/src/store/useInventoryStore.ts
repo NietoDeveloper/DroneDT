@@ -34,6 +34,3 @@ interface InventoryState {
 export const useInventoryStore = create<InventoryState>((set, get) => ({
   // Estado Inicial con Data de Prueba (Mock) para Visualización Inmediata
   products: [
-    { id: '1', sku: 'EM-BG-001', name: 'Trapiche Emerald', carats: 2.5, price: 12500, status: 'AVAILABLE', lastUpdate: new Date().toISOString() },
-    { id: '2', sku: 'EM-MU-042', name: 'Muzo Prime', carats: 1.8, price: 8900, status: 'SOLD', lastUpdate: new Date().toISOString() },
-    { id: '3', sku: 'EM-CH-015', name: 'Chivor Blue-Green', carats: 3.2, price: 15000, status: 'AVAILABLE', lastUpdate: new Date().toISOString() },
