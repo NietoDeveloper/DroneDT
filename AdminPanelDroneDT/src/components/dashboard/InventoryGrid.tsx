@@ -26,9 +26,7 @@ export const InventoryGrid = () => {
             Real-Time Inventory
           </h2>
         </div>
-        <span className="text-[10px] font-mono text-white/40">
-          L5_SYNC_ACTIVE
-        </span>
+
       </div>
 
       {/* Grid Adaptativo: Sin Scroll Externo */}
