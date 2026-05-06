@@ -21,14 +21,7 @@ export const InventoryCard = ({ product }: Props) => {
   const currentStatus = statusConfig[product.status] || statusConfig.DRAFT;
 
   return (
-    <motion.div
-      whileHover={{ scale: 1.01, backgroundColor: 'rgba(255, 255, 255, 0.03)' }}
-      className="relative flex flex-col gap-3 border border-white/10 bg-black/40 p-3 transition-all duration-300 group"
-    >
-      {/* Glitch Effect sutil en el borde al hacer hover */}
-      <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent" />
-      </div>
+
 
       {/* Header: SKU & Status Indicator */}
       <div className="z-10 flex items-start justify-between">
