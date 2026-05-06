@@ -80,7 +80,7 @@ export const InventoryCard = ({ product }: Props) => {
         </div>
         
         <button className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-widest text-white/40 hover:text-white transition-colors">
-          Inspect
+    
           <ArrowUpRight className="h-2.5 w-2.5" />
         </button>
       </div>
