@@ -103,20 +103,7 @@ export default function UsersPage() {
               <span className="text-[8px] text-zinc-600 font-mono italic">v2.0.4</span>
             </div>
             
-            <div className="flex-1 overflow-y-auto font-mono text-[9px] space-y-3 custom-scrollbar pr-2 leading-relaxed">
-              <div className="text-zinc-500 border-l border-zinc-800 pl-3">
-                <span className="text-gold/50">[09:22:10]</span> SYSTEM_READY: Double cluster initialized.
-              </div>
-              <div className="text-green-400 border-l border-zinc-800 pl-3 bg-green-500/5 py-1">
-                <span className="text-zinc-600">[09:45:02]</span> AUTH_SUCCESS: Operator "M. Nieto" logged in.
-              </div>
-              <div className="text-red-400 border-l border-zinc-800 pl-3 bg-red-500/5 py-1">
-                <span className="text-zinc-600">[10:12:44]</span> BAN_TRIGGER: Level_5_Security active.
-              </div>
-              <div className="text-zinc-500 border-l border-zinc-800 pl-3">
-                <span className="text-zinc-600">[11:05:19]</span> DB_SYNC: Inventory updated (Railway.app).
-              </div>
-            </div>
+
           </div>
         </aside>
 
