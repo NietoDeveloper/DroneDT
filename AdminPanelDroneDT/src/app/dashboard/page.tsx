@@ -163,10 +163,7 @@ export default function UsersPage() {
                       </span>
                     </td>
                     <td className="px-6 py-5">
-                      <div className="flex items-center gap-2">
-  
-                        <span className="text-[10px] font-black uppercase tracking-tighter text-zinc-700">{user.status}</span>
-                      </div>
+
                     </td>
                     <td className="px-6 py-5 text-right px-10">
                       <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-2 group-hover:translate-x-0">
