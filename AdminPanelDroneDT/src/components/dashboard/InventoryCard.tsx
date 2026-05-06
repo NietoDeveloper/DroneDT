@@ -9,10 +9,7 @@ interface Props {
   product: Product;
 }
 
-export const InventoryCard = ({ product }: Props) => {
-  // Configuración de colores según el estado (Estética de seguridad L5)
-  const statusConfig = {
-    AVAILABLE: { color: 'text-emerald-500', bg: 'bg-emerald-500/10', label: 'IN_STOCK' },
+ABLE: { color: 'text-emerald-500', bg: 'bg-emerald-500/10', label: 'IN_STOCK' },
 
 
 
