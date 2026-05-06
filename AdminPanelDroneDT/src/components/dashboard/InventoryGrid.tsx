@@ -23,7 +23,6 @@ export const InventoryGrid = () => {
         <div className="flex items-center gap-2">
           <PackageSearch className="h-5 w-5 text-emerald-400" />
 
-          </h2>
         </div>
 
       </div>
