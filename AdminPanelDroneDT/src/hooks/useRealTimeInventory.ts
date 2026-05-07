@@ -69,6 +69,5 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     };
   }, [fetchInventory, refreshInterval]);
 
-  // Retornamos una función manual de refresco para botones "Sync Now"
   return { manualSync: fetchInventory };
 };
