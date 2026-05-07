@@ -83,11 +83,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
       transition={{ duration: 0.4, delay, ease: "easeOut" }}
       className="relative flex flex-col border border-white/10 bg-black/60 p-3 overflow-hidden group"
     >
-      {/* Background Layer: Efecto de profundidad aeroespacial */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
-      <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.08] transition-opacity duration-700">
-        <ShieldCheck className="h-20 w-20 text-white" />
-      </div>
+
 
       {/* Top Section */}
       <div className="z-10 flex items-center justify-between mb-3">
