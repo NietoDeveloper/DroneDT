@@ -101,24 +101,3 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
           {icon}
         </div>
       </div>
-
-      {/* Main Value Section */}
-      <div className="z-10 flex flex-col">
-        <div className="flex items-baseline gap-2">
-          <h4 className={`text-xl font-black tracking-tighter font-mono ${isStatus ? 'text-emerald-400' : 'text-white'}`}>
-            {value}
-          </h4>
-          {trend && (
-            <span className="text-[7px] font-bold text-emerald-400 bg-emerald-500/10 px-1 py-0.5 border border-emerald-500/20">
-              {trend}
-            </span>
-          )}
-        </div>
-        <p className="text-[9px] font-medium text-white/30 uppercase mt-1 tracking-wider">
-          {subLabel}
-        </p>
-      </div>
-
-});
-
-StatCard.displayName = 'StatCard';
