@@ -120,12 +120,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
       </div>
 
       {/* Scanner Line: Efecto visual de proceso en tiempo real */}
-      <motion.div 
-        animate={{ x: ['-100%', '100%'] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-        className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"
-      />
-    </motion.div>
+
   );
 });
 
