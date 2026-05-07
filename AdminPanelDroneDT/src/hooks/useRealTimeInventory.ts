@@ -54,7 +54,7 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
   }, [actions]);
 
   useEffect(() => {
-    // Primera carga inmediata
+
     fetchInventory();
 
     timerRef.current = setInterval(() => {
