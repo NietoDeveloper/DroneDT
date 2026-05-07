@@ -62,7 +62,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
       fetchInventory();
     }, refreshInterval);
 
-    // Cleanup Protocol: Evita memory leaks al desmontar el Dashboard
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
       if (abortControllerRef.current) abortControllerRef.current.abort();
