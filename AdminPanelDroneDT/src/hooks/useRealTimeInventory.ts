@@ -57,7 +57,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     // Primera carga inmediata
     fetchInventory();
 
-    // Configuración del loop de sincronización (Real-time Simulation)
     timerRef.current = setInterval(() => {
       fetchInventory();
     }, refreshInterval);
