@@ -32,26 +32,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
         },
       });
 
-      if (!response.ok) throw new Error(`HTTP_ERROR: ${response.status}`);
-
-      const data = await response.json();
-
-      // Sanitización y Validación de Datos L5
-      if (Array.isArray(data)) {
-        actions.setProducts(data);
-        actions.setError(null);
-      }
-    } catch (error: any) {
-      if (error.name === 'AbortError') {
-        console.log('Fetch_Aborted: Operation superseded by new request');
-      } else {
-        console.error('L5_SYNC_FAILURE:', error);
-        actions.setError('FAILED_TO_SYNC_WITH_CLUSTER');
-      }
-    } finally {
-      actions.setLoading(false);
-    }
-  }, [actions]);
 
   useEffect(() => {
 
