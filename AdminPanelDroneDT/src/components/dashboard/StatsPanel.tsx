@@ -119,9 +119,6 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
         </p>
       </div>
 
-      {/* Scanner Line: Efecto visual de proceso en tiempo real */}
-
-  );
 });
 
 StatCard.displayName = 'StatCard';
