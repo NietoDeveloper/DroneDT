@@ -30,22 +30,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
           'Content-Type': 'application/json',
           'X-Security-Level': 'L5-Shield',
         },
-      });
-
-
-  useEffect(() => {
-
-    fetchInventory();
-
-    timerRef.current = setInterval(() => {
-      fetchInventory();
-    }, refreshInterval);
-
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-      if (abortControllerRef.current) abortControllerRef.current.abort();
-    };
-  }, [fetchInventory, refreshInterval]);
-
+   
   return { manualSync: fetchInventory };
 };
