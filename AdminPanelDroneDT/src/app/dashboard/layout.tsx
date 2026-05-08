@@ -90,29 +90,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
             </div>
             {isSidebarOpen && (
               <div className="overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-500">
-                <p className="text-[11px] font-black text-white truncate leading-none mb-1 uppercase tracking-tighter">
-                  {userProfile?.name || 'MANUEL NIETO'}
-                </p>
-                <p className="text-[9px] text-gold/60 uppercase tracking-[0.2em] font-mono">
-                  {userProfile?.role || 'SYSTEM_ADMIN'}
-                </p>
-              </div>
-            )}
-          </div>
-        </div>
-      </aside>
 
-      {/* MAIN VIEWPORT CANVAS */}
-      <main className="flex-1 flex flex-col min-w-0 relative h-full overflow-hidden">
-        
-        {/* TOPBAR - Glassmorphism ready */}
-        <header className="h-16 bg-white/90 backdrop-blur-md border-b border-gainsboro flex items-center justify-between px-8 z-40 flex-shrink-0">
-          <div className="flex items-center gap-4">
-            <div className="h-4 w-[2px] bg-gold hidden md:block" />
-            <h2 className="text-[10px] font-black text-heading uppercase tracking-[0.3em]">
-              Control Panel / <span className="text-zinc-400 font-medium">L5_Architecture</span>
-            </h2>
-          </div>
 
         {/* LIENZO DE COMPONENTES - Responsive 310px to 1900px */}
         <section className="flex-1 relative bg-main overflow-hidden">
