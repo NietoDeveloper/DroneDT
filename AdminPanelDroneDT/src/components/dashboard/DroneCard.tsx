@@ -50,9 +50,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
         <div className="flex flex-col">
           <div className="flex items-center gap-2">
             <div className={`w-1 h-1 rounded-full ${isFlying ? 'bg-blue-500 animate-ping' : 'bg-emerald-500'}`} />
-            <span className="text-[10px] font-black text-white tracking-widest uppercase">
- 
-            </span>
           </div>
           <span className="text-[7px] text-zinc-600 font-bold ml-3 uppercase tracking-tighter">
 
