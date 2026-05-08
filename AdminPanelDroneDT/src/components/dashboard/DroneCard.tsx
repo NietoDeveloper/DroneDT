@@ -113,7 +113,7 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
         <div className="flex gap-1">
            <div className={`w-1 h-3 ${isFlying ? 'bg-blue-500/20 animate-pulse' : 'bg-zinc-800'}`} />
            <div className={`w-1 h-3 ${isFlying ? 'bg-blue-500/40 animate-pulse' : 'bg-zinc-800'}`} />
-           <div className={`w-1 h-3 ${isFlying ? 'bg-blue-500 animate-pulse' : 'bg-zinc-800'}`} />
+         
         </div>
       </div>
 
