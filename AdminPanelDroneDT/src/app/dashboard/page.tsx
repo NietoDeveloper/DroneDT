@@ -50,15 +50,7 @@ export default function DashboardL5() {
               <span className="text-[9px] font-bold uppercase tracking-widest text-zinc-400">Asset_Stream</span>
             </div>
             
-            <div className="flex items-center h-full bg-black/40 px-2 border-l border-white/5 group transition-colors hover:bg-black/60">
-              <Search size={10} className="text-zinc-600 group-focus-within:text-emerald-500" />
-              <input 
-                type="text" 
-                placeholder="SKU_SEARCH" 
-                className="bg-transparent text-[9px] outline-none w-20 sm:w-32 ml-2 text-emerald-500 uppercase placeholder:text-zinc-800 cursor-text" 
-              />
-            </div>
-          </div>
+
 
           {/* GRID DE INVENTARIO (Sección Real) */}
           <div className="flex-1 overflow-y-auto overflow-x-hidden p-1 custom-scrollbar">
