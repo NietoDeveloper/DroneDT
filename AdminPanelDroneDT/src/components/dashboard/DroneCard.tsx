@@ -84,22 +84,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
           </div>
         </div>
 
-        {/* Batería Modular */}
-        <div className="flex items-center gap-2">
-          <div className="flex-1 h-[3px] bg-zinc-900 rounded-full overflow-hidden">
-            <motion.div 
-              initial={{ width: 0 }}
-              animate={{ width: `${drone.battery}%` }}
-              className={`h-full ${
-                drone.battery < 20 ? 'bg-red-600' : drone.battery < 50 ? 'bg-amber-500' : 'bg-emerald-600'
-              }`} 
-            />
-          </div>
-          <span className="text-[8px] font-mono text-zinc-500 w-6 text-right">
-            {drone.battery}%
-          </span>
-        </div>
-      </div>
 
       {/* 4. FOOTER: Sync & Navigation */}
       <div className="z-10 flex justify-between items-end pt-1 border-t border-white/5">
