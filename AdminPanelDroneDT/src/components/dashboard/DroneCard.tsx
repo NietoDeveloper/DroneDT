@@ -105,9 +105,7 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
       <div className="z-10 flex justify-between items-end pt-1 border-t border-white/5">
         <div className="flex items-center gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity">
           <Navigation size={8} className="text-zinc-400" />
-          <span className="text-[7px] text-zinc-500 uppercase font-bold tracking-tight">
-            Lat_Lng_Active
-          </span>
+
         </div>
         
         <div className="flex gap-1">
