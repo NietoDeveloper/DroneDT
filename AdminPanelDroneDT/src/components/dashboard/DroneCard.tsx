@@ -39,8 +39,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
       whileHover={{ y: -3, borderColor: isCritical ? 'rgba(239, 68, 68, 0.5)' : 'rgba(16, 185, 129, 0.4)' }}
       className={`relative bg-black border ${isCritical ? 'border-red-900/50' : 'border-white/5'} p-3 flex flex-col gap-3 group cursor-pointer transition-all overflow-hidden selection:bg-emerald-500/30`}
     >
-      
-      {/* 1. BACKGROUND GLYPH - Identidad visual técnica */}
 
       {/* 2. HEADER: Identificador y Señal */}
       <div className="z-10 flex justify-between items-start">
