@@ -55,22 +55,7 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
             </span>
           </div>
           <span className="text-[7px] text-zinc-600 font-bold ml-3 uppercase tracking-tighter">
-            ID: {drone.id.split('_').pop()}
-          </span>
-        </div>
-        
-        <div className="flex items-center gap-1.5 bg-zinc-900/50 px-1.5 py-0.5 rounded-sm border border-white/5">
-          <span className={`text-[8px] font-mono ${drone.signal > 70 ? 'text-emerald-500' : 'text-amber-500'}`}>
-            {drone.signal}%
-          </span>
-          <Radio size={10} className={drone.signal > 70 ? 'text-emerald-500' : 'text-zinc-600'} />
-        </div>
-      </div>
 
-      {/* 3. CENTER: Telemetría de Vuelo / Status */}
-      <div className="z-10 flex flex-col py-1">
-        <div className="flex items-center justify-between mb-1">
-        </div>
 
 
       {/* 4. FOOTER: Sync & Navigation */}
