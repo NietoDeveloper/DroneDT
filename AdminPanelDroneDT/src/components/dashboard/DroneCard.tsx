@@ -116,10 +116,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
       </div>
 
       <div className="absolute inset-x-0 bottom-0 h-[1px] overflow-hidden pointer-events-none">
-        <motion.div 
-        
-          className="w-1/2 h-full bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent group-hover:via-emerald-500/50"
-        />
       </div>
 
     </motion.div>
