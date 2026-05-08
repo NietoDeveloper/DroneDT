@@ -11,8 +11,6 @@ import {
   lastUpdate: string;
 }
 
-interface DroneCardProps {
-  drone: DroneData;
 }
 
 export const DroneCard = memo(({ drone }: DroneCardProps) => {
