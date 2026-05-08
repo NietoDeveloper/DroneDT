@@ -41,9 +41,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
     >
       
       {/* 1. BACKGROUND GLYPH - Identidad visual técnica */}
-      <div className="absolute -right-4 -bottom-4 opacity-[0.03] group-hover:opacity-[0.07] transition-opacity pointer-events-none">
-        <Cpu size={80} className="text-white" />
-      </div>
 
       {/* 2. HEADER: Identificador y Señal */}
       <div className="z-10 flex justify-between items-start">
