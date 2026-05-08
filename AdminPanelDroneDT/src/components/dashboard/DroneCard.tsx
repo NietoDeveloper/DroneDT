@@ -76,11 +76,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
             ) : (
               <Zap size={10} className={isFlying ? 'text-blue-400' : 'text-emerald-500'} />
             )}
-            <span className={`text-[9px] font-black uppercase tracking-widest ${
-              isCritical ? 'text-red-500' : isFlying ? 'text-blue-400' : 'text-emerald-500'
-            }`}>
-              {drone.status}
-            </span>
           </div>
         </div>
 
