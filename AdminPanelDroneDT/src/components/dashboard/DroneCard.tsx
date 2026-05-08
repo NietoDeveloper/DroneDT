@@ -107,10 +107,7 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
           <Navigation size={8} className="text-zinc-400" />
 
         </div>
-        
-        <div className="flex gap-1">
-           <div className={`w-1 h-3 ${isFlying ? 'bg-blue-500/20 animate-pulse' : 'bg-zinc-800'}`} />
-        </div>
+    
       </div>
 
     </motion.div>
