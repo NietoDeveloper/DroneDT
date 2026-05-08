@@ -40,9 +40,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
       className={`relative bg-black border ${isCritical ? 'border-red-900/50' : 'border-white/5'} p-3 flex flex-col gap-3 group cursor-pointer transition-all overflow-hidden selection:bg-emerald-500/30`}
     >
 
-      {/* 2. HEADER: Identificador y Señal */}
-      <div className="z-10 flex justify-between items-start">
-        <div className="flex flex-col">
 
         
 
