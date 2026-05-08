@@ -43,9 +43,7 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
       {/* 2. HEADER: Identificador y Señal */}
       <div className="z-10 flex justify-between items-start">
         <div className="flex flex-col">
-          <div className="flex items-center gap-2">
-            <div className={`w-1 h-1 rounded-full ${isFlying ? 'bg-blue-500 animate-ping' : 'bg-emerald-500'}`} />
-          </div>
+
           <span className="text-[7px] text-zinc-600 font-bold ml-3 uppercase tracking-tighter">
 
 
