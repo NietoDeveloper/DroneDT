@@ -44,7 +44,7 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
       <div className="z-10 flex justify-between items-start">
         <div className="flex flex-col">
 
-          <span className="text-[7px] text-zinc-600 font-bold ml-3 uppercase tracking-tighter">
+        
 
 
     
