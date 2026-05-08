@@ -115,7 +115,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
         </div>
       </div>
 
-      {/* 5. L5 SCANNER LINE - Solo se activa en Hover */}
       <div className="absolute inset-x-0 bottom-0 h-[1px] overflow-hidden pointer-events-none">
         <motion.div 
           animate={{ x: ['-100%', '100%'] }}
