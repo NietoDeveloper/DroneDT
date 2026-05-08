@@ -113,21 +113,6 @@ export default function DashboardLayout({ children }: LayoutProps) {
               Control Panel / <span className="text-zinc-400 font-medium">L5_Architecture</span>
             </h2>
           </div>
-          
-          <div className="flex items-center gap-6">
-            <div className="hidden sm:flex flex-col items-end font-mono">
-              <span className="flex items-center gap-1.5 text-[9px] font-black text-black">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                SISTEMA_ACTIVO
-              </span>
-              <span className="text-[8px] text-zinc-400 tracking-tighter uppercase">Latency: 14ms</span>
-            </div>
-            <div className="h-8 w-[1px] bg-gainsboro" />
-            <span className="bg-black text-gold px-3 py-1 rounded-sm text-[9px] font-black tracking-widest border border-gold/20 shadow-sm uppercase">
-              MVP_Q2_2026
-            </span>
-          </div>
-        </header>
 
         {/* LIENZO DE COMPONENTES - Responsive 310px to 1900px */}
         <section className="flex-1 relative bg-main overflow-hidden">
