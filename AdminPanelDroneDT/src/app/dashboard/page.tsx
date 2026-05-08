@@ -83,12 +83,6 @@ export default function DashboardL5() {
           </div>
         </div>
 
-        {/* LADO DERECHO: SIDEBAR */}
-        <aside className="hidden lg:flex w-[180px] flex-shrink-0 flex-col bg-black">
-          {/* BOTÓN ACCIÓN REAL */}
-          <button className="h-[44px] w-full bg-emerald-500 hover:bg-emerald-400 text-black font-black text-[10px] uppercase tracking-tighter transition-all active:scale-[0.98] cursor-pointer">
-            + NEW_UNIT_ASSET
-          </button>
 
       </div>
 
