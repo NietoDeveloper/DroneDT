@@ -90,24 +90,6 @@ export default function DashboardL5() {
             + NEW_UNIT_ASSET
           </button>
 
-          {/* SECCIÓN LOGS (Sección Real) */}
-          <div className="flex-1 flex flex-col min-h-0 border-t border-white/10">
-            <div className="h-[22px] px-2 flex items-center gap-2 bg-zinc-950 border-b border-white/5 cursor-default">
-              <Terminal size={10} className="text-emerald-500" />
-              <span className="text-[8px] text-zinc-400 font-bold tracking-widest">SYSTEM_LOG</span>
-            </div>
-            <div className="flex-1 overflow-hidden p-2 font-mono text-[8px] text-zinc-600 leading-relaxed">
-              <p className="hover:text-zinc-300 cursor-crosshair transition-colors truncate"><span className="text-emerald-900 mr-1">»</span> KERNEL_LIVE</p>
-              <p className="hover:text-zinc-300 cursor-crosshair transition-colors truncate"><span className="text-emerald-900 mr-1">»</span> SHIELD_ACTIVE</p>
-              <div className="mt-2 animate-pulse text-emerald-500/30 text-[7px] font-black">_LISTENING_MODE</div>
-            </div>
-          </div>
-
-          {/* ESPACIO VACÍO PARA FUTURAS SECCIONES */}
-          <div className="h-24 border-t border-white/5 bg-zinc-950/20">
-            {/* Futura sección de control de drones o telemetría */}
-          </div>
-        </aside>
       </div>
 
 
