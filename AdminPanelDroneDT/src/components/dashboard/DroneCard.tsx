@@ -115,9 +115,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
         </div>
       </div>
 
-      <div className="absolute inset-x-0 bottom-0 h-[1px] overflow-hidden pointer-events-none">
-      </div>
-
     </motion.div>
   );
 });
