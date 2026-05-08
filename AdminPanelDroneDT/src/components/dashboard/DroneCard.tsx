@@ -5,10 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Battery, 
   Wifi, 
-  Navigation, 
-  AlertTriangle, 
-  Cpu, 
-  Zap,
+
   Radio
 } from 'lucide-react';
 
