@@ -52,59 +52,7 @@ export default function DashboardLayout({ children }: LayoutProps) {
             onClick={toggleSidebar} 
             className="text-gainsboro hover:text-gold transition-colors p-1 cursor-pointer outline-none focus:ring-1 focus:ring-gold/30 rounded"
             aria-label="Toggle Sidebar"
-          >
-            {isSidebarOpen ? <X size={18} /> : <Menu size={22} />}
-          </button>
-        </div>
 
-        <nav className="flex-1 mt-6 px-3 space-y-1 overflow-y-auto custom-scrollbar overflow-x-hidden">
-          {navigation.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="flex items-center p-3 text-gainsboro hover:bg-gold hover:text-black rounded-lg transition-all duration-300 group relative"
-            >
-              <item.icon size={20} className="min-w-[20px] flex-shrink-0" />
-              {isSidebarOpen && (
-                <span className="ml-4 text-[10px] font-black uppercase tracking-widest animate-in slide-in-from-left-4 duration-300">
-                  {item.name}
-                </span>
-              )}
-              {!isSidebarOpen && (
-                <div className="absolute left-14 bg-black text-gold text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity border border-gold/30 whitespace-nowrap z-50 font-mono shadow-xl">
-                  {item.name}
-                </div>
-              )}
-            </a>
-          ))}
-        </nav>
-
-        {/* PROFILE SECTION - Safe Hydration Check */}
-        <div className={`p-4 border-t border-white/5 bg-zinc-950/50 ${!isSidebarOpen && 'flex justify-center'}`}>
-          <div className="flex items-center gap-3">
-            <div className="relative flex-shrink-0">
-               <div className="w-8 h-8 rounded-full bg-yellow-color border border-gold flex items-center justify-center shadow-[0_0_10px_rgba(255,184,0,0.3)]">
-                  <ShieldCheck size={14} className="text-black" />
-               </div>
-               <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 border-2 border-black rounded-full" />
-            </div>
-            {isSidebarOpen && (
-              <div className="overflow-hidden animate-in fade-in slide-in-from-bottom-2 duration-500">
-
-
-        {/* LIENZO DE COMPONENTES - Responsive 310px to 1900px */}
-        <section className="flex-1 relative bg-main overflow-hidden">
-          <div className="absolute inset-0 p-4 md:p-8 overflow-y-auto custom-scrollbar">
-            <div className="min-h-full w-full max-w-[1900px] min-w-[310px] mx-auto relative z-10">
-              {children}
-            </div>
-            
-            {/* Watermark Logo */}
-            <div className="fixed bottom-4 right-8 pointer-events-none opacity-[0.03] select-none z-0">
-              <span className="text-[120px] font-black text-black tracking-tighter">DT</span>
-            </div>
-          </div>
-        </section>
       </main>
     </div>
   );
