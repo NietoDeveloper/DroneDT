@@ -110,16 +110,7 @@ export default function DashboardL5() {
         </aside>
       </div>
 
-      {/* 4. ATOMIC FOOTER (14px) */}
-      <footer className="h-[14px] flex-shrink-0 flex items-center justify-between px-2 bg-zinc-950 border-t border-white/10">
-        <div className="flex gap-4 text-[7px] text-zinc-700 font-bold uppercase cursor-default">
-          <span className="hover:text-emerald-500 transition-colors">NODE: BOG_CENTER</span>
-          <span className="hidden sm:inline hover:text-emerald-500 transition-colors">TEMP: 21°C</span>
-        </div>
-        <div className="text-[7px] text-zinc-800 tracking-[0.2em] font-black hover:text-zinc-600 cursor-help transition-colors">
-          NIETO_LAB_CORE_2026
-        </div>
-      </footer>
+
 
     </div>
   );
