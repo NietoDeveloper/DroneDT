@@ -57,13 +57,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
           <span className="text-[7px] text-zinc-600 font-bold ml-3 uppercase tracking-tighter">
 
 
-
-      {/* 4. FOOTER: Sync & Navigation */}
-      <div className="z-10 flex justify-between items-end pt-1 border-t border-white/5">
-        <div className="flex items-center gap-1.5 opacity-40 group-hover:opacity-100 transition-opacity">
-
-
-        </div>
     
       </div>
 
