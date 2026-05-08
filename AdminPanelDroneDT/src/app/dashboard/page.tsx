@@ -42,14 +42,7 @@ export default function DashboardL5() {
       {/* 3. WORKSPACE CORE */}
       <div className="flex-1 min-h-0 flex overflow-hidden">
         
-        {/* LADO IZQUIERDO: STREAM DE ACTIVOS */}
-        <div className="flex-1 min-w-0 flex flex-col border-r border-white/10">
-          <div className="h-[24px] flex-shrink-0 flex items-center justify-between px-2 bg-zinc-900/40 border-b border-white/5">
-            <div className="flex items-center gap-2 cursor-default">
-              <Layers size={10} className="text-emerald-500/50" />
-              <span className="text-[9px] font-bold uppercase tracking-widest text-zinc-400">Asset_Stream</span>
-            </div>
-            
+
 
 
           {/* GRID DE INVENTARIO (Sección Real) */}
