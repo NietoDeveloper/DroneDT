@@ -70,13 +70,6 @@ export const DroneCard = memo(({ drone }: DroneCardProps) => {
       {/* 3. CENTER: Telemetría de Vuelo / Status */}
       <div className="z-10 flex flex-col py-1">
         <div className="flex items-center justify-between mb-1">
-          <div className="flex items-center gap-1">
-            {isCritical ? (
-              <AlertTriangle size={10} className="text-red-500 animate-pulse" />
-            ) : (
-              <Zap size={10} className={isFlying ? 'text-blue-400' : 'text-emerald-500'} />
-            )}
-          </div>
         </div>
 
 
