@@ -7,10 +7,6 @@ import {
   Wifi, 
 
   Radio
-} from 'lucide-react';
-
-interface DroneData {
-  id: string;
 
   lastUpdate: string;
 }
