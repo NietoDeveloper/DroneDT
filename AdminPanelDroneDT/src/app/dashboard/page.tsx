@@ -69,15 +69,7 @@ export default function DashboardL5() {
                   key={i} 
                   className="h-16 border border-white/5 bg-zinc-950/50 hover:border-emerald-500/40 hover:bg-zinc-900 transition-all p-2 flex flex-col justify-between group cursor-pointer"
                 >
-                  <div className="flex justify-between items-center">
-                    <div className="w-1 h-3 bg-zinc-800 group-hover:bg-emerald-500 transition-colors" />
-                    <span className="text-[8px] text-zinc-600 font-bold group-hover:text-zinc-300">#{1024 + i}</span>
-                  </div>
-                  <div className="flex justify-between items-end">
-                    <span className="text-[7px] text-zinc-800 uppercase font-black group-hover:text-emerald-500/40">Active</span>
-                    <div className="w-1 h-1 rounded-full bg-zinc-800 group-hover:bg-emerald-500 shadow-emerald-500/50 group-hover:shadow-[0_0_4px]" />
-                  </div>
-                </div>
+
               ))}
             </div>
           </div>
