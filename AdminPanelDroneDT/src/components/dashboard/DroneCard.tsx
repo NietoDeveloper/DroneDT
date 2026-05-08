@@ -14,10 +14,7 @@ import {
 
 interface DroneData {
   id: string;
-  sku: string;
-  status: 'READY' | 'FLYING' | 'MAINTENANCE' | 'CRITICAL';
-  battery: number;
-  signal: number;
+
   lastUpdate: string;
 }
 
