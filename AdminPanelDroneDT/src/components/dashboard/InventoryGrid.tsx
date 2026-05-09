@@ -71,7 +71,7 @@ export const InventoryGrid = () => {
               <div className="col-span-full flex h-32 flex-col items-center justify-center border border-dashed border-white/5 bg-white/[0.01]">
                 <PackageSearch className="mb-2 h-6 w-6 text-white/10" />
                 <p className="font-mono text-[9px] uppercase tracking-widest text-white/20">
-                  Buffer_Vacío: Esperando_Datos_del_Laboratorio
+                  Buffer_Vacío: Esperando_Datos_del_DataBase
                 </p>
               </div>
             )}
