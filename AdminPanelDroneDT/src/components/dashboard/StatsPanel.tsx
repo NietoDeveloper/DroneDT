@@ -66,8 +66,7 @@ export const StatsPanel = () => {
 
 const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }: StatCardProps) => {
   return (
-    <motion.div 
-      initial={{ opacity: 0 }}
+
 
       className="relative flex flex-col bg-black p-3 group cursor-pointer overflow-hidden border-r border-white/5 last:border-r-0"
     >
