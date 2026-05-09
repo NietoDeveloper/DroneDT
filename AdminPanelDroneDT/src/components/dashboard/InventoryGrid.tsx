@@ -20,24 +20,7 @@ export const InventoryGrid = () => {
     return (
       <div className="flex h-full min-h-[200px] w-full flex-col items-center justify-center border border-white/10 bg-black/40 backdrop-blur-xl">
         <Activity className="mb-2 h-5 w-5 animate-pulse text-emerald-500/50" />
-        <span className="text-[10px] font-mono tracking-[0.2em] text-emerald-500/50">INITIALIZING_CLUSTER...</span>
-      </div>
-    );
-  }
-
-  return (
-    <section className="group relative flex h-full w-full flex-col overflow-hidden border border-white/10 bg-black/20 transition-colors duration-500 hover:border-emerald-500/30">
-      
-        <div className="flex items-center gap-3">
-
-        </div>
-      </div>
-
-      {/* Grid Container - Optimizado para 310px - 1900px */}
-      <div className="flex-1 overflow-y-auto p-3 scrollbar-none hover:scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-        <motion.div 
-          layout
-          className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+ rid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
         >
           <AnimatePresence mode='popLayout'>
             {products.length > 0 ? (
