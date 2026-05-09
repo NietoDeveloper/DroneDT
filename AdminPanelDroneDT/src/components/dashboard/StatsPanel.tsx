@@ -89,13 +89,6 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
         <ShieldCheck size={64} className="text-white" />
       </div>
 
-      {/* Header Info */}
-      <div className="z-10 flex items-center justify-between mb-2">
-
-
-      </div>
->
-  );
 });
 
 StatCard.displayName = 'StatCard';
