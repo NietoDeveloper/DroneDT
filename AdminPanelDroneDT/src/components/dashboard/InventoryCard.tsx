@@ -92,15 +92,6 @@ export const InventoryCard = memo(({ product }: Props) => {
       {/* Footer: Sincronización Temporal y Acción */}
       <div className="z-10 flex items-center justify-between">
 
-        
-        <button className="relative overflow-hidden group/btn px-2 py-1 flex items-center gap-1">
-          <span className="relative z-10 text-[9px] font-bold uppercase tracking-widest text-white/60 group-hover/btn:text-white transition-colors">
-            Inspect
-          </span>
-          <ArrowUpRight className="relative z-10 h-2.5 w-2.5 text-white/40 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-          <div className="absolute inset-0 bg-emerald-500/0 group-hover/btn:bg-emerald-500/10 transition-colors duration-300" />
-        </button>
-      </div>
 
       {/* Background Security Watermark */}
       <ShieldCheck className="absolute -bottom-2 -right-2 h-10 w-10 text-white/[0.015] -rotate-12 pointer-events-none" />
