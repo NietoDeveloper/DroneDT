@@ -69,16 +69,7 @@ export const InventoryCard = memo(({ product }: Props) => {
             {currentStatus.label}
           </span>
         </div>
-      </div>
-
-      {/* Matrix Data: Specs Técnicas */}
-      <div className="z-10 grid grid-cols-2 gap-2 border-y border-white/5 py-2 my-1">
-        <div className="flex flex-col border-r border-white/5">
-          <div className="flex items-center gap-1.5">
-            <Gem className="h-3 w-3 text-emerald-500/70" />
-            <span className="font-mono text-[10px] font-medium text-white">{product.carats.toFixed(2)}</span>
-          </div>
-          <span className="text-[7px] uppercase tracking-[0.1em] text-white/20 mt-1">Weight_CT</span>
+      </div> mt-1">Weight_CT</span>
 
   );
 });
