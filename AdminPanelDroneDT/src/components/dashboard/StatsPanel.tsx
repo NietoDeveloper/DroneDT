@@ -12,13 +12,6 @@ import {
   ChevronRight
 } from 'lucide-react';
 
-// Formateador robusto
-const formatCurrency = (val: number) => 
-  new Intl.NumberFormat('en-US', { 
-    style: 'currency', 
-    currency: 'USD', 
-    maximumFractionDigits: 0 
-  }).format(val || 0);
 
 export const StatsPanel = () => {
   const stats = useInventoryStore((state) => state.stats);
