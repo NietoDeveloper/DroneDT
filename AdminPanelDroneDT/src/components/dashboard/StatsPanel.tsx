@@ -96,9 +96,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
       </div>
 
       {/* L5 Scanner Animation */}
-      <div clduration: 4, repeat: Infinity, ease: "linear" }}
-          className="w-1/3 h-full bg-gradient-to-r from-transparent via-emerald-500/40 to-transparent"
-        />
+    
       </div>
     </motion.div>
   );
