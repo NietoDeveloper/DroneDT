@@ -33,20 +33,3 @@ export const StatsPanel = () => {
         subLabel={`${stats?.totalStock || 0} UNITS_IN_VAULT`}
         delay={0.1}
       />
-
-      <StatCard 
-        label="Operational_Revenue"
-        value={formatCurrency(stats?.revenue || 0)}
-        icon={<TrendingUp size={12} className="text-blue-500" />}
-        trend="LIVE_STREAM"
-        subLabel={`${stats?.totalSold || 0} LIQUIDATED_ASSETS`}
-        delay={0.2}
-      />
-
-      <StatCard 
-        label="Avg_Carat_Performance"
-        value={formatCurrency(stats?.averageCaratPrice || 0)}
-        icon={<Zap size={12} className="text-amber-500" />}
- 
-
-
