@@ -86,7 +86,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
       
       {/* Background Icon Watermark */}
       <div className="absolute -right-2 -bottom-2 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 transition-all duration-700 pointer-events-none">
-        <ShieldCheck size={64} className="text-white" />
+
       </div>
 
 });
