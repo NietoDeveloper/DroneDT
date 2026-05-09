@@ -73,10 +73,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
       {/* Hover Glow Effect */}
       <div className="absolute inset-0 bg-emerald-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      {/* Background Icon Watermark */}
-      <div className="absolute -right-2 -bottom-2 opacity-[0.02] group-hover:opacity-[0.06] group-hover:scale-110 transition-all duration-700 pointer-events-none">
 
-      </div>
 
 });
 
