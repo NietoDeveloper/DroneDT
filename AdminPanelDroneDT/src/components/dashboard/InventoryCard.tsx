@@ -89,13 +89,6 @@ export const InventoryCard = memo(({ product }: Props) => {
         </div>
       </div>
 
-      {/* Footer: Sincronización Temporal y Acción */}
-      <div className="z-10 flex items-center justify-between">
-
-
-      {/* Background Security Watermark */}
-      <ShieldCheck className="absolute -bottom-2 -right-2 h-10 w-10 text-white/[0.015] -rotate-12 pointer-events-none" />
-    </motion.div>
   );
 });
 
