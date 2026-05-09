@@ -91,10 +91,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
 
       {/* Header Info */}
       <div className="z-10 flex items-center justify-between mb-2">
-        <div className="flex items-center gap-1.5">
-          <div className={`w-1 h-1 rounded-full ${isStatus ? 'bg-emerald-500 animate-pulse' : 'bg-zinc-700'} group-hover:bg-emerald-400`} />
 
-        </div>
 
       </div>
 
