@@ -32,9 +32,7 @@ export const InventoryGrid = () => {
       <div className="flex items-center justify-between bg-white/[0.02] px-3 py-2 border-b border-white/5">
         <div className="flex items-center gap-2">
           <DatabaseZap className="h-3 w-3 text-emerald-500" />
-          <h2 className="text-[10px] font-bold uppercase tracking-[0.15em] text-white/80">
-            Live_Inventory_Stream
-          </h2>
+
         </div>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5">
