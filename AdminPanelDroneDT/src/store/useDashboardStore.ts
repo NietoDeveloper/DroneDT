@@ -1,63 +1,74 @@
+'use client';
+
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 
+// Roles definidos para la jerarquía de Drone DT
+export type UserRole = 'SYSTEM_ADMIN' | 'FLEET_MANAGER' | 'MAINTENANCE_TECH' | 'GUEST';
+
 interface UserProfile {
   name: string;
-  role: string;
+  role: UserRole;
   avatar?: string;
   status: 'online' | 'offline';
+  location: string; // Nodo de conexión
 }
 
 interface DashboardState {
   // UI State
   isSidebarOpen: boolean;
   
-  // Real-time Data State
+  // Real-time Operational State
   userProfile: UserProfile | null;
-  totalSalesToday: number;
-  activeUsers: number;
+  totalFleetRevenue: number;
+  activeDronesInAir: number;
 
   // Actions
-  toggleSidebar: () => void;
-  setUserProfile: (profile: UserProfile) => void;
-  updateSales: (amount: number) => void;
-  setActiveUsers: (count: number) => void;
+  actions: {
+    toggleSidebar: () => void;
+    setUserProfile: (profile: UserProfile) => void;
+    updateRevenue: (amount: number) => void;
+    setActiveDrones: (count: number) => void;
+  };
 }
 
 export const useDashboardStore = create<DashboardState>()(
   persist(
     (set) => ({
-      // Initial States: Valores por defecto consistentes
+      // Initial States: Configuración de Manuel Nieto como Admin Global
       isSidebarOpen: true,
       userProfile: {
         name: "MANUEL NIETO",
         role: "SYSTEM_ADMIN",
-        status: 'online'
+        status: 'online',
+        location: "NIETO_LAB_BOG"
       },
-      totalSalesToday: 0,
-      activeUsers: 24, // Mock inicial de tráfico industrial
+      totalFleetRevenue: 0,
+      activeDronesInAir: 3, // Mock de telemetría activa
 
-      // Actions
-      toggleSidebar: () => set((state) => ({ 
-        isSidebarOpen: !state.isSidebarOpen 
-      })),
-      
-      setUserProfile: (profile) => set({ 
-        userProfile: profile 
-      }),
-      
-      updateSales: (amount) => set((state) => ({ 
-        totalSalesToday: state.totalSalesToday + amount 
-      })),
+      // Actions encapsuladas para limpieza de código
+      actions: {
+        toggleSidebar: () => set((state) => ({ 
+          isSidebarOpen: !state.isSidebarOpen 
+        })),
+        
+        setUserProfile: (profile) => set({ 
+          userProfile: profile 
+        }),
+        
+        updateRevenue: (amount) => set((state) => ({ 
+          totalFleetRevenue: state.totalFleetRevenue + amount 
+        })),
 
-      setActiveUsers: (count) => set({ 
-        activeUsers: count 
-      }),
+        setActiveDrones: (count) => set({ 
+          activeDronesInAir: count 
+        }),
+      },
     }),
     {
       name: 'dronedt-dashboard-storage',
       storage: createJSONStorage(() => localStorage),
-      // Prevent hydration mismatch: Solo persistimos UI State por ahora
+      // Solo persistimos lo esencial para evitar problemas de hidratación en Next.js
       partialize: (state) => ({ 
         isSidebarOpen: state.isSidebarOpen,
         userProfile: state.userProfile 
