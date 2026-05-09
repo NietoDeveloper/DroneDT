@@ -94,11 +94,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
 
 
       </div>
-
-      {/* L5 Scanner Animation */}
-    
-      </div>
-    </motion.div>
+>
   );
 });
 
