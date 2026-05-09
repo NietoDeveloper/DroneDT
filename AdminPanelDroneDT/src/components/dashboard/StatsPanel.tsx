@@ -67,9 +67,7 @@ interface StatCardProps {
   label: string;
   value: string | number;
   icon: React.ReactNode;
-  trend?: string;
-  subLabel: string;
-  isStatus?: boolean;
+
   delay: number;
 }
 
