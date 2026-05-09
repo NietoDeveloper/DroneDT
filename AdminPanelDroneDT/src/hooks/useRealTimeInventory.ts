@@ -5,22 +5,23 @@ import { useInventoryStore } from '@/store/useInventoryStore';
 
 /**
  * HOOK: useRealTimeInventory
- * Nivel: L5 Architecture - High-Availability Sync (Anti-Loop Version)
+ * Nivel: L5 Architecture - High-Availability Sync (Drone DT Edition)
+ * Propósito: Sincronización de telemetría de flota y estado de hangar.
  */
 export const useRealTimeInventory = (refreshInterval = 30000) => {
-  // Selectores atómicos para evitar dependencias circulares
+  // Selectores atómicos para evitar re-renders innecesarios y dependencias circulares
   const setProducts = useInventoryStore((state) => state.actions.setProducts);
   const setLoading = useInventoryStore((state) => state.actions.setLoading);
   const setError = useInventoryStore((state) => state.actions.setError);
   
-  // Usamos una Ref para la data actual para comparar sin disparar el useCallback
+  // Ref para comparar data sin disparar el ciclo de vida de React
   const productsRef = useRef(useInventoryStore.getState().products);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const abortControllerRef = useRef<AbortController | null>(null);
   const retryCount = useRef(0);
 
-  // Sincronizar la Ref con el Store global
+  // Sincronizar la Ref con el Store global de Drone DT
   useEffect(() => {
     return useInventoryStore.subscribe(
       (state) => (productsRef.current = state.products)
@@ -28,12 +29,12 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
   }, []);
 
   const fetchInventory = useCallback(async () => {
-    // 1. Race Condition Guard: Abortar peticiones en vuelo
+    // 1. Race Condition Guard: Abortar peticiones previas en vuelo
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
     }
 
-    // 2. Visibility Check: No gastar recursos si la pestaña no es visible
+    // 2. Visibility Check: Pausar telemetría si el operador no está viendo el dashboard
     if (document.hidden) return;
 
     abortControllerRef.current = new AbortController();
@@ -44,17 +45,18 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
         signal: abortControllerRef.current.signal,
         headers: {
           'Content-Type': 'application/json',
-          'X-Security-Level': 'L5-Shield',
-          'X-Origin-Node': 'BOG_NODE_01',
+          'X-Security-Level': 'L5-Shield-Industrial',
+          'X-Origin-Node': 'NIETO_LAB_BOG_CENTRO',
+          'X-Project-ID': 'DRONE_DT_FLEET',
           'Cache-Control': 'no-cache'
         },
       });
 
-      if (!response.ok) throw new Error(`HTTP_ERROR: ${response.status}`);
+      if (!response.ok) throw new Error(`TELEMETRY_SYNC_ERROR: ${response.status}`);
 
       const data = await response.json();
 
-      // 3. Deduplicación inteligente usando la Ref (Evita el loop infinito)
+      // 3. Deduplicación inteligente: Solo actualizamos si hay cambios reales en la flota
       if (Array.isArray(data)) {
         const hasChanged = JSON.stringify(data) !== JSON.stringify(productsRef.current);
         
@@ -67,45 +69,45 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
       }
     } catch (error: any) {
       if (error.name === 'AbortError') {
-        // Silencioso: Petición cancelada por una nueva o por desmontaje
+        // Silencioso: Petición cancelada por actualización o desmontaje
       } else {
-        console.error('L5_SYNC_FAILURE:', error);
+        console.error('DRONE_DT_SYNC_FAILURE:', error);
         retryCount.current += 1;
         
+        // Umbral de tolerancia de fallos del sistema
         if (retryCount.current > 3) {
-          setError('CLUSTER_SYNC_LOST_CHECK_CONNECTION');
+          setError('CRITICAL: LINK_TO_CLUSTER_LOST_RECONNECTING');
         }
       }
     } finally {
       setLoading(false);
     }
-    // IMPORTANTE: Ya no dependemos de 'products' ni del objeto 'actions' completo
   }, [setProducts, setLoading, setError]);
 
   useEffect(() => {
-    // Ejecución inicial
+    // Ejecución inicial de enlace
     fetchInventory();
 
-    // Gestión del intervalo
+    // Gestión del intervalo de polling (Heartbeat)
     const startPolling = () => {
       timerRef.current = setInterval(fetchInventory, refreshInterval);
     };
 
     startPolling();
 
-    // Page Visibility API para pausar el tráfico en segundo plano
+    // Page Visibility API: Optimización de recursos de red y CPU
     const handleVisibilityChange = () => {
       if (document.hidden) {
         if (timerRef.current) clearInterval(timerRef.current);
       } else {
-        fetchInventory(); // Refresco inmediato al volver
+        fetchInventory(); 
         startPolling();
       }
     };
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // Cleanup Protocol: Cero fugas de memoria
+    // Protocolo de limpieza para evitar fugas de memoria en el Nieto Laboratory
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
       if (abortControllerRef.current) abortControllerRef.current.abort();
@@ -115,6 +117,7 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
 
   return { 
     manualSync: fetchInventory,
-    isRetrying: retryCount.current > 0
+    isRetrying: retryCount.current > 0,
+    status: retryCount.current > 0 ? 'RECONNECTING' : 'SYNCED'
   };
 };
