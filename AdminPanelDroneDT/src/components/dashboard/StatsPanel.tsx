@@ -104,11 +104,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
 
       {/* Main Value */}
       <div className="z-10 flex flex-col">
-        <div className="flex items-center gap-2">
 
-          {trend && (
-          )}
-        </div>
       </div>
 
       {/* L5 Scanner Animation */}
