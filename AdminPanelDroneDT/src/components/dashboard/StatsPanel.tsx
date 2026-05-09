@@ -65,10 +65,6 @@ export const StatsPanel = () => {
 
 interface StatCardProps {
   label: string;
-  value: string | number;
-  icon: React.ReactNode;
-
-  delay: number;
 }
 
 const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }: StatCardProps) => {
