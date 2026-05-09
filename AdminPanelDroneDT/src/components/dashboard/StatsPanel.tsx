@@ -68,8 +68,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
   return (
     <motion.div 
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.3, delay }}
+
       className="relative flex flex-col bg-black p-3 group cursor-pointer overflow-hidden border-r border-white/5 last:border-r-0"
     >
       {/* Hover Glow Effect */}
