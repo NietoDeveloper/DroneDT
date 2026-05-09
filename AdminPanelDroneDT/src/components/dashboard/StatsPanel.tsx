@@ -63,9 +63,6 @@ export const StatsPanel = () => {
   );
 };
 
-interface StatCardProps {
-  label: string;
-}
 
 const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }: StatCardProps) => {
   return (
