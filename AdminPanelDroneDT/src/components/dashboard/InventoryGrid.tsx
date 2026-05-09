@@ -29,13 +29,7 @@ export const InventoryGrid = () => {
     <section className="group relative flex h-full w-full flex-col overflow-hidden border border-white/10 bg-black/20 transition-colors duration-500 hover:border-emerald-500/30">
       
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-            </span>
-            <span className="font-mono text-[9px] text-emerald-500/80">{activeCount} READY</span>
-          </div>
+
         </div>
       </div>
 
