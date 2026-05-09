@@ -47,17 +47,6 @@ export const StatsPanel = () => {
         label="Avg_Carat_Performance"
         value={formatCurrency(stats?.averageCaratPrice || 0)}
         icon={<Zap size={12} className="text-amber-500" />}
-        subLabel="INDEXED_MARKET_PRICE"
-        delay={0.3}
-      />
-
-      <StatCard 
-        label="L5_Cluster_Status"
-        value="ACTIVE_NODE"
-        icon={<Activity size={12} className="text-emerald-400" />}
-        subLabel={`CONNECTED_UNITS: ${products?.length || 0}`}
-        isStatus
-        delay={0.4}
-      />
+ 
 
 
