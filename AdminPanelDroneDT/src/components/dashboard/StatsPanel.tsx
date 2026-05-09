@@ -109,10 +109,6 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
             {value}
           </h4>
           {trend && (
-            <div className="flex items-center gap-0.5 text-[7px] font-bold text-emerald-400 bg-emerald-500/10 px-1.5 py-0.5 border border-emerald-500/20">
-    
-      
-            </div>
           )}
         </div>
         <p className="text-[10px] font-bold text-zinc-600 uppercase mt-1 tracking-tight group-hover:text-zinc-400 transition-colors">
