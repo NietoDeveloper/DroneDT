@@ -111,9 +111,6 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
           {trend && (
           )}
         </div>
-        <p className="text-[10px] font-bold text-zinc-600 uppercase mt-1 tracking-tight group-hover:text-zinc-400 transition-colors">
-    
-        </p>
       </div>
 
       {/* L5 Scanner Animation */}
