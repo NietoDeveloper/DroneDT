@@ -79,15 +79,6 @@ export const InventoryCard = memo(({ product }: Props) => {
             <span className="font-mono text-[10px] font-medium text-white">{product.carats.toFixed(2)}</span>
           </div>
           <span className="text-[7px] uppercase tracking-[0.1em] text-white/20 mt-1">Weight_CT</span>
-        </div>
-        
-        <div className="flex flex-col pl-2">
-          <span className="font-mono text-[10px] font-medium text-emerald-400">
-            ${product.price.toLocaleString('en-US')}
-          </span>
-          <span className="text-[7px] uppercase tracking-[0.1em] text-white/20 mt-1">Value_USD</span>
-        </div>
-      </div>
 
   );
 });
