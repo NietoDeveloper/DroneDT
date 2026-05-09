@@ -59,17 +59,5 @@ export const StatsPanel = () => {
         isStatus
         delay={0.4}
       />
-    </div>
-  );
-};
 
 
-const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }: StatCardProps) => {
-  return (
-lute inset-0 bg-emerald-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      
-
-
-});
-
-StatCard.displayName = 'StatCard';
