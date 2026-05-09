@@ -28,12 +28,6 @@ export const InventoryGrid = () => {
   return (
     <section className="group relative flex h-full w-full flex-col overflow-hidden border border-white/10 bg-black/20 transition-colors duration-500 hover:border-emerald-500/30">
       
-      {/* Top Technical Bar - Reemplaza el header tradicional */}
-      <div className="flex items-center justify-between bg-white/[0.02] px-3 py-2 border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <DatabaseZap className="h-3 w-3 text-emerald-500" />
-
-        </div>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-1.5">
             <span className="relative flex h-1.5 w-1.5">
