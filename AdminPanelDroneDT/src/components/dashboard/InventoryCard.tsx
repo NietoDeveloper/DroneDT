@@ -91,12 +91,7 @@ export const InventoryCard = memo(({ product }: Props) => {
 
       {/* Footer: Sincronización Temporal y Acción */}
       <div className="z-10 flex items-center justify-between">
-        <div className="flex items-center gap-1.5 px-1.5 py-0.5 bg-white/[0.03] rounded-sm">
-          <Clock className="h-2.5 w-2.5 text-white/30" />
-          <span className="font-mono text-[8px] text-white/40">
-            SYNC: {new Date(product.lastUpdate).toLocaleTimeString('es-CO', { hour12: false })}
-          </span>
-        </div>
+
         
         <button className="relative overflow-hidden group/btn px-2 py-1 flex items-center gap-1">
           <span className="relative z-10 text-[9px] font-bold uppercase tracking-widest text-white/60 group-hover/btn:text-white transition-colors">
