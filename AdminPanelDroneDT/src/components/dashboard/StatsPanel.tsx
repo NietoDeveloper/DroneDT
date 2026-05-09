@@ -97,9 +97,7 @@ const StatCard = memo(({ label, value, icon, trend, subLabel, isStatus, delay }:
             {label}
           </span>
         </div>
-        <div className="p-1 bg-zinc-900 border border-white/5 group-hover:border-emerald-500/30 group-hover:bg-zinc-800 transition-all">
 
-        </div>
       </div>
 
       {/* L5 Scanner Animation */}
