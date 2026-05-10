@@ -140,9 +140,7 @@ export default function DashboardL5() {
               
               <div className="mt-12 p-4 border border-white/5 bg-zinc-950/50 rounded-lg">
                 <div className="text-[8px] lg:text-[10px] text-zinc-500 mb-2 font-black tracking-tighter">DATA_STREAM_LOAD:</div>
-                <div className="w-full h-1.5 lg:h-3 bg-zinc-900 rounded-full overflow-hidden border border-white/5">
-                   <div className={`h-full bg-emerald-500 transition-all duration-1000 ${loading ? 'w-[85%]' : 'w-[15%]'}`} />
-                </div>
+
               </div>
             </div>
           </div>
