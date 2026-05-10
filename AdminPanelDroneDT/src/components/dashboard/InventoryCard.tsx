@@ -57,6 +57,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
 
       const data = await response.json();
 
-      if (Array.isArray(data)) {
-        // Comparación profunda de telemetría para evitar ciclos de render
-        const hasChanged = JSON.stringify(data) !== JSON.stringify(productsRef.current);
