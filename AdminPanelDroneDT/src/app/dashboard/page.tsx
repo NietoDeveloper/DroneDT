@@ -77,14 +77,6 @@ export default function DashboardL5() {
               {loading && <span className="text-[7px] lg:text-[10px] text-emerald-500 animate-pulse ml-2 font-bold italic">_SCANNING_HANGAR_01</span>}
             </di8 custom-scrollbar bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
             
-       roducts.length === 0 ? (
-                  Array.from({length: 8}).map((_, i) => <DroneSkeleton key={i} />)
-    
-
-
-      {/* 4. FOOTER INDUSTRIAL (Aumentado) */}
-      <footer className="h-[24px] lg:h-[32px] flex-shrink-0 flex items-center justify-between px-6 bg-zinc-950 border-t border-white/10">
-
       </footer>
     </div>
   );
