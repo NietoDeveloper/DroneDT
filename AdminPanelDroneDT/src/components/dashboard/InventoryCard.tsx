@@ -95,5 +95,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     const handleVisibilityChange = () => {
       if (document.hidden) {
         if (timerRef.current) clearInterval(timerRef.current);
-      } else {
-        // Re-sincronización inmediata al recuperar foco
