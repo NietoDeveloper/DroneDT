@@ -67,10 +67,7 @@ export default function DashboardL5() {
 
       {/* 3. NÚCLEO DEL ESPACIO DE TRABAJO */}
       <div className="flex-1 min-h-0 flex overflow-hidden">
-        
-        {/* COLUMNA CENTRAL: GRID DE LA FLOTA */}
-        <div className="flex-1 min-w-0 flex flex-col border-r border-white/10">
-          <div className="h-[32px] lg:h-[48px] flex-shritop,_var(--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
+        (--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
             
       </footer>
     </div>
