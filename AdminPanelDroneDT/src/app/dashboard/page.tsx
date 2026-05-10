@@ -126,15 +126,7 @@ export default function DashboardL5() {
           </button>
 
           <div className="flex-1 flex flex-col min-h-0 border-t border-white/10">
-            <div className="h-[30px] lg:h-[45px] px-4 flex items-center gap-2 bg-zinc-950 border-b border-white/5">
-              <Terminal className="text-emerald-500 w-3 h-3 lg:w-4 lg:h-4" />
-              <span className="text-[9px] lg:text-[11px] text-zinc-400 font-black tracking-widest uppercase">Logs_de_Sistema</span>
-            </div>
-            <div className="flex-1 overflow-hidden p-4 lg:p-6 font-mono text-[9px] lg:text-[12px] text-zinc-600 leading-relaxed bg-black/50 uppercase">
- 
 
-            </div>
-          </div>
 
         </aside>
       </div>
