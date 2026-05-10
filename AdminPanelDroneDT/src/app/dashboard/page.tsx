@@ -120,15 +120,7 @@ export default function DashboardL5() {
 
         {/* COLUMNA DERECHA: PANEL DE CONTROL (Escalado de w-200 a w-350 en XL) */}
         <aside className="hidden lg:flex lg:w-[250px] xl:w-[350px] flex-shrink-0 flex-col bg-black">
-          <button className="h-[60px] lg:h-[80px] w-full bg-emerald-500 hover:bg-emerald-400 text-black font-black text-[11px] lg:text-[14px] uppercase tracking-[0.3em] transition-all active:scale-[0.98] flex items-center justify-center gap-3">
-            <Plus className="w-4 h-4 lg:w-6 lg:h-6" strokeWidth={4} />
-            REGISTRAR_DRONE
-          </button>
 
-          <div className="flex-1 flex flex-col min-h-0 border-t border-white/10">
-
-
-        </aside>
       </div>
 
       {/* 4. FOOTER INDUSTRIAL (Aumentado) */}
