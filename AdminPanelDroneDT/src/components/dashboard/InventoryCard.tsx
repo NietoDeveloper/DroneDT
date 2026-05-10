@@ -107,7 +107,7 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     return () => {
 
       if (abortControllerRef.current) abortControllerRef.current.abort();
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
+
     };
   }, [fetchInventory, refreshInterval]);
 
