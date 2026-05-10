@@ -64,10 +64,7 @@ export default function DashboardL5() {
       <div className="flex-shrink-0 border-b border-white/10 bg-black">
         <StatsPanel />
       </div>
-
-      {/* 3. NÚCLEO DEL ESPACIO DE TRABAJO */}
-      <div className="flex-1 min-h-0 flex overflow-hidden">
-        (--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
+ck">
             
       </footer>
     </div>
