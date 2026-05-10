@@ -27,6 +27,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
 
   const fetchInventory = useCallback(async () => {
     // Protección contra ráfagas (mínimo 2 segundos entre peticiones)
-    const now = Date.now();
-    if (now - lastFetchTime.current < 2000) return;
-    lastFetchTime.current = now;
