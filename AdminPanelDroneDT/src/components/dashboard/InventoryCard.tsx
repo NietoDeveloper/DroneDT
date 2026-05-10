@@ -108,8 +108,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
 
       if (abortControllerRef.current) abortControllerRef.current.abort();
 
-    };
-  }, [fetchInventory, refreshInterval]);
 
   return { 
 
