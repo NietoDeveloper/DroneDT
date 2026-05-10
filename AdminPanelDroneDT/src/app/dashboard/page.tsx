@@ -138,19 +138,7 @@ export default function DashboardL5() {
               {isRetrying && <p className="text-red-500 animate-pulse truncate"><span className="mr-1">!</span> REINTENTANDO_UPLINK...</p>}
               <div className="mt-4 p-1 border border-white/5 bg-zinc-950">
                 <div className="text-[6px] text-zinc-500 mb-1">CARGA_DE_RED:</div>
-                <div className="w-full h-1 bg-zinc-900 rounded-full overflow-hidden">
-                   <div className="h-full bg-emerald-500 w-[65%]" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="h-20 border-t border-white/5 bg-zinc-950/20 p-2 flex flex-col justify-center items-center opacity-30 italic">
-             <WifiOff size={16} className="text-zinc-800 mb-1" />
-             <span className="text-[7px] text-zinc-800 uppercase font-black tracking-widest">Protocolo_Stealth</span>
-          </div>
-        </aside>
-      </div>
+  
 
 
     </div>
