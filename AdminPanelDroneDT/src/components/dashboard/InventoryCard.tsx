@@ -34,8 +34,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
     }
-
-    if (document.hidden) return;
-
-    abortControllerRef.current = new AbortController();
-    setLoading(true);
