@@ -153,9 +153,6 @@ export default function DashboardL5() {
       {/* 4. FOOTER INDUSTRIAL (Aumentado) */}
       <footer className="h-[24px] lg:h-[32px] flex-shrink-0 flex items-center justify-between px-6 bg-zinc-950 border-t border-white/10">
 
-        <div className="text-[8px] lg:text-[11px] text-zinc-800 tracking-[0.5em] font-black uppercase">
-          Nieto_Code // Drone_DT_Industrial // 2026
-        </div>
       </footer>
     </div>
   );
