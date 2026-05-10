@@ -105,7 +105,7 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
+
       if (abortControllerRef.current) abortControllerRef.current.abort();
       document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
