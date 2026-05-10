@@ -44,23 +44,7 @@ export default function DashboardL5() {
           </span>
         </div>
         
-        <div className="flex items-center h-full">
-          <button 
-            onClick={() => manualSync()} 
-            disabled={loading}
-            className={`h-full px-4 lg:px-8 border-l border-white/5 transition-all group flex items-center gap-2 lg:gap-4 ${loading ? 'opacity-50' : 'hover:bg-emerald-500/10'}`}
-          >
-            <span className="text-[8px] lg:text-[11px] text-zinc-500 group-hover:text-emerald-400 hidden sm:inline uppercase font-black tracking-widest">Resync_Uplink</span>
-            <Activity className={`${loading ? 'animate-spin text-emerald-500' : 'text-zinc-500 group-hover:text-emerald-500'} w-3 h-3 lg:w-4 lg:h-4`} />
-          </button>
-          
-          <div className="h-full px-3 lg:px-6 border-l border-white/5 flex items-center bg-emerald-500/[0.03]">
-            <div className={`w-1.5 h-1.5 lg:w-3 lg:h-3 rounded-full transition-all duration-500 ${error ? 'bg-red-600 shadow-[0_0_12px_red]' : 'bg-emerald-500 shadow-[0_0_12px_rgba(16,185,129,0.6)]'}`} />
-          </div>
-        </div>
-      </div>
-
-      {/* 2. PANEL DE ESTADÍSTICAS (Ya ajustado para ser imponente) */}
+ ser imponente) */}
       <div className="flex-shrink-0 border-b border-white/10 bg-black">
         <StatsPanel />
       </div>
