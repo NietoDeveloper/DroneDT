@@ -11,11 +11,7 @@ import { useInventoryStore } from '@/store/useInventoryStore';
 
 /**
  * PAGE: DashboardL5
- * Optimización: High-Performance Desktop (Hasta 1900px)
- * Proyecto: Drone DT
- */
-export default function DashboardL5() {
-  const products = useInventoryStore((state) => state.products);
+ * Opti
   const loading
         <StatsPanel />
       </div>
