@@ -125,22 +125,5 @@ export default function DashboardL5() {
             NUEVA_UNIDAD
           </button>
 
-          {/* TELEMETRÍA LOGS */}
-          <div className="flex-1 flex flex-col min-h-0 border-t border-white/10">
-            <div className="h-[22px] px-2 flex items-center gap-2 bg-zinc-950 border-b border-white/5">
-              <Terminal size={10} className="text-emerald-500" />
-              <span className="text-[8px] text-zinc-400 font-bold tracking-widest uppercase">Logs_de_Sistema</span>
-            </div>
-            <div className="flex-1 overflow-hidden p-2 font-mono text-[8px] text-zinc-600 leading-relaxed bg-black/50 uppercase">
-              <p className="truncate text-emerald-500/60"><span className="mr-1">»</span> STATUS: {status}</p>
-              <p className="truncate"><span className="text-zinc-800 mr-1">»</span> {loading ? 'ESCANEO_ACTIVO...' : 'HANGAR_STANDBY'}</p>
-              <p className="truncate"><span className="text-zinc-800 mr-1">»</span> {error ? 'AVISO: LINK_PERDIDO' : 'LINK: ENCRIPTADO_L5'}</p>
-              {isRetrying && <p className="text-red-500 animate-pulse truncate"><span className="mr-1">!</span> REINTENTANDO_UPLINK...</p>}
-              <div className="mt-4 p-1 border border-white/5 bg-zinc-950">
-                <div className="text-[6px] text-zinc-500 mb-1">CARGA_DE_RED:</div>
-  
-
-
-    </div>
   );
 }
