@@ -93,5 +93,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     startPolling();
 
     const handleVisibilityChange = () => {
-      if (document.hidden) {
-        if (timerRef.current) clearInterval(timerRef.current);
