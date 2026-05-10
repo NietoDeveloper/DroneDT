@@ -48,12 +48,4 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
           'X-Security-Level': 'L5-Shield-Industrial',
           'X-Origin-Node': 'NIETO_LAB_BOG_CENTRO',
           'X-Project-ID': 'DRONE_DT_FLEET',
-          'Cache-Control': 'no-cache',
-          'X-Timestamp': now.toString()
-        },
-      });
-
-      if (!response.ok) throw new Error(`TELEMETRY_SYNC_ERROR: ${response.status}`);
-
-      const data = await response.json();
 
