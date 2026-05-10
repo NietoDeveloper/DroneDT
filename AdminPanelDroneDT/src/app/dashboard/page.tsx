@@ -72,9 +72,7 @@ export default function DashboardL5() {
         <div className="flex-1 min-w-0 flex flex-col border-r border-white/10">
           <div className="h-[32px] lg:h-[48px] flex-shrink-0 flex items-center justify-between px-3 lg:px-6 bg-zinc-900/40 border-b border-white/5">
             <div className="flex items-center gap-2 lg:gap-4">
-              <Layers className="text-emerald-500/50 w-3 h-3 lg:w-5 lg:h-5" />
-              <span className="text-[9px] lg:text-[12px] font-black uppercase tracking-[0.3em] text-zinc-400">Transmisión_de_Inventario</span>
-              {loading && <span className="text-[7px] lg:text-[10px] text-emerald-500 animate-pulse ml-2 font-bold italic">_SCANNING_HANGAR_01</span>}
+              <Layers className="text-emeralxt-[10px] text-emerald-500 animate-pulse ml-2 font-bold italic">_SCANNING_HANGAR_01</span>}
             </di8 custom-scrollbar bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
             
       </footer>
