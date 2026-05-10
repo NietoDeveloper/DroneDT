@@ -9,11 +9,7 @@ import { ErrorShield } from '@/components/dashboard/ErrorShield';
 import { useRealTimeInventory } from '@/hooks/useRealTimeInventory';
 import { useInventoryStore } from '@/store/useInventoryStore';
 
-/**
- * PAGE: DashboardL5
- * Opti
-  const loading
-        <StatsPanel />
+
       </div>
 ck">
             
