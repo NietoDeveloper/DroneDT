@@ -6,8 +6,7 @@ import { StatsPanel } from '@/components/dashboard/StatsPanel';
 import { InventoryCard } from '@/components/dashboard/InventoryCard';
 import { DroneSkeleton } from '@/components/dashboard/DroneSkeleton';
 import { ErrorShield } from '@/components/dashboard/ErrorShield';
-import { useRealTimeInventory } from '@/hooks/useRealTimeInventory';
-import { useInventoryStore } from '@/store/useInventoryStore';
+impo
 
 
       </div>
