@@ -73,12 +73,5 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
         console.error('DRONE_DT_SYNC_FAILURE:', error);
         retryCount.current += 1;
         
-        if (retryCount.current > 3) {
-          setError('CRITICAL: LINK_TO_CLUSTER_LOST_RECONNECTING');
-        }
-      }
-    } finally {
-      setLoading(false);
-    }
-  }, [setProducts, setLoading, setError]);
+
 
