@@ -82,9 +82,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     }
   }, [setProducts, setLoading, setError]);
 
-  useEffect(() => {
-    fetchInventory();
-
-    const startPolling = () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-      timerRef.current = setInterval(fetchInventory, refreshInterval);
