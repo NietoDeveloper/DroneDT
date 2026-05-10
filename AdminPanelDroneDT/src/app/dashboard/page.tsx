@@ -92,10 +92,7 @@ export default function DashboardL5() {
           {/* ÁREA DE RENDERIZADO - Grid Reducido para que cada unidad crezca */}
           <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 lg:p-8 custom-scrollbar bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
             
-            {error && products.length === 0 ? (
-              <div className="h-full flex items-center justify-center p-10">
-                <ErrorShield message="ENLACE_CON_CLUSTER_CAÍDO" retry={manualSync} />
-              </div>
+            {error 
        roducts.length === 0 ? (
                   Array.from({length: 8}).map((_, i) => <DroneSkeleton key={i} />)
     
