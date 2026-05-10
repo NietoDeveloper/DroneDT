@@ -101,11 +101,7 @@ export default function DashboardL5() {
               <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 lg:gap-8">
                 {loading && products.length === 0 ? (
                   Array.from({length: 8}).map((_, i) => <DroneSkeleton key={i} />)
-                ) : (
-                  filteredDrones.map((item) => (
-                    <InventoryCard key={item._id} product={item} />
-                  ))
-  
+    
 
 
       {/* 4. FOOTER INDUSTRIAL (Aumentado) */}
