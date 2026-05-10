@@ -75,16 +75,7 @@ export default function DashboardL5() {
               <Layers className="text-emerald-500/50 w-3 h-3 lg:w-5 lg:h-5" />
               <span className="text-[9px] lg:text-[12px] font-black uppercase tracking-[0.3em] text-zinc-400">Transmisión_de_Inventario</span>
               {loading && <span className="text-[7px] lg:text-[10px] text-emerald-500 animate-pulse ml-2 font-bold italic">_SCANNING_HANGAR_01</span>}
-            </div>
-            
-            <div className="flex items-center h-full bg-black/40 px-3 lg:px-6 border-l border-white/5 group focus-within:bg-black/80 transition-all">
-              <Search className="text-zinc-600 group-focus-within:text-emerald-500 w-3 h-3 lg:w-4 lg:h-4" />
-              <input 
-                type="text" 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="BUSCAR_UNIDAD_ID" 
- ame="flex-1 overflow-y-auto overflow-x-hidden p-4 lg:p-8 custom-scrollbar bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
+            </di8 custom-scrollbar bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
             
        roducts.length === 0 ? (
                   Array.from({length: 8}).map((_, i) => <DroneSkeleton key={i} />)
