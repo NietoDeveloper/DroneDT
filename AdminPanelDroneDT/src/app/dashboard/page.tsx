@@ -159,11 +159,7 @@ export default function DashboardL5() {
           <span className="hidden sm:inline text-emerald-900">MERN_L6_INDUSTRIAL</span>
           <span className={`hidden sm:inline ${error ? 'text-red-900' : 'text-emerald-900'}`}>
             {error ? 'ERR_04_CON' : 'SYS_OK'}
-          </span>
-        </div>
-        <div className="text-[7px] text-zinc-800 tracking-[0.2em] font-black uppercase">
-          Nieto_Laboratory // Drone_DT // v1.0.4
-        </div>
+
       </footer>
     </div>
   );
