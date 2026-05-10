@@ -96,10 +96,7 @@ export default function DashboardL5() {
               <div className="h-full flex items-center justify-center p-10">
                 <ErrorShield message="ENLACE_CON_CLUSTER_CAÍDO" retry={manualSync} />
               </div>
-            ) : (
-              // GRID AJUSTADO: lg:3 y xl:4 para que las tarjetas sean grandes a 1900px
-              <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 lg:gap-8">
-                {loading && products.length === 0 ? (
+       roducts.length === 0 ? (
                   Array.from({length: 8}).map((_, i) => <DroneSkeleton key={i} />)
     
 
