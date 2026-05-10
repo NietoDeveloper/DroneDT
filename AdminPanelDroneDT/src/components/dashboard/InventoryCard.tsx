@@ -88,6 +88,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     const startPolling = () => {
       if (timerRef.current) clearInterval(timerRef.current);
       timerRef.current = setInterval(fetchInventory, refreshInterval);
-    };
-
-    startPolling();
