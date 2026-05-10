@@ -113,8 +113,7 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
 
   return { 
     manualSync: fetchInventory,
-    isRetrying: retryCount.current > 0,
-    status: retryCount.current > 0 ? 'RECONNECTING' : 'SYNCED',
+
     lastSync: lastFetchTime.current
   };
 };
