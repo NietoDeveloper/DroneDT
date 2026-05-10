@@ -131,11 +131,7 @@ export default function DashboardL5() {
               <span className="text-[9px] lg:text-[11px] text-zinc-400 font-black tracking-widest uppercase">Logs_de_Sistema</span>
             </div>
             <div className="flex-1 overflow-hidden p-4 lg:p-6 font-mono text-[9px] lg:text-[12px] text-zinc-600 leading-relaxed bg-black/50 uppercase">
-              <div className="space-y-2 lg:space-y-4">
-                <p className="truncate text-emerald-500/80"><span className="text-emerald-800">»</span> STATUS: {status}</p>
-                <
-                {isRetrying && <p className="text-red-500 animate-pulse truncate"><span className="mr-1">!</span> UPLINK_RETRY_0x{products.length}</p>}
-              </div>
+ 
 
             </div>
           </div>
