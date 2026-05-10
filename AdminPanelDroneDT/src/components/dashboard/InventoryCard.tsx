@@ -112,8 +112,5 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
   }, [fetchInventory, refreshInterval]);
 
   return { 
-    manualSync: fetchInventory,
 
-    lastSync: lastFetchTime.current
-  };
 };
