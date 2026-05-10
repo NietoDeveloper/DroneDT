@@ -68,37 +68,4 @@ export default function DashboardL5() {
       <div className="flex-1 min-h-0 flex overflow-hidden">
         
         {/* LADO IZQUIERDO: GRID DE LA FLOTA */}
-        <div className="flex-1 min-w-0 flex flex-col border-r border-white/10">
-          <div className="h-[24px] flex-shrink-0 flex items-center justify-between px-2 bg-zinc-900/40 border-b border-white/5">
-            <div className="flex items-center gap-2">
-              <Layers size={10} className="text-emerald-500/50" />
-              <span className="text-[9px] font-bold uppercase tracking-widest text-zinc-400">Transmisión_de_Inventario</span>
-              {loading && <span className="text-[7px] text-emerald-500 animate-pulse ml-2 font-bold italic text-white/90">_ACTUALIZANDO_HANGAR</span>}
-            </div>
-            
-            <div className="flex items-center h-full bg-black/40 px-2 border-l border-white/5 group transition-colors focus-within:bg-black/80">
-              <Search size={10} className="text-zinc-600 group-focus-within:text-emerald-500" />
-              <input 
-                type="text" 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="BUSCAR_POR_SKU" 
-                className="bg-transparent text-[9px] outline-none w-20 sm:w-32 ml-2 text-emerald-400 uppercase placeholder:text-zinc-800" 
-              />
-            </div>
-          </div>
-
-          {/* ÁREA DE RENDERIZADO DE UNIDADES */}
-          <div className="flex-1 overflow-y-auto overflow-x-hidden p-1 custom-scrollbar bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
-            
-            {error && products.length === 0 ? (
-              <div className="h-full flex items-center justify-center p-10">
-                <ErrorShield message="ENLACE_CON_CLUSTER_CAÍDO" retry={manualSync} />
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-1">
-                
-                {/* ESTADO DE CARGA INICIAL */}
-                {loading && products.length
-
-}
+   
