@@ -30,7 +30,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     const now = Date.now();
     if (now - lastFetchTime.current < 2000) return;
     lastFetchTime.current = now;
-
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
-    }
