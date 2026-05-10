@@ -91,5 +91,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     };
 
     startPolling();
-
-    const handleVisibilityChange = () => {
