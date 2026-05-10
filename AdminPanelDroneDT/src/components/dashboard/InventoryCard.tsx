@@ -97,7 +97,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
         if (timerRef.current) clearInterval(timerRef.current);
       } else {
         // Re-sincronización inmediata al recuperar foco
-        fetchInventory(); 
-        startPolling();
-      }
-    };
