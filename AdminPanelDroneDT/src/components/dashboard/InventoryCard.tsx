@@ -1,141 +1,123 @@
 'use client';
 
-import { useEffect, useRef, useCallback } from 'react';
-import { useInventoryStore } from '@/store/useInventoryStore';
+import React from 'react';
+import { 
+  Package, 
+  Cpu, 
+  Battery, 
+  Zap, 
+  AlertCircle, 
+  CheckCircle2, 
+  Navigation 
+} from 'lucide-react';
+
+interface DroneProduct {
+  _id: string;
+  name: string;
+  status: 'active' | 'maintenance' | 'offline';
+  stock: number;
+  batteryLevel?: number;
+  sku?: string;
+  firmwareVersion?: string;
+}
 
 /**
- * HOOK: useRealTimeInventory
- * Nivel: L5 Architecture - Industrial Telemetry Sync
- * Proyecto: Drone DT
- * Propósito: Sincronización de telemetría con protección de estado global y optimización de recursos.
+ * COMPONENT: InventoryCard
+ * Nivel: L5 Architecture - Industrial Telemetry
+ * Propósito: Visualización técnica de unidades Drone DT.
+ * Export: Named Export for Turbopack Compliance.
  */
-export const useRealTimeInventory = (refreshInterval = 30000) => {
-  // Selectores atómicos para evitar re-renders innecesarios
-  const setProducts = useInventoryStore((state) => state.actions.setProducts);
-  const setLoading = useInventoryStore((state) => state.actions.setLoading);
-  const setError = useInventoryStore((state) => state.actions.setError);
+export const InventoryCard = ({ product }: { product: DroneProduct }) => {
   
-  // Referencias para control de flujo (Zero-Footprint Design)
-  const productsRef = useRef(useInventoryStore.getState().products);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const abortControllerRef = useRef<AbortController | null>(null);
-  const retryCount = useRef(0);
-  const lastFetchTime = useRef(0);
-
-  // Sincronización silenciosa de la referencia con el Store
-  useEffect(() => {
-    const unsub = useInventoryStore.subscribe(
-      (state) => (productsRef.current = state.products)
-    );
-    return () => unsub();
-  }, []);
-
-  const fetchInventory = useCallback(async () => {
-    const now = Date.now();
-
-    // 1. Anti-Burst Shield: Mínimo 2s entre peticiones para proteger el clúster
-    if (now - lastFetchTime.current < 2000) return;
-    lastFetchTime.current = now;
-
-    // 2. Race Condition Guard: Abortar peticiones previas activas
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
+  const getStatusStyles = (status: string) => {
+    switch (status) {
+      case 'active': 
+        return {
+          text: 'text-emerald-400',
+          border: 'border-emerald-500/30',
+          bg: 'bg-emerald-500/5',
+          shadow: 'shadow-[0_0_10px_rgba(16,185,129,0.1)]',
+          icon: <CheckCircle2 size={10} className="text-emerald-500" />
+        };
+      case 'maintenance': 
+        return {
+          text: 'text-amber-400',
+          border: 'border-amber-500/30',
+          bg: 'bg-amber-500/5',
+          shadow: 'shadow-[0_0_10px_rgba(245,158,11,0.1)]',
+          icon: <AlertCircle size={10} className="text-amber-500" />
+        };
+      default: 
+        return {
+          text: 'text-rose-400',
+          border: 'border-rose-500/30',
+          bg: 'bg-rose-500/5',
+          shadow: 'shadow-[0_0_10px_rgba(244,63,94,0.1)]',
+          icon: <Zap size={10} className="text-rose-500" />
+        };
     }
-
-    // 3. Environment Check: No sincronizar si el laboratorio está oculto
-    if (document.hidden) return;
-
-    const controller = new AbortController();
-    abortControllerRef.current = controller;
-    setLoading(true);
-
-    try {
-      const response = await fetch('/api/inventory', {
-        signal: controller.signal,
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Security-Level': 'L5-Shield-Industrial',
-          'X-Origin-Node': 'NIETO_LAB_BOG_CENTRO',
-          'X-Project-ID': 'DRONE_DT_FLEET',
-          'Cache-Control': 'no-cache',
-          'X-Timestamp': now.toString()
-        },
-      });
-
-      if (!response.ok) throw new Error(`HTTP_ERR_${response.status}`);
-
-      const data = await response.json();
-
-      if (Array.isArray(data)) {
-        // 4. Data Integrity Check: Comparación profunda antes de mutar el estado
-        const hasChanged = JSON.stringify(data) !== JSON.stringify(productsRef.current);
-        
-        if (hasChanged) {
-          setProducts(data);
-        }
-        
-        setError(null);
-        retryCount.current = 0;
-      }
-    } catch (error: any) {
-      if (error.name !== 'AbortError') {
-        console.error('CRITICAL_SYNC_FAILURE:', error.message);
-        retryCount.current += 1;
-        
-        // Umbral de tolerancia de enlace industrial
-        if (retryCount.current > 3) {
-          setError('CRITICAL: LINK_TO_CLUSTER_LOST_RECONNECTING');
-        }
-      }
-    } finally {
-      // Solo desactivar loading si esta petición fue la última procesada
-      if (abortControllerRef.current === controller) {
-        setLoading(false);
-      }
-    }
-  }, [setProducts, setLoading, setError]);
-
-  useEffect(() => {
-    // Inicialización de ciclo de telemetría
-    fetchInventory();
-
-    const startPolling = () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-      timerRef.current = setInterval(fetchInventory, refreshInterval);
-    };
-
-    startPolling();
-
-    // 5. Visibility Optimization: Gestión inteligente de recursos del sistema
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        if (timerRef.current) {
-          clearInterval(timerRef.current);
-          timerRef.current = null;
-        }
-      } else {
-        fetchInventory(); 
-        startPolling();
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    // Cleanup Final: Cierre de sockets y controladores al desmontar
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-      if (abortControllerRef.current) abortControllerRef.current.abort();
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, [fetchInventory, refreshInterval]);
-
-  return { 
-    manualSync: fetchInventory,
-    isRetrying: retryCount.current > 0,
-    status: retryCount.current > 3 
-      ? 'LINK_LOST' 
-      : (retryCount.current > 0 ? 'RECONNECTING' : 'SYNCED'),
-    lastSync: lastFetchTime.current,
-    retryCount: retryCount.current
   };
+
+  const ui = getStatusStyles(product.status);
+
+  return (
+    <div className={`group relative p-3 rounded-lg border ${ui.border} ${ui.bg} ${ui.shadow} backdrop-blur-xl hover:bg-white/[0.03] transition-all duration-500 overflow-hidden`}>
+      
+      {/* 1. HEADER: TELEMETRÍA RÁPIDA */}
+      <div className="flex justify-between items-start mb-3">
+        <div className="p-1.5 bg-zinc-950/50 rounded-md border border-white/5 group-hover:border-emerald-500/30 transition-colors">
+          <Navigation size={12} className="text-white/40 group-hover:text-emerald-400" />
+        </div>
+        <div className="flex flex-col items-end">
+          <div className={`flex items-center gap-1 text-[8px] font-black uppercase tracking-tighter ${ui.text}`}>
+            {ui.icon}
+            {product.status}
+          </div>
+          <span className="text-[7px] text-zinc-600 mt-0.5 font-mono">
+            {product.firmwareVersion || 'v1.0.4-L5'}
+          </span>
+        </div>
+      </div>
+
+      {/* 2. IDENTIFICACIÓN DE UNIDAD */}
+      <div className="space-y-0.5">
+        <h3 className="text-[11px] font-bold text-white/90 truncate uppercase tracking-tight">
+          {product.name}
+        </h3>
+        <div className="flex items-center gap-2">
+          <span className="text-[8px] font-mono text-zinc-500 bg-black/40 px-1 py-0.5 rounded border border-white/5">
+            ID: {product._id?.slice(-8).toUpperCase() || 'UNKNOWN'}
+          </span>
+        </div>
+      </div>
+
+      {/* 3. MÉTRICAS OPERATIVAS */}
+      <div className="mt-4 grid grid-cols-2 gap-2 border-t border-white/5 pt-3">
+        <div className="flex flex-col">
+          <span className="text-[7px] text-zinc-600 uppercase font-black">Disponibilidad</span>
+          <div className="flex items-baseline gap-1">
+            <span className="text-xs font-bold text-white">{product.stock}</span>
+            <span className="text-[8px] text-zinc-500 font-medium italic">unid.</span>
+          </div>
+        </div>
+        <div className="flex flex-col border-l border-white/5 pl-2">
+          <span className="text-[7px] text-zinc-600 uppercase font-black">Carga_Nucleo</span>
+          <div className="flex items-center gap-1.5 mt-1">
+             <div className="flex-1 h-0.5 bg-zinc-900 rounded-full overflow-hidden">
+                <div 
+                  className={`h-full ${product.stock > 0 ? 'bg-emerald-500' : 'bg-rose-500'}`} 
+                  style={{ width: `${Math.min(product.stock * 10, 100)}%` }} 
+                />
+             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* DECORACIÓN TECNOLÓGICA (NIETO LAB AESTHETIC) */}
+      <div className="absolute top-0 right-0 w-8 h-8 opacity-10 group-hover:opacity-30 transition-opacity">
+        <div className="absolute top-0 right-0 w-[1px] h-full bg-gradient-to-b from-emerald-500 to-transparent" />
+        <div className="absolute top-0 right-0 h-[1px] w-full bg-gradient-to-l from-emerald-500 to-transparent" />
+      </div>
+    </div>
+  );
 };
