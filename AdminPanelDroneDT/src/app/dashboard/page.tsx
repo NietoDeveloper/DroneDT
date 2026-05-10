@@ -113,15 +113,7 @@ export default function DashboardL5() {
                     <span className="text-[10px] lg:text-[12px] mt-4 block">No se detectan unidades con esos parámetros</span>
                   </div>
                 )}
-              </div>
-            )}
-          </div>
-        </div>
 
-        {/* COLUMNA DERECHA: PANEL DE CONTROL (Escalado de w-200 a w-350 en XL) */}
-        <aside className="hidden lg:flex lg:w-[250px] xl:w-[350px] flex-shrink-0 flex-col bg-black">
-
-      </div>
 
       {/* 4. FOOTER INDUSTRIAL (Aumentado) */}
       <footer className="h-[24px] lg:h-[32px] flex-shrink-0 flex items-center justify-between px-6 bg-zinc-950 border-t border-white/10">
