@@ -40,12 +40,7 @@ export default function DashboardL5() {
             DRONE_<span className="text-emerald-500">DT</span>
           </h1>
           <span className="hidden sm:inline text-[8px] lg:text-[10px] text-zinc-600 uppercase border-l border-white/10 pl-2 lg:pl-4 ml-1 italic tracking-[0.2em]">
-            Escudo_Aéreo_Nieto_Lab
-          </span>
-        </div>
-        
- ser imponente) */}
-      <div className="flex-shrink-0 border-b border-white/10 bg-black">
+            Escudo_Aéreo_N/10 bg-black">
         <StatsPanel />
       </div>
 ck">
