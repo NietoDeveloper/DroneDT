@@ -105,12 +105,7 @@ export default function DashboardL5() {
                   filteredDrones.map((item) => (
                     <InventoryCard key={item._id} product={item} />
                   ))
-                )}
-
-                {!loading && filteredDrones.length === 0 && (
-                  <div className="col-span-full py-48 text-center opacity-20">
-       
-                )}
+  
 
 
       {/* 4. FOOTER INDUSTRIAL (Aumentado) */}
