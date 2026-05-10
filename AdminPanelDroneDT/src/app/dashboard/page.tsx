@@ -99,31 +99,6 @@ export default function DashboardL5() {
               <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 2xl:grid-cols-8 gap-1">
                 
                 {/* ESTADO DE CARGA INICIAL */}
-                {loading && products.length === 0 ? (
-                  Array.from({length: 24}).map((_, i) => <DroneSkeleton key={i} />)
-                ) : (
-                  filteredDrones.map((item) => (
-                    <InventoryCard key={item.id} product={item} />
-                  ))
-                )}
+                {loading && products.length
 
-                {/* EMPTY STATE */}
-                {!loading && filteredDrones.length === 0 && (
-                  <div className="col-span-full py-20 text-center opacity-20">
-                    <span className="text-[10px] font-black uppercase tracking-[0.5em]">Sin_Coincidencias_en_Radar</span>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* LADO DERECHO: PANEL DE CONTROL OPERATIVO */}
-        <aside className="hidden lg:flex w-[180px] flex-shrink-0 flex-col bg-black">
-          <button className="h-[44px] w-full bg-emerald-500 hover:bg-emerald-400 text-black font-black text-[10px] uppercase tracking-tighter transition-all active:scale-[0.98] flex items-center justify-center gap-2">
-            <Plus size={14} />
-            NUEVA_UNIDAD
-          </button>
-
-  );
 }
