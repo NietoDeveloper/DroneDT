@@ -152,15 +152,7 @@ export default function DashboardL5() {
         </aside>
       </div>
 
-      {/* 4. FOOTER INDUSTRIAL */}
-      <footer className="h-[14px] flex-shrink-0 flex items-center justify-between px-2 bg-zinc-950 border-t border-white/10">
-        <div className="flex gap-4 text-[7px] text-zinc-700 font-bold uppercase">
-          <span>HOST: RAILWAY_DOUBLE_CLUSTER</span>
-          <span className="hidden sm:inline text-emerald-900">MERN_L6_INDUSTRIAL</span>
-          <span className={`hidden sm:inline ${error ? 'text-red-900' : 'text-emerald-900'}`}>
-            {error ? 'ERR_04_CON' : 'SYS_OK'}
 
-      </footer>
     </div>
   );
 }
