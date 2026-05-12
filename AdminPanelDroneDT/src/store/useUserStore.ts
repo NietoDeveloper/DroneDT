@@ -53,6 +53,3 @@ export const useUserStore = create<UserState>((set) => ({
   setLoading: (status) => set({ 
     isLoading: status 
   }),
-
-  setError: (message) => set({ 
-
