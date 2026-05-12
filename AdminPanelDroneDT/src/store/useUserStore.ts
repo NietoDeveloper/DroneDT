@@ -55,6 +55,4 @@ export const useUserStore = create<UserState>((set) => ({
   }),
 
   setError: (message) => set({ 
-    error: message, 
-    isLoading: false 
-  }),
+
