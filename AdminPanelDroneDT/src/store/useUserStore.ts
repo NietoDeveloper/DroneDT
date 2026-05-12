@@ -49,7 +49,3 @@ export const useUserStore = create<UserState>((set) => ({
     operators, 
     isLoading: false 
   }),
-
-  setLoading: (status) => set({ 
-    isLoading: status 
-  }),
