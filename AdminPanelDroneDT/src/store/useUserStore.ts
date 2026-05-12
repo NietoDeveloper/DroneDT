@@ -29,8 +29,3 @@ interface UserState {
   setError: (message: string | null) => void;
   selectOperator: (operator: Operator | null) => void;
   
-  // Mutaciones de interfaz (Optimistic Updates)
-  updateOperatorStatus: (id: string, status: Operator['status']) => void;
-}
-
-
