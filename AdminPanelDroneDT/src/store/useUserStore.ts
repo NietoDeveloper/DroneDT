@@ -19,7 +19,6 @@ export interface Operator {
 interface UserState {
   // Estado
   operators: Operator[];
-  isLoading: boolean;
   error: string | null;
   selectedOperator: Operator | null;
 
