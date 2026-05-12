@@ -44,8 +44,3 @@ export const useUserStore = create<UserState>((set) => ({
   error: null,
   selectedOperator: null,
 
-  // Setters de Telemetría
-  setOperators: (operators) => set({ 
-    operators, 
-    isLoading: false 
-  }),
