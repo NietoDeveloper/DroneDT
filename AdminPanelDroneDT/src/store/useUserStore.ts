@@ -6,7 +6,5 @@ import { create } from 'zustand';
  */
 export interface Operator {
   _id: string;
-  name: string;
-  email: string;
-  role: 'ADMIN_CHIEF' | 'FIELD_OPERATOR'
+  n
 
