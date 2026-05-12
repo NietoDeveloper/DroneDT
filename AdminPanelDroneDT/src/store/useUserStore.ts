@@ -12,7 +12,6 @@ export interface Operator {
   status: 'ACTIVE' | 'IDLE' | 'OFFLINE' | 'SUSPENDED';
   location: string;
   lastUplink: string;
-  clearanceLevel: 1 | 2 | 3 | 4 | 5; // Nivel L5 es el máximo (Manuel Nieto)
-  avatar?: string;
+
 
 interface UserState {
