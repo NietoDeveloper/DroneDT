@@ -64,9 +64,5 @@ export const useUserStore = create<UserState>((set) => ({
   }),
 
   /**
-
-   */
-  updateOperatorStatus: (id, status) => set((state) => ({
-
   })),
 }));
