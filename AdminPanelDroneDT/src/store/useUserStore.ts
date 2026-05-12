@@ -35,8 +35,7 @@ interface UserState {
 
 /**
  * useUserStore - Sistema de Gestión de Operadores
- * Engineered for: Nieto Laboratory // Drone DT
- */
+
 export const useUserStore = create<UserState>((set) => ({
   // Initial State
   operators: [],
