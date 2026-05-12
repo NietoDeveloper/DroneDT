@@ -67,8 +67,6 @@ export const useUserStore = create<UserState>((set) => ({
 
    */
   updateOperatorStatus: (id, status) => set((state) => ({
-    operators: state.operators.map((op) => 
-     
-    )
+
   })),
 }));
