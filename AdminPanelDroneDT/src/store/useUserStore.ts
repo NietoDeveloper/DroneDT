@@ -33,13 +33,4 @@ interface UserState {
   updateOperatorStatus: (id: string, status: Operator['status']) => void;
 }
 
-/**
- * useUserStore - Sistema de Gestión de Operadores
-
-export const useUserStore = create<UserState>((set) => ({
-  // Initial State
-  operators: [],
-  isLoading: false,
-  error: null,
-
 
