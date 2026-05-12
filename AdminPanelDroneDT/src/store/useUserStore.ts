@@ -68,7 +68,7 @@ export const useUserStore = create<UserState>((set) => ({
    */
   updateOperatorStatus: (id, status) => set((state) => ({
     operators: state.operators.map((op) => 
-      op._id === id ? { ...op, status, lastUplink: new Date().toISOString() } : op
+     
     )
   })),
 }));
