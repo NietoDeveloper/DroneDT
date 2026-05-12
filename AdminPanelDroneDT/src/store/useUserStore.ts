@@ -42,5 +42,5 @@ export const useUserStore = create<UserState>((set) => ({
   operators: [],
   isLoading: false,
   error: null,
-  selectedOperator: null,
+
 
