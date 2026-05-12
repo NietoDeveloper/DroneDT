@@ -21,6 +21,4 @@ interface UserState {
 
   // Acciones (Cerebro del Dashboard)
   setOperators: (operators: Operator[]) => void;
- 
-  selectOperator: (operator: Operator | null) => void;
   
