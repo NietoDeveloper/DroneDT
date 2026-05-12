@@ -12,6 +12,3 @@ export interface Operator {
   status: 'ACTIVE' | 'IDLE' | 'OFFLINE' | 'SUSPENDED';
   location: string;
   lastUplink: string;
-
-
-interface UserState {
