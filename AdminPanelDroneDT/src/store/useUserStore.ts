@@ -60,7 +60,3 @@ export const useUserStore = create<UserState>((set) => ({
   }),
 
   selectOperator: (operator) => set({ 
-    selectedOperator: operator 
-
-  })),
-}));
