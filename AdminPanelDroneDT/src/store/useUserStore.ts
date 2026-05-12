@@ -17,8 +17,3 @@ export interface Operator {
 }
 
 interface UserState {
-  // Estado
-
-  // Acciones (Cerebro del Dashboard)
-  setOperators: (operators: Operator[]) => void;
-  
