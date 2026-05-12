@@ -64,7 +64,7 @@ export const useUserStore = create<UserState>((set) => ({
   }),
 
   /**
-   * Actualización de estado en tiempo real (Handshake visual)
+
    */
   updateOperatorStatus: (id, status) => set((state) => ({
     operators: state.operators.map((op) => 
