@@ -50,21 +50,6 @@ export default function LoginPage() {
           <div className="flex flex-col items-center mb-12 text-center">
             {/* Contenedor del Logo con escalado en hover */}
             <div className="mb-8 transform transition-all duration-700 hover:scale-110 hover:-rotate-2 cursor-none">
-              <div className="bg-zinc-950 p-7 lg:p-9 rounded-[2rem] border border-amber-500/30 shadow-2xl relative group">
-                <div className="absolute -inset-3 bg-amber-500/10 blur-2xl opacity-0 group-hover:opacity-100 transition-opacity rounded-full" />
-                <Logo iconSize={54} className="relative z-10" />
-              </div>
-            </div>
-            
-            {/* Status Indicator */}
-            <div className="inline-block px-4 py-1.5 rounded-full bg-zinc-100 border border-zinc-200 mb-6">
-              <span className="text-[10px] lg:text-[12px] font-mono font-black text-zinc-800 tracking-[0.3em] uppercase flex items-center gap-3">
-                <span className={`w-2 h-2 rounded-full bg-amber-500 ${isAuthorizing ? 'animate-ping' : 'animate-pulse shadow-[0_0_8px_#f59e0b]'}`} />
-                {isAuthorizing ? 'AUTHORIZING_UPLINK...' : 'SECURE_NODE_READY'}
-              </span>
-            </div>
-            
-            <h2 className="text-2xl lg:text-3xl font-black text-zinc-950 uppercase tracking-tighter mb-2 italic">
-              CENTRAL_CONTROL
+             
             </h2>
             
