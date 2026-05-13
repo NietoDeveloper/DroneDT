@@ -131,12 +131,3 @@ export default function LoginPage() {
           <div className="mt-10 flex justify-between items-end border-t border-zinc-100 pt-8">
             <div className="text-[9px] lg:text-[10px] font-mono text-zinc-400 leading-relaxed uppercase">
               ID: <span className="text-zinc-900 font-black tracking-widest">NIETO_LAB_S1</span> <br />
-              REGION: <span className="text-zinc-900 font-black">BOGOTÁ_COL</span>
-            </div>
-            <div className="text-[9px] lg:text-[10px] font-mono text-right text-zinc-400 uppercase leading-relaxed">
-              ENCRYPTION: <span className="text-zinc-900 font-black">RSA_4096</span> <br />
-              SHIELD: <span 
-        </p>
-
-  );
-}
