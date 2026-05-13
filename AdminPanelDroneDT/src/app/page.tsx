@@ -135,12 +135,7 @@ export default function LoginPage() {
             </div>
             <div className="text-[9px] lg:text-[10px] font-mono text-right text-zinc-400 uppercase leading-relaxed">
               ENCRYPTION: <span className="text-zinc-900 font-black">RSA_4096</span> <br />
-              SHIELD: <span className="text-emerald-600 font-black animate-pulse italic">ACTIVE_PROTECTION</span>
-            </div>
-          </div>
-        </div>
-[11px] text-zinc-500 font-mono tracking-[0.6em] uppercase opacity-60 font-bold">
-          © 2026 // NIETO LABORATORY // DRONE DT ENGINE
+              SHIELD: <span 
         </p>
 
   );
