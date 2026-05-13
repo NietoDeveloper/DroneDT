@@ -48,8 +48,7 @@ export const Sidebar = () => {
               )}
               {item.icon}
               <span className="hidden lg:block ml-4 text-[11px] font-black tracking-[0.1em] uppercase">
-                {item.name}
-              </span>1 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">
+                {item.y-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">
                 {item.name}
 
   );
