@@ -27,19 +27,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden bg-zinc-950">
       
       {/* 1. FONDO ESTRUCTURAL: Malla de precisión industrial */}
-      <div 
-        className="absolute inset-0 z-0 opacity-20 pointer-events-none" 
-        style={{ 
-          backgroundImage: 'radial-gradient(circle, #fbbf24 0.5px, transparent 0.5px)', 
-          backgroundSize: '30px 30px' 
-        }} 
-      />
-      
-      {/* 2. ATMÓSFERA: Brillo ambiental Drone DT para profundidad */}
-      <div className="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
-
-      <div className="max-w-md lg:max-w-lg w-full z-10 transition-all duration-500">
+tion-all duration-500">
         
         {/* PANEL DE CRISTAL INDUS
              
