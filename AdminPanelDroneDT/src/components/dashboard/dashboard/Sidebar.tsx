@@ -23,7 +23,4 @@ export const Sidebar = () => {
     <aside className="fixed left-0 top-0 h-screen w-[60px] lg:w-[240px] bg-black border-r border-white/10 flex flex-col z-50">
       {/* BRANDING */}
       <div className="h-[70px] flex items-center justify-center lg:justify-start lg:px-6 border-b border-white/5">
-        <div className="w-8 h-8 bg-emerald-500 rounded flex items-center justify-center shadow-[0_0_15px_rgba(16,185,129,0.4)]">
-          <span className="text-black font-black text-xs">DT</span>
-        </div>
-        <span className="hidden lg:block ml-3 font-black tracking-widest text-sm text-white uppercase">
+        <div className="w-8 h-8 bg-emerald-500g-widest text-sm text-white uppercase">
