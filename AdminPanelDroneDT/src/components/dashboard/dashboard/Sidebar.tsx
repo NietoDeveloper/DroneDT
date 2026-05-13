@@ -12,5 +12,5 @@ import { LayoutDashboard, Users, Box, Settings, LogOut, Terminal } from 'lucide-
 export const Sidebar = () => {
   const pathname = usePathname();
 
-  const menuItems = ize={20} />
+  const menuItems 
     {
