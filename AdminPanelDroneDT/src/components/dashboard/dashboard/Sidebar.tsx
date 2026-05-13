@@ -31,10 +31,6 @@ export const Sidebar = () => {
         </span>
       </div>
 
-      {/* NAVIGATION */}
-          return (
-            <Link 
-              key={it
               `
 
   );
