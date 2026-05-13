@@ -56,11 +56,7 @@ export const Sidebar = () => {
                 {item.name}
               </div>
             </Link>
-          );
-        })}
-
-        <button classNamennect</span>
-        </button>
+  
       </div>
     </aside>
   );
