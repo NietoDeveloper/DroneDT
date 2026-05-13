@@ -18,6 +18,5 @@ export const Sidebar = () => {
     { name: 'SYSTEM_LOGS', icon: <Terminal size={20} />, path: '/dashboard/logs' },
     { name: 'CONFIG', icon: <Settings size={20} />, path: '/dashboard/settings' },
   ];
-
-  return (:w-[240px] bg-black border-rcol z-50">
+ z-50">
       {/* BRANDING */}t-white uppercase">
