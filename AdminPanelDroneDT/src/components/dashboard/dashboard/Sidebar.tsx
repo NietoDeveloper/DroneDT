@@ -14,4 +14,4 @@ export const Sidebar = () => {
 
   const menuItems = 
     { name: 'HANGAR', icon: <Box size={20} />
-    { nam
+    {
