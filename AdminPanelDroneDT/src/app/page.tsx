@@ -139,9 +139,7 @@ export default function LoginPage() {
             </div>
           </div>
         </div>
-
-        {/* Footer Externo */}
-        <p className="text-center mt-10 text-[10px] lg:text-[11px] text-zinc-500 font-mono tracking-[0.6em] uppercase opacity-60 font-bold">
+[11px] text-zinc-500 font-mono tracking-[0.6em] uppercase opacity-60 font-bold">
           © 2026 // NIETO LABORATORY // DRONE DT ENGINE
         </p>
 
