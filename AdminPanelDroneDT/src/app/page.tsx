@@ -44,10 +44,7 @@ export default function LoginPage() {
         {/* PANEL DE CRISTAL INDUSTRIAL */}
         <div className="glass-panel p-8 lg:p-12 relative overflow-hidden bg-white/95 backdrop-blur-2xl border border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-3xl">
           
-          {/* Línea de escaneo superior */}
-          <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-80" />
-          
-          <div classNaml duration-700 hover:scale-110 hover:-rotate-2 cursor-none">
+          {/* Línea de escaneo superiote-2 cursor-none">
              
             </h2>
             
