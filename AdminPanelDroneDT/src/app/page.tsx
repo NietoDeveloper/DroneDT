@@ -110,15 +110,5 @@ export default function LoginPage() {
                   relative w-full flex items-center justify-center gap-4 h-16 lg:h-20
                   bg-zinc-950 text-white rounded-2xl border border-white/10
                   hover:bg-amber-500 hover:text-black hover:border-amber-400
-                  hover:-translate-y-1.5 transition-all duration-500 disabled:opacity-50 
-                  cursor-pointer active:scale-95 group overflow-hidden
-                "
-              >
-                {/* Efecto de brillo al pasar el mouse */}
-                <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_2s_infinite] transition-transform" />
-                
-                <span className="text-sm lg:text-base font-black tracking-[0.5em] uppercase italic relative z-10">
-                  {isAuthorizing ? 'CONNECTING' : 'INITIALIZE'}
-                </span>
-                <span className="text-amber-500 group-hover:text-black group-hover:translate-x-3 transition-all duration-500 font-black text-2xl relative z-10">
+                  hover:-translate-y-1.5 text-black group-hover:translate-x-3 transition-all duration-500 font-black text-2xl relative z-10">
                   {isAuth
