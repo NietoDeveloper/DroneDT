@@ -27,11 +27,3 @@ export const Sidebar = () => {
           <span className="text-black font-black text-xs">DT</span>
         </div>
         <span className="hidden lg:block ml-3 font-black tracking-widest text-sm text-white uppercase">
-          Drone_DT <span className="text-emerald-500">L5</span>
-        </span>
-      </div>
-
-              `
-
-  );
-};
