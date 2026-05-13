@@ -14,6 +14,5 @@ export const Sidebar = () => {
 
   const menuItems = [
     { name: 'HANGAR', icon: <Box size={20} />, path: '/dashboard' },
-    { name: 'OPERATORS', icon: <Users size={20} />, path: '/dashboard/users' },
-    { name: 'SYSTEM_LOGS', icon: <Terminal size={20} />, path: '/dashboard/logs' },
+    { name: 'OPERATORS', icon: <Users size={20} />,shboard/logs' },
     { nam
