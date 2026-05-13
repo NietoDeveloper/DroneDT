@@ -41,10 +41,7 @@ export default function LoginPage() {
 
       <div className="max-w-md lg:max-w-lg w-full z-10 transition-all duration-500">
         
-        {/* PANEL DE CRISTAL INDUSTRIAL */}
-        <div className="glass-panel p-8 lg:p-12 relative overflow-hidden bg-white/95 backdrop-blur-2xl border border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.5)] rounded-3xl">
-          
-          {/* Línea de escaneo superiote-2 cursor-none">
+        {/* PANEL DE CRISTAL INDUS
              
             </h2>
             
