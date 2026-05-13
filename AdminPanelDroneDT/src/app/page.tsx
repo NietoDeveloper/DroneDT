@@ -144,14 +144,6 @@ export default function LoginPage() {
         <p className="text-center mt-10 text-[10px] lg:text-[11px] text-zinc-500 font-mono tracking-[0.6em] uppercase opacity-60 font-bold">
           © 2026 // NIETO LABORATORY // DRONE DT ENGINE
         </p>
-      </div>
 
-      {/* Animación personalizada para el botón */}
-      <style jsx global>{`
-        @keyframes shimmer {
-          100% { transform: translateX(100%); }
-        }
-      `}</style>
-    </div>
   );
 }
