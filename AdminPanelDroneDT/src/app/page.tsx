@@ -67,9 +67,4 @@ export default function LoginPage() {
             <h2 className="text-2xl lg:text-3xl font-black text-zinc-950 uppercase tracking-tighter mb-2 italic">
               CENTRAL_CONTROL
             </h2>
-            <p className="text-[10px] lg:text-[12px] font-mono text-zinc-500 uppercase tracking-[0.4em] font-bold">
-              Drone DT Intelligence System
-            </p>
-          </div>
-          
-                  {isAuth
+            
