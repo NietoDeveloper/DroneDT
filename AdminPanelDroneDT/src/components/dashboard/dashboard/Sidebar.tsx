@@ -38,8 +38,7 @@ export const Sidebar = () => {
           return (
             <Link 
               key={item.path} 
-              href={item.path}
-              className={`flex items-center justify-center lg:j5' : 'text-zinc-500 hover:text-white hover:bg-white/5'}
+              href={item.path}text-zinc-500 hover:text-white hover:bg-white/5'}
               `}
             >
                 {item.name}
