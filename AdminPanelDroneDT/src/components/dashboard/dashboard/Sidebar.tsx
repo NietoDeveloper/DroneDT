@@ -37,8 +37,7 @@ export const Sidebar = () => {
           const isActive = pathname === item.path;
           return (
             <Link 
-              key={item.path} 
-           t-zinc-500 hover:text-wh
+              key={it
               `
 
   );
