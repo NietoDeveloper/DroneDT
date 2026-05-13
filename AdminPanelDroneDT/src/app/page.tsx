@@ -82,9 +82,5 @@ export default function LoginPage() {
                 type="email" 
                 required
                 className="w-full p-5 bg-zinc-50 border-2 border-zinc-100 rounded-2xl focus:border-amber-500/50 focus:bg-white transition-all duration-300 outline-none text-sm font-bold text-zinc-900 shadow-sm placeholder:text-zinc-300 placeholder:font-normal uppercase"
-                placeholder="ENTER_CREDENTIALS"
-              />
-            </div>
-            
-            {/* Input: Access Key */}oup-hove:translate-x-3 transition-all duration-500 font-black text-2xl relative z-10">
+                placansition-all duration-500 font-black text-2xl relative z-10">
                   {isAuth
