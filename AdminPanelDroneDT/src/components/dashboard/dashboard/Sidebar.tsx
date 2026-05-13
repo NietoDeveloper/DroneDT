@@ -10,5 +10,3 @@ import { LayoutDashboard, Users, Box, Settings, LogOut, Terminal } from 'lucide-
  * Estética: SpaceX Minimalist / Fixed Position
  */
 export const Sidebar = () => {
-  const pathname = u
-
