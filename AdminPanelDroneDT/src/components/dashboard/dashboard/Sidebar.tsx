@@ -32,9 +32,6 @@ export const Sidebar = () => {
       </div>
 
       {/* NAVIGATION */}
-      <nav className="flex-1 py-6 space-y-2">
-        {menuItems.map((item) => {
-          const isActive = pathname === item.path;
           return (
             <Link 
               key={it
