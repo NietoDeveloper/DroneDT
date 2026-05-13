@@ -5,6 +5,4 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { LayoutDashboard, Users, Box, Settings, LogOut, Terminal } from 'lucide-react';
 
-/**
- * SIDEBAR L5 - COMMAND CENTER
  * Estética: SpaceX Min
