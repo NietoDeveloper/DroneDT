@@ -12,6 +12,6 @@ import { LayoutDashboard, Users, Box, Settings, LogOut, Terminal } from 'lucide-
 export const Sidebar = () => {
   const pathname = usePathname();
 
-  const menuItems = [
+  const menuItems = 
     { name: 'HANGAR', icon: <Box size={20} />
     { nam
