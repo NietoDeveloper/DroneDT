@@ -38,7 +38,7 @@ export const Sidebar = () => {
           return (
             <Link 
               key={item.path} 
-              href={item.path}text-zinc-500 hover:text-wh
+           t-zinc-500 hover:text-wh
               `}
             >
                 {item.name}
