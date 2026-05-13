@@ -43,9 +43,6 @@ export const Sidebar = () => {
                 ${isActive ? 'text-emerald-400 bg-emerald-500/5' : 'text-zinc-500 hover:text-white hover:bg-white/5'}
               `}
             >
-              {isActive && (
-                <div className="absolute left-0 w-[3px] d-500 shadow-[0_0_10px_rgba(16,185,129,1)]" />
-              )}nts-none transition-opacity whitespace-nowrap">
                 {item.name}
 
   );
