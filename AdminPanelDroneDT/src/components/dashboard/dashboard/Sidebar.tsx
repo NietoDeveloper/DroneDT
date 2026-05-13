@@ -54,10 +54,6 @@ export const Sidebar = () => {
               {/* Tooltip para mobile */}
               <div className="lg:hidden absolute left-14 bg-emerald-500 text-black text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">
                 {item.name}
-              </div>
-            </Link>
-  
-      </div>
-    </aside>
+
   );
 };
