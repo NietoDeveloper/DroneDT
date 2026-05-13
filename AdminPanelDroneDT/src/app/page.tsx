@@ -75,9 +75,6 @@ export default function LoginPage() {
           <form className="space-y-6" onSubmit={handleLogin}>
             {/* Input: Operator */}
             <div className="group">
-              <label className="block text-[9px] lg:text-[11px] font-black text-zinc-400 uppercase tracking-[0.3em] mb-3 ml-2">
-                Operator_ID
-              </label>
-              <input 
+              <label classNa
                 type="email"  relative z-10">
                   {isAuth
