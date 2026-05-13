@@ -124,8 +124,4 @@ export default function LoginPage() {
                   {isAuthorizing ? '...' : '→'}
                 </span>
               </button>
-            </div>
-          </form>
-          
-          {/* Footer de Metadatos del Sistema */}
-          <div className="mt-10 flex  font-black tracking-widest">NIETO_LAB_S1</span> <br />
+            </div>acking-widest">NIETO_LAB_S1</span> <br />
