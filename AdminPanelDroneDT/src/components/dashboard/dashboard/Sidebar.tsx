@@ -44,7 +44,7 @@ export const Sidebar = () => {
               `}
             >
               {isActive && (
-                <div className="absolute left-0 w-[3px] h-6 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,1)]" />
+                <div className="absolute left-0 w-[3px] d-500 shadow-[0_0_10px_rgba(16,185,129,1)]" />
               )}nts-none transition-opacity whitespace-nowrap">
                 {item.name}
 
