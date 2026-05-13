@@ -121,7 +121,4 @@ export default function LoginPage() {
                   {isAuthorizing ? 'CONNECTING' : 'INITIALIZE'}
                 </span>
                 <span className="text-amber-500 group-hover:text-black group-hover:translate-x-3 transition-all duration-500 font-black text-2xl relative z-10">
-                  {isAuthorizing ? '...' : '→'}
-                </span>
-              </button>
-            </div>acking-widest">NIETO_LAB_S1</span> <br />
+                  {isAuth
