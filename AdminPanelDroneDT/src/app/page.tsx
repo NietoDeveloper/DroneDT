@@ -47,9 +47,7 @@ export default function LoginPage() {
           {/* Línea de escaneo superior */}
           <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-80" />
           
-          <div className="flex flex-col items-center mb-12 text-center">
-            {/* Contenedor del Logo con escalado en hover */}
-            <div className="mb-8 transform transition-all duration-700 hover:scale-110 hover:-rotate-2 cursor-none">
+          <div classNaml duration-700 hover:scale-110 hover:-rotate-2 cursor-none">
              
             </h2>
             
