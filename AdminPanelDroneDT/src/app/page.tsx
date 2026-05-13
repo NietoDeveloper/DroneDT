@@ -86,19 +86,5 @@ export default function LoginPage() {
               />
             </div>
             
-            {/* Input: Access Key */}
-            <div className="group">
-              <label className="block text-[9px] lg:text-[11px] font-black text-zinc-400 uppercase tracking-[0.3em] mb-3 ml-2">
-                Access_Passkey
-              </label>
-              <input 
-                type="password" 
-              <button 
-                type="submit"
-                disabled={isAuthorizing}
-                className="
-                  relative w-full flex items-center justify-center gap-4 h-16 lg:h-20
-                  bg-zinc-950 text-white rounded-2xl border border-white/10
-                  hover:bg-amber-500 hover:text-black hover:border-amber-400
-                  hover:-translate-y-1.5 text-black group-hove:translate-x-3 transition-all duration-500 font-black text-2xl relative z-10">
+            {/* Input: Access Key */}oup-hove:translate-x-3 transition-all duration-500 font-black text-2xl relative z-10">
                   {isAuth
