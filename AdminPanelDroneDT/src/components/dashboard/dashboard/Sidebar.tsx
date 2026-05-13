@@ -13,6 +13,5 @@ export const Sidebar = () => {
   const pathname = usePathname();
 
   const menuItems = [
-    { name: 'HANGAR', icon: <Box size={20} />, path: '/dashboard' },
-    { name: 'OPERATORS', icon: <Users size={20} />,shboard/logs' },
+    { name: 'HANGAR', icon: <Box size={20} />
     { nam
