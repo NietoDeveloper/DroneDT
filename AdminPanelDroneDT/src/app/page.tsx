@@ -128,6 +128,4 @@ export default function LoginPage() {
           </form>
           
           {/* Footer de Metadatos del Sistema */}
-          <div className="mt-10 flex justify-between items-end border-t border-zinc-100 pt-8">
-            <div className="text-[9px] lg:text-[10px] font-mono text-zinc-400 leading-relaxed uppercase">
-              ID: <span className="text-zinc-900 font-black tracking-widest">NIETO_LAB_S1</span> <br />
+          <div className="mt-10 flex  font-black tracking-widest">NIETO_LAB_S1</span> <br />
