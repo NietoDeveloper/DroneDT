@@ -72,9 +72,4 @@ export default function LoginPage() {
             </p>
           </div>
           
-          <form className="space-y-6" onSubmit={handleLogin}>
-            {/* Input: Operator */}
-            <div className="group">
-              <label classNa
-                type="email"  relative z-10">
                   {isAuth
