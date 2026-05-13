@@ -21,6 +21,4 @@ export const Sidebar = () => {
 
   return (
     <aside className="fixed left-0 top-0 h-screen w-[60px] lg:w-[240px] bg-black border-r border-white/10 flex flex-col z-50">
-      {/* BRANDING */}
-      <div className="h-[70px] flex items-center justify-center lg:justify-start lg:px-6 border-b border-white/5">
-        <div className="w-8 h-8 bg-emerald-500g-widest text-sm text-white uppercase">
+      {/* BRANDING */}t-white uppercase">
