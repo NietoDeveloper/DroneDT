@@ -39,9 +39,7 @@ export const Sidebar = () => {
             <Link 
               key={item.path} 
            t-zinc-500 hover:text-wh
-              `}
-            >
-                {item.name}
+              `
 
   );
 };
