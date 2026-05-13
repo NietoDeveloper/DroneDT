@@ -7,5 +7,5 @@ import { LayoutDashboard, Users, Box, Settings, LogOut, Terminal } from 'lucide-
 
 /**
  * SIDEBAR L5 - COMMAND CENTER
- * Estética: SpaceX Minimalist / Fixed Po
+ * Estética: SpaceX Min
  */
