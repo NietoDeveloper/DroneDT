@@ -16,7 +16,4 @@ export const Sidebar = () => {
     { name: 'HANGAR', icon: <Box size={20} />, path: '/dashboard' },
     { name: 'OPERATORS', icon: <Users size={20} />, path: '/dashboard/users' },
     { name: 'SYSTEM_LOGS', icon: <Terminal size={20} />, path: '/dashboard/logs' },
-    { name: 'CONFIG', icon: <Settings size={20} />, path: '/dashboard/settings' },
-  ];
- z-50">
-      {/* BRANDING */}t-white uppercase">
+    { nam
