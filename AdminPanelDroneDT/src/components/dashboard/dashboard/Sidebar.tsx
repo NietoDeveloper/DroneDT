@@ -45,10 +45,7 @@ export const Sidebar = () => {
             >
               {isActive && (
                 <div className="absolute left-0 w-[3px] h-6 bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,1)]" />
-              )}
-              {item.icon}
-              <span className="hidden lg:block ml-4 text-[11px] font-black tracking-[0.1em] uppercase">
-                {item.y-0 group-hover:opacity-100 pointer-events-none transition-opacity whitespace-nowrap">
+              )}nts-none transition-opacity whitespace-nowrap">
                 {item.name}
 
   );
