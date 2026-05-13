@@ -64,7 +64,7 @@ export const Sidebar = () => {
       <div className="p-4 border-t border-white/5">
         <button className="flex items-center justify-center lg:justify-start lg:px-2 w-full h-10 text-zinc-600 hover:text-rose-500 transition-colors">
           <LogOut size={20} />
-          <span className="hidden lg:block ml-4 text-[11px] font-black uppercase">Disconnect</span>
+          <span className="hidden l font-black uppercase">Disconnect</span>
         </button>
       </div>
     </aside>
