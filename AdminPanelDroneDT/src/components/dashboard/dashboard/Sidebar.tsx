@@ -19,6 +19,5 @@ export const Sidebar = () => {
     { name: 'CONFIG', icon: <Settings size={20} />, path: '/dashboard/settings' },
   ];
 
-  return (
-    <aside className="fixed left-0 top-0 h-screen w-[60px] lg:w-[240px] bg-black border-r border-white/10 flex flex-col z-50">
+  return (:w-[240px] bg-black border-r border-white/10 flex flex-col z-50">
       {/* BRANDING */}t-white uppercase">
