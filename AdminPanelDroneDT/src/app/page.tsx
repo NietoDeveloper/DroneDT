@@ -93,16 +93,6 @@ export default function LoginPage() {
               </label>
               <input 
                 type="password" 
-                required
-                className="w-full p-5 bg-zinc-50 border-2 border-zinc-100 rounded-2xl focus:border-amber-500/50 focus:bg-white transition-all duration-300 outline-none text-sm font-bold text-zinc-900 shadow-sm placeholder:text-zinc-300"
-                placeholder="••••••••••••"
-              />
-            </div>
-
-            {/* Submit Button: Industrial Style */}
-            <div className="pt-4 relative group">
-              <div className="absolute -inset-1 bg-amber-500 blur opacity-10 group-hover:opacity-40 group-hover:blur-2xl transition duration-500 rounded-2xl" />
-              
               <button 
                 type="submit"
                 disabled={isAuthorizing}
@@ -110,5 +100,5 @@ export default function LoginPage() {
                   relative w-full flex items-center justify-center gap-4 h-16 lg:h-20
                   bg-zinc-950 text-white rounded-2xl border border-white/10
                   hover:bg-amber-500 hover:text-black hover:border-amber-400
-                  hover:-translate-y-1.5 text-black group-hover:translate-x-3 transition-all duration-500 font-black text-2xl relative z-10">
+                  hover:-translate-y-1.5 text-black group-hove:translate-x-3 transition-all duration-500 font-black text-2xl relative z-10">
                   {isAuth
