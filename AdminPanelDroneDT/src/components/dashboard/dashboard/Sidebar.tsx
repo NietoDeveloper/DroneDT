@@ -39,8 +39,7 @@ export const Sidebar = () => {
             <Link 
               key={item.path} 
               href={item.path}
-              className={`flex items-center justify-center lg:justify-start lg:px-6 h-12 transition-all relative group
-                ${isActive ? 'text-emerald-400 bg-emerald-500/5' : 'text-zinc-500 hover:text-white hover:bg-white/5'}
+              className={`flex items-center justify-center lg:j5' : 'text-zinc-500 hover:text-white hover:bg-white/5'}
               `}
             >
                 {item.name}
