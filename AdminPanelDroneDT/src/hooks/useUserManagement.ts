@@ -31,9 +31,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
         {
           _id: 'OP-001',
           name: 'MANUEL NIETO',
-          email: 'manuel@nieto-lab.com',
-          role: 'ADMIN_CHIEF',
-          status: 'ACTIVE',
+
 
         },
         {
