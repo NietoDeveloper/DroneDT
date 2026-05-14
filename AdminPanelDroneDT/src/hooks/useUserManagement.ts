@@ -34,7 +34,5 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
 
 
         },
-        {
 
-        },
 
