@@ -72,5 +72,5 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
       ];
 
       setOperators(mockOperators);
-      setError(null);
+
     } catch (err) {
