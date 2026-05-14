@@ -17,8 +17,4 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
   
   const syncTimer = useRef<NodeJS.Timeout | null>(null);
 
-  /**
-   * MOCK_DATA_L5: Semilla de datos para desarrollo
-   * Representa el personal activo en el despliegue Drone DT
-   */
   const fetchOperators = useCallback(async () => {
