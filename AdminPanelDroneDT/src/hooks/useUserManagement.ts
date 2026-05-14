@@ -102,8 +102,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
    * Interfaz de Control Manual
    */
   const manualRefresh = () => fetchOperators();
-
-
-    changeOperatorStatus
-  };
-};
