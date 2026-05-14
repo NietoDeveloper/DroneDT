@@ -103,8 +103,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
    */
   const manualRefresh = () => fetchOperators();
 
-  const changeOperatorStatus = (id: string, status: Operator['status']) => {
-    // Aquí iría el PUT al backend. Por ahora, actualización atómica en Store.
+lización atómica en Store.
     updateOperatorStatus(id, status);
   };
 
