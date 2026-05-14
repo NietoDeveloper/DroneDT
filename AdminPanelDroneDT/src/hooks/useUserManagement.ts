@@ -24,6 +24,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
   const fetchOperators = useCallback(async () => {
     setLoading(true);
     try {
-      // Simulación de latencia de red (Nivel de Cluster Railway)
-      await new Promise(resolve => setTimeout(resolve, 1200));
-
