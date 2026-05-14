@@ -59,5 +59,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
           lastUplink: new Date().toISOString(),
           clearanceLevel: 3
         },
-        {
-          _id: 'OP-004',
