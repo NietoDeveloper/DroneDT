@@ -50,8 +50,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
           clearanceLevel: 4
         },
         {
-          _id: 'OP-003',
-          name: 'TECH_UNIT_01',
+
 
 
 
