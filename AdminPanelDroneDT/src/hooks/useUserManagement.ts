@@ -40,7 +40,6 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
           avatar: '/avatars/manuel.jpg'
         },
         {
-          _id: 'OP-002',
 
         },
 
