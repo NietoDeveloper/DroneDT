@@ -74,6 +74,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
       setOperators(mockOperators);
       setError(null);
     } catch (err) {
-      setError('ERROR_DE_SINCRONIZACIÓN_L5: FALLO_EN_UPLINK_DE_PERSONAL');
-    } finally {
-
