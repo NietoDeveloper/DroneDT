@@ -103,10 +103,6 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
    */
   const manualRefresh = () => fetchOperators();
 
-  };
-
-  return {
-    operators,
 
     changeOperatorStatus
   };
