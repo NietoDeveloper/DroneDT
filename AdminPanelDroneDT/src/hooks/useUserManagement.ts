@@ -86,10 +86,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
   useEffect(() => {
     fetchOperators();
 
-    if (autoSyncInterval > 0) {
-      syncTimer.current = setInterval(() => {
-        // En producción, aquí se llamaría a la API silenciosamente
-        console.log('--- RE-SYNCING_OPERATORS_TELEMETRY ---');
-      }, autoSyncInterval);
-    }
-
