@@ -103,8 +103,6 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
    */
   const manualRefresh = () => fetchOperators();
 
-lización atómica en Store.
-    updateOperatorStatus(id, status);
   };
 
   return {
