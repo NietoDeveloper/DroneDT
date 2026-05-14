@@ -97,6 +97,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
       if (syncTimer.current) clearInterval(syncTimer.current);
     };
   }, [fetchOperators, autoSyncInterval]);
-
-  /**
-   * Interfaz de Control Manual
