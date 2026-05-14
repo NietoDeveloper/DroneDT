@@ -14,6 +14,4 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
     updateOperatorStatus,
     operators 
   } = useUserStore();
-  
-  const syncTimer = useRef<NodeJS.Timeout | null>(null);
 
