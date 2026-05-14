@@ -30,9 +30,6 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
       const mockOperators: Operator[] = [
         {
           _id: 'OP-001',
-          name: 'MANUEL NIETO',
 
-
-        },
 
 
