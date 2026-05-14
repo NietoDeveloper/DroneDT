@@ -96,4 +96,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
     return () => {
       if (syncTimer.current) clearInterval(syncTimer.current);
     };
-  }, [fetchOperators, autoSyncInterval]);
