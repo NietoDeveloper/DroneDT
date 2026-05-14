@@ -22,5 +22,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
    * Representa el personal activo en el despliegue Drone DT
    */
   const fetchOperators = useCallback(async () => {
-    setLoading(true);
-    try {
