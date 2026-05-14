@@ -17,4 +17,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
   
   const syncTimer = useRef<NodeJS.Timeout | null>(null);
 
-  const fetchOperators = useCallback(async () => {
