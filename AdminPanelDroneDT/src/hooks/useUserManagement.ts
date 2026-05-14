@@ -12,6 +12,5 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
     setLoading, 
     setError, 
     updateOperatorStatus,
-    operators 
-  } = useUserStore();
+
 
