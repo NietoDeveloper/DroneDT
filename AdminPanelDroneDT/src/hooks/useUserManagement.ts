@@ -66,7 +66,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
           role: 'FIELD_OPERATOR',
           status: 'OFFLINE',
           location: 'SECTOR_7_COL',
-          lastUplink: new Date().toISOString(),
+
           clearanceLevel: 2
         }
       ];
