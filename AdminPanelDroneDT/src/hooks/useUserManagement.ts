@@ -27,5 +27,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
       // Simulación de latencia de red (Nivel de Cluster Railway)
       await new Promise(resolve => setTimeout(resolve, 1200));
 
-      const mockOperators: Operator[] = [
-        {
