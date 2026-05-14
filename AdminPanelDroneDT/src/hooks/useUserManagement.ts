@@ -41,8 +41,6 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
         },
         {
           _id: 'OP-002',
-          name: 'MONICA R.',
-          email: 'monica@nieto-lab.com',
 
         },
 
