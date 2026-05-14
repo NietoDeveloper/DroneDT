@@ -65,9 +65,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
           email: 'alpha@drone-dt.com',
           role: 'FIELD_OPERATOR',
           status: 'OFFLINE',
-          location: 'SECTOR_7_COL',
 
-          clearanceLevel: 2
         }
       ];
 
