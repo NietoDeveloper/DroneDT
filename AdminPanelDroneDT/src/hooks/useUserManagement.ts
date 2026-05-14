@@ -61,5 +61,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
         },
         {
           _id: 'OP-004',
-          name: 'OPERATOR_ALPHA',
-          email: 'alpha@drone-dt.com',
