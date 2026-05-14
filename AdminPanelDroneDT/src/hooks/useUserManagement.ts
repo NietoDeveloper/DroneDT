@@ -110,7 +110,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
 
   return {
     operators,
-    manualRefresh,
+
     changeOperatorStatus
   };
 };
