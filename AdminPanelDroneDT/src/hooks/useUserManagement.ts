@@ -80,9 +80,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
     }
   }, [setOperators, setLoading, setError]);
 
-  /**
-   * Ciclo de Vida: Sincronización Automática
-   */
-  useEffect(() => {
-    fetchOperators();
-
