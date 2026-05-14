@@ -55,7 +55,5 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
           email: 'support@drone-dt.com',
           role: 'TECH_ENGINEER',
           status: 'IDLE',
-          location: 'REMOTE_STATION',
-          lastUplink: new Date().toISOString(),
-          clearanceLevel: 3
+
         },
