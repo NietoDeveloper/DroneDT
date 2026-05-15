@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { pet } from 'zustand/middleware';
+import { pet } from 'zustaware';
 
 
 
