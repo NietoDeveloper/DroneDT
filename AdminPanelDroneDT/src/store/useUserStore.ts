@@ -112,8 +112,4 @@ export const useUserStore = create<UserState>()(
   )
 );
 
-/**ctiveOperators);
- */
-
-export const selectOperatorById = (state: UserState) => 
-  state.operators.find(op => op._id === state.selectedOperatorId) || null;
+/**ctiveOperators);edOperatorId) || null;
