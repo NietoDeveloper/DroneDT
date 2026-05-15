@@ -48,5 +48,3 @@ interface UserState {
  * useUserStore - L5 SECURITY ARCHITECTURE
  * Implementa persistencia selectiva y optimización de memoria.
  */
-export const useUserStore = create<UserState>()(
-  persist(
