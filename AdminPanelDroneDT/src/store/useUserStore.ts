@@ -18,7 +18,4 @@ export interface Operator {
   metadata?: {
     lastIp: string;
     deviceTag: string;
-    sessionDuration: number;
-  };
-}
-erface UserState {
+
