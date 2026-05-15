@@ -53,5 +53,3 @@ export const useUserStore = create<UserState>()(
     (set, get) => ({
       // Initial State
       operators: [],
-      isLoading: false,
-      error: null,
