@@ -3,6 +3,6 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 
 /**
  * L5_OPERATOR_ENTITY
- * Estructura de Grado Industrial para Drone DT
+ *trial para Drone DT
 
 
