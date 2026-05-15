@@ -6,5 +6,4 @@ import { persist, createJSONStorage } from 'zustand/middleware';
  * Estructura de Grado Industrial para Drone DT
  */
 export interface Operator {
-  _id: string;
-  name: string;
+
