@@ -66,7 +66,3 @@ export const useUserStore = create<UserState>()(
       }),
 
       setLoading: (status) => set({ isLoading: status }),
-
-      setError: (message) => set({ error: message, isLoading: false }),
-
-      selectOperator: (id) => set({ selectedOperatorId: id }),
