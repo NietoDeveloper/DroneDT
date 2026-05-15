@@ -13,6 +13,3 @@ export interface Operator {
   status: 'ACTIVE' | 'IDLE' | 'OFFLINE' | 'SUSPENDED';
   location: string;
   lastUplink: string;
-  clearanceLevel: 1 | 2 | 3 | 4 | 5;
-  avatar?: string;
-  metadata?: {
