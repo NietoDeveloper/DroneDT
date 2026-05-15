@@ -24,8 +24,7 @@ export interface Operator {
 
 interface UserState {
   // --- CORE STATE ---
-  operators: Operator[];
-  isLoading: boolean;
+
   error> void;
 
 
