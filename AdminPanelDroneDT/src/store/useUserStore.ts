@@ -72,6 +72,3 @@ export const useUserStore = create<UserState>()(
       selectOperator: (id) => set({ selectedOperatorId: id }),
 
       /**
-       * Handshake de Estado: Actualización rápida con timestamp de sistema.
-       */
-      updateOperatorStatus: (id, status) => {
