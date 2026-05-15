@@ -40,11 +40,6 @@ interface UserState {
   updateOperatorStatus: (id: string, status: Operator['status']) => void;
   bulkUpdateOperators: (updates: Partial<Operator>[]) => void;
   
-  // --- UTILS ---
   resetStore: () => void;
 }
 
-/**
- * useUserStore - L5 SECURITY ARCHITECTURE
- * Implementa persistencia selectiva y optimización de memoria.
- */
