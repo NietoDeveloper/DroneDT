@@ -59,6 +59,3 @@ export const useUserStore = create<UserState>()(
       lastSync: null,
 
       setOperators: (operators) => set({ 
-        operators: [...operators], // Garantiza nueva referencia de array
-        isLoading: false,
-        lastSync: Date.now(),
