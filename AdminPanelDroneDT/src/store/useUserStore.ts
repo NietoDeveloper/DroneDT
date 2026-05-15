@@ -62,7 +62,3 @@ export const useUserStore = create<UserState>()(
         operators: [...operators], // Garantiza nueva referencia de array
         isLoading: false,
         lastSync: Date.now(),
-        error: null 
-      }),
-
-      setLoading: (status) => set({ isLoading: status }),
