@@ -75,7 +75,3 @@ export const useUserStore = create<UserState>()(
        * Handshake de Estado: Actualización rápida con timestamp de sistema.
        */
       updateOperatorStatus: (id, status) => {
-        const timestamp = new Date().toISOString();
-        set((state) => ({
-          operators: state.operators.map((op) => 
-
