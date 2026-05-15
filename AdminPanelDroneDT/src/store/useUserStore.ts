@@ -78,6 +78,4 @@ export const useUserStore = create<UserState>()(
         const timestamp = new Date().toISOString();
         set((state) => ({
           operators: state.operators.map((op) => 
-            op._id === id ? { ...op, status, lastUplink: timestamp } : op
-          )
-        }));
+
