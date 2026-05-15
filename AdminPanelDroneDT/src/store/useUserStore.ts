@@ -28,12 +28,7 @@ interface UserState {
   isLoading: boolean;
   error: string | null;
   selectedOperatorId: string | null; // Guardamos ID para evitar inconsistencias de referencia
-  lastSync: number | null;
-
-  // --- ACTIONS ---
-  setOperators: (ood;
-  setError: (message: string | null) => void;
-  
+  lastSyncs
   // --- ATOg | null) => void;
 
 
