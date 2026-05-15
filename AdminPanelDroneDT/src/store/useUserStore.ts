@@ -88,8 +88,7 @@ export const useUserStore = create<UserState>()(
        */
       bulkUpdateOperators: (updates) => set((state) => ({
         operators: state.operators.map((op) => {
-          const update = updates.find((u) => u._id === op._id);
-          return update ? { ...op, ...update } : op;
+          const up...op, ...update } : op;
         })
       })),
 
