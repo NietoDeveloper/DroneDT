@@ -25,6 +25,3 @@ export interface Operator {
 interface UserState {
   // --- CORE STATE ---
 
-  error> void;
-
-
