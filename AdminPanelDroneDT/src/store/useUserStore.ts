@@ -110,6 +110,3 @@ export const useUserStore = create<UserState>()(
       }),
     }
   )
-);
-
-/**ctiveOperators);edOperatorId) || null;
