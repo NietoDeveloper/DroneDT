@@ -107,6 +107,3 @@ export const useUserStore = create<UserState>()(
         // Solo persistimos datos esenciales para rapidez de carga
         operators: state.operators,
         lastSync: state.lastSync 
-      }),
-    }
-  )
