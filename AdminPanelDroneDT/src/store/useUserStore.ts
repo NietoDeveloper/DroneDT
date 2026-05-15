@@ -31,7 +31,7 @@ interface UserState {
   lastSync: number | null;
 
   // --- ACTIONS ---
-  setOperators: (ooolean) => void;
+  setOperators: (ood;
   setError: (message: string | null) => void;
   
   // --- ATOg | null) => void;
