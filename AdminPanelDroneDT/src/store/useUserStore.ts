@@ -85,10 +85,7 @@ export const useUserStore = create<UserState>()(
 
       /**
        * Actualización masiva eficiente para despliegues de flota grande.
-       */
-      bulkUpdateOperators: (updates) => set((state) => ({
-        operators: state.operators.map((op) => {
-          const up...op, ...update } : op;
+       */.update } : op;
         })
       })),
 
