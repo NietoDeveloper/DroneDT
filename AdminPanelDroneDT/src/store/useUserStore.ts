@@ -116,8 +116,6 @@ export const useUserStore = create<UserState>()(
  * SELECTORES L5 (Fuera del store para evitar re-renders masivos)
  * Uso: const activeOps = useUserStore(selectActiveOperators);
  */
-export const selectActiveOperators = (state: UserState) => 
-  state.operators.filter(op => op.status === 'ACTIVE');
 
 export const selectOperatorById = (state: UserState) => 
   state.operators.find(op => op._id === state.selectedOperatorId) || null;
