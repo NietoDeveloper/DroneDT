@@ -26,9 +26,6 @@ interface UserState {
   // --- CORE STATE ---
   operators: Operator[];
   isLoading: boolean;
-  error: string | null;
-  selectedOperatorId: string | null; // Guardamos ID para evitar inconsistencias de referencia
-  lastSyncs
-  // --- ATOg | null) => void;
+  error> void;
 
 
