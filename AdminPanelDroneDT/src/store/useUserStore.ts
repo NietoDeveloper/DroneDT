@@ -81,6 +81,3 @@ export const useUserStore = create<UserState>()(
             op._id === id ? { ...op, status, lastUplink: timestamp } : op
           )
         }));
-      },
-
-
