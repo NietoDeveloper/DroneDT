@@ -112,9 +112,7 @@ export const useUserStore = create<UserState>()(
   )
 );
 
-/**
- * SELECTORES L5 (Fuera del store para evitar re-renders masivos)
- * Uso: const activeOps = useUserStore(selectActiveOperators);
+/**ctiveOperators);
  */
 
 export const selectOperatorById = (state: UserState) => 
