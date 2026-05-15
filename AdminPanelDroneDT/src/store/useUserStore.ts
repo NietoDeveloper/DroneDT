@@ -83,9 +83,7 @@ export const useUserStore = create<UserState>()(
         }));
       },
 
-      /**
-       * Actualización masiva eficiente para despliegues de flota grande.
-       */.update } : op;
+
         })
       })),
 
