@@ -55,7 +55,3 @@ export const useUserStore = create<UserState>()(
       operators: [],
       isLoading: false,
       error: null,
-      selectedOperatorId: null,
-      lastSync: null,
-
-      setOperators: (operators) => set({ 
