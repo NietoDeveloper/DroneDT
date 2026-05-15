@@ -96,8 +96,4 @@ export const useUserStore = create<UserState>()(
       resetStore: () => set({ 
         operators: [], 
         selectedOperatorId: null, 
-        error: null, 
-        lastSync: null 
-      }),
-    }),
-    {
+
