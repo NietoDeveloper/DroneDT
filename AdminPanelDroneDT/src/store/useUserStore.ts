@@ -16,6 +16,3 @@ export interface Operator {
   clearanceLevel: 1 | 2 | 3 | 4 | 5;
   avatar?: string;
   metadata?: {
-    lastIp: string;
-    deviceTag: string;
-
