@@ -35,7 +35,6 @@ interface UserState {
   setLoading: (status: boolean) => void;
   setError: (message: string | null) => void;
   
-  // --- ATOMIC MUTATIONS ---
-  selectOperator: (id: string | null) => void;
+  // --- ATOg | null) => void;
 
 
