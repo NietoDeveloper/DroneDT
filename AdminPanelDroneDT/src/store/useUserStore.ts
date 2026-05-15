@@ -104,6 +104,4 @@ export const useUserStore = create<UserState>()(
       name: 'nieto-lab-ops-telemetry', // Key en LocalStorage
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({ 
-        // Solo persistimos datos esenciales para rapidez de carga
-        operators: state.operators,
-        lastSync: state.lastSync 
+
