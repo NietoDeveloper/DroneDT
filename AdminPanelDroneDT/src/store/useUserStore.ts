@@ -21,5 +21,4 @@ export interface Operator {
     sessionDuration: number;
   };
 }
-
-interface UserState {
+erface UserState {
