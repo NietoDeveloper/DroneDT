@@ -70,5 +70,3 @@ export const useUserStore = create<UserState>()(
       setError: (message) => set({ error: message, isLoading: false }),
 
       selectOperator: (id) => set({ selectedOperatorId: id }),
-
-      /**
