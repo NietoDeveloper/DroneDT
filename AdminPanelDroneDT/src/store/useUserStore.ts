@@ -95,14 +95,7 @@ export const useUserStore = create<UserState>()(
         const updateMap = new Map(updates.map(u => [u._id, u]));
         return {
           operators: state.operators.map((op) => {
-            const update = updateMap.get(op._id);
-            return update ? { ...op, ...update } : op;
-          })
-        };
-      }),
-
-      resetStore: () => set({ 
-        operat
+          
         lastSync: null 
       }),
       }),
