@@ -36,8 +36,7 @@ interface UserState {
   setError: (message: string | null) => void;
   
   // --- ATOMIC MUTATIONS ---
-  selectOperator: (id: string | null) => void;
-  updateOperatorStatus: (id: string, status: Operator['status']) => void;
+  selectOperator: (id: string |  status: Operator['status']) => void;
   bulkUpdateOperators: (updates: Partial<Operator> & { _id: string }[]) => void;
   
   // --- UTILS ---
