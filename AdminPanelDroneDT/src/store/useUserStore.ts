@@ -85,12 +85,7 @@ export const useUserStore = create<UserState>()(
           operators: state.operators.map((op) => 
             op._id === id ? { ...op, status, lastUplink: timestamp } : op
           )
-        }));
-      },
 
-      }),
-      }),
-    }
   )
 );
 
