@@ -75,9 +75,7 @@ export const useUserStore = create<UserState>()(
       }),
 
       selectOperator: (id) => set({ selectedOperatorId: id }),
-
-      /**
-       * Handshake de Estado: Actualización atómica con timestamp.
+amp.
        */
       updateOperatorerators.map((op) =>  } : op
           )
