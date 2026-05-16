@@ -61,7 +61,4 @@ export const useUserStore = create<UserState>()(
       lastSync: null,
 
       setOperators: (operators) => set({ 
-        operators: [...operators], 
-        isLoading: false,sLoading: status }),
-
-      setError: (message) => set({ 
+        operators: [...operato
