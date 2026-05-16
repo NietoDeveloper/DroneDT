@@ -124,7 +124,5 @@ export const useUserStore = create<UserState>()(
 /**
 
  */
-export const selectActiveOperators = (state: UserState) => 
-
 
 export const selectOperatorById = (state: null;
