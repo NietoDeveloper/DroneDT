@@ -41,8 +41,4 @@ interface UserState {
   bulkUpdateOperators: (updates: Partial<Operator> & { _id: string }[]) => void;
   
   // --- UTILS ---
-  resetStore: () => void;
-}
-
-/**
- * useUserStore - 
+ - 
