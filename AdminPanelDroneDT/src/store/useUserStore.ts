@@ -87,10 +87,7 @@ export const useUserStore = create<UserState>()(
           )
         }));
       },
-encia.
-       */
-      bulkUpdateOpera
-        lastSync: null 
+
       }),
       }),
     }
