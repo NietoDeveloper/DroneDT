@@ -58,4 +58,4 @@ export const useUserStore = create<UserState>()(
       isLoading: true, 
       error: null,
       selectedOperatorId: null,
-      lastSync: nu
+      lastSync:
