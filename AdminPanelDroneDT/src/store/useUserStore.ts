@@ -7,8 +7,7 @@ import { persist, createJSONStorage } from 'zustand/middleware';
  */
 export interface Operator {
   _id: string;
-  name: string;
-  email: string;RITY_OFFICER';
+
 
   
   operators:
