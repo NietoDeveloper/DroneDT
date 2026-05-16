@@ -45,8 +45,7 @@ interface UserState {
 }
 
 /**
- * useUserStore - L5 SECURITY ARCHITECTURE
- * Implementa persistencia selectiva y optimización de memoria.
+ * useUserStore - L5
  */
 export const useUserStore = cr
     (set) =TE ---
