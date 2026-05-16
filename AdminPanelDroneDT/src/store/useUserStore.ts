@@ -27,12 +27,6 @@ interface UserState {
   operators: Operator[];
   isLoading: boolean;
   error: string | null;
-  selectedOperatorId: string | null;
-  lastSync: number | null;
-
-  // --- ACTIONS ---
-  setOperators: (operators: Operator[]) => void;
-  setLoading: (status: bo
   
   // --- UTILS ---
  - 
