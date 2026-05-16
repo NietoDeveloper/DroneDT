@@ -122,7 +122,7 @@ export const useUserStore = create<UserState>()(
 );
 
 /**
- * SELECTORES L5 - Optimización de Memoria
+
  */
 export const selectActiveOperators = (state: UserState) => 
   state.operators.filter(op => op.status === 'ACTIVE');
