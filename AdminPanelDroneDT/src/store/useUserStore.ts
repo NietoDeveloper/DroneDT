@@ -108,7 +108,6 @@ export const useUserStore = create<UserState>()(
         error: null, 
         lastSync: null 
       }),
-        lastSync: state.lastSync 
       }),
     }
   )
