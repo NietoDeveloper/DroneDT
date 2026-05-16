@@ -19,8 +19,4 @@ export interface Operator {
     lastIp: string;
     deviceTag: string;
   };
-}
-
-interface UserState {
-  // --- CORE STATE ---
   operators:
