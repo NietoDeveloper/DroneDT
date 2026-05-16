@@ -79,10 +79,7 @@ export const useUserStore = create<UserState>()(
       /**
        * Handshake de Estado: Actualización atómica con timestamp.
        */
-      updateOperatorStatus: (id, status) => {
-        const timestamp = new Date().toISOString();
-        set((state) => ({
-          operators: state.operators.map((op) => 
+      updateOperatorerators.map((op) => 
             op._id === id ? { ...op, status, lastUplink: timestamp } : op
           )
 
