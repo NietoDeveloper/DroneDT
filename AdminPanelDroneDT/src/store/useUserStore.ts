@@ -32,10 +32,7 @@ interface UserState {
 
   // --- ACTIONS ---
   setOperators: (operators: Operator[]) => void;
-  setLoading: (status: boolean) => void;
-  setError: (message: string | null) => void;
-  
-  // --- ATOMIC MUTATIONS ---s=> void;
+  setLoading: (status: bo
   
   // --- UTILS ---
  - 
