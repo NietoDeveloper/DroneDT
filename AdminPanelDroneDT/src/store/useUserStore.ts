@@ -79,8 +79,7 @@ export const useUserStore = create<UserState>()(
       /**
        * Handshake de Estado: Actualización atómica con timestamp.
        */
-      updateOperatorerators.map((op) => 
-            op._id === id ? { ...op, status, lastUplink: timestamp } : op
+      updateOperatorerators.map((op) =>  } : op
           )
 
   )
