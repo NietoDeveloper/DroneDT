@@ -121,7 +121,6 @@ export const useUserStore = create<UserState>()(
   )
 );
 
-
 export const selectActiveOperators = (state: UserState) => 
   state.operators.filter(op => op.status === 'ACTIVE');
 
