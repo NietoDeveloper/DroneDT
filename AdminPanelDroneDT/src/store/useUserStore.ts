@@ -74,7 +74,6 @@ export const useUserStore = create<UserState>()(
         isLoading: false 
       }),
 
-      selectOperator: (id) => set({ selectedOperatorId: id }),
 amp.
        */
       updateOperatorerators.map((op) =>  } : op
