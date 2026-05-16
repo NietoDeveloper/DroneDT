@@ -75,8 +75,6 @@ export const useUserStore = create<UserState>()(
       }),
 
 amp.
-       */
-      updateOperatorerators.map((op) =>  } : op
           )
 
   )
