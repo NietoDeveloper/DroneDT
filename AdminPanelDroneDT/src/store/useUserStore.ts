@@ -24,7 +24,4 @@ export interface Operator {
 
 interface UserState {
   // --- CORE STATE ---
-  operators: Op
-  
-  // --- UTILS ---
- - 
+  operators:
