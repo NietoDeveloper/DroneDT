@@ -52,6 +52,3 @@ export const useUserStore = create<UserState>()(
   persist(
     (set) => ({
       // --- INITIAL STATE ---
-      // IMPORTANTE: isLoading arranca en TRUE para forzar al Preloader
-      // hasta que el hook useUserManagement realice el primer handshake.
-      operator
