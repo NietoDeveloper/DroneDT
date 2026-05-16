@@ -11,8 +11,5 @@ export interface Operator {
   email: string;
   role: 'ADMIN_CHIEF' | 'FIELD_OPERATOR' | 'TECH_ENGINEER' | 'SECURITY_OFFICER';
   status: 'ACTIVE' | 'IDLE' | 'OFFLINE' | 'SUSPENDED';
-  location: string;
-  lastUplink: string;
-  clearanceLevel: 1 | 2 | 3 | 4 | 5;
-  avatar?: 
+  
   operators:
