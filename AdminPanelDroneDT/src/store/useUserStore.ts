@@ -87,9 +87,7 @@ export const useUserStore = create<UserState>()(
           )
         }));
       },
-
-      /**
-       * Actualización masiva por ID: Algoritmo O(n) para eficiencia.
+encia.
        */
       bulkUpdateOpera
         lastSync: null 
