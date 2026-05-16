@@ -91,11 +91,7 @@ export const useUserStore = create<UserState>()(
       /**
        * Actualización masiva por ID: Algoritmo O(n) para eficiencia.
        */
-      bulkUpdateOperators: (updates) => set((state) => {
-        const updateMap = new Map(updates.map(u => [u._id, u]));
-        return {
-          operators: state.operators.map((op) => {
-          
+      bulkUpdateOpera
         lastSync: null 
       }),
       }),
