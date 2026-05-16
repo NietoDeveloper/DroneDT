@@ -50,5 +50,4 @@ interface UserState {
  */
 export const useUserStore = create<UserState>()(
   persist(
-    (set) => ({
-      // --- INITIAL STATE ---
+    (set) =TE ---
