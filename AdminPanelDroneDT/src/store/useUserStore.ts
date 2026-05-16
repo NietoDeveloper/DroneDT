@@ -14,9 +14,5 @@ export interface Operator {
   location: string;
   lastUplink: string;
   clearanceLevel: 1 | 2 | 3 | 4 | 5;
-  avatar?: string;
-  metadata?: {
-    lastIp: string;
-    deviceTag: string;
-  };
+  avatar?: 
   operators:
