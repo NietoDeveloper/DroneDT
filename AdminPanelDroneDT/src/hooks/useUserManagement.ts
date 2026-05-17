@@ -39,9 +39,7 @@ export const useUserManagement = (autoSy
           role: 'SECURITY_OFFICER',
           status: 'ACTIVE',
           location: 'BOGOTÁ_HQ',
-          lastUplink: new Date().toISOString(),
-          clearanceLevel: 4
-        }
+       
       ];
 
  
