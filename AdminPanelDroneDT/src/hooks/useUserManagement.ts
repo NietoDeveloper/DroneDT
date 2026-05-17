@@ -1,6 +1,4 @@
-'use client';
-
-import { useEffect, useCallfrom '@/store/useUserStore';
+'use client';serStore';
 
 /**
  *
