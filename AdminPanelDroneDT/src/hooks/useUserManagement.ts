@@ -7,8 +7,7 @@ import { useUserStore, Operator } from '@/store/useUserStore';
  * HOOK: useUserManagement L5
  * Engine: Telemetría de Personal Opereld
  */
-export const useUserManagement = (autoSyncInterval = 30000) => {
-  // Guardián de Hidratación: Evita que el Preloader se rompa en SSR
+export const useUserManagement = (autoSyncImpa en SSR
   const [isReady, setIsReady] = useState(false);
   
   const { 
