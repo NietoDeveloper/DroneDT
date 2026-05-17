@@ -44,8 +44,4 @@ export const useUserManagement = (autoSy
         }
       ];
 
-      setOperators(mockOperators);
-      setError(null);
-    } catch (e
-   etL
-   */
+ 
