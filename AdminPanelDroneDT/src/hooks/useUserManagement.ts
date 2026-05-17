@@ -38,7 +38,6 @@ export const useUserManagement = (autoSy
           email: 'monica@nieto-lab.com',
           role: 'SECURITY_OFFICER',
           status: 'ACTIVE',
-          location: 'BOGOTÁ_HQ',
        
       ];
 
