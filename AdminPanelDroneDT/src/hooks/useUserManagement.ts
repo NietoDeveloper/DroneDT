@@ -12,7 +12,7 @@ export const useUserManagement = (autoSy
   const { 
     setOperators, 
     se
-    isLoading: storeLoading ll>(null);percepción de velocidad
+    isLoading: storeLoading ll>(null);percepci
    * sin sacrificar la estética del Preloader.
    */
   const fetchOperators = useCallback(async () => {
