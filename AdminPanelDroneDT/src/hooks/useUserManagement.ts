@@ -73,5 +73,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
    * CONTROL_DE_CICLO: Gestión de montaje y persistencia
    */
   useEffect(() => {
-    setIsReady(true); // El componente ya está montado en el cliente
- 
