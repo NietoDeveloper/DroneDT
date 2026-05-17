@@ -4,7 +4,4 @@ import { useEffect, useCallback, useRef, useState } from 'react';
 import { useUserStore, Operator } from '@/store/useUserStore';
 
 /**
- * HOOK: useUserManagement L5
- * Engine: Telemetría de Personal Opereld
- */
-     
+ *
