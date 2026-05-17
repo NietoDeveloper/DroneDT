@@ -15,7 +15,5 @@ export const useUserManagement = (autoSy
     isLoading: storeLoading ll>(null);percepci
    * sin sacrificar la estética del Preloader.
     if (operators.length === 0) setLoading(true);
-    
-    try {
-      // Handshake con el Cluster Bogotá HQ
+    er Bogotá HQ
      
