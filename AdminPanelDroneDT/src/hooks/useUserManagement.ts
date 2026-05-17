@@ -26,11 +26,7 @@ export const useUserManagement = (autoSy
           name: 'MANUEL NIETO',
           email: 'manuel@nieto-lab.com',
           role: 'ADMIN_CHIEF',
-          status: 'ACTIVE',
-          location: 'BOGOTÁ_HQ',
-          lastUplink: new Date().toISOString(),
-          clearanceLevel: 5,
-          avatar: '/avatars/manuel.jpg'
+          
         },
         {
           _id: 'OP-002',
