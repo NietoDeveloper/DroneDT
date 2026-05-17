@@ -82,9 +82,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
     }
 
     return () => 
-      if (syncTimer.current) clearI
-    };
-  }, [fetchOperators, autoSyncInterval]);
+      if (syncTimer
 
   // Interfaz de salida blindada
   return {
