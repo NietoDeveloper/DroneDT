@@ -22,9 +22,7 @@ export const useUserManagement = (autoSy
 
       const mockOperators: Operator[] = [
         {
-          _id: 'OP-001',
-          name: 'MANUEL NIETO',
-          email: 'manuel@nieto-lab.com',
+          _id: 'OP-001
           role: 'ADMIN_CHIEF',
           
         },
