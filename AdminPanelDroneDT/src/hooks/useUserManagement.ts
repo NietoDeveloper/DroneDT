@@ -47,7 +47,7 @@ export const useUserManagement = (autoSy
       setOperators(mockOperators);
       setError(null);
     } catch (err) {
-      setError('CRITICAL_AUTH_UPLINK_FAILURE');
+      setError('CRITICAL_AUTH_UPLI
     } finally {
       setL
    */
