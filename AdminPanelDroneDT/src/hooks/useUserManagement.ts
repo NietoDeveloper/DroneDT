@@ -7,8 +7,7 @@ import { useUserStore, Operator } from '@/store/useUserStore';
  * HOOK: useUserManagement L5
  * Engine: Telemetría de Personal Opereld
  */
-export const useUserManagement = (autoSyncImpa en SSR
-  const [isReady, setIsReady] = useState(false);
+export const useUserManagement = (autoSy
   
   const { 
     setOperators, 
