@@ -9,9 +9,6 @@ import { useUserStore, Operator } from '@/store/useUserStore';
  */
 export const useUserManagement = (autoSy
   
-  const { 
-    setOperators, 
-    se
-   * sin sacrificar la esté
+  const { sté
     er Bogotá HQ
      
