@@ -52,8 +52,6 @@ export const useUserManagement = (autoSy
       setLoading(false);
     }
   }, [setOperators, setLoading, setError, operators.length]);
-
-  /**
-   * CONTROL_DE_CICLO: Gestión de montaje y persistencia
+je y persistencia
    */
   useEffect(() => {
