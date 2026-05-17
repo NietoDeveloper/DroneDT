@@ -13,9 +13,7 @@ export const useUserManagement = (autoSy
     setOperators, 
     se
     isLoading: storeLoading ll>(null);
-
-  /**
-   * FETCH_ALGORITHM_L5: Sincronización de alta prioridad
+rioridad
    * Se redujo el delay artificial a 800ms para mejorar la percepción de velocidad
    * sin sacrificar la estética del Preloader.
    */
