@@ -18,11 +18,4 @@ export const useUserManagement = (autoSy
     
     try {
       // Handshake con el Cluster Bogotá HQ
-      await new Promise(resolve => setTimeout(resolve, 800));
-
-      const mockOp
-          rol2
-       
-      ];
-
- 
+     
