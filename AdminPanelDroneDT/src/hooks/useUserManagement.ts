@@ -13,8 +13,6 @@ export const useUserManagement = (autoSy
     setOperators, 
     se
     isLoading: storeLoading 
-  } = useUserStore();
-  
   const syncTimer = useRef<NodeJS.Timeout | null>(null);
 
   /**
