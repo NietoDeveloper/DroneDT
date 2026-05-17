@@ -83,9 +83,6 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
 
     return () => 
       if
-  return {
-    operators: isReady ? operators : [],
-    isLoading: !isReady || storeLoading,
     manualRefresh: fetchOperators,
     changeOperatorStatus: updateOperatorStatus
   };
