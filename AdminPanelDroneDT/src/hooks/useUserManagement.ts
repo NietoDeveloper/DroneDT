@@ -50,8 +50,7 @@ export const useUserManagement = (autoSy
       setError('CRITICAL_AUTH_UPLINK_FAILURE');
     } finally {
       setLoading(false);
-    }
-  }, [setOperators, setLoading, setError, operators.length]);
+    }ators.length]);
 je y persistencia
    */
   useEffect(() => {
