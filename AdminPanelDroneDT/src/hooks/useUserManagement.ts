@@ -12,8 +12,7 @@ export const useUserManagement = (autoSy
   const { 
     setOperators, 
     se
-    isLoading: storeLoading 
-  const syncTimer = useRef<NodeJS.Timeout | null>(null);
+    isLoading: storeLoading ll>(null);
 
   /**
    * FETCH_ALGORITHM_L5: Sincronización de alta prioridad
