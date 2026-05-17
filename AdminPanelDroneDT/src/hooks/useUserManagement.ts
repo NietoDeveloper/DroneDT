@@ -75,6 +75,3 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
   useEffect(() => {
     setIsReady(true); // El componente ya está montado en el cliente
     fetchOperators();
-
-  
- 
