@@ -14,9 +14,6 @@ export const useUserManagement = (autoSy
     se
     isLoading: storeLoading ll>(null);percepci
    * sin sacrificar la estética del Preloader.
-   */
-  const fetchOperators = useCallback(async () => {
-    // Solo disparamos el loading global si el store está vacío
     if (operators.length === 0) setLoading(true);
     
     try {
