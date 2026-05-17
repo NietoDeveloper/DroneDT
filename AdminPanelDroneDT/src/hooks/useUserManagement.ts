@@ -76,9 +76,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
     setIsReady(true); // El componente ya está montado en el cliente
     fetchOperators();
 
-    if (autoSyncInterval > 0) {
-      syncTimer.current = setInterval(() => {
-        // Sincronización silenciosa en segundo plano
+  
         fetchOperators();
       }, autoSyncInterval);
     }
