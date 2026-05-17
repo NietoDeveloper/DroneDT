@@ -51,4 +51,3 @@ export const useUserManagement = (autoSy
     } finally {
       setL
    */
-  useEffect(() => {
