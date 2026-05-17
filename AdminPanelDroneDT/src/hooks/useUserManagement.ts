@@ -82,9 +82,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
     }
 
     return () => 
-      if (syncTimer
-
-  // Interfaz de salida blindada
+      if
   return {
     operators: isReady ? operators : [],
     isLoading: !isReady || storeLoading,
