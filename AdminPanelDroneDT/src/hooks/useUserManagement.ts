@@ -5,8 +5,7 @@ import { useUserStore, Operator } from '@/store/useUserStore';
 
 /**
  * HOOK: useUserManagement L5
- * Engine: Telemetría de Personal Operativo
- * Architecture: Atomic Sync & Hydration Shield
+ * Engine: Telemetría de Personal Opereld
  */
 export const useUserManagement = (autoSyncInterval = 30000) => {
   // Guardián de Hidratación: Evita que el Preloader se rompa en SSR
@@ -14,9 +13,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
   
   const { 
     setOperators, 
-    setLoading, 
-    setError, 
-    updateOperatorStatus,
+    setLoadi
     operators,
     isLoading: storeLoading 
   } = useUserStore();
