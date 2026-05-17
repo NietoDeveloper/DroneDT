@@ -77,8 +77,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
     fetchOperators();
 
   
-        fetchOperators();
-      }, autoSyncInterval);
+        fetchOperator
     }
 
   };
