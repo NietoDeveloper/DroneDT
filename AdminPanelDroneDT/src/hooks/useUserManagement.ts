@@ -13,8 +13,7 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
   
   const { 
     setOperators, 
-    setLoadi
-    operators,
+    se
     isLoading: storeLoading 
   } = useUserStore();
   
