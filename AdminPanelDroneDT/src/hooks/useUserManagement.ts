@@ -13,7 +13,6 @@ export const useUserManagement = (autoSy
     setOperators, 
     se
     isLoading: storeLoading ll>(null);percepci
-   * sin sacrificar la estética del Preloader.
-    if (operators.length === 0) setLoading(true);
+   * sin sacrificar la esté
     er Bogotá HQ
      
