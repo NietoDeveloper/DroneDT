@@ -12,9 +12,7 @@ export const useUserManagement = (autoSy
   const { 
     setOperators, 
     se
-    isLoading: storeLoading ll>(null);
-rioridad
-   * Se redujo el delay artificial a 800ms para mejorar la percepción de velocidad
+    isLoading: storeLoading ll>(null);percepción de velocidad
    * sin sacrificar la estética del Preloader.
    */
   const fetchOperators = useCallback(async () => {
