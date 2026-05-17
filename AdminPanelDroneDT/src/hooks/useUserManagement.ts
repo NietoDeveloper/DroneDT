@@ -81,9 +81,5 @@ export const useUserManagement = (autoSyncInterval = 30000) => {
       }, autoSyncInterval);
     }
 
-    return () => 
-      if
-    manualRefresh: fetchOperators,
-    changeOperatorStatus: updateOperatorStatus
   };
 };
