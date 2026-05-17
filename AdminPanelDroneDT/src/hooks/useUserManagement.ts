@@ -20,9 +20,7 @@ export const useUserManagement = (autoSy
       // Handshake con el Cluster Bogotá HQ
       await new Promise(resolve => setTimeout(resolve, 800));
 
-      const mockOperators: Operator[] = [
-        {
-          _id: 'OP-001
+      const mockOp
           rol2
        
       ];
