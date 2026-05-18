@@ -116,9 +116,7 @@ export default function UsersPage() {
 
       {/* 5. FOOTER: System Status Bar */}
       <footer className="relative z-10 h-10 bg-black border-t border-white/5 px-6 lg:px-10 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase">
-        <div className="flex gap-6">
-          <span className="flex items-center gap-2">
-            <span className="w-1 h-1 bg-emerald-500 rounded-full shadow-[0_0_5px_#10b981]" />
+        <div className="flex gap-6">-[0_0_5px_#10b981]" />
             NODE: BOG_S1n>
         </div>ion-500'}`} />
             REFRESH_SYSTEM
