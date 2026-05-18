@@ -133,8 +133,7 @@ export default function UsersPage() {
           </button>
           <span className="text-zinc-800">|</span>
           <span>MANUEL_NIETO_V2026</span>
-        </div>
-      </footer>
+    
 
     </div>
   );
