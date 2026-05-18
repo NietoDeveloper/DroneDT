@@ -104,9 +104,6 @@ export default function UsersPage() {
               {filteredOperators.map((op, idx) => (
                 <UserRow key={op._id || idx} operator={op} index={idx} />
               ))}
-            </div>
-          ) : (cking-widest uppercase">
-        <div className="flex gap-6">-[0_0_5px_#10b981]" />
             NODE: BOG_S1n>
         </div>ion-500'}`} />
             REFRESH_SYSTEM
