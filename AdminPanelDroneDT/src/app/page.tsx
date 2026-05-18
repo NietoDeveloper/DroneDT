@@ -100,9 +100,7 @@ export default function UsersPage() {
               <span className="font-mono text-[10px] tracking-[0.5em] animate-pulse uppercase">Syncing_Nodes...</span>
             </div>
           ) : filteredOperators.length > 0 ? (
-            <div className="divide-y divide-white/5">
-              {filteredOperators.map((op, idx) => (
-                <UserRow key={op._id || idx} operator={op} index={idx} />
+            <div className="divide-y divide-dx} />
               ))}
             NODE: BOG_S1n>
         </div>ion-500'}`} />
