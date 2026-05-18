@@ -131,8 +131,6 @@ export default function UsersPage() {
             <RefreshCw size={12} className={`${isLoading ? 'animate-spin' : 'group-hover:rotate-180 transition-transform duration-500'}`} />
             REFRESH_SYSTEM
           </button>
-          <span className="text-zinc-800">|</span>
-          <span>MANUEL_NIETO_V2026</span>
     
 
     </div>
