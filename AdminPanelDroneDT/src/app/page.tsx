@@ -122,8 +122,7 @@ export default function UsersPage() {
             NODE: BOG_S1
           </span>
           <span className="hidden sm:inline">UPLINK: ACTIVE</span>
-        </div>
-        <div className="flex items-center gap-4">s group"form duion-500'}`} />
+        </div>ion-500'}`} />
             REFRESH_SYSTEM
           </button>
     
