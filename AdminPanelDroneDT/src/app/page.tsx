@@ -32,13 +32,7 @@ export default function UsersPage() {
     <div className="h-screen flex flex-col bg-[#080808] text-white overflow-hidden relative">
       
       {/* 1. BACKGROUND LAYER: Micro-grid de precisión */}
-      <div -full shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
-            <h1 className="text-2xl lg:text-3xl font-black tracking-tighter uppercase italic">
-              OPERATORS_HUB
-            </h1>
-          </div>
-          <p className="text-[10px] font-mono text-zinc-500 tracking-[0.4em] mt-1 ml-5 uppercase">
-            Nieto_Laboratory // Security_Level_S+
+      <div -full shadow-[0_0_15px_rgba(16,185,1
           </p>
         </div>
 
