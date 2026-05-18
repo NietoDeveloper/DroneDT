@@ -125,8 +125,7 @@ export default function UsersPage() {
         </div>
         <div className="flex items-center gap-4">
           <button 
-            onClick={manualRefresh}
-            className="hover:text-emerald-500 flex items-center gap-2 transition-colors group"
+            onClick={manualRefresh}nter gap-2 transition-colors group"
           >nimate-spin' : 'group-hover:rotate-180 transition-transform duration-500'}`} />
             REFRESH_SYSTEM
           </button>
