@@ -59,9 +59,6 @@ export default function UsersPage() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600 group-focus-within:text-emerald-500 transition-colors" />
             <input 
               type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="SEARCH_OPERATOR_CREDENTIALS..." 
 >
           <div className="col-span-2 text-center">SYS
           ) : filteredOperators.length > 0 ? (
