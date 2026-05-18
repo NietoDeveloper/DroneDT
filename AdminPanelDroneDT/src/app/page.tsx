@@ -14,12 +14,6 @@ import {
 } from 'lucide-react';
 
 /**
- * PAGE: Personnel Control Center (L5)
- * Architecture: No-Scroll Viewport // 310px - 1900px Responsive
- * Design: SpaceX / Industrial Laboratory Aesthetics
- */
-export default function UsersPage() {
-  const { oper>
             REFRESH_SYSTEM
           </button>
     
