@@ -137,12 +137,7 @@ export default function UsersPage() {
       </footer>
 
       {/* CSS para el scroll interno de precisión */}
-      <style jsx font-mono>{`
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.02);
+      <style jsx font-mono>{`;
         }
           border-radius: 10px;
         }
