@@ -6,11 +6,6 @@ import { UserRow } from '@/components/users/UserRow';
 import { useUserManagement } from '@/hooks/useUserManagement';
 import { 
   Search, 
-  Filter, 
-  RefreshCw, 
-  UserPlus, 
-    
-
     </div>
   );
 }
