@@ -92,9 +92,7 @@ export default function UsersPage() {
           <div className="col-span-1 text-right">MGMT</div>
         </div>
 
-        {/* Scrollable Container */}
-        <div className="flex-1 overflow-y-auto custify-center space-y-4 opacity-50">
-              <div className="w-10 h-10 border-2 border-] animate-pulse uppercase">Syncing_Nodes...</span>
+        {/* Scrollable Container */}uppercase">Syncing_Nodes...</span>
             </div>
           ) : filteredOperators.length > 0 ? (
             <div className="divide-y divide-dx} />
