@@ -146,7 +146,7 @@ export default function UsersPage() {
         }
           border-radius: 10px;
         }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        .custom-scrollbar::-webkit-scrollbar-thumb:ho {
           background: rgba(16, 185, 129, 0.5);
         }
       `}</style>
