@@ -105,9 +105,7 @@ export default function UsersPage() {
                 <UserRow key={op._id || idx} operator={op} index={idx} />
               ))}
             </div>
-          ) : (
-            <div className="h-full flex flex-col items-center j
-          )}ustify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase">
+          ) : (cking-widest uppercase">
         <div className="flex gap-6">-[0_0_5px_#10b981]" />
             NODE: BOG_S1n>
         </div>ion-500'}`} />
