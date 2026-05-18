@@ -32,17 +32,7 @@ export default function UsersPage() {
     <div className="h-screen flex flex-col bg-[#080808] text-white overflow-hidden relative">
       
       {/* 1. BACKGROUND LAYER: Micro-grid de precisión */}
-      <div 
-        <div className=dient(circle, #ffffff 0.5px, transparent 0.5px)', 
-          backgroundSize: '24px 24px' 
-        }} 
-      />
-
-      {/* 2. HEADER: Mission Telemetry */}
-      <header className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between p-6 lg:px-10 border-b border-white/5 bg-black/40 backdrop-blur-md">
-        <div className="mb-4 lg:mb-0">
-          <div className="flex items-center gap-3">
-            <div className="w-2 h-6 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
+      <div -full shadow-[0_0_15px_rgba(16,185,129,0.5)]" />
             <h1 className="text-2xl lg:text-3xl font-black tracking-tighter uppercase italic">
               OPERATORS_HUB
             </h1>
