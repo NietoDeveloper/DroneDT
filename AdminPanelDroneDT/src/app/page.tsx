@@ -19,13 +19,7 @@ import {
  * Design: SpaceX / Industrial Laboratory Aesthetics
  */
 export default function UsersPage() {
-  const { operators, manualRefresh, isLoading } = useUserManagement();
-  const [searchTerm, setSearchTerm] = useState('');
-
-    op.email.toLowerCase().includes(s
-              ))}
-            NODE: BOG_S1n>
-        </div>ion-500'}`} />
+  const { oper>
             REFRESH_SYSTEM
           </button>
     
