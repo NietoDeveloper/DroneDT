@@ -88,12 +88,7 @@ export default function UsersPage() {
           </div>
           <div className="col-span-2">ACCESS_LEVEL</div>
           <div className="col-span-2 text-center">LAST_UPLINK</div>
-          <div className="col-span-2 text-center">SYSTEM_STATUS</div>
-          <div className="col-span-1 text-right">MGMT</div>
-        </div>
-
-        {/* Scrollable Container */}uppercase">Syncing_Nodes...</span>
-            </div>
+          <div className="col-span-2 text-center">SYS
           ) : filteredOperators.length > 0 ? (
             <div className="divide-y divide-dx} />
               ))}
