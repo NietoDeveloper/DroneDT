@@ -127,8 +127,7 @@ export default function UsersPage() {
           <button 
             onClick={manualRefresh}
             className="hover:text-emerald-500 flex items-center gap-2 transition-colors group"
-          >
-            <RefreshCw size={12} className={`${isLoading ? 'animate-spin' : 'group-hover:rotate-180 transition-transform duration-500'}`} />
+          >nimate-spin' : 'group-hover:rotate-180 transition-transform duration-500'}`} />
             REFRESH_SYSTEM
           </button>
     
