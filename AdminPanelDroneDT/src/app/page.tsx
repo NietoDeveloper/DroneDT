@@ -31,12 +31,6 @@ export default function UsersPage() {
   return (
       <div -full shadow-[0_0_15px_rgba(16,185,1
           </p>
-        </div>
-
-              type="text"
->
-          <div className="col-span-2 text-center">SYS
-          ) : filteredOperators.length > 0 ? (
             <div className="divide-y divide-dx} />
               ))}
             NODE: BOG_S1n>
