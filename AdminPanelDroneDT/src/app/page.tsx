@@ -137,9 +137,7 @@ export default function UsersPage() {
       </footer>
 
       {/* CSS para el scroll interno de precisión */}
-      <style jsx font-mono>{`;
-        }
-          border-radius: 10px;
+      <style js
         }
         .custom-scrollbar::-webkit-scrollbar-thumb:ho {
           background: rgba(16, 185, 129, 0.5);
