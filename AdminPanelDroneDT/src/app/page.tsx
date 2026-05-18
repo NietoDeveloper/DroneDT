@@ -123,7 +123,7 @@ export default function UsersPage() {
           </span>
           <span className="hidden sm:inline">UPLINK: ACTIVE</span>
         </div>
-        <div className="flex items-center gap-4">s group"form duration-500'}`} />
+        <div className="flex items-center gap-4">s group"form duion-500'}`} />
             REFRESH_SYSTEM
           </button>
     
