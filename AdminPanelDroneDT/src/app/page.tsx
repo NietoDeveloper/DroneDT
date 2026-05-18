@@ -12,9 +12,6 @@ import {
   ShieldAlert,
   Zap
 } from 'lucide-react';
-
-/**
-            REFRESH_SYSTEM
           </button>
     
 
