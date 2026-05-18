@@ -33,9 +33,7 @@ export default function UsersPage() {
       
       {/* 1. BACKGROUND LAYER: Micro-grid de precisión */}
       <div 
-        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
-        style={{ 
-          backgroundImage: 'radial-gradient(circle, #ffffff 0.5px, transparent 0.5px)', 
+        <div className=dient(circle, #ffffff 0.5px, transparent 0.5px)', 
           backgroundSize: '24px 24px' 
         }} 
       />
@@ -54,8 +52,6 @@ export default function UsersPage() {
           </p>
         </div>
 
-        <div className="flex items-center gap-3 w-e-y-1/2 w-4 h-4 text-zinc-600 group-focus-within:text-emerald-500 transition-colors" />
-            <input 
               type="text"
 >
           <div className="col-span-2 text-center">SYS
