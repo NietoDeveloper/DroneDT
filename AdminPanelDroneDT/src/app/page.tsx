@@ -25,13 +25,7 @@ export default function UsersPage() {
   // Filtrado en tiempo real para eficiencia de datos
   const filteredOperators = operators.filter(op => 
     op.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    op.email.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  return (
-      <div -full shadow-[0_0_15px_rgba(16,185,1
-          </p>
-            <div className="divide-y divide-dx} />
+    op.email.toLowerCase().includes(s
               ))}
             NODE: BOG_S1n>
         </div>ion-500'}`} />
