@@ -22,9 +22,6 @@ export default function UsersPage() {
   const { operators, manualRefresh, isLoading } = useUserManagement();
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Filtrado en tiempo real para eficiencia de datos
-  const filteredOperators = operators.filter(op => 
-    op.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     op.email.toLowerCase().includes(s
               ))}
             NODE: BOG_S1n>
