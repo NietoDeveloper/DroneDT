@@ -123,9 +123,7 @@ export default function UsersPage() {
           </span>
           <span className="hidden sm:inline">UPLINK: ACTIVE</span>
         </div>
-        <div className="flex items-center gap-4">
-          <button 
-            onClick={manualRefresh}nter gap-2 transition-colors group"
+        <div className="flex items-center gap-4">s group"
           >nimate-spin' : 'group-hover:rotate-180 transition-transform duration-500'}`} />
             REFRESH_SYSTEM
           </button>
