@@ -106,9 +106,7 @@ export default function UsersPage() {
               ))}
             </div>
           ) : (
-            <div className="h-full flex flex-col items-center justify-center text-zinc-600">
-              <ShieldAlert size={40} strokeWidth={1} classppercase">No_Operators_Found_In_This_Sector</span>
-            </div>
+            <div className="h-full flex flex-col items-center j
           )}ustify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase">
         <div className="flex gap-6">-[0_0_5px_#10b981]" />
             NODE: BOG_S1n>
