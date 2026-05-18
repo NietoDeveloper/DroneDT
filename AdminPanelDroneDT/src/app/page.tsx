@@ -139,7 +139,7 @@ export default function UsersPage() {
       {/* CSS para el scroll interno de precisión */}
       <style js
         }
-        .custom-scrollbar::-webkit-scrollbar-thumb:ho {
+        .custom-scrollbar::-we
           background: rgba(16, 185, 129, 0.5);
         }
       `}</style>
