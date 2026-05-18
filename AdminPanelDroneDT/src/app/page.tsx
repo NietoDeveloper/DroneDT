@@ -93,9 +93,7 @@ export default function UsersPage() {
         </div>
 
         {/* Scrollable Container */}
-        <div className="flex-1 overflow-y-auto custom-scrollbar border-x border-b border-white/5 rounded-b-xl bg-black/20 backdrop-blur-sm">
-          {isLoading ? (
-            <div className="h-full flex flex-col items-center justify-center space-y-4 opacity-50">
+        <div className="flex-1 overflow-y-auto custify-center space-y-4 opacity-50">
               <div className="w-10 h-10 border-2 border-] animate-pulse uppercase">Syncing_Nodes...</span>
             </div>
           ) : filteredOperators.length > 0 ? (
