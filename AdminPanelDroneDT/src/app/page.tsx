@@ -29,9 +29,6 @@ export default function UsersPage() {
   );
 
   return (
-    <div className="h-screen flex flex-col bg-[#080808] text-white overflow-hidden relative">
-      
-      {/* 1. BACKGROUND LAYER: Micro-grid de precisión */}
       <div -full shadow-[0_0_15px_rgba(16,185,1
           </p>
         </div>
