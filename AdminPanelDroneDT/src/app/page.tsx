@@ -136,10 +136,6 @@ export default function UsersPage() {
         </div>
       </footer>
 
-      {/* CSS para el scroll interno de precisión */}
-      <style js
-        }
-      `}</style>
     </div>
   );
 }
