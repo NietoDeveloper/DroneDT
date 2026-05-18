@@ -110,9 +110,7 @@ export default function UsersPage() {
               <ShieldAlert size={40} strokeWidth={1} className="mb-4 opacity-20" />
               <span className="font-mono text-[10px] tracking-widest uppercase">No_Operators_Found_In_This_Sector</span>
             </div>
-          )}
-        </div>
-      </main>border-white/5 px-6 lg:px-10 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase">
+          )}ustify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase">
         <div className="flex gap-6">-[0_0_5px_#10b981]" />
             NODE: BOG_S1n>
         </div>ion-500'}`} />
