@@ -119,9 +119,7 @@ export default function UsersPage() {
         <div className="flex gap-6">
           <span className="flex items-center gap-2">
             <span className="w-1 h-1 bg-emerald-500 rounded-full shadow-[0_0_5px_#10b981]" />
-            NODE: BOG_S1
-          </span>
-          <span className="hidden sm:inline">UPLINK: ACTIVE</span>
+            NODE: BOG_S1n>
         </div>ion-500'}`} />
             REFRESH_SYSTEM
           </button>
