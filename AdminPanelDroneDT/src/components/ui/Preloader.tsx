@@ -49,9 +49,7 @@
             animate={{ opacity: 1 }}
             className="mt-24 text-center space-y-6"
           >
-            <div>
-                <h2 className="text-[#FFD700] font-black tracking-[0.7em] text-3xl">DRONE <span className="text-white">DT</span></h2>
-                <p className="text-[9px] text-zinc-500 tracking-[0.5em] uppercase mt-2 font-mono">Autonomous Intelligence Engine</p>
+            <div>cking-[0.5em] uppercase mt-2 font-mono">Autonomous Intelligence Engine</p>
             </div>
             apl
                 </div>
