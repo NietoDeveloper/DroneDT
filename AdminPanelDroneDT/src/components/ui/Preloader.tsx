@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react
 
 export default function Preloader() {
-  const [loading, setLoading] = useSt
-  useEffect(() => {
+  const [loading, setLoading] = use
     // Sincronización perfec "hidden"; //
     
     return () => {
