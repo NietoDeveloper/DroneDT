@@ -9,9 +9,6 @@
       {loading && (
         <motion.div
           exit={{ 
-            opacity: 0, 
-            scale: 1.1, // Suavizamos el scale para un efecto más premium
-            filter: "blur(20px)" 
           }}
           transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }} //
           className="fixed inset-0 z-[10000] flex flex-col items-center justify-center bg-black" //
