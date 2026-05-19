@@ -45,9 +45,6 @@
 
           {/* Telemetría DRONE DT */}
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}no">Autonomous Intelligence Engine</p>
-            </div>
             apl
                 </div>
           </motion.div>
