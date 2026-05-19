@@ -66,8 +66,7 @@
           {/* Barra de Carga de Alta Precisión */}
           <div className="absolute bottom-20 w-72 h-[1px] bg-zinc-900">
             <motion.div 
-              initial={{ x: "-100%" }}
-              animate={{ x: "0%
+              initial={{ x: "-1
           </div>
         </motion.div>
       )}
