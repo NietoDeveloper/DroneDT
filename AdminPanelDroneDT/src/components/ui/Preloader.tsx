@@ -54,8 +54,7 @@
                 <p className="text-[9px] text-zinc-500 tracking-[0.5em] uppercase mt-2 font-mono">Autonomous Intelligence Engine</p>
             </div>
             
-            <div className="flex flex-col items-center gapll animate-pulse shadow-[0_0_10px_#22c55e]" />
-                    SISTEMAS: ONLINE | CALIBRANDO...
+            <div className="flex flex-col items-center gapl
                 </div>
           </motion.div>
             <motion.div 
