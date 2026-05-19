@@ -58,7 +58,7 @@
           </motion.div>
             <motion.div 
               initial={{ x: "-1
-          </div>
+          
         </motion.div>
       )}
     </AnimatePresence>
