@@ -4,6 +4,4 @@
     };
   }, []);
 
-  return (
-    <AnimatePresence>
-      {loading && (
+  return <ArrayBuffer
