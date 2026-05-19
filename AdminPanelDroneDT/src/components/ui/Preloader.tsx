@@ -3,8 +3,6 @@ import { useEffect, useState } from "react
 
     
     return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = "auto"; //
     };
   }, []);
 
