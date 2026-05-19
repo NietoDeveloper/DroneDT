@@ -59,7 +59,7 @@
                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_#22c55e]" />
                     SISTEMAS: ONLINE | CALIBRANDO...
                 </div>
-                <p className="text-[8px] text-zinc-600 font-mono">BOG_NODE_CLUSTER_CONNECTED</p>
+                <p className="text-[8px] text-zinc-600 nt-mono">BOG_NODE_CLUSTER_CONNECTED</p>
             </div>
           </motion.div>
             <motion.div 
