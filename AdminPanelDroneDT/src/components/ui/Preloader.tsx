@@ -67,8 +67,7 @@
           <div className="absolute bottom-20 w-72 h-[1px] bg-zinc-900">
             <motion.div 
               initial={{ x: "-100%" }}
-              animate={{ x: "0%" }}
-              transition={{ duration: 3
+              animate={{ x: "0%
           </div>
         </motion.div>
       )}
