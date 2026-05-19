@@ -1,9 +1,7 @@
 "use client";
 import { useEffect, useState } from "react
 
-export default function Preloader() {
-  const [loading, setLoading] = use
-    // Sincronización perfec "hidden"; //
+export default function Preload
     
     return () => {
       clearTimeout(timer);
