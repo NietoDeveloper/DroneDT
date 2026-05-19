@@ -15,8 +15,4 @@
             animate={{ y: [0, -12, 0] }}
             transition={{ repeat: Infinity, duration: 2.5, ease:center"
           >
-            {/* Cuerpo del Drone (Identidad Técnica Gold) */}
-            <div className="absolute w-16 h-1
-c-800 to-zinc-900 rounded-full"
-                style={{ tra
                     <div class
