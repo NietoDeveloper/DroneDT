@@ -28,13 +28,5 @@
               <div
                 key={i}
                 className="absolute w-32 h-2 bg-gradient-to-r from-zinc-800 to-zinc-900 rounded-full"
-                style={{ transform: `rotate(${angle}deg)` }}
-              >
-                {/* Motores de Alta Revolución */}
-                <div className="absolute -right-1 -top-4 w-10 h-10 flex items-center justify-center">
-                    <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ repeat: Infinity, duration: 0.1, ease: "linear" }} // RPMs aumentadas
-                      className="w-12 h-12 border-t-2 border-b-[1px] border-[#FFD700]/50 rounded-full blur-[0.8px]"
-                    />
+                style={{ tra
                     <div class
