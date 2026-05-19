@@ -41,14 +41,6 @@
                 </div>
               </div>
             ))}
-          </motion.div>
-                </div>
-          </motion.div>
-            <motion.div 
-              initial={{ x: "-1
           
-        </motion.div>
-      )}
-    </AnimatePresence>
   );
 }
