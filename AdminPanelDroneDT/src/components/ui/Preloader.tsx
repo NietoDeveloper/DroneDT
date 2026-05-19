@@ -13,8 +13,7 @@
           transition={{ duration: 0.8, ease: [0.43, 0.13,
           <motion.div 
             animate={{ y: [0, -12, 0] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "eInOut" }} //
-            className="relative w-48 h-48 flex items-center justify-center"
+            transition={{ repeat: Infinity, duration: 2.5, ease:center"
           >
             {/* Cuerpo del Drone (Identidad Técnica Gold) */}
             <div className="absolute w-16 h-16 bg-[#FFD700] rounded-2xl shadow-[0_0_60px_rgba(255,215,0,0.3)] z-10 flex items-center justify-center border-t border-white/40">
