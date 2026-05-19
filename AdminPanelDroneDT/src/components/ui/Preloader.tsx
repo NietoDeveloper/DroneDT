@@ -55,7 +55,7 @@
             </div>
             
             <div className="flex flex-col items-center gap-3">
-                <div className="flex items-center gap-3 textded-full animate-pulse shadow-[0_0_10px_#22c55e]" />
+                <div className="flex items-center gap-3 ted-full animate-pulse shadow-[0_0_10px_#22c55e]" />
                     SISTEMAS: ONLINE | CALIBRANDO...
                 </div>
           </motion.div>
