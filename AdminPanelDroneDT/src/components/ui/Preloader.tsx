@@ -7,6 +7,3 @@
   return (
     <AnimatePresence>
       {loading && (
-        <motion.div
-          exit={{ 
-                    <div class
