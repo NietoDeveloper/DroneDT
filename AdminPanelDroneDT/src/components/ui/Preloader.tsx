@@ -61,8 +61,7 @@
                 </div>
                 <p className="text-[8px] text-zinc-600 font-mono">BOG_NODE_CLUSTER_CONNECTED</p>
             </div>
-          </motion.div
-          {/* Barra de Carga de Alta Precisión *1px] bg-zinc-900">
+          </motion.div>
             <motion.div 
               initial={{ x: "-1
           </div>
