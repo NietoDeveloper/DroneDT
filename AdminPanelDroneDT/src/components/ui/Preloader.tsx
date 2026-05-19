@@ -68,7 +68,7 @@
             <motion.div 
               initial={{ x: "-100%" }}
               animate={{ x: "0%" }}
-              transition={{ duration: 3.2, ease: 
+              transition={{ duration: 3
           </div>
         </motion.div>
       )}
