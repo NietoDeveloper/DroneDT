@@ -15,7 +15,7 @@
           {/* Contenedor del Drone DT - Vuelo Estacionario */}
           <motion.div 
             animate={{ y: [0, -12, 0] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }} //
+            transition={{ repeat: Infinity, duration: 2.5, ease: "eInOut" }} //
             className="relative w-48 h-48 flex items-center justify-center"
           >
             {/* Cuerpo del Drone (Identidad Técnica Gold) */}
