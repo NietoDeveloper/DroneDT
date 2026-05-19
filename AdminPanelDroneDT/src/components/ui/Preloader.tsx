@@ -42,10 +42,6 @@
               </div>
             ))}
           </motion.div>
-
-          {/* Telemetría DRONE DT */}
-          <motion.div 
-            apl
                 </div>
           </motion.div>
             <motion.div 
