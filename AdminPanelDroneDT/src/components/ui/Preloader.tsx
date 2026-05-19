@@ -63,8 +63,7 @@
             </div>
           </motion.div>
 
-          {/* Barra de Carga de Alta Precisión */}
-          <div className="absolute bottom-20 w-72 h-[1px] bg-zinc-900">
+          {/* Barra de Carga de Alta Precisión *1px] bg-zinc-900">
             <motion.div 
               initial={{ x: "-1
           </div>
