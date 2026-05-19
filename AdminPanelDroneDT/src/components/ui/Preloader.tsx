@@ -24,9 +24,6 @@
             </div>
 
             {/* Configuración de Motores en X (Atlas-MERN Structure) */}
-            {[45, 135, 225, 315].map((angle, i) => (
-              <div
-                key={i}
-                className="absolute w-32 h-2 bg-gradient-to-r from-zinc-800 to-zinc-900 rounded-full"
+            {[45, 135, 225, 315].map((angle, i) =to-r from-zinc-800 to-zinc-900 rounded-full"
                 style={{ tra
                     <div class
