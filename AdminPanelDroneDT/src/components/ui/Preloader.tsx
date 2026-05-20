@@ -23,9 +23,7 @@ export default function Preloader() {
 
   return (
     <AnimatePresence>
-      {loading && (
-        <motion.div
-          exit={{ 
+
 
 
 
