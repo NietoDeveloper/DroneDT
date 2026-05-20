@@ -26,10 +26,6 @@ export default function Preloader() {
       {loading && (
         <motion.div
           exit={{ 
-            opacity: 0, 
-            scale: 1.1, // Suavizamos el scale para un efecto más premium
-
-        >
 
 
 
