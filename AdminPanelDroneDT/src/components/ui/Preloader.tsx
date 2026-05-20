@@ -51,10 +51,6 @@ export default function Preloader() {
             {[45, 135, 225, 315].map((angle, i) => (
               <div
 
-                    /
-                </div>
-              </div>
-            ))}
 
 
 
