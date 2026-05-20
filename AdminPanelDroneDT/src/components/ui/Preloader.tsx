@@ -64,12 +64,7 @@ export default function Preloader() {
                 </div>
               </div>
             ))}
-          </motion.div>
 
-          <motion.div 
-
-
-          >
 
 
 
