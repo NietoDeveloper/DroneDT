@@ -47,7 +47,6 @@ export default function Preloader() {
                </div>
             </div>
 
-            {/* Configuración de Motores en X (Atlas-MERN Structure) */}
 
               <div
 
