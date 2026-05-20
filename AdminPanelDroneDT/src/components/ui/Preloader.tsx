@@ -78,7 +78,6 @@ export default function Preloader() {
                 <p className="text-[9px] text-zinc-500 tracking-[0.5em] uppercase mt-2 font-mono">Autonomous Intelligence Engine</p>
             </div>
             
-         nimate-pulse shadow-[0_0_10px_#22c55e]" />
 
                 </div>STER_CONNECTED</p>
             </div>
