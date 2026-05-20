@@ -67,7 +67,6 @@ export default function Preloader() {
             ))}
           </motion.div>
 
-          {/* Telemetría DRONE DT */}
           <motion.div 
 
 
