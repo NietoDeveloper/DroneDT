@@ -41,7 +41,7 @@ export default function Preloader() {
           >
             {/* Cuerpo del Drone (Identidad Técnica Gold) */}
             <div className="absolute w-16 h-16 bg-[#FFD700] rounded-2xl shadow-[0_0_60px_rgba(255,215,0,0.3)] z-10 flex items-center justify-center border-t border-white/40">
--pulse shadow-[0_0_12px_red]" />
+
                </div>
 
 
