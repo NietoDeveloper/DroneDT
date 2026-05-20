@@ -73,9 +73,7 @@ export default function Preloader() {
             animate={{ opacity: 1 }}
             className="mt-24 text-center space-y-6"
           >
-            </div>
 
-            </div>
 
 
       )}
