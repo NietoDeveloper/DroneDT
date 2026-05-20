@@ -91,7 +91,7 @@ export default function Preloader() {
           <div className="absolute bottom-20 w-72 h-[1px] bg-zinc-900">
             <motion.div 
               initial={{ x: "-100%" }}
-              animate={{ x: "0%" }}
+  
               transition={{ duration: 3.2, ease: "easeInOut" }} //
               className="w-full h-full bg-[#FFD700] shadow-[0_0_20px_#FFD700]"
             />
