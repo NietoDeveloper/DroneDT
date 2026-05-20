@@ -33,8 +33,7 @@ export default function Preloader() {
           transition={{ duration: 0.8, ease: [0.43, 0.13, 0.23, 0.96] }} //
           className="fixed inset-0 z-[10000] flex flex-col items-center justify-center bg-black" //
         >
-          {/* Contenedor del Drone DT - Vuelo Estacionario */}
-          <motion.div 
+
 
 
 
