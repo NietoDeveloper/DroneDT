@@ -77,9 +77,7 @@ export default function Preloader() {
                 <h2 className="text-[#FFD700] font-black tracking-[0.7em] text-3xl">DRONE <span className="text-white">DT</span></h2>
                 <p className="text-[9px] text-zinc-500 tracking-[0.5em] uppercase mt-2 font-mono">Autonomous Intelligence Engine</p>
             </div>
-            
 
-                </div>STER_CONNECTED</p>
             </div>
 
 
