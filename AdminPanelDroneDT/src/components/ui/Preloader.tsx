@@ -57,8 +57,7 @@ export default function Preloader() {
                 {/* Motores de Alta Revolución */}
                 <div className="absolute -right-1 -top-4 w-10 h-10 flex items-center justify-center">
                     <motion.div
-                      animate={{ rotate: 360 }}
-                      transition={{ repeat: Infini]"
+ 
                     /
                 </div>
               </div>
