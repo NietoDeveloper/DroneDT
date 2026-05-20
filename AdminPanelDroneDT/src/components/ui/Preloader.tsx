@@ -70,8 +70,7 @@ export default function Preloader() {
           {/* Telemetría DRONE DT */}
           <motion.div 
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="mt-24 text-center space-y-6"
+
           >
 
 
