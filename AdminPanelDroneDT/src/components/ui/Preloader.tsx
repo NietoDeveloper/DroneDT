@@ -59,7 +59,7 @@ export default function Preloader() {
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ repeat: Infinity, duration: 0.1, ease: "linear" }} // RPMs aumentadas
-                      className="w-12 h-12 border-t-2 border-b-[1px] border-[#FFD700]/50 rounded-full blur-[0.8px]"
+                      className="w-12 h-12 borderer-[#FFD700]/50 rounded-full blur-[0.8px]"
                     />rounded-full border border-zinc-600" />
                 </div>
               </div>
