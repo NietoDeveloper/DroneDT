@@ -85,8 +85,7 @@ export default function Preloader() {
                 </div>
                 <p className="text-[8px] text-zinc-600 font-mono">BOG_NODE_CLUSTER_CONNECTED</p>
             </div>
-          </motion.div>
-            <motion.div 
+
 
       )}
     </AnimatePresence>
