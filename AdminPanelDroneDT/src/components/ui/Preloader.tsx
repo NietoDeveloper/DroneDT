@@ -45,10 +45,7 @@ export default function Preloader() {
                   {/* Sensor de Proximidad Activo */}
                   <div className="w-2 h-2 bg-red-600 rounded-full animate-pulse shadow-[0_0_12px_red]" />
                </div>
-            </div>
 
-
-              <div
 
   );
 }
