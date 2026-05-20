@@ -18,11 +18,7 @@ export default function Preloader() {
     return () => {
       clearTimeout(timer);
       document.body.style.overflow = "auto"; //
-    };
-  }, []);
 
-  return (
-    <AnimatePresence>
 
 
 
