@@ -81,7 +81,7 @@ export default function Preloader() {
             <div className="flex flex-col items-center gap-3">
                 <div className="flex items-center gap-3 text-[10px] text-zinc-300 font-mono tracking-widest bg-zinc-900/80 px-5 py-2.5 rounded-xl border border-white/10 backdrop-blur-sm">
                     <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_#22c55e]" />
-                    SISTEMAS: ONLINE | CALIBRANDO...
+
                 </div>
                 <p className="text-[8px] text-zinc-600 font-mono">BOG_NODE_CLUSTER_CONNECTED</p>
             </div>
