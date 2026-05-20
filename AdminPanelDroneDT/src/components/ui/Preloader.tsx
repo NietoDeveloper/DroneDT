@@ -69,7 +69,7 @@ export default function Preloader() {
 
           {/* Telemetría DRONE DT */}
           <motion.div 
-            initial={{ opacity: 0 }}
+
 
           >
 
