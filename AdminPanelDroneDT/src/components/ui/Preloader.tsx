@@ -13,11 +13,7 @@ export default function Preloader() {
     }, 3500); //
     
     // Bloqueamos scroll durante la calibración de sistemas
-    document.body.style.overflow = "hidden"; //
-    
-    return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = "auto"; //
+
 
 
 
