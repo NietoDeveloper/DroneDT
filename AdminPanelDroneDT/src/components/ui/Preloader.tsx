@@ -80,8 +80,7 @@ export default function Preloader() {
             
          nimate-pulse shadow-[0_0_10px_#22c55e]" />
 
-                </div>
-                <p className="text-[8px] text-zinc-600 font-mono">BOG_NODE_CLUSTER_CONNECTED</p>
+                </div>STER_CONNECTED</p>
             </div>
 
 
