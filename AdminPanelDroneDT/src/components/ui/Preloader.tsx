@@ -40,10 +40,3 @@ export default function Preloader() {
             className="relative w-48 h-48 flex items-center justify-center"
           >
             {/* Cuerpo del Drone (Identidad Técnica Gold) */}
-w-[0_0_60px_rgba(255,215,0,0.3)] z-10 flex items-center justify-center border-t border-white/40">
-
-               </div>
-
-
-  );
-}
