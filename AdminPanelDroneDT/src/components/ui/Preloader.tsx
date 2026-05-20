@@ -51,8 +51,7 @@ export default function Preloader() {
             {[45, 135, 225, 315].map((angle, i) => (
               <div
                 key={i}
-                className="absolute w-32 h-2 bg-gradient-to-r from-zinc-800 to-zinc-900 rounded-full"
-                style={{ transform: `rotate(${angle}deg)` }}
+
 
                     <motion.div
  
