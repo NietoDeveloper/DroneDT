@@ -37,5 +37,5 @@ export default function Preloader() {
           <motion.div 
             animate={{ y: [0, -12, 0] }}
             transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }} //
-            className="relative w-48 h-48 flex items-center justify-center"
+
 
