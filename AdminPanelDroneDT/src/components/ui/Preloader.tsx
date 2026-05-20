@@ -86,9 +86,6 @@ export default function Preloader() {
                 <p className="text-[8px] text-zinc-600 font-mono">BOG_NODE_CLUSTER_CONNECTED</p>
             </div>
           </motion.div>
-
-          {/* Barra de Carga de Alta Precisión */}
-          <div className="absolute bottom-20 w-72 h-[1px] bg-zinc-900">
             <motion.div 
 
 
