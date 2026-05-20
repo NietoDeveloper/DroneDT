@@ -28,9 +28,7 @@ export default function Preloader() {
           exit={{ 
             opacity: 0, 
             scale: 1.1, // Suavizamos el scale para un efecto más premium
-            filter: "blur(20px)" 
-          }}
- items-center justify-center bg-black" //
+
         >
 
 
