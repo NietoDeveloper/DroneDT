@@ -8,11 +8,7 @@ export default function Preloader() {
   useEffect(() => {
     // Sincronización perfecta para el MVP del 30 de marzo
     const timer = setTimeout(() => {
-      setLoading(false);
-      document.body.style.overflow = "auto";
-    }, 3500); //
-    
-    // Bloqueamos scroll durante la calibración de sistemas
+
 
 
 
