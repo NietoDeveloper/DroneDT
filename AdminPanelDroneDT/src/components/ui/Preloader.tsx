@@ -50,11 +50,7 @@ export default function Preloader() {
             {/* Configuración de Motores en X (Atlas-MERN Structure) */}
             {[45, 135, 225, 315].map((angle, i) => (
               <div
-                key={i}
 
-
-                    <motion.div
- 
                     /
                 </div>
               </div>
