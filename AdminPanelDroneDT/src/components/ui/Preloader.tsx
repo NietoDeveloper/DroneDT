@@ -35,7 +35,6 @@ export default function Preloader() {
         >
           {/* Contenedor del Drone DT - Vuelo Estacionario */}
           <motion.div 
-            animate={{ y: [0, -12, 0] }}
-            transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }} //
+
 
 
