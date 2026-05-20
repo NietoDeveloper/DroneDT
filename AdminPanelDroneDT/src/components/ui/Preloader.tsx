@@ -54,8 +54,7 @@ export default function Preloader() {
                 className="absolute w-32 h-2 bg-gradient-to-r from-zinc-800 to-zinc-900 rounded-full"
                 style={{ transform: `rotate(${angle}deg)` }}
               >
-                {/* Motores de Alta Revolución */}
-                <div className="absolute -right-1 -top-4 w-10 h-10 flex items-center justify-center">
+                {/* Motores de Alta Revolución */}x items-center justify-center">
                     <motion.div
  
                     /
