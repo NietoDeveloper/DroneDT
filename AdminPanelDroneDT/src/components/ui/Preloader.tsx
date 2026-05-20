@@ -59,7 +59,7 @@ export default function Preloader() {
                     <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ repeat: Infini]"
-                    />rounded-full border border-zinc-600" />
+                    /
                 </div>
               </div>
             ))}
