@@ -73,7 +73,7 @@ export default function Preloader() {
             animate={{ opacity: 1 }}
             className="mt-24 text-center space-y-6"
           >
-            <div>[0.5em] uppercase mt-2 font-mono">Autonomous Intelligence Engine</p>
+            <div>[0.5em] uppercase mt-2 font-mono">Autonomous Intellgine</p>
             </div>
 
             </div>
