@@ -38,5 +38,4 @@ export default function Preloader() {
             animate={{ y: [0, -12, 0] }}
             transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }} //
             className="relative w-48 h-48 flex items-center justify-center"
-          >
-            {/* Cuerpo del Drone (Identidad Técnica Gold) */}
+
