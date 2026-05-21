@@ -23,6 +23,4 @@ export default function RootLayout({
     <html lang="es" className="selection:bg-gold selection:text-black">
       <body 
         className="
-          bg-main 
-          antia
 }
