@@ -172,27 +172,7 @@ export default function UsersPage() {
                 <div className="col-span-5 flex items-center gap-2">
                   <Zap size={10} className="text-emerald-500" /> OPERATOR_IDENTITY
                 </div>
-                <div className="col-span-2">ACCESS_LEVEL</div>
-                <div className="col-span-2 text-center">LAST_UPLINK</div>
-                <div className="col-span-2 text-center">SYSTEM_STATUS</div>
-                <div className="col-span-1 text-right">MGMT</div>
-              </div>
 
-              {/* Scrollable Container */}
-              <div className="flex-1 overflow-y-auto custom-scrollbar border-x border-b border-white/5 rounded-b-xl bg-black/20 backdrop-blur-sm">
-                {hookLoading ? (
-                  <div className="h-full flex flex-col items-center justify-center text-zinc-500 font-mono text-[10px] tracking-widest uppercase">
-                    <RefreshCw size={18} className="animate-spin mb-3 text-emerald-500" />
-                    FETCHING_CLUSTER_DATA...
-                  </div>
-                ) : filteredOperators.length > 0 ? (
-                  <div className="divide-y divide-white/5">
-                    {filteredOperators.map((op, idx) => (
-                      <UserRow key={op._id || idx} operator={op} index={idx} />
-                    ))}
-                  </div>
-                ) : (
-            {/* FOOTER: System Status Bar */}
             <footer className="h-10 bg-black border-t border-white/5 px-6 lg:px-10 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase relative z-20">
               <div className="flex gap-6">
                 <sp
