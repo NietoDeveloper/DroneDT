@@ -2,6 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css"; 
 import Preloader from "@/components/ui/Preloa
  * Metadata - Drone DT Intelligen
- * World-Class Engin
+ * World-Clas
 export const metad
   tit
