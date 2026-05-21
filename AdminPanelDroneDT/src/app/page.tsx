@@ -202,13 +202,3 @@ export default function DroneDashboardPage() {
                 <div className="lg:col-span-2 bg-zinc-950/20 border border-white/5 rounded-xl p-2 overflow-hidden flex flex-col justify-between">
                   <Inventory />
                 </div>
-
-                {/* SECCIÓN DE PRODUCTOS E INVENTARIO RÁPIDO */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 overflow-hidden">
-                  <div className="bg-zinc-950/20 border border-white/5 rounded-xl p-1 overflow-hidden">
-                    <InventoryCard />
-                  </div>
-                  <div className="bg-zinc-950/20 border border-white/5 rounded-xl p-1 overflow-hidden">
-                    <DroneCard />
-                  </div>
-                </div>
