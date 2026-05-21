@@ -106,9 +106,4 @@ export default function UsersPage() {
                 <UserRow key={op._id} operator={op} index={idx} />
               ))}
             </div>
-          ) : (
-            <div className="h-full flex flex-col items-center justify-center text-zinc-600 animate-in fade-in duration-700">
-              <ShieldAlert size={40} strokeWidth={1} className="mb-4 opacity-20" />
-              <spa
-  );
 }
