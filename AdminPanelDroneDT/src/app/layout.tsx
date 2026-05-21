@@ -24,7 +24,5 @@ export default function RootLayout({
       <body 
         className="
           bg-main 
-          antialiased 
-          h-screen 
-          w-scree
+          antia
 }
