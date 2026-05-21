@@ -30,10 +30,6 @@ export default function RootLayout({
           overflow-hidden
           fixed
           inset-0
-          flex
-          flex-colow-hidden">
-          {children}
-        </main>
 
       </body>
     </html>
