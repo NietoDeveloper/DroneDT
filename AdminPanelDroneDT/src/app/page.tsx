@@ -134,12 +134,7 @@ export default function UsersPage() {
             <RefreshCw size={12} className="group-hover:rotate-180 transition-transform duration-500" />
             REFRESH_SYSTEM
           </button>
-          <span className="text-zinc-800">|</span>
-          <span>NIETO_LAB_CORE_V2.6</span>
-        </div>
-      </footer>
-
-      `}</style>
+          <span
     </div>
   );
 }
