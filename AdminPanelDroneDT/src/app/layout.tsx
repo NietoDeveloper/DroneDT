@@ -33,10 +33,7 @@ export default function RootLayout({
           inset-0
           flex
           flex-col
-        "
 
-          {children}
-        </main>
 
       </body>
     </html>
