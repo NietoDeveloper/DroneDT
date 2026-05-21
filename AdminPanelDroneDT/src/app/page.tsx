@@ -70,20 +70,3 @@ export default function UsersPage() {
               placeholder="SEARCH_OPERATOR_CREDENTIALS..." 
               className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-3 pl-12 pr-4 text-[11px] font-mono focus:outline-none focus:border-emerald-500/40 focus:bg-white/[0.05] transition-all placeholder:text-zinc-700 uppercase"
             />
-          </div>
-          
-          <button className="hidden sm:flex items-center gap-2 bg-emerald-500 text-black px-4 py-3 rounded-xl font-black text-[10px] tracking-widest hover:bg-emerald-400 hover:-translate-y-0.5 transition-all active:scale-95 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
-            <UserPlus size={16} strokeWidth={3} />
-            <span className="hidden xl:inline">REGISTER_NEW</span>
-          </button>
-        </div>
-      </header>
-
-      {/* 3. SUB-HEADER: HUD Stats */}
-      <section className="relative z-10 px-6 lg:px-10 py-4 bg-zinc-950/50 border-b border-white/5">
-        <UserStats />
-      </section>
-
-      {/* 4. MAIN CONTENT: Internal Scroll Area */}
-      <main 
-        {/* Scrollab
