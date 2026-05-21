@@ -114,18 +114,7 @@ export default function UsersPage() {
             
             <p className="absolute bottom-6 font-mono text-[8px] text-zinc-600 tracking-[0.4em] uppercase">
               Nieto Laboratory // Core Production Environment
-            </p>
-          </motion.div>
-        )}
-
-        {/* INTERFAZ 2: CONTROL CENTER DASHBOARD (MÓDULO OPERADORES) */}
-        {currentFlow === 'DASHBOARD' && (
-          <motion.div
-            key="dashboard-interface"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-            className="flex-1 flex flex-col overflow-hidden relative z-10"
+            </p>dden relative z-10"
           >
             {/* HEADER: Mission Telemetry-12 pr-4 text-[11px] font-mono focus:outline-none focus:border-emerald-500/40 focus:bg-white/[0.05] transition-all placeholder:text-zinc-700 uppercase"
                   />
