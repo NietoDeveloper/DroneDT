@@ -212,11 +212,3 @@ export default function DroneDashboardPage() {
                     <DroneCard />
                   </div>
                 </div>
-
-              </main>
-
-              {/* PIE DE PÁGINA PERIFÉRICO */}
-              <footer className="h-10 bg-black border-t border-white/5 px-6 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase relative z-20">
-                <div className="flex gap-6">
-  
-}
