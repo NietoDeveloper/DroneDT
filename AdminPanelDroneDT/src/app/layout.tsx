@@ -43,7 +43,7 @@ export default function RootLayout({
         {/* 
            MAIN CANVAS: 
            Ocupa el 100% del viewport. El scroll solo ocurrirá 
-           dentro de los componentes específicos (tablas, logs, etc.) 
+
         */}
         <main className="flex-1 relative z-10 h-full w-full overflow-hidden">
           {children}
