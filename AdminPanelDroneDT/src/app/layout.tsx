@@ -5,5 +5,4 @@ import Preloader from "@/components/ui/Preloa
  * World-Class Engin
 export const metad
   tit
-    template
-}: {
+    templat
