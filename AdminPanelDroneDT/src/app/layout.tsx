@@ -4,6 +4,6 @@ import Preloader from "@/components/ui/Preloa
  * Metadata - Drone DT Intelligen
  * World-Class Engin
 export const metad
-  title: {
+  tit
     template
 }: {
