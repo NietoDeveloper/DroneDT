@@ -4,7 +4,7 @@ import Preloader from "@/components/ui/Preloader";
 
 /**
  * Metadata - Drone DT Intelligence System
- * World-Class Engineering by NietoDev
+ * World-Class Engineering by Niet
  */
 export const metadata: Metadata {
   title: {
