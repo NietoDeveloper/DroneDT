@@ -20,5 +20,3 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es" className="selection:bg-gold selection:text-black">
-      <body 
