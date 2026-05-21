@@ -56,19 +56,4 @@ export default function UsersPage() {
       <div 
         className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
         style={{ 
-          backgroundImage: 'radial-gradient(circle, #ffffff 0.5px, transparent 0.5px)', 
-          backgroundSize: '24px 24px' 
-        }} 
-      />
-
-      <AnimatePresence mode="wait">
-        {/* INTERFAZ 1: REGISTRO / LOGIN INDUSTRIAL (BYPASS DIRECTO) */}
-        {currentFlow === 'LOGIN' && (
-          <motion.div
-            key="login-interface"
-            initial={{ opacity: 0, scale: 0.98 }}
-
-              </div>
-
-              {/* Caja informati
 }
