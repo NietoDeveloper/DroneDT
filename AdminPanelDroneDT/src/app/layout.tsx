@@ -22,5 +22,3 @@ export default function RootLayout({
   return (
     <html lang="es" className="selection:bg-gold selection:text-black">
       <body 
-        className="
-}
