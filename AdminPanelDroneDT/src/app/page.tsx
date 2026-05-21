@@ -139,8 +139,8 @@ export default function UsersPage() {
         </div>
       </footer>
 
-      <style jsx>{`
-        .custom-scrollbar::-webkit-scrollbar { width:a(255, 255, 255, 0.02); }
+      <style jsx>{`5
+        .custom-scrollbar::-webkit-scrolh:a(255, 25, 255, 0.02); }
         .custom-scrollbar::-webkit-scrollbar-thumb { 
 kground: rgba(16, 185, 129, 0.5); }
       `}</style>
