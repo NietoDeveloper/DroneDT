@@ -11,7 +11,5 @@ export const metadata: Metadata = {
     template: '%s | Panel Control Empresa Drone DT',
     default: 'Panel Control Empresa DroneDT',
   },
-  description: "Sistema de Inteligenci
-  childre
 }: {
   return (
