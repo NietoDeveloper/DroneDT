@@ -4,7 +4,7 @@ import Preloader from "@/components/ui/Preload
 
 /**
  * Metadata - Drone DT Intelligen
- * World-Class Engineering by N
+ * World-Class Engineerin
 export const metad
   title: {
     template
