@@ -131,10 +131,6 @@ export default function UsersPage() {
             onClick={manualRefresh}
             className="hover:text-emerald-500 flex items-center gap-2 transition-colors group"
           >
-            <RefreshCw size={12} className="group-hover:rotate-180 transition-transform duration-500" />
-            REFRESH_SYSTEM
-          </button>
-          <span
-    </div>
+            <RefreshCw size={12} 
   );
 }
