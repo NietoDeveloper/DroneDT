@@ -140,7 +140,6 @@ export default function UsersPage() {
       </footer>
 
       <style jsx>{`5
-        .custom-scrollbar::-webkit-scrolh:a(255, 25, 255, 0.02); }
         .custom-scrollbar::-webkit-scrollbar-thumb { 
 kground: rgba(16, 185, 129, 0.5); }
       `}</style>
