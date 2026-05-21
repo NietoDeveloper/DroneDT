@@ -264,10 +264,7 @@ export default function DroneDashboardPage() {
         .fluid-hud {
           padding: clamp(8px, 0.8vw + 2px, 16px) clamp(16px, 2vw + 8px, 40px);
         }
-
-        .fluid-main {
-          padding: clamp(10px, 1.2vw + 2px, 24px);
-        }
+s
 
         /* Títulos y Métricas que crecen proporcionalmente con la pantalla */
         .fluid-text-title {
