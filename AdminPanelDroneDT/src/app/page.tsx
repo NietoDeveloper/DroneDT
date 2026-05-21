@@ -80,17 +80,5 @@ export default function DroneDashboardPage() {
           >
             <div className="w-full max-w-md bg-zinc-950/40 border border-white/5 rounded-2xl p-8 backdrop-blur-xl relative overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.9)]">
               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FFD700]/40 to-transparent" />
-              
-              <div className="flex flex-col items-center text-center mb-8">
-                <div className="w-12 h-12 rounded-xl bg-white/[0.02] border border-white/10 flex items-center justify-center mb-4 text-[#FFD700]">
-                  <Logo />
-                </div>
-                <h2 className="text-xl font-black tracking-[0.4em] uppercase text-white italic">
-                  ACCESS_GATEWAY
-                </h2>
-                <p className="text-[9px] text-zinc-500 tracking-widest mt-1 uppercase">
-                  Drone DT Ecosystem // Secure Link
-                </p>
-              </div>
 
 
