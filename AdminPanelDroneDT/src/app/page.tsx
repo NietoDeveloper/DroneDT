@@ -218,28 +218,5 @@ export default function DroneDashboardPage() {
               {/* PIE DE PÁGINA PERIFÉRICO */}
               <footer className="h-10 bg-black border-t border-white/5 px-6 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase relative z-20">
                 <div className="flex gap-6">
-                  <span className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[#FFD700] rounded-full shadow-[0_0_8px_#FFD700]" />
-                    NODE: BOG_MASTER_S1
-                  </span>
-                  <span className="hidden sm:flex items-center gap-2">
-                    <Activity size={10} className="text-zinc-700" /> UPLINK: ACTIVE
-                  </span>
-                </div>
-                <div className="flex items-center gap-4">
-                  <button 
-                    onClick={triggerManualHealthCheck}
-                    className="hover:text-[#FFD700] flex items-center gap-2 transition-colors group text-zinc-400"
-                  >
-                    <RefreshCw size={12} className={`${isSystemChecking ? 'animate-spin' : 'group-hover:rotate-180'} transition-transform duration-500`} />
-                    CALIBRATE_TWIN
-                  </button>
-                  <span className="text-zinc-800">|</span>
-                  <span>NIETO_LAB_CORE_V2.6</span>
-
-          scrollbar-width: none !important;
-        }
-      `}</style>
-    </div>
-  );
+  
 }
