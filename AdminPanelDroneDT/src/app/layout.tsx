@@ -32,10 +32,6 @@ export default function RootLayout({
           fixed
           inset-0
           flex
-          flex-col
-
-
-      </body>
-    </html>
+          flex-co
   );
 }
