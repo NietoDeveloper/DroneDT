@@ -31,12 +31,3 @@ export default function UsersPage() {
   // Filtrado en tiempo real para eficiencia de datos
   const filteredOperators = operators.filter(op => 
     op.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    op.email.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  return (
-    <div className="h-screen flex flex-col bg-[#080808] text-white overflow-hidden relative">
-
-      />
-
-    
