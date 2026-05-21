@@ -109,12 +109,6 @@ export default function UsersPage() {
           ) : (
             <div className="h-full flex flex-col items-center justify-center text-zinc-600 animate-in fade-in duration-700">
               <ShieldAlert size={40} strokeWidth={1} className="mb-4 opacity-20" />
-              <span className="font-mono text-[10px] tracking-widest uppercase">No_Operators_Found_In_This_Sector</span>
-            </div>
-          )}
-        </div>
-
-          >
-            <RefreshCw size={12} 
+              <spa
   );
 }
