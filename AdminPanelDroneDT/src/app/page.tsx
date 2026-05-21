@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Preloader } from '@/components/ui/Preloader';
 import { motion, AnimatePresence } from 'framer-motion';
 
-// IMPORTACIÓN EXACTA DE TUS 8 COMPONENTES DEL DASHBOARD
+// IMPORTACIÓN EXACTA DE TUS COMPONENTES DEL DASHBOARD
 import { DroneCard } from '@/components/dashboard/DroneCard';
 import { DroneSkeleton } from '@/components/dashboard/DroneSkeleton';
 import { ErrorShield } from '@/components/dashboard/ErrorShield';
@@ -22,8 +22,8 @@ type FlowState = 'PRELOADER' | 'LOGIN' | 'DASHBOARD';
 
 export default function DroneDashboardPage() {
   const [currentFlow, setCurrentFlow] = useState<FlowState>('PRELOADER');
-  const [systemTime, setSystemTime] = useState('00:00:00');
-  const [isSystemChecking, setIsSystemChecking] = useState(false);
+  const [systemTime, setSystemTime] = useState<string>('00:00:00');
+  const [isSystemChecking, setIsSystemChecking] = useState<boolean>(false);
 
   // Datos mock de alta fidelidad para el HUD superior (Unidades Vendidas vs Disponibles)
   const productMetrics = {
@@ -48,7 +48,7 @@ export default function DroneDashboardPage() {
     };
   }, []);
 
-  const triggerManualHealthCheck = () => {
+  const triggerManualHealthCheck = (): void => {
     setIsSystemChecking(true);
     setTimeout(() => setIsSystemChecking(false), 1200);
   };
@@ -125,7 +125,7 @@ export default function DroneDashboardPage() {
             animate={{ opacity: 1 }}
             className="flex-1 flex overflow-hidden relative z-10 w-full h-full"
           >
-            {/* COMPONENTE 7: SIDEBAR */}
+            {/* COMPONENTE: SIDEBAR */}
             <Sidebar />
 
             {/* PANEL DE CONTROL CENTRAL */}
@@ -248,14 +248,12 @@ export default function DroneDashboardPage() {
 
       {/* ESTILOS INYECTADOS PARA EL MOTOR RESPONSIVO DINÁMICO (310px - 1900px) */}
       <style jsx global>{`
-        /* Configuración de Tipografía y Layout Dinámico mediante Clamps */
         :root {
           --fluid-min-width: 310px;
           --fluid-max-width: 1900px;
         }
 
         .fluid-container {
-          /* Escalado de fuentes globales basado en el viewport */
           font-size: clamp(12px, 0.8vw + 8px, 16px);
         }
 
@@ -271,7 +269,6 @@ export default function DroneDashboardPage() {
           padding: clamp(10px, 1.2vw + 2px, 24px);
         }
 
-        /* Títulos y Métricas que crecen proporcionalmente con la pantalla */
         .fluid-text-title {
           font-size: clamp(14px, 1.2vw + 10px, 28px);
         }
@@ -287,6 +284,7 @@ export default function DroneDashboardPage() {
         }
         * {
           scrollbar-width: none !important;
+          -ms-overflow-style: none !important;
         }
       `}</style>
     </div>
