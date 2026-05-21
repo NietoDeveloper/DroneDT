@@ -203,18 +203,6 @@ export default function UsersPage() {
             {/* FOOTER: System Status Bar */}
             <footer className="h-10 bg-black border-t border-white/5 px-6 lg:px-10 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase relative z-20">
               <div className="flex gap-6">
-                <span className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full shadow-[0_0_8px_#10b981]" />
-                  NODE: BOG_S1
-                </span>
-                <span className="hidden sm:flex items-center gap-2">
-                  <Activity size={10} className="text-zinc-700" /> UPLINK: ACTIVE
-                </span>
-              </div>
-              <div className="flex items-center gap-4">
-                <button 
-                  onClick={manualRefresh}
-              
-    </div>
+                <sp
   );
 }
