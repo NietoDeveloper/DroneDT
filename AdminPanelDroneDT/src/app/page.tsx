@@ -127,18 +127,7 @@ export default function UsersPage() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="flex-1 flex flex-col overflow-hidden relative z-10"
           >
-            {/* HEADER: Mission Telemetry */}
-            <header className="flex flex-col lg:flex-row lg:items-center justify-between p-6 lg:px-10 border-b border-white/5 bg-black/40 backdrop-blur-md">
-              <div className="mb-4 lg:mb-0">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-6 bg-emerald-500 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.5)] animate-pulse" />
-                  <h1 className="text-2xl lg:text-3xl font-black tracking-tighter uppercase italic">
-                    OPERATORS_HUB
-                  </h1>
-                </div>
-                <p className="text-[10px] font-mono text-zinc-500 tracking-[0.4em] mt-1 ml-5 uppercase">
-                  Nieto_Laboratory // Security_Level_S+
-                </p> border border-white/10 rounded-xl py-3 pl-12 pr-4 text-[11px] font-mono focus:outline-none focus:border-emerald-500/40 focus:bg-white/[0.05] transition-all placeholder:text-zinc-700 uppercase"
+            {/* HEADER: Mission Telemetry-12 pr-4 text-[11px] font-mono focus:outline-none focus:border-emerald-500/40 focus:bg-white/[0.05] transition-all placeholder:text-zinc-700 uppercase"
                   />
   );
 }
