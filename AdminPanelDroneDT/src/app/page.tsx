@@ -46,9 +46,4 @@ export default function UsersPage() {
         }} 
       />
 
-      {/* 2. HEADER: Mission Telemetry */}
-      <header className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between p-6 lg:px-10 border-b border-white/5 bg-black/40 backdrop-blur-md">
-        <div className="mb-4 lg:mb-0">
-          <div className="flex items-center gap-3">
-
     
