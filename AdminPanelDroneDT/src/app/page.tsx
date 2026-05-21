@@ -162,18 +162,7 @@ export default function UsersPage() {
 
             {/* SUB-HEADER: HUD Stats */}
             <section className="px-6 lg:px-10 py-4 bg-zinc-950/50 border-b border-white/5">
-              <UserStats />
-            </section>
-
-            {/* MAIN CONTENT: Internal Scroll Area */}
-            <main className="flex-1 overflow-hidden flex flex-col px-4 lg:px-10 py-4">
-              {/* Table Head (Industrial Design) */}
-              <div className="hidden lg:grid grid-cols-12 gap-4 px-6 py-3 border border-white/5 rounded-t-xl bg-white/[0.02] text-[9px] font-black text-zinc-500 uppercase tracking-[0.2em]">
-                <div className="col-span-5 flex items-center gap-2">
-                  <Zap size={10} className="text-emerald-500" /> OPERATOR_IDENTITY
-                </div>
-
-            <footer className="h-10 bg-black border-t border-white/5 px-6 lg:px-10 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase relative z-20">
+              <UserStats />-t border-white/5 px-6 lg:px-10 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase relative z-20">
               <div className="flex gap-6">
                 <sp
   );
