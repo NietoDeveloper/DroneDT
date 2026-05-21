@@ -88,23 +88,5 @@ export default function UsersPage() {
                 </p>
               </div>
 
-              {/* Caja informativa de estado del Clúster */}
-              <div className="mb-6 p-4 bg-zinc-900/30 border border-white/5 rounded-xl font-mono text-[10px] text-zinc-400 space-y-1.5">
-                <div className="flex justify-between">
-                  <span className="text-zinc-600">SECURITY_LEVEL:</span>
-                  <span className="text-[#FFD700] font-bold">RANK_S+ (BOG)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-zinc-600">UPLINK_STATUS:</span>
-                  <span className="text-emerald-500 flex items-center gap-1.5">
-                    <span className="w-1 h-1 bg-emerald-500 rounded-full animate-ping" /> READY
-                  </span>
-                </div>
-              </div>
-
-              {/* Botón de Acceso Directo (Sin validación de claves en esta fase) */}
-              <button
-            {/* HEADER: Mission Telemetry-12 pr-4 text-[11px] font-mono focus:outline-none focus:border-emerald-500/40 focus:bg-white/[0.05] transition-all placeholder:text-zinc-700 uppercase"
-                  />
-  );
+              {/* Caja informati
 }
