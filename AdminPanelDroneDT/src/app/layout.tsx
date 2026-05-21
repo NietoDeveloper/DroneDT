@@ -3,7 +3,7 @@ import "./globals.css";
 import Preloader from "@/components/ui/Preload
 
 /**
- * Metadata - Drone DT Intelligence Sys
+ * Metadata - Drone DT Intelligen
  * World-Class Engineering by Niet
  */
 export const metadata: Metadata {
