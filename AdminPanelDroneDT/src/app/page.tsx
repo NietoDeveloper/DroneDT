@@ -92,10 +92,5 @@ export default function UsersPage() {
           <div className="col-span-5 flex items-center gap-2">
             <Zap size={10} className="text-emerald-500" /> OPERATOR_IDENTITY
           </div>
-          <div className="col-span-2">ACCESS_LEVEL</div>
-          <div className="col-span-2 text-center">LAST_UPLINK</div>
-          <div className="col-span-2 text-center">SYSTEM_STATUS</div>
-          <div className="col-span-1 text-right">MGMT</div>
-        </div>
-
+          <div className="col-span-2">ACCESS
         {/* Scrollab
