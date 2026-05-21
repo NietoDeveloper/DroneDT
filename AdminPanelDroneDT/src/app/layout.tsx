@@ -30,8 +30,5 @@ export default function RootLayout({
           w-screen
           overflow-hidden
           fixed
-          inset-0
-          flex
-          flex-co
   );
 }
