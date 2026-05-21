@@ -30,8 +30,3 @@ export default function DroneDashboardPage() {
     eficienciaFlota: '98.4%'
   };
 
-  useEffect(() => {
-    const preloaderTimer = setTimeout(() => {
-      setCurrentFlow('LOGIN');
-    }, 3500);
-
