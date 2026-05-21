@@ -36,14 +36,7 @@ export default function UsersPage() {
 
   return (
     <div className="h-screen flex flex-col bg-[#080808] text-white overflow-hidden relative">
-      
-      {/* 1. BACKGROUND LAYER: Micro-grid de precisión */}
-      <div 
-        className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
-        style={{ 
-          backgroundImage: 'radial-gradient(circle, #ffffff 0.5px, transparent 0.5px)', 
-          backgroundSize: '24px 24px' 
-        }} 
+
       />
 
     
