@@ -192,14 +192,6 @@ export default function UsersPage() {
                     ))}
                   </div>
                 ) : (
-                  <div className="h-full flex flex-col items-center justify-center text-zinc-600">
-                    <ShieldAlert size={40} strokeWidth={1} className="mb-4 opacity-20" />
-                    <span className="font-mono text-[10px] tracking-widest uppercase">No_Operators_Found_In_This_Sector</span>
-                  </div>
-                )}
-              </div>
-            </main>
-
             {/* FOOTER: System Status Bar */}
             <footer className="h-10 bg-black border-t border-white/5 px-6 lg:px-10 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase relative z-20">
               <div className="flex gap-6">
