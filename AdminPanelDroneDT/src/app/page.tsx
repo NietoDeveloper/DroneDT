@@ -98,9 +98,4 @@ export default function UsersPage() {
           <div className="col-span-1 text-right">MGMT</div>
         </div>
 
-        {/* Scrollable Container */}
-        <div className="flex-1 overflow-y-auto custom-scrollbar border-x border-b border-white/5 rounded-b-xl bg-black/20 backdrop-blur-sm">
-          {filteredOperators.length > 0 ? (
-            <div className="divide-y divide-white/5">
-         
-}
+        {/* Scrollab
