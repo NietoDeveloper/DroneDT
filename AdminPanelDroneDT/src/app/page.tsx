@@ -104,18 +104,6 @@ export default function UsersPage() {
 
               {/* Botón de Acceso Directo (Sin validación de claves en esta fase) */}
               <button
-                onClick={() => setCurrentFlow('DASHBOARD')}
-                className="w-full flex items-center justify-center gap-3 bg-[#FFD700] text-black h-12 rounded-xl font-black text-[11px] tracking-[0.3em] uppercase hover:bg-yellow-400 transition-all active:scale-[0.98] shadow-[0_0_30px_rgba(255,215,0,0.15)] group"
-              >
-                <Cpu size={14} className="group-hover:rotate-90 transition-transform duration-300" />
-                INITIALIZE_DASHBOARD
-              </button>
-            </div>
-            
-            <p className="absolute bottom-6 font-mono text-[8px] text-zinc-600 tracking-[0.4em] uppercase">
-              Nieto Laboratory // Core Production Environment
-            </p>dden relative z-10"
-          >
             {/* HEADER: Mission Telemetry-12 pr-4 text-[11px] font-mono focus:outline-none focus:border-emerald-500/40 focus:bg-white/[0.05] transition-all placeholder:text-zinc-700 uppercase"
                   />
   );
