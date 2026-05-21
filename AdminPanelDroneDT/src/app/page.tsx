@@ -36,23 +36,7 @@ export default function UsersPage() {
     }, 3500);
 
     return () => clearTimeout(preloaderTimer);
-  }, []);
-
-  // Filtrado en tiempo real para eficiencia de datos en el Dashboard
-  const filteredOperators = operators.filter(op => 
-    op.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    op.email.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  // Manejo del estado del flujo secuencial
-  if (currentFlow === 'PRELOADER') {
-    return <Preloader />;
-  }
-
-  return (
-    <div className="h-screen w-screen flex flex-col bg-[#080808] text-white overflow-hidden relative select-none">
-      
-      {/* BACKGROUND LAYER GLOBAL: Micro-grid de precisión aeroespacial */}
+  }, []);recisión aeroespacial */}
       <div 
         className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
         style={{ 
