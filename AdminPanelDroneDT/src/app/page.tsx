@@ -214,12 +214,7 @@ export default function UsersPage() {
               <div className="flex items-center gap-4">
                 <button 
                   onClick={manualRefresh}
-                  className="hover:text-emerald-500 flex items-center gap-2 transition-colors group"
-                >
-                  <RefreshCw size={12} className="group-hover:rotate-180 transition-transform duration-500" />
-                  REFRESH_SYSTEM
-                </button>
-                <span className="text-zinc-800">|</span>
+              
                 <span>NIETO_LAB_CORE_V2.6</span>
 
 
