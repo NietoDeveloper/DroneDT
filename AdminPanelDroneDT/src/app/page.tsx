@@ -35,13 +35,3 @@ export default function DroneDashboardPage() {
       setCurrentFlow('LOGIN');
     }, 3500);
 
-    const interval = setInterval(() => {
-      const now = new Date();
-      setSystemTime(now.toTimeString().split(' ')[0]);
-    }, 1000);
-
-    return () => {
-      clearTimeout(preloaderTimer);
-      clearInterval(interval);
-    };
-  }, []);
