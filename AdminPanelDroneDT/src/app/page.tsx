@@ -215,14 +215,6 @@ export default function UsersPage() {
                 <button 
                   onClick={manualRefresh}
               
-                <span>NIETO_LAB_CORE_V2.6</span>
-round: rgba(255, 255, 255, 0.02); }
-        .custom-scrollbar::-webkit-scrollbar-thumb { 
-          background: rgba(16, 185, 129, 0.2); 
-          border-radius: 10px; 
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: rgba(16, 185, 129, 0.5); }
-      `}</style>
     </div>
   );
 }
