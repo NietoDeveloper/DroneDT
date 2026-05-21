@@ -85,12 +85,5 @@ export default function UsersPage() {
       </section>
 
       {/* 4. MAIN CONTENT: Internal Scroll Area */}
-      <main className="relative z-10 flex-1 overflow-hidden flex flex-col px-4 lg:px-10 py-4">
-        
-        {/* Table Head (Industrial Design) */}
-        <div className="hidden lg:grid grid-cols-12 gap-4 px-6 py-3 border border-white/5 rounded-t-xl bg-white/[0.02] text-[9px] font-black text-zinc-500 uppercase tracking-[0.2em]">
-          <div className="col-span-5 flex items-center gap-2">
-            <Zap size={10} className="text-emerald-500" /> OPERATOR_IDENTITY
-          </div>
-          <div className="col-span-2">ACCESS
+      <main 
         {/* Scrollab
