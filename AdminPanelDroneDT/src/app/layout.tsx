@@ -35,10 +35,7 @@ export default function RootLayout({
           flex-col
         "
 
-        <Preloader />
-
-        {/* Barra superior dorada Aeroespacial - Línea de identidad Drone DT */}
-        <div className="fixed top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-gold via-yellow-color to-gold z-[9999]" />
+        <Preloader />g-gradient-to-r from-gold via-yellow-color to-gold z-[9999]" />
 
         <main className="flex-1 relative z-10 h-full w-full overflow-hidden">
           {children}
