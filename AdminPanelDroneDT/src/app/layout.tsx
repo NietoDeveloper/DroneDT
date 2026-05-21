@@ -34,8 +34,7 @@ export default function RootLayout({
           flex-col
         "
       >
-
-bg-gradient-to-r from-gold via-yellow-color to-gold z-[9999]" />
+999]" />
 
         <main className="flex-1 relative z-10 h-full w-full overflow-hidden">
           {children}
