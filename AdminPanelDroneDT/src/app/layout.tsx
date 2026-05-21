@@ -35,7 +35,6 @@ export default function RootLayout({
           flex-col
         "
 
-        <Preloader />g-gradient-to-r from-gold via-yel-hidden">
           {children}
         </main>
 
