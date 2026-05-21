@@ -53,7 +53,7 @@ export default function RootLayout({
            FOOTER ELIMINADO: 
            Siguiendo el protocolo Nieto Laboratory, la interfaz es una 
            Single Viewport App. El estatus de conexión ahora se integra 
-           mejor dentro de los headers de cada página específica.
+
         */}
       </body>
     </html>
