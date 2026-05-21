@@ -127,9 +127,7 @@ export default function UsersPage() {
           </span>
         </div>
         <div className="flex items-center gap-4">
-          <button 
-            onClick={manualRefresh}
-            className="hover:text-emerald-500 flex items-center gap-2 transition-colors group"
+          <button gap-2 transition-colors group"
           >
             <RefreshCw size={12} 
   );
