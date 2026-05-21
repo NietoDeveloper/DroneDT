@@ -236,40 +236,7 @@ export default function DroneDashboardPage() {
                   </button>
                   <span className="text-zinc-800">|</span>
                   <span>NIETO_LAB_CORE_V2.6</span>
-                </div>
-              </footer>
 
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* ESTILOS INYECTADOS PARA EL MOTOR RESPONSIVO DINÁMICO (310px - 1900px) */}
-      <style jsx global>{`
-        /* Configuración de Tipografía y Layout Dinámico mediante Clamps */
-        :root {
-          --fluid-min-width: 310px;
-          --fluid-max-width: 1900px;
-        }
-
-        .fluid-container {
-          /* Escalado de fuentes globales basado en el viewport */
-          font-size: clamp(12px, 0.8vw + 8px, 16px);
-        }
-
-        .fluid-header {
-          padding: clamp(12px, 1vw + 4px, 24px) clamp(16px, 2vw + 8px, 40px);
-        }
-
-        .fluid-hud {
-          padding: clamp(8px, 0.8vw + 2px, 16px) clamp(16px, 2vw + 8px, 40px);
-        }
-
-        /* Bloqueo total de barras de scroll involuntarias */
-        ::-webkit-scrollbar {
-          display: none !important;
-        }
-        * {
           scrollbar-width: none !important;
         }
       `}</style>
