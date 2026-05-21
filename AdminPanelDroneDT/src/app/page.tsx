@@ -61,12 +61,4 @@ export default function UsersPage() {
         </div>
 
         <div className="flex items-center gap-3 w-full lg:w-auto">
-          <div className="relative flex-1 lg:w-80 group">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-600 group-focus-within:text-emerald-500 transition-colors" />
-            <input 
-              type="text"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="SEARCH_OPERATOR_CREDENTIALS..." 
-              className="w-full bg-white/[0.03] border border-white/10 rounded-xl py-3 pl-12 pr-4 text-[11px] font-mono focus:outline-none focus:border-emerald-500/40 focus:bg-white/[0.05] transition-all placeholder:text-zinc-700 uppercase"
-            />
+    
