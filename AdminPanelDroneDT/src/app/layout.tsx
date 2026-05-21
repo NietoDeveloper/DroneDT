@@ -8,7 +8,5 @@ import Preloader from "@/components/ui/Preloader";
  */
 export const metadata: Metadata = {
   title: {
-    template: '%s | Panel Control Empresa Drone DT',
-    default: 'Panel Control Empresa DroneDT',
-  },
+    template
 }: {
