@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css"; 
-import Preloader from "@/components/ui/Preloader";
+import Preloader from "@/components/ui/Preload
 
 /**
  * Metadata - Drone DT Intelligence Sys
