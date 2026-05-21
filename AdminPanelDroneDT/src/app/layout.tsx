@@ -31,12 +31,7 @@ export default function RootLayout({
           fixed
           inset-0
           flex
-          flex-col
-        "
-      >
-999]" />
-
-        <main className="flex-1 relative z-10 h-full w-full overflow-hidden">
+          flex-colow-hidden">
           {children}
         </main>
 
