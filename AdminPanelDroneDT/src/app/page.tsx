@@ -13,11 +13,3 @@ import {
   Zap,
   Activity
 } from 'lucide-react';
-
-/**
- * PAGE: Personnel Control Center (L5)
- * Architecture: No-Scroll Viewport // 310px - 1900px Responsive
- * Logic: Gatekeeper de Preloader -> Dashboard
- */
-export default function UsersPage() {
-.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
