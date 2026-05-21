@@ -26,7 +26,5 @@ export default function RootLayout({
           bg-main 
           antialiased 
           h-screen 
-          w-screen
-          overflow-hidden
-          fixed
+          w-scree
 }
