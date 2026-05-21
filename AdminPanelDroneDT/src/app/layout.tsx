@@ -31,7 +31,5 @@ export default function RootLayout({
           fixed
           inset-0
 
-      </body>
-    </html>
   );
 }
