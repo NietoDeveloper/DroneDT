@@ -20,14 +20,4 @@ import {
  * Logic: Gatekeeper de Preloader -> Dashboard
  */
 export default function UsersPage() {
-  const { operators, manualRefresh, isLoading } = useUserManagement();
-  const [searchTerm, setSearchTerm] = useState('');
-
-  // 1. GATEKEEPER: Si el Hook está en fase de Uplink, mostramos Preloader L5
-  if (isLoading) {
-    return <Preloader />;
-  }
-
-  // Filtrado en tiempo real para eficiencia de datos
-  const filteredOperators = operators.filter(op => 
-    op.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
