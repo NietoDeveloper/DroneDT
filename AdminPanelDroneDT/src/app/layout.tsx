@@ -49,10 +49,7 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* 
-           FOOTER ELIMINADO: 
-           Siguiendo el protocolo Nieto Laboratory, la interfaz es una 
-           Single Viewport App. El estatus de conexión ahora se integra 
+ 
 
         */}
       </body>
