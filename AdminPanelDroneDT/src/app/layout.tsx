@@ -12,4 +12,3 @@ export const metadata: Metadata = {
     default: 'Panel Control Empresa DroneDT',
   },
 }: {
-  return (
