@@ -53,7 +53,5 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
           text: 'text-rose-400',
           border: 'border-rose-500/30',
           bg: 'bg-rose-500/5',
-          shadow: 'shadow-[0_0_15px_rgba(244,63,94,0.05)]',
-          icon: <Zap className="w-2 h-2 lg:w-4 lg:h-4 text-rose-500" />
-        };
+          shadow: 'shadow-[0_0_15px_rgba(244,63,94,0.0
     }
