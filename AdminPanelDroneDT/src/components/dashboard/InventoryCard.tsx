@@ -116,12 +116,7 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
                   animate={{ width: `${Math.min(product.stock * 10, 100)}%` }}
                   transition={{ duration: 1, ease: "easeOut" }}
                   className={`h-full ${product.stock > 0 ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]' : 'bg-rose-500'}`} 
-                />
-             </div>
-          </div>
-        </div>
-
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-0 group-hover:h-1/2 bg-emerald-500 transition-all duration-500" />
+                />2 w-[2px] h-0 group-hover:h-1/2 bg-emerald-500 transition-all duration-500" />
     </motion.div>
   );
 };
