@@ -52,6 +52,4 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
         return {
           text: 'text-rose-400',
           border: 'border-rose-500/30',
-          bg: 'bg-rose-500/5',
-          shadow: 'shadow-[0_0_15px_rgba(244,63,94,0.0
     }
