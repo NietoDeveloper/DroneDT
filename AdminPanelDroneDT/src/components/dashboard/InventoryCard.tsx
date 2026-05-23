@@ -57,7 +57,3 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
           icon: <Zap className="w-2 h-2 lg:w-4 lg:h-4 text-rose-500" />
         };
     }
-  };
-
-  const ui = getS
-};
