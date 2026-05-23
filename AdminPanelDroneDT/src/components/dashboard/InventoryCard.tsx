@@ -102,17 +102,7 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
         <div className="flex flex-col gap-1">
           <span className="text-[7px] lg:text-[10px] text-zinc-600 uppercase font-black tracking-widest">Disponibilidad</span>
           <div className="flex items-baseline gap-1">
-            <span className="text-sm lg:text-2xl font-black text-white">{product.stock}</span>
-            <span className="text-[8px] lg:text-[11px] text-zinc-500 font-bold italic uppercase">Units</span>
-          </div>
-        </div>
-        
-        <div className="flex flex-col border-l border-white/10 pl-4 gap-1">
-          <span className="text-[7px] lg:text-[10px] text-zinc-600 uppercase font-black tracking-widest">Carga_Núcleo</span>
-          <div className="flex items-center h-full">
-             <div className="flex-1 h-1 lg:h-2 bg-zinc-900 rounded-full overflow-hidden border border-white/5">
-                <motion.div 
-                  initial={{ width: 0 }} transition-all duration-500" />
+0" />
     </motion.div>
   );
 };
