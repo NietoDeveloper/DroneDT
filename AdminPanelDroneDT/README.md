@@ -35,9 +35,7 @@ dronedt-admin/
 ├── src/
 │   ├── app/
 │   │   ├── (auth)/                # Flujo de Acceso
-│   │   │   ├── login/page.tsx      # Logiuctos e inventarios
-│   │   │   ├── chat/page.tsx       # Mensajería en tiempo real
-│   │   │   └── cms-manager/page.tsx # Actualización de títulos/secciones del front
+│   │   │   ├── login/page.tsx      # Logiucto de títulos/secciones del front
 │   │   └── api/                    # Backend interno (Serverless Functions)
 │   │       ├── auth/[...nextauth]/route.ts
 │   │       └── upload-video/route.ts
