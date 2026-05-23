@@ -37,7 +37,7 @@ dronedt-admin/
 │   │   ├── api/socket-client.ts    # Cliente para WebSockets / Real-time
 │   │   └── utils/formatters.ts     # Formateo de moneda y fechas
 │   ├── types/                      # Definiciones estrictas de TS
-│   │   ├── user.types.ts           # Roles y permisos (Admin/Operador)
+│   │   ├── user.tyes.ts           # Roles y permisos (Admin/Operador)
 │   │   ├── sales.types.ts          # Estructuras de ventas D/M/A
 │   │   └── product.types.ts
 │   └── config/
