@@ -30,7 +30,3 @@ interface DroneProduct {
  */
 export const InventoryCard = ({ product }: { product: DroneProduct }) => {
   
-  const getStatusStyles = (status: string) => {
-    switch (status) {
-      case 'active': 
-          text: 'text-amber-400',,0
