@@ -35,12 +35,7 @@ dronedt-admin/
 ├── src/
 │   ├── app/
 │   │   ├── (auth)/                # Flujo de Acceso
-│   │   │   ├── login/page.tsx      # Logiucto de títulos/secciones del front
-│   │   └── api/                    # Backend interno (Serverless Functions)
-│   │       ├── auth/[...nexs
-│   ├── components/
-│   │   ├── ui/                     # Botones, inputs, modales (Estilo Software DT)
-│   │   ├── layout/                 # Sidebar.tsx, Navbar.tsx
+│   │   │   ├── login/page.tsx      # LogiuctoNavbar.tsx
 │   │   ├── charts/                 # Gráficos dinámicos de ventas
 │   │   ├── dashboard/              # SalesCentralizer.tsx, LiveVideoPlayer.tsx
 │   │   ├── users/                  # UserManagementTable.tsx
