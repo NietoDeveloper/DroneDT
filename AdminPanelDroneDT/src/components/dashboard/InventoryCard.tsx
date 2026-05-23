@@ -12,9 +12,6 @@ import {
 
 interface DroneProduct {
   _id: string;
-  name: string;
-  status: 'active' | 'maintenance' | 'offline';
-
 
 
 /**
