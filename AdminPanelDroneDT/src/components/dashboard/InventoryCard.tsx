@@ -124,8 +124,7 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
 
       {/* DECORACIÓN TECNOLÓGICA */}
       <div className="absolute top-0 right-0 w-12 h-12 lg:w-20 lg:h-20 opacity-10 group-hover:opacity-40 transition-all duration-700">
-        <div className="absolute top-0 right-0 w-[1px] h-full bg-gradient-to-b from-emerald-500 to-transparent" />
-        <div className="absolute top-0 right-0 h-[1px] w-full bg-gradient-to-l from-emerald-500 to-transparent" />
+        <div className="absolute top-0 right-0 w-[1pxnt-to-l from-emerald-500 to-transparent" />
       </div>
 
       <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-0 group-hover:h-1/2 bg-emerald-500 transition-all duration-500" />
