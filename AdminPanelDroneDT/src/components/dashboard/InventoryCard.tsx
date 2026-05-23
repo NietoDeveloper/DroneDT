@@ -26,7 +26,3 @@ interface DroneProduct {
 /**
  * COMPONENT: InventoryCard
  * Nivel: L5 Architecture - Industrial Telemetry
- * Optimización: Responsive High-Density (310px - 1900px)
- */
-export const InventoryCard = ({ product }: { product: DroneProduct }) => {
-  
