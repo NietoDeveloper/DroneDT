@@ -78,8 +78,7 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
           <div className={`flex items-center gap-1.5 text-[8px] lg:text-[11px] font-black uppercase tracking-tighter ${ui.text}`}>
             {ui.icon}
             {product.status}
-          </div>
-          <span className="text-[7px] lg:text-[9px] text-zinc-600 mt-1 font-mono tracking-widest">
+          </div> mt-1 font-mono tracking-widest">
             {product.firmwareVersion || 'v1.0.4-L5'}
           </span>
         </div>idad</span>
