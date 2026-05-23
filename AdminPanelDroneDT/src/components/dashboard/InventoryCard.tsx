@@ -35,11 +35,5 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
       case 'active': 
         return {
           text: 'text-emerald-400',
-          border: 'border-emerald-500/30',
-          bg: 'bg-emerald-500/5',
-          shadow: 'shadow-[0_0_15px_rgba(16,185,129,0.05)]',
-          icon: <CheckCircle2 className="w-2 h-2 lg:w-4 lg:h-4 text-emerald-500" />
-        };
-      case 'maintenance': 
-        return {
+          border: 'border-emerald-500
           text: 'text-amber-400',,0
