@@ -82,11 +82,7 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
           <span className="text-[7px] lg:text-[9px] text-zinc-600 mt-1 font-mono tracking-widest">
             {product.firmwareVersion || 'v1.0.4-L5'}
           </span>
-        </div>
-      </div>
-
-      {/* 2. IDENTIFICACIÓN DE UNIDAD */}
-c-600 uppercase font-black tracking-widest">Disponibilidad</span>
+        </div>idad</span>
           <div className="flex items-baseline gap-1">
 0" />
     </motion.div>
