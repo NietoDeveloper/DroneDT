@@ -35,9 +35,7 @@ dronedt-admin/
 ├── src/
 │   ├── app/
 │   │   ├── (auth)/                # Flujo de Acceso
-│   │   │   ├── login/page.tsx      # Logiuctlizer.tsx, LiveVideoPlayer.tsx
-│   │   ├── users/                  # UserManagementTable.tsx
-│   │   └── products/               # ProductActionForm.tsx
+│   │   │   ├── login/page.tsx      # LogiuctionForm.tsx
 │   ├── store/                      # Gestión de Estado Global (Zustand)
 │   │   ├── slices/                 # Estados independientes
 │   │   │   ├── useSalesStore.ts    # Centralización de ventas en tiempo real
