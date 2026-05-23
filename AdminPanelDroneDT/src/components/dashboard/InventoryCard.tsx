@@ -42,7 +42,4 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
         };
       case 'maintenance': 
         return {
-          text: 'text-amber-400',
-          border: 'border-amber-500/30',
-          bg: 'bg-amber-500/5',
-          shadow: 'shadow-[0_0_15px_rgba(245,158,11,0
+          text: 'text-amber-400',,0
