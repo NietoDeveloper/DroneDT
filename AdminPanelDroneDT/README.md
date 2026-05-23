@@ -35,8 +35,7 @@ dronedt-admin/
 ├── src/
 │   ├── app/
 │   │   ├── (auth)/                # Flujo de Acceso
-│   │   │   ├── login/page.tsx      # Logi
-│   │   │   ├── products/page.tsx   # CRUD de productos e inventarios
+│   │   │   ├── login/page.tsx      # Logiuctos e inventarios
 │   │   │   ├── chat/page.tsx       # Mensajería en tiempo real
 │   │   │   └── cms-manager/page.tsx # Actualización de títulos/secciones del front
 │   │   └── api/                    # Backend interno (Serverless Functions)
