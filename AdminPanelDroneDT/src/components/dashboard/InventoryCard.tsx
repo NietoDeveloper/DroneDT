@@ -68,11 +68,6 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
       transition={{ duration: 0.4, ease: "easeOut" }}
       className={`group relative p-3 lg:p-6 rounded-xl border ${ui.border} ${ui.bg} ${ui.shadow} backdrop-blur-xl hover:bg-white/[0.04] transition-all duration-500 overflow-hidden`}
     >
-      
-      {/* 1. HEADER: TELEMETRÍA RÁPIDA */}-white/40 group-hover:text-emerald-400 group-hover:rotate-45 transition-all" />
-        </div>
-        </div>idad</span>
-          <div className="flex items-baseline gap-1">
 0" />
     </motion.div>
   );
