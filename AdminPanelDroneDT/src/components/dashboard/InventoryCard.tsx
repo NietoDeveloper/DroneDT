@@ -24,5 +24,3 @@ interface DroneProduct {
 }
 
 /**
- * COMPONENT: InventoryCard
- * Nivel: L5 Architecture - Industrial Telemetry
