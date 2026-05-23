@@ -37,8 +37,7 @@ dronedt-admin/
 │   │   ├── (auth)/                # Flujo de Acceso
 │   │   │   ├── login/page.tsx      # Logiucto de títulos/secciones del front
 │   │   └── api/                    # Backend interno (Serverless Functions)
-│   │       ├── auth/[...nextauth]/route.ts
-│   │       └── upload-video/route.ts
+│   │       ├── auth/[...nexs
 │   ├── components/
 │   │   ├── ui/                     # Botones, inputs, modales (Estilo Software DT)
 │   │   ├── layout/                 # Sidebar.tsx, Navbar.tsx
