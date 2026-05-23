@@ -14,8 +14,7 @@ interface DroneProduct {
   _id: string;
   name: string;
   status: 'active' | 'maintenance' | 'offline';
-  stock: number;
-  batteryLevel?: number;
+
   sku?: string;
   firmwareVersion?: string;
 }
