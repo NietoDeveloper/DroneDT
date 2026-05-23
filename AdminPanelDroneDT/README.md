@@ -35,10 +35,7 @@ dronedt-admin/
 ├── src/
 │   ├── app/
 │   │   ├── (auth)/                # Flujo de Acceso
-│   │   │   ├── login/page.tsx      # Login con botón Gold e identidad visual
-│   │   │   └── layout.tsx          # Fondo de malla y centrado de paneles
-cipal (Ventas Totales D/M/A)
-│   │   │   ├── users/page.tsx      # Gestión de usuarios: autorizar, crear, borrar
+│   │   │   ├── login/page.tsx      # Logi
 │   │   │   ├── products/page.tsx   # CRUD de productos e inventarios
 │   │   │   ├── chat/page.tsx       # Mensajería en tiempo real
 │   │   │   └── cms-manager/page.tsx # Actualización de títulos/secciones del front
