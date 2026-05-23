@@ -10,8 +10,3 @@ import {
   Zap, 
 
 
-interface DroneProduct {
-  _id: string;
-
-
-/**
