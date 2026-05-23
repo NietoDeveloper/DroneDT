@@ -33,11 +33,7 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 ---
 dronedt-admin/
 ├── src/lobal (Zustand)
-│   │   ├── slices/                 # Estados independientes
-│   │   │   ├── useSalesStore.ts    # Centralización de ventas en tiempo real
-│   │   │   ├── useInventoryStore.ts 
-│   │   │   ├── useChatStore.ts
-│   │   │   └── useUserAdminStore.ts
+│   │   ├── slices/                 # Es
 │   │   └── index.ts                # Exportación unificada de stores
 │   ├── services/                   # Comunicación con Backend Express
 │   │   ├── userService.ts          # Lógica para autorizar y borrar usuarios
