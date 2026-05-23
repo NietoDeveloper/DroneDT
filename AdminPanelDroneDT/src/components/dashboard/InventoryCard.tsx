@@ -45,7 +45,4 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
           text: 'text-amber-400',
           border: 'border-amber-500/30',
           bg: 'bg-amber-500/5',
-          shadow: 'shadow-[0_0_15px_rgba(245,158,11,0.05)]',
-          icon: <AlertCircle className="w-2 h-2 lg:w-4 lg:h-4 text-amber-500" />
-        };
-      default: 
+          shadow: 'shadow-[0_0_15px_rgba(245,158,11,0
