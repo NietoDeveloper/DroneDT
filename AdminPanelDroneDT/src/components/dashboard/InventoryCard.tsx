@@ -69,10 +69,7 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
       className={`group relative p-3 lg:p-6 rounded-xl border ${ui.border} ${ui.bg} ${ui.shadow} backdrop-blur-xl hover:bg-white/[0.04] transition-all duration-500 overflow-hidden`}
     >
       
-      {/* 1. HEADER: TELEMETRÍA RÁPIDA */}
-      <div className="flex justify-between items-start mb-4 lg:mb-8">
-        <div className="p-1.5 lg:p-3 bg-zinc-950/50 rounded-lg border border-white/5 group-hover:border-emerald-500/30 transition-all duration-500">
-          <Navigation className="w-3 h-3 lg:w-6 lg:h-6 text-white/40 group-hover:text-emerald-400 group-hover:rotate-45 transition-all" />
+      {/* 1. HEADER: TELEMETRÍA RÁPIDA */}-white/40 group-hover:text-emerald-400 group-hover:rotate-45 transition-all" />
         </div>
         </div>idad</span>
           <div className="flex items-baseline gap-1">
