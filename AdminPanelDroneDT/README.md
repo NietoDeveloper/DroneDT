@@ -31,7 +31,60 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 | **Charts** | Recharts / Chart.js |
 
 ---
-
+dronedt-admin/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx                  # Root Layout con viewport unificado (Responsive 310px - 1900px)
+│   │   ├── page.tsx                    # Preloader con pasarela de acceso y bypass directo sin sesión
+│   │   ├── (auth)/                     # FLUJO DE ACCESO CRIPTOGRÁFICO
+│   │   │   ├── login/page.tsx          # Login UI con estética espacial SpaceX y botón Gold (#FFD700)
+│   │   │   └── layout.tsx              # Fondo de malla reactiva y centrado estructural de paneles
+│   │   └── (dashboard)/                # CENTRO DE MANDO OPERATIVO L5
+│   │       ├── layout.tsx              # Orquestador maestro de la UI base (Sidebar + Navbar inyectados)
+│   │       ├── page.tsx                # Dashboard Principal: Grid Bento con analíticas y telemetría industrial
+│   │       ├── users/page.tsx          # Gestión avanzada de operarios: autorizaciones, altas y bajas
+│   │       ├── products/page.tsx       # CRUD de sistemas de drones e indexación de Gemelos Digitales (DT)
+│   │       ├── chat/page.tsx           # Terminal de mensajería cifrada interna en tiempo real
+│   │       └── cms-manager/page.tsx    # Gestión e inyección de strings/títulos del Frontend público
+│   ├── components/
+│   │   ├── ui/                         # COMPONENTES ATÓMICOS DE ALTA FIDELIDAD (SpaceX Style)
+│   │   │   ├── button.tsx              # Botones optimizados de grado aeroespacial (Gold & Gainsboro)
+│   │   │   ├── input.tsx               # Cajas de texto oscuras con foco reactivo e indicadores neon
+│   │   │   └── dialog.tsx              # Modales HUD flotantes integrados con desenfoque (backdrop-blur)
+│   │   ├── layout/                     # ENVOLTURAS INFRAESTRUCTURALES DE NAVEGACIÓN
+│   │   │   ├── Sidebar.tsx             # Panel colapsable optimizado para densidad de pixeles en pantallas HD
+│   │   │   └── Navbar.tsx              # Barra superior: Telemetría de red, alertas críticas y perfil del operador
+│   │   ├── charts/                     # CAPA DE VISUALIZACIÓN VECTORIAL
+│   │   │   └── SalesCharts.tsx         # Gráficos de rendimiento comercial históricos y proyectados (D/M/A)
+│   │   └── dashboard/                  # COMPONENTES TELEMÉTRICOS DEL CORE (Estabilizados)
+│   │       ├── SalesCentralizer.tsx    # Streaming ininterrumpido de transacciones (Live Data Core Module)
+│   │       ├── InventoryCard.tsx       # Módulo de stock con blindaje L5 ante 'undefined' e inyección automática de fallback
+│   │       ├── InventoryGrid.tsx       # Distribuidor bento-grid balanceado autoadaptable
+│   │       ├── LiveVideoPlayer.tsx     # Reproductor HUD de monitoreo para transmisión en vivo de drones
+│   │       └── ErrorShield.tsx         # Perímetro de aislamiento perimetral ante excepciones en tiempo de ejecución
+│   ├── store/                          # GESTIÓN DE ESTADO GLOBAL CENTRALIZADO (Zustand React)
+│   │   ├── slices/                     # Rebanadas atómicas de datos independientes
+│   │   │   ├── useSalesStore.ts        # Centralización analítica de ingresos y unidades en tiempo real
+│   │   │   ├── useInventoryStore.ts    # Indexación y control instantáneo de existencias de drones industriales
+│   │   │   ├── useChatStore.ts         # Logs y canales de flujo continuo vía WebSockets
+│   │   │   └── useUserAdminStore.ts    # Estado administrativo para autorizaciones y roles (RBAC)
+│   │   └── index.ts                    # Punto de unificación e importación limpia de la arquitectura de estados
+│   ├── services/                       # CAPA DE CLIENTE DE RED (Consumo Core del Backend Express)
+│   │   ├── userService.ts              # Pasarela de credenciales y administración de accesos
+│   │   ├── productService.ts           # Despacho de operaciones CRUD de productos e inventarios
+│   │   └── cmsService.ts               # Sincronización del estado visual y strings del Frontend público
+│   ├── lib/
+│   │   ├── api/socket-client.ts        # Instancia aislada de WebSocket para flujos continuos full-duplex
+│   │   └── utils/formatters.ts         # Formateadores matemáticos de precisión para divisas y fechas
+│   ├── types/                          # ESPECIFICACIONES DE TIPADO ESTRICTO (TypeScript Definition Layer)
+│   │   ├── user.types.ts               # Estructuras de roles operativos y perfiles de operarios (RBAC)
+│   │   ├── sales.types.ts              # Tipados de analíticas financieras y flujos de ventas
+│   │   └── product.types.ts            # Esquemas técnicos de drones (UID, carga de núcleo, firmware, stock)
+│   └── config/
+│       ├── navigation.ts               # Árbol estático de rutas y mapeo de iconos del Sidebar
+│       └── permissions.ts              # Matriz estricta para el control de acceso basado en roles (RBAC)
+├── tailwind.config.ts                  # Variables industriales: Gold (#FFD700), Gainsboro (#DCDCDC) y Zinc Muted
+└── README.md                           # Manifiesto Técnico de Élite - Nieto Laboratory
 ---
 
 ## 🔑 Key Features
