@@ -33,7 +33,4 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
   const getStatusStyles = (status: string) => {
     switch (status) {
       case 'active': 
-        return {
-          text: 'text-emerald-400',
-          border: 'border-emerald-500
           text: 'text-amber-400',,0
