@@ -15,8 +15,6 @@ interface DroneProduct {
   name: string;
   status: 'active' | 'maintenance' | 'offline';
 
-  sku?: string;
-  firmwareVersion?: string;
-}
+
 
 /**
