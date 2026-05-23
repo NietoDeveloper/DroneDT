@@ -34,9 +34,7 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 dronedt-admin/
 ├── src/lobal (Zustand)
 │   │   ├── slices/                 # Es
-│   │   ├── api/socket-client.ts    # Cliente para WebSockets / Real-time
-│   │   └── utils/formatters.ts     # Formateo de moneda y fechas
-│   ├── types/                      # Definiciones estrictas de TS
+│   │   ├── api/socket-client.ts    # Cliente estrictas de TS
 │   │   ├── user.tyes.ts           # Roles y permisos (Admin/Operador)
 │   │   ├── sales.types.ts          # Estructuras de ventas D/M/A
 │   │   └── product.types.ts
