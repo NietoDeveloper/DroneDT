@@ -8,10 +8,7 @@ import {
   Cpu, 
   Battery, 
   Zap, 
-  AlertCircle, 
-  CheckCircle2, 
-  Navigation 
-} from 'lucide-react';
+
 
 interface DroneProduct {
   _id: string;
