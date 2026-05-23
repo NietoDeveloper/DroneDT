@@ -74,9 +74,6 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
         <div className="p-1.5 lg:p-3 bg-zinc-950/50 rounded-lg border border-white/5 group-hover:border-emerald-500/30 transition-all duration-500">
           <Navigation className="w-3 h-3 lg:w-6 lg:h-6 text-white/40 group-hover:text-emerald-400 group-hover:rotate-45 transition-all" />
         </div>
-        <div className="flex flex-col items-end">
-          <div className={`flex items-center gap
-          </span>
         </div>idad</span>
           <div className="flex items-baseline gap-1">
 0" />
