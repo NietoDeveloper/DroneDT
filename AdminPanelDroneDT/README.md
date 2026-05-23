@@ -32,9 +32,7 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 
 ---
 dronedt-admin/
-├── src/lobal (Zustand)
-│   │   ├── slices/                 # Es
-└── README.md                       # Identidad Técnica NietoDeveloper
+├── src                     # Identidad Técnica NietoDeveloper
 ---
 
 ## 🔑 Key Features
