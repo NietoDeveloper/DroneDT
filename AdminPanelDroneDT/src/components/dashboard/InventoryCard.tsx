@@ -59,9 +59,5 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
     }
   };
 
-  const ui = getStatusStyles(product.status);
-
-  return (
-    </motion.div>
-  );
+  const ui = getS
 };
