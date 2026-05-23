@@ -31,8 +31,7 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 | **Charts** | Recharts / Chart.js |
 
 ---
-dronedt-admin/
-├── src                     # Identidad Técnica NietoDeveloper
+
 ---
 
 ## 🔑 Key Features
