@@ -86,21 +86,7 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
       </div>
 
       {/* 2. IDENTIFICACIÓN DE UNIDAD */}
-      <div className="space-y-1 lg:space-y-3">
-        <h3 className="text-[11px] lg:text-[16px] xl:text-[18px] font-black text-white/90 truncate uppercase tracking-tight group-hover:text-white transition-colors">
-          {product.name}
-        </h3>
-        <div className="flex items-center gap-2">
-          <span className="text-[8px] lg:text-[10px] font-mono text-zinc-500 bg-black/60 px-1.5 py-0.5 lg:px-2 lg:py-1 rounded border border-white/5 uppercase">
-            UID_{product._id?.slice(-8).toUpperCase() || 'UNKNOWN'}
-          </span>
-        </div>
-      </div>
-
-      {/* 3. MÉTRICAS OPERATIVAS */}
-      <div className="mt-6 lg:mt-10 grid grid-cols-2 gap-4 border-t border-white/10 pt-4 lg:pt-6">
-        <div className="flex flex-col gap-1">
-          <span className="text-[7px] lg:text-[10px] text-zinc-600 uppercase font-black tracking-widest">Disponibilidad</span>
+c-600 uppercase font-black tracking-widest">Disponibilidad</span>
           <div className="flex items-baseline gap-1">
 0" />
     </motion.div>
