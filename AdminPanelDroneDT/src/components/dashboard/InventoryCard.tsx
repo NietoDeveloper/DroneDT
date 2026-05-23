@@ -6,7 +6,3 @@ import { motion } from 'framer-motion';
 import { 
   Package, 
   Cpu, 
-  Battery, 
-  Zap, 
-
-
