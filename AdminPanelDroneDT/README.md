@@ -32,10 +32,7 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 
 ---
 dronedt-admin/
-├── src/
-│   ├── app/
-│   │   ├── (auth)/                # Flujo deorm.tsx
-│   ├── store/                      # Gestión de Estado Global (Zustand)
+├── src/lobal (Zustand)
 │   │   ├── slices/                 # Estados independientes
 │   │   │   ├── useSalesStore.ts    # Centralización de ventas en tiempo real
 │   │   │   ├── useInventoryStore.ts 
