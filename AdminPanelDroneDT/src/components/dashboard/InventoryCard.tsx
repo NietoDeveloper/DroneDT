@@ -75,11 +75,7 @@ export const InventoryCard = ({ product }: { product: DroneProduct }) => {
           <Navigation className="w-3 h-3 lg:w-6 lg:h-6 text-white/40 group-hover:text-emerald-400 group-hover:rotate-45 transition-all" />
         </div>
         <div className="flex flex-col items-end">
-          <div className={`flex items-center gap-1.5 text-[8px] lg:text-[11px] font-black uppercase tracking-tighter ${ui.text}`}>
-            {ui.icon}
-            {product.status}
-          </div> mt-1 font-mono tracking-widest">
-            {product.firmwareVersion || 'v1.0.4-L5'}
+          <div className={`flex items-center gap
           </span>
         </div>idad</span>
           <div className="flex items-baseline gap-1">
