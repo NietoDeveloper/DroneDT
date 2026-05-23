@@ -34,8 +34,6 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 dronedt-admin/
 ├── src/lobal (Zustand)
 │   │   ├── slices/                 # Es
-│   │   ├── api/socket-client.ts    # Cliente ezación (RBAC)
-├── tailwind.config.ts              # Colores Gold (#FFD700) y Gainsboro (#DCDCDC)
 └── README.md                       # Identidad Técnica NietoDeveloper
 ---
 
