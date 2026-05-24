@@ -54,13 +54,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
 
       if (!response.ok) throw new Error(`TELEMETRY_SYNC_ERROR: ${response.status}`);
 
-      const data = await response.json();
-
-      // 3. Deduplicación inteligente: Solo actualizamos si hay cambios reales en la flota
-      if (Array.isArray(data)) {
-        const hasChanged = JSON.stringify(data) !== JSON.stringify(productsRef.current);
-        
-        if (hasChanged) {
           setProducts(data);
         }
         
