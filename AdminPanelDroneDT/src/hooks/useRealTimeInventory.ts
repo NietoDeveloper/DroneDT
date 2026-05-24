@@ -18,18 +18,7 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
   const productsRef = useRef(useInventoryStore.getState().products);
 
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const abortControllerRef = useRef<AbortController | null>(null);
-  const retryCount = useRef(0);
-
-  // Sincronizar la Ref con el Store global de Drone DT
-  useEffect(() => {
-    return useInventoryStore.subscribe(
-      (state) => (productsRef.current = state.products)
-    );
-  }, []);
-
-  const fetchInventory = useC
-        
+  const abortControllerRef = useRef<AbortController | 
         setError(null);
         retryCount.current = 0;
       }
