@@ -96,13 +96,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     startPolling();
 
     // Page Visibility API: Optimización de recursos de red y CPU
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        if (timerRef.current) clearInterval(timerRef.current);
-      } else {
-        fetchInventory(); 
-        startPolling();
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
