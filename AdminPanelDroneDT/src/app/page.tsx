@@ -158,14 +158,6 @@ export default function DroneDashboardPage() {
               {/* HUD DE MÉTRICAS CORE: AJUSTADO A RESPONSIVE EXTREMO */}
               <section className="fluid-hud grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 bg-zinc-950/40 border-b border-white/5 font-mono w-full">
                 <div className="bg-white/[0.01] border border-white/5 p-3 rounded-xl flex flex-row sm:flex-col justify-between items-center sm:items-start">
-                  <div className="flex items-center gap-2 text-zinc-500 text-[9px] tracking-widest uppercase">
-                    <Package size={12} className="text-[#FFD700]" /> UNITS_AVAILABLE
-                  </div>
-                  <div className="fluid-text-metric font-black text-[#FFD700] tracking-tight sm:mt-1">
-                    {productMetrics.totalDisponibles} <span className="text-[9px] font-normal text-zinc-500">U</span>
-                  </div>
-                </div>
-                
-                <div className="bg
+                  <div className="fl
                 <div className="md:col-span-2 lg:col-span-2 bg-zinc-950/20 border border-white/5 rounded-xl p-2 overflow-hidden flex flex-col justify-between min-h-[220px] lg:min-h-0">
                   <
