@@ -259,13 +259,6 @@ export default function DroneDashboardPage() {
           font-size: clamp(11px, 0.7vw + 7px, 15px);
         }
 
-        .fluid-header {
-          padding-top: clamp(10px, 1vw + 2px, 20px);
-          padding-bottom: clamp(10px, 1vw + 2px, 20px);
-          padding-left: clamp(12px, 2vw + 4px, 32px);
-          padding-right: clamp(12px, 2vw + 4px, 32px);
-        }
-
     </div>
   );
 }
