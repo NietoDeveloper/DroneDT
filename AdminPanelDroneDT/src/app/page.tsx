@@ -277,15 +277,6 @@ export default function DroneDashboardPage() {
           padding: clamp(8px, 1vw + 2px, 20px);
         }
 
-        .fluid-text-title {
-          font-size: clamp(12px, 1vw + 8px, 24px);
-        }
-
-        .fluid-text-metric {
-          font-size: clamp(16px, 1.5vw + 10px, 32px);
-          line-height: 1;
-        }
-
 
     </div>
   );
