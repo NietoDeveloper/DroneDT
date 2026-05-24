@@ -120,13 +120,6 @@ export default function DashboardL5() {
             )}
           </div>
         </div>
-
-        {/* COLUMNA DERECHA: PANEL DE CONTROL */}
-        <aside className="hidden lg:flex lg:w-[250px] xl:w-[350px] flex-shrink-0 flex-col bg-black">
-          <button className="h-[60px] lg:h-[80px] w-full bg-emerald-500 hover:bg-emerald-400 text-black font-black text-[11px] lg:text-[14px] uppercase tracking-[0.3em] transition-all active:scale-[0.98] flex items-center justify-center gap-3">
-            <Plus className="w-4 h-4 lg:w-6 lg:h-6" strokeWidth={4} />
-            REGISTRAR_DRONE00 ${loading ? 'w-[85%]' : 'w-[15%]'}`} />
-                </div>
               </div>
             </div>
           </div>
