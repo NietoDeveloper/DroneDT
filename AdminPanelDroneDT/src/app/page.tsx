@@ -80,17 +80,7 @@ export default function DroneDashboardPage() {
             transition={{ duration: 0.4, ease: 'easeInOut' }}
             className="flex-1 z-10 flex flex-col items-center justify-center px-4 w-full h-full overflow-hidden"
           >
-            <div className="w-full max-w-sm sm:max-w-md bg-zinc-950/40 border border-white/5 rounded-2xl p-6 sm:p-8 backdrop-blur-xl relative overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.9)]">
-              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#FFD700]/40 to-transparent" />
-              
-              <div className="flex flex-col items-center text-center mb-6 sm:mb-8">
-                <div className="w-12 h-12 rounded-xl bg-white/[0.02] border border-white/10 flex items-center justify-center mb-4 text-[#FFD700]">
-                  <Logo />
-                </div>
-                <h2 className="text-lg sm:text-xl font-black tracking-[0.3em] sm:tracking-[0.4em] uppercase text-white italic">
-                  ACCESS_GATEWAY
-                </h2>
-                <p className="text-[8px] sm:text-[9px] text-zinc-500 tracking-widest mt-1 uppercase">
+            <div className="w-full max-w-sm sm:max-w-md bg-zinc--1 uppercase">
                   Drone DT Ecosystem // Sec
                 className="w-full flex items-center justify-center gap-3 bg-[#FFD700] text-black h-12 rounded-xl font-black text-[11px] tracking-[0.2em] sm:tracking-[0.25em] uppercase hover:bg-yellow-400 transition-all active:scale-[0.98] shadow-[0_0_30px_rgba(223,190,0,0.15)] group"
               >
