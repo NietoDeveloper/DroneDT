@@ -11,9 +11,4 @@ import { useInventoryStore } from '@/store/useInventoryStore';
 
 /**
  * PAGE: DashboardL5
- * Optimización: High-Performance Desktop (Hasta 1900px)
- * Fix: Unique Key Prop para Skeletons y Listas
- * Proyecto: Drone DT
- */
-export default function DashboardL5() {
-  const products = useInventoryStore((state) => state.products);
+ * Optimización: High-Performance Desktop (Hasta 
