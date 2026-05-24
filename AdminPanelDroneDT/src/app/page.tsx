@@ -91,23 +91,7 @@ export default function DroneDashboardPage() {
                   ACCESS_GATEWAY
                 </h2>
                 <p className="text-[8px] sm:text-[9px] text-zinc-500 tracking-widest mt-1 uppercase">
-                  Drone DT Ecosystem // Secure Link
-                </p>
-              </div>
-
-              <div className="mb-6 p-4 bg-zinc-900/20 border border-white/5 rounded-xl text-[10px] text-zinc-400 space-y-2">
-                <div className="flex justify-between">
-                  <span className="text-zinc-600">CLUSTER_SECURITY:</span>
-                  <span className="text-[#FFD700] font-bold">MAX_LOCK (S+)</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-zinc-600">WORKSPACE:</span>
-                  <span className="text-zinc-300">NIETO_LAB_CORE</span>
-                </div>
-              </div>
-
-              <button
-                onClick={() => setCurrentFlow('DASHBOARD')}
+                  Drone DT Ecosystem // Sec
                 className="w-full flex items-center justify-center gap-3 bg-[#FFD700] text-black h-12 rounded-xl font-black text-[11px] tracking-[0.2em] sm:tracking-[0.25em] uppercase hover:bg-yellow-400 transition-all active:scale-[0.98] shadow-[0_0_30px_rgba(223,190,0,0.15)] group"
               >
             <Sidebar />
