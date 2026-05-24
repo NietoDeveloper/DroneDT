@@ -106,11 +106,3 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     };
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
-
-
-  return { 
-    manualSync: fetchInventory,
-    isRetrying: retryCount.current > 0,
-    status: retryCount.current > 0 ? 'RECONNECTING' : 'SYNCED'
-  };
-};
