@@ -73,16 +73,7 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
       } else {
         console.error('DRONE_DT_SYNC_FAILURE:', error);
         retryCount.current += 1;
-        
-        // Umbral de tolerancia de fallos del sistema
-        if (retryCount.current > 3) {
-          setError('CRITICAL: LINK_TO_CLUSTER_LOST_RECONNECTING');
-        }
-      }
-    } finally {
-      setLoading(false);
-    }
-  }, [setProducts, setLoading, setError]);
+        setError]);
 
   useEffect(() => {
     // Ejecución inicial de enlace
