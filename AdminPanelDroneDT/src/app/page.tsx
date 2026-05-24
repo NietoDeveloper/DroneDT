@@ -221,16 +221,7 @@ export default function DroneDashboardPage() {
 
               {/* PIE DE PÁGINA PERIFÉRICO */}
               <footer className="h-10 bg-black border-t border-white/5 px-4 sm:px-6 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase relative z-20 w-full shrink-0">
-                <div className="flex gap-4 sm:gap-6">
-                  <span className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-[#FFD700] rounded-full shadow-[0_0_8px_#FFD700]" />
-                    NODE: BOG_MASTER_S1
-                  </span>
-                  <span className="hidden md:flex items-center gap-2">
-                    <Activity size={10} className="text-zinc-700" /> UPLINK: ACTIVE
 
-            </div>
-          </motion.div>
         )}
 
 
