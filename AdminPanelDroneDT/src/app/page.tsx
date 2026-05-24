@@ -266,18 +266,6 @@ export default function DroneDashboardPage() {
           padding-right: clamp(12px, 2vw + 4px, 32px);
         }
 
-        .fluid-hud {
-          padding-top: clamp(8px, 0.6vw + 2px, 14px);
-          padding-bottom: clamp(8px, 0.6vw + 2px, 14px);
-          padding-left: clamp(12px, 2vw + 4px, 32px);
-          padding-right: clamp(12px, 2vw + 4px, 32px);
-        }
-
-        .fluid-main {
-          padding: clamp(8px, 1vw + 2px, 20px);
-        }
-
-
     </div>
   );
 }
