@@ -106,13 +106,7 @@ export default function DashboardL5() {
                 ) : (
                   /* CORRECCIÓN 2: Uso de item._id como clave única */
                   filteredDrones.map((item) => (
-                    <InventoryCard key={item._id || item.id} product={item} />
-                  ))
-                )}
-              </div>
-    
-        </div>
-              </div>
+                    <InventoryCard key={item.
             </div>
           </div>
 
