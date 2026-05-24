@@ -122,8 +122,5 @@ export default function DroneDashboardPage() {
           <motion.div
             key="dashboard-interface"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="flex-1 flex overflow-hidden relative z-10 w-full h-full"
-          >
             {/* COMPONENTE: SIDEBAR */}
             <Sidebar />
