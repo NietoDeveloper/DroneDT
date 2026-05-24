@@ -246,14 +246,7 @@ export default function DroneDashboardPage() {
             </div>
           </motion.div>
         )}
-      </AnimatePresence>
 
-      {/* INYECCIÓN DE ESTILOS DE PRECISIÓN MILIMÉTRICA */}
-      <style jsx global>{`
-        :root {
-          --fluid-min-width: 310px;
-          --fluid-max-width: 1900px;
-        }
 
         .fluid-container {
           font-size: clamp(11px, 0.7vw + 7px, 15px);
