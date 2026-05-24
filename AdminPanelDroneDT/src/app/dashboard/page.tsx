@@ -129,17 +129,7 @@ export default function DashboardL5() {
           </button>
 
           <div className="flex-1 flex flex-col min-h-0 border-t border-white/10">
-            <div className="h-[30px] lg:h-[45px] px-4 flex items-center gap-2 bg-zinc-950 border-b border-white/5">
-              <Terminal className="text-emerald-500 w-3 h-3 lg:w-4 lg:h-4" />
-              <span className="text-[9px] lg:text-[11px] text-zinc-400 font-black tracking-widest uppercase">Logs_de_Sistema</span>
-            </div>
-            <div className="flex-1 overflow-hidden p-4 lg:p-6 font-mono text-[9px] lg:text-[12px] text-zinc-600 leading-relaxed bg-black/50 uppercase">
-              <div className="space-y-2 lg:space-y-4">
-                <p className="truncate text-emerald-500/80"><span className="text-emerald-800">»</span> STATUS: {status}</p>
-                <p className="truncate"><span className="text-zinc-800">»</span> {loading ? 'SCAN_SEQUENCE_ACTIVE' : 'SYSTEM_READY'}</p>
-                <p className="truncate"><span className="text-zinc-800">»</span> ARCH: NIETO_L5_SECURE</p>
-                {isRetrying && <p className="text-red-500 animate-pulse truncate"><span className="mr-1">!</span> UPLINK_RETRY_ACTIVE</p>}
-              </div>
+            <div className="h-[30px] lg:h-[45p
               font-black tracking-tighter">DATA_STREAM_LOAD:</div>
                 <div className="w-full h-1.5 lg:h-3 bg-zinc-900 rounded-full overflow-hidden border border-white/5">
                     <div className={`h-full bg-emerald-500 transition-all duration-1000 ${loading ? 'w-[85%]' : 'w-[15%]'}`} />
