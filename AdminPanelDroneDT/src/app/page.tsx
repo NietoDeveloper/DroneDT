@@ -286,14 +286,7 @@ export default function DroneDashboardPage() {
           line-height: 1;
         }
 
-        /* Bloqueo total y limpio de barras de scroll visuales */
-        ::-webkit-scrollbar {
-          display: none !important;
 
-        * {
-
-        }
-      `}</style>
     </div>
   );
 }
