@@ -199,10 +199,3 @@ export default function DroneDashboardPage() {
                     <DroneSkeleton />
                   ) : (
                     <ErrorShield />
-                  )}
-                </div>
-
-                {/* MÓDULO CORE DE INVENTARIO DIGITAL TWIN CON NOMBRE CORREGIDO */}
-                <div className="md:col-span-2 lg:col-span-2 bg-zinc-950/20 border border-white/5 rounded-xl p-2 overflow-hidden flex flex-col justify-between min-h-[220px] lg:min-h-0">
-                  <InventoryGrid />
-                </
