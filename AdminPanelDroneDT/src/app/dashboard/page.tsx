@@ -109,13 +109,6 @@ export default function DashboardL5() {
                     <InventoryCard key={item._id || item.id} product={item} />
                   ))
                 )}
-
-                {!loading && filteredDrones.length === 0 && (
-                  <div className="col-span-full py-48 text-center opacity-20">
-                    <span className="text-[14px] lg:text-[20px] font-black uppercase tracking-[0.8em] block">Radar_Limpio</span>
-                    <span className="text-[10px] lg:text-[12px] mt-4 block">No se detectan unidades con esos parámetros</span>
-                  </div>
-                )}
               </div>
             )}
           </div>
