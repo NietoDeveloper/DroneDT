@@ -112,11 +112,3 @@ export default function DashboardL5() {
 
         </aside>
       </div>
-
-      {/* 4. FOOTER INDUSTRIAL */}
-
-        </div>
-      </footer>
-    </div>
-  );
-}
