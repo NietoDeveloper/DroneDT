@@ -97,16 +97,7 @@ export default function DashboardL5() {
                 <ErrorShield message="ENLACE_CON_CLUSTER_CAÍDO" retry={manualSync} />
               </div>
             ) : (
-              <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 lg:gap-8">
-                {loading && products.length === 0 ? (
-                  /* CORRECCIÓN 1: Clave única para Skeletons basada en el index */
-                  Array.from({length: 8}).map((_, i) => (
-                    <DroneSkeleton key={`drone-loading-slot-${i}`} />
-                  ))
-                ) : (
-                  /* CORRECCIÓN 2: Uso de item._id como clave única */
-                  filteredDrones.map((item) => (
-                    <InventoryCard key={item.
+              <div className="grid grid-cols-1 xs:
             </div>
           </div>
 
