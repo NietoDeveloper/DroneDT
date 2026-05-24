@@ -107,13 +107,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
 
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
-    // Protocolo de limpieza para evitar fugas de memoria en el Nieto Laboratory
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-      if (abortControllerRef.current) abortControllerRef.current.abort();
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
-  }, [fetchInventory, refreshInterval]);
 
   return { 
     manualSync: fetchInventory,
