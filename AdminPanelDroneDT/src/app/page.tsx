@@ -207,9 +207,7 @@ export default function DroneDashboardPage() {
                   <InventoryGrid />
                 </
 
-
-        .fluid-container {
-          font-size: clamp(11px, 0.7vw + 7px, 15px);
+ + 7px, 15px);
         }
 
     </div>
