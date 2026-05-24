@@ -57,17 +57,6 @@ export default function DroneDashboardPage() {
     return <Preloader />;
   }
 
-  return (
-    <div className="fluid-container h-screen w-screen flex flex-col bg-[#050505] text-white overflow-hidden relative select-none font-mono">
-      
-      {/* CAPA DE FONDO: Micro-grid de precisión */}
-      <div 
-        className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none" 
-        style={{ 
-          backgroundImage: 'radial-gradient(circle, #ffffff 0.5px, transparent 0.5px)', 
-          backgroundSize: 'clamp(16px, 1.5vw, 24px) clamp(16px, 1.5vw, 24px)' 
-        }} 
-      />
 
       <AnimatePresence mode="wait">
         {/* INTERFAZ 1: GATEWAY DE INGRESO (BYPASS) */}
