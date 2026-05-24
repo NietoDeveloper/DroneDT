@@ -130,34 +130,7 @@ export default function DroneDashboardPage() {
 
             {/* PANEL DE CONTROL CENTRAL */}
             <div className="flex-1 flex flex-col overflow-hidden h-full w-full">
-              
-              {/* TELEMETRÍA Y CABECERA FLUIDA */}
-              <header className="flex items-center justify-between fluid-header border-b border-white/5 bg-black/40 backdrop-blur-md w-full">
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 flex items-center justify-center">
-                    <Logo />
-                  </div>
-                  <div>
-                    <h1 className="fluid-text-title font-black tracking-tighter uppercase italic text-white leading-none">
-                      DRONE_DT_MASTER_CONTROL
-                    </h1>
-                    <p className="text-[8px] sm:text-[9px] text-zinc-500 tracking-[0.2em] sm:tracking-[0.3em] uppercase mt-1">
-                      Nieto_Laboratory // Production_Environment
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-4 text-[9px] sm:text-[10px] text-zinc-400 bg-white/[0.02] border border-white/5 px-2 sm:px-4 py-1.5 sm:py-2 rounded-xl">
-                  <span className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                    <span className="hidden xs:inline">SYS_TIME:</span> <span className="text-white font-bold">{systemTime}</span>
-                  </span>
-                </div>
-              </header>
-
-              {/* HUD DE MÉTRICAS CORE: AJUSTADO A RESPONSIVE EXTREMO */}
-              <section className="fluid-hud grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 bg-zinc-950/40 border-b border-white/5 font-mono w-full">
-                <div className="bg-white/[0.01] border border-white/5 p-3 rounded-xl flex flex-row sm:flex-col justify-between items-center sm:items-start">
+ p-3 rounded-xl flex flex-row sm:flex-col justify-between items-center sm:items-start">
                   <div className="fl
                 <div className="md:col-span-2 lg:col-span-2 bg-zinc-950/20 border border-white/5 rounded-xl p-2 overflow-hidden flex flex-col justify-between min-h-[220px] lg:min-h-0">
                   <
