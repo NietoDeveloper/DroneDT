@@ -158,9 +158,7 @@ export default function DashboardL5() {
       </div>
 
       {/* 4. FOOTER INDUSTRIAL */}
-      <footer className="h-[24px] lg:h-[32px] flex-shrink-0 flex items-center justify-between px-6 bg-zinc-950 border-t border-white/10">
-        <div className="flex gap-6 text-[8px] lg:text-[10px] text-zinc-700 font-black uppercase tracking-tighter">
-          <span className="f
+
         </div>
       </footer>
     </div>
