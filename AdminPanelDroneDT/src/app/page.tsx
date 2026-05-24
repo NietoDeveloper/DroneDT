@@ -291,8 +291,7 @@ export default function DroneDashboardPage() {
           display: none !important;
 
         * {
-          scrollbar-width: none !important;
-          -ms-overflow-style: none !important;
+
         }
       `}</style>
     </div>
