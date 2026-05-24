@@ -150,10 +150,6 @@ export default function DashboardL5() {
             </div>
           </div>
 
-          <div className="h-32 lg:h-48 border-t border-white/5 bg-zinc-950/20 p-6 flex flex-col justify-center items-center opacity-20">
-             <WifiOff size={24} className="text-zinc-700 mb-3" />
-             <span className="text-[8px] lg:text-[11px] text-zinc-800 uppercase font-black tracking-[0.4em] text-center">Nieto_Laboratory<br/>Secret_Project_DT</span>
-          </div>
         </aside>
       </div>
 
