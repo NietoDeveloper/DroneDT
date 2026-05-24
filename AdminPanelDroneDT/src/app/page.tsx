@@ -73,15 +73,3 @@ export default function DroneDashboardPage() {
         {/* INTERFAZ 1: GATEWAY DE INGRESO (BYPASS) */}
         {currentFlow === 'LOGIN' && (
           <motion.div
-            key="login-interface"
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, filter: 'blur(12px)', y: -15 }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="flex-1 z-10 flex flex-col items-center justify-center px-4 w-full h-full overflow-hidden"
-          >
-            <div className="w-full max-w-sm sm:max-w-md bg-zinc--1 uppercase">
-                  Drone DT Ecosystem // Sec
-                className="w-full flex items-center justify-center gap-3 bg-[#FFD700] text-black h-12 rounded-xl font-black text-[11px] tracking-[0.2em] sm:tracking-[0.25em] uppercase hover:bg-yellow-400 transition-all active:scale-[0.98] shadow-[0_0_30px_rgba(223,190,0,0.15)] group"
-              >
-            <Sidebar />
