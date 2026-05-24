@@ -205,24 +205,7 @@ export default function DroneDashboardPage() {
                 {/* MÓDULO CORE DE INVENTARIO DIGITAL TWIN CON NOMBRE CORREGIDO */}
                 <div className="md:col-span-2 lg:col-span-2 bg-zinc-950/20 border border-white/5 rounded-xl p-2 overflow-hidden flex flex-col justify-between min-h-[220px] lg:min-h-0">
                   <InventoryGrid />
-                </div>
-
-                {/* SECCIÓN DE PRODUCTOS E INVENTARIO RÁPIDO */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 overflow-hidden">
-                  <div className="bg-zinc-950/20 border border-white/5 rounded-xl p-1 overflow-hidden min-h-[110px] lg:min-h-0">
-                    <InventoryCard />
-                  </div>
-                  <div className="bg-zinc-950/20 border border-white/5 rounded-xl p-1 overflow-hidden min-h-[110px] lg:min-h-0">
-                    <DroneCard />
-                  </div>
-                </div>
-
-              </main>
-
-              {/* PIE DE PÁGINA PERIFÉRICO */}
-              <footer className="h-10 bg-black border-t border-white/5 px-4 sm:px-6 flex items-center justify-between text-[9px] font-mono text-zinc-500 tracking-widest uppercase relative z-20 w-full shrink-0">
-
-        )}
+                </
 
 
         .fluid-container {
