@@ -194,8 +194,4 @@ export default function DroneDashboardPage() {
                 </div>
 
                 {/* ESCUDO ANTE EXCEPCIONES Y MONITOR SKELETON */}
-                <div className="bg-zinc-950/20 border border-white/5 rounded-xl p-4 flex flex-col gap-3 justify-between overflow-hidden min-h-[200px] lg:min-h-0">
-                  {isSystemChecking ? (
-                    <DroneSkeleton />
-                  ) : (
-                    <ErrorShield />
+                <div classNa
