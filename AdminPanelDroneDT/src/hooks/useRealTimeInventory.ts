@@ -41,20 +41,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     setLoading(true);
 
     try {
-      const response = await fetch('/api/inventory', {
-        signal: abortControllerRef.current.signal,
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Security-Level': 'L5-Shield-Industrial',
-          'X-Origin-Node': 'NIETO_LAB_BOG_CENTRO',
-          'X-Project-ID': 'DRONE_DT_FLEET',
-          'Cache-Control': 'no-cache'
-        },
-      });
-
-      if (!response.ok) throw new Error(`TELEMETRY_SYNC_ERROR: ${response.status}`);
-
-          setProducts(data);
         }
         
         setError(null);
