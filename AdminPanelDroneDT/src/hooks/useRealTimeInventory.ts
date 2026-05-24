@@ -28,20 +28,7 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     );
   }, []);
 
-  const fetchInventory = useCallback(async () => {
-    // 1. Race Condition Guard: Abortar peticiones previas en vuelo
-    if (abortControllerRef.current) {
-      abortControllerRef.current.abort();
-    }
-
-    // 2. Visibility Check: Pausar telemetría si el operador no está viendo el dashboard
-    if (document.hidden) return;
-
-    abortControllerRef.current = new AbortController();
-    setLoading(true);
-
-    try {
-        }
+  const fetchInventory = useC
         
         setError(null);
         retryCount.current = 0;
