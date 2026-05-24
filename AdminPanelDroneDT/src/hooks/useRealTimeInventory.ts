@@ -88,10 +88,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
     // Ejecución inicial de enlace
     fetchInventory();
 
-    // Gestión del intervalo de polling (Heartbeat)
-    const startPolling = () => {
-      timerRef.current = setInterval(fetchInventory, refreshInterval);
-    };
 
     startPolling();
 
