@@ -228,20 +228,6 @@ export default function DroneDashboardPage() {
                   </span>
                   <span className="hidden md:flex items-center gap-2">
                     <Activity size={10} className="text-zinc-700" /> UPLINK: ACTIVE
-                  </span>
-                </div>
-                <div className="flex items-center gap-2 sm:gap-4">
-                  <button 
-                    onClick={triggerManualHealthCheck}
-                    className="hover:text-[#FFD700] flex items-center gap-2 transition-colors group text-zinc-400"
-                  >
-                    <RefreshCw size={12} className={`${isSystemChecking ? 'animate-spin' : 'group-hover:rotate-180'} transition-transform duration-500`} />
-                    <span className="hidden xs:inline">CALIBRATE_TWIN</span>
-                  </button>
-                  <span className="text-zinc-800">|</span>
-                  <span>NIETO_LAB_CORE_V2.6</span>
-                </div>
-              </footer>
 
             </div>
           </motion.div>
