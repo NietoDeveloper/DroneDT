@@ -98,8 +98,3 @@ export default function DashboardL5() {
               </div>
             ) : (
               <div className="grid grid-cols-1 xs:
-            </div>
-          </div>
-
-        </aside>
-      </div>
