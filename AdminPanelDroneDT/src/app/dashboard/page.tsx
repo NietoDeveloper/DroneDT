@@ -17,18 +17,3 @@ import { useInventoryStore } from '@/store/useInventoryStore';
  */
 export default function DashboardL5() {
   const products = useInventoryStore((state) => state.products);
-  const loading = useInventoryStore((state) => state.isLoading);
-  const error = useInventoryStore((state) => state.error);
-  
-  const { manualSync, isRetrying, status } = useRealTimeInventory(15000);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const filteredDrones = useMemo(() => {
-    return products.filter(p => 
-      p.name?.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      p._id?.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-  }, [products, searchQuery]);
-
-        
-              <div className="grid grid-cols-1 xs:
