@@ -42,21 +42,6 @@ export default function DroneDashboardPage() {
       setSystemTime(now.toTimeString().split(' ')[0]);
     }, 1000);
 
-    return () => {
-      clearTimeout(preloaderTimer);
-      clearInterval(interval);
-    };
-  }, []);
-
-  const triggerManualHealthCheck = (): void => {
-    setIsSystemChecking(true);
-    setTimeout(() => setIsSystemChecking(false), 1200);
-  };
-
-  if (currentFlow === 'PRELOADER') {
-    return <Preloader />;
-  }
-
 
       <AnimatePresence mode="wait">
         {/* INTERFAZ 1: GATEWAY DE INGRESO (BYPASS) */}
