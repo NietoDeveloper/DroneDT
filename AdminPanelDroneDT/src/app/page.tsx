@@ -11,18 +11,7 @@ import { ErrorShield } from '@/components/dashboard/ErrorShield';
 import { InventoryCard } from '@/components/dashboard/InventoryCard';
 import { InventoryGrid } from '@/components/dashboard/InventoryGrid';
 import { SalesCentralizer } from '@/components/dashboard/SalesCentralizer';
-import { Sidebar } from '@/components/dashboard/Sidebar';
-
-// CORRECCIÓN DE RUTAS: Ubicación real de la UI base dentro de src/components/ui/
-import Logo from '@/components/ui/Logo';
-
-import { Cpu, Activity, RefreshCw, Layers, TrendingUp, Package } from 'lucide-react';
-
-type FlowState = 'PRELOADER' | 'LOGIN' | 'DASHBOARD';
-
-export default function DroneDashboardPage() {
-  const [currentFlow, setCurrentFlow] = useState<FlowState>('PRELOADER');
-  const [systemTime, setSystemTime] = useState<string>('00:00:00');
+import { Sidebar } from '@/components/dashboard/Sid
   const [isSystemChecking, setIsSystemChecking] = useState<boolean>(false);
 
   // Datos mock de alta fidelidad para el HUD superior (Unidades Vendidas vs Disponibles)
