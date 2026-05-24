@@ -27,17 +27,6 @@ export default function DroneDashboardPage() {
 
   // Datos mock de alta fidelidad para el HUD superior (Unidades Vendidas vs Disponibles)
   const productMetrics = {
-    totalDisponibles: 1420,
-    totalVendidas: 8432,
-    eficienciaFlota: '98.4%'
-  };
-
-  useEffect(() => {
-    const preloaderTimer = setTimeout(() => {
-      setCurrentFlow('LOGIN');
-    }, 3500);
-
-    const interval = setInterval(() => {
       const now = new Date();
       setSystemTime(now.toTimeString().split(' ')[0]);
     }, 1000);
