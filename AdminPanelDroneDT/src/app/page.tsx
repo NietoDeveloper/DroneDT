@@ -127,10 +127,3 @@ export default function DroneDashboardPage() {
           >
             {/* COMPONENTE: SIDEBAR */}
             <Sidebar />
-
-            {/* PANEL DE CONTROL CENTRAL */}
-            <div className="flex-1 flex flex-col overflow-hidden h-full w-full">
- p-3 rounded-xl flex flex-row sm:flex-col justify-between items-center sm:items-start">
-                  <div className="fl
-                <div className="md:col-span-2 lg:col-span-2 bg-zinc-950/20 border border-white/5 rounded-xl p-2 overflow-hidden flex flex-col justify-between min-h-[220px] lg:min-h-0">
-                  <
