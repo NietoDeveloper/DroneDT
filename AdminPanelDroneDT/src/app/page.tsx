@@ -178,16 +178,6 @@ export default function DroneDashboardPage() {
                 <div className="bg-white/[0.01] border border-white/5 p-3 rounded-xl flex flex-row sm:flex-col justify-between items-center sm:items-start">
                   <div className="flex items-center gap-2 text-zinc-500 text-[9px] tracking-widest uppercase">
                     <Layers size={12} className="text-zinc-400" /> FLI_EFFICIENCY
-                  </div>
-                  <div className="fluid-text-metric font-black text-white tracking-tight sm:mt-1">
-                    {productMetrics.eficienciaFlota}
-                  </div>
-                </div>
-              </section>
-
-              {/* RETÍCULA BENTO RESTRINGIDA CON SCROLL INTERNO CONTROLADO EN MOBILE */}
-              <main className="flex-1 fluid-main overflow-y-auto lg:overflow-hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-max lg:auto-rows-fr h-full w-full content-start">
-                
-                {/* BLOQUE DE VENTAS / CENTRAL DE FLUJO CON NOMBRE CORREGIDO */}
+                  </div> NOMBRE CORREGIDO */}
                 <div className="md:col-span-2 lg:col-span-2 bg-zinc-950/20 border border-white/5 rounded-xl p-2 overflow-hidden flex flex-col justify-between min-h-[220px] lg:min-h-0">
                   <
