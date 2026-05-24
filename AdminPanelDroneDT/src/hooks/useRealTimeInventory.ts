@@ -67,16 +67,6 @@ export const useRealTimeInventory = (refreshInterval = 30000) => {
         setError(null);
         retryCount.current = 0;
       }
-    } catch (error: any) {
-      if (error.name === 'AbortError') {
-        // Silencioso: Petición cancelada por actualización o desmontaje
-      } else {
-        console.error('DRONE_DT_SYNC_FAILURE:', error);
-        retryCount.current += 1;
-        setError]);
-
-  useEffect(() => {
-    // Ejecución inicial de enlace
     fetchInventory();
 
 
