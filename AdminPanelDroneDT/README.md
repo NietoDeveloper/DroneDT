@@ -34,57 +34,57 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 dronedt-admin/
 ├── src/
 │   ├── app/
-│   │   ├── layout.tsx                  # Root Layout con viewport unificado (Responsive 310px - 1900px)
-│   │   ├── page.tsx                    # Preloader con pasarela de acceso y bypass directo sin sesión
-│   │   ├── (auth)/                     # FLUJO DE ACCESO CRIPTOGRÁFICO
-│   │   │   ├── login/page.tsx          # Login UI con estética espacial SpaceX y botón Gold (#FFD700)
-│   │   │   └── layout.tsx              # Fondo de malla reactiva y centrado estructural de paneles
-│   │   └── (dashboard)/                # CENTRO DE MANDO OPERATIVO L5
-│   │       ├── layout.tsx              # Orquestador maestro de la UI base (Sidebar + Navbar inyectados)
-│   │       ├── page.tsx                # Dashboard Principal: Grid Bento con analíticas y telemetría industrial
-│   │       ├── users/page.tsx          # Gestión avanzada de operarios: autorizaciones, altas y bajas
-│   │       ├── products/page.tsx       # CRUD de sistemas de drones e indexación de Gemelos Digitales (DT)
-│   │       ├── chat/page.tsx           # Terminal de mensajería cifrada interna en tiempo real
-│   │       └── cms-manager/page.tsx    # Gestión e inyección de strings/títulos del Frontend público
+│   │   ├── layout.tsx                  # Root Layout: Unified Viewport Configurator (Strict Responsive Constraints: 310px - 1900px)
+│   │   ├── page.tsx                    # System Bootstrapper: Preloader Engine with Direct Access Gateway & Session Bypass Pipeline
+│   │   ├── (auth)/                     # CRYPTOGRAPHIC ACCESS FLUX ZONE
+│   │   │   ├── login/page.tsx          # Authentication Gateway UI: SpaceX Minimalist Aesthetic featuring Gold (#FFD700) Action Nodes
+│   │   │   └── layout.tsx              # Reactive Mesh Matrix Background & Structural Panel Centering Shell
+│   │   └── (dashboard)/                # MISSION-CRITICAL L5 OPERATIONS COMMAND CENTER
+│   │       ├── layout.tsx              # Master UI Orchestrator: Dynamic Sidebar Injection & Core Navbar Pipeline
+│   │       ├── page.tsx                # Operations Matrix: High-Density Bento Grid containing Real-Time Analytical Engines
+│   │       ├── users/page.tsx          # Operator Management Core: RBAC Authorization Matrix & Lifecycle Provisioning
+│   │       ├── products/page.tsx       # Fleet Asset Matrix: Digital Twin (DT) Indirection Layer & Industrial Drone CRUD
+│   │       ├── chat/page.tsx           # Encrypted Node-to-Node Real-Time Communication Terminal
+│   │       └── cms-manager/page.tsx    # Localization Core: Public Frontend String Injection & Dictionary Synchronizer
 │   ├── components/
-│   │   ├── ui/                         # COMPONENTES ATÓMICOS DE ALTA FIDELIDAD (SpaceX Style)
-│   │   │   ├── button.tsx              # Botones optimizados de grado aeroespacial (Gold & Gainsboro)
-│   │   │   ├── input.tsx               # Cajas de texto oscuras con foco reactivo e indicadores neon
-│   │   │   └── dialog.tsx              # Modales HUD flotantes integrados con desenfoque (backdrop-blur)
-│   │   ├── layout/                     # ENVOLTURAS INFRAESTRUCTURALES DE NAVEGACIÓN
-│   │   │   ├── Sidebar.tsx             # Panel colapsable optimizado para densidad de pixeles en pantallas HD
-│   │   │   └── Navbar.tsx              # Barra superior: Telemetría de red, alertas críticas y perfil del operador
-│   │   ├── charts/                     # CAPA DE VISUALIZACIÓN VECTORIAL
-│   │   │   └── SalesCharts.tsx         # Gráficos de rendimiento comercial históricos y proyectados (D/M/A)
-│   │   └── dashboard/                  # COMPONENTES TELEMÉTRICOS DEL CORE (Estabilizados)
-│   │       ├── SalesCentralizer.tsx    # Streaming ininterrumpido de transacciones (Live Data Core Module)
-│   │       ├── InventoryCard.tsx       # Módulo de stock con blindaje L5 ante 'undefined' e inyección automática de fallback
-│   │       ├── InventoryGrid.tsx       # Distribuidor bento-grid balanceado autoadaptable
-│   │       ├── LiveVideoPlayer.tsx     # Reproductor HUD de monitoreo para transmisión en vivo de drones
-│   │       └── ErrorShield.tsx         # Perímetro de aislamiento perimetral ante excepciones en tiempo de ejecución
-│   ├── store/                          # GESTIÓN DE ESTADO GLOBAL CENTRALIZADO (Zustand React)
-│   │   ├── slices/                     # Rebanadas atómicas de datos independientes
-│   │   │   ├── useSalesStore.ts        # Centralización analítica de ingresos y unidades en tiempo real
-│   │   │   ├── useInventoryStore.ts    # Indexación y control instantáneo de existencias de drones industriales
-│   │   │   ├── useChatStore.ts         # Logs y canales de flujo continuo vía WebSockets
-│   │   │   └── useUserAdminStore.ts    # Estado administrativo para autorizaciones y roles (RBAC)
-│   │   └── index.ts                    # Punto de unificación e importación limpia de la arquitectura de estados
-│   ├── services/                       # CAPA DE CLIENTE DE RED (Consumo Core del Backend Express)
-│   │   ├── userService.ts              # Pasarela de credenciales y administración de accesos
-│   │   ├── productService.ts           # Despacho de operaciones CRUD de productos e inventarios
-│   │   └── cmsService.ts               # Sincronización del estado visual y strings del Frontend público
+│   │   ├── ui/                         # ATOMIC HIGH-FIDELITY DESIGN SYSTEM (SpaceX Aesthetic Standard)
+│   │   │   ├── button.tsx              # Aerospace-Grade Interactive Primitives (Gold & Gainsboro Color Spectrum Protocols)
+│   │   │   ├── input.tsx               # Low-Luminance Fields with Reactive Hover Overlays & Neon Focus Matrix
+│   │   │   └── dialog.tsx              # Floating HUD Modals with Backdrop-Blur Isolation Barriers
+│   │   ├── layout/                     # NAVIGATION INFRASTRUCTURE WRAPPERS
+│   │   │   ├── Sidebar.tsx             # Collapsible Control Rail Optimized for Ultra-High-Density Pixels on 4K Monitors
+│   │   │   └── Navbar.tsx              # Master HUD Status Rail: Heartbeat Telemetries, Critical Alerts & Operator Signatures
+│   │   ├── charts/                     # VECTORIAL ANALYTICS RECONSTRUCTION LAYER
+│   │   │   └── SalesCharts.tsx         # Historical & Projected Commercial Performance Data-Streams (Diurnal/Mensual/Annual)
+│   │   └── dashboard/                  # SYSTEM CORE TELEMETRY MODULES (Fault-Tolerant)
+│   │       ├── SalesCentralizer.tsx    # Uninterrupted Streaming Engine for Financial Events (Live Data Core Module)
+│   │       ├── InventoryCard.tsx       # Asset Node Encapsulation: Strict L5 Null-Shield Guard with Autonomous Mock Injection
+│   │       ├── InventoryGrid.tsx       # Balanced Bento-Grid Matrix with Dynamic Aspect-Ratio Self-Adaptation
+│   │       ├── LiveVideoPlayer.tsx     # Low-Latency HUD Feed Streamer for UAV Real-Time Telemetry Feeds
+│   │       └── ErrorShield.tsx         # Perimetric Isolation Barrier catching Runtime Exceptions before Main Thread Failures
+│   ├── store/                          # GLOBAL STATE CENTRALIZATION LAYER (Zustand Distributed Store)
+│   │   ├── slices/                     # Atomic Data Decoupling & Independent State Slices
+│   │   │   ├── useSalesStore.ts        # Real-Time Financial Influx & Volume Analytics Aggregator
+│   │   │   ├── useInventoryStore.ts    # Industrial UAV Stock Indexing & Telemetric Inventory Control Rail
+│   │   │   ├── useChatStore.ts         # Full-Duplex Network Buffering & Persistent WebSocket Logging Slices
+│   │   │   └── useUserAdminStore.ts    # Security Context Management: Operator Roles & Access Permissions (RBAC)
+│   │   └── index.ts                    # Single Point of Unification & Clean Structural Interface Export
+│   ├── services/                       # NETWORK INGESTION LAYER (Client Monolithic Bridge to Express.js Backend)
+│   │   ├── userService.ts              # Authorization Token Exchange & Cryptographic Credential Passing Handlers
+│   │   ├── productService.ts           # Hardware Asset Dispatcher managing Remote State Mutations & CRUD Execution
+│   │   └── cmsService.ts               # Public Manifest Synchronization & Client-Side Dictionary Mutation Hook
 │   ├── lib/
-│   │   ├── api/socket-client.ts        # Instancia aislada de WebSocket para flujos continuos full-duplex
-│   │   └── utils/formatters.ts         # Formateadores matemáticos de precisión para divisas y fechas
-│   ├── types/                          # ESPECIFICACIONES DE TIPADO ESTRICTO (TypeScript Definition Layer)
-│   │   ├── user.types.ts               # Estructuras de roles operativos y perfiles de operarios (RBAC)
-│   │   ├── sales.types.ts              # Tipados de analíticas financieras y flujos de ventas
-│   │   └── product.types.ts            # Esquemas técnicos de drones (UID, carga de núcleo, firmware, stock)
+│   │   ├── api/socket-client.ts        # Isolated WebSocket Manager handling Duplex Streams with Automated Backoff Retries
+│   │   └── utils/formatters.ts         # High-Precision Mathematical Parsers for ISO Date Formats & Financial Valuations
+│   ├── types/                          # STRATIFIED DATA SCHEMAS (Strict TypeScript Typings Layer)
+│   │   ├── user.types.ts               # Structural Typing definitions for Operator Contexts & Security Privileges
+│   │   ├── sales.types.ts              # Financial Stream Models & Analytical Event Payloads
+│   │   └── product.types.ts            # UAV Specifications Schemas: Core Load Capacity, Firmware Matrix & Stock Structs
 │   └── config/
-│       ├── navigation.ts               # Árbol estático de rutas y mapeo de iconos del Sidebar
-│       └── permissions.ts              # Matriz estricta para el control de acceso basado en roles (RBAC)
-├── tailwind.config.ts                  # Variables industriales: Gold (#FFD700), Gainsboro (#DCDCDC) y Zinc Muted
-└── README.md                           # Manifiesto Técnico de Élite - Nieto Laboratory
+│   │   ├── navigation.ts               # Static Navigation Tree Matrix & Icon Vector Mapping for Sidebar Rails
+│   │   └── permissions.ts              # Access Control Matrix defining Strict Access Rules across System Nodes
+├── tailwind.config.ts                  # Industrial Design Variable Matrix: Gold (#FFD700), Gainsboro (#DCDCDC) & Muted Zinc
+└── README.md                           # Core Technical Manifesto — Nieto Laboratory Elite Operations Guide
 ---
 
 ## 🔑 Key Features
