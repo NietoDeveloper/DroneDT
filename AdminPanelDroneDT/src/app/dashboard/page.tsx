@@ -262,21 +262,6 @@ export default function DashboardPage() {
               />
             </div>
           </div>
-
-          <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 lg:p-8 custom-scrollbar bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-zinc-900/20 via-black to-black">
-            
-            {error && products.length === 0 ? (
-              <div className="h-full flex items-center justify-center p-10">
-                <ErrorShield message="ENLACE_CON_CLUSTER_CAÍDO" retry={manualSync} />
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 lg:gap-8">
-                {loading && products.length === 0 ? (
-                  Array.from({length: 8}).map((_, i) => (
-                    <DroneSkeleton key={`drone-loading-slot-${i}`} />
-                  ))
-                ) : (
-                  filteredDrones.map((item) => (
                     <InventoryCard key={item._id || item.id} product={item} />
                   ))
                 )}
