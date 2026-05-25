@@ -237,36 +237,6 @@ export default function DashboardPage() {
       {/* 2. PANEL DE ESTADÍSTICAS */}
       <div className="flex-shrink-0 border-b border-white/10 bg-black">
         <StatsPanel />
-      </div>
-
-      {/* 3. NÚCLEO DEL ESPACIO DE TRABAJO */}
-      <div className="flex-1 min-h-0 flex overflow-hidden">
-        
-        {/* COLUMNA CENTRAL: GRID DE LA FLOTA */}
-        <div className="flex-1 min-w-0 flex flex-col border-r border-white/10">
-          <div className="h-[32px] lg:h-[48px] flex-shrink-0 flex items-center justify-between px-3 lg:px-6 bg-zinc-900/40 border-b border-white/5">
-            <div className="flex items-center gap-2 lg:gap-4">
-              <Layers className="text-emerald-500/50 w-3 h-3 lg:w-5 lg:h-5" />
-              <span className="text-[9px] lg:text-[12px] font-black uppercase tracking-[0.3em] text-zinc-400">Transmisión_de_Inventario</span>
-              {loading && <span className="text-[7px] lg:text-[10px] text-emerald-500 animate-pulse ml-2 font-bold italic">_SCANNING_HANGAR_01</span>}
-            </div>
-            
-            <div className="flex items-center h-full bg-black/40 px-3 lg:px-6 border-l border-white/5 group focus-within:bg-black/80 transition-all">
-              <Search className="text-zinc-600 group-focus-within:text-emerald-500 w-3 h-3 lg:w-4 lg:h-4" />
-              <input 
-                type="text" 
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="BUSCAR_UNIDAD_ID" 
-                className="bg-transparent text-[9px] lg:text-[12px] outline-none w-24 sm:w-48 lg:w-64 ml-3 text-emerald-400 uppercase placeholder:text-zinc-800 font-bold" 
-              />
-            </div>
-          </div>
-                    <InventoryCard key={item._id || item.id} product={item} />
-                  ))
-                )}
-
-              </div>
             )}
           </div>
         </div>
