@@ -184,35 +184,7 @@ export default function DashboardPage() {
                 </>
               ) : (
                 <>
-                  AUTENTICAR_OPERADOR
-                  <ArrowRight className="w-4 h-4" />
-                </>
-              )}
-            </button>
-          </form>
 
-          <div className="mt-6 pt-4 border-t border-white/5 flex justify-between text-[8px] text-zinc-600 uppercase font-bold">
-            <span>Sec_Arch: L5_Double_Cluster</span>
-            <span>Nieto_Lab_v1.2</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  // =========================================================================
-  // VISTA C: COMPONENTE CENTRAL DASHBOARD (HASTA 1900PX)
-  // =========================================================================
-  return (
-    <div className="fixed inset-0 bg-black text-white flex flex-col overflow-hidden font-mono selection:bg-emerald-500/30">
-      
-      {/* 1. BARRA DE CONTROL SUPERIOR (HUD) */}
-      <div className="h-[30px] lg:h-[40px] flex-shrink-0 flex items-center justify-between bg-zinc-950 border-b border-white/10 px-3 lg:px-6">
-        <div className="flex items-center gap-2 lg:gap-4 cursor-pointer hover:opacity-80 transition-opacity">
-          <Cpu className="w-3 h-3 l
-      </div>
-
-      {/* 4. FOOTER INDUSTRIAL */}
       <footer className="h-[24px] lg:h-[32px] flex-shrink-0 flex items-center justify-between px-6 bg-zinc-950 border-t border-white/10">
 
       </footer>
