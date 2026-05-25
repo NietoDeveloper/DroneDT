@@ -131,7 +131,6 @@ export const useRealTimeInventory = (refreshInterval = 15000) => {
     fetchInventory();
     resetPolling();
 
-    // Page Visibility API: Optimización estricta de recursos de red y CPU de Nieto Laboratory
     const handleVisibilityChange = () => {
       if (document.hidden) {
         if (timerRef.current) clearInterval(timerRef.current);
