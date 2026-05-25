@@ -337,9 +337,7 @@ export default function DashboardPage() {
           <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-zinc-800 rounded-full" /> CLUSTER: RAILWAY_L5</span>
           <span className="hidden md:inline text-emerald-900/60">NODE: BOGOTÁ_SOUTH_PRIMARY</span>
         </div>
-        <div className="text-[8px] lg:text-[11px] text-zinc-600 tracking-[0.3em] font-black uppercase">
-          Software DT // Drone DT Ecosystem // 2026
-        </div>
+
       </footer>
     </div>
   );
