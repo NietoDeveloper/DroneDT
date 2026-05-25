@@ -281,9 +281,6 @@ export default function DashboardPage() {
                   ))
                 )}
 
-                {!loading && filteredDrones.length === 0 && (
-
-                )}
               </div>
             )}
           </div>
