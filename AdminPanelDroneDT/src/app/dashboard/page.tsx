@@ -292,43 +292,6 @@ export default function DashboardPage() {
           </div>
         </div>
 
-        {/* COLUMNA DERECHA: PANEL DE CONTROL INDUSTRIAL */}
-        <aside className="hidden lg:flex lg:w-[250px] xl:w-[350px] flex-shrink-0 flex-col bg-black">
-          <button className="h-[60px] lg:h-[80px] w-full bg-emerald-500 hover:bg-emerald-400 text-black font-black text-[11px] lg:text-[14px] uppercase tracking-[0.3em] transition-all active:scale-[0.98] flex items-center justify-center gap-3">
-            <Plus className="w-4 h-4 lg:w-6 lg:h-6" strokeWidth={4} />
-            REGISTRAR_DRONE
-          </button>
-
-          <div className="flex-1 flex flex-col min-h-0 border-t border-white/10">
-            <div className="h-[30px] lg:h-[45px] px-4 flex items-center gap-2 bg-zinc-950 border-b border-white/5">
-              <Terminal className="text-emerald-500 w-3 h-3 lg:w-4 lg:h-4" />
-              <span className="text-[9px] lg:text-[11px] text-zinc-400 font-black tracking-widest uppercase">Logs_de_Sistema</span>
-            </div>
-            <div className="flex-1 overflow-hidden p-4 lg:p-6 font-mono text-[9px] lg:text-[12px] text-zinc-600 leading-relaxed bg-black/50 uppercase">
-              <div className="space-y-2 lg:space-y-4">
-                <p className="truncate text-emerald-500/80"><span className="text-emerald-800">»</span> STATUS: {status}</p>
-                <p className="truncate"><span className="text-zinc-800">»</span> {loading ? 'SCAN_SEQUENCE_ACTIVE' : 'SYSTEM_READY'}</p>
-                <p className="truncate"><span className="text-zinc-800">»</span> ARCH: NIETO_L5_SECURE</p>
-                {isRetrying && <p className="text-red-500 animate-pulse truncate"><span className="mr-1">!</span> UPLINK_RETRY_ACTIVE</p>}
-              </div>
-              
-              <div className="mt-12 p-4 border border-white/5 bg-zinc-950/50 rounded-lg">
-                <div className="text-[8px] lg:text-[10px] text-zinc-500 mb-2 font-black tracking-tighter">DATA_STREAM_LOAD:</div>
-                <div className="w-full h-1.5 lg:h-3 bg-zinc-900 rounded-full overflow-hidden border border-white/5">
-                  <div className={`h-full bg-emerald-500 transition-all duration-1000 ${loading ? 'w-[85%]' : 'w-[15%]'}`} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="h-32 lg:h-48 border-t border-white/5 bg-zinc-950/20 p-6 flex flex-col justify-center items-center opacity-30 select-none">
-             <ShieldCheck size={24} className="text-emerald-600 mb-3 animate-pulse" />
-             <span className="text-[8px] lg:text-[10px] text-zinc-500 uppercase font-black tracking-[0.3em] text-center leading-relaxed">
-               Nieto Laboratory<br/>
-               <span className="text-zinc-700 text-[7px]">Core Architecture por Manuel Nieto</span>
-             </span>
-          </div>
-        </aside>
       </div>
 
       {/* 4. FOOTER INDUSTRIAL */}
