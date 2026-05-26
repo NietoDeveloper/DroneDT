@@ -663,9 +663,4 @@ For questions, support, or business inquiries:
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:2196f3,100:0d47a1&height=120&section=footer&animation=fadeIn" width="100%"/>
 
-**Built with ❤️ for the Colombian drone industry**
-
-[![GitHub stars](https://img.shields.io/github/stars/your-username/dronedt-project?style=social)](https://github.com/your-username/dronedt-project)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/dronedt-project?style=social)](https://github.com/your-username/dronedt-project/fork)
-
 </div>
