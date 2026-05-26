@@ -9,15 +9,3 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-  },
-  "keywords": [
-    "drones",
-    "digital-twin",
-    "emerald-dt",
-    "mern",
-    "nextjs16",
-    "turbopack",
-    "tailwindcss-v4"
-  ],
-  "dependencies":
-
