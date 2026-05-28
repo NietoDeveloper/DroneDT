@@ -39,7 +39,4 @@ const nextConfig = {
       'lucide-react', 
       '@headlessui/react', 
       'framer-motion'
-    ],
-  },
 
- 
