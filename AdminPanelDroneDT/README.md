@@ -97,15 +97,6 @@ dronedt-admin/
 
 ---
 
-## ⚙️ Getting Started
-
-### Prerequisites
-
-- **Node.js** 18+ or 20+
-- **Docker** (Optional for containerized development)
-- **npm** or **pnpm** package manager
-- **Git** for version control
-
 ### Installation
 
 1. **Clone the repository:**
