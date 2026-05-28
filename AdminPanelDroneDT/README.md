@@ -97,15 +97,7 @@ dronedt-admin/
 
 ### 📦 Operational Management
 
-- **Order Lifecycle:** Complete tracking from purchase to manufacturing and shipping
-- **Inventory Control:** Real-time stock management of drone components and finished products
-- **Manufacturing Module:** Monitor assembly line status, production schedules, and quality control
-- **Logistics & Shipping:** Route optimization and delivery tracking
-
-### 🤖 Automation & AI
-
-- **AI-Bot Integration:** Management and monitoring of AI-driven customer service
-- **Support Center:** Advanced ticketing system for technical drone assistance
+- **Order Lifecycle:** Complete tracking from purchase to manufacturing
 - **Automated Workflow** Optional 2FA for enhanced security
 
 ### 🎨 User Experience
