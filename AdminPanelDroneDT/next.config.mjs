@@ -25,6 +25,5 @@ const nextConfig = {
   },
 
   /* 
-      DOCKER & RAILWAY OPTIMIZATION
       Build standalone para máxima eficiencia en contenedores.
   */
