@@ -1,17 +1,5 @@
 <div align="center">
 
-Platform%20%7C%20Colombia&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
-
-<br/>
-
-<!-- BADGES -->
-[![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?
-<br/>
-
-<!-- QUICK NAVIGATION -->
-[🚀 Quick Start](#-quick-start) · [🏗️ Architecture](#%EF%B8%8F-architecture) · [📦 Modules](#-modules) · [🛠️ Tech Stack](#%EF%B8%8F-tech-stack) · [🐳 Docker](#-docker) · [☁️ Deploy](#%EF%B8%8F-deployment) · [🤝 Contributing](#-contributing)
-
-</div>
 
 ---
 
