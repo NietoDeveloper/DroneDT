@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- Animated Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700,FEB60D&height=200&section=header&text=DroneDT%20Admin&fontSize=52&fontColor=0a0a0a&fontAlignY=38&desc=Industrial%20Drone%20Management%20Platform&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0a0a0a,1a1a1a&height=200&section=header&text=DroneDT%20Admin&fontSize=52&fontColor=FFD700&fontAlignY=38&desc=Industrial%20Drone%20Management%20Platform&descAlignY=58&descSize=18&descAlpha=80&animation=fadeIn" width="100%"/>
 
 <br/>
 
@@ -276,6 +276,6 @@ All rights reserved © 2026 Manuel Nieto
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700,FEB60D&height=120&section=footer&text=Empowering%20Colombia%27s%20Drone%20Industry&fontSize=16&fontColor=0a0a0a&fontAlignY=65&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0a0a0a,1a1a1a&height=120&section=footer&text=Empowering%20Colombia%27s%20Drone%20Industry&fontSize=16&fontColor=FFD700&fontAlignY=65&animation=fadeIn" width="100%"/>
 
 </div>
