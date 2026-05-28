@@ -73,20 +73,7 @@ dronedt-admin/
 │   │   ├── userService.ts              # Authorization Token Exchange & Cryptographic Credential Passing Handlers
 │   │   ├── productService.ts           # Hardware Asset Dispatcher managing Remote State Mutations & CRUD Execution
 │   │   └── cmsService.ts               # Public Manifest Synchronization & Client-Side Dictionary Mutation Hook
-│   ├── lib/
-│   │   ├── api/socket-client.ts        # Isolated WebSocket Manager handling Duplex Streams with Automated 
-pnpm install
-```AME=DroneDT Admin
-NEXT_PUBLIC_APP_URL=http://localhost:3001
-NODE_ENV=development
-
-# API Backend
-NEXT_PUBLIC_API_URL=http://localhost:5000
-NEXT_PUBLIC_API_VERSION=v1
-
-# Authentication
-NEXTAUTH_URL=http://localhost:3001
-NEXTAUTH_SECRET=your-super-secret-key-change-this
+│   ├── lib/secret-key-change-this
 
 # Database
 DATABASE_URL=mongodb+srv://user:pass@cluster.mongodb.net/dronedt
