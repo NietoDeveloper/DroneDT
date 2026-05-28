@@ -106,11 +106,7 @@ dronedt-admin/
 
 - **AI-Bot Integration:** Management and monitoring of AI-driven customer service
 - **Support Center:** Advanced ticketing system for technical drone assistance
-- **Automated Workflows:** Smart notifications and process automation
-
-### 🛡 Security & Access Control
-
-- **RBAC (Role-Based Access Control):** Granular permissions for employees and administrators
+- **Automated Workflows:** Smart notifications and process automationstrators
 - **Secure Authentication:** Enterprise-grade login/reset-password flows using NextAuth.js
 - **Audit Logs:** Complete tracking of administrative actions
 - **Two-Factor Authentication:** Optional 2FA for enhanced security
