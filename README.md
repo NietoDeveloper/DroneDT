@@ -5,14 +5,7 @@ Platform%20%7C%20Colombia&descAlignY=58&descSize=18&animation=fadeIn" width="100
 <br/>
 
 <!-- BADGES -->
-[![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?style=for
-
-
-<br/>
-
-> **A high-performance MERN stack e-commerce platform for industrial drone manufacturing in Colombia.**
-> Tesla-inspired UI · Secure multi-panel architecture · Fully containerized · AWS-ready.
-
+[![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?
 <br/>
 
 <!-- QUICK NAVIGATION -->
