@@ -1,252 +1,281 @@
-> **A high-performance MERN stack e-commerce platform for industrial drone manufacturing in Colombia.**
-> Tesla & SpaceX-inspired UI · Secure multi-cluster architecture · Fully containerized · AWS-ready.
+<div align="center">
 
-### 🌐 PRODUCTION NODES ONLINE
+<!-- Animated Header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700,FEB60D&height=200&section=header&text=DroneDT%20Admin&fontSize=52&fontColor=0a0a0a&fontAlignY=38&desc=Industrial%20Drone%20Management%20Platform&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
 
-**🛒 Public Storefront:** [dronedt.vercel.app](https://dronedt.vercel.app/)
+<br/>
 
-**🛠️ Employee Admin Dashboard:** [dashboard-drone-dt.vercel.app](https://dashboard-drone-dt.vercel.app/)
+[![Live Platform](https://img.shields.io/badge/🚀%20Live%20Platform-DroneDT-FFD700?style=for-the-badge&labelColor=0a0a0a)](https://dronedt.vercel.app/)
+[![Admin Dashboard](https://img.shields.io/badge/🛸%20Admin%20Dashboard-Control%20Panel-FEB60D?style=for-the-badge&labelColor=0a0a0a)](https://dashboarddronedt.vercel.app/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 
-[🚀 Quick Start](https://www.google.com/search?q=%23-quick-start) · [🏗️ Architecture](https://www.google.com/search?q=%23%25EF%25B8%258F-architecture) · [📦 Modules](https://www.google.com/search?q=%23-modules) · [🛠️ Tech Stack](https://www.google.com/search?q=%23%25EF%25B8%258F-tech-stack) · [🐳 Docker](https://www.google.com/search?q=%23-docker) · [☁️ Deploy](https://www.google.com/search?q=%23%25EF%25B8%258F-deployment) · [🤝 Contributing](https://www.google.com/search?q=%23-contributing)
-
----
-
----
-
-## 📋 Table of Contents
-
-* [Overview](https://www.google.com/search?q=%23-overview)
-* [Key Features](https://www.google.com/search?q=%23-key-features)
-* [Architecture](https://www.google.com/search?q=%23%25EF%25B8%258F-architecture)
-* [Modules](https://www.google.com/search?q=%23-modules)
-* [Tech Stack](https://www.google.com/search?q=%23%25EF%25B8%258F-tech-stack)
-* [Quick Start](https://www.google.com/search?q=%23-quick-start)
-* [Roadmap](https://www.google.com/search?q=%23%25EF%25B8%258F-infrastructure-roadmap)
-* [Contributing](https://www.google.com/search?q=%23-contributing)
-* [License](https://www.google.com/search?q=%23-license)
+</div>
 
 ---
 
-## 🌐 Overview
+## 🛸 DroneDT — Admin Control Panel
 
-**DroneDT** is a full-stack monorepo e-commerce platform purpose-built for the industrial drone manufacturing market in Colombia. Inspired by [SpaceX's website](https://www.spacex.com) design philosophy — immersive visuals, technical minimalism, and zero-friction high-availability UX — it combines a public storefront, a customer portal, and a dedicated employee back-end administration panel into a single structured monorepo environment.
+Central management engine for **DroneDT**, a world-class platform for drone manufacturing, commercialization, and logistics in Colombia. Built with production-ready **Next.js 15** architecture, designed for high scalability and real-time operations.
 
-```text
-┌─────────────────────────────────────────────────────────┐
-│                        DroneDT                          │
-│                                                         │
-│   🛒 Public Shop      👤 Client Panel   🛠️ Dashboard  │
-│   (front/)               (panel-cliente/)   (dashboard/)│
-│        ↕                        ↕                  ↕    │
-│                 ⚡ Express REST API (back/)             │
-│                          ↕                              │
-│                 🍃 MongoDB Atlas Secure Cluster         │
-│                          ↕                              │
-│              ☁️ AWS S3 · EC2 · CloudFront               │
-└─────────────────────────────────────────────────────────┘
+> **Live:** [dronedt.vercel.app](https://dronedt.vercel.app/) &nbsp;|&nbsp; **Dashboard:** [dashboarddronedt.vercel.app](https://dashboarddronedt.vercel.app/)
 
+---
+
+## 🚀 Engineering Profile
+
+**Developed by:** Manuel Nieto — [NietoDeveloper](https://github.com/NietoDeveloper)  
+**Role:** Full-Stack Software Engineer
+
+- 🏆 **Rank:** #1 Committer in Colombia | #3 in South & Central America — [committers.top](https://committers.top)
+- 💻 **Stack:** MERN + Next.js + TypeScript + AWS + Docker
+- 🎯 **Focus:** High-performance, production-grade systems
+
+---
+
+## 🛠 Tech Stack
+
+| Category | Technology |
+|----------|-----------|
+| **Framework** | Next.js 15 (App Router) |
+| **Language** | TypeScript 5+ |
+| **Styling** | Tailwind CSS (Custom DroneDT Theme) |
+| **State Management** | Redux Toolkit / Zustand (Slices architecture) |
+| **Authentication** | NextAuth.js |
+| **Backend Integration** | RESTful API with dedicated Service Layer |
+| **Database** | MongoDB Atlas (MERN Stack) |
+| **Infrastructure** | Docker + AWS / Railway / Vercel |
+| **Real-time** | Socket.io (WebSockets) |
+| **Charts** | Recharts / Chart.js |
+
+---
+
+## 🔑 Key Features
+
+### 📊 Intelligence & Analytics
+
+- **Real-time Dashboard:** Advanced visualization of sales, production status, and drone telemetry
+- **Financial Reports:** Integrated finance module for profit/loss tracking and revenue analysis
+- **Customer Analytics:** Behavior patterns and segmentation insights
+
+### 📦 Operational Management
+
+- **Order Lifecycle:** Complete tracking from purchase to manufacturing and shipping
+- **Inventory Control:** Real-time stock management of drone components and finished products
+- **Manufacturing Module:** Monitor assembly line status, production schedules, and quality control
+- **Logistics & Shipping:** Route optimization and delivery tracking
+
+### 🤖 Automation & AI
+
+- **AI-Bot Integration:** Management and monitoring of AI-driven customer service
+- **Support Center:** Advanced ticketing system for technical drone assistance
+- **Automated Workflows:** Smart notifications and process automation
+
+### 🛡 Security & Access Control
+
+- **RBAC (Role-Based Access Control):** Granular permissions for employees and administrators
+- **Secure Authentication:** Enterprise-grade login/reset-password flows using NextAuth.js
+- **Audit Logs:** Complete tracking of administrative actions
+- **Two-Factor Authentication:** Optional 2FA for enhanced security
+
+### 🎨 User Experience
+
+- **Responsive Design:** Optimized for desktop, tablet, and mobile (310px – 1900px)
+- **Dark Mode:** Eye-friendly theme for extended work sessions
+- **Customizable Dashboard:** Drag-and-drop widget configuration
+- **Multi-language Support:** Spanish and English interfaces
+
+---
+
+## 🗂 Project Structure
+
+```
+dronedt-admin/
+├── src/
+│   ├── app/
+│   │   ├── layout.tsx                  # Root Layout — Strict Responsive (310px–1900px)
+│   │   ├── page.tsx                    # Preloader Engine & Session Bypass Pipeline
+│   │   ├── (auth)/                     # Authentication Zone
+│   │   │   ├── login/page.tsx          # Auth Gateway — SpaceX Minimalist UI
+│   │   │   └── layout.tsx              # Mesh Background & Panel Shell
+│   │   └── (dashboard)/                # Operations Command Center
+│   │       ├── layout.tsx              # Master UI Orchestrator & Navbar Pipeline
+│   │       ├── page.tsx                # Bento Grid — Real-Time Analytics
+│   │       ├── users/page.tsx          # RBAC Operator Management
+│   │       ├── products/page.tsx       # Fleet Asset Matrix & Drone CRUD
+│   │       ├── chat/page.tsx           # Real-Time Communication Terminal
+│   │       └── cms-manager/page.tsx    # Localization & Dictionary Synchronizer
+│   ├── components/
+│   │   ├── ui/                         # Atomic Design System (SpaceX Aesthetic)
+│   │   ├── layout/                     # Sidebar + Navbar Infrastructure
+│   │   ├── charts/                     # Vectorial Analytics Layer
+│   │   └── dashboard/                  # Telemetry Modules (Fault-Tolerant)
+│   ├── store/                          # Global State — Zustand Distributed Store
+│   ├── services/                       # Network Ingestion Layer
+│   ├── lib/                            # Socket Client & Utilities
+│   ├── types/                          # Strict TypeScript Schemas
+│   └── config/                         # Navigation Tree & Permissions Matrix
+├── tailwind.config.ts                  # Gold (#FFD700), Gainsboro (#DCDCDC) Design Vars
+└── README.md
 ```
 
 ---
 
-## ✨ Key Features
+## ⚙️ Getting Started
 
-### 🛒 E-Commerce Shop (`front/`)
+### Prerequisites
 
-* Product configurator (drone specs, industrial payloads)
-* Cart management & real-time checkout flow
-* Enterprise appointment & custom service scheduling
-* High-fidelity video hero sections
-* SEO-optimized with Next.js App Router
+- **Node.js** 18+ or 20+
+- **Docker** (optional for containerized development)
+- **npm** or **pnpm**
 
-### 🛠️ Back-End Dashboard (`dashboard/`)
-
-* Real-time inventory management (CRUD)
-* Core node monitoring ("Users Node Online" telemetry)
-* Operational sales analytics with interactive charts
-* Granular employee module access
-* Automated workflow logs
-
-### 👤 Client Dashboard (`panel-cliente/`)
-
-* Industrial order tracking & history logs
-* Business profile management
-* Support desk integration & technical FAQs
-* Personalized asset recommendations
-
-### 🔒 Security & Infrastructure
-
-* NextAuth & JWT secure authentication
-* Strict validation via [Zod](https://zod.dev/)
-* Maximum security double-cluster deployment
-* Role-Based Access Control (RBAC)
-* Full multi-zone containerization
-
----
-
-## 🏗️ Architecture
-
-The infrastructure runs on an optimized **npm workspaces** monorepo layout, isolating responsibilities while sharing type safety boundaries across nodes.
-
-```text
-drone-dt/                         ← Monorepo root perimeters
-├── front/                        ← Public Storefront (Next.js 16 + Turbopack)
-├── back/                         ← REST API Core (Node.js + Express + TS)
-├── dashboard/                    ← Employee Back-End Admin Panel (Next.js 16)
-├── panel-cliente/                ← Client Fleet Management Panel (Next.js)
-├── shared/                       ← Unified types & core utility schemas
-├── docker-compose.yml            ← Full orchestration matrix
-└── package.json                  ← Workspace cluster engine
-
-```
-
-### Data Flow Execution
-
-```text
-User View (Client/Admin) → Next.js (SSR/Turbopack) → Express API Core (back/) → MongoDB Secure Cluster
-                                                                   ↘ AWS S3 (Industrial Media Storage)
-
-```
-
----
-
-## 📦 Modules
-
-### 1. `front/` — Public Storefront
-
-> SpaceX-inspired storefront — minimalist, dark theme, high-speed rendering.
-
-| Route | Description |
-| --- | --- |
-| `/` | Enterprise Landing: hero video, drone models, custom CTAs |
-| `/shop/drones` | Configurable industrial aircraft catalog |
-| `/shop/accesorios` | Payloads, thermal sensors, and parts listing |
-| `/shop/servicios` | Agronomy, mapping, and monitoring packages |
-
----
-
-### 2. `back/` — REST API Engine
-
-> Scalable Node.js + Express API built with TypeScript and secure database clustering.
-
-| Method | Endpoint | Description | Auth Access |
-| --- | --- | --- | --- |
-| `POST` | `/api/v1/users/register` | Register enterprise user | Public ❌ |
-| `POST` | `/api/v1/users/login` | Login node, grants secure JWT | Public ❌ |
-| `GET` | `/api/v1/drones` | List active fleet inventory | Public ❌ |
-| `POST` | `/api/v1/drones` | Inject new aircraft item | 🔒 Admin / Employee |
-| `GET` | `/api/v1/admin/stats` | High-level KPI operational readouts | 🔒 Admin Only |
-
----
-
-### 3. `dashboard/` — Employee Admin Panel
-
-> Operations hub for telemetry control, logistics tracking, and inventory status.
-
-| Route | Description |
-| --- | --- |
-| `/` | Main Grid: Daily sales, active users tracking, stock thresholds |
-| `/inventario` | Advanced interface forms for drone specifications control |
-| `/users` | Node status dashboard ("Users Node Online" live feed) |
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology | Status / Version |
-| --- | --- | --- |
-| **Frontend Store** | [Next.js](https://nextjs.org/) + [React](https://react.dev/) | 16.x / 19.x (Turbopack) |
-| **Admin Panel** | [Next.js Dashboard](https://nextjs.org/) | 16.x (Standalone Build) |
-| **Styling Engine** | [Tailwind CSS](https://tailwindcss.com/) | 4.x Modern Layering |
-| **Backend API** | [Node.js](https://nodejs.org/) + [Express](https://expressjs.com/) | v20.x + TypeScript 5.x |
-| **Database Core** | [MongoDB Atlas](https://www.mongodb.com/atlas) | Secure Double Cluster Mongoose |
-| **Cloud Storage** | [AWS S3](https://aws.amazon.com/s3/) | Industrial Media CDN |
-| **Containerization** | [Docker](https://www.docker.com/) | Multi-stage Docker Compose |
-| **API Infrastructure** | [Railway](https://railway.app/) | High-Availability Pipelines |
-| **App Edge Host** | [Vercel Production](https://vercel.com/) | Edge Network Routing |
-
----
-
-## 🚀 Quick Start
-
-### 1. Clone the Repository
+### Installation
 
 ```bash
-git clone https://github.com/NietoDeveloper/Dashboard-DroneDT.git
-cd drone-dt
+# 1. Clone the repository
+git clone https://github.com/NietoDeveloper/dronedt-admin.git
+cd dronedt-admin
 
-```
-
-### 2. Install Workspace Cluster Dependencies
-
-```bash
+# 2. Install dependencies
 npm install
 
+# 3. Setup environment variables
+cp .env.example .env.local
 ```
 
-### 3. Run Development Servers via Docker Orchestration
+Edit `.env.local`:
+
+```env
+# Application
+NEXT_PUBLIC_APP_NAME=DroneDT Admin
+NEXT_PUBLIC_APP_URL=http://localhost:3001
+NODE_ENV=development
+
+# API Backend
+NEXT_PUBLIC_API_URL=http://localhost:5000
+NEXT_PUBLIC_API_VERSION=v1
+
+# Authentication
+NEXTAUTH_URL=http://localhost:3001
+NEXTAUTH_SECRET=your-super-secret-key-change-this
+
+# Database
+DATABASE_URL=mongodb+srv://user:pass@cluster.mongodb.net/dronedt
+
+# AWS Configuration
+AWS_REGION=us-east-1
+AWS_ACCESS_KEY_ID=your-access-key
+AWS_SECRET_ACCESS_KEY=your-secret-key
+AWS_S3_BUCKET=dronedt-uploads
+
+# Payment Gateway
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_xxx
+STRIPE_SECRET_KEY=sk_test_xxx
+STRIPE_WEBHOOK_SECRET=whsec_xxx
+```
 
 ```bash
-docker-compose up --build
-
+# 4. Run development server
+npm run dev
+# → http://localhost:3001
 ```
-
-### 📊 Local Node Engine Mapping
-
-| Local Node | Endpoint Mapping |
-| --- | --- |
-| 🔧 **Backend API Engine** | `http://localhost:5000/api/v1` |
-| 🛒 **Public Storefront** | `http://localhost:3000` |
-| 🛠️ **Employee Admin Panel** | `http://localhost:3001` |
 
 ---
 
-## 🗺️ Infrastructure Roadmap
+## 🐳 Docker Deployment
 
-* [x] Monorepo structure with optimized npm workspaces
-* [x] Backend REST API Core (Express + TypeScript 5)
-* [x] MongoDB Atlas production cluster connection setup
-* [x] Next.js 16 Custom Admin Dashboard node deployment
-* [x] Vercel Cloud Pipeline configuration bypass (TypeScript compilation validation)
-* [x] Responsive layout optimization (Fluid scaling: 310px to 1900px)
-* [ ] AWS S3 live asset stream integration
-* [ ] Automated CI/CD production release pipelines
+```bash
+# Development
+docker-compose up -d
+
+# Production build
+docker build -t dronedt-admin:latest .
+docker run -p 3001:3001 --env-file .env.production dronedt-admin:latest
+
+# Multi-stage production
+docker-compose -f docker-compose.prod.yml up -d
+```
 
 ---
 
-## 🤝 Contributing
+## 📜 Scripts
 
-1. **Fork** the repository.
-2. **Create** an optimized branch:
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server on port 3001 |
+| `npm run build` | Build production-ready application |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+| `npm run type-check` | TypeScript type checking |
+| `npm run test` | Run unit tests |
+| `npm run test:e2e` | Run end-to-end tests |
+| `npm run format` | Format code with Prettier |
 
-```bash
-git checkout -b feature/allocation-node
+---
 
-```
+## 🎨 Design Identity
 
-3. **Commit** changes following conventional guidelines:
+| Token | Value |
+|-------|-------|
+| **Primary Gold** | `#FFD700` |
+| **Secondary Gold** | `#FEB60D` |
+| **Background** | `#DCDCDC` (Gainsboro) |
+| **Dark Base** | `#0a0a0a` |
+| **Aesthetic** | Tesla-inspired minimalist |
 
-```bash
-git commit -m 'feat: optimize tree-shaking metrics'
+---
 
-```
+## 📈 Performance & Quality
 
-4. **Push** to origin and open a formal Pull Request.
+✅ React Compiler — optimized rendering  
+✅ Code Splitting — automatic route-based  
+✅ Image Optimization — Next.js lazy loading  
+✅ Bundle Analysis — regular audits  
+✅ CI/CD Pipeline — Vercel + AWS ready  
+✅ TypeScript Strict — full enforcement  
+✅ Security — regular dependency audits  
+✅ Monitoring — error tracking ready  
+
+---
+
+## 🗺 Roadmap
+
+- [x] Core admin dashboard
+- [x] Order management system
+- [x] Inventory control
+- [x] Manufacturing module
+- [ ] Advanced AI-bot analytics dashboard
+- [ ] Mobile app integration
+- [ ] Multi-warehouse support
+- [ ] Advanced reporting engine
+- [ ] Real-time drone telemetry visualization
 
 ---
 
 ## 📄 License
 
-This software architecture is licensed under the **MIT License** — see the `LICENSE` file for complete asset terms.
+Proprietary software developed by **NietoDeveloper** for DroneDT.  
+All rights reserved © 2026 Manuel Nieto
 
 ---
 
-### 🌌 NIETO LABORATORY
+<div align="center">
 
-**Lead Enterprise Architect & Systems Engineer:** [Manuel Nieto]()
+## 📬 Contact
 
-**Deployment Cycle:** Rank S+ Status Verification Matrix
+[![GitHub](https://img.shields.io/badge/GitHub-NietoDeveloper-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/NietoDeveloper)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Manuel%20Nieto-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/manuelnietodeveloper)
+[![Portfolio](https://img.shields.io/badge/Portfolio-manuelnieto.netlify.app-FFD700?style=for-the-badge&labelColor=0a0a0a)](https://manuelnieto.netlify.app/)
+[![Email](https://img.shields.io/badge/Email-contact@nietodev.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@nietodev.com)
 
-**Last Infrastructure Update:** May 2026 · Bogotá, Colombia
+<br/>
 
-🚀 *Ad Astra per Aspera — Building Next-Gen Digital Twins.*
+[![Platform](https://img.shields.io/badge/🌐%20Live%20Platform-dronedt.vercel.app-FFD700?style=flat-square&labelColor=0a0a0a)](https://dronedt.vercel.app/)
+&nbsp;
+[![Dashboard](https://img.shields.io/badge/🛸%20Admin%20Dashboard-dashboarddronedt.vercel.app-FEB60D?style=flat-square&labelColor=0a0a0a)](https://dashboarddronedt.vercel.app/)
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700,FEB60D&height=120&section=footer&text=Empowering%20Colombia%27s%20Drone%20Industry&fontSize=16&fontColor=0a0a0a&fontAlignY=65&animation=fadeIn" width="100%"/>
+
+</div>
