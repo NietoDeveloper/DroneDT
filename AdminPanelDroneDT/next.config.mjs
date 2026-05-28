@@ -51,10 +51,5 @@ const nextConfig = {
   },
 
   /* 
-      ESLINT (Next.js 16/Turbopack Standard)
-      Se eliminó la clave 'eslint' raíz para evitar advertencias de esquema.
-      La validación se delega al proceso nativo de 'next build'.
-  */
-};
 
 export default nextConfig;
