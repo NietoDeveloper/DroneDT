@@ -1,17 +1,6 @@
 <div align="center">
 
 
----
-
-<!-- ANIMATED DEMO GIF PLACEHOLDER -->
-<div align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=2196F3&center=true&vCenter=true&multiline=true&width=700&height=80&lines=MERN+Stack+%7C+Next.js+15+%7C+TypeScript;Tesla-Inspired+UI+%7C+Docker+%7C+AWS-Ready;Industrial+Drones+%7C+Colombia+%F0%9F%87%A8%F0%9F%87%B4" alt="Typing SVG"/>
-</div>
-
----
-
-## 📋 Table of Contents
-
 - [Overview](#-overview)
 - [Key Features](#-key-features)
 - [Architecture](#%EF%B8%8F-architecture)
