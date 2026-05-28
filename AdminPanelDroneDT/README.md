@@ -74,43 +74,7 @@ dronedt-admin/
 │   │   ├── productService.ts           # Hardware Asset Dispatcher managing Remote State Mutations & CRUD Execution
 │   │   └── cmsService.ts               # Public Manifest Synchronization & Client-Side Dictionary Mutation Hook
 │   ├── lib/
-│   │   ├── api/socket-client.ts        # Isolated WebSocket Manager handling Duplex Streams with Automated Backoff Retries
-│   │   └── utils/formatters.ts         # High-Precision Mathematical Parsers for ISO Date Formats & Financial Valuations
-│   ├── types/                          # STRATIFIED DATA SCHEMAS (Strict TypeScript Typings Layer)
-│   │   ├── user.types.ts               # Structural Typing definitions for Operator Contexts & Security Privileges
-│   │   ├── sales.types.ts              # Financial Stream Models & Analytical Event Payloads
-│   │   └── product.types.ts            # UAV Specifications Schemas: Core Load Capacity, Firmware Matrix & Stock Structs
-│   └── config/
-│   │   ├── navigation.ts               # Static Navigation Tree Matrix & Icon Vector Mapping for Sidebar Rails
-│   │   └── permissions.ts              # Access Control Matrix defining Strict Access Rules across System Nodes
-├── tailwind.config.ts                  # Industrial Design Variable Matrix: Gold (#FFD700), Gainsboro (#DCDCDC) & Muted Zinc
-└── README.md                           # Core Technical Manifesto — Nieto Laboratory Elite Operations Guide
----
-
-## 🔑 Key Features
-
-### 📊 Intelligence & Analytics
-
-- **Real-time Dashboard:** Advanced visualization of sales, production status, and drone telemetry
-- **Financial Reports:** Integrated finance module for profit/loss tracking and revenue analysis
-- **Customer Analytics:** Behavior patterns and segmentation insights
-
----
-
-### Installation
-
-1. **Clone the repository:**
-
-```bash
-git clone https://github.com/NietoDeveloper/dronedt-admin.git
-cd dronedt-admin
-```
-
-1. **Install dependencies:**
-
-```bash
-npm install
-# or
+│   │   ├── api/socket-client.ts        # Isolated WebSocket Manager handling Duplex Streams with Automated 
 pnpm install
 ```
 
