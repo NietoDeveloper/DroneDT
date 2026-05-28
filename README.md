@@ -1,7 +1,6 @@
 <div align="center">
 
-<!-- ANIMATED HEADER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d47a1,100:2196f3&height=200&section=header&text=DroneDT&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Industrial%20Drone%20E-Commerce%20Platform%20%7C%20Colombia&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
+Platform%20%7C%20Colombia&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
 
 <br/>
 
