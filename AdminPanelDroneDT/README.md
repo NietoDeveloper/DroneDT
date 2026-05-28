@@ -95,15 +95,6 @@ dronedt-admin/
 - **Financial Reports:** Integrated finance module for profit/loss tracking and revenue analysis
 - **Customer Analytics:** Behavior patterns and segmentation insights
 
-### 📦 Operational Management
-
-- **Order Lifecycle:** Complete tracking from purchase to manufacturing
-- **Automated Workflow** Optional 2FA for enhanced security
-
-### 🎨 User Experience
-
-- **Responsive Design Spanish and English interfaces
-
 ---
 
 ## ⚙️ Getting Started
