@@ -7,9 +7,6 @@ Platform%20%7C%20Colombia&descAlignY=58&descSize=18&animation=fadeIn" width="100
 <!-- BADGES -->
 [![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?style=for
 
-[![Deploy on Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
-[![Deploy on Railway](https://img.shields.io/badge/Deploy-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
-[![AWS Ready](https://img.shields.io/badge/AWS-S3%20%7C%20EC2%20Ready-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/)
 
 <br/>
 
