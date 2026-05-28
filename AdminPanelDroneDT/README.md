@@ -76,19 +76,7 @@ dronedt-admin/
 │   ├── lib/
 │   │   ├── api/socket-client.ts        # Isolated WebSocket Manager handling Duplex Streams with Automated 
 pnpm install
-```
-
-1. **Setup environment variables:**
-
-```bash
-cp .env.example .env.local
-```
-
-Edit `.env.local` with your configuration:
-
-```env
-# Application
-NEXT_PUBLIC_APP_NAME=DroneDT Admin
+```AME=DroneDT Admin
 NEXT_PUBLIC_APP_URL=http://localhost:3001
 NODE_ENV=development
 
