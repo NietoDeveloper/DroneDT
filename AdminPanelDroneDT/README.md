@@ -73,17 +73,6 @@ dronedt-admin/
 │   │   ├── userService.ts              # Authorization Token Exchange & Cryptographic Credential Passing Handlers
 │   │   ├── productService.ts           # Hardware Asset Dispatcher managing Remote State Mutations & CRUD Execution
 │   │   └── cmsService.ts               # Public Manifest Synchronization & Client-Side Dictionary Mutation Hook
-│   ├── lib/secret-key-change-this
-
-# Database
-DATABASE_URL=mongodb+srv://user:pass@cluster.mongodb.net/dronedt
-
-# AWS Configuration
-AWS_REGION=us-east-1
-AWS_ACCESS_KEY_ID=your-access-key
-AWS_SECRET_ACCESS_KEY=your-secret-key
-AWS_S3_BUCKET=dronedt-uploads
-
 # Payment Gateway (Stripe)
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_xxx
 STRIPE_SECRET_KEY=sk_test_xxx
