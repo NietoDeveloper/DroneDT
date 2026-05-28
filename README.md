@@ -1,8 +1,3 @@
-Aquí tienes el archivo completo con la sintaxis corregida, los bloques de código y las tablas perfectamente formateadas para que los saltos de línea e indentaciones no rompan el renderizado en GitHub.
-
-Copia y pega este bloque de código Markdown tal cual en tu archivo **`README.md`**:
-
-```markdown
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d47a1,100:2196f3&height=200&section=header&text=DroneDT&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Industrial%20Drone%20E-Commerce%20Platform%20%7C%20Colombia&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
@@ -70,9 +65,6 @@ Copia y pega este bloque de código Markdown tal cual en tu archivo **`README.md
 
 **DroneDT** is a full-stack monorepo e-commerce platform purpose-built for the industrial drone manufacturing market in Colombia. Inspired by [SpaceX's website](https://www.spacex.com) design philosophy — immersive visuals, technical minimalism, and zero-friction high-availability UX — it combines a public storefront, a customer portal, and a dedicated employee back-end administration panel into a single structured monorepo environment.
 
-
-```
-
 ┌─────────────────────────────────────────────────────────┐
 │                        DroneDT                          │
 │                                                         │
@@ -86,7 +78,6 @@ Copia y pega este bloque de código Markdown tal cual en tu archivo **`README.md
 │              ☁️ AWS S3 · EC2 · CloudFront               │
 └─────────────────────────────────────────────────────────┘
 
-```
 
 ---
 
@@ -144,9 +135,6 @@ Copia y pega este bloque de código Markdown tal cual en tu archivo **`README.md
 
 The infrastructure runs on an optimized **npm workspaces** monorepo layout, isolating responsibilities while sharing type safety boundaries across nodes.
 
-
-```
-
 drone-dt/                         ← Monorepo root perimeters
 ├── front/                        ← Public Storefront (Next.js 16 + Turbopack)
 ├── back/                         ← REST API Core (Node.js + Express + TS)
@@ -156,17 +144,12 @@ drone-dt/                         ← Monorepo root perimeters
 ├── docker-compose.yml            ← Full orchestration matrix
 └── package.json                  ← Workspace cluster engine
 
-```
 
 ### Data Flow Execution
-
-
-```
 
 User View (Client/Admin) → Next.js (SSR/Turbopack) → Express API Core (back/) → MongoDB Secure Cluster
 ↘ AWS S3 (Industrial Media Storage)
 
-```
 
 ---
 
@@ -234,67 +217,51 @@ User View (Client/Admin) → Next.js (SSR/Turbopack) → Express API Core (back/
 ```bash
 git clone [https://github.com/NietoDeveloper/Dashboard-DroneDT.git](https://github.com/NietoDeveloper/Dashboard-DroneDT.git)
 cd drone-dt
-
-```
-
-### 2. Install Workspace Cluster Dependencies
-
-```bash
+2. Install Workspace Cluster Dependencies
+Bash
 npm install
-
-```
-
-### 3. Run Development Servers via Docker Orchestration
-
-```bash
+3. Run Development Servers via Docker Orchestration
+Bash
 docker-compose up --build
+Local Node Engine Mapping
+Local Node	Endpoint Mapping
+🔧 Backend API Engine	http://localhost:5000/api/v1
+🛒 Public Storefront	http://localhost:3000
+🛠️ Employee Admin Panel	http://localhost:3001
+🗺️ Infrastructure Roadmap
+[x] Monorepo structure with optimized npm workspaces
 
-```
+[x] Backend REST API Core (Express + TypeScript 5)
 
-### Local Node Engine Mapping
+[x] MongoDB Atlas production cluster connection setup
 
-| Local Node | Endpoint Mapping |
-| --- | --- |
-| 🔧 **Backend API Engine** | `http://localhost:5000/api/v1` |
-| 🛒 **Public Storefront** | `http://localhost:3000` |
-| 🛠️ **Employee Admin Panel** | `http://localhost:3001` |
+[x] Next.js 16 Custom Admin Dashboard node deployment
 
----
+[x] Vercel Cloud Pipeline configuration bypass (TypeScript compilation validation)
 
-## 🗺️ Infrastructure Roadmap
+[x] Responsive layout optimization (Fluid scaling: 310px to 1900px)
 
-* [x] Monorepo structure with optimized npm workspaces
-* [x] Backend REST API Core (Express + TypeScript 5)
-* [x] MongoDB Atlas production cluster connection setup
-* [x] Next.js 16 Custom Admin Dashboard node deployment
-* [x] Vercel Cloud Pipeline configuration bypass (TypeScript compilation validation)
-* [x] Responsive layout optimization (Fluid scaling: 310px to 1900px)
-* [ ] AWS S3 live asset stream integration
-* [ ] Automated CI/CD production release pipelines
+[ ] AWS S3 live asset stream integration
 
----
+[ ] Automated CI/CD production release pipelines
 
-## 🤝 Contributing
+🤝 Contributing
+Fork the repository.
 
-1. **Fork** the repository.
-2. **Create** an optimized branch: `git checkout -b feature/allocation-node`.
-3. **Commit** changes following conventional guidelines: `git commit -m 'feat: optimize tree-shaking metrics'`.
-4. **Push** to origin and open a formal Pull Request.
+Create an optimized branch: git checkout -b feature/allocation-node.
 
----
+Commit changes following conventional guidelines: git commit -m 'feat: optimize tree-shaking metrics'.
 
-## 📄 License
+Push to origin and open a formal Pull Request.
 
-This software architecture is licensed under the **MIT License** — see the `LICENSE` file for complete asset terms.
+📄 License
+This software architecture is licensed under the MIT License — see the LICENSE file for complete asset terms.
 
----
+🌌 NIETO LABORATORY
+Lead Enterprise Architect & Systems Engineer: Manuel Nieto
 
-### 🌌 NIETO LABORATORY
+Deployment Cycle: Rank S+ Status Verification Matrix
 
-**Lead Enterprise Architect & Systems Engineer:** [Manuel Nieto](https://www.google.com/search?q=https://github.com/NietoDeveloper)
+Last Infrastructure Update: May 2026 · Bogotá, Colombia
 
-**Deployment Cycle:** Rank S+ Status Verification Matrix
-
-**Last Infrastructure Update:** May 2026 · Bogotá, Colombia
-
-🚀 *Ad Astra per Aspera — Building Next-Gen Digital Twins.*
+🚀 Ad Astra per Aspera — Building Next-Gen Digital Twins.
