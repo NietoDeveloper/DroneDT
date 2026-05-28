@@ -44,8 +44,5 @@ const nextConfig = {
 
   /* 
       STRICT VALIDATION
-      Cero tolerancia a errores de tipado en producción.
-  */
-  typescript: {
-    ignoreBuildErrors: false,
+      Cero toleran false,
   },
