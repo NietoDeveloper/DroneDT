@@ -11,6 +11,3 @@ const nextConfig = {
       SECURITY & ASSET MANAGEMENT
       Configuración optimizada para S3 (Esmeraldas) y referencias de SpaceX.
   */
-  images: {
-    remotePatterns: [
-
