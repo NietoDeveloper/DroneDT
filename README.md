@@ -1,4 +1,4 @@
-Aquí tienes el código completo y corregido. Se solucionaron todos los problemas de colapso de texto (donde las etiquetas Bash y las líneas se habían mezclado), se estructuraron correctamente los diagramas ASCII, los bloques de código, las tablas y las listas de tareas pendientes ([x]).Copia este bloque de código limpio y pégalo directamente en tu archivo README.md:Markdown<div align="center">
+<div align="center">
 
 <!-- ANIMATED HEADER -->
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d47a1,100:2196f3&height=200&section=header&text=DroneDT&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Industrial%20Drone%20E-Commerce%20Platform%20%7C%20Colombia&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
