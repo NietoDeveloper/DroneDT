@@ -35,10 +35,10 @@
 ┌─────────────────────────────────────────────────────────┐
 │                        DroneDT                          │
 │                                                         │
-│   🛒 Public Shop         👤 Client Panel     🛠️ Dashboard  │
+│   🛒 Public Shop      👤 Client Panel   🛠️ Dashboard  │
 │   (front/)               (panel-cliente/)   (dashboard/)│
 │        ↕                        ↕                  ↕    │
-│                 ⚡ Express REST API (back/)               │
+│                 ⚡ Express REST API (back/)             │
 │                          ↕                              │
 │                 🍃 MongoDB Atlas Secure Cluster         │
 │                          ↕                              │
