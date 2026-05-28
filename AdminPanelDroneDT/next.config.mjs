@@ -28,8 +28,3 @@ const nextConfig = {
       DOCKER & RAILWAY OPTIMIZATION
       Build standalone para máxima eficiencia en contenedores.
   */
-  output: 'standalone',
-
-  /* 
-      PERFORMANCE & EXPERIMENTAL
-      Turbopack optimizado: tree-shaking agresivo para el Dashboard.
