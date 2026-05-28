@@ -110,10 +110,7 @@ dronedt-admin/
 
 ### 🎨 User Experience
 
-- **Responsive Design:** Optimized for desktop, tablet, and mobile devices
-- **Dark Mode:** Eye-friendly theme for extended work sessions
-- **Customizable Dashboard:** Drag-and-drop widget configuration
-- **Multi-language Support:** Spanish and English interfaces
+- **Responsive Design Spanish and English interfaces
 
 ---
 
