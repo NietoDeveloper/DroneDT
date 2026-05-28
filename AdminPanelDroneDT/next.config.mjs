@@ -33,6 +33,3 @@ const nextConfig = {
   /* 
       PERFORMANCE & EXPERIMENTAL
       Turbopack optimizado: tree-shaking agresivo para el Dashboard.
-  */
-  experimental: {
-    optimizePackageImports: [
