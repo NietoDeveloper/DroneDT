@@ -1,666 +1,252 @@
-<div align="center">
-
-<!-- ANIMATED HEADER -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d47a1,100:2196f3&height=200&section=header&text=DroneDT&fontSize=80&fontColor=ffffff&fontAlignY=38&desc=Industrial%20Drone%20E-Commerce%20Platform%20%7C%20Colombia&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
-
-<br/>
-
-<!-- BADGES -->
-[![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/atlas)
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](./LICENSE)
-
-<br/>
-
-[![Deploy on Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
-[![Deploy on Railway](https://img.shields.io/badge/Deploy-Railway-0B0D0E?style=for-the-badge&logo=railway&logoColor=white)](https://railway.app/)
-[![AWS Ready](https://img.shields.io/badge/AWS-S3%20%7C%20EC2%20Ready-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/)
-
-<br/>
-
 > **A high-performance MERN stack e-commerce platform for industrial drone manufacturing in Colombia.**
-> Tesla-inspired UI · Secure multi-panel architecture · Fully containerized · AWS-ready.
+> Tesla & SpaceX-inspired UI · Secure multi-cluster architecture · Fully containerized · AWS-ready.
 
-<br/>
+### 🌐 PRODUCTION NODES ONLINE
 
-<!-- QUICK NAVIGATION -->
-[🚀 Quick Start](#-quick-start) · [🏗️ Architecture](#%EF%B8%8F-architecture) · [📦 Modules](#-modules) · [🛠️ Tech Stack](#%EF%B8%8F-tech-stack) · [🐳 Docker](#-docker) · [☁️ Deploy](#%EF%B8%8F-deployment) · [🤝 Contributing](#-contributing)
+**🛒 Public Storefront:** [dronedt.vercel.app](https://dronedt.vercel.app/)
 
-</div>
+**🛠️ Employee Admin Dashboard:** [dashboard-drone-dt.vercel.app](https://dashboard-drone-dt.vercel.app/)
+
+[🚀 Quick Start](https://www.google.com/search?q=%23-quick-start) · [🏗️ Architecture](https://www.google.com/search?q=%23%25EF%25B8%258F-architecture) · [📦 Modules](https://www.google.com/search?q=%23-modules) · [🛠️ Tech Stack](https://www.google.com/search?q=%23%25EF%25B8%258F-tech-stack) · [🐳 Docker](https://www.google.com/search?q=%23-docker) · [☁️ Deploy](https://www.google.com/search?q=%23%25EF%25B8%258F-deployment) · [🤝 Contributing](https://www.google.com/search?q=%23-contributing)
 
 ---
-
-<!-- ANIMATED DEMO GIF PLACEHOLDER -->
-<div align="center">
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=2196F3&center=true&vCenter=true&multiline=true&width=700&height=80&lines=MERN+Stack+%7C+Next.js+15+%7C+TypeScript;Tesla-Inspired+UI+%7C+Docker+%7C+AWS-Ready;Industrial+Drones+%7C+Colombia+%F0%9F%87%A8%F0%9F%87%B4" alt="Typing SVG"/>
-</div>
 
 ---
 
 ## 📋 Table of Contents
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Architecture](#%EF%B8%8F-architecture)
-- [Modules](#-modules)
-- [Tech Stack](#%EF%B8%8F-tech-stack)
-- [Quick Start](#-quick-start)
-- [Docker Setup](#-docker)
-- [Environment Variables](#-environment-variables)
-- [Project Structure](#-project-structure)
-- [API Reference](#-api-reference)
-- [Deployment](#%EF%B8%8F-deployment)
-- [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
-- [License](#-license)
+* [Overview](https://www.google.com/search?q=%23-overview)
+* [Key Features](https://www.google.com/search?q=%23-key-features)
+* [Architecture](https://www.google.com/search?q=%23%25EF%25B8%258F-architecture)
+* [Modules](https://www.google.com/search?q=%23-modules)
+* [Tech Stack](https://www.google.com/search?q=%23%25EF%25B8%258F-tech-stack)
+* [Quick Start](https://www.google.com/search?q=%23-quick-start)
+* [Roadmap](https://www.google.com/search?q=%23%25EF%25B8%258F-infrastructure-roadmap)
+* [Contributing](https://www.google.com/search?q=%23-contributing)
+* [License](https://www.google.com/search?q=%23-license)
 
 ---
 
 ## 🌐 Overview
 
-**DroneDT** is a full-stack monorepo e-commerce platform purpose-built for the industrial drone manufacturing market in Colombia. Inspired by [Tesla's website](https://www.tesla.com) design philosophy — immersive visuals, product configurators, and zero-friction UX — it combines a public storefront, a customer dashboard, and an employee admin panel into one cohesive system.
+**DroneDT** is a full-stack monorepo e-commerce platform purpose-built for the industrial drone manufacturing market in Colombia. Inspired by [SpaceX's website](https://www.spacex.com) design philosophy — immersive visuals, technical minimalism, and zero-friction high-availability UX — it combines a public storefront, a customer portal, and a dedicated employee back-end administration panel into a single structured monorepo environment.
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                        DroneDT                          │
 │                                                         │
-│  🛒 Public Shop   👤 Client Panel   🛠️ Employee Panel   │
-│        ↕                 ↕                  ↕           │
-│              ⚡ Express REST API (back/)                 │
+│   🛒 Public Shop         👤 Client Panel     🛠️ Dashboard  │
+│   (front/)               (panel-cliente/)   (dashboard/)│
+│        ↕                        ↕                  ↕    │
+│                 ⚡ Express REST API (back/)               │
 │                          ↕                              │
-│        🍃 MongoDB Atlas    +    🗄️ PostgreSQL (SQL)      │
+│                 🍃 MongoDB Atlas Secure Cluster         │
 │                          ↕                              │
-│              ☁️ AWS S3 · EC2 · CloudFront                │
+│              ☁️ AWS S3 · EC2 · CloudFront               │
 └─────────────────────────────────────────────────────────┘
+
 ```
 
 ---
 
 ## ✨ Key Features
 
-<table>
-<tr>
-<td width="50%">
+### 🛒 E-Commerce Shop (`front/`)
 
-### 🛒 E-Commerce Shop
-- Product configurator (drone specs, add-ons)
-- Cart management & checkout flow
-- Appointment & service scheduling
-- 4K video hero sections
-- SEO-optimized with Next.js 15 App Router
+* Product configurator (drone specs, industrial payloads)
+* Cart management & real-time checkout flow
+* Enterprise appointment & custom service scheduling
+* High-fidelity video hero sections
+* SEO-optimized with Next.js App Router
 
-</td>
-<td width="50%">
+### 🛠️ Back-End Dashboard (`dashboard/`)
 
-### 🛠️ Admin / Employee Panel
-- Real-time inventory management (CRUD)
-- Sales analytics with charts
-- User & role management
-- Appointment tracking
-- AI bot integration *(planned)*
+* Real-time inventory management (CRUD)
+* Core node monitoring ("Users Node Online" telemetry)
+* Operational sales analytics with interactive charts
+* Granular employee module access
+* Automated workflow logs
 
-</td>
-</tr>
-<tr>
-<td width="50%">
+### 👤 Client Dashboard (`panel-cliente/`)
 
-### 👤 Client Dashboard
-- Order tracking & history
-- Profile management
-- Support chat / FAQ
-- Personalized recommendations
+* Industrial order tracking & history logs
+* Business profile management
+* Support desk integration & technical FAQs
+* Personalized asset recommendations
 
-</td>
-<td width="50%">
+### 🔒 Security & Infrastructure
 
-### 🔒 Security & Scalability
-- JWT authentication with refresh tokens
-- Input validation via [Zod](https://zod.dev/)
-- Hybrid DB: MongoDB Atlas + PostgreSQL
-- Role-based access control (RBAC)
-- Docker-first local development
-
-</td>
-</tr>
-</table>
+* NextAuth & JWT secure authentication
+* Strict validation via [Zod](https://zod.dev/)
+* Maximum security double-cluster deployment
+* Role-Based Access Control (RBAC)
+* Full multi-zone containerization
 
 ---
 
 ## 🏗️ Architecture
 
-```
-drone-dt/                         ← Monorepo root
-├── front/                        ← Public Shop  (Next.js 15 + Tailwind)
-├── back/                         ← REST API     (Express + TypeScript)
-├── panel-cliente/                ← Client Panel (Next.js + Auth)
-├── panel-empleados/              ← Admin Panel  (Next.js + RBAC)
-├── shared/                       ← Shared types & utils (TypeScript)
-├── docker-compose.yml            ← Full local orchestration
-└── package.json                  ← Workspace config
+The infrastructure runs on an optimized **npm workspaces** monorepo layout, isolating responsibilities while sharing type safety boundaries across nodes.
+
+```text
+drone-dt/                         ← Monorepo root perimeters
+├── front/                        ← Public Storefront (Next.js 16 + Turbopack)
+├── back/                         ← REST API Core (Node.js + Express + TS)
+├── dashboard/                    ← Employee Back-End Admin Panel (Next.js 16)
+├── panel-cliente/                ← Client Fleet Management Panel (Next.js)
+├── shared/                       ← Unified types & core utility schemas
+├── docker-compose.yml            ← Full orchestration matrix
+└── package.json                  ← Workspace cluster engine
+
 ```
 
-### Data Flow
+### Data Flow Execution
 
-```
-Browser → Next.js (SSR/SSG) → Express API → MongoDB Atlas / PostgreSQL
-                                         ↘ AWS S3 (media storage)
-                                         ↘ AI Bot API (planned)
+```text
+User View (Client/Admin) → Next.js (SSR/Turbopack) → Express API Core (back/) → MongoDB Secure Cluster
+                                                                   ↘ AWS S3 (Industrial Media Storage)
+
 ```
 
 ---
 
 ## 📦 Modules
 
-### 1. `front/` — Public E-Commerce Shop
+### 1. `front/` — Public Storefront
 
-> Tesla-inspired storefront — minimalist, fast, immersive.
+> SpaceX-inspired storefront — minimalist, dark theme, high-speed rendering.
 
 | Route | Description |
-|---|---|
-| `/` | Home: hero, drone models, CTAs |
-| `/shop/drones` | Interactive drone catalog |
-| `/shop/accesorios` | Accessories listing |
-| `/shop/servicios` | Service packages |
-| `/about` | Brand story |
-| `/contact` | Contact form |
-| `/legal/privacidad` | Privacy policy |
-| `/legal/terminos` | Terms of service |
-
-**Key components:**
-- `Header.tsx` — Fixed navbar, responsive hamburger menu
-- `Footer.tsx` — Links to shop, support, legal
-- `sections/Hero.tsx` — Full-screen 4K drone video
-- `sections/FeaturesDrones.tsx` — Animated product cards
+| --- | --- |
+| `/` | Enterprise Landing: hero video, drone models, custom CTAs |
+| `/shop/drones` | Configurable industrial aircraft catalog |
+| `/shop/accesorios` | Payloads, thermal sensors, and parts listing |
+| `/shop/servicios` | Agronomy, mapping, and monitoring packages |
 
 ---
 
 ### 2. `back/` — REST API Engine
 
-> Scalable Node.js + Express API with dual-database architecture.
+> Scalable Node.js + Express API built with TypeScript and secure database clustering.
 
-| Method | Endpoint | Description | Auth |
-|---|---|---|---|
-| `POST` | `/api/users/register` | Register new user | ❌ |
-| `POST` | `/api/users/login` | Login, returns JWT | ❌ |
-| `GET` | `/api/drones` | List all drones | ❌ |
-| `GET` | `/api/drones/:id` | Drone detail | ❌ |
-| `POST` | `/api/drones` | Create drone | 🔒 Admin |
-| `PUT` | `/api/drones/:id` | Update drone | 🔒 Admin |
-| `DELETE`| `/api/drones/:id` | Delete drone | 🔒 Admin |
-| `GET` | `/api/orders` | User orders | 🔒 User |
-| `POST` | `/api/orders` | Place order | 🔒 User |
-| `GET` | `/api/admin/stats` | Dashboard metrics | 🔒 Admin |
+| Method | Endpoint | Description | Auth Access |
+| --- | --- | --- | --- |
+| `POST` | `/api/v1/users/register` | Register enterprise user | Public ❌ |
+| `POST` | `/api/v1/users/login` | Login node, grants secure JWT | Public ❌ |
+| `GET` | `/api/v1/drones` | List active fleet inventory | Public ❌ |
+| `POST` | `/api/v1/drones` | Inject new aircraft item | 🔒 Admin / Employee |
+| `GET` | `/api/v1/admin/stats` | High-level KPI operational readouts | 🔒 Admin Only |
 
 ---
 
-### 3. `panel-cliente/` — Customer Dashboard
+### 3. `dashboard/` — Employee Admin Panel
 
-> Self-service portal for customers post-purchase.
+> Operations hub for telemetry control, logistics tracking, and inventory status.
 
 | Route | Description |
-|---|---|
-| `/` | Summary: recent orders, quick actions |
-| `/ordenes` | Full order history with filters |
-| `/perfil` | Edit profile, preferences |
-| `/soporte` | Support chat & FAQ |
-
----
-
-### 4. `panel-empleados/` — Employee Admin Panel
-
-> Internal tool for operations, inventory, and analytics.
-
-| Route | Description |
-|---|---|
-| `/` | KPI Dashboard: daily sales, low stock alerts |
-| `/inventario` | Drone & accessory CRUD forms |
-| `/ventas` | Sales reports, Chart.js graphs |
-| `/usuarios` | Manage customers & employees |
-| `/configuracion` | App settings, integrations |
-
----
-
-### 5. `shared/` — Shared Packages
-
-```typescript
-// shared/types/index.ts
-export interface IDrone {
-  _id: string;
-  name: string;
-  price: number;
-  specs: DroneSpecs;
-  stock: number;
-  imageUrl: string;
-}
-
-export interface IUser {
-  _id: string;
-  email: string;
-  role: 'client' | 'employee' | 'admin';
-  createdAt: Date;
-}
-
-export interface IOrder {
-  _id: string;
-  userId: string;
-  items: OrderItem[];
-  total: number;
-  status: 'pending' | 'confirmed' | 'shipped' | 'delivered';
-}
-```
+| --- | --- |
+| `/` | Main Grid: Daily sales, active users tracking, stock thresholds |
+| `/inventario` | Advanced interface forms for drone specifications control |
+| `/users` | Node status dashboard ("Users Node Online" live feed) |
 
 ---
 
 ## 🛠️ Tech Stack
 
-<div align="center">
-
-| Layer | Technology | Version |
-|---|---|---|
-| **Frontend** | [Next.js](https://nextjs.org/) + [React](https://react.dev/) | 15 / 19 |
-| **Styling** | [Tailwind CSS](https://tailwindcss.com/) | 4.x |
-| **State** | [Zustand](https://zustand-demo.pmnd.rs/) / [Redux Toolkit](https://redux-toolkit.js.org/) | latest |
-| **Backend** | [Node.js](https://nodejs.org/) + [Express](https://expressjs.com/) | 20 / 5 |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) | 5.x |
-| **NoSQL DB** | [MongoDB Atlas](https://www.mongodb.com/atlas) + [Mongoose](https://mongoosejs.com/) | 8.x |
-| **SQL DB** | [PostgreSQL](https://www.postgresql.org/) | 16 |
-| **Auth** | [JWT](https://jwt.io/) + [bcrypt](https://www.npmjs.com/package/bcrypt) | — |
-| **Validation** | [Zod](https://zod.dev/) | 3.x |
-| **Media** | [AWS S3](https://aws.amazon.com/s3/) | — |
-| **Containerization** | [Docker](https://www.docker.com/) + [Docker Compose](https://docs.docker.com/compose/) | latest |
-| **Deploy (API)** | [Railway](https://railway.app/) | — |
-| **Deploy (Front)** | [Vercel](https://vercel.com/) | — |
-
-</div>
+| Layer | Technology | Status / Version |
+| --- | --- | --- |
+| **Frontend Store** | [Next.js](https://nextjs.org/) + [React](https://react.dev/) | 16.x / 19.x (Turbopack) |
+| **Admin Panel** | [Next.js Dashboard](https://nextjs.org/) | 16.x (Standalone Build) |
+| **Styling Engine** | [Tailwind CSS](https://tailwindcss.com/) | 4.x Modern Layering |
+| **Backend API** | [Node.js](https://nodejs.org/) + [Express](https://expressjs.com/) | v20.x + TypeScript 5.x |
+| **Database Core** | [MongoDB Atlas](https://www.mongodb.com/atlas) | Secure Double Cluster Mongoose |
+| **Cloud Storage** | [AWS S3](https://aws.amazon.com/s3/) | Industrial Media CDN |
+| **Containerization** | [Docker](https://www.docker.com/) | Multi-stage Docker Compose |
+| **API Infrastructure** | [Railway](https://railway.app/) | High-Availability Pipelines |
+| **App Edge Host** | [Vercel Production](https://vercel.com/) | Edge Network Routing |
 
 ---
 
 ## 🚀 Quick Start
 
-### Prerequisites
-
-Make sure you have the following installed:
-
-[![Node.js 20+](https://img.shields.io/badge/Node.js-20%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
-[![npm 10+](https://img.shields.io/badge/npm-10%2B-CB3837?logo=npm&logoColor=white)](https://www.npmjs.com/)
-[![Docker](https://img.shields.io/badge/Docker-latest-2496ED?logo=docker&logoColor=white)](https://www.docker.com/get-started)
-[![Git](https://img.shields.io/badge/Git-latest-F05032?logo=git&logoColor=white)](https://git-scm.com/)
-
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/dronedt-project.git
-cd dronedt-project
+git clone https://github.com/NietoDeveloper/Dashboard-DroneDT.git
+cd drone-dt
+
 ```
 
-### 2. Install all dependencies (workspace)
+### 2. Install Workspace Cluster Dependencies
 
 ```bash
 npm install
+
 ```
 
-Or install individually:
-
-```bash
-# Backend
-cd back && npm install
-
-# Public shop
-cd ../front && npm install
-
-# Client panel
-cd ../panel-cliente && npm install
-
-# Employee panel
-cd ../panel-empleados && npm install
-```
-
-### 3. Set up environment variables
-
-Copy and fill in each `.env.example`:
-
-```bash
-cp back/.env.example back/.env
-cp front/.env.example front/.env.local
-cp panel-cliente/.env.example panel-cliente/.env.local
-cp panel-empleados/.env.example panel-empleados/.env.local
-```
-
-### 4. Run with Docker (recommended)
+### 3. Run Development Servers via Docker Orchestration
 
 ```bash
 docker-compose up --build
+
 ```
 
-| Service | URL |
-|---|---|
-| 🔧 Backend API | http://localhost:4000 |
-| 🛒 Public Shop | http://localhost:3001 |
-| 👤 Client Panel | http://localhost:3002 |
-| 🛠️ Employee Panel | http://localhost:3003 |
+### 📊 Local Node Engine Mapping
 
-### 5. Run manually (alternative)
-
-```bash
-# Terminal 1 — Backend
-cd back && npm run dev
-
-# Terminal 2 — Public Shop
-cd front && npm run dev
-
-# Terminal 3 — Client Panel
-cd panel-cliente && npm run dev
-
-# Terminal 4 — Employee Panel
-cd panel-empleados && npm run dev
-```
+| Local Node | Endpoint Mapping |
+| --- | --- |
+| 🔧 **Backend API Engine** | `http://localhost:5000/api/v1` |
+| 🛒 **Public Storefront** | `http://localhost:3000` |
+| 🛠️ **Employee Admin Panel** | `http://localhost:3001` |
 
 ---
 
-## 🐳 Docker
+## 🗺️ Infrastructure Roadmap
 
-The project is fully containerized. The `docker-compose.yml` orchestrates all services:
-
-```yaml
-# docker-compose.yml (simplified)
-services:
-  back:
-    build: ./back
-    ports: ["4000:4000"]
-    environment:
-      - MONGO_URI=${MONGO_URI}
-      - JWT_SECRET=${JWT_SECRET}
-    depends_on: [mongo]
-
-  front:
-    build: ./front
-    ports: ["3001:3000"]
-
-  panel-cliente:
-    build: ./panel-cliente
-    ports: ["3002:3000"]
-
-  panel-empleados:
-    build: ./panel-empleados
-    ports: ["3003:3000"]
-
-  mongo:
-    image: mongo:7
-    ports: ["27017:27017"]
-    volumes: [mongo_data:/data/db]
-```
-
-### Useful Docker commands
-
-```bash
-# Start all services
-docker-compose up --build
-
-# Stop all services
-docker-compose down
-
-# View logs
-docker-compose logs -f back
-
-# Rebuild a single service
-docker-compose up --build back
-
-# Remove volumes (reset DB)
-docker-compose down -v
-```
-
----
-
-## 🔑 Environment Variables
-
-### `back/.env`
-
-```env
-# Server
-PORT=4000
-NODE_ENV=development
-
-# MongoDB Atlas
-MONGO_URI=mongodb+srv://<user>:<password>@cluster.mongodb.net/dronedt
-
-# PostgreSQL (payments)
-DATABASE_URL=postgresql://user:password@localhost:5432/dronedt_payments
-
-# Authentication
-JWT_SECRET=your_super_secret_jwt_key_here
-JWT_EXPIRES_IN=7d
-
-# AWS S3 (media storage)
-AWS_ACCESS_KEY_ID=your_aws_access_key
-AWS_SECRET_ACCESS_KEY=your_aws_secret_key
-AWS_REGION=us-east-1
-AWS_BUCKET_NAME=dronedt-media
-
-# CORS
-FRONTEND_URL=http://localhost:3001
-```
-
-### `front/.env.local`
-
-```env
-NEXT_PUBLIC_API_URL=http://localhost:4000/api
-NEXT_PUBLIC_SITE_URL=http://localhost:3001
-```
-
----
-
-## 📁 Project Structure
-
-```
-drone-dt/
-├── front/                         ← 🛒 Public E-Commerce Shop
-│   ├── app/
-│   │   ├── layout.tsx             ← Root layout (Geist fonts, metadata)
-│   │   ├── page.tsx               ← Home: hero, models, shop
-│   │   ├── shop/
-│   │   │   ├── drones/page.tsx    ← Drone catalog
-│   │   │   ├── accesorios/page.tsx
-│   │   │   └── servicios/page.tsx
-│   │   ├── about/page.tsx
-│   │   ├── contact/page.tsx
-│   │   └── legal/
-│   │       ├── privacidad/page.tsx
-│   │       ├── terminos/page.tsx
-│   │       └── cookies/page.tsx
-│   ├── components/
-│   │   ├── ui/                    ← Button, Card, Input (Tailwind)
-│   │   ├── layout/
-│   │   │   ├── Header.tsx         ← Fixed navbar, responsive
-│   │   │   └── Footer.tsx
-│   │   └── sections/              ← Hero, FeaturesDrones, Testimonials
-│   ├── lib/                       ← API fetchers → /back/
-│   ├── styles/globals.css
-│   └── package.json
-│
-├── back/                          ← ⚡ REST API
-│   ├── src/
-│   │   ├── index.ts               ← Entry: app.listen()
-│   │   ├── routes/
-│   │   │   ├── drones.ts          ← /api/drones (CRUD)
-│   │   │   ├── users.ts           ← /api/users (auth)
-│   │   │   ├── orders.ts          ← /api/orders
-│   │   │   └── admin.ts           ← Admin-only endpoints
-│   │   ├── models/
-│   │   │   ├── Drone.ts           ← Mongoose schema
-│   │   │   ├── User.ts
-│   │   │   └── Order.ts
-│   │   ├── controllers/
-│   │   ├── middleware/            ← Auth, error handling
-│   │   └── config/db.ts          ← MongoDB connection
-│   ├── Dockerfile
-│   └── package.json
-│
-├── panel-cliente/                 ← 👤 Client Dashboard
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx               ← Order summary
-│   │   ├── ordenes/page.tsx
-│   │   ├── perfil/page.tsx
-│   │   └── soporte/page.tsx
-│   └── package.json
-│
-├── panel-empleados/               ← 🛠️ Employee Admin Panel
-│   ├── app/
-│   │   ├── layout.tsx
-│   │   ├── page.tsx               ← KPIs dashboard
-│   │   ├── inventario/page.tsx
-│   │   ├── ventas/page.tsx
-│   │   ├── usuarios/page.tsx
-│   │   └── configuracion/page.tsx
-│   └── package.json
-│
-├── shared/                        ← 🔗 Shared types & utils
-│   ├── types/                     ← IDrone, IUser, IOrder
-│   └── utils/                     ← formatCurrency, validateEmail
-│
-├── docker-compose.yml
-├── .gitignore
-├── README.md
-└── package.json                   ← Workspaces config
-```
-
----
-
-## ☁️ Deployment
-
-### Backend → Railway
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new)
-
-1. Push `back/` to your repository.
-2. Connect the repo on [Railway](https://railway.app/).
-3. Set environment variables in the Railway dashboard.
-4. Railway auto-detects the `Dockerfile` and deploys.
-
-```bash
-# railway.toml (optional)
-[build]
-  builder = "DOCKERFILE"
-  dockerfilePath = "back/Dockerfile"
-
-[deploy]
-  startCommand = "npm start"
-  restartPolicyType = "ON_FAILURE"
-```
-
----
-
-### Frontend & Panels → Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-
-1. Connect your monorepo on [Vercel](https://vercel.com/).
-2. Set **Root Directory** to `front/`, `panel-cliente/`, or `panel-empleados/` for each project.
-3. Add environment variables in Vercel's project settings.
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy public shop
-cd front && vercel --prod
-
-# Deploy client panel
-cd ../panel-cliente && vercel --prod
-
-# Deploy employee panel
-cd ../panel-empleados && vercel --prod
-```
-
----
-
-### AWS Integration *(planned)*
-
-| Service | Use |
-|---|---|
-| [S3](https://aws.amazon.com/s3/) | Drone images & 4K video storage |
-| [EC2](https://aws.amazon.com/ec2/) | Backend production server |
-| [CloudFront](https://aws.amazon.com/cloudfront/) | CDN for media assets |
-| [RDS](https://aws.amazon.com/rds/) | Managed PostgreSQL for payments |
-
----
-
-## 🗺️ Roadmap
-
-- [x] Monorepo setup with npm workspaces
-- [x] Backend REST API (Express + TypeScript)
-- [x] MongoDB Atlas integration (Mongoose)
-- [x] JWT authentication & RBAC
-- [x] Public shop (Next.js 15 + Tailwind)
-- [x] Client dashboard
-- [x] Employee admin panel
-- [x] Docker Compose full orchestration
-- [ ] PostgreSQL integration for payments
-- [ ] AWS S3 media uploads
-- [ ] AI bot for customer support
-- [ ] Stripe / PayU payment gateway
-- [ ] Real-time notifications (WebSockets)
-- [ ] PWA support
-- [ ] End-to-end tests (Playwright)
-- [ ] CI/CD pipeline (GitHub Actions)
+* [x] Monorepo structure with optimized npm workspaces
+* [x] Backend REST API Core (Express + TypeScript 5)
+* [x] MongoDB Atlas production cluster connection setup
+* [x] Next.js 16 Custom Admin Dashboard node deployment
+* [x] Vercel Cloud Pipeline configuration bypass (TypeScript compilation validation)
+* [x] Responsive layout optimization (Fluid scaling: 310px to 1900px)
+* [ ] AWS S3 live asset stream integration
+* [ ] Automated CI/CD production release pipelines
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please follow these steps:
+1. **Fork** the repository.
+2. **Create** an optimized branch:
 
-1. **Fork** the repository
-2. **Create** a feature branch:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. **Commit** your changes:
-   ```bash
-   git commit -m 'feat: add your feature description'
-   ```
-4. **Push** to the branch:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. **Open** a Pull Request
+```bash
+git checkout -b feature/allocation-node
 
-### Commit Convention
+```
 
-We follow [Conventional Commits](https://www.conventionalcommits.org/):
+3. **Commit** changes following conventional guidelines:
 
-| Prefix | Description |
-|---|---|
-| `feat:` | New feature |
-| `fix:` | Bug fix |
-| `docs:` | Documentation changes |
-| `style:` | Code style (no logic change) |
-| `refactor:` | Code refactoring |
-| `test:` | Adding or updating tests |
-| `chore:` | Build process or tooling |
+```bash
+git commit -m 'feat: optimize tree-shaking metrics'
+
+```
+
+4. **Push** to origin and open a formal Pull Request.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
+This software architecture is licensed under the **MIT License** — see the `LICENSE` file for complete asset terms.
 
 ---
 
-## 📬 Contact
+### 🌌 NIETO LABORATORY
 
-For questions, support, or business inquiries:
+**Lead Enterprise Architect & Systems Engineer:** [Manuel Nieto]()
 
-[![Email](https://img.shields.io/badge/Email-contact@dronedt.co-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@dronedt.co)
-[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/your-username/dronedt-project/issues)
+**Deployment Cycle:** Rank S+ Status Verification Matrix
 
----
+**Last Infrastructure Update:** May 2026 · Bogotá, Colombia
 
-<div align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2196f3,100:0d47a1&height=120&section=footer&animation=fadeIn" width="100%"/>
-
-</div>
+🚀 *Ad Astra per Aspera — Building Next-Gen Digital Twins.*
