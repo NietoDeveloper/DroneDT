@@ -43,6 +43,5 @@ const nextConfig = {
   },
 
   /* 
-      STRICT VALIDATION
-      Cero toleran false,
+   
   },
