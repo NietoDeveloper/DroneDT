@@ -1,24 +1,54 @@
 <div align="center">
 
-<!-- Animated Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700,FEB60D&height=200&section=header&text=DroneDT%20Admin&fontSize=52&fontColor=0a0a0a&fontAlignY=38&desc=Industrial%20Drone%20Management%20Platform&descAlignY=58&descSize=18&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=240&section=header&text=DRONE%20DT%20Admin&fontSize=80&fontColor=FFD700&fontAlignY=42&desc=⚡%20Industrial%20Drone%20Management%20·%20Next.js%2015%20·%20Docker%20Powered&descAlignY=62&descColor=DCDCDC&animation=fadeIn" width="100%"/>
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=700&size=20&duration=2800&pause=900&color=FFD700&center=true&vCenter=true&width=750&lines=🛸+Industrial+Drone+Admin+Control+Panel;🐳+Fully+Dockerized+%7C+Zero+Local+Dependencies;🔒+RBAC+Security+%7C+NextAuth.js+Enterprise+Auth;📊+Real-Time+Dashboard+%7C+Socket.io+%2B+WebSockets;🚀+AWS+%2B+Vercel+%7C+CI%2FCD+via+Git;🏆+%231+GitHub+Committer+in+Colombia)](https://git.io/typing-svg)
 
 <br/>
 
-[![Live Platform](https://img.shields.io/badge/🚀%20Live%20Platform-DroneDT-FFD700?style=for-the-badge&labelColor=0a0a0a)](https://dronedt.vercel.app/)
-[![Admin Dashboard](https://img.shields.io/badge/🛸%20Admin%20Dashboard-Control%20Panel-FEB60D?style=for-the-badge&labelColor=0a0a0a)](https://dashboarddronedt.vercel.app/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Next.js](https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+<p align="center">
+  <a href="https://committers.top/colombia">
+    <img src="https://img.shields.io/badge/🥇_No._1_Committer-Colombia-FFD700?style=for-the-badge&logoColor=000000"/>
+  </a>
+  <a href="https://committers.top">
+    <img src="https://img.shields.io/badge/🏆_Top_3-South_%26_Central_America-DCDCDC?style=for-the-badge&logoColor=000000"/>
+  </a>
+  <img src="https://img.shields.io/badge/Status-Production_Ready-00D26A?style=for-the-badge&logo=checkmarx&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Security-Level_S%2B-FF0000?style=for-the-badge&logoColor=white"/>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=next.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-5+-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-Alpine-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Zustand-State-FF6B35?style=for-the-badge&logo=react&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Socket.io-Real--Time-010101?style=for-the-badge&logo=socket.io&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AWS-Cloud-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
+</p>
+
+<p align="center">
+  <a href="https://dronedt.vercel.app/">
+    <img src="https://img.shields.io/badge/🌐_Live_Platform-dronedt.vercel.app-FFD700?style=for-the-badge"/>
+  </a>
+  <a href="https://dashboarddronedt.vercel.app/">
+    <img src="https://img.shields.io/badge/🛸_Admin_Dashboard-dashboarddronedt.vercel.app-FEB60D?style=for-the-badge"/>
+  </a>
+  <a href="https://github.com/NietoDeveloper/Dashboard-DroneDT">
+    <img src="https://img.shields.io/badge/📂_Source-NietoDeveloper%2FDashboard--DroneDT-000000?style=for-the-badge&logo=github&logoColor=FFD700"/>
+  </a>
+</p>
+
+<br/>
+
+> 🛸 **DroneDT Admin** — Central management engine for a world-class platform for drone manufacturing,
+> commercialization, and logistics in Colombia. Built with production-ready **Next.js 15** architecture,
+> designed for high scalability and real-time industrial operations.
+>
+> *Modular · Robust · Obsessively Production-Ready · Built in Bogotá 🇨🇴*
 
 </div>
-
----
-
-## 🛸 DroneDT — Admin Control Panel
-
-Central management engine for **DroneDT**, a world-class platform for drone manufacturing, commercialization, and logistics in Colombia. Built with production-ready **Next.js 15** architecture, designed for high scalability and real-time operations.
-
-> **Live:** [dronedt.vercel.app](https://dronedt.vercel.app/) &nbsp;|&nbsp; **Dashboard:** [dashboarddronedt.vercel.app](https://dashboarddronedt.vercel.app/)
 
 ---
 
@@ -35,6 +65,8 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 
 ## 🛠 Tech Stack
 
+<div align="center">
+
 | Category | Technology |
 |----------|-----------|
 | **Framework** | Next.js 15 (App Router) |
@@ -47,6 +79,8 @@ Central management engine for **DroneDT**, a world-class platform for drone manu
 | **Infrastructure** | Docker + AWS / Railway / Vercel |
 | **Real-time** | Socket.io (WebSockets) |
 | **Charts** | Recharts / Chart.js |
+
+</div>
 
 ---
 
@@ -133,7 +167,7 @@ dronedt-admin/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/NietoDeveloper/dronedt-admin.git
+git clone https://github.com/NietoDeveloper/Dashboard-DroneDT.git
 cd dronedt-admin
 
 # 2. Install dependencies
@@ -215,13 +249,28 @@ docker-compose -f docker-compose.prod.yml up -d
 
 ## 🎨 Design Identity
 
-| Token | Value |
-|-------|-------|
-| **Primary Gold** | `#FFD700` |
-| **Secondary Gold** | `#FEB60D` |
-| **Background** | `#DCDCDC` (Gainsboro) |
-| **Dark Base** | `#0a0a0a` |
-| **Aesthetic** | Tesla-inspired minimalist |
+```javascript
+/** tailwind.config.ts — DroneDT Design Tokens */
+export default {
+  theme: {
+    extend: {
+      colors: {
+        gold:         "#FFD700",   // 🟡 Primary brand accent
+        yellowColor:  "#FEB60D",   // 🟠 Secondary accent
+        gainsboro:    "#DCDCDC",   // 🩶 Corporate base background
+        darkBase:     "#0a0a0a",   // ⚫ Dark surfaces
+      },
+    },
+  },
+}
+```
+
+| Token | Hex | Role |
+|:------|:----|:-----|
+| `gold` | `#FFD700` | Primary accent · CTAs · Brand highlights |
+| `yellowColor` | `#FEB60D` | Secondary accent · Hover states |
+| `gainsboro` | `#DCDCDC` | Base background · Borders |
+| `darkBase` | `#0a0a0a` | Dark surfaces · Cards |
 
 ---
 
@@ -261,21 +310,36 @@ All rights reserved © 2026 Manuel Nieto
 
 <div align="center">
 
-## 📬 Contact
-
-[![GitHub](https://img.shields.io/badge/GitHub-NietoDeveloper-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/NietoDeveloper)
+[![Live Platform](https://img.shields.io/badge/🌐_Live_Platform-dronedt.vercel.app-FFD700?style=for-the-badge)](https://dronedt.vercel.app/)
+[![Admin Dashboard](https://img.shields.io/badge/🛸_Admin_Dashboard-dashboarddronedt.vercel.app-FEB60D?style=for-the-badge)](https://dashboarddronedt.vercel.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-NietoDeveloper-000?style=for-the-badge&logo=github&logoColor=FFD700)](https://github.com/NietoDeveloper)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Manuel%20Nieto-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/manuelnietodeveloper)
 [![Portfolio](https://img.shields.io/badge/Portfolio-manuelnieto.netlify.app-FFD700?style=for-the-badge&labelColor=0a0a0a)](https://manuelnieto.netlify.app/)
 [![Email](https://img.shields.io/badge/Email-contact@nietodev.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@nietodev.com)
 
 <br/>
 
-[![Platform](https://img.shields.io/badge/🌐%20Live%20Platform-dronedt.vercel.app-FFD700?style=flat-square&labelColor=0a0a0a)](https://dronedt.vercel.app/)
-&nbsp;
-[![Dashboard](https://img.shields.io/badge/🛸%20Admin%20Dashboard-dashboarddronedt.vercel.app-FEB60D?style=flat-square&labelColor=0a0a0a)](https://dashboarddronedt.vercel.app/)
+[![#1 Colombia](https://img.shields.io/badge/🥇_%231_Committer-Colombia-FFD700?style=for-the-badge)](https://committers.top/colombia)
+[![LATAM Top](https://img.shields.io/badge/🌎_Top_3-South_%26_Central_America-DCDCDC?style=for-the-badge)](https://committers.top)
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=FFD700,FEB60D&height=120&section=footer&text=Empowering%20Colombia%27s%20Drone%20Industry&fontSize=16&fontColor=0a0a0a&fontAlignY=65&animation=fadeIn" width="100%"/>
+```
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║   "Every line of code is optimized for performance              ║
+║    and security. Production-ready by default."                  ║
+║                                                                  ║
+║                               — NietoDeveloper Standard         ║
+╚══════════════════════════════════════════════════════════════════╝
+```
+
+*DroneDT Admin — Built by **NietoDeveloper · Manuel Nieto***
+
+*Developed with technical rigor in* 📍 **Bogotá, Colombia** 🇨🇴
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=130&section=footer&animation=fadeIn" width="100%"/>
 
 </div>
