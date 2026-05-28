@@ -24,6 +24,3 @@ const nextConfig = {
     ],
   },
 
-  /* 
-      Build standalone para máxima eficiencia en contenedores.
-  */
