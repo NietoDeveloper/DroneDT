@@ -1,66 +1,58 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# ###########################################################
+# NIETO LABORATORY - INFRASTRUCTURE CONFIGURATION
+# PROJECT: Drone DT Admin Dashboard
+# ###########################################################
 
-# Dependencies
+# Dependency Directories
+node_modules/
 /node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
+package-lock.json
 
-# Next.js Build Output
-/.next/
-/out/
+# Next.js Build and Output Artifacts
+.next/
+out/
+build/
+dist/
 
-# Production Build
-/build
-/dist
-
-# Debug Logs
+# Debug and System Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 .pnpm-debug.log*
 
-# Local Env Files
-# Use .env.example to share the structure, never the secrets
+# Environment Variables & Local Secrets
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+*.env.local
 
-# Vercel
+# Vercel Deployment Metadata
 .vercel
 
-# TypeScript
-*.tsbuildinfo
-next-env.d.ts
+# Testing & Coverage
+coverage/
+.nyc_output/
 
-# Testing
-/coverage
-/.nyc_output
-/tests/unit/__snapshots__
-/tests/e2e/test-results
-/tests/e2e/playwright-report
-/tests/e2e/blob-report
-/tests/e2e/videos
-/tests/e2e/screenshots
-
-# Docker
-.dockerignore
-# Ignore data folders if you run DBs locally in containers
-/docker/data
-
-# OS Metadata
-.DS_Store
-*.pem
-Thumbs.db
-
-# IDE Configs
-.vscode/
+# IDE / Editor Configurations
+.vscode/*
+!.vscode/extensions.json
 .idea/
-*.swp
-*.swo
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
-# Project Specific
-/public/images/uploads/*
-!/public/images/uploads/.gitkeep
+# Operating System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary Override Triggers
+trigger.txt
+src/app/dashboard/users/trigger.txt
