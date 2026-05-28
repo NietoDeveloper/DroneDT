@@ -36,7 +36,3 @@ const nextConfig = {
   */
   experimental: {
     optimizePackageImports: [
-      'lucide-react', 
-      '@headlessui/react', 
-      'framer-motion'
-
