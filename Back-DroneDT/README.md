@@ -227,8 +227,7 @@ Todos los derechos reservados © 2026 Manuel Nieto
 ---
 
 <div align="center">
-ub.com/NietoDkedin.com/in/manuelfrancisconietoarias/)
-[![Portf-badge&labelColor=0a0a0a)](https://manuelnieto.netlify.app/)
+ub.com/NietoDkedihttps://manuelnieto.netlify.app/)
 
 <br/>
  ║
