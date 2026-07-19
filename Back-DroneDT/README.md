@@ -184,8 +184,7 @@ npm install
 
 ### 4. Levantar en modo desarrollo
 
-```bash
-npm run dev
+
 ```
 
 
