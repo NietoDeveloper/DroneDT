@@ -48,8 +48,7 @@
 
 ## 🚀 Engineering Profile
 
-**Desarrollado por:** Manuel Nieto — [NietoDeveloper](https://github.com/NietoDeveloper)
-**Rol:** Full-Stack Software Engineer
+
 
 
 
