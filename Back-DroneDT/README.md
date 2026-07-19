@@ -246,10 +246,6 @@ Todos los derechos reservados © 2026 Manuel Nieto
 ║    Production-ready by default."                                ║
 ║                                                                  ║
 ║                               — NietoDeveloper Standard         ║
-╚══════════════════════════════════════════════════════════════════╝
-```
-
-
 
 
 
