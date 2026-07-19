@@ -223,8 +223,7 @@ docker run -p 5000:5000 --env-file .env dronedt-backend
 
 Desarrollo de ar
 ---
-
-ietoDkedihttps://manuelnieto.netlify.app/)
+y.app/)
 
 <br/>
  ║
