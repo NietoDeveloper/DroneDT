@@ -1,23 +1,4 @@
-<div align="center">
 
-
-
----
-
-## 🚀 Engineering Profile
-
-
-
-
-
----
-
-
-
-
-```
-
----
 
 
 
