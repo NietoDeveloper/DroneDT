@@ -164,10 +164,7 @@ Monitoreo en tiempo real del estado de los drones; si el stock toca fondo (0 abs
 
 ### 1. Clonar e ingresar al directorio del backend
 
-```bash
-git clone https://github.com/NietoDeveloper/DroneDT.git
-cd drone-dt/back
-```
+
 
 ### 2. Instalar dependencias
 
