@@ -242,10 +242,7 @@ Todos los derechos reservados © 2026 Manuel Nieto
 ```
 ╔══════════════════════════════════════════════════════════════════╗
 ║                                                                  ║
-║   "Every transaction is atomic. Every rollback is silent.       ║
-║    Production-ready by default."                                ║
-║                                                                  ║
-║                               — NietoDeveloper Standard         ║
+                            — NietoDeveloper Standard         ║
 
 
 
