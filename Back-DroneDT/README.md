@@ -204,9 +204,7 @@ docker build -t dronedt-backend .
 docker run -p 5000:5000 --env-file .env dronedt-backend
 ```
 
-```
-🐳 El contenedor expone:
-   └── 🔧 Core API Engine  →  http://localhost:5000/api/v1
+
 ```
 
 ---
