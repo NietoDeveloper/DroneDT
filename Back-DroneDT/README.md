@@ -227,8 +227,7 @@ Todos los derechos reservados © 2026 Manuel Nieto
 ---
 
 <div align="center">
-
-[![GitHub](https://img.shields.io/badge/GitHub-NietoDeveloper-000?style=for-the-badge&logo=github&logoColor=FFD700)](https://github.com/NietoDkedin.com/in/manuelfrancisconietoarias/)
+ub.com/NietoDkedin.com/in/manuelfrancisconietoarias/)
 [![Portf-badge&labelColor=0a0a0a)](https://manuelnieto.netlify.app/)
 
 <br/>
