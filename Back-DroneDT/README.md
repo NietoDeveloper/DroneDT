@@ -228,8 +228,7 @@ Todos los derechos reservados © 2026 Manuel Nieto
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-NietoDeveloper-000?style=for-the-badge&logo=github&logoColor=FFD700)](https://github.com/NietoDeveloper)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Manuel%20Nieto-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/manuelfrancisconietoarias/)
+[![GitHub](https://img.shields.io/badge/GitHub-NietoDeveloper-000?style=for-the-badge&logo=github&logoColor=FFD700)](https://github.com/NietoDkedin.com/in/manuelfrancisconietoarias/)
 [![Portf-badge&labelColor=0a0a0a)](https://manuelnieto.netlify.app/)
 
 <br/>
