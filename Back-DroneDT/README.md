@@ -51,9 +51,7 @@
 **Desarrollado por:** Manuel Nieto — [NietoDeveloper](https://github.com/NietoDeveloper)
 **Rol:** Full-Stack Software Engineer
 
-- 🏆 **Rank:** #1 Committer en Colombia | #3 en South & Central America — [committers.top](https://committers.top)
-- 💻 **Stack:** Node.js + TypeScript + Express.js + MongoDB (Mongoose) + Docker + AWS
-- 🎯 **Focus:** Consistencia transaccional, blindaje de inventario y arquitectura desacoplada por capas
+
 
 ---
 
