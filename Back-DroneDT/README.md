@@ -113,10 +113,6 @@ back/                                  ← NÚCLEO: REST API Engine
 
 ---
 
-## 🛡️ Core de Seguridad y Consistencia (Nivel S+)
-
-### 🔐 Transacciones ACID
-Implementación de 
 
 
 
@@ -124,10 +120,6 @@ Implementación de
 ---
 
 
-
-
-
-</div>
 
 ---
 
