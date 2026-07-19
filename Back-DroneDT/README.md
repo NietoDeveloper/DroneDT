@@ -199,9 +199,7 @@ npm run dev
 
 ### 5. Orquestación vía Docker
 
-```bash
-docker build -t dronedt-backend .
-docker run -p 5000:5000 --env-file .env dronedt-backend
+
 ```
 
 
