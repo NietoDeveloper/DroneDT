@@ -1,13 +1,3 @@
-
- ║
-                            — NietoDeveloper Standard         ║
-
-
-
-
-
-
-
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=240&section=header&text=DRONE%20DT%20·%20BACKEND&fontSize=64&fontColor=FFD700&fontAlignY=42&desc=⚙️%20REST%20API%20Engine%20·%20Transactional%20Core%20·%20Docker%20Powered&descAlignY=62&descColor=DCDCDC&animation=fadeIn" width="100%"/>
@@ -252,10 +242,10 @@ Todos los derechos reservados © 2026 Manuel Nieto
 ```
 ╔══════════════════════════════════════════════════════════════════╗
 ║                                                                  ║
-║   "Every transaction is atomic. Every rollback is silent.       ║
-║    Production-ready by default."                                ║
+║   "Every transaction is atomic. Every rollback is silent.        ║
+║    Production-ready by default."                                 ║
 ║                                                                  ║
-║                               — NietoDeveloper Standard         ║
+║                               — NietoDeveloper Standard          ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
