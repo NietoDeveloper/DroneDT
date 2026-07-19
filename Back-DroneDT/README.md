@@ -137,8 +137,7 @@ Uso del operador `$inc` combinado con validaciones condicionales estrictas (`sto
 
 ## 📈 Progreso del Roadmap Back-End
 
-- [x] **Fase 1 — Configuración de Conectores**
-  `src/config/db.ts` creado con pools de conexión optimizados (`maxPoolSize: 10`) y manejo de excepciones críticas del clúster.
+
 
 
 
