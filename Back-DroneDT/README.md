@@ -184,11 +184,7 @@ JWT_SECRET=your_ultra_secure_secret_here
 JWT_EXPIRES_IN=7d
 PORT=5000
 
-# AWS
-AWS_REGION=us-east-1
-AWS_ACCESS_KEY_ID=your-access-key
-AWS_SECRET_ACCESS_KEY=your-secret-key
-AWS_S3_BUCKET=dronedt-uploads
+
 ```
 
 ### 4. Levantar en modo desarrollo
@@ -197,10 +193,9 @@ AWS_S3_BUCKET=dronedt-uploads
 npm run dev
 ```
 
-### 5. Orquestación vía Docker
 
 
-```
+
 
 
 ```
