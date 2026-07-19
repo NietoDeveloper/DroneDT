@@ -177,12 +177,7 @@ npm install
 
 ### 3. Configurar variables de entorno
 
-```env
-# back/.env
-MONGO_URI=mongodb+srv://user:pass@cluster.mongodb.net/dronedt
-JWT_SECRET=your_ultra_secure_secret_here
-JWT_EXPIRES_IN=7d
-PORT=5000
+
 
 
 ```
