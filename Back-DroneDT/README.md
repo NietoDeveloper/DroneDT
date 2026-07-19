@@ -233,11 +233,7 @@ Todos los derechos reservados © 2026 Manuel Nieto
 [![Portfolio](https://img.shields.io/badge/Portfolio-manuelnieto.netlify.app-FFD700?style=for-the-badge&labelColor=0a0a0a)](https://manuelnieto.netlify.app/)
 
 <br/>
-
-[![#1 Colombia](https://img.shields.io/badge/🥇_%231_Committer-Colombia-FFD700?style=for-the-badge)](https://committers.top/colombia)
-
-
-```                                                                ║
+ ║
                             — NietoDeveloper Standard         ║
 
 
