@@ -57,9 +57,7 @@
 
 ---
 
-## 🛰️ Resumen de Arquitectura
 
-**Enfoque Principal:** Migración progresiva a TypeScript estricto bajo el **Strangler 
 
 
 ```
