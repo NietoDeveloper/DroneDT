@@ -209,9 +209,7 @@ npm run dev
 
 ## 📊 Port Mapping
 
-| Nodo | URL Local | Deploy |
-|:-----|:----------|:-------|
-| 🔧 **Core API Engine** | `http://localhost:5000/api/v1` | Railway |
+
 
 ---
 
