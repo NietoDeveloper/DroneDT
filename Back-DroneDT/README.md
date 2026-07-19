@@ -172,7 +172,7 @@ Monitoreo en tiempo real del estado de los drones; si el stock toca fondo (0 abs
 npm install
 ```
 
-### 3. Configurar variables de entorno
+
 
 
 
