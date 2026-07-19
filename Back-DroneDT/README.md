@@ -129,9 +129,7 @@ Uso del operador `$inc` combinado con validaciones condicionales estrictas (`sto
 
 <div align="center">
 
-| Capa | Tecnología | Detalle |
- | MongoDB + Mongoose | ORM corporativo con sesiones transaccionales |
-**Cloud / Deploy** | Railway + AWS | Preparado para Doble Clúster distribuido |
+
 
 </div>
 
