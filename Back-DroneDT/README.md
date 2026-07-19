@@ -125,9 +125,7 @@ Uso del operador `$inc` combinado con validaciones condicionales estrictas (`sto
 
 ---
 
-## 🛠️ Tech Stack
 
-<div align="center">
 
 
 
