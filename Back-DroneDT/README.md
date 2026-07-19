@@ -219,11 +219,9 @@ docker run -p 5000:5000 --env-file .env dronedt-backend
 
 ---
 
-## 📄 License
 
-Desarrollo de ar
----
-y.app/)
+
+
 
 <br/>
  ║
