@@ -118,8 +118,7 @@ back/                                  ← NÚCLEO: REST API Engine
 ### 🔐 Transacciones ACID
 Implementación de 
 
-### ⚛️ Bloqueo Atómico de Inventario
-Uso del operador `$inc` combinado con val
+
 
 
 ---
