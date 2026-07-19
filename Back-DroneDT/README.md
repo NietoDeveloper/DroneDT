@@ -25,15 +25,7 @@
   <img src="https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
   <img src="https://img.shields.io/badge/AWS-EC2_%7C_S3-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
   <img src="https://img.shields.io/badge/Railway-API_Deploy-0B0D0E?style=for-the-badge&logo=railway&logoColor=white"/>
-</p>
 
-<p align="center">
-  <a href="https://github.com/NietoDeveloper/DroneDT">
-    <img src="https://img.shields.io/badge/📂_Source-NietoDeveloper%2FDroneDT-000000?style=for-the-badge&logo=github&logoColor=FFD700"/>
-  </a>
-</p>
-
-<br/>
 
 
 
