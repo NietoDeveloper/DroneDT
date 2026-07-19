@@ -76,13 +76,7 @@
 ║                     │   🔧 EXPRESS + TYPESCRIPT      │                ║
 ║                     │   Capas: Route → Controller →  │                ║
 ║                     │   Service → Model              │                ║
-║                     └───────────────┬────────────────┘                ║
-║                                     │                                ║
-║                    ┌────────────────┴─────────────────┐              ║
-║                    ▼                                  ▼              ║
-║         ┌────────────────────┐             ┌──────────────────────┐ ║
-║         │  mongoose.Session  │             │   MongoDB Atlas /     │ ║
-║         │  ACID Transactions │◄───────────►│   Cluster Corporativo │ ║
+    │  ACID Transactions │◄───────────►│   Cluster Corporativo │ ║
 
 
 ```
