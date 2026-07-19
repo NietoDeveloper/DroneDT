@@ -121,8 +121,7 @@ Implementación de `mongoose.startSession()` para asegurar que las operaciones c
 ### ⚛️ Bloqueo Atómico de Inventario
 Uso del operador `$inc` combinado con validaciones condicionales estrictas (`stock: { $gte: quantity }`) directamente en la base de datos, blindando el inventario contra compras simultáneas fraudulentas o concurrentes — sin necesidad de locks externos.
 
-### 🔄 Mutaciones Automáticas de Estado
-Monitoreo en tiempo real del estado de los drones; si el stock toca fondo (0 absoluto), el backend transmuta el estado a `OUT_OF_STOCK` de forma automatizada y lo propaga a los nodos consumidores (storefront y dashboard).
+
 
 ---
 
