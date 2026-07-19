@@ -131,10 +131,7 @@ Monitoreo en tiempo real del estado de los drones; si el stock toca fondo (0 abs
 <div align="center">
 
 | Capa | Tecnología | Detalle |
-|:-----|:-----------|:--------|
-| ⚙️ **Runtime** | Node.js | 20.x LTS + TypeScript nativo (`tsx` / `tsc`) |
-| 🔧 **Framework** | Express.js | Arquitectura REST limpia, desacoplada por capas |
-| 🗄️ **Base de Datos** | MongoDB + Mongoose | ORM corporativo con sesiones transaccionales |
+ | MongoDB + Mongoose | ORM corporativo con sesiones transaccionales |
 **Cloud / Deploy** | Railway + AWS | Preparado para Doble Clúster distribuido |
 
 </div>
