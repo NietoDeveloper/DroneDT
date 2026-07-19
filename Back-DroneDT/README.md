@@ -35,12 +35,7 @@
 
 <br/>
 
-> ⚙️ **DroneDT Back-End** — Núcleo transaccional de la plataforma industrial de comercialización
-> y tracking logístico de aeronaves no tripuladas. Motor REST construido bajo migración progresiva
-> a **TypeScript estricto** mediante el patrón **Strangler Fig**, con blindaje atómico de inventario
-> para eliminar por completo las condiciones de carrera (*Race Conditions*) en operaciones de compra.
->
-> *Modular · Transaccional · Obsesivamente Production-Ready · Construido en Bogotá 🇨🇴*
+
 
 </div>
 
