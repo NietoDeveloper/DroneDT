@@ -59,24 +59,7 @@
 
 ## 🛰️ Resumen de Arquitectura
 
-**Enfoque Principal:** Migración progresiva a TypeScript estricto bajo el **Strangler Fig Pattern**, integrando operaciones atómicas para evitar la duplicidad o pérdida de inventario (*Race Conditions*).
-
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║                     DRONEDT · CORE API ENGINE                       ║
-╠══════════════════════════════════════════════════════════════════════╣
-║                                                                      ║
-║        ┌────────────────────────┐      ┌───────────────────────┐    ║
-║        │  🛒 STOREFRONT (front) │      │  🛠️ ADMIN (dashboard) │    ║
-║        └────────────┬───────────┘      └───────────┬───────────┘    ║
-║                     │                              │                ║
-║                     └───────────────┬──────────────┘                ║
-║                                     ▼                                ║
-║                     ┌───────────────────────────────┐                ║
-║                     │   🔧 EXPRESS + TYPESCRIPT      │                ║
-║                     │   Capas: Route → Controller →  │                ║
-║                     │   Service → Model              │                ║
-    │  ACID Transactions │◄───────────►│   Cluster Corporativo │ ║
+**Enfoque Principal:** Migración progresiva a TypeScript estricto bajo el **Strangler 
 
 
 ```
