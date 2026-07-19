@@ -1,11 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=240&section=header&text=DRONE%20DT%20·%20BACKEND&fontSize=64&fontColor=FFD700&fontAlignY=42&desc=⚙️%20REST%20API%20Engine%20·%20Transactional%20Core%20·%20Docker%20Powered&descAlignY=62&descColor=DCDCDC&animation=fadeIn" width="100%"/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=700&size=20&duration=2800&pause=900&color=FFD700&center=true&vCenter=true&width=750&lines=⚙️+Strangler+Fig+Migration+to+Strict+TypeScript;🔒+ACID+Transactions+%7C+mongoose.startSession();🐳+Fully+Dockerized+%7C+Dual-Cluster+Ready;📊+Atomic+Stock+Locking+%7C+Zero+Race+Conditions;🚀+Railway+%2B+AWS+%7C+CI%2FCD+Pipeline;🏆+%231+GitHub+Committer+in+Colombia)](https://git.io/typing-svg)
-
-<br/>
-adge/TypeScript-Strict_Mode-3178C6?
 
 ---
 
