@@ -213,11 +213,6 @@ npm run dev
 
 ---
 
-
-
-
-
-<br/>
  ║
                             — NietoDeveloper Standard         ║
 
