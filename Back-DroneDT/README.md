@@ -221,13 +221,10 @@ docker run -p 5000:5000 --env-file .env dronedt-backend
 
 ## 📄 License
 
-Desarrollo de arquitectura de software protegido bajo **Licencia MIT**.
-Todos los derechos reservados © 2026 Manuel Nieto
-
+Desarrollo de ar
 ---
 
-<div align="center">
-ub.com/NietoDkedihttps://manuelnieto.netlify.app/)
+ietoDkedihttps://manuelnieto.netlify.app/)
 
 <br/>
  ║
