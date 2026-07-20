@@ -1,50 +1,52 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=240&section=header&text=DRONE%20DT%20Frontend&fontSize=75&fontColor=FFD700&fontAlignY=42&desc=⚡%20Industrial%20Drone%20E-Commerce%20·%20Next.js%2015%20·%20Tesla%20Minimalist%20UI&descAlignY=62&descColor=DCDCDC&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=240&section=header&text=DRONE%20DT%20·%20FRONTEND&fontSize=62&fontColor=FFD700&fontAlignY=42&desc=🛸%20Next.js%20App%20Router%20·%20Industrial%20E-Commerce%20·%20Tesla-Minimalist%20UI&descAlignY=62&descColor=DCDCDC&animation=fadeIn" width="100%"/>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=700&size=20&duration=2800&pause=900&color=FFD700&center=true&vCenter=true&width=750&lines=🛸+Drone+Digital+Ecosystem+Frontend;⚡+Next.js+15+App+Router+%2B+React+Compiler;🎨+Tesla+Minimalist+UI+%7C+Feature-First+Architecture;🧠+Zustand+State+%7C+Zero+Re-renders;🚀+AWS+S3+%2B+Docker+%2B+Vercel+%7C+CI%2FCD;🏆+%231+GitHub+Committer+in+Colombia)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Share+Tech+Mono&weight=700&size=20&duration=2800&pause=900&color=FFD700&center=true&vCenter=true&width=780&lines=🛸+Aerospace-Inspired+Dashboard+%26+Storefront;⚡+Framer+Motion+%7C+GPU-Accelerated+Transitions;📐+Fluid+Responsive+310px+%E2%86%92+1900px;🐳+Dockerized+%7C+Next.js+16+Turbopack;🏆+%231+GitHub+Committer+en+Colombia)](https://git.io/typing-svg)
 
 <br/>
 
 <p align="center">
-  <a href="https://committers.top/colombia">
+  <a href="https://committers.top/colombia#NietoDeveloper">
     <img src="https://img.shields.io/badge/🥇_No._1_Committer-Colombia-FFD700?style=for-the-badge&logoColor=000000"/>
   </a>
   <a href="https://committers.top">
     <img src="https://img.shields.io/badge/🏆_Top_3-South_%26_Central_America-DCDCDC?style=for-the-badge&logoColor=000000"/>
   </a>
-  <img src="https://img.shields.io/badge/Status-Production_Ready-00D26A?style=for-the-badge&logo=checkmarx&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Status-Development-F97316?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Security-Level_S%2B-FF0000?style=for-the-badge&logoColor=white"/>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js-15+-000000?style=for-the-badge&logo=next.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TypeScript-Strict_Mode-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Tailwind_CSS-Custom_Theme-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Zustand-State-FF6B35?style=for-the-badge&logo=react&logoColor=white"/>
-  <img src="https://img.shields.io/badge/AWS-S3_Assets-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Docker-Containerized-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Next.js-16_App_Router-000000?style=for-the-badge&logo=next.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-5.x_Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-4.x-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Framer_Motion-GPU_Transitions-FF0088?style=for-the-badge&logo=framer&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Zustand-State_Mgmt-000000?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/AWS-S3_CDN-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white"/>
 </p>
 
 <p align="center">
   <a href="https://dronedt.vercel.app/">
-    <img src="https://img.shields.io/badge/🌐_Live_Platform-dronedt.vercel.app-FFD700?style=for-the-badge"/>
+    <img src="https://img.shields.io/badge/🛒_Public_Storefront-dronedt.vercel.app-FFD700?style=for-the-badge"/>
   </a>
   <a href="https://dashboarddronedt.vercel.app/">
-    <img src="https://img.shields.io/badge/🛸_Admin_Dashboard-dashboarddronedt.vercel.app-FEB60D?style=for-the-badge"/>
+    <img src="https://img.shields.io/badge/🛠️_Admin_Dashboard-dashboarddronedt.vercel.app-FEB60D?style=for-the-badge"/>
   </a>
   <a href="https://github.com/NietoDeveloper/DroneDT">
-    <img src="https://img.shields.io/badge/📂_Source-NietoDeveloper%2FDroneDT-000000?style=for-the-badge&logo=github&logoColor=FFD700"/>
+    <img src="https://img.shields.io/badge/📂_Monorepo-NietoDeveloper%2FDroneDT-000000?style=for-the-badge&logo=github&logoColor=FFD700"/>
   </a>
 </p>
 
 <br/>
 
-> 🛸 **DroneDT Frontend** — Plataforma de e-commerce industrial y control visual de aeronaves no tripuladas en Colombia.
-> Construida con **Next.js 15** App Router, arquitectura Feature-First y estética Tesla-minimalist.
-> Escalable, precisa y obsesivamente production-ready.
+> 🛸 **Drone DT — Frontend** es el nodo cliente del ecosistema DroneDT: un dashboard y tienda
+> industrial de alto rendimiento inspirado en los paradigmas de diseño aeroespacial (SpaceX
+> layout principles). Construido para escalar con precisión visual en resoluciones desde
+> **310px hasta 1900px**, con transiciones GPU-aceleradas y renderizado vectorial de precisión.
 >
-> *Modular · Preciso · Tesla-Minimalist · Construido en Bogotá 🇨🇴*
+> *Modular · Fluido · Obsesivamente Production-Ready · Construido en Bogotá 🇨🇴*
 
 </div>
 
@@ -52,165 +54,181 @@
 
 ## 🚀 Engineering Profile
 
-**Desarrollado por:** Manuel Nieto — [NietoDeveloper](https://github.com/NietoDeveloper)  
-**Rol:** Full-Stack Software Engineer
+**Desarrollado por:** Manuel Nieto — [NietoDeveloper](https://github.com/NietoDeveloper)
+**Rol:** Full-Stack Software Engineer · Frontend Architecture
 
-- 🏆 **Rank:** #1 Committer en Colombia | #3 en South & Central America — [committers.top](https://committers.top)
-- 💻 **Stack:** MERN + Next.js + TypeScript + AWS + Docker
-- 🎯 **Focus:** Sistemas de alto rendimiento, production-grade
-
-<p align="left">
-  <a href="https://committers.top/colombia#NietoDeveloper"><img src="https://user-badge.committers.top/colombia/NietoDeveloper.svg" alt="Committers Top Colombia"/></a>
-  <a href="https://committers.top/colombia#NietoDeveloper"><img src="https://user-badge.committers.top/colombia_public/NietoDeveloper.svg" alt="Committers Top Public"/></a>
-  <a href="https://committers.top/colombia#NietoDeveloper"><img src="https://user-badge.committers.top/colombia_private/NietoDeveloper.svg" alt="Committers Top Private"/></a>
-</p>
+- 🏆 **Rank:** #1 Committer en Colombia | Top 3 South & Central America — [committers.top](https://committers.top)
+- 💻 **Stack:** Next.js · TypeScript · Tailwind CSS · Framer Motion · Zustand
+- 🎯 **Focus:** HUD telemetry en tiempo real, Bento-Grid dashboards, e-commerce industrial de alta fidelidad visual
 
 ---
 
-## 🛠️ Tech Stack Identity
+## 💻 Tech Stack & Performance Core
+
+| Capa | Tecnología | Detalle |
+|:-----|:-----------|:--------|
+| ⚙️ **Framework** | Next.js | App Router Architecture · React Compiler |
+| 🔷 **Lenguaje** | TypeScript | Strict Type Safety |
+| 🎨 **Estilos** | Tailwind CSS + PostCSS | Utility-first, tokens de marca custom |
+| 🎬 **Animación** | Framer Motion | Transiciones GPU-aceleradas (hardware-accelerated) |
+| 🧠 **Estado Global** | Zustand | Store ligero para telemetría y carrito |
+| 🖼️ **Render Engine** | `shapeRendering="geometricPrecision"` | Anti-aliasing directo, sin blur en vectores al escalar |
+| ☁️ **Infra** | AWS S3 + Docker | Assets estáticos + contenedor listo para Railway/Vercel |
+
+---
+
+## 🏗️ System Architecture (Frontend Node)
+
+```
+╔══════════════════════════════════════════════════════════════════════╗
+║                     DRONE DT — FRONTEND NODE                         ║
+╠══════════════════════════════════════════════════════════════════════╣
+║                                                                      ║
+║   ┌──────────────────────────┐        ┌──────────────────────────┐   ║
+║   │  🛒 (shop) Route Group    │        │  🛠️ (dashboard) Group     │║
+║   │  Catálogo · Checkout      │        │  Bento-Grid · HUD         │ ║
+║   │  Config. Carga Útil       │        │  Telemetry en vivo        │ ║
+║   └────────────┬─────────────┘        └────────────┬──────────────┘  ║
+║                │                                    │                ║
+║                └─────────────────┬──────────────────┘                ║
+║                                  ▼                                   ║
+║                  ┌──────────────────────────────┐                    ║
+║                  │   🔌 api/ Route Handlers    │                    ║
+║                  │   BFF — Backend for Frontend │                    ║
+║                  └──────────────┬───────────────┘                    ║
+║                                 ▼                                    ║
+║                  ┌──────────────────────────────┐                    ║
+║                  │   🔧 Core API Engine (back/)  │                  ║
+║                  │   Node.js · Express · TS      │                   ║
+║                  └───────────────────────────────┘                   ║
+╚══════════════════════════════════════════════════════════════════════╝
+```
+
+---
+
+## 🗂️ Directory & Module Structure
+
+Estructura **Feature-First**: cada módulo de negocio (Drones, Shop, Telemetry) crece de forma
+independiente sin generar deuda técnica.
+
+```text
+drone-dt-frontend/
+├── src/
+│   ├── app/                    # 🟢 Routing & Server Components
+│   │   ├── (shop)/             # Grupo: E-commerce (drones, shop)
+│   │   ├── (dashboard)/        # Grupo: Panel de control (my-account)
+│   │   ├── api/                # Route Handlers (BFF)
+│   │   ├── layout.tsx          # Layout raíz — viewports globales y wrappers HTML
+│   │   └── page.tsx            # Hero Landing / Bento-Grid Dashboard
+│   ├── components/             # 🔵 Componentes Atómicos Globales
+│   │   ├── ui/                 # Botones, Cards, Inputs, Logo.tsx, Preloader.tsx
+│   │   └── layout/              # Navbars, Sidebars, Footers globales
+│   ├── features/               # 🔴 LÓGICA DE NEGOCIO CORE (Domain-driven)
+│   │   ├── drones/              # Modelos, vistas 3D, especificaciones técnicas
+│   │   ├── checkout/            # Carrito y sistema de pagos
+│   │   └── telemetry/           # Datos de vuelo en tiempo real
+│   ├── lib/                     # 🟡 Configuración de terceros (AWS, utils)
+│   ├── styles/                  # 🎨 Estilos globales & secciones Pure CSS
+│   ├── types/                   # 🔷 Definiciones TS globales
+│   └── store/                   # 🧠 Estado global (Zustand)
+├── public/                      # Assets estáticos optimizados
+├── Dockerfile                   # Configuración de contenedor
+└── tailwind.config.ts           # Identidad visual custom (Gainsboro & Gold)
+```
+
+**Componentes UI clave:**
+
+| Componente | Descripción |
+|:-----------|:------------|
+| `Logo.tsx` | Vector de marca aeroespacial con micro-rotación y glow |
+| `Preloader.tsx` | Motor de telemetría L5 — simulación de encendido de dron |
+
+---
+
+## 🎨 Brand Identity (Software DT Styles)
 
 <div align="center">
 
-| Capa | Tecnología | Enfoque |
-|:-----|:-----------|:--------|
-| **Framework** | Next.js 15+ (App Router + React Compiler) | Server Components · Turbopack |
-| **Language** | TypeScript — Strict Mode | Tipado absoluto · Zero `any` |
-| **Styling** | Tailwind CSS + Pure CSS Modules | Animaciones críticas · Tesla aesthetic |
-| **State** | Zustand | Feature slices · Zero re-renders |
-| **Infrastructure** | AWS S3 + Docker + Railway/Vercel | Assets CDN · CI/CD via Git |
-| **UI/UX** | Component-driven · Tesla-minimalist | Fluido 310px–1900px |
+| Elemento | Variable | Hex |
+|:---------|:---------|:----|
+| 🟡 Gold Primario | `gold` | `#FFD700` |
+| 🟠 Amarillo Acento | `yellowColor` | `#FEB60D` |
+| ⚪ Fondo Principal | `gainsboro` | `#DCDCDC` |
+| ⚫ Texto / Headings | `headingColor` | `#000000` |
 
 </div>
 
 ---
 
-## 📐 Arquitectura Feature-First
+## 🚀 Getting Started
 
-Cada módulo de negocio (Drones, Shop, Telemetría) crece de forma independiente sin generar deuda técnica.
-
-```
-drone-dt-frontend/
-├── src/
-│   ├── app/                    # 🟢 Routing & Server Components
-│   │   ├── (shop)/             # E-commerce — Drones, catálogo, tienda
-│   │   ├── (dashboard)/        # Control Panel — Mi cuenta, pedidos
-│   │   ├── api/                # Route Handlers (BFF — Backend for Frontend)
-│   │   ├── layout.tsx          # Main Layout — Tesla-style Navigation
-│   │   └── page.tsx            # Hero Landing Page
-│   ├── components/             # 🔵 Componentes Atómicos Globales
-│   │   ├── ui/                 # Base elements — Buttons, Cards, Inputs
-│   │   └── layout/             # Navbars, Sidebars & Footers globales
-│   ├── features/               # 🔴 CORE BUSINESS LOGIC (Domain-driven)
-│   │   ├── drones/             # Modelos, vistas 3D, especificaciones
-│   │   ├── checkout/           # Carrito y sistemas de pago
-│   │   └── telemetry/          # Datos de vuelo en tiempo real
-│   ├── lib/                    # 🟡 Configs de terceros — AWS, Utils
-│   ├── styles/                 # 🎨 Estilos globales & Pure CSS sections
-│   ├── types/                  # 🔷 Definiciones TypeScript globales
-│   └── store/                  # 🧠 Estado global — Zustand slices
-├── public/                     # Static Assets (Imágenes optimizadas)
-├── Dockerfile                  # Configuración de contenedorización
-└── tailwind.config.ts          # Custom Identity — Gainsboro & Gold
-```
-
----
-
-## 🎨 Brand Identity
-
-```javascript
-/** tailwind.config.ts — DroneDT Frontend Design Tokens */
-export default {
-  theme: {
-    extend: {
-      colors: {
-        gold:         "#FFD700",   // 🟡 Primary brand accent
-        yellowColor:  "#FEB60D",   // 🟠 Secondary accent
-        gainsboro:    "#DCDCDC",   // 🩶 Main background
-        headingColor: "#000000",   // ⚫ Headings & display text
-        textColor:    "#000000",   // ⚫ Body text
-      },
-    },
-  },
-}
-```
-
-| Elemento | Variable | Hex |
-|:---------|:---------|:----|
-| Primary Gold | `gold` | `#FFD700` |
-| Accent Yellow | `yellowColor` | `#FEB60D` |
-| Main Background | `gainsboro` | `#DCDCDC` |
-| Heading / Text | `headingColor` | `#000000` |
-
----
-
-## ⚙️ Getting Started
-
-### Clonar e instalar
+### 1. Clonar e instalar
 
 ```bash
-git clone https://github.com/NietoDeveloper/DroneDT.git
+git clone https://github.com/NietoDeveloper/drone-dt-frontend.git
 cd drone-dt-frontend
 npm install
 ```
 
-### Variables de entorno
+### 2. Configurar entorno
 
-Crea un archivo `.env.local` con tus credenciales:
+Crear `.env.local`:
 
 ```env
 NEXT_PUBLIC_API_URL=your_api_gateway
 AWS_S3_BUCKET=your_bucket_name
-AWS_REGION=us-east-1
-AWS_ACCESS_KEY_ID=your-access-key
-AWS_SECRET_ACCESS_KEY=your-secret-key
 ```
 
-### Modo desarrollo
+### 3. Modo desarrollo
 
 ```bash
 npm run dev
-# → http://localhost:3000
 ```
 
----
+App disponible en → `http://localhost:3000`
 
-## 🐳 Docker Production Build
+### 4. Build de producción con Docker
 
 ```bash
-# Build
 docker build -t drone-dt-frontend .
-
-# Run
 docker run -p 3000:3000 drone-dt-frontend
 ```
 
 ---
 
-## 📜 Scripts
+## 📊 Deploy & Port Mapping
 
-| Comando | Descripción |
-|---------|-------------|
-| `npm run dev` | Servidor de desarrollo en puerto 3000 |
-| `npm run build` | Build de producción optimizado |
-| `npm run start` | Servidor de producción |
-| `npm run lint` | ESLint — code quality |
-| `npm run type-check` | TypeScript strict check |
+| Nodo | URL Local | Deploy |
+|:-----|:----------|:-------|
+| 🛒 **Public Storefront** | `http://localhost:3000` | [dronedt.vercel.app](https://dronedt.vercel.app/) |
+| 🛠️ **Admin Dashboard** | `http://localhost:3001` | [dashboarddronedt.vercel.app](https://dashboarddronedt.vercel.app/) |
+
+---
+
+## 🗺️ Roadmap
+
+- [x] Bento-Grid Dashboard con HUD telemetry interactivo
+- [x] Preloader L5 con simulación de encendido de dron
+- [x] Layout fluido responsivo 310px → 1900px
+- [x] Integración Framer Motion GPU-aceleradas
+- [ ] Vistas 3D de especificaciones de drones (`features/drones`)
+- [ ] Telemetría en tiempo real vía WebSockets/Socket.io
+- [ ] Modo offline / PWA para operarios de campo
 
 ---
 
 ## 📄 License
 
-Desarrollo propietario por **NietoDeveloper** para DroneDT.  
+Desarrollo de arquitectura de software protegido bajo **Licencia MIT**.
 Todos los derechos reservados © 2026 Manuel Nieto
 
 ---
 
 <div align="center">
 
-[![Live Platform](https://img.shields.io/badge/🌐_Live_Platform-dronedt.vercel.app-FFD700?style=for-the-badge)](https://dronedt.vercel.app/)
-[![Admin Dashboard](https://img.shields.io/badge/🛸_Dashboard-dashboarddronedt.vercel.app-FEB60D?style=for-the-badge)](https://dashboarddronedt.vercel.app/)
+[![Live Storefront](https://img.shields.io/badge/🛒_Storefront-dronedt.vercel.app-FFD700?style=for-the-badge)](https://dronedt.vercel.app/)
+[![Admin Dashboard](https://img.shields.io/badge/🛠️_Dashboard-dashboarddronedt.vercel.app-FEB60D?style=for-the-badge)](https://dashboarddronedt.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-NietoDeveloper-000?style=for-the-badge&logo=github&logoColor=FFD700)](https://github.com/NietoDeveloper)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Manuel%20Nieto-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/manuelnietodeveloper)
 [![Portfolio](https://img.shields.io/badge/Portfolio-manuelnieto.netlify.app-FFD700?style=for-the-badge&labelColor=0a0a0a)](https://manuelnieto.netlify.app/)
 
 <br/>
@@ -223,13 +241,14 @@ Todos los derechos reservados © 2026 Manuel Nieto
 ```
 ╔══════════════════════════════════════════════════════════════════╗
 ║                                                                  ║
-║   "Built for Scalability, Performance, and Precision."          ║
+║   "Every line of code is optimized for performance               ║
+║    and security. Production-ready by default."                   ║
 ║                                                                  ║
-║                               — NietoDeveloper Standard         ║
+║                               — NietoDeveloper                   ║
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
-*DroneDT Frontend — Built by **NietoDeveloper · Manuel Nieto***
+*Drone DT Frontend — Built by **NietoDeveloper · Manuel Nieto***
 
 *Desarrollado con rigor técnico en* 📍 **Bogotá, Colombia** 🇨🇴
 
