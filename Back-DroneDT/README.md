@@ -854,7 +854,3 @@ Monitoreo en tiempo real del estado de los drones; si el stock toca fondo (0 abs
 | 🔧 **Framework** | Express.js | Arquitectura REST limpia, desacoplada por capas |
 | 🗄️ **Base de Datos** | MongoDB + Mongoose | ORM corporativo con sesiones transaccionales |
 | 🔒 **Autenticación** | JWT | Tokens firmados + expiración configurable |
-| 🧬 **Validación** | Zod | Schemas estrictos de payload y headers |
-| 🐳 **Contenedores** | Docker | Aislamiento de procesos por servicio |
-| ☁️ **Cloud / Deploy** | Railway + AWS | Preparado para Doble Clúster distribuido |
-
