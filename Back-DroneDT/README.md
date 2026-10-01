@@ -588,21 +588,4 @@ Todos los derechos reservados © 2026 Manuel Nieto
 
 ## 🚀 Engineering Profile
 
-**Desarrollado por:** Manuel Nieto — [NietoDeveloper](https://github.com/NietoDeveloper)
-**Rol:** Full-Stack Software Engineer
-
-- 🏆 **Rank:** #1 Committer en Colombia | #3 en South & Central America — [committers.top](https://committers.top)
-- 💻 **Stack:** Node.js + TypeScript + Express.js + MongoDB (Mongoose) + Docker + AWS
-- 🎯 **Focus:** Consistencia transaccional, blindaje de inventario y arquitectura desacoplada por capas
-
----
-
-## 🛰️ Resumen de Arquitectura
-
-**Enfoque Principal:** Migración progresiva a TypeScript estricto bajo el **Strangler Fig Pattern**, integrando operaciones atómicas para evitar la duplicidad o pérdida de inventario (*Race Conditions*).
-
-```
-╔══════════════════════════════════════════════════════════════════════╗
-║                     DRONEDT · CORE API ENGINE                       ║
-╠══════════════════════════════════════════════════════════════════════╣
-║                                                                      ║
+**Desarrollado por:** Manuel Nieto — [NietoDeveloper](https://github.c
