@@ -837,7 +837,4 @@ back/                                  ← NÚCLEO: REST API Engine
 Implementación de `mongoose.startSession()` para asegurar que las operaciones críticas (compras y reducción de stock) se completen en su totalidad o hagan **rollback** inmediato ante cualquier fallo intermedio.
 
 ### ⚛️ Bloqueo Atómico de Inventario
-Uso del operador `$inc` combinado con validaciones condicionales estrictas (`stock: { $gte: quantity }`) directamente en la base de datos, blindando el inventario contra compras simultáneas fraudulentas o concurrentes — sin necesidad de locks externos.
-
-### 🔄 Mutaciones Automáticas de Estado
-Monitoreo en tiempo real del estado de los drones; si el stock toca 
+Uso del operador `$inc` combinado con validaciones condicionales estrictas (`st
