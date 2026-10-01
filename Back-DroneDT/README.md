@@ -821,7 +821,4 @@ back/                                  ← NÚCLEO: REST API Engine
 │   │   ├── Drone.ts                   ← Esquema + índices únicos + estado OUT_OF_STOCK
 │   │   └── Sale.ts                    ← Esquema de transacciones y órdenes
 │   ├── routes/                        ← Enrutamiento desacoplado por recurso
-│   ├── services/                      ← Reglas de negocio aisladas del controlador
-│   ├── types/                         ← Interfaces y contratos TypeScript estrictos
-│   └── server.ts                      ← Punto de entrada · Middlewares de red (CORS, JSON)
-├── tsconfig.json                      ← Configuración de compilación es
+│   ├─
