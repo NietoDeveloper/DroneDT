@@ -774,11 +774,5 @@ Todos los derechos reservados © 2026 Manuel Nieto
 
 <br/>
 
-[![#1 Colombia](https://img.shields.io/badge/🥇_%231_Committer-Colombia-FFD700?style=for-the-badge)](https://committers.top/colombia)
-[![LATAM Top](https://img.shie
-<br/>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=130&section=footer&animation=fadeIn" width="100%"/>
-
-</div>
+[![#1 Colombia](https://img.shie
 
