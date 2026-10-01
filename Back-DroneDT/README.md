@@ -952,22 +952,7 @@ Todos los derechos reservados © 2026 Manuel Nieto
 
 <br/>
 
-[![#1 Colombia](https://img.shields.io/badge/🥇_%231_Committer-Colombia-FFD700?style=for-the-badge)](https://committers.top/colombia)
-[![LATAM Top](https://img.shields.io/badge/🌎_Top_3-South_%26_Central_America-DCDCDC?style=for-the-badge)](https://committers.top)
-
-<br/>
-
-```
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║   "Every transaction is atomic. Every rollback is silent.        ║
-║    Production-ready by default."                                 ║
-║                                                                  ║
-║                               — NietoDeveloper Standard          ║
-╚══════════════════════════════════════════════════════════════════╝
-```
-
-*DroneDT Backend — Built by **NietoDeveloper · Manuel Nieto***
+[![#1 Colombia](https://img.shields.io/badge/🥇_%231_Committer-Colombia-FFD70uel Nieto***
 
 *Desarrollado con rigor técnico en* 📍 **Bogotá, Colombia** 🇨🇴
 
