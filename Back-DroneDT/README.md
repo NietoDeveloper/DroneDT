@@ -622,19 +622,3 @@ Todos los derechos reservados © 2026 Manuel Nieto
 ║                    ▼                                  ▼              ║
 ║         ┌────────────────────┐             ┌──────────────────────┐ ║
 ║         │  mongoose.Session  │             │   MongoDB Atlas /     │ ║
-║         │  ACID Transactions │◄───────────►│   Cluster Corporativo │ ║
-║         │  $inc + $gte Lock  │             │   Dual-Cluster Ready   │ ║
-║         └────────────────────┘             └──────────────────────┘ ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
-
----
-
-## 🗂️ Arquitectura de Carpetas
-
-```text
-back/                                  ← NÚCLEO: REST API Engine
-├── src/
-│   ├── config/
-│   │   └── db.ts                      ← Conexión Mongoose · Pool optimizado (maxPoolSize: 10)
-│   ├── con
