@@ -824,14 +824,4 @@ back/                                  ← NÚCLEO: REST API Engine
 │   ├── services/                      ← Reglas de negocio aisladas del controlador
 │   ├── types/                         ← Interfaces y contratos TypeScript estrictos
 │   └── server.ts                      ← Punto de entrada · Middlewares de red (CORS, JSON)
-├── tsconfig.json                      ← Configuración de compilación estricta
-├── Dockerfile                         ← Imagen aislada del motor backend
-└── package.json
-```
-
----
-
-## 🛡️ Core de Seguridad y Consistencia (Nivel S+)
-
-### 🔐 Transacciones ACID
-Implementación de `mongoose.startSession()` para asegurar que las operaciones críticas (compras y reducción de stock) se completen en su totalidad o hagan **rollback** inmediato ante cualquier fallo 
+├── tsconfig.json                      ← Configuración de compilación es
