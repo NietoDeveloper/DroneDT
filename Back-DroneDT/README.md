@@ -807,8 +807,3 @@ npm install
 ```
 
 ---
-
-## 🗂️ Arquitectura de Carpetas
-
-```text
-back/                                  ← NÚCLEO: REST API Engine
