@@ -858,8 +858,3 @@ Monitoreo en tiempo real del estado de los drones; si el stock toca fondo (0 abs
 | 🐳 **Contenedores** | Docker | Aislamiento de procesos por servicio |
 | ☁️ **Cloud / Deploy** | Railway + AWS | Preparado para Doble Clúster distribuido |
 
-</div>
-
----
-
-## 📈 Progreso del Roadmap Back-End
