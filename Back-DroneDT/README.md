@@ -534,7 +534,7 @@ Todos los derechos reservados © 2026 Manuel Nieto
 
 *DroneDT Backend — Built by **NietoDeveloper · Manuel Nieto***
 
-*Desarrollado con rigor técnico en* 📍 **Bogotá, Colombia** 🇨🇴
+*Desarrollado con rigor técnico en* 📍 **Bogotábia** 🇨🇴
 
 <br/>
 
