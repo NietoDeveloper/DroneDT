@@ -852,5 +852,4 @@ Monitoreo en tiempo real del estado de los drones; si el stock toca fondo (0 abs
 |:-----|:-----------|:--------|
 | ⚙️ **Runtime** | Node.js | 20.x LTS + TypeScript nativo (`tsx` / `tsc`) |
 | 🔧 **Framework** | Express.js | Arquitectura REST limpia, desacoplada por capas |
-| 🗄️ **Base de Datos** | MongoDB + Mongoose | ORM corporativo con sesiones transaccionales |
-| 🔒 **Autenticación** | JWT | Tokens firmados + expiración configurable |
+| 🗄️ *
