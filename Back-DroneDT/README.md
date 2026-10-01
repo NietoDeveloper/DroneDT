@@ -710,12 +710,3 @@ cd drone-dt/back
 ```
 
 ### 2. Instalar dependencias
-
-```bash
-npm install
-```
-
-### 3. Configurar variables de entorno
-<div align="center">
-o._1_Committer-Colombia-FFD700?style=for-the-badge&logoColor=000000"/>
-  </a>
