@@ -863,15 +863,3 @@ Monitoreo en tiempo real del estado de los drones; si el stock toca fondo (0 abs
 ---
 
 ## 📈 Progreso del Roadmap Back-End
-
-- [x] **Fase 1 — Configuración de Conectores**
-  `src/config/db.ts` creado con pools de conexión optimizados (`maxPoolSize: 10`) y manejo de excepciones críticas del clúster.
-
-- [ ] **Fase 2 — Entrada del Servidor** ⏳
-  Creación de `src/server.ts` para levantar middlewares de red (CORS, Express JSON) e inicializar el socket del servidor.
-
-- [ ] **Fase 3 — Modelado de Datos** ⏳
-  Estructurar las interfaces e índices únicos de MongoDB para `Drone.ts` y `Sale.ts`.
-
-- [ ] **Fase 4 — Controladores Transaccionales** ⏳
-  Inyección de la lógica transaccional y enrutamiento de la API.
