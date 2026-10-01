@@ -779,15 +779,6 @@ Todos los derechos reservados © 2026 Manuel Nieto
 
 <br/>
 
-```
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║   "Every transaction is atomic. Every rollback is silent.        ║
-║    Production-ready by default."                                 ║
-║                                                                  ║
-║                               — NietoDeveloper Standard          ║
-╚══════════════════════════════════════════════════════════════════╝
-```
 
 *DroneDT Backend — Built by **NietoDeveloper · Manuel Nieto***
 
