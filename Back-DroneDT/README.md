@@ -532,10 +532,7 @@ Todos los derechos reservados © 2026 Manuel Nieto
 ╚══════════════════════════════════════════════════════════════════╝
 ```
 
-*DroneDT Backend — Built by **NietoDeveloper · Manuel Nieto***
-
-*Desarrollado con rigor técnico en* 📍 **Bogotábia** 🇨🇴
-
+*DroneDT Backend — Built by **Nie
 <br/>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradientomColorList=0,2,2,5,30&height=130&section=footer&animation=fadeIn" width="100%"/>
