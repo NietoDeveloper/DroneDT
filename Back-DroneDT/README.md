@@ -812,11 +812,3 @@ npm install
 
 ```text
 back/                                  ← NÚCLEO: REST API Engine
-├── src/
-│   ├── config/
-│   │   └── db.ts                      ← Conexión Mongoose · Pool optimizado (maxPoolSize: 10)
-│   ├── controllers/                   ← Lógica transaccional · Ventas · Inventario · Usuarios
-│   ├── middleware/                    ← JWT · Validaciones Zod · Manejo de errores centralizado
-│   ├── models/
-│   │   ├── Drone.ts                   ← Esquema + índices únicos + estado OUT_OF_STOCK
-│   │   └── Sale.ts 
