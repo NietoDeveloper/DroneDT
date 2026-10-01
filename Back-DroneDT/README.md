@@ -819,6 +819,4 @@ back/                                  ← NÚCLEO: REST API Engine
 │   ├── middleware/                    ← JWT · Validaciones Zod · Manejo de errores centralizado
 │   ├── models/
 │   │   ├── Drone.ts                   ← Esquema + índices únicos + estado OUT_OF_STOCK
-│   │   └── Sale.ts                    ← Esquema de transacciones y órdenes
-│   ├── routes/                        ← Enrutamiento desacoplado por recurso
-│   ├─
+│   │   └── Sale.ts 
