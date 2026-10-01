@@ -834,7 +834,4 @@ back/                                  ← NÚCLEO: REST API Engine
 ## 🛡️ Core de Seguridad y Consistencia (Nivel S+)
 
 ### 🔐 Transacciones ACID
-Implementación de `mongoose.startSession()` para asegurar que las operaciones críticas (compras y reducción de stock) se completen en su totalidad o hagan **rollback** inmediato ante cualquier fallo intermedio.
-
-### ⚛️ Bloqueo Atómico de Inventario
-Uso del operador `$inc` combinado con validaciones condicionales estrictas (`st
+Implementación de `mongoose.startSession()` para asegurar que las operaciones críticas (compras y reducción de stock) se completen en su totalidad o hagan **rollback** inmediato ante cualquier fallo 
