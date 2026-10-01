@@ -538,6 +538,6 @@ Todos los derechos reservados © 2026 Manuel Nieto
 
 <br/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=130&section=footer&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradientomColorList=0,2,2,5,30&height=130&section=footer&animation=fadeIn" width="100%"/>
 
 </div>
