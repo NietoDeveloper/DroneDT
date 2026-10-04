@@ -92,8 +92,7 @@ router.get('/menu',
 });
 
 module.expor
-// --- IMPORTACIÓN Cm[DRONE-ASSET-LOG]\x1b[0m ${req.requestTime} - \x1b[32m${req.method}\x1b[0m ${req.originalUrl}`);
-    next();
+// --- ;
 });
 
 /**
