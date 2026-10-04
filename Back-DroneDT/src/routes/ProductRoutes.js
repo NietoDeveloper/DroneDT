@@ -86,9 +86,7 @@ const mongoose = require('mongoose');
 
 /**
  * [RUTAS DE FLOTA E INVENTAR
-
-// 1. RUTA DE NAVEGACIÓN (Menu / Categorías)
-// Accesible vía: GET /api/v1/products/menu
+cts/menu
 router.get('/menu', getProductMenu);
 
 // 2. RUTAS DE COLECCIÓN
