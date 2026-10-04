@@ -236,16 +236,3 @@ router.use((req, res, next) => {
  */
 
 // 1. RUTA DE NAVEGACIÓN (Menu / Categorías)
-// Accesible vía: GET /api/v1/products/menu
-router.get('/menu', getProductMenu);
-
-// 2. RUTAS DE COLECCIÓN
-// Accesible vía: /api/v1/products/
-router.route('/')
-    .get(getProducts)    // Catálogo para la Shop
-    .post(createProduct); // Admin: Registro de nuevas unidades
-
-// 3. RUTAS DE INSTANCIA (ID Validado)
-// Accesible vía: GET /api/v1/products/:id
-router.get('/:id', (req, res, next) => {
-    if (!mongoose.Types.
