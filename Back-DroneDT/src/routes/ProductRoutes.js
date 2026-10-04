@@ -92,12 +92,7 @@ router.get('/menu',
 });
 
 module.expor
-// --- IMPORTACIÓN CRÍTICA (PascalCase exacto) ---
-const { ntrollers/ProductController');
-router.use((req, res, next) => {
-    req.requestTime = new Date().toISOString();
-    // Color Magenta (\x1b[35m) para identificar tráfico hacia el Cluster 2
-    console.log(`\x1b[35m[DRONE-ASSET-LOG]\x1b[0m ${req.requestTime} - \x1b[32m${req.method}\x1b[0m ${req.originalUrl}`);
+// --- IMPORTACIÓN Cm[DRONE-ASSET-LOG]\x1b[0m ${req.requestTime} - \x1b[32m${req.method}\x1b[0m ${req.originalUrl}`);
     next();
 });
 
