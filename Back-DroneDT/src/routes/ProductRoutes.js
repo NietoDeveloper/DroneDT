@@ -78,10 +78,3 @@ module.exports = router;
 
 
 /**
- * [RUTAS DE FLOTA E INVENTAR
-cts/meconst express = require('express');
-const router = express.Router();
-const mongoose = require('mongoose');
-
-// --- IMPORTACIÓN CRÍTICA (PascalCase exacto) ---
-const { 
