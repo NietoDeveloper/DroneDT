@@ -80,13 +80,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 
-// --- IMPORTACIÓN CRÍTICA (PascalCase exacto) ---
-const { 
-    getProducts, 
-    getProductMenu, 
-    getProductById, 
-    createProduct 
-} = require('../controllers/ProductController');
+ require('../controllers/ProductController');
 
 
 
