@@ -86,13 +86,7 @@ router.get('/menu', getProductMenu);
 // Acces; // Admin: Registro de nuevas unidades
 
 // 3. RUTAS DE INSTANCIA (ID Validado)
-// Accesible vía: GET /api/v1/products/:id
-router.get('/:id', (req, res, next) => {
-    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-        console.error(`\x1b[31m[SECURITY]\x1b[0m ID inválido detectado: ${req.params.id}`);
-        return res.status(400).json({
-            success: false,
-            system_code: 'INVALID_DRONE_ID',
+// Accesible vía: GET /_DRONE_ID',
             message: 'El ID proporcionado no es un formato válido de MongoDB Atlas.'
         });
     }
