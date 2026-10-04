@@ -91,9 +91,7 @@ router.get('/menu',
     });
 });
 
-module.expor
-// --- ;
-});
+
 
 /**
  * [RUTAS DE FLOTA E INVENTARIO]
