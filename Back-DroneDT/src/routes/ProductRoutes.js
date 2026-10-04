@@ -90,10 +90,7 @@ cts/menu
 router.get('/menu', getProductMenu);
 
 // 2. RUTAS DE COLECCIÓN
-// Accesible vía: /api/v1/products/
-router.route('/')
-    .get(getProducts)    // Catálogo para la Shop
-    .post(createProduct); // Admin: Registro de nuevas unidades
+// Acces; // Admin: Registro de nuevas unidades
 
 // 3. RUTAS DE INSTANCIA (ID Validado)
 // Accesible vía: GET /api/v1/products/:id
