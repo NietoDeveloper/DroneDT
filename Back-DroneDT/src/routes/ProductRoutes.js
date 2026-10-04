@@ -175,15 +175,3 @@ router.use((req, res, next) => {
 router.get('/menu', getProductMenu);
 
 // 2. RUTAS DE COLECCIÓN
-// Accesible vía: /api/v1/products/
-router.route('/')
-    .get(getProducts)    // Catálogo para la Shop
-    .post(createProduct); // Admin: Registro de nuevas unidades
-
-// 3. RUTAS DE INSTANCIA (ID Validado)
-// Accesible vía: GET /api/v1/products/:id
-router.get('/:id', (req, res, next) => {
-    if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
-        console.error(`\x1b[31m[SECURITY]\x1b[0m ID inválido detectado: ${req.params.id}`);
-        return res.status(400).json({
-nk: 'Colombia #1 | S+ Performance' 
