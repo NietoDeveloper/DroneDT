@@ -84,5 +84,3 @@ router.get('/menu',
     }
     next();
 }, getProductById);
-
-/**
