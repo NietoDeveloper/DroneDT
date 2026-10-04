@@ -92,6 +92,3 @@ router.get('/menu',
 
 /**
  * [RUTAS DE FLOTA E INVENTARIO]
-
-
-
