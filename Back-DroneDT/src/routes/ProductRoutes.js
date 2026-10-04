@@ -95,17 +95,3 @@ const {
  * [MIDDLEWARE DE TELEMETRÍA LOCAL]
  * Monitoreo de latencia para el Cluster de Assets de Drone DT
  */
-router.use((req, res, next) => {
-    req.requestTime = new Date().toISOString();
-    // Color Magenta (\x1b[35m) para identificar tráfico hacia el Cluster 2
-    console.log(`\x1b[35m[DRONE-ASSET-LOG]\x1b[0m ${req.requestTime} - \x1b[32m${req.method}\x1b[0m ${req.originalUrl}`);
-    next();
-});
-
-/**
- * [RUTAS DE FLOTA E INVENTARIO]
- * Endpoint base: /api/v1/products
- */
-
-// 1. RUTA DE NAVEGACIÓN (Menu / Categorías)
-// Accesible vía: GET /api/v1/products/menu
