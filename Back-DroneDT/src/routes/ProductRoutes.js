@@ -87,10 +87,6 @@ router.get('/menu',
 
 /**
  * [CATCH-ALL ERROR HANDLER] 
- * Garantiza que el frontend reciba una respuesta incluso en fallos críticos
- */cess: false,
-        system_code: 'INTERNAL_PRODUCT_ERROR',
-        engineer: 'Manuel Nieto',
         rank: 'Colombia #1 | S+ Performance' 
     });
 });
