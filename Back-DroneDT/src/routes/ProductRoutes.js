@@ -76,13 +76,6 @@ module.exports = router;
 
 
 
-const express = require('express');
-const router = express.Router();
-const mongoose = require('mongoose');
-
-
-
-
 
 /**
  * [RUTAS DE FLOTA E INVENTAR
