@@ -80,4 +80,4 @@ module.exports = router;
 /**
  * [RUTAS DE FLOTA E INVENTAR
 cts/menu
-router.
+ro
