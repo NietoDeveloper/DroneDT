@@ -86,10 +86,7 @@ router.get('/menu',
 }, getProductById);
 
 /**
- * [CATCH-ALL ERROR HANDLER] 
-        rank: 'Colombia #1 | S+ Performance' 
-    });
-});
+
 
 
 
