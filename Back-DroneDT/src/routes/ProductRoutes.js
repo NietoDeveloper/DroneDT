@@ -85,13 +85,3 @@ const mongoose = require('mongoose');
 
 // --- IMPORTACIÓN CRÍTICA (PascalCase exacto) ---
 const { 
-    getProducts, 
-    getProductMenu, 
-    getProductById, 
-    createProduct 
-} = require('../controllers/ProductController');
-
-/**
- * [MIDDLEWARE DE TELEMETRÍA LOCAL]
- * Monitoreo de latencia para el Cluster de Assets de Drone DT
- */
