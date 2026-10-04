@@ -263,14 +263,3 @@ router.get('/:id', (req, res, next) => {
  * [CATCH-ALL ERROR HANDLER] 
  * Garantiza que el frontend reciba una respuesta incluso en fallos críticos
  */
-router.use((err, req, res, next) => {
-    console.error(`\x1b[41m[PRODUCT-ROUTE-ERROR]\x1b[0m`, err.stack);
-    res.status(err.status || 500).json({
-        success: false,
-        system_code: 'INTERNAL_PRODUCT_ERROR',
-        engineer: 'Manuel Nieto',
-        rank: 'Colombia #1 | S+ Performance' 
-    });
-});
-
-module.exports = router;
