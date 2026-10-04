@@ -201,9 +201,7 @@ router.get('/:id', (req, res, next) => {
 router.use((err, req, res, next) => {
     console.error(`\x1b[41m[PRODUCT-ROUTE-ERROR]\x1b[0m`, err.stack);
     res.status(err.status || 500).json({
-        success: false,
-        system_code: 'INTERNAL_PRODUCT_ERROR',
-        engineer: 'Manuel Nieto',
+        success: false,',
         rank: 'Colombia #1 | S+ Performance' 
     });
 });
