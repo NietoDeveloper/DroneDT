@@ -186,20 +186,4 @@ router.get('/:id', (req, res, next) => {
     if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
         console.error(`\x1b[31m[SECURITY]\x1b[0m ID inválido detectado: ${req.params.id}`);
         return res.status(400).json({
-            success: false,
-            system_code: 'INVALID_DRONE_ID',
-            message: 'El ID proporcionado no es un formato válido de MongoDB Atlas.'
-        });
-    }
-    next();
-}, getProductById);
-
-/**
- * [CATCH-ALL ERROR HANDLER] 
- * Garantiza que el frontend reciba una respuesta incluso en fallos críticos
- */
-router.use((err, req, res, next) => {
-    console.error(`\x1b[41m[PRODUCT-ROUTE-ERROR]\x1b[0m`, err.stack);
-    res.status(err.status || 500).json({
-        success: false,',
-        rank: 'Colombia #1 | S+ Performance' 
+nk: 'Colombia #1 | S+ Performance' 
