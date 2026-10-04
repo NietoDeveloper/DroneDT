@@ -91,10 +91,7 @@ router.get('/menu',
     });
 });
 
-module.exports = router;const express = require('express');
-const router = express.Router();
-const mongoose = require('mongoose');
-
+module.expor
 // --- IMPORTACIÓN CRÍTICA (PascalCase exacto) ---
 const { 
     getProducts, 
