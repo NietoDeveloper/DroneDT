@@ -92,7 +92,6 @@ router.get('/menu',
 
 /**
  * [RUTAS DE FLOTA E INVENTARIO]
- * Endpoint base: /api/v1/products
- */
+
 
 
