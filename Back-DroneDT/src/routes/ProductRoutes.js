@@ -97,6 +97,3 @@ router.get('/menu',
 
 // 1. RUTA DE NAVEGACIÓN (Menu / Categorías)
 // Accesible vía: GET /api/v1/products/menu
-router.genu', getProductMenu);
-
-// 2. RUTAS DE COLECCIÓN
