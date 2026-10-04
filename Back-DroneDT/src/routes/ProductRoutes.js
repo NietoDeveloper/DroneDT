@@ -95,5 +95,4 @@ router.get('/menu',
  * Endpoint base: /api/v1/products
  */
 
-// 1. RUTA DE NAVEGACIÓN (Menu / Categorías)
-// Accesible vía: GET /api/v1/products/menu
+
