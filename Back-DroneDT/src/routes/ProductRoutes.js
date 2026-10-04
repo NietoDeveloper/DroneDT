@@ -85,9 +85,7 @@ const mongoose = require('mongoose');
 
 
 /**
- * [RUTAS DE FLOTA E INVENTARIO]
- * Endpoint base: /api/v1/products
- */
+ * [RUTAS DE FLOTA E INVENTAR
 
 // 1. RUTA DE NAVEGACIÓN (Menu / Categorías)
 // Accesible vía: GET /api/v1/products/menu
