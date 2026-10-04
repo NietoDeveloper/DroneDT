@@ -82,5 +82,3 @@ module.exports = router;
 cts/menu
 router.get('/menu',
     }
-    next();
-}, getProductById);
