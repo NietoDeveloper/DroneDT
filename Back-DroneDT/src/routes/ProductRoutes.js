@@ -93,12 +93,7 @@ router.get('/menu',
 
 module.expor
 // --- IMPORTACIÓN CRÍTICA (PascalCase exacto) ---
-const { 
-    getProducts, 
-    getProductMenu, 
-    getProductById, 
-    createProduct 
-} = require('../controllers/ProductController');
+const { ntrollers/ProductController');
 
 /**
  * [MIDDLEWARE DE TELEMETRÍA LOCAL]
