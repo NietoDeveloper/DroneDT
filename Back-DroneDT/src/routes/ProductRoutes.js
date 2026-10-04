@@ -203,19 +203,3 @@ router.use((err, req, res, next) => {
     res.status(err.status || 500).json({
         success: false,',
         rank: 'Colombia #1 | S+ Performance' 
-    });
-});
-
-module.exports = router;
-const express = require('express');
-const router = express.Router();
-const mongoose = require('mongoose');
-
-// --- IMPORTACIÓN CRÍTICA (PascalCase exacto) ---
-const { 
-    getProducts, 
-    getProductMenu, 
-    getProductById, 
-    createProduct 
-} = require('../controllers/ProductController');
-
