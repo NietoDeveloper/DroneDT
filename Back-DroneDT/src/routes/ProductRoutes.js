@@ -80,15 +80,7 @@ module.exports = router;
 /**
  * [RUTAS DE FLOTA E INVENTAR
 cts/menu
-router.get('/menu', getProductMenu);
-
-// 2. RUTAS DE COLECCIÓN
-// Acces; // Admin: Registro de nuevas unidades
-
-// 3. RUTAS DE INSTANCIA (ID Validado)
-// Accesible vía: GET /_DRONE_ID',
-            message: 'El ID proporcionado no es un formato válido de MongoDB Atlas.'
-        });
+router.get('/menu',
     }
     next();
 }, getProductById);
