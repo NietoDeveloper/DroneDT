@@ -94,11 +94,6 @@ router.get('/menu',
 module.expor
 // --- IMPORTACIÓN CRÍTICA (PascalCase exacto) ---
 const { ntrollers/ProductController');
-
-/**
- * [MIDDLEWARE DE TELEMETRÍA LOCAL]
- * Monitoreo de latencia para el Cluster de Assets de Drone DT
- */
 router.use((req, res, next) => {
     req.requestTime = new Date().toISOString();
     // Color Magenta (\x1b[35m) para identificar tráfico hacia el Cluster 2
